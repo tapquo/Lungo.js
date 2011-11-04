@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="30285013-672e-4686-875b-58c4268c29f5" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/build.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/CSSImportRule.js" afterPath="$PROJECT_DIR$/lib/CSSImportRule.js" />
+    </list>
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="CSSOM.iws" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+    <option name="REVERSE_PATCH" value="false" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CSSOM" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="parse.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/parse.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="16" selection-start="713" selection-end="713" vertical-scroll-proportion="-16.0">
+              <folding>
+                <marker date="1292697557000" expanded="true" signature="681:774" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parse2.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/parse2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="197" column="25" selection-start="3686" selection-end="3686" vertical-scroll-proportion="-0.6666667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docs/build.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="28" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.6090535">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parse.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/parse.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="11" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSSOM.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/CSSOM.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="11" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/helper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="0" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qunit.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/vendor/qunit.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="59" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSSStyleDeclaration.test.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/CSSStyleDeclaration.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="19" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CSSStyleDeclaration.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/CSSStyleDeclaration.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="105" column="22" selection-start="2425" selection-end="2443" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="clone.test.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/clone.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="14" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Branch.Configurations">
+    <option name="CURRENT" value="parser" />
+    <option name="CONFIGURATIONS">
+      <array>
+        <BranchConfiguration>
+          <option name="IS_AUTO_DETECTED" value="true" />
+          <option name="NAME" value="master" />
+          <option name="BRANCHES">
+            <array>
+              <BranchInfo>
+                <option name="ROOT" value="$PROJECT_DIR$" />
+                <option name="REFERENCE" value="master" />
+              </BranchInfo>
+            </array>
+          </option>
+        </BranchConfiguration>
+        <BranchConfiguration>
+          <option name="IS_AUTO_DETECTED" value="true" />
+          <option name="NAME" value="parser" />
+          <option name="BRANCHES">
+            <array>
+              <BranchInfo>
+                <option name="ROOT" value="$PROJECT_DIR$" />
+                <option name="REFERENCE" value="parser" />
+              </BranchInfo>
+            </array>
+          </option>
+        </BranchConfiguration>
+      </array>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
+    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/test/parse.test.js" />
+        <option value="$PROJECT_DIR$/lib/CSSImportRule.js" />
+        <option value="$PROJECT_DIR$/server/index.html" />
+        <option value="$PROJECT_DIR$/server/index.js" />
+        <option value="$PROJECT_DIR$/lib/parse.js" />
+        <option value="$PROJECT_DIR$/lib/index.js" />
+        <option value="$PROJECT_DIR$/test/index.html" />
+        <option value="$PROJECT_DIR$/test/clone.test.js" />
+        <option value="$PROJECT_DIR$/lib/clone.js" />
+        <option value="$PROJECT_DIR$/test/helper.js" />
+        <option value="$PROJECT_DIR$/test/vendor/qunit.js" />
+        <option value="$PROJECT_DIR$/lib/CSSStyleDeclaration.js" />
+        <option value="$PROJECT_DIR$/test/CSSStyleDeclaration.test.js" />
+        <option value="$PROJECT_DIR$/docs/parse2.html" />
+        <option value="$PROJECT_DIR$/docs/parse.html" />
+        <option value="$PROJECT_DIR$/docs/build.html" />
+      </list>
+    </option>
+  </component>
+  <component name="PerforceDirect.Settings">
+    <option name="ENABLED" value="false" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="false" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Favorites" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSSOM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSSOM" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="options.lastSelected" value="preferences.sourceCode.HTML" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+  </component>
+  <component name="PublishConfig" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg" autoUpload="true">
+    <servers>
+      <server id="03e3dd9a-a049-4a09-8d26-9d8ee4abc8ea">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="UPDATE_RUN_STATUS" value="false" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <configuration useDefault="true">$USER_HOME$/.subversion_IDEA</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30285013-672e-4686-875b-58c4268c29f5" name="Default" comment="" />
+      <created>1285386214790</created>
+      <updated>1285386214790</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="851" y="22" width="907" height="1087" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2691867" sideWeight="0.3254902" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948454" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3866775" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3565976" sideWeight="0.9709977" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327451" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="true" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="5" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="CSSOM" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="39" selection-start="306" selection-end="306" vertical-scroll-proportion="0.30877194" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="40" selection-start="432" selection-end="432" vertical-scroll-proportion="0.4040404" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="423" selection-end="423" vertical-scroll-proportion="-10.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CSSStyleRule.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="2" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CSSStyleSheet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="6" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/clone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="9" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="11" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/CSSOM.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="11" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/helper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/vendor/qunit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="59" selection-start="1027" selection-end="1027" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/CSSStyleDeclaration.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="19" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CSSStyleDeclaration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="105" column="22" selection-start="2425" selection-end="2443" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/clone.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="14" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/parse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="16" selection-start="713" selection-end="713" vertical-scroll-proportion="-16.0">
+          <folding>
+            <marker date="1292697557000" expanded="true" signature="681:774" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/parse2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="25" selection-start="3686" selection-end="3686" vertical-scroll-proportion="-0.6666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/build.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="28" selection-start="1126" selection-end="1126" vertical-scroll-proportion="0.6090535">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

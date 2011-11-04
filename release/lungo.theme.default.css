@@ -1,0 +1,217 @@
+/**
+ *
+ *    /$$
+ *   | $$
+ *   | $$       /$$   /$$ /$$$$$$$   /$$$$$$   /$$$$$$
+ *   | $$      | $$  | $$| $$__  $$ /$$__  $$ /$$__  $$
+ *   | $$      | $$  | $$| $$  \ $$| $$  \ $$| $$  \ $$
+ *   | $$      | $$  | $$| $$  | $$| $$  | $$| $$  | $$
+ *   | $$$$$$$$|  $$$$$$/| $$  | $$|  $$$$$$$|  $$$$$$/
+ *   |________/ \______/ |__/  |__/ \____  $$ \______/
+ *                                  /$$  \ $$
+ *                                 |  $$$$$$/
+ *                                  \______/
+ *
+ * @copyright 2011 TapQuo Inc (c)
+ * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
+ * @version   1.0.0
+ * @link      https://github.com/TapQuo/Lungo.js
+ *
+ * @author   Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+/* @group layout */
+.app {
+	font-size:13px;
+    background: #000;
+	}
+
+article{
+	background: #fff;
+	}
+	
+/* @group <header> & <footer> */
+header{
+	background: #42474d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #42474d), color-stop(1, #2c3137));
+	-webkit-box-shadow: 
+		inset 0px 1px 0px rgba(255,255,255,0.25), 
+		inset 0px -1px rgba(0,0,0,0.5), 
+		0px 2px 2px rgba(0,0,0,0.2);}
+	
+footer{
+	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d));
+	
+	-webkit-box-shadow: 
+		inset 0px 1px rgba(0,0,0,0.5), 
+		0px -1px 2px rgba(0,0,0,0.4);}
+
+.title{
+	color: #fff;
+	text-shadow: rgba(0,0,0,0.5) 0 -1px 1px; 
+	text-transform: uppercase;}
+/* @end */
+
+/* @group <nav> */
+nav a {
+	background: none;
+	color: rgba(0,0,0,0.5);
+	text-shadow: rgba(255,255,255,0.35) 0 1px 1px;}
+	
+header:not(.toolbar) nav a, footer:not(.toolbar) nav a{
+	text-shadow: none;
+	
+	-webkit-box-shadow: 
+	inset 0px 1px rgba(255,255,255,0.15), 
+	inset 1px 0px rgba(0,0,0,0.75), 
+	inset 2px 0px rgba(255,255,255,0.25);
+}
+
+nav a.current{
+	background: rgba(255,255,255,0.15);
+	color: #fff;
+	text-shadow: rgba(0,0,0,1) 0 1px 1px;
+	text-shadow: none;
+	}	
+
+//@ToDo: Change the colour for not .toolbar classed elements
+not(.toolbar) nav a.current{
+	
+}
+
+.toolbar a:first-child{	-webkit-box-shadow: none; }
+	
+/* @end */
+
+/* @group .list */
+.list {
+	background: #c5c5c5;
+	}
+
+.list li:not(.info){
+	background: #fff;
+	border-bottom: 1px inset #c3c4c6;
+	color: #333;
+	}
+	
+.list li.toolbar{
+	border-bottom-color: rgba(0,0,0,0.2);
+	}
+
+.list li:not(.toolbar) a { 
+	color: #333;
+	text-shadow: #fff 0px 1px 1px; 
+	-webkit-tap-highlight-color: #242525;
+	}
+
+.list strong {
+	color: #2343be;
+	}
+	
+.list small{
+	opacity: 0.75;
+	}
+	
+.list .bubble{
+	border: 1px solid rgba(0,0,0,0.15);
+	-webkit-border-radius: 2px;
+	color: #fff; 
+	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+	}	
+.list .button{
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.3); 
+}
+
+.list .arrow:before{
+	color: #a9a9a9;}
+
+
+
+/* @group .anchor */
+.list li.anchor {
+	background: #e1e1e1;
+	color: #222;
+	}
+/* @end */
+
+
+/* @group .anchor */
+.list li.search {
+	border: none;
+	-webkit-box-shadow: 
+		inset 0px 1px 0px rgba(255,255,255,0.1), 
+		inset 0px -1px 0px rgba(0,0,0,0.25);
+	}
+/* @end */
+
+/* @group .info */
+.list li.info {	
+	border: none;
+	-webkit-box-shadow: 
+		inset 0px 1px 0px rgba(255,255,255,0.1), 
+		inset 0px -1px 0px rgba(0,0,0,0.25);
+	background: #cbcbcb;
+	}
+	
+.list .info strong{	
+	color: #333;
+	}
+
+.list .info.contrast strong{	
+	color: #fff;
+	}
+/* @end */
+/* @end */
+.list .contrast{
+	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d)) !important;
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.25);
+	color: #fff;
+}
+
+.list .highlight{
+	background: #499dc4 -webkit-gradient(linear, left top, left bottom, color-stop(0, #499dc4), color-stop(1, #0e8eb6)) !important;
+	}
+	
+/* @end */
+
+/* @group .classes */
+/* @end */
+
+/* @group widgets */
+
+/* @group <section>.splash */
+.splash article { 
+	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d)) !important;
+	color: #fff; 
+	text-shadow: rgba(0,0,0,0.5) 0 1px 1px;}
+/* @end */
+
+/* @group <inputs> */
+input, textarea, select {
+	border: 1px solid #ccc;	
+	-webkit-border-radius: 2px;
+	background: #fff -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddd), color-stop(0.15, #fff));}
+	
+input:focus, textarea:focus, select:focus { 
+	border: 1px solid #058cf5;
+	-webkit-box-shadow: 0 0 4px 1px #058cf5; 
+	background: #e8fefe;}
+	
+.select:after {
+	background: #ccc;
+	color: white;
+	-webkit-border-radius: 0 2px 2px 0;}
+/* @end */
+	
+
+
+/* @group .counter (BETA) */
+.counter{
+	background: #ee2c23;
+	-webkit-border-radius: 2px; 
+	-moz-border-radius: 2px; 
+	
+	color: #fff;
+}
+/* @end */
+/* @end */

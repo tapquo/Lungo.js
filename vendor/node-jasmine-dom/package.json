@@ -1,0 +1,23 @@
+{
+    "name"        : "jasmine-dom"
+,   "version"     : "0.2.5"
+ 
+,   "description" : "Run your jasmine html SpecRunner in node.js."
+,   "keywords"    : ["javascript testing","bdd","jasmine"]
+,   "homepage"    : "https://github.com/andrewpmckenzie/node-jasmine-dom"
+,   "repository"  : {"type":"git",
+                     "url" :"https://github.com/andrewpmckenzie/node-jasmine-dom.git"}
+,   "author"      : "Andrew McKenzie <andrew@mckenzie.name> (http://andrew.mckenzie.name)"
+,   "thanks-to"   : "jasmine-node"
+
+,   "engines"     : { "node" : ">= 0.4.9" }
+,   "dependencies": { "jsdom" : "0.2.1",
+                      "node-static" : "0.5.7",
+                      "yaml" : "0.2.1",
+                      "request" : "2.0.2",
+                      "cssom" : "0.2.0",
+                      "htmlparser" : "1.7.3"
+                    }
+,   "bin"         : "bin/jasmine-dom"
+,   "main"        : "lib/jasmine-dom"
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title></title>
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "http://localhost:8124/css_save", true);
+		xhr.setRequestHeader("x-path", "/tmp/test.txt");
+		xhr.onreadystatechange = function (aEvt) {
+			console.log(aEvt)
+		};
+		xhr.send("asdfsdf sdfkjs dkf");
+	</script>
+</head>
+<body>
+<form action="http://localhost:8124/css_save" method="POST">
+	<input name="path" value="file:///Users/nv/Code/CSSOM/server/index.html">
+	<textarea name="content">Fuu</textarea>
+	<button>Submit</button>
+</form>
+</body>
+</html>

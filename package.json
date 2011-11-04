@@ -1,0 +1,18 @@
+{
+    "name": "LungoJS"
+  , "description": ""
+  , "version": ""
+  , "homepage": "https://github.com/TapQuo/Lungo.js"
+  , "author": "Javier Jimenez Villar <javier@tapquo.com> (http://twitter.com/soyjavi ) "
+  , "keywords": []
+  , "main": "./"
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/TapQuo/Lungo.js"
+  }
+  , "devDependencies": {
+      "": ">= "
+      "": ">= "
+      "": ">= "
+  }
+}

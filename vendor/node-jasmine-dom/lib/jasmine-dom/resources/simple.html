@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script src="jquery.js"></script>
+	<title>Loading...</title>
+	<style>
+		body {
+			position:absolute;
+			height:100%;
+			width:100%;
+		}
+		.pass {
+			background-color:green;
+		}
+		.fail {
+			background-color:red;
+		}
+		.connection-error {
+			background-color:gray;
+		}
+		.pass #scaffold {
+			height:100%;
+			width:1px;
+			display:inline-block;
+			vertical-align:middle;
+		}
+		.pass #message {
+			font-size: 100px;
+			width:95%;
+			text-align: center;
+			display:inline-block;
+			vertical-align:middle;
+		}
+		#message {
+			opacity: 0.3;
+		}
+		#message:hover {
+		    opacity: 0.7;
+		}
+		.error-report {
+			margin-bottom:100px;
+		}
+		.error-location {
+			font-size:20px;
+		}
+		.error-detail {
+			font-size:30px;
+			margin-top:20px;
+			margin-bottom:30px;
+		}
+		code {
+			font-size:10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="scaffold"></div>
+	<div id="message">
+		
+	</div>
+	
+	<script>
+		var $ = jQuery;
+
+		var poll = function(period){
+			window.setTimeout(function(){
+				$.ajax({
+					url: "/json",
+					dataType: "json",
+					success: function(json){
+						var result = json.failed == 0 ? "pass" : "fail";
+						$('body').attr("class", result);
+						$('title').html(result.toUpperCase());
+						
+						
+						var message = $("#message");
+						message.html("");
+						if(json.failed == 0){
+							message.html(":-)");
+						}else{
+							for(var k in json.failureDetails){
+								var detail = json.failureDetails[k];
+								message.append("<div class='error-report'><span class='error-location'><b>" + detail.group + "</b> <i>" + detail.suite + "</i> " + detail.spec + "</span> <div class='error-detail'>"+detail.trace.message+"</div> <code>"+detail.trace.stack+"</code></div>");
+							}
+						}
+						poll(100);
+					},
+					error: function(){
+						$('body').attr("class","connection-error");
+						$("#message").html("Connection error");
+						$('title').html("CONNECTION ERROR");
+						poll(5000);
+					}
+				});
+			},period);
+		};
+
+		poll(100);
+
+	</script>
+</body>
+</html>

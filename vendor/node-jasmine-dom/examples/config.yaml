@@ -1,0 +1,7 @@
+---
+  test_one:
+    name: Example test one
+    runner: ./runner.html
+  test_two:
+    name: Example test two
+    runner: ./runner2.html

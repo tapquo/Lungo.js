@@ -1,0 +1,44 @@
+/* @group <section> #demo_events */
+section#demo_events div.container{
+	width: 100%;
+	height: 128px;
+	background: #f00;
+	font-size: 2.0em;
+	text-align: center;
+	line-height: 128px;
+	color: #fff;
+	text-shadow: rgba(0,0,0,0.5) 0 2px 1px;
+}
+
+section#demo_events div.output{
+	width: 100%;
+	padding: 4px;
+	min-height: 14px;
+	background: #ccc;
+	color: rgba(0,0,0,0.75);
+}
+/* @end */
+
+/* @group <section> #demo_scroll */
+#scroll_vertical, #scroll_horizontal{margin-left: 3px;}
+#scroll_vertical{
+	height: 256px;
+}
+
+#scroll_horizontal {
+	height: 80px;
+}
+
+section#demo_scroll li{
+	height: 76px;
+	width: 76px;
+	background: #ccc;
+	font-size: 24px;
+	line-height: 76px;
+	list-style: none;
+	text-align: center;
+	float:left;
+	margin-right: 3px;
+	margin-bottom: 3px;
+}
+/* @end */

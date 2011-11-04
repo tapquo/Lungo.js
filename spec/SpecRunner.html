@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="author" content="Guillermo Pascual" />
+  <meta charset="UTF-8" />
+  <title>Lungo Spec Runner</title>
+  
+  <link rel="shortcut icon" type="image/png" href="../vendor/jasmine-1.1.0/jasmine_favicon.png">
+  <link rel="stylesheet" type="text/css" href="../vendor/jasmine-1.1.0/jasmine.css">
+
+  <!-- lib source files here... -->
+    <script type="text/javascript" src="../vendor/jasmine-1.1.0/jasmine.js"></script>
+    <script type="text/javascript" src="../vendor/jasmine-1.1.0/jasmine-html.js"></script>
+  <!-- end lib source files -->
+
+  <!-- Lungo source files here... -->
+    <script type="text/javascript" src="../src/Lungo/Lungo.js"></script>
+    <script type="text/javascript" src="../src/Lungo/Lungo.Core.js"></script>
+  <!-- end Lungo source files -->
+
+  <!-- Lungo spec files here... -->
+    <script type="text/javascript" src="Lungo.Spec.js"></script>
+    <script type="text/javascript" src="Lungo.Core.Spec.js"></script>
+  <!-- Lungo spec files -->
+
+  <script type="text/javascript">
+    (function() {
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
+
+        var trivialReporter = new jasmine.TrivialReporter();
+
+        jasmineEnv.addReporter(trivialReporter);
+
+        jasmineEnv.specFilter = function(spec) {
+            return trivialReporter.specFilter(spec);
+        };
+
+        var currentWindowOnload = window.onload;
+
+        window.onload = function() {
+            if (currentWindowOnload) {
+                currentWindowOnload();
+            }
+            execJasmine();
+        };
+
+        function execJasmine() {
+            jasmineEnv.execute();
+        }
+    })();
+  </script>
+</head>
+<body>
+    
+</body>
+</html>

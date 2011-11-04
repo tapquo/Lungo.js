@@ -1,0 +1,186 @@
+#!/usr/bin/env node
+
+function getArguments(args){
+	var unprocessed = args,
+		processed = {}, 
+		key = "", 
+		value = "";
+
+	for(var i = 0; i < unprocessed.length; i++){
+		var arg = unprocessed[i];
+		if(arg.substr(0,2) == "--"){
+			if(key){
+				processed[key] = value;
+				key = "";
+				value = "";
+			}
+			key = arg.substr(2);
+		} else {
+			if(key) value += (value?" ":"") + arg;
+		}
+	};
+
+	if(key){
+		processed[key] = value;
+		key = "";
+		value = "";
+	};
+
+	return processed;
+};
+
+var arguments = getArguments(process.argv);
+var options = {
+	format: arguments.format || "default",
+	output: arguments.output || null,
+	debug: "debug" in arguments,
+	runner: arguments.runner,
+	server: "server" in arguments,
+	port: arguments.server,
+	help: "help" in arguments,
+	refreshInterval: arguments.refresh,
+	config: arguments.config
+};
+
+function _getAbsolutePath(file, base){
+	var path;
+	var base = base || process.cwd();
+	if (file.substring(0,1) == "/"){
+		path = file;
+	} else {
+		path = base + '/' + file;
+	}
+	return require('path').normalize(path);
+};
+
+function _getUsage(){
+	return "Usage: node run.js --runner <path> | --config <path> [--format simple|nice|json|html|junit] [--output <path>] [--server [port] [--refresh <ms interval>]] [--help]\n\n" +
+	       "For more information, visit https://github.com/andrewpmckenzie/node-jasmine-dom";
+};
+
+function _formatNice(obj){
+	if(obj.failed == 0){
+		return "Passed";
+	} else {
+		var message = "Failed: \n";
+		for( var k in obj.failureDetails ){
+			var details = obj.failureDetails[k];
+			message += " - In " + details.group + " >> " + details.suite + " >> " + details.spec + " :: " + details.message + "\n";
+		}
+		return message;
+	}
+};
+
+function _format(report){
+	var result = '';
+
+	switch(options.format){
+		case 'simple':
+		case 'default':
+			result = report.simple.status;
+			break;
+		case 'json':
+			result = JSON.stringify(report.simple);
+			break;
+		case 'nice':
+			result = _formatNice(report.simple);
+			break;
+		case 'html':
+			result = report.html;
+			break;
+		case 'junit':
+			result = report.junit;
+			break;
+		default:
+			console.error("Unknown format:" + options.format);
+			process.exit(0);
+			break;
+	};
+
+	return result;
+};
+
+function _output(text){
+	if(options.output){
+		var file = _getAbsolutePath(options.output);
+		require('fs').writeFile(file,text,function(err){
+			if(err) console.log("Something went wrong writing the report to disk: ",err);
+		});
+	} else if(options.server) {
+	    return;
+	} else {
+		console.log(text);
+	}
+};
+
+function _processReport(report){
+	var text = _format(report);
+	_output(text);
+};
+
+function _parseConfig(config){
+	var fs = require('fs'),
+		path = require('path');
+
+	var configPath = _getAbsolutePath(config);
+	var configBase = path.normalize(path.dirname(configPath));
+
+	var file = fs.readFileSync(config,'utf8');
+
+	var runnerConfig = [];
+	try {
+		var yaml = require('yaml').eval(file);
+
+		for(var k in yaml){
+			var runner = yaml[k];
+			if("runner" in runner){
+				runnerConfig.push({
+					name: runner.name,
+					runner: _getAbsolutePath(runner.runner, configBase)
+				});
+			}
+		};
+
+		if(runnerConfig.length == 0) throw "No runners specified in config. See examples/config.yaml for format.";
+
+	} catch (e) {
+		console.log("Invalid config file.\n\n");
+		console.error(e);
+		process.exit(1);
+	}
+
+	return runnerConfig;
+};
+
+function validate(options){
+	if (options.help){
+		console.log(_getUsage());
+		process.exit(0);
+	}
+	if (! options.runner && ! options.config) {
+		console.error("You need to specify a html --runner file.\n");
+		console.log(_getUsage());
+		process.exit(0);
+	}
+};
+
+function getRunners(runner, config){
+	if(config){
+		return _parseConfig(config);
+	} else {
+		return [ _getAbsolutePath(runner) ];
+	}
+};
+
+validate(options);
+
+require('../lib/jasmine-dom').run({
+	runners: getRunners(options.runner, options.config),
+	serve: options.server,
+	port: options.port,
+	refreshInterval: options.refreshInterval,
+	debug: options.debug,
+	onDone: function(report){
+		_processReport(report);
+	}
+});
