@@ -27,7 +27,7 @@ LUNGO.View.Article = (function(lng, undefined) {
         _disableItems(header_items_items);
 
         var current_nav_item = lng.Dom.query(nav_items + '[href="' + article_id + '"]');
-        var current_header_item = lng.Dom.query(header_items + '[data-article="' + article_id + '"]');
+        var current_header_item = lng.Dom.query(header_items + '[data-article="' + article_id.replace("#", "") + '"]');
         var current_header_common_item = lng.Dom.query(header_items + ':not([data-article])');
 
         current_nav_item.addClass(CSS_CLASSES.ACTIVE);
