@@ -74,8 +74,8 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
     
     var _initHeaderItems = function(section, article) {
-        $("#" + section.attr("id") + ' header').children('a[data-article="' + article.attr('id') + '"]').addClass(ACTIVE_CLASS);
-        $("#" + section.attr("id") + ' header').children('a:not([data-article])').addClass(ACTIVE_CLASS);
+        lng.Dom.query("#" + section.attr("id") + ' header').children('a[data-article="' + article.attr('id') + '"]').addClass(ACTIVE_CLASS);
+        lng.Dom.query("#" + section.attr("id") + ' header').children('a:not([data-article])').addClass(ACTIVE_CLASS);
     }
 
     return {
