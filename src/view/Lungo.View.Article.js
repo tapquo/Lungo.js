@@ -12,7 +12,8 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var SELECTORS = {
         ARTICLE: 'article',
-        NAVIGATION_ITEM: 'nav a'
+        NAVIGATION_ITEM: 'nav a',
+        HEADER_ITEM: 'header a'
     };
 
     var CSS_CLASSES = {
@@ -21,16 +22,24 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var show = function(section_id, article_id) {
         var nav_items = section_id + ' ' + SELECTORS.NAVIGATION_ITEM;
-        _disableNavItems(nav_items);
+        var header_items = section_id + ' ' + SELECTORS.HEADER_ITEM;    
+        _disableItems(nav_items);
+        _disableItems(header_items_items);
 
         var current_nav_item = lng.Dom.query(nav_items + '[href="' + article_id + '"]');
+        var current_header_item = lng.Dom.query(header_items + '[data-article="' + article_id + '"]');
+        var current_header_common_item = lng.Dom.query(header_items + ':not([data-article])');
+
         current_nav_item.addClass(CSS_CLASSES.ACTIVE);
+		current_header_item.addClass(CSS_CLASSES.ACTIVE);
+		current_header_common_item.addClass(CSS_CLASSES.ACTIVE);
+        
         _setTitle(section_id, current_nav_item);
 
         _showContainer(section_id, article_id);
     };
 
-    var _disableNavItems = function(items) {
+    var _disableItems = function(items) {
         lng.Dom.query(items).removeClass(CSS_CLASSES.ACTIVE);
     };
 
