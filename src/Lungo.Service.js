@@ -50,6 +50,7 @@ LUNGO.Service = (function(lng, $, undefined) {
         $.ajax({
             type: type,
             url: url,
+            data: data,
             dataType: 'json',
             success: function(response) {
                 if (lng.Core.toType(callback) === 'function') {
