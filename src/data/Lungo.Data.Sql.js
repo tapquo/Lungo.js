@@ -109,7 +109,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
      * @param {object} [OPTIONAL] Object selection condition 
      */
     var drop = function(table, where_obj) {
-        var where = (where_obj) ? ' WHERE ' + _convertToSql(where_obj, 'AND') : null;
+        var where = (where_obj) ? ' WHERE ' + _convertToSql(where_obj, 'AND') : '';
 
         execute('DELETE FROM ' + table + where + ';');
     };
