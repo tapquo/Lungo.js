@@ -31,7 +31,7 @@
 			<div class="form">
 				<input type="text" placeholder="Type your user" disabled/>
 				<input type="password" placeholder="Type your password" disabled/>
-				<a href="#main" class="section button big blue" data-icon="key">Go to app!</a>
+				<a href="#main" data-target="section" class="button big blue" data-icon="key">Go to app!</a>
 			</div>
 			<div class="copyright">Copyright TapQuo Inc, 2011</div>
 		</article>
@@ -39,7 +39,7 @@
 
 	<section id="main">
 		<header data-title="ToDo.js">
-			<a href="#new" class="section button onright articblue" data-icon="add">&nbsp;New</a>
+			<a href="#new" data-target="section" class="button onright articblue" data-icon="add">&nbsp;New</a>
 		</header>
 
         <article id="pending" class="list"></article>
@@ -47,9 +47,9 @@
 
         <footer class="toolbar">
             <nav>
-                <a href="#pending" class="article current" data-title="Pending ToDo's" data-icon="inbox"></a>
-                <a href="#done" class="article" data-title="Done ToDo's" data-icon="folder"></a>
-                <a href="#settings" class="section" data-icon="config"></a>
+                <a href="#pending" data-target="article" class="current" data-title="Pending ToDo's" data-icon="inbox"></a>
+                <a href="#done" data-target="article" data-title="Done ToDo's" data-icon="folder"></a>
+                <a href="#settings" data-target="section" data-icon="config"></a>
             </nav>
         </footer>
     </section>
@@ -101,7 +101,7 @@
 				<br/>
 				
 				<a href="#" id="btnNewTodo" class="button big articblue" data-icon="check">Add ToDo</a>
-				<a href="#back" class="section button big red" data-icon="cancel">Cancel</a>
+				<a href="#back" data-target="section" class="button big red" data-icon="cancel">Cancel</a>
 			</p>
 		</article>
 	</section> 
