@@ -399,4 +399,4 @@ article.info details span {
 	font-style: normal;
 }
 
-.icon.calendar:before { content: '\\'; }
+.icon.calendar::before { content: '\\'; }
