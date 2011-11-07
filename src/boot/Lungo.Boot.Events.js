@@ -20,7 +20,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var touch_move_event  = 'TOUCH_MOVE';
         var touch_start_event = 'TOUCH_START';
         var orientation_change = 'ORIENTATION_CHANGE';
-        var events_selector   = 'a[href].section, a[href].article';
+        var events_selector   = 'a[href][data-target]';
 
         lng.Dom.Event.bind(document, touch_move_event, _iScroll);
         lng.Dom.Event.bind(window, orientation_change, _changeOrientation);
@@ -39,11 +39,10 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         event.preventDefault();
 
         var link = lng.Dom.query(this);
-        var destination_id = link.attr('href');
+        var target_id = link.attr('href');
+        var target_type = link.data('target');
 
-        if (destination_id.length > 0) {
-            (link.hasClass('section')) ? _goSection(destination_id) : _goArticle(link);
-        }
+        (target_type === 'section') ? _goSection(target_id) : _goArticle(link);
     };
 
     var _goSection = function(id) {

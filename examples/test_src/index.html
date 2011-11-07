@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>LungoJS - Test Source</title>
+    <title>LungoJS - Test Source 1.0.1</title>
     <meta name="description" content="">
     <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
     <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
@@ -33,7 +33,7 @@
 			<div class="form">
 				<input type="text" placeholder="Type your user"/>
 				<input type="password" placeholder="Type your password"/>
-				<a href="#demo" class="section button big blue" data-icon="play">Go to demo!</a>
+				<a href="#demo" data-target="section" class="button big blue" data-icon="play">Go to demo!</a>
 			</div>
 			<div class="copyright">Copyright TapQuo Inc, 2011</div>
 		</article>
@@ -43,8 +43,8 @@
 		<header data-title="LungoJS Framework">
 			<nav class="onright">
 				<a href="#"><span class="counter">8</span></a>
-				<a href="#main" class="article current" data-title="LungoJS Framework" data-icon="config"></a>
-				<a href="#author" class="article" data-title="Authors" data-icon="user"></a>
+				<a href="#main" data-target="article" class="current" data-title="LungoJS Framework" data-icon="config"></a>
+				<a href="#author" data-target="article" data-title="Authors" data-icon="user"></a>
 			</nav>
 		</header>
 		<article id="main" class="list">
@@ -56,24 +56,24 @@
                         <small class="margin-top-4">version 1.0.0</small>
                         <small>by TapQuo Inc.</small>
                     </li>
-    				<li><a href="#demo_header_footer" class="section arrow" data-icon="wifi">
+    				<li><a href="#demo_header_footer" data-target="section" class="arrow" data-icon="wifi">
     					<strong>Header + Footer + Articles</strong><small>paodapod</small></a></li>
-    				<li><a href="#demo_toolbar" class="section arrow" data-icon="download">
+    				<li><a href="#demo_toolbar" data-target="section" class="arrow" data-icon="download">
     					<strong>Toolbar</strong><small>Toolbar</small></a></li>	
-    				<li><a href="#demo_list" class="section arrow" id="load_list" data-icon="note">
+    				<li><a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note">
                         <div class="bubble highlight">3 types</div>
     					<strong>Lists</strong>
     					<small>paodapod</small></a></li>
-    				<li><a href="#demo_events" class="section arrow" data-icon="user">
+    				<li><a href="#demo_events" data-target="section" class="arrow" data-icon="user">
     						<strong>Events handler</strong><small>paodapod</small></a></li>
-    				<li><a href="#demo_scroll" class="section arrow" id="load_scroll_mocks" data-icon="points">
+    				<li><a href="#demo_scroll" data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points">
     						<strong>Scroll</strong><small>paodapod</strong></small></a></li>
-    				<li><a href="#demo_buttons" class="section arrow" data-icon="plus">
+    				<li><a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus">
     						<strong>Buttons</strong><small>paodapod</small></a></li>
-    				<li><a href="#demo_forms" class="section arrow" data-icon="write">
+    				<li><a href="#demo_forms" data-target="section" class="arrow" data-icon="write">
                         <strong>Forms</strong><small>paodapod</small></a></li>
     				<li class="anchor" data-icon="key">Tapquo Sugars</li>
-    				<li><a href="#demo_sugars" class="section" data-icon="box">
+    				<li><a href="#demo_sugars" data-target="section" data-icon="box">
     					<strong>Sugars</strong><small>paodapod</small></a></li>
     			</ul>
 			</scroll>
@@ -100,8 +100,8 @@
 	<section id="demo_header_footer"  class="popup">
 		<header data-title="Summary" data-back="home blue">
             <nav class="onright">
-                <a href="#summary" class="article current" data-title="Summary" data-icon="user"></a>
-                <a href="#messages" class="article" data-title="Message" data-icon="chat"><abbr>Messages</abbr></a>
+                <a href="#summary" data-target="article" class="current" data-title="Summary" data-icon="user"></a>
+                <a href="#messages" data-target="article" data-title="Message" data-icon="chat"><abbr>Messages</abbr></a>
             </nav>
         </header>
 
@@ -117,8 +117,8 @@
 		<footer>
 		    <a href="#" class="button articblue onright" data-icon="key">Sign In</a>
             <nav class="onleft">
-                <a href="#summary" class="article" alt="Test Article Nº1"><span class="icon user"></span></a>
-                <a href="#messages" class="article" alt="Test Article Nº2"><span class="icon chat"></span></a>
+                <a href="#summary" data-target="article"><span class="icon user"></span></a>
+                <a href="#messages" data-target="article"><span class="icon chat"></span></a>
             </nav>
         </footer>
 	</section>
@@ -156,9 +156,9 @@
 	<section id="demo_list">
 		<header data-back="home articblue" data-title="LISTS">
 			<nav class="onright">
-				<a href="#list_sample" class="article current" data-icon="note"><abbr>Simple List</abbr></a>
-				<a href="#list_grouped_sample" class="article" data-icon="folder"><abbr>Grouped List</abbr></a>
-				<a href="#list_info_sample" class="article" data-icon="cloudup"><abbr>Special .class</abbr></a>
+				<a href="#list_sample" data-target="article" class="current" data-icon="note"><abbr>Simple List</abbr></a>
+				<a href="#list_grouped_sample" data-target="article" data-icon="folder"><abbr>Grouped List</abbr></a>
+				<a href="#list_info_sample" data-target="article" data-icon="cloudup"><abbr>Special .class</abbr></a>
 			</nav>
 		</header>
 		<article id="list_sample" class="list"></article>
@@ -181,9 +181,9 @@
                  
                 <li class="toolbar contrast">
                     <nav>
-                        <a href="#list_sample" class="article current" data-icon="note"></a>
-        				<a href="#list_grouped_sample" class="article" data-icon="folder"></a>
-        				<a href="#list_info_sample" class="article" data-icon="cloudup"></a>
+                        <a href="#list_sample" data-target="article" class="current" data-icon="note"></a>
+        				<a href="#list_grouped_sample" data-target="article" data-icon="folder"></a>
+        				<a href="#list_info_sample" data-target="article" data-icon="cloudup"></a>
                     </nav>
                 </li>
                 <li class="info contrast highlight">
@@ -194,9 +194,9 @@
                 </li>
                 <li class="toolbar highlight">
                     <nav>
-                        <a href="#list_sample" class="article current" data-icon="note"></a>
-        				<a href="#list_grouped_sample" class="article" data-icon="folder"></a>
-        				<a href="#list_info_sample" class="article" data-icon="cloudup"></a>
+                        <a href="#list_sample" data-target="article" class="current" data-icon="note"></a>
+        				<a href="#list_grouped_sample" data-target="article" data-icon="folder"></a>
+        				<a href="#list_info_sample" data-target="article" data-icon="cloudup"></a>
                     </nav>
                 </li>
 		    </ul>
@@ -212,11 +212,11 @@
 		<article id="toolbar_4"></article>
 		<footer class="toolbar">
             <nav>
-                <a href="#back" class="section" alt="Test Article Nº1" data-icon="left"></a>
-                <a href="#toolbar_1" class="article current" alt="Test Article Nº2" data-icon="chat"></a>
-				<a href="#toolbar_2" class="article" alt="Test Article Nº1" data-icon="user"></a>
-                <a href="#toolbar_3" class="article" alt="Test Article Nº2" data-icon="chat"></a>
-				<a href="#toolbar_4" class="article" alt="Test Article Nº1" data-icon="user"></a>
+                <a href="#back" data-target="section" alt="Test Article Nº1" data-icon="left"></a>
+                <a href="#toolbar_1" data-target="article" class="current" data-icon="chat"></a>
+				<a href="#toolbar_2" data-target="article" data-icon="user"></a>
+                <a href="#toolbar_3" data-target="article" data-icon="chat"></a>
+				<a href="#toolbar_4" data-target="article" data-icon="user"></a>
             </nav>
         </footer>
 	</section> 
@@ -245,7 +245,7 @@
 			</scroll>
 		</article>
 		<footer>
-		    <a href="#back" class="section back onleft button articblue" data-icon="home">Home</a>
+		    <a href="#back" data-target="section" class="back onleft button articblue" data-icon="home">Home</a>
 			<a href="#" class="button red onleft" data-icon="picture">Picture</a>
 			<a href="#" class="button articblue onleft" data-icon="wifi"></a>
 			<a href="#" class="button yellow onleft" data-icon="home">Home</a>
