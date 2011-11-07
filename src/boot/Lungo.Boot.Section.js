@@ -68,8 +68,15 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initFirstArticle = function(section) {
-        section.children(SELECTORS.ARTICLE).first().addClass(ACTIVE_CLASS);
+        article = section.children(SELECTORS.ARTICLE).first();
+        article.addClass(ACTIVE_CLASS);               
+        _initHeaderItems(section, article);
     };
+    
+    var _initHeaderItems = function(section, article) {
+        lng.Dom.query("#" + section.attr("id") + ' header').children('a[data-article="' + article.attr('id') + '"]').addClass(ACTIVE_CLASS);
+        lng.Dom.query("#" + section.attr("id") + ' header').children('a:not([data-article])').addClass(ACTIVE_CLASS);
+    }
 
     return {
         start: start

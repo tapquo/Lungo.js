@@ -57,6 +57,18 @@ header .title, footer .title {
 	font-size: 1.1em;
 	}
 
+section header a {
+    z-index: 0;
+    opacity: 0;
+    display: none!important;
+}
+
+section header a.current {
+    z-index: 1;
+    opacity: 1;
+    display: inline!important;
+}
+
 section header a.button, section footer a.button{
 	margin: 2px 2px auto;
 	}
