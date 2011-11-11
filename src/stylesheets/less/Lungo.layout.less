@@ -1,0 +1,146 @@
+@import "mixins.less";
+
+/* @group <section> */
+section  {
+	position: absolute;
+	width: 100%; 
+	height: 100%;
+	overflow: hidden;
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+	.transform(translate3d(100%, 0, 0));
+}
+
+section:first-child  { 
+	z-index: 1;
+	.transform(translate3d(0%, 0, 0));
+}
+	
+section.hide  { 
+	z-index: 0;
+	.transform(translate3d(-100%, 0, 0));
+}
+section.show  { 
+	 z-index: 1;
+	.transform(translate3d(0%, 0, 0));
+}
+
+section.static.hide  {
+	.transform(translate3d(0%, 0, 0));
+}
+
+section.popup  {
+	.transform(translate3d(0, 100%, 0));
+}
+
+section.popup.show  {
+	.transform(translate3d(0, 0%, 0));
+}
+
+section.popup.hide  {
+	.transform(translate3d(0, -100%, 0));
+}
+/* @end */
+
+
+/* @group <header> & <footer> */
+header, footer  {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 40px;
+	display: block;
+	z-index: 2;
+	line-height: 40px;
+}
+	
+header  { 
+	top: 0px
+}
+	
+footer  { 
+	bottom:0px;
+}
+	
+header .title, footer .title  {
+	float: left; 
+	margin: 0 8px; 
+	font-size: 1.1em;
+}
+
+section header a.button, section footer a.button  {
+	margin: 2px 2px auto;
+}
+
+section header a.button.icon, section footer a.button.icon  {
+	width: 17px;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+/* @end */
+
+/* @group <nav> */
+nav  {
+	height: inherit;
+	text-align: center;
+	font-weight: normal;
+}
+
+nav a  {
+	display: inline-block;
+	padding: 0 9px 0 10px;
+	height: inherit;
+	min-width: 22px;	
+	float: left;
+	font-size: 2.0em;
+}
+
+nav a abbr {
+	position: relative;
+	bottom: 3px;
+	margin-left: 4px;
+	display: none;
+	font-size: 0.5em;
+	font-weight: bold;
+}
+
+nav a.current abbr { 
+	display: inline;
+}
+	
+nav a.current {
+	.transition(all 0.3s ease-in-out);
+}
+/* @end */
+
+/* @group <article> */
+article {
+	position: absolute; 
+	width: 100%;
+	height: auto;
+	top: 0px; 
+	bottom: 0px;
+	display: block;
+	z-index: 0;
+	opacity: 0;
+}
+
+article.current { 
+	z-index: 1;
+	opacity: 1; 
+}
+/* @end */
+
+/* @group .toolbar */
+.toolbar {
+	height: 48px; 
+	line-height: 44px;
+	display: block;
+}
+
+.toolbar a  {
+	float: left;
+	padding: 0;
+	font-size: 2.0em;
+}
+/* @end */

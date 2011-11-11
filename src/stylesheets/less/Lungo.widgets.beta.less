@@ -1,0 +1,52 @@
+
+
+/* ---- BETA's ----*/
+
+/* @group .counter (BETA) */
+.counter{
+	padding: 1px 5px 0;
+	border: 1px solid rgba(0,0,0,0.15);
+	
+	text-shadow: rgba(0,0,0,0.25) 0 -1px 0;
+	font-size: 0.6em;
+	font-weight: bold;
+	margin: 0 auto;
+}
+/* @end */
+
+
+/* @group <article>.info */
+article.info details{
+	margin: 16px;
+	height: 80%;
+	border: 4px dotted #ccc;
+	color: #a9a9a9;
+	display: block;
+	text-align: center;
+	font-size: 1.25em;
+	padding: 16px;
+}
+
+article.info details > *{
+	display: block;
+	color: #a8a8a8;
+	font-weight: normal;
+	font-style: normal;
+}
+
+article.info details em{
+	opacity: 0.75;
+	font-size: 0.85em;
+}
+
+article.info details span {
+	font-size: 192px;
+	//-webkit-animation: article-info 1.5s; 
+	-webkit-animation-iteration-count: infinite;}
+	
+@-webkit-keyframes article-info { 
+	0% {opacity: 1; -webkit-transform:rotate(0deg);} 
+	50% {opacity: 0.1; -webkit-transform:rotate(360deg);} 
+	100% {opacity: 1; -webkit-transform:rotate(720deg);} 
+}       
+/* @end */
