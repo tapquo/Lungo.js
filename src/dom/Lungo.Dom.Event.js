@@ -93,6 +93,21 @@ LUNGO.Dom.Event = (function(lng, undefined) {
         lng.Dom.query(selector).undelegate(selector);
     };
 
+    /**
+     * Listener for DOMelement
+     *
+     * @method listener
+     *
+     * @param  {object} Selector that dispatches the event
+     * @param  {string} Touch event name
+     * @param  {Function} Callback function after the request
+     */
+    var listener = function(selector, event_name, callback) {
+        selector.addEventListener(lng.Events.get(event_name), function(event) {
+            setTimeout(callback, 0, event);
+        }, false);
+    };
+
     var _isNotSpecialEvent = function(selector, event_name, callback) {
         var is_special_event = false;
         /*
@@ -144,7 +159,8 @@ LUNGO.Dom.Event = (function(lng, undefined) {
         live: live,
         die: die,
         delegate: delegate,
-        undelegate: undelegate
+        undelegate: undelegate,
+        listener: listener
     };
 
 })(LUNGO);

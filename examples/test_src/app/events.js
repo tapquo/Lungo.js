@@ -1,4 +1,4 @@
-App.Events = (function(lng, $, undefined) {
+App.Events = (function(lng, undefined) {
 
     lng.Dom.Event.live('#event_touchstart', 'TOUCH_START', function(event) {
         alert("TOUCH_START!");
@@ -48,4 +48,4 @@ App.Events = (function(lng, $, undefined) {
         App.View.scroll_mockup();
     });
 
-})(LUNGO, Zepto);
+})(LUNGO);
