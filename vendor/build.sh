@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.0.0"
+VERSION="1.0.1"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
@@ -108,29 +108,33 @@ FILES_TO_COMPRESS=""
 echo -e "Do you wish to compress your STYLESHEETS? (Y)es or (N)o?: \c "
 read WISH
 if [[ $WISH == "Y" || $WISH == "y" ]] ; then
-	DIR=$LUNGO_SOURCES"stylesheets/"
+    DIR=$LUNGO_SOURCES"stylesheets/css/"
+
     echo -e "\033[33m  [DIR]: "$DIR
-    FILES=(base layout widgets)
+    FILES=(base layout layout.list widgets widgets.splash widgets.button widgets.form widgets.colour )
     for file in "${FILES[@]}"
     do  
-        echo "    - Compressing "$DIR$file".css ..."
-        java -jar $COMPRESSOR $DIR$file".css" -o $DIR$file".min.css"
-        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$file".min.css"
+        echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
+        #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
+        
+        java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
+        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
     done
+    FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
 	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.$MINIFIED.css
 
-	for file in "${FILES[@]}" 
-	do 
-	    rm $LUNGO_SOURCES"stylesheets/"$file".min.css" 
-	done
+    for file in "${FILES[@]}"
+    do
+        rm $DIR$LUNGO_NAMESPACE$file".min.css" 
+    done
 	
-	DIR=$LUNGO_SOURCES"stylesheets/"
+	DIR=$LUNGO_SOURCES"stylesheets/css"
 	FILES=(default.css)
 	echo -e "\033[33m  [DIR]: "$DIR
 	for file in "${FILES[@]}"
 	do
 		echo "   - [THEME] "$file
-		cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
+		#cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
 	done
 	echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED".css\033[0m"
 fi
