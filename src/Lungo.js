@@ -14,7 +14,7 @@
  *
  * @copyright 2011 TapQuo Inc (c)
  * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
- * @version   1.0.0
+ * @version   1.0
  * @link      https://github.com/TapQuo/Lungo.js
  *
  * @author   Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
@@ -23,7 +23,7 @@
 
 var LUNGO = LUNGO || {};
 
-LUNGO.VERSION = '1.0';
+LUNGO.VERSION = '1.0.1';
 
 LUNGO.Attributes || (LUNGO.Attributes = {});
 LUNGO.Data || (LUNGO.Data = {});
