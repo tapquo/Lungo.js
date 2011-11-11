@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../../src/stylesheets/widgets.css">
     <link rel="stylesheet" href="../../src/stylesheets/lungo.theme.default.css">
     <!-- App Stylesheet -->
-    <link rel="stylesheet" href="assets/stylesheets/app.css?v=1">    
+    <link rel="stylesheet" href="assets/stylesheets/app.css?v=1">
 </head> 
  
 <body class="app">   
@@ -255,7 +255,8 @@
 	<section id="demo_forms">
 		<header data-back="home blue"></header>
 		<article>
-			<p class="form">
+		    <scroll id="scroll_forms">
+			<form>
 				<input type="text" placeholder="Input text"/>
 				<input type="password" placeholder="Input password"/>
 				<input type="checkbox">Save credentials</input>
@@ -267,11 +268,27 @@
 						<option value="3">Three</option>
 					</select>
 				</label>
+				<label data-icon="twitter"></label>
+				<label class="checkbox"><input type="checkbox" id="checkbox-0"/></label>
+
+				<label data-icon="facebook"></label>
+				<label class="checkbox"><input type="checkbox" id="checkbox-1" checked="checked"/></label>
+
+				<label data-icon="picture"></label>
+				<label class="checkbox"><input type="checkbox" id="checkbox-2"/></label>
+	
+	            <br/>
+				<label>Radio:</label>
+				<label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
+				<label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
+				<label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
+            </ul>
+            
 				<br/>
-				
 				<a href="#" class="button big green" data-icon="check">Accept</a>
 				<a href="#" class="button big red" data-icon="cancel">Cancel</a>
-			</p>
+			</form>
+			</scroll>
 		</article>
 	</section>
 	
