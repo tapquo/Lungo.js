@@ -20,22 +20,22 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var touch_move_event  = 'TOUCH_MOVE';
         var touch_start_event = 'TOUCH_START';
         var orientation_change = 'ORIENTATION_CHANGE';
-        var events_selector   = 'a[href][data-target]';
+        var target_selector   = 'a[href][data-target]';
 
-        lng.Dom.Event.bind(document, touch_move_event, _iScroll);
-        lng.Dom.Event.bind(window, orientation_change, _changeOrientation);
-        lng.Dom.Event.live(events_selector, touch_start_event, _loadLayout);
+        lng.Dom.Event.listener(document, touch_move_event, _iScroll);
+        lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
+        lng.Dom.Event.live(target_selector, touch_start_event, _loadTarget);
     };
 
-    var _iScroll = function(event) {
-        event.preventDefault();
+    var _iScroll = function(event_handler) {
+        event_handler.preventDefault();
     };
 
     var _changeOrientation = function(event) {
         lng.View.Resize.toolbars();
     };
 
-    var _loadLayout = function(event) {
+    var _loadTarget = function(event) {
         event.preventDefault();
 
         var link = lng.Dom.query(this);
