@@ -1,0 +1,17 @@
+.list li:not(.toolbar){padding:8px 6px;list-style-type:none;}
+.list li:not(.toolbar) a{width:auto;display:block;}
+.list li:not(.toolbar) img,.list li:not(.toolbar) .icon{float:left;width:32px;height:32px;margin-right:6px;font-size:36px;font-weight:normal;line-height:32px;}
+.list strong,.list small{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.list strong{width:75%;font-size:1.1em;}
+.list small{display:block;font-size:0.9em;font-style:normal;}
+.list li.anchor{font-size:0.9em;font-weight:bold;padding-top:3px;padding-bottom:3px;}
+.list .anchor a{padding:0px;}
+.list .anchor .icon{width:14px !important;height:14px !important;margin-right:4px !important;font-size:1.3em !important;font-weight:normal;line-height:16px !important;}
+.list .anchor .bubble{display:none;}
+.list li.info{min-height:48px;}
+.list li.info img,.list li.info .icon{height:48px;width:48px;line-height:48px;}
+.list .search input{width:88%;}
+.list .search a{float:right;height:30px;margin:0px;padding:0px;}
+.list .search a .icon{height:12px;width:30px;margin:0px;font-size:1.2em;font-weight:normal;}
+.list a.arrow:before{float:right;content:">";position:relative;top:6px;font-size:16px;font-family:"Courier New",Courier,mono;font-weight:bold;}
+.list .bubble{position:relative;right:2px;top:6px;float:right;padding:2px 3px 3px;line-height:1.0em;font-weight:bold;font-size:0.85em;}

@@ -1,0 +1,10 @@
+a,abbr,address,article,aside,audio,b,blockquote,body,caption,cite,code,dd,del,dfn,dialog,div,dl,dt,em,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video{border:0;margin:0;outline:0;padding:0;font-size:100%;}
+a{color:#fff;text-decoration:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+a:hover{opacity:1;}
+html{height:100%;font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+body{margin:0;padding:0;width:100%;height:100%;min-height:100%;overflow:hidden;-webkit-touch-callout:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.231;}
+b,strong{font-weight:bold;}
+img{border:0;-ms-interpolation-mode:bicubic;vertical-align:middle;font-size:0;}
+table{border-collapse:collapse;border-spacing:0;}
+th,td,caption{vertical-align:top;font-weight:normal;text-align:left;}
+*{margin:0;padding:0;}

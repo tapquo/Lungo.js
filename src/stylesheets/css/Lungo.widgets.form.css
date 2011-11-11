@@ -1,0 +1,26 @@
+.form,form{position:relative;margin:8px;font-size:1.15em;font-weight:bold;}
+input:not([type=checkbox]),textarea,select{display:inline-block;padding:6px 6px 5px;width:95%;margin-bottom:8px;outline:none;-webkit-appearance:none;font-size:1.0em;font-weight:bold;line-height:1.25em;}
+input[type=search]{width:100%;z-index:1;margin:0px;}
+input[type=search]:before{content:"hola";}
+select{width:100%;}
+label.select{position:relative;display:inline-block;width:100%;}
+.select:after{padding:0 7px;position:absolute;top:0;right:0;bottom:0;height:30px;content:"▼";pointer-events:none;font-size:60%;line-height:32px;}
+.no-pointer-events .select:after{content:none;}
+input[type="checkbox"],input[type="radio"]{width:74px;float:left;z-index:1;}
+input[type="checkbox"]+span::after,input[type="radio"]+span::after{content:"off";}
+input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{content:"on";}
+.iphone-toggle-buttons{-moz-user-select:none;-webkit-user-select:none;user-select:none;}
+.iphone-toggle-buttons{margin:4px 0;}
+input[type="checkbox"]+span,input[type="radio"]+span,input[type="checkbox"]+span::before,input[type="radio"]+span::before,input[type="checkbox"]+span::after,input[type="radio"]+span::after{-moz-border-radius:16px;-webkit-border-radius:16px;border-radius:16px;display:inline-block;}
+input[type="checkbox"]+span::before,input[type="radio"]+span::before,input[type="checkbox"]+span::after,input[type="radio"]+span::after,input[type="checkbox"]:checked+span::before,input[type="radio"]:checked+span::before,input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{top:0;}
+input[type="checkbox"]+span::after,input[type="radio"]+span::after,input[type="checkbox"]:checked+span::before,input[type="radio"]:checked+span::before{right:0;}
+input[type="checkbox"]+span::before,input[type="radio"]+span::before,input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{left:0;}
+input[type="checkbox"],input[type="radio"],input[type="checkbox"]+span::before,input[type="radio"]+span::before,input[type="checkbox"]+span::after,input[type="radio"]+span::after{position:absolute;}
+input[type="checkbox"],input[type="radio"]{filter:alpha(opacity=0);-moz-opacity:0;-webkit-opacity:0;opacity:0;}
+input[type="checkbox"]+span,input[type="radio"]+span{width:74px;margin-bottom:8px;height:30px;font:bold 14px/30px Arial,Sans-serif;color:#8c8c8c;text-transform:uppercase;border:solid 1px #bcbbbb;background:#c8c8c8 -webkit-gradient(linear, left top, left bottom, color-stop(0, #c8c8c8), color-stop(1, #f3f3f3));position:relative;text-indent:-9999px;}
+input[type="checkbox"]+span::before,input[type="radio"]+span::before{content:"";width:29px;height:29px;border-top:solid 1px #fff;border-right:solid 1px #bebebe;background:#cfcfcf -webkit-gradient(linear, left top, left bottom, color-stop(0, #cfcfcf), color-stop(1, #f9f9f9));-webkit-box-shadow:1px 0 1px #bebebe;-moz-box-shadow:1px 0 1px #bebebe;box-shadow:1px 0 1px #bebebe;}
+input[type="checkbox"]+span::after,input[type="radio"]+span::after{text-indent:0;width:56px;height:32px;text-align:center;}
+input[type="checkbox"]:checked+span,input[type="radio"]:checked+span{background:#5d96ea -webkit-gradient(linear, left top, left bottom, color-stop(0, #1b45bd), color-stop(1, #5d96ea));color:#fff;text-shadow:-1px -1px #0d2046;}
+input[type="checkbox"]:checked+span::before,input[type="radio"]:checked+span::before{left:auto;-webkit-box-shadow:-2px 0 1px #3a5e91;-webkit-box-shadow:-2px 0 1px #3a5e91;-moz-box-shadow:-2px 0 1px #3a5e91;box-shadow:-2px 0 1px #3a5e91;}
+input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{border-top:solid 1px #0f2a4f;border-bottom:solid 1px #0f2a4f;border-left:solid 1px #2c5496;height:30px;top:-1px;left:-1px;-webkit-border-radius:16px 0 0 16px;-moz-border-radius:16px 0 0 16px;border-radius:16px 0 0 16px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
+@media screen and (-webkit-min-device-pixel-ratio:0){.custom-select select{padding-right:30px;}}
