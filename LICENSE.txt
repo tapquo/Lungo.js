@@ -1,4 +1,4 @@
-Copyright (c) 2011 TapQuo Inc (Javier Jimenez Villar, Guillermo Pascual)
+Copyright (c) 2011 TapQuo Inc (Javier Jimenez Villar)
 
 ===============================================================================
 ===============================================================================
