@@ -14,12 +14,13 @@
  *
  * @copyright 2011 TapQuo Inc (c)
  * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
- * @version   1.0.1
+ * @version   1.0
  * @link      https://github.com/TapQuo/Lungo.js
  *
  * @author   Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author   Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
+
 var LUNGO = LUNGO || {};
 
 LUNGO.VERSION = '1.0.1';
@@ -742,10 +743,25 @@ LUNGO.View.Template = (function(undefined) {
         return _templates[id];
     };
 
+    /**
+     * Performs databinding process for a data set and a given template
+     *
+     * @method binding
+     *
+     * @param {String} Id of the container showing the result of databinding
+     * @param {Number} Databinding Template Id
+     * @param {Object} Data for binding
+     * @param {Function} Callback when the process is complete
+     */
+    var binding = function(container_id, id, data, callback) {
+        lng.View.Template.Binding.create(container_id, id, data, callback);
+    };
+
     return {
         create: create,
         exists: exists,
-        get: get
+        get: get,
+        binding: binding
     };
 
 })();
