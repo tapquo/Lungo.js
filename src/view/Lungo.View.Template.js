@@ -49,10 +49,25 @@ LUNGO.View.Template = (function(undefined) {
         return _templates[id];
     };
 
+    /**
+     * Performs databinding process for a data set and a given template
+     *
+     * @method binding
+     *
+     * @param {String} Id of the container showing the result of databinding
+     * @param {Number} Databinding Template Id
+     * @param {Object} Data for binding
+     * @param {Function} Callback when the process is complete
+     */
+    var binding = function(container_id, id, data, callback) {
+        lng.View.Template.Binding.create(container_id, id, data, callback);
+    };
+
     return {
         create: create,
         exists: exists,
-        get: get
+        get: get,
+        binding: binding
     };
 
 })();
