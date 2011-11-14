@@ -54,6 +54,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
             for (var i = 0, len = rs.rows.length; i < len; i++) {
                 result.push(rs.rows.item(i));
             }
+			if (result.length === 1) result = result[0]; 
 
             _callbackResponse(callback, result);
         });
