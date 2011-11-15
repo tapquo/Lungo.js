@@ -9,7 +9,7 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
  
-LUNGO.View.Template = (function(undefined) {
+LUNGO.View.Template = (function(lng, undefined) {
 
     var _templates = {};
 
@@ -70,4 +70,4 @@ LUNGO.View.Template = (function(undefined) {
         binding: binding
     };
 
-})();
+})(LUNGO);
