@@ -1,6 +1,6 @@
-/** 
+/**
  * Lungo Data-Binding system
- * 
+ *
  * @namespace LUNGO.View.Template
  * @class Binding
  * @requires Zepto
@@ -8,7 +8,7 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
- 
+
 LUNGO.View.Template.Binding = (function(lng, undefined) {
 
     var BINDING_START = '{{';
@@ -66,11 +66,11 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     };
 
     var _bindProperties = function(element, template) {
-		var regex;
+        var binding_field;
         for (var property in element) {
             if (lng.Core.isOwnProperty(element, property)) {
-				regex = new RegExp(BINDING_START + property + BINDING_END, "g");
-				template = template.replace(regex,element[property]);
+                binding_field = new RegExp(BINDING_START + property + BINDING_END, 'g');
+                template = template.replace(binding_field, element[property]);
             }
         }
         return _removeNoBindedProperties(template);
