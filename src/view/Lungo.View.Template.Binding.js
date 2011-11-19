@@ -66,12 +66,13 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     };
 
     var _bindProperties = function(element, template) {
+		var regex;
         for (var property in element) {
             if (lng.Core.isOwnProperty(element, property)) {
-                template = template.replace(BINDING_START + property + BINDING_END, element[property]);
+				regex = new RegExp(BINDING_START + property + BINDING_END, "g");
+				template = template.replace(regex,element[property]);
             }
         }
-
         return _removeNoBindedProperties(template);
     };
 
