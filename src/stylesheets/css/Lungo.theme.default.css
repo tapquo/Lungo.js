@@ -1,3 +1,11 @@
+/** 
+ * Stylesheet
+ * 
+ * @namespace LUNGO.Theme
+ * @class Default
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
 /* @group layout */
 .app {
   font-size: 13px;
