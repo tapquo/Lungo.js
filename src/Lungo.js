@@ -29,3 +29,4 @@ LUNGO.Attributes || (LUNGO.Attributes = {});
 LUNGO.Data || (LUNGO.Data = {});
 LUNGO.Sugar || (LUNGO.Sugar = {});
 LUNGO.View || (LUNGO.View = {});
+LUNGO.Device || (LUNGO.Device = {});
