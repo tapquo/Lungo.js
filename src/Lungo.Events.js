@@ -18,7 +18,12 @@ LUNGO.Events = (function(lng, undefined) {
             TOUCH_END: 'touchend',
             TAP: 'tap',
             DOUBLE_TAP: 'doubletap',
-            ORIENTATION_CHANGE: 'orientationchange'
+            ORIENTATION_CHANGE: 'orientationchange',
+			SWIPE:'swipe',
+			SWIPE_LEFT:'swipeLeft',
+			SWIPE_RIGHT:'swipeRight',
+			SWIPE_UP: 'swipeUp',
+			SWIPE_DOWN:'swipeDown' 			
         },
         desktop: {
             TOUCH_START: 'click',
