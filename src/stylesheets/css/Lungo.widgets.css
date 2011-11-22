@@ -1,6 +1,7 @@
 .scroll,scroll{position:relative;display:block;width:100%;height:100%;}
 section.copyright{margin-top:128px;z-index:1000;background:#000;text-align:center;font-size:24px;}
 section.copyright img{max-height:128px;}
+.scroll{overflow:scroll;-webkit-overflow-scrolling:touch;}
 .hidden{display:none;}
 .onleft{float:left;}
 .onright{float:right;}
