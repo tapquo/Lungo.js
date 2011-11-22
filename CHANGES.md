@@ -1,0 +1,30 @@
+# LungoJS
+### HTML5 Mobile Framework, and stuff.
+
+
+## Changes in Version 1.0.2
+
+- Fixed template.binding
+- In Data.Sql.select() method if the total rows it's 1, returns a object and
+  not a array of objects.
+- Scroll fixed in iOS v.5 devices
+- Hide Navigation bar when App Instance is started.
+- Creation of homogeneous parameters in methods view.binding() & .view.list.create()
+- In Service.get() the parameters of url are setted by a JSON object.
+
+## Changes in Version 1.0.1
+
+- New <input type="checkbox"> style (as iOS style).
+- New <input type="group"> style (as IOS style).
+- New Navigation system via data-target attribute.
+
+## Credits
+Created by [Javier Jiménez](http://twitter.com/soyjavi).
+
+Copyright (c) 2011 by Tapquo Inc.
+
+## Licensing Options
+LungoJS is licensed under free commercial and open source licenses for
+application development, and a paid commercial license for OEM uses.
+
+See LICENSE.txt for license.
