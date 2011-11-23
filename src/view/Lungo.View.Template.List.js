@@ -30,6 +30,10 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             _render();
             _createScroll();
         }
+		else if(config.hasOwnProperty('norecords') && _config.data.length === 0){
+			lng.View.Template.Binding.forcerender(_config.container_id,_config.norecords)
+		}
+
     };
 
     var _validateConfig = function() {
