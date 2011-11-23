@@ -29,3 +29,7 @@ LUNGO.Attributes || (LUNGO.Attributes = {});
 LUNGO.Data || (LUNGO.Data = {});
 LUNGO.Sugar || (LUNGO.Sugar = {});
 LUNGO.View || (LUNGO.View = {});
+<<<<<<< HEAD
+=======
+LUNGO.Device || (LUNGO.Device = {});
+>>>>>>> upstream/master

@@ -1,6 +1,6 @@
-/** 
+/**
  * Boot for a new LungoJS Application instance
- * 
+ *
  * @namespace LUNGO
  * @class App
  *
@@ -13,6 +13,7 @@ LUNGO.Boot = (function(lng, undefined) {
     return function() {
         lng.Environment.start();
 
+        lng.Boot.Layout.start();
         lng.Boot.Events.start();
         lng.Boot.Data.start();
         lng.Boot.Section.start();
