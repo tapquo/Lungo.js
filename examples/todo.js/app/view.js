@@ -1,6 +1,6 @@
 App.View = (function(lng, App, undefined) {
 
-    lng.View.Template.create('pending-tmp', 
+    lng.View.Template.create('pending-tmp',
         '<li id="{{id}}">\
             <a href="#">\
                 <span class="icon check"></span>\
@@ -10,7 +10,7 @@ App.View = (function(lng, App, undefined) {
         </li>'
     );
 
-    lng.View.Template.create('list-tmp', 
+    lng.View.Template.create('list-tmp',
         '<li id="{{id}}">\
             <a href="#">\
                 <span class="icon folder"></span>\
@@ -22,8 +22,8 @@ App.View = (function(lng, App, undefined) {
 
     var todo = function(id) {
         lng.Data.Sql.select('todo', {id:id}, function(result){
-            if (result.length > 0) {
-                var data = result[0];
+            if (result){
+                var data = result;
                 lng.Data.Cache.set('current_todo', data);
 
                 $('#txtEditName').val(data.name);
