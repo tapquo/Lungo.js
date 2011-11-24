@@ -76,9 +76,9 @@ LUNGO.Dom.Event = (function(lng, undefined) {
      * @param  {Function} Callback function after the request
      */
     var delegate = function(selector, children_selector, event_name, callback) {
-        if (_isNotSpecialEvent(selector, event_name, callback)) {
-            lng.Dom.query(selector).delegate(children_selector, lng.Events.get(event_name), callback);
-        }
+        if (typeof lng.Events.get(event_name) !== 'undefined') {
+		  lng.Dom.query(selector).delegate(children_selector, lng.Events.get(event_name), callback);
+		}
     };
 
     /**

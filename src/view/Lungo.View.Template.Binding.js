@@ -87,6 +87,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
 
     return {
         create: create,
+		forcerender:_render
         dataAttribute: dataAttribute
     };
 
