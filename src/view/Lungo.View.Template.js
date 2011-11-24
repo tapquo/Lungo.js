@@ -1,6 +1,6 @@
-/** 
+/**
  * Lungo Template system
- * 
+ *
  * @namespace LUNGO.View
  * @class Template
  * @requires Zepto
@@ -8,7 +8,7 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
- 
+
 LUNGO.View.Template = (function(lng, undefined) {
 
     var _templates = {};
@@ -55,12 +55,12 @@ LUNGO.View.Template = (function(lng, undefined) {
      * @method binding
      *
      * @param {String} Id of the container showing the result of databinding
-     * @param {Number} Databinding Template Id
+     * @param {String} Databinding Template Id
      * @param {Object} Data for binding
      * @param {Function} Callback when the process is complete
      */
-    var binding = function(container_id, id, data, callback) {
-        lng.View.Template.Binding.create(container_id, id, data, callback);
+    var binding = function(container_id, template_id, data, callback) {
+        lng.View.Template.Binding.create(container_id, template_id, data, callback);
     };
 
     return {

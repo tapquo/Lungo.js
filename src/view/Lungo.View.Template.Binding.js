@@ -21,18 +21,18 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
      * @method create
      *
      * @param {String} Id of the container showing the result of databinding
-     * @param {Number} Databinding Template Id
+     * @param {String} Databinding Template Id
      * @param {Object} Data for binding
      * @param {Function} Callback when the process is complete
      */
-    var create = function(container_id, id, data, callback) {
-        if (lng.View.Template.exists(id)) {
-            var template = lng.View.Template.get(id);
+    var create = function(container_id, template_id, data, callback) {
+        if (lng.View.Template.exists(template_id)) {
+            var template = lng.View.Template.get(template_id);
             var markup = _processData(data, template);
             _render(container_id, markup);
             lng.Core.execute(callback);
         } else {
-            lng.Core.log(3, 'lng.View.Template.binding: id ' + id + ' not exists');
+            lng.Core.log(3, 'lng.View.Template.binding: id ' + template_id + ' not exists');
         }
     };
 

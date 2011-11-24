@@ -8,8 +8,7 @@
 - In Data.Sql.select() method if the total rows it's 1, returns a object and
   not a array of objects.
 - Scroll fixed in iOS v.5 devices
-- Hide Navigation bar when App Instance is started.
-- Creation of homogeneous parameters in methods view.binding() & .view.list.create()
+- Hide Navigation bar when App Instance is started (only in iOS Devices).
 - In Service.get() the parameters of url are setted by a JSON object.
 
 ## Changes in Version 1.0.1
