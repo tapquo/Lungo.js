@@ -15,12 +15,13 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     /**
      * Create a list based DataBind with a configuration object for an element <article>
+	 * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
      *
      * @method create
      *
      * @param {object} Id of the container showing the result of databinding
      */
-    var create = function(config) {
+     var create = function(config) {
         _config = config;
         _config.container_id += '_list';
 
@@ -29,8 +30,8 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             // @ToDo >> _group();
             _render();
             _createScroll();
-        }
-    };
+        }     
+	};
 
     var _validateConfig = function() {
         var checked = false;
@@ -44,10 +45,13 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             if (template_exists && _config.data.length) {
                 checked = true;
             }
+			else if(template_exists && _config.hasOwnProperty('norecords')){
+				lng.View.Template.Binding.forcerender(_config.container_id,_config.norecords)
+			}
         }
 
         return checked;
-    };
+};
 
     var _order = function() {
         var order_field = _config.order_field;
