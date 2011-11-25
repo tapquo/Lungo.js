@@ -30,28 +30,25 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             // @ToDo >> _group();
             _render();
             _createScroll();
-        }     
+        }  
 	};
 
     var _validateConfig = function() {
         var checked = false;
         var container_exists = !! lng.Dom.query(_config.container_id);
+        var template_exists = lng.View.Template.exists(_config.template_id);
 
-        if (container_exists) {
+        if (container_exists && template_exists) {
             //@ToDo >> Refactor to other method
             lng.Dom.query("#"+_config.container_id).html('');
 
-            var template_exists = lng.View.Template.exists(_config.template_id);
-            if (template_exists && _config.data.length) {
+            if (_config.data.length) {
                 checked = true;
             }
-			else if(template_exists && _config.hasOwnProperty('norecords')){
-				lng.View.Template.Binding.forcerender(_config.container_id,_config.norecords)
-			}
         }
 
         return checked;
-};
+    };
 
     var _order = function() {
         var order_field = _config.order_field;
