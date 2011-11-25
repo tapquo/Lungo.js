@@ -120,7 +120,7 @@ LUNGO.Dom.Event = (function(lng, undefined) {
             is_not_special_event = false;
         }
 
-        return is_special_event;
+        return is_not_special_event;
     };
 
     return {
