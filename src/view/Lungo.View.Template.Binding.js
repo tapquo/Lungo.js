@@ -36,10 +36,6 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         }
     };
 
-	var forcerender = function(container_id, markup) {
-		 _render(container_id, markup);
-	}
-
     var dataAttribute = function(element, attribute) {
         var data = element.data(attribute.tag);
 
@@ -91,7 +87,6 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
 
     return {
         create: create,
-		forcerender: forcerender,
         dataAttribute: dataAttribute
     };
 
