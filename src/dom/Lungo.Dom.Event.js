@@ -66,7 +66,7 @@ LUNGO.Dom.Event = (function(lng, undefined) {
     };
 
     /**
-     * Add an event listener without event delegation
+     * Add an event listener with event delegation if enviornment allows event.
      *
      * @method delegate
      *
@@ -76,7 +76,7 @@ LUNGO.Dom.Event = (function(lng, undefined) {
      * @param  {Function} Callback function after the request
      */
     var delegate = function(selector, children_selector, event_name, callback) {
-        if (_isNotSpecialEvent(selector, event_name, callback)) {
+      	if (typeof lng.Events.get(event_name) !== 'undefined') {
             lng.Dom.query(selector).delegate(children_selector, lng.Events.get(event_name), callback);
         }
     };
@@ -123,7 +123,7 @@ LUNGO.Dom.Event = (function(lng, undefined) {
         lng.Dom.query(selector)[special_event](callback);
         */
 
-        switch(event_name) {
+       /* switch(event_name) {
             case 'SWIPE':
                 lng.Dom.query(selector).swipe(callback);
                 break;
@@ -148,7 +148,16 @@ LUNGO.Dom.Event = (function(lng, undefined) {
                 break;
             default:
                 is_special_event = true;
-        }
+        }*/
+		if(event_name === 'DOUBLE_TAP'){
+			if (lng.Environment.isDesktop()) {
+				lng.Dom.query(selector).live(lng.Events.get(event_name), callback);
+            } else {
+                lng.Dom.query(selector).doubleTap(callback);
+            }
+		} else{
+            is_special_event = true;
+		}
 
         return is_special_event;
     };
