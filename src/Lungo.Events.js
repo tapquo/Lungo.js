@@ -18,12 +18,7 @@ LUNGO.Events = (function(lng, undefined) {
             TOUCH_END: 'touchend',
             TAP: 'tap',
             DOUBLE_TAP: 'doubletap',
-            ORIENTATION_CHANGE: 'orientationchange',
-            SWIPE:'swipe',
-            SWIPE_LEFT:'swipeLeft',
-            SWIPE_RIGHT:'swipeRight',
-            SWIPE_UP: 'swipeUp',
-            SWIPE_DOWN:'swipeDown'
+            ORIENTATION_CHANGE: 'orientationchange'
         },
         desktop: {
             TOUCH_START: 'click',
@@ -35,6 +30,9 @@ LUNGO.Events = (function(lng, undefined) {
         }
     };
 
+    var current_environment = lng.Environment.current();
+    var current_events = EVENTS[current_environment];
+
     /**
      * Returns the touch event based on an enumeration of LungoJS
      * and the current environment
@@ -45,8 +43,6 @@ LUNGO.Events = (function(lng, undefined) {
      * @return {string} Touch event based on the current environment
      */
     var get = function(eventName) {
-        var current_environment = lng.Environment.current();
-        var current_events = EVENTS[current_environment];
         return current_events[eventName];
     };
 

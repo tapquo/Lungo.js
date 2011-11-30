@@ -66,7 +66,7 @@ LUNGO.Dom.Event = (function(lng, undefined) {
     };
 
     /**
-     * Add an event listener with event delegation if enviornment allows event.
+     * Add an event listener without event delegation
      *
      * @method delegate
      *
@@ -76,7 +76,7 @@ LUNGO.Dom.Event = (function(lng, undefined) {
      * @param  {Function} Callback function after the request
      */
     var delegate = function(selector, children_selector, event_name, callback) {
-      	if (typeof lng.Events.get(event_name) !== 'undefined') {
+        if (_isNotSpecialEvent(selector, event_name, callback)) {
             lng.Dom.query(selector).delegate(children_selector, lng.Events.get(event_name), callback);
         }
     };
@@ -109,18 +109,48 @@ LUNGO.Dom.Event = (function(lng, undefined) {
     };
 
     var _isNotSpecialEvent = function(selector, event_name, callback) {
-        var is_not_special_event = true;
+        var is_special_event = false;
+        /*
+        var SPECIAL_EVENTS = {
+            SWIPE: 'swipe',
+            SWIPE_LEFT: 'swipeLeft',
+            SWIPE_RIGHT: 'swipeRight',
+            SWIPE_UP: 'swipeUp',
+            SWIPE_DOWN: 'swipeDown',
+            DOUBLE_TAP: 'doubleTap'
+        };
+        var special_event = SPECIAL_EVENTS[event_name];
+        lng.Dom.query(selector)[special_event](callback);
+        */
 
-        if (event_name === 'DOUBLE_TAP') {
-            if (lng.Environment.isDesktop()) {
-                lng.Dom.query(selector).live(lng.Events.get(event_name), callback);
-            } else {
-                lng.Dom.query(selector).doubleTap(callback);
-            }
-            is_not_special_event = false;
+        switch(event_name) {
+            case 'SWIPE':
+                lng.Dom.query(selector).swipe(callback);
+                break;
+            case 'SWIPE_LEFT':
+                lng.Dom.query(selector).swipeLeft(callback);
+                break;
+            case 'SWIPE_RIGHT':
+                lng.Dom.query(selector).swipeRight(callback);
+                break;
+            case 'SWIPE_UP':
+                lng.Dom.query(selector).swipeUp(callback);
+                break;
+            case 'SWIPE_DOWN':
+                lng.Dom.query(selector).swipeDown(callback);
+                break;
+            case 'DOUBLE_TAP':
+                if (lng.Environment.isDesktop()) {
+                    lng.Dom.query(selector).live(lng.Events.get(event_name), callback);
+                } else {
+                    lng.Dom.query(selector).doubleTap(callback);
+                }
+                break;
+            default:
+                is_special_event = true;
         }
 
-        return is_not_special_event;
+        return is_special_event;
     };
 
     return {
