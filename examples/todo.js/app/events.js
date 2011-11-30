@@ -1,5 +1,11 @@
 App.Events = (function(lng, undefined) {
 
+    //Login
+    lng.Dom.Event.live('#btnLogin', 'TAP', function(evet) {
+        lng.Router.section('main');
+        App.Data.refresh();
+    });
+
     //Create new todo
     lng.Dom.Event.live('#btnNewTodo', 'TAP', function(event) {
 
@@ -19,7 +25,7 @@ App.Events = (function(lng, undefined) {
 
         App.View.returnToMain('ToDo created', 'check');
     });
-    
+
     //View ToDo
     lng.Dom.Event.live('#done li, #pending li', 'TAP', function(event) {
         var todo_id = lng.Dom.query(this).attr('id');

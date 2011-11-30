@@ -5,20 +5,20 @@ App.Data = (function(lng, App, undefined) {
         name: 'todo.js',
         version: '1.0',
         schema: [
-            { name: 'todo', drop: false, fields: {  
+            { name: 'todo', drop: false, fields: {
                 id: 'INTEGER PRIMARY KEY',
                 name: 'TEXT',
                 description: 'TEXT',
                 type: 'STRING',
                 done: 'INTEGER DEFAULT 0',
-                created_at: 'DATETIME' 
+                created_at: 'DATETIME'
                 }
             },
             { name: 'types', drop: false, fields: {
                 id: 'INTEGER PRIMARY KEY',
                 name: 'TEXT'
                 }
-            },
+            }
         ]
     });
 
@@ -37,6 +37,7 @@ App.Data = (function(lng, App, undefined) {
 
     var updateTodo = function(id, data) {
         lng.Data.Sql.update('todo', data, {id:id});
+        refresh();
     };
 
     var doneTodo = function(id) {
@@ -44,26 +45,16 @@ App.Data = (function(lng, App, undefined) {
     };
 
     var _pendingTodos = function() {
-        lng.Data.Sql.select('todo', {done:0}, function(result){
-            lng.View.Template.List.create({
-                container_id: 'pending',
-                template_id: 'pending-tmp',
-                data: result
-            });
+        lng.Data.Sql.select('todo', {done:0}, function(result) {
+            App.View.list('pending', 'pending-tmp', result);
         });
     };
 
     var _doneTodos = function() {
         lng.Data.Sql.select('todo', {done:1}, function(result){
-            lng.View.Template.List.create({
-                container_id: 'done',
-                template_id: 'list-tmp',
-                data: result
-            });
+            App.View.list('done', 'list-tmp', result);
         });
     };
-
-    refresh();
 
     return {
         refresh: refresh,
@@ -72,5 +63,5 @@ App.Data = (function(lng, App, undefined) {
         updateTodo: updateTodo,
         doneTodo: doneTodo
     }
-    
+
 })(LUNGO, App);

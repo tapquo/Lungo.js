@@ -36,18 +36,29 @@ App.View = (function(lng, App, undefined) {
     };
 
     var returnToMain = function(message, icon) {
-        lng.Sugar.Growl.show(message, icon, true);
+        lng.Sugar.Growl.notify(message, 'Tap to close', icon, 'error', 5);
+
+        //lng.Sugar.Growl.show(message, icon, true);
         App.Data.refresh();
 
         setTimeout(function() {
             lng.Router.back();
             lng.Sugar.Growl.hide();
-        }, 500);
+        }, 1000);
+    };
+
+    var list = function(container, template, rows) {
+        lng.View.Template.List.create({
+            container_id: container,
+            template_id: template,
+            data: rows
+        });
     };
 
     return{
         todo: todo,
-        returnToMain: returnToMain
+        returnToMain: returnToMain,
+        list: list
     }
 
 })(LUNGO, App);
