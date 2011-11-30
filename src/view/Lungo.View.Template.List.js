@@ -1,6 +1,6 @@
-/** 
+/**
  * Auto generate lists based on Template and Data-Binding system
- * 
+ *
  * @namespace LUNGO.View.Template
  * @class List
  * @requires Zepto
@@ -30,7 +30,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             // @ToDo >> _group();
             _render();
             _createScroll();
-        }  
+        }
 	};
 
     var _validateConfig = function() {
@@ -42,7 +42,8 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             //@ToDo >> Refactor to other method
             lng.Dom.query("#"+_config.container_id).html('');
 
-            if (_config.data.length) {
+            var type = lng.Core.toType(_config.data);
+            if (type === 'array' || type === 'object') {
                 checked = true;
             }
         }
