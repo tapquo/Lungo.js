@@ -1,6 +1,9 @@
 # LungoJS
 ### HTML5 Mobile Framework, and stuff.
 
+## Changes in Version 1.0.3
+
+- Fixed error in method List.create() when result is a object
 
 ## Changes in Version 1.0.2
 
