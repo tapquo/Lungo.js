@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LungoJS - Test Source 1.0.2</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icon@2x.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
+    <link rel="apple-touch-startup-image" href="assets/images/default.png">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.base.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.list.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.splash.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.button.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.form.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.colour.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="assets/stylesheets/app.css?v=1">
+</head>
+
+<body class="app">
+
+	<section id="demo" class="_static">
+		<header>
+            <a href="#" id="btnAside" data-target="aside" class="button pink onleft" data-icon="note"></a>
+        </header>
+        <aside>
+            <a href="#main" data-target="article" data-icon="facebook">Facebook</a>
+            <a href="#second" data-target="article" data-icon="twitter">Twitter</a>
+            <a href="#main" data-target="article" data-icon="picture">Flickr</a>
+            <a href="#main" data-target="article" data-icon="cloudup">Upload by ...</a>
+            <a href="#main" data-target="article" data-icon="user">Connect with facebook</a>
+            <a href="#main" data-target="article" data-icon="music">Download music</a>
+            <a href="#main" data-target="article" data-icon="key">Logout</a>
+        </aside>
+		<article id="main" class="list">
+            <scroll id="main_scroll">
+                <ul>
+    				<li><a href="#demo_header_footer" data-target="section" class="arrow" data-icon="wifi">
+    					<strong>Header + Footer + Articles</strong><small>paodapod</small></a></li>
+    				<li><a href="#demo_toolbar" data-target="section" class="arrow" data-icon="download">
+    					<strong>Toolbar</strong><small>Toolbar</small></a></li>
+    				<li><a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note">
+                        <div class="bubble highlight">3 types</div>
+    					<strong>Lists</strong>
+    					<small>paodapod</small></a></li>
+    				<li><a href="#demo_events" data-target="section" class="arrow" data-icon="user">
+    						<strong>Events handler</strong><small>paodapod</small></a></li>
+    				<li><a href="#demo_scroll" data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points">
+    						<strong>Scroll</strong><small>paodapod</strong></small></a></li>
+    				<li><a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus">
+    						<strong>Buttons</strong><small>paodapod</small></a></li>
+    				<li><a href="#demo_forms" data-target="section" class="arrow" data-icon="write">
+                        <strong>Forms</strong><small>paodapod</small></a></li>
+    				<li class="anchor" data-icon="key">Tapquo Sugars</li>
+    				<li><a href="#demo_sugars" data-target="section" data-icon="box">
+    					<strong>Sugars</strong><small>paodapod</small></a></li>
+    			</ul>
+			</scroll>
+        </article>
+
+        <article id="second">
+            second
+        </article>
+    </section>
+
+    <!-- Third parties dependencies -->
+    <script src="../../src/lib/zepto.js"></script>
+    <script src="../../src/lib/iscroll.js"></script>
+    <!-- LungoJS Libraries (Development mode)-->
+    <script src="../../src/Lungo.js"></script>
+    <script src="../../src/Lungo.App.js" ></script>
+    <script src="../../src/Lungo.Environment.js" ></script>
+    <script src="../../src/Lungo.Core.js"></script>
+    <script src="../../src/Lungo.Events.js"></script>
+    <script src="../../src/Lungo.Service.js"></script>
+    <script src="../../src/router/Lungo.Router.js"></script>
+    <script src="../../src/router/Lungo.Router.History.js" ></script>
+    <script src="../../src/view/Lungo.View.Resize.js"></script>
+    <script src="../../src/view/Lungo.View.Article.js" ></script>
+    <script src="../../src/view/Lungo.View.Aside.js" ></script>
+    <script src="../../src/view/Lungo.View.Scroll.js"></script>
+    <script src="../../src/view/Lungo.View.Template.js"></script>
+    <script src="../../src/view/Lungo.View.Template.Binding.js"></script>
+    <script src="../../src/view/Lungo.View.Template.List.js"></script>
+    <script src="../../src/dom/Lungo.Dom.js"></script>
+    <script src="../../src/dom/Lungo.Dom.Event.js"></script>
+    <script src="../../src/data/Lungo.Data.Cache.js"></script>
+    <script src="../../src/data/Lungo.Data.Sql.js"></script>
+    <script src="../../src/data/Lungo.Data.Storage.js"></script>
+    <script src="../../src/attributes/Lungo.Attributes.Data.js"></script>
+    <script src="../../src/attributes/Lungo.Attributes.Section.js"></script>
+    <script src="../../src/boot/Lungo.Boot.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Layout.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Events.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Data.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Section.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Article.js"></script>
+    <!-- LungoJS - Sandbox App -->
+    <script src="app/app.js"></script>
+</body>
+</html>
