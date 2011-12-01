@@ -23,7 +23,7 @@
 
 var LUNGO = LUNGO || {};
 
-LUNGO.VERSION = '1.0.1';
+LUNGO.VERSION = '1.0.3';
 
 LUNGO.Attributes || (LUNGO.Attributes = {});
 LUNGO.Data || (LUNGO.Data = {});
