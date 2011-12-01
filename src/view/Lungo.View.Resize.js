@@ -1,6 +1,6 @@
-/** 
- * 
- * 
+/**
+ *
+ *
  * @namespace LUNGO.View
  * @class Resize
  *
@@ -34,15 +34,17 @@ LUNGO.View.Resize = (function(lng, undefined) {
      * @method article
      *
      * @param {object} Object reference of a determinated <section>
-     * @param {string} Selector that refers to a section element 
+     * @param {string} Selector that refers to a section element
      * @param {string} CSS property
+     * @param {string} Element reference for resizing
      */
-    var article = function(section, selector, property) {
+    var article = function(section, selector, property, reference) {
         var element = section.children(selector);
-        var ARTICLE = 'article'; //@todo >> refactor
+        var ARTICLE = 'article';
 
-        if (element) {
-            section.children(ARTICLE).css(property, element.height() + 'px');
+        if (element.length > 0) {
+            var reference_dimension = element[reference]();
+            section.children(ARTICLE).css(property, reference_dimension + 'px');
         }
     };
 

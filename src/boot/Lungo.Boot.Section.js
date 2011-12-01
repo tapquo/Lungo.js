@@ -1,6 +1,6 @@
-/** 
+/**
  * Initialize the <section> element
- * 
+ *
  * @namespace LUNGO.Boot
  * @class Section
  * @requires Zepto
@@ -57,7 +57,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         for (var attribute in section_attributes) {
             if (lng.Core.isOwnProperty(section_attributes, attribute)) {
                 var property = section_attributes[attribute];
-                lng.View.Resize.article(section, property.name, property.bind);
+                lng.View.Resize.article(section, property.name, property.bind, property.reference);
             }
         }
     };
