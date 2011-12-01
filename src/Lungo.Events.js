@@ -21,9 +21,9 @@ LUNGO.Events = (function(lng, undefined) {
             ORIENTATION_CHANGE: 'orientationchange'
         },
         desktop: {
-            TOUCH_START: 'click',
-            TOUCH_MOVE: 'click',
-            TOUCH_END: 'click',
+            TOUCH_START: 'mousedown',
+            TOUCH_MOVE: 'mousemove',
+            TOUCH_END: 'mouseup',
             TAP: 'click',
             DOUBLE_TAP: 'dblclick',
             ORIENTATION_CHANGE: 'orientationchange'
