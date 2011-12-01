@@ -26,7 +26,7 @@ The idea of LungoJS arose earlier this year, the author [Javi Jiménez Villar](h
 - [How to use](http://www.lungojs.com/how-to-use/)
 - [JavaScript API](http://www.lungojs.com/api/) 
 - [About](http://www.lungojs.com/about/) the author and contributors.
-- [Watch Screencasts video preview](http://www.vimeo.com/) to see it in action.
+- [Watch Screencasts video preview](http://www.lungojs.com/screencasts//) to see it in action.
 
 ## Credits
 Created by [Javier Jiménez](http://twitter.com/soyjavi).
