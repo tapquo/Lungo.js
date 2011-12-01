@@ -145,16 +145,72 @@ article.current {
 }
 /* @end */
 
-/* @group .toolbar */
-.toolbar {
-	height: 48px; 
-	line-height: 44px;
-	display: block;
+/* @group <article> */
+article {
+	position: absolute; 
+	width: 100%;
+	height: auto;
+	top: 0px; 
+	bottom: 0px;
+	
+	z-index: 0;
+	opacity: 0;
 }
 
-.toolbar a  {
+article.current { 
+	z-index: 1;
+	opacity: 1; 
+}
+
+article.aside {
+    left: 256px !important;
+}
+/* @end */
+
+/* @group <aside> */
+aside {
+	position: absolute;
+	top: 0px; 
+	bottom: 0px;
+	width: 256px;
+	height: auto;
+	/* @ToDo */
+	padding-top: 40px;
+}
+
+aside a{
+	display: block;
+	width: 100%;
+	height: 48px;
+	padding: 0 8px;
+	
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 48px;
+}
+
+aside a .icon {
+	width: 32px;
 	float: left;
-	padding: 0;
-	font-size: 2.0em;
+	margin: 8px 4px 0 0;
+    
+	opacity: 0.5;
+    
+    font-size: 2.2em;
+    text-align: center;
+}
+
+@media handheld, only screen and (max-width: 768px) {
+	article {
+    	-webkit-transition: left 0.3s ease-in-out;
+	}
+	
+	aside {
+    	width: 0px;
+	}
+
+	aside.show {
+	    width: 256px;
+	}
 }
 /* @end */
