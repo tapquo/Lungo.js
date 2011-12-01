@@ -5,7 +5,7 @@ App.Events = (function(lng, undefined) {
     });
     
     lng.Dom.Event.live('#event_touchend', 'TOUCH_END', function(event) {
-        alert("TOUCH_START!");
+        alert("TOUCH_END!");
     });
     
     lng.Dom.Event.live('#event_touchmove', 'TOUCH_MOVE', function(event) {
