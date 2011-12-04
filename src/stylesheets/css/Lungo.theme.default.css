@@ -49,20 +49,20 @@ nav a.current {
 .toolbar a.current {
   background: rgba(255, 255, 255, 0.15);
 }
-.toolbar a:first-child {
-  -webkit-box-shadow: none;
-}
 /* @end */
 /* @group <aside> */
 aside {
   background: #252525;
-  -webkit-box-shadow: inset -1px 0px 0px #ffffff, inset -4px 0px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset -1px 0px 0px #000000, inset -4px 0px 8px rgba(0, 0, 0, 0.5);
 }
 aside a {
   color: #fff !important;
   text-shadow: 0px 1px 0px #000 !important;
   border-bottom: 1px inset rgba(0, 0, 0, 0.3);
   border-top: 1px inset rgba(255, 255, 255, 0.1);
+}
+aside a.current {
+  background: rgba(255, 255, 255, 0.1);
 }
 aside a .icon {
   opacity: 0.5;
@@ -150,14 +150,6 @@ aside a .icon {
   background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d)) !important;
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.5) 0 1px 1px;
-}
-/* @end */
-/* @group .button */
-a.button {
-  background-color: #15744d;
-}
-a.button:active {
-  background-color: #189462;
 }
 /* @end */
 /* @group <inputs> */
