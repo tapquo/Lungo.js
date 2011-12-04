@@ -4,6 +4,10 @@
 ## Changes in Version 1.0.3
 
 - Fixed error in method List.create() when result is a object
+- Aside element
+- New theme
+- New default button color
+- Center Title in <header>
 
 ## Changes in Version 1.0.2
 
