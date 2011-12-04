@@ -79,7 +79,16 @@ footer  {
 header .title, footer .title  {
 	float: left; 
 	margin: 0 8px; 
-	font-size: 1.1em;
+	font-size: 1.3em;
+}
+
+header .title {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	margin:0px auto;
+	text-align: center;
+	z-index: -1;	
 }
 
 section header a.button, section footer a.button  {
@@ -102,9 +111,8 @@ nav  {
 
 nav a  {
 	display: inline-block;
-	padding: 0 9px 0 10px;
-	height: inherit;
-	min-width: 22px;	
+	padding: 0 6px;
+	height: inherit;	
 	float: left;
 	font-size: 2.0em;
 }
@@ -112,7 +120,7 @@ nav a  {
 nav a abbr {
 	position: relative;
 	bottom: 3px;
-	margin-left: 4px;
+	margin-left: 2px;
 	display: none;
 	font-size: 0.5em;
 	font-weight: bold;
@@ -143,23 +151,17 @@ article.current {
 	z-index: 1;
 	opacity: 1; 
 }
-/* @end */
 
-/* @group <article> */
-article {
-	position: absolute; 
-	width: 100%;
-	height: auto;
-	top: 0px; 
-	bottom: 0px;
-	
-	z-index: 0;
-	opacity: 0;
+.toolbar{
+	height:48px;
+	line-height:44px;
+	display:block;
 }
 
-article.current { 
-	z-index: 1;
-	opacity: 1; 
+.toolbar a{
+	float:left;
+	padding:0;
+	font-size:2.0em;
 }
 
 article.aside {
@@ -180,23 +182,23 @@ aside {
 
 aside a{
 	display: block;
-	width: 100%;
-	height: 48px;
-	padding: 0 8px;
+	width: 242px;
+	height: 40px;
+	padding: 0 6px;
 	
 	font-size: 1.1em;
 	font-weight: bold;
-	line-height: 48px;
+	line-height: 40px;
 }
 
 aside a .icon {
-	width: 32px;
+	width: 28px;
+	height: 28px;
 	float: left;
-	margin: 8px 4px 0 0;
+	margin: 8px 6px 0 0;
     
-	opacity: 0.5;
-    
-    font-size: 2.2em;
+    font-size: 1.9em;
+    line-height: 1.0em;
     text-align: center;
 }
 
