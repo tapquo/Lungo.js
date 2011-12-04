@@ -21,11 +21,12 @@ article {
 	
 /* @group <header> & <footer> */
 header {
-	background: #42474d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #42474d), color-stop(1, #2c3137));
+	background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #006b41));
+	
+	.border-radius(6px, 6px, 0, 0);
 	-webkit-box-shadow: 
-		inset 0px 1px 0px rgba(255,255,255,0.25), 
-		inset 0px -1px rgba(0,0,0,0.5), 
-		0px 2px 2px rgba(0,0,0,0.2);
+		inset 0px 1px 0px rgba(255,255,255,0.4), 
+		inset 0px -1px rgba(0,0,0,0.5)
 }
 	
 footer {
@@ -38,32 +39,28 @@ footer {
 
 .title {
 	color: #fff;
-	text-shadow: rgba(0,0,0,0.5) 0 -1px 1px; 
-	text-transform: uppercase;
+	text-shadow: rgba(0,0,0,0.5) 0 -1px 0px; 
 }
 /* @end */
 
 /* @group <nav> */
 nav a {
-	background: none;
 	color: rgba(0,0,0,0.5);
 	text-shadow: rgba(255,255,255,0.35) 0 1px 1px;
 }
 	
 header:not(.toolbar) nav a, footer:not(.toolbar) nav a {
-	text-shadow: none;
-	
-	-webkit-box-shadow: 
-		inset 0px 1px rgba(255,255,255,0.15), 
-		inset 1px 0px rgba(0,0,0,0.75), 
-		inset 2px 0px rgba(255,255,255,0.25);
+	line-height: 38px;
 }
 
 nav a.current {
-	background: rgba(255,255,255,0.15);
 	color: #fff;
-	text-shadow: none;
-}	
+	text-shadow: 0px 1px 0px #000 !important;
+}
+
+.toolbar a.current{
+	background: rgba(255,255,255,0.15);
+}
 
 //@ToDo: Change the colour for not .toolbar classed elements
 not(.toolbar) nav a.current {
@@ -76,14 +73,25 @@ not(.toolbar) nav a.current {
 
 /* @group <aside> */
 aside {
-    background: #42474d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #42474d), color-stop(1, #2c3137));
-	-webkit-box-shadow: inset -4px 0px 8px rgba(0,0,0, 0.5);
+    background: #252525;
+	-webkit-box-shadow: inset -1px 0px 0px #fff, inset -4px 0px 8px rgba(0,0,0, 0.5);
+}
+
+aside {
+	
 }
 
 aside a{
 	color: #fff !important;
     text-shadow: 0px 1px 0px #000 !important;
-    border-bottom: 1px inset rgba(255,255,255,0.1);
+    border-bottom: 1px inset rgba(0,0,0,0.3);
+    border-top: 1px inset rgba(255,255,255,0.1);
+}
+
+aside a .icon {
+	
+    
+	opacity: 0.5;
 }
 
 /* @end */
@@ -135,7 +143,7 @@ aside a{
 
 /* @group .anchor */
 .list li.anchor {
-	background: #e1e1e1;
+	background: #f4f4f4;
 	color: #222;
 }
 /* @end */
@@ -186,6 +194,11 @@ aside a{
 	color: #fff; 
 	text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
 }
+/* @end */
+
+/* @group .button */
+a.button{background-color: #15744d;}
+a.button:active{background-color: #189462;}
 /* @end */
 
 /* @group <inputs> */
