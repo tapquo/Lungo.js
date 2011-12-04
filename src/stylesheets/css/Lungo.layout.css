@@ -10,20 +10,21 @@ section.popup.hide{-webkit-transform:translate3d(0, -100%, 0);-moz-transform:tra
 header,footer{position:absolute;left:0px;width:100%;height:40px;display:block;z-index:2;line-height:40px;}
 header{top:0px;}
 footer{bottom:0px;}
-header .title,footer .title{float:left;margin:0 8px;font-size:1.1em;}
+header .title,footer .title{float:left;margin:0 8px;font-size:1.3em;}
+header .title{position:absolute;left:0px;width:100%;margin:0px auto;text-align:center;z-index:-1;}
 section header a.button,section footer a.button{margin:2px 2px auto;}
 section header a.button.icon,section footer a.button.icon{width:17px;font-size:1.5em;font-weight:normal;}
 nav{height:inherit;text-align:center;font-weight:normal;}
-nav a{display:inline-block;padding:0 9px 0 10px;height:inherit;min-width:22px;float:left;font-size:2.0em;}
-nav a abbr{position:relative;bottom:3px;margin-left:4px;display:none;font-size:0.5em;font-weight:bold;}
+nav a{display:inline-block;padding:0 6px;height:inherit;float:left;font-size:2.0em;}
+nav a abbr{position:relative;bottom:3px;margin-left:2px;display:none;font-size:0.5em;font-weight:bold;}
 nav a.current abbr{display:inline;}
 nav a.current{-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-ms-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;transition:all 0.3s ease-in-out;}
 article{position:absolute;width:100%;height:auto;top:0px;bottom:0px;display:block;z-index:0;opacity:0;}
 article.current{z-index:1;opacity:1;}
-article{position:absolute;width:100%;height:auto;top:0px;bottom:0px;z-index:0;opacity:0;}
-article.current{z-index:1;opacity:1;}
+.toolbar{height:48px;line-height:44px;display:block;}
+.toolbar a{float:left;padding:0;font-size:2.0em;}
 article.aside{left:256px !important;}
 aside{position:absolute;top:0px;bottom:0px;width:256px;height:auto;padding-top:40px;}
-aside a{display:block;width:100%;height:48px;padding:0 8px;font-size:1.1em;font-weight:bold;line-height:48px;}
-aside a .icon{width:32px;float:left;margin:8px 4px 0 0;opacity:0.5;font-size:2.2em;text-align:center;}
+aside a{display:block;width:242px;height:40px;padding:0 6px;font-size:1.1em;font-weight:bold;line-height:40px;}
+aside a .icon{width:28px;height:28px;float:left;margin:8px 6px 0 0;font-size:1.9em;line-height:1.0em;text-align:center;}
 @media handheld, only screen and (max-width: 768px){article{-webkit-transition:left 0.3s ease-in-out;} aside{width:0px;} aside.show{width:256px;}}
