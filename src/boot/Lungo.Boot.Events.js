@@ -25,7 +25,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
 
         lng.Dom.Event.listener(document, touch_move_event, _iScroll);
         lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
-        lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _hideAside);
+        lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _toggleAside);
         lng.Dom.Event.live(target_selector, touch_start_event, _loadTarget);
     };
 
@@ -37,7 +37,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.View.Resize.toolbars();
     };
 
-    var _hideAside = function(event) {
+    var _toggleAside = function(event) {
         event.preventDefault();
 
         var link = lng.Dom.query(this);
