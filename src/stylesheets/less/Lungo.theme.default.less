@@ -61,24 +61,13 @@ nav a.current {
 .toolbar a.current{
 	background: rgba(255,255,255,0.15);
 }
-
-//@ToDo: Change the colour for not .toolbar classed elements
-not(.toolbar) nav a.current {
-	
-}
-
-.toolbar a:first-child{	-webkit-box-shadow: none; }
 	
 /* @end */
 
 /* @group <aside> */
 aside {
     background: #252525;
-	-webkit-box-shadow: inset -1px 0px 0px #fff, inset -4px 0px 8px rgba(0,0,0, 0.5);
-}
-
-aside {
-	
+	-webkit-box-shadow: inset -1px 0px 0px #000, inset -4px 0px 8px rgba(0,0,0, 0.5);
 }
 
 aside a{
@@ -88,9 +77,11 @@ aside a{
     border-top: 1px inset rgba(255,255,255,0.1);
 }
 
+aside a.current {
+	background: rgba(255,255,255,0.1);
+}
+
 aside a .icon {
-	
-    
 	opacity: 0.5;
 }
 
@@ -194,11 +185,6 @@ aside a .icon {
 	color: #fff; 
 	text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
 }
-/* @end */
-
-/* @group .button */
-a.button{background-color: #15744d;}
-a.button:active{background-color: #189462;}
 /* @end */
 
 /* @group <inputs> */
