@@ -14,7 +14,7 @@
  *
  * @copyright 2011 TapQuo Inc (c)
  * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
- * @version   1.0.2
+ * @version   1.0.3
  * @link      https://github.com/TapQuo/Lungo.js
  *
  * @author   Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
@@ -23,7 +23,7 @@
 
 var LUNGO = LUNGO || {};
 
-LUNGO.VERSION = '1.0.1';
+LUNGO.VERSION = '1.0.3';
 
 LUNGO.Attributes || (LUNGO.Attributes = {});
 LUNGO.Data || (LUNGO.Data = {});
@@ -321,8 +321,8 @@ LUNGO.Events = (function(lng, undefined) {
         },
         desktop: {
             TOUCH_START: 'click',
-            TOUCH_MOVE: 'click',
-            TOUCH_END: 'click',
+            TOUCH_MOVE: 'mousemove',
+            TOUCH_END: 'mouseup',
             TAP: 'click',
             DOUBLE_TAP: 'dblclick',
             ORIENTATION_CHANGE: 'orientationchange'
@@ -582,7 +582,7 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var SELECTORS = {
         ARTICLE: 'article',
-        NAVIGATION_ITEM: 'nav a'
+        NAVIGATION_ITEM: 'a'
     };
 
     var CSS_CLASSES = {
@@ -663,13 +663,15 @@ LUNGO.View.Resize = (function(lng, undefined) {
      * @param {object} Object reference of a determinated <section>
      * @param {string} Selector that refers to a section element
      * @param {string} CSS property
+     * @param {string} Element reference for resizing
      */
-    var article = function(section, selector, property) {
+    var article = function(section, selector, property, reference) {
         var element = section.children(selector);
-        var ARTICLE = 'article'; //@todo >> refactor
+        var ARTICLE = 'article';
 
-        if (element) {
-            section.children(ARTICLE).css(property, element.height() + 'px');
+        if (element.length > 0) {
+            var reference_dimension = element[reference]();
+            section.children(ARTICLE).css(property, reference_dimension + 'px');
         }
     };
 
@@ -898,12 +900,13 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     /**
      * Create a list based DataBind with a configuration object for an element <article>
+	 * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
      *
      * @method create
      *
      * @param {object} Id of the container showing the result of databinding
      */
-    var create = function(config) {
+     var create = function(config) {
         _config = config;
         _config.container_id += '_list';
 
@@ -913,18 +916,19 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             _render();
             _createScroll();
         }
-    };
+	};
 
     var _validateConfig = function() {
         var checked = false;
         var container_exists = !! lng.Dom.query(_config.container_id);
+        var template_exists = lng.View.Template.exists(_config.template_id);
 
-        if (container_exists) {
+        if (container_exists && template_exists) {
             //@ToDo >> Refactor to other method
             lng.Dom.query("#"+_config.container_id).html('');
 
-            var template_exists = lng.View.Template.exists(_config.template_id);
-            if (template_exists && _config.data.length) {
+            var type = lng.Core.toType(_config.data);
+            if (type === 'array' || type === 'object') {
                 checked = true;
             }
         }
@@ -1345,10 +1349,12 @@ LUNGO.Attributes.Data = {
 LUNGO.Attributes.Section = {
      header: {
          name: 'header',
+         reference: 'height',
          bind: 'top'
      },
      footer: {
          name: 'footer',
+         reference: 'height',
          bind: 'bottom'
      }
 };
@@ -1777,7 +1783,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
     var start = function() {
         _initElement(SELECTORS.LIST_IN_ARTICLE, _createListElement);
         _initElement(SELECTORS.SCROLL_IN_ARTICLE, _createScrollElement);
-        _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _b);
+        _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _createCheckboxElement);
     };
 
     var _initElement = function(selector, callback) {
@@ -1801,7 +1807,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
         lng.View.Scroll.create(scroll_id);
     };
 
-    var _b = function(checkbox) {
+    var _createCheckboxElement = function(checkbox) {
         checkbox.append('<span>&nbsp;</span>');
     };
 
@@ -1879,10 +1885,12 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var touch_move_event  = 'TOUCH_MOVE';
         var touch_start_event = 'TOUCH_START';
         var orientation_change = 'ORIENTATION_CHANGE';
-        var target_selector   = 'a[href][data-target]';
+        var target_selector = 'a[href][data-target]';
+        var target_selector_from_aside = 'ASIDE a[href][data-target]';
 
         lng.Dom.Event.listener(document, touch_move_event, _iScroll);
         lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
+        lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _toggleAside);
         lng.Dom.Event.live(target_selector, touch_start_event, _loadTarget);
     };
 
@@ -1894,14 +1902,39 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.View.Resize.toolbars();
     };
 
+    var _toggleAside = function(event) {
+        event.preventDefault();
+
+        var link = lng.Dom.query(this);
+        var section_id =  _getParentIdOfElement(link);
+
+        lng.View.Aside.toggle(section_id);
+    };
+
     var _loadTarget = function(event) {
         event.preventDefault();
 
         var link = lng.Dom.query(this);
-        var target_id = link.attr('href');
+        _selectTarget(link);
+    };
+
+    var _selectTarget = function(link) {
         var target_type = link.data('target');
 
-        (target_type === 'section') ? _goSection(target_id) : _goArticle(link);
+        switch(target_type) {
+            case 'section':
+                var target_id = link.attr('href');
+                _goSection(target_id);
+                break;
+
+            case 'article':
+                _goArticle(link);
+                break;
+
+            case 'aside':
+                _goAside(link);
+                break;
+        }
     };
 
     var _goSection = function(id) {
@@ -1913,10 +1946,20 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _goArticle = function(element) {
-        var section_id =  '#' + element.parents('section').attr('id');
+        var section_id =  _getParentIdOfElement(element);
         var article_id =  element.attr('href');
 
         lng.Router.article(section_id, article_id);
+    };
+
+    var _goAside = function(element) {
+        var section_id = _getParentIdOfElement(element);
+        lng.View.Aside.toggle(section_id);
+    };
+
+    var _getParentIdOfElement = function(element) {
+        var parent_id = '#' + element.parents('section').attr('id');
+        return parent_id;
     };
 
     return {
@@ -1984,7 +2027,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         for (var attribute in section_attributes) {
             if (lng.Core.isOwnProperty(section_attributes, attribute)) {
                 var property = section_attributes[attribute];
-                lng.View.Resize.article(section, property.name, property.bind);
+                lng.View.Resize.article(section, property.name, property.bind, property.reference);
             }
         }
     };
