@@ -4,7 +4,7 @@ Copyright (c) 2011 TapQuo Inc (Javier Jimenez Villar)
 ===============================================================================
 
 OPEN SOURCE LICENSE FOR LUNGOJS
-Version 1.0.1
+Version 1.0.3
 
 LungoJS is an avid supporter of open source software. This is the appropriate
 option if you are creating an open source application with a license compatible
@@ -13,33 +13,7 @@ the GPLv3 has many terms, the most important is that you must provide the
 source code of your application to your users so they can be free to modify
 your application for their own needs.
 
--------------------------------------------------------------------------------
-
-The MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-===============================================================================
-===============================================================================
-
-COMMERCIAL SOFTWARE LICENSE FOR LUNGOJS
-Version 1.0.1
+View the license terms: http://www.gnu.org/copyleft/gpl.html
 
 THIS DOCUMENT IS A LEGAL AGREEMENT (the “License Agreement”) BETWEEN TAPQUO INC.
 (“We,” “Us”) AND YOU OR THE ORGANIZATION ON WHOSE BEHALF YOU ARE UNDERTAKING
@@ -53,242 +27,218 @@ SOFTWARE IS PROTECTED BY UNITED STATES COPYRIGHT LAWS AND INTERNATIONAL
 COPYRIGHT LAWS, AS WELL AS OTHER INTELLECTUAL PROPERTY LAWS AND TREATIES.
 THE SOFTWARE IS LICENSED, NOT SOLD.
 
-THIS LICENSE AGREEMENT DESCRIBES YOUR RIGHTS WITH RESPECT TO THE SOFTWARE
-AND ITS COMPONENTS.
+===============================================================================
+===============================================================================
 
-1. OWNERSHIP, LICENSE GRANT
+OPEN SOURCE LICENSE FAQ
+Version 1.0.3
 
-This is a license agreement and not an agreement for sale. We reserve ownership
-of all intellectual property rights inherent in or relating to the Software,
-which include, but are not limited to, all copyright, patent rights, all rights
-in relation to registered and unregistered trademarks (including service marks),
-confidential information (including trade secrets and know-how) and all
-rights other than those expressly granted by this Agreement.
+This document is for guidance purposes only and is not a legal document and is
+not legally binding. We encourage you to read the GPL v3 and the Quick Guide to
+the GPLv3 in their entirety and consult legal counsel if you require additional
+advice.
 
-Subject to the terms and conditions of this License Agreement, We grant to You
-a revocable, non-transferable, non-exclusive license (i) for a Designated
-User(s) (as defined below) within Your organization to install and use the
-Software on any workstations used exclusively by such Designated User(s) and
-(ii) for You to install and use the Software in connection with unlimited
-domains and sub-domains on unlimited servers, solely in connection with
-distribution of the Software in accordance with sections 3 and 4 below. This
-license is not sublicensable except as explicitly set forth herein.
-“Designated User(s)” shall mean Your employee(s) acting within the scope of
-their employment or Your consultant(s) or contractor(s) acting within the scope
-of the services they provide for You or on Your behalf.
+===============================================================================
+===============================================================================
 
-2. PERMITTED USES, SOURCE CODE, MODIFICATIONS
+LUNGOJS AND THE GPL v3
+Version 1.0.3
 
-We provide You with source code so that You can create Modifications of the
-original Software, where Modification means: a) any addition to or deletion
-from the contents of a file included in the original Software or previous
-Modifications created by You, or b) any new file that contains any part of the
-original Software or previous Modifications. While You retain all rights to any
-original work authored by You as part of the Modifications, We continue to own
-all copyright and other intellectual property rights in the Software.
+-------------------------------------------------------------------------------
+What is the GPL v3?
+-------------------------------------------------------------------------------
+The GNU General Public License(GPL) is the most widely used free and open
+source software (FOSS) license in the world. The GPL was created and sponsored
+by the Free Software Foundation (FSF). Read the GPL v3 license
 
-3. DISTRIBUTION
+-------------------------------------------------------------------------------
+What are the advantages of GPL v3?
+-------------------------------------------------------------------------------
+The GPL is the most widely used open source license in the world. Linux, MySQL,
+Wordpress and other major open source projects are all licensed under the GPL.
+The GPL is designed to ensure that you have the freedom to modify the software
+you use as you see fit. In return, you are asked to ensure that any users of
+software that you have built using GPL software receive the same freedom to
+modify your software in turn. Licensing under GPLv3 ensures the highest amount
+of availability in the open source community.
 
-You may distribute the Software in any applications, frameworks, or elements
-(collectively referred to as “Applications”) that you develop using the Software
-in accordance with this License Agreement, provided that such distribution does
-not violate the restrictions set forth in section 4 of this agreement. You must
-not remove, obscure or interfere with any copyright, acknowledgment,
-attribution, trademark, warning or disclaimer statement affixed to, incorporated
-in or otherwise applied in connection with the Software.
+-------------------------------------------------------------------------------
+What LungoJS products are available under the GPL v3?
+-------------------------------------------------------------------------------
+LungoJS Core, LungoJS Sugars and LungoJS Themes are all available under GPL v3.
 
-You are required to ensure that the Software is not reused by or with any
-applications other than those with which You distribute it as permitted herein.
-For example, if You install the Software on a customer’s server, that customer
-is not permitted to use the Software independently of Your application, and
-must be informed as such.
+===============================================================================
+===============================================================================
 
-You will not owe Us any royalties for Your distribution of the Software in
-accordance with this License Agreement.
+The GPL v3
 
-4. PROHIBITED USES
+-------------------------------------------------------------------------------
+What am I not allowed to do with code that is released under the GPL v3?
+-------------------------------------------------------------------------------
+You can download the code base, install it, and modify it as needed. If you
+modify the code, we encourage you to contribute it back to the LungoJS community
+by contributing your modifications under GPL v3 in the LungoJS forums. If you
+convey your modifications (under the GPL definition of conveyance) then you
+must make your modifications available in source form to the users to whom you
+distributed your software. More information about what the GPL license allows
+is available in the GPL license itself, the Quick Guide to the GPLv3 and the
+official GPL FAQ.
 
-You may not, without Our prior written consent, redistribute the Software or
-Modifications other than by including the Software or a portion thereof within
-Your own product, which must have substantially different functionality than
-the Software or Modifications and must not allow any third party to use the
-Software or Modifications, or any portions thereof, for software development
-or application development purposes. You are explicitly not allowed to
-redistribute the Software or Modifications as part of any product that can be
-described as a development toolkit or library or is intended for use by
-software developers or application developers and not end-users. You are not
-allowed to redistribute any part of the Software documentation.
+-------------------------------------------------------------------------------
+What is a modification?
+-------------------------------------------------------------------------------
+The simple rule to follow is if you modify any functionality or file in a Lungo
+product for a purpose other than configuration, then you have created a
+modification. All modifications of a GPLv3 licensed products are subject to the
+GPL v3 license. Additional information is available in the official GPL FAQ.
 
-You may not: a) use any part of the Software or Modifications or Your
-knowledge of the Software (or any information that You learn as a result of
-Your use of the Software) to create a product with the same or substantially
-the same functionality as the Software; or b) change or remove the copyright
-notice from any of the files included in the Software or Modifications.
+The following are examples of modifications:
+    Modify JavaScript, LESS or CSS source file
+    Extend LungoJS class or override any LungoJS functions or methods
+    Modifying an LungoJS API
 
-UNDER NO CIRCUMSTANCES MAY YOU USE THE SOFTWARE AS THE BASIS FOR OR IN
-CONNECTION WITH A PRODUCT THAT CONTAINS THE SAME,OR SUBSTANTIALLY THE SAME
-FUNCTIONALITY AS THE SOFTWARE.
+The following are not modifications:
+    Creating a new theme in a new CSS file
+    Creating or applying a locale/language pack
+    Overriding property defaults on class prototypes (configuration)
 
-The Open Source version of the Software (“GPL Version”) is licensed under the
-terms of the GNU General Public License versions 3.0 (“GPL”) and not under this
-Agreement. If You, or another third party, has, at any time, developed all (or
-any portions of) the Application(s) using the GPL Version, You may not combine
-such development work with the Software and must license such Application(s)
-(or any portions derived there from) under the terms of the GNU General Public
-License version 3, a copy of which is located at:
-http://www.gnu.org/copyleft/gpl.html.
+-------------------------------------------------------------------------------
+What licenses are compatible with GPL v3?
+-------------------------------------------------------------------------------
+A list of compatible licenses is available on gnu.org. This compatiblity list
+includes licenses that can be included in a GPL’ed work. The diagram below
+shows the directions of compatibility for some common licenses:
 
-5. TERMINATION
 
-This License Agreement and Your right to use the Software and Modifications
-will terminate immediately without notice if You fail to comply with the terms
-and conditions of this License Agreement. Upon termination, You agree to
-immediately cease using and destroy the Software or Modifications, including
-all accompanying documents. The provisions of sections 4, 5, 6, 7, 8, 9, 10 and
-12 will survive any termination of this License Agreement.
+-------------------------------------------------------------------------------
+Where can I find additional information about the GPL v3?
+-------------------------------------------------------------------------------
+The best sources are the GPL license itself, the Quick Guide to the GPLv3” and
+the official GPL FAQ.
 
-6. DISCLAIMER OF WARRANTIES
+-------------------------------------------------------------------------------
+What is the LungoJS interpretation of “conveyance” under the GPL v3?
+-------------------------------------------------------------------------------
+The short answer to this question is that when a non-employee of the
+organization that created the modifications to GPL v3, uses those modifications,
+then the program has been “conveyed”.
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WE AND OUR SUPPLIERS
-DISCLAIM ALL WARRANTIES AND CONDITIONS, EITHER EXPRESS OR IMPLIED, INCLUDING,
-BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-PARTICULAR PURPOSE, AND TITLE AND NON-INFRINGEMENT, WITH REGARD TO THE
-SOFTWARE. WE DO NOT GUARANTEE THAT THE OPERATION OF THE SOFTWARE WILL
-BE UNINTERRUPTED OR ERROR-FREE, AND YOU ACKNOWLEDGE THAT IT IS NOT
-TECHNICALLY PRACTICABLE FOR US TO DO SO.
+The long answer to this question is unfortunately, quite complicated,due to the
+complex wording of the GPL, the ambiguity of certain terms in copyright law and
+the nature of JavaScript programs. Here is our interpretation of what
+constitutes “conveyance” under the languages of the GPL v3.
 
-7. LIMITATION OF LIABILITIES
+Derived Works
+When a software program calls code that is licensed under the GPLv3, then that
+software program becomes a derived work of the GPL’d code and hence subject to
+the GPLv3 copyright license. If the software program is then “conveyed” to a
+user, the GPLv3 requires that the source code to that software program also be
+“conveyed.” “Conveyance” for a web application is triggered when a user outside
+the legal entity that created the application uses the application.
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WE OR
-OUR SUPPLIERS BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL
-DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS
-PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION OR ANY OTHER
-PECUNIARY LAW) ARISING OUT OF THE USE OF OR INABILITY TO USE THE SOFTWARE, EVEN
-IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ANY CASE, OUR
-ENTIRE LIABILITY UNDER ANY PROVISION OF THIS LICENSE AGREEMENT SHALL BE LIMITED
-TO THE AMOUNT ACTUALLY PAID BY YOU FOR THE SOFTWARE.
+The Definition of a Software Program
+Since the boundaries defining an individual software program can be hazy in
+modern app architectures, we follow the rule “when determining what constitutes
+the software program, follow the main principle of the GPL v3, which states
+that users should be free to modify the entire software program that
+incorporates GPL’d code for their own purposes”. For software programs built
+using today’s web architectures that use remote network-based service
+interfaces for internal communication instead of traditional static or dynamic
+linking, the relevant software program is the totality of the application code,
+including code executed on the server and code executed on the client, provided
+that the server code is integral to the application. We exclude from the
+definition of “software program”, software incorporated into the software
+program via a service interface that provides functionality ancillary to the
+main purpose of the program, functionality un-related to application logic, or
+functionality that is used by a number of separate applications other than the
+application in question. With this caveat, please remember that the use of any
+specific technical approach in and of itself does not guarantee that
+“derivation” will not be held to have occurred.
 
-8. VERIFICATION
+Example
+For example: let’s take a mortgage processing software program. Let’s say that
+the application has a front-end (that generates web pages linked to LungoJS
+JavaScript) that communicates over JSON/HTTP with a backend service. This
+backend service contains approval and validation logic for this application
+alone. Even if only the front-end uses LungoJS code, you should consider that
+the combination of front and back ends constitutes the application, and the
+source code for both back and front end would need to be provided to the
+application’s end users under GPLv3 if the application is used by an end-user
+who is not part of the same legal entity that holds the GPLv3 license to the
+LungoJS code.
 
-We or a certified auditor acting on Our behalf, may, upon its reasonable
-request and at its expense, audit You with respect to the use of the Software.
-Such audit may be conducted by mail, electronic means or through an in-person
-visit to Your place of business. Any such in-person audit shall be conducted
-during regular business hours at Your facilities and shall not unreasonably
-interfere with Your business activities. We shall not remove, copy, or
-redistribute any electronic material during the course of an audit. If an audit
-reveals that You are using the Software in a way that is in material violation
-of the terms of the Agreement, then You shall pay Our reasonable costs of
-conducting the audit. In the case of a material violation, You agree to pay Us
-any amounts owing that are attributable to the unauthorized use. In the
-alternative, We reserve the right, at Our sole option, to terminate the
-licenses for the Software.
+Next, let’s assume that the mortgage application web-pages also offer
+functionality that allows users to search current interest rates, and file a
+customer support ticket (functionality ancillary to the purpose of the
+application) and those functions are provided by separate server-side services.
+We do not consider those programs to compose part of the software program for
+the purposes of the GPLv3. For example, in all cases we would not consider a
+database that provides data interfaces to the application over standard
+interfaces to be part of the application.
 
-9. THIRD PARTY SOFTWARE
+Reasonableness Test
+As mentioned above, in many cases, there can be ambiguity about the exact
+boundaries of a software program. In these cases, we apply a “reasonableness”
+test to establish application boundaries. Following the principles of the GPL
+v3, we should ask “what would a user who is conveyed a copy of the application
+reasonably expect to receive in source code form in order to modify the
+application for his or her needs.”
 
-Examples included in Software may provide links to third party libraries or
-code (collectively “Third Party Software”) to implement various functions.
-Third Party Software does not comprise part of the Software. In some cases,
-access to Third Party Software may be included along with the Software delivery
-as a convenience for demonstration purposes. Such source code and libraries may
-be included in the “…/examples” source tree delivered with the Software and do
-not comprise the Software. Licensee acknowledges (1) that some part of Third
-Party Software may require additional licensing of copyright and patents from
-the owners of such, and (2) that distribution of any of the Software
-referencing or including any portion of a Third Party Software may require
-appropriate licensing from such third parties.
+Certain Technical Strategies
+Our interpretation is that the use of technical strategies that store and
+transmit LungoJS code as data (for example by storing JavaScript libraries as
+data-files within a database which are then transmitted as data files to the
+browser and only then converted into a program through the use of eval()) does
+not change the above definition of software program under the GPLv3 definitions.
 
-10. PAYMENT AND TAXES
+Definition of License Holder
+Following GPL v3 guidelines, we consider the holder of the GPL v3 license to be
+the legal entity that owns the rights to the work product of the developer who
+writes the software code that calls LungoJS functions. For example, a developer
+that downloads LungoJS and uses it to build an application that is copied to
+multiple offices within their company and serves web pages to employees across
+the country, has not triggered “conveyance” of the program since the containing
+corporate entity is the licensee, not the individual developer. However if a
+contractor, agent, employee of another subsidiary or other non-employee uses
+that software, then conveyance has occurred.
 
-If credit has been extended to You by Us, all payments under this Agreement are
-due within thirty (30) days of the date We mail an invoice to You. If We have
-not extended credit to You, You shall be required to make payment concurrent
-with the delivery of the Software by Us. All amounts payable are gross amounts
-but exclusive of any value added tax, use tax, sales tax or similar tax. You
-shall be entitled to withhold from payments any applicable withholding taxes
-and comply with all applicable tax and employment legislation. Each party shall
-pay all taxes (including, but not limited to, taxes based upon its income) or
-levies imposed on it under applicable laws, regulations and tax treaties as a
-result of this Agreement and any payments made hereunder (including those
-required to be withheld or deducted from payments). Each party shall furnish
-evidence of such paid taxes as is sufficient to enable the other party to
-obtain any credits available to it, including original withholding tax
-certificates.
+In addition, if a copy of the software program is provided by the developer to
+a person in another legal entity, then we consider that “conveyance”, as
+defined by the GPLv3, has occurred, and that person must be provided with a
+copy of the source for the software program. Further conveyance by the
+recipient would only be permitted under the GPL v3.
 
-11. SUPPORT AND UPDATES
+Conveyance vs. Propagation
+Since LungoJS are software programs that can run within the browser while
+disconnected from the network or the rest of a server program; when a LungoJS
+based interface is embedded in a web-page served to a user who does not have an
+employee relationship with the original licensed entity, we consider that
+“conveyance” rather than simple web page “propagation” as defined by the GPL v3
+has occurred, and the source code of the whole application must be provided to
+the user.  Users who are not entitled to use the software under the original
+license grant to the recipient legal entity (whose developer downloaded and
+wrote to the LungoJS libraries) include contractors, agents, and distributors
+of the original legal entity, as well as employees of related corporate
+subsidiaries or parents. In these cases, a user who is a contractor must be
+provided with a copy of the source code of the application with further
+conveyance by the contractor permitted only under the GPL v3. This also applies
+to web development firms who create software programs under contract for a
+client.
 
-You are not entitled to any support for the Software under this Agreement.
-All support must be purchased separately and will be subject to the terms and
-conditions contained in the Tapquo support agreement. You are entitled to
-receive minor version updates to the Software (i.e. versions identified as
-follows (X.Y, X.Y+1). You are not entitled to receive major version updates
-(i.e. X.Y, X+1.Y) or bug fix updates to the Software (X.Y.Z, X.Y.Z+1). Major
-version updates and bug fix updates to the Software are available separately
-for purchase.
+In the case of the GPLv3 licensed entities, our interpretation is that the
+distribution of abstraction/intermediary libraries to contractors or users
+outside the licensed legal entity for development purposes also falls under
+the definition of “conveyance.”
 
-12 MISCELLANEOUS
-
-The license granted herein applies only to the version of the Software
-available when purchased in connection with the terms of this Agreement. Any
-previous or subsequent license granted to You for use of the Software shall be
-governed by the terms and conditions of the agreement entered in connection
-with purchase of that version of the Software. You agree that you will comply
-with all applicable laws and regulations with respect to the Software,
-including without limitation all export and re-export control laws and
-regulations.
-
-While redistributing the Software or Modifications thereof, You may choose to
-offer acceptance of support, warranty, indemnity, or other liability
-obligations and/or rights consistent with this Agreement. However, in accepting
-such obligations, You may act only on Your own behalf and on Your sole
-responsibility, not on our behalf. You agree to indemnify, defend, and hold Us
-harmless from and against any liability incurred by, or claims asserted
-against, Us (i) by reason of Your accepting any such support, warranty,
-indemnity or additional liability; or (ii) arising out of the use, reproduction
-or distribution of Your Application, except to the extent such claim is solely
-based on the inclusion of the Software therein.
-
-You agree to be identified as a customer of ours and You agree that We may
-refer to You by name, trade name and trademark, if applicable, and may briefly
-describe Your business in our marketing materials and web site.
-
-You may not assign this License Agreement without Our prior written consent,
-which will not be unreasonably withheld. This License Agreement will inure to
-the benefit of Our successors and assigns.
-
-You acknowledge that this License Agreement is complete and is the exclusive
-representation of our agreement. No oral or written information given by Us or
-on our behalf shall create a warranty or collateral contract, or in any way
-increase the scope of this License Agreement in any way, and You may not rely
-on any such oral or written information. No term or condition contained in any
-purchase order shall apply unless expressly accepted by Us in writing,
-
-There are no implied licenses or other implied rights granted under this
-Agreement, and all rights, save for those expressly granted hereunder, shall
-remain with Us and our licensors. In addition, no licenses or immunities are
-granted to the combination of the Software and/or Modifications, as applicable,
-with any other software or hardware not delivered by Us to You under this
-Agreement.
-
-If any provision in this License Agreement shall be determined to be invalid,
-such provision shall be deemed omitted; the remainder of this License Agreement
-shall continue in full force and effect. If any remedy provided is determined
-to have failed for its essential purpose, all limitations of liability and
-exclusions of damages set forth in this Agreement shall remain in effect.
-
-This License Agreement may be modified only by a written instrument signed by
-an authorized representative of each party.
-
-This Agreement is governed by the law of the State of California, United
-States (notwithstanding conflicts of laws provisions), and all parties
-irrevocably submit to the jurisdiction of the courts of the State of California
-and further agree to commence any litigation which may arise hereunder in the
-state or federal courts located in the judicial district of Santa Clara County,
-California, US.
-
-If the Software or any related documentation is licensed to the U.S. government
-or any agency thereof, it will be deemed to be “commercial computer software”
-or “commercial computer software documentation,” pursuant to SFAR Section
-227.7202 and FAR Section 12.212. Any use of the Software or related
-documentation by the U.S. government will be governed solely by the terms of
-this License Agreement.
+-------------------------------------------------------------------------------
+GPL v3 Is The Official License
+-------------------------------------------------------------------------------
+While this is our best attempt to characterize our interpretation of the GPL v3,
+relatively little of this interpretation has been confirmed in law due to the
+limited case law surrounding GPL v3. In all cases, the GPL v3 text itself
+constitutes the actual legal agreement between LungoJS and our GPL v3 licensees.
+This FAQ does not constitute legal advice, but reflects our position on the
+responsibilities of users who use our software licensed under the GPLv3. We do
+not provide legal advice to current or potential users of our GPLv3 licensed
+programs, so we ask you to consult your own legal counsel if you have further
+questions.
