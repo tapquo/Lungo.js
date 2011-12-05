@@ -35,11 +35,13 @@
 <body class="app">
     <section id="demo" class="_static">
         <header data-title="Tablet Demo">
-            <a href="#" data-target="aside" class="button onleft" data-icon="note"></a>
-            <a href="#settings" data-target="section" class="button onright" data-icon="config">&nbsp;Add</a>
+            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
+            <a href="#settings" data-target="section" class="button onright" data-icon="config"></a>
         </header>
 
         <aside>
+            <scroll id="main_scroll">
+                <div>
             <a href="#main" data-target="article" data-icon="note" data-title="Facebook">Facebook</a>
             <a href="#second" data-target="article" data-icon="twitter" data-title="Twitter">Twitter</a>
             <a href="#" data-icon="picture">Flickr</a>
@@ -47,6 +49,8 @@
             <a href="#" data-icon="user">Connect with facebook</a>
             <a href="#" data-icon="music">Download music</a>
             <a href="#" data-icon="key">Logout</a>
+                </div>
+            </scroll>
         </aside>
 
 		<article id="main" class="list">
@@ -75,9 +79,7 @@
 			</scroll>
         </article>
 
-        <article id="second">
-            second
-        </article>
+        <article id="second"></article>
     </section>
 
     <section id="settings">
