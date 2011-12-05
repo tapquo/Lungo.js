@@ -1,6 +1,6 @@
-/** 
+/**
  * Initialize the <articles> layout of a certain <section>
- * 
+ *
  * @namespace LUNGO.View
  * @class Article
  *
@@ -12,7 +12,7 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var SELECTORS = {
         ARTICLE: 'article',
-        NAVIGATION_ITEM: 'nav a'
+        NAVIGATION_ITEM: 'a'
     };
 
     var CSS_CLASSES = {
