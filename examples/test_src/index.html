@@ -48,7 +48,6 @@
 	<section id="demo" class="_static">
 		<header data-title="LungoJS Framework">
 			<nav class="onright">
-				<a href="#"><span class="counter">8</span></a>
 				<a href="#main" data-target="article" class="current" data-title="LungoJS Framework" data-icon="config"></a>
 				<a href="#author" data-target="article" data-title="Authors" data-icon="user"></a>
 			</nav>
@@ -85,26 +84,52 @@
 			</scroll>
         </article>
 
-		<article id="author">
-		    <div class="list" data-search="contrast">
-		        <ul>
-		            <li>
-		                <img src="assets/images/soyjavi.jpg" class="size48 framed">
-		                <strong>Javi Jiménez Villar</strong>
-		                <small>@soyjavi</small>
-		                </li>
-
-	                <li>
-		                <img src="assets/images/pasku.png" class="size48 rounded">
-		                <strong>Guillermo Pascual</strong>
-		                <small>@pasku1</small></li>
-		        </ul>
-		    </div>
+		<article id="author" class="list" >
+            <scroll id="people_scroll">
+    	        <ul>
+                    <li class="anchor" data-icon="key">Author</li>
+    	            <li>
+    	                <img src="assets/images/soyjavi.jpg" class="size48 ">
+    	                <strong>Javi Jiménez Villar</strong>
+    	                <small>@soyjavi</small>
+    	                </li>
+                    <li class="anchor" data-icon="key">CoreTeam</li>
+                    <li>
+    	                <img src="assets/images/pasku.jpg" class="size48 ">
+    	                <strong>Guillermo Pascual</strong>
+    	                <small>@pasku1</small></li>
+                    <li>
+                        <img src="assets/images/ikalbeniz.jpg" class="size48">
+                        <strong>Iker Perez Albeniz</strong>
+                        <small>@ikalneniz</small></li>
+                    <li class="anchor" data-icon="key">Contributors</li>
+                    <li>
+                        <img src="https://secure.gravatar.com/avatar/b374f3bd05b1db4a974585ba57661815?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" class="size48 ">
+                        <strong>Jorge Casar</strong>
+                        <small>jorgecasar</small></li>
+                    <li>
+                        <img src="https://secure.gravatar.com/avatar/3d4bf44cff9779242dd82d20a0b7d0c8?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" class="size48 ">
+                        <strong>Dave Winders</strong>
+                        <small>daithiw44</small></li>
+                    <li>
+                        <img src="https://secure.gravatar.com/avatar/884b5d1e91b826afc8c6b4fc3429dbd0?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" class="size48 ">
+                        <strong>GermanDZ</strong>
+                        <small>GermanDZ</small></li>
+                    <li>
+                        <img src="https://secure.gravatar.com/avatar/b41d652ca9b88e636516d907599dcc87?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" class="size48 ">
+                        <strong>Juan Gallego Galisteo</strong>
+                        <small>nickel</small></li>
+                    <li>
+                        <img src="https://secure.gravatar.com/avatar/a3257b495a2bc4ae15405c7880300848?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" class="size48 ">
+                        <strong>John McLear</strong>
+                        <small>johnyma22</small></li>
+    	        </ul>
+            <scroll>
 		</article>
     </section>
 
 	<section id="demo_header_footer">
-		<header data-title="Summary" data-back="home blue">
+		<header data-title="Summary" data-back="home">
             <nav class="onright">
                 <a href="#summary" data-target="article" class="current" data-title="Summary" data-icon="user"></a>
                 <a href="#messages" data-target="article" data-title="Message" data-icon="chat"><abbr>Messages</abbr></a>
@@ -130,7 +155,7 @@
 	</section>
 
 	<section id="demo_events">
-	    <header data-title="Events demo" data-back="home blue"></header>
+	    <header data-title="Events demo" data-back="home"></header>
 	    <article class="list">
 	        <li class="info contrast" data-icon="user">
                 <strong>Test events</strong>
@@ -150,7 +175,7 @@
 	</section>
 
 	<section id="demo_scroll">
-		<header data-title="Scroll Demo" data-back="home blue"></header>
+		<header data-title="Scroll Demo" data-back="home"></header>
 		<article>
 			<h1>Scroll: vertical</h1>
 			<scroll id="scroll_vertical" class="vertical"></scroll>
@@ -229,7 +254,7 @@
 	</section>
 
 	<section id="demo_buttons">
-		<header data-back="home blue" data-title="Buttons">
+		<header data-back="home" data-title="Buttons">
 		</header>
 		<article>
 			<scroll id="scroll_buttons">
@@ -260,7 +285,7 @@
 	</section>
 
 	<section id="demo_forms">
-		<header data-back="home blue"></header>
+		<header data-back="home"></header>
 		<article>
 		    <scroll id="scroll_forms">
 			<form>
