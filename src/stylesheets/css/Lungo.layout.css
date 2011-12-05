@@ -12,7 +12,7 @@ header{top:0px;}
 footer{bottom:0px;}
 header .title,footer .title{float:left;margin:0 8px;font-size:1.3em;}
 header .title{position:absolute;left:0px;width:100%;margin:0px auto;text-align:center;z-index:-1;}
-section header a.button,section footer a.button{margin:2px 2px auto;}
+section header a.button,section footer a.button{margin:4px 3px auto;}
 section header a.button.icon,section footer a.button.icon{width:17px;font-size:1.5em;font-weight:normal;}
 nav{height:inherit;text-align:center;font-weight:normal;}
 nav a{display:inline-block;padding:0 6px;height:inherit;float:left;font-size:2.0em;}
