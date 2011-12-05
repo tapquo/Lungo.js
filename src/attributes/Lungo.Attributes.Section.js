@@ -1,4 +1,4 @@
-/**
+    /**
  * Make an analysis of <elements> in a <section>.
  *
  * @namespace LUNGO.Attributes
@@ -18,10 +18,5 @@ LUNGO.Attributes.Section = {
          name: 'footer',
          reference: 'height',
          bind: 'bottom'
-     },
-     aside: {
-         name: 'aside',
-         reference: 'width',
-         bind: 'left'
      }
 };
