@@ -136,6 +136,10 @@ nav a.current {
 /* @end */
 
 /* @group <aside> */
+[data-target="aside"]{
+	display: none !important;
+}
+
 aside {
 	position: absolute;
 	top: 0px; 
@@ -171,6 +175,10 @@ aside a .icon {
 @media handheld, only screen and (max-width: 768px) {
 	article {
     	-webkit-transition: left 0.3s ease-in-out;
+	}
+	
+	[data-target="aside"]{
+		display: inline !important;
 	}
 	
 	aside {
