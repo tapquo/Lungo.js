@@ -181,16 +181,4 @@ input:focus, textarea:focus, select:focus {
   background-clip: padding-box;
 }
 /* @end */
-/* @group .counter (BETA) */
-.counter {
-  background: #ee2c23;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  color: #fff;
-}
-/* @end */
 /* @end */
