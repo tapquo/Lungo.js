@@ -32,6 +32,20 @@ LUNGO.Service = (function(lng, $, undefined) {
 
         _ajax('GET', url, null, callback);
     };
+    
+    /**
+     * Load data from a remote server using a JSONP request.
+     *
+     * @method getJSONP
+     *
+     * @param  {string} Containing the URL to which the request is sent
+     * @param  {object} A map or string that is sent to the server with the request
+     * @param  {Function} [OPTIONAL] Callback function after the request
+     */
+    var getJSONP = function (url, data, callback) {
+        data['callback'] = "?";
+        get(url, data, callback);
+    };
 
     /**
      * Load data from the server using a HTTP POST request.
@@ -67,7 +81,8 @@ LUNGO.Service = (function(lng, $, undefined) {
 
     return {
         get: get,
-        post: post
+        post: post,
+        getJSONP: getJSONP
     };
 
 })(LUNGO, Zepto);
