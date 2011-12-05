@@ -6,9 +6,9 @@
 - Fixed error in method List.create() when result is a object
 - Aside element; autohide in mobile devices.
 - New data-target: aside
-- New theme
-- New default button color
-- Center Title in <header>
+- New theme & default button color
+- Responsive Layout: Mobile & Tablet Support
+- Title centered in <header>
 - New LungoJS default application icon
 
 ## Changes in Version 1.0.2
