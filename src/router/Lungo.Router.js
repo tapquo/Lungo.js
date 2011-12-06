@@ -44,6 +44,8 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <article> Id
      */
     var article = function(section_id, article_id) {
+        var section_id = (section_id.indexOf('#')) ? '#' + section_id : section_id;
+        var article_id = (article_id.indexOf('#')) ? '#' + article_id : article_id;
         var target = section_id + ' article' + article_id;
 
         if (_existsTarget(target)) {
