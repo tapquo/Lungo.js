@@ -1107,6 +1107,48 @@ LUNGO.View.Scroll = (function(lng, undefined) {
 })(LUNGO);
 
 /**
+ * Initialize the <articles> layout of a certain <section>
+ *
+ * @namespace LUNGO.View
+ * @class Article
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
+ */
+
+LUNGO.View.Aside = (function(lng, undefined) {
+
+    var toggle = function(section_id) {
+        if (_isVisible(section_id)) {
+            _hide(section_id);
+        } else {
+            _show(section_id);
+        }
+    };
+
+    var _show = function(section_id) {
+        lng.Dom.query(section_id + ' aside').addClass('show');
+
+        var articles = lng.Dom.query(section_id + ' article');
+        articles.toggleClass('aside');
+    };
+
+    var _hide = function(section_id) {
+        var articles = lng.Dom.query(section_id + ' article');
+        articles.toggleClass('aside');
+    };
+
+    var _isVisible = function(section_id) {
+        var isVisible = lng.Dom.query(section_id + ' aside').hasClass('show');
+
+        return isVisible;
+    };
+
+    return {
+        toggle: toggle
+    };
+
+})(LUNGO);/**
  * LungoJS Dom Handler
  *
  * @namespace LUNGO
@@ -1134,9 +1176,7 @@ LUNGO.Dom = (function(lng, $, undefined) {
         query: query
     };
 
-})(LUNGO, Zepto);
-
-/**
+})(LUNGO, Zepto);/**
  * Lungo DOM UI events Manager
  *
  * @namespace LUNGO.Dom
@@ -1334,9 +1374,7 @@ LUNGO.Attributes.Data = {
          selector: 'header, footer',
          html: '<a href="#back" data-target="section" class="back onleft button icon {{value}}"></a>'
      }
-};
-
-/**
+};    /**
  * Make an analysis of <elements> in a <section>.
  *
  * @namespace LUNGO.Attributes
@@ -1357,9 +1395,7 @@ LUNGO.Attributes.Section = {
          reference: 'height',
          bind: 'bottom'
      }
-};
-
-/**
+};/**
  * Temporary cache system
  *
  * @namespace LUNGO.Data
@@ -1441,9 +1477,7 @@ LUNGO.Data.Cache = (function(lng, undefined) {
         exists: exists
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Wrapper for using WebSql (HTML5 feature)
  *
  * @namespace LUNGO.Data
@@ -1664,9 +1698,7 @@ LUNGO.Data.Storage = (function(lng, undefined) {
 
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Boot for a new LungoJS Application instance
  *
  * @namespace LUNGO
@@ -1688,9 +1720,7 @@ LUNGO.Boot = (function(lng, undefined) {
         lng.Boot.Article.start();
     };
 
-})(LUNGO);
-
-/**
+})(LUNGO);/**
  * Initialize the Layout of LungoJS (if it's a mobile environment)
  *
  * @namespace LUNGO.Boot
