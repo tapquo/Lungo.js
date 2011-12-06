@@ -22,7 +22,7 @@ nav a.current{-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s e
 aside{position:absolute;top:0px;bottom:0px;height:auto;width:0px;}
 aside.show{width:256px;}
 header~aside{padding-top:40px;}
-header~aside{padding-bottom:40px;}
+footer~aside{padding-bottom:40px;}
 aside~article{-webkit-transition:left 0.3s ease-in-out;left:0px;}
 aside a{display:block;width:244px;height:40px;padding:0 6px;font-size:1.1em;font-weight:bold;line-height:40px;}
 aside a .icon{width:28px;height:28px;float:left;margin:8px 6px 0 0;font-size:1.9em;line-height:1.0em;text-align:center;}

@@ -1,12 +1,12 @@
-/** 
+/**
  * Stylesheet
- * 
+ *
  * @namespace LUNGO
  * @class Layout
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
- 
+
 @import "mixins.less";
 
 /* @group <section> */
@@ -24,16 +24,16 @@ section{
 	.transform(translate3d(100%, 0, 0));
 }
 
-section:first-child  { 
+section:first-child  {
 	z-index: 1;
 	.transform(translate3d(0%, 0, 0));
 }
-	
-section.hide  { 
+
+section.hide  {
 	z-index: 0;
 	.transform(translate3d(-100%, 0, 0));
 }
-section.show  { 
+section.show  {
 	 z-index: 1;
 	.transform(translate3d(0%, 0, 0));
 }
@@ -67,18 +67,18 @@ header, footer  {
 	z-index: 2;
 	line-height: 40px;
 }
-	
-header  { 
+
+header  {
 	top: 0px
 }
-	
-footer  { 
+
+footer  {
 	bottom:0px;
 }
-	
+
 header .title, footer .title  {
-	float: left; 
-	margin: 0 8px; 
+	float: left;
+	margin: 0 8px;
 	font-size: 1.3em;
 }
 
@@ -88,7 +88,7 @@ header .title {
 	width: 100%;
 	margin:0px auto;
 	text-align: center;
-	z-index: -1;	
+	z-index: -1;
 }
 
 section header a.button, section footer a.button  {
@@ -112,7 +112,7 @@ nav  {
 nav a  {
 	display: inline-block;
 	padding: 0 6px;
-	height: inherit;	
+	height: inherit;
 	float: left;
 	font-size: 2.0em;
 }
@@ -126,10 +126,10 @@ nav a abbr {
 	font-weight: bold;
 }
 
-nav a.current abbr { 
+nav a.current abbr {
 	display: inline;
 }
-	
+
 nav a.current {
 	.transition(all 0.3s ease-in-out);
 }
@@ -138,23 +138,23 @@ nav a.current {
 /* @group <aside> */
 aside {
 	position: absolute;
-	top: 0px; 
+	top: 0px;
 	bottom: 0px;
 	height: auto;
-	width: 0px;	
+	width: 0px;
 }
 	aside.show {
 		width: 256px;
 	}
-	
+
 header ~ aside {
 	padding-top: 40px;
 }
 
-header ~ aside {
+footer ~ aside {
 	padding-bottom: 40px;
 }
-	
+
 aside ~ article{
 	-webkit-transition: left 0.3s ease-in-out;
 	left: 0px;
@@ -165,7 +165,7 @@ aside a{
 	width: 244px;
 	height: 40px;
 	padding: 0 6px;
-	
+
 	font-size: 1.1em;
 	font-weight: bold;
 	line-height: 40px;
@@ -176,7 +176,7 @@ aside a{
 		height: 28px;
 		float: left;
 		margin: 8px 6px 0 0;
-	    
+
 	    font-size: 1.9em;
 	    line-height: 1.0em;
 	    text-align: center;
@@ -186,11 +186,11 @@ aside a{
 	[data-target="aside"] {
 		display: none !important;
 	}
-	
+
 	aside {
 		width: 256px;
 	}
-	
+
 	aside ~ article{
     	left: 256px;
 	}
@@ -199,19 +199,19 @@ aside a{
 
 /* @group <article> */
 article {
-	position: absolute; 
+	position: absolute;
 	width: 100%;
 	height: auto;
-	top: 0px; 
+	top: 0px;
 	bottom: 0px;
 	display: block;
 	z-index: 0;
 	opacity: 0;
 }
 
-article.current { 
+article.current {
 	z-index: 1;
-	opacity: 1; 
+	opacity: 1;
 }
 
 .toolbar{
