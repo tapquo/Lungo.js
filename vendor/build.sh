@@ -43,7 +43,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     #View
     DIR=$LUNGO_SOURCES"view/"$LUNGO_NAMESPACE"View."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"view/"
-    FILES=(Article.js Resize.js Template.js Template.Binding.js Template.List.js Scroll.js)
+    FILES=(Article.js Resize.js Template.js Template.Binding.js Template.List.js Scroll.js Aside.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -115,18 +115,20 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     for file in "${FILES[@]}"
     do
         echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
-        #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
 
-        java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
-        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
+        #Compressing via YUI
+        #java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
+        #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
+
+        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
     FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
 	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.$MINIFIED.css
 
-    for file in "${FILES[@]}"
-    do
-        rm $DIR$LUNGO_NAMESPACE$file".min.css"
-    done
+    #for file in "${FILES[@]}"
+    #do
+    #    rm $DIR$LUNGO_NAMESPACE$file".min.css"
+    #done
 
 	DIR=$LUNGO_SOURCES"stylesheets/css/"
 	FILES=(default.css)
