@@ -1,6 +1,6 @@
-/** 
+/**
  * Stylesheet
- * 
+ *
  * @namespace LUNGO.Theme
  * @class Default
  *
@@ -8,6 +8,12 @@
  */
 
 @import "mixins.less";
+/* Mixin */
+@base: #019d5e;
+@lighter: lighten(spin(@base, 10), 20%);
+@light: lighten(spin(@base, 5), 10%);
+@dark: darken(spin(@base, -5), 10%);
+@darker: darken(spin(@base, -10), 20%);
 
 /* @group layout */
 .app {
@@ -18,28 +24,28 @@
 article {
 	background: #fff;
 }
-	
+
 /* @group <header> & <footer> */
 header {
-	background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #006b41));
-	
+	background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, @base), color-stop(1, @dark));
+
 	.border-radius(6px, 6px, 0, 0);
-	-webkit-box-shadow: 
-		inset 0px 1px 0px rgba(255,255,255,0.4), 
+	-webkit-box-shadow:
+		inset 0px 1px 0px rgba(255,255,255,0.4),
 		inset 0px -1px rgba(0,0,0,0.5)
 }
-	
+
 footer {
 	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d));
-	
-	-webkit-box-shadow: 
-		inset 0px 1px rgba(0,0,0,0.5), 
+
+	-webkit-box-shadow:
+		inset 0px 1px rgba(0,0,0,0.5),
 		0px -1px 2px rgba(0,0,0,0.4);
 }
 
 .title {
 	color: #fff;
-	text-shadow: rgba(0,0,0,0.5) 0 -1px 0px; 
+	text-shadow: rgba(0,0,0,0.5) 0 -1px 0px;
 }
 /* @end */
 
@@ -48,7 +54,7 @@ nav a {
 	color: rgba(0,0,0,0.5);
 	text-shadow: rgba(255,255,255,0.35) 0 1px 1px;
 }
-	
+
 header:not(.toolbar) nav a, footer:not(.toolbar) nav a {
 	line-height: 38px;
 }
@@ -61,7 +67,7 @@ nav a.current {
 .toolbar a.current{
 	background: rgba(255,255,255,0.15);
 }
-	
+
 /* @end */
 
 /* @group <aside> */
@@ -97,35 +103,35 @@ aside a .icon {
 	border-bottom: 1px inset #c3c4c6;
 	color: #333;
 }
-	
+
 .list li.toolbar {
 	border-bottom-color: rgba(0,0,0,0.2);
 }
 
-.list li:not(.toolbar) a { 
+.list li:not(.toolbar) a {
 	color: #333;
-	text-shadow: #fff 0px 1px 1px; 
+	text-shadow: #fff 0px 1px 1px;
 	-webkit-tap-highlight-color: #242525;
 }
 
 .list strong {
 	color: #2343be;
 }
-	
+
 .list small {
 	opacity: 0.75;
 }
-	
+
 .list .bubble {
 	border: 1px solid rgba(0,0,0,0.15);
 	.border-radius(2px);
-	color: #fff; 
+	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
-}	
+}
 
 .list .button {
 	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.3); 
+	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
 }
 
 .list .arrow:before {
@@ -142,26 +148,26 @@ aside a .icon {
 /* @group .anchor */
 .list li.search {
 	border: none;
-	-webkit-box-shadow: 
-		inset 0px 1px 0px rgba(255,255,255,0.1), 
+	-webkit-box-shadow:
+		inset 0px 1px 0px rgba(255,255,255,0.1),
 		inset 0px -1px 0px rgba(0,0,0,0.25);
 	}
 /* @end */
 
 /* @group .info */
-.list li.info {	
+.list li.info {
 	border: none;
-	-webkit-box-shadow: 
-		inset 0px 1px 0px rgba(255,255,255,0.1), 
+	-webkit-box-shadow:
+		inset 0px 1px 0px rgba(255,255,255,0.1),
 		inset 0px -1px 0px rgba(0,0,0,0.25);
 	background: #cbcbcb;
 }
-	
-.list .info strong{	
+
+.list .info strong{
 	color: #333;
 }
 
-.list .info.contrast strong {	
+.list .info.contrast strong {
 	color: #fff;
 }
 /* @end */
@@ -180,26 +186,26 @@ aside a .icon {
 /* @group widgets */
 
 /* @group <section>.splash */
-.splash article { 
+.splash article {
 	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d)) !important;
-	color: #fff; 
+	color: #fff;
 	text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
 }
 /* @end */
 
 /* @group <inputs> */
 input, textarea, select {
-	border: 1px solid #ccc;	
+	border: 1px solid #ccc;
 	.border-radius(2px);
 	background: #fff -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddd), color-stop(0.15, #fff));
 }
-	
-input:focus, textarea:focus, select:focus { 
+
+input:focus, textarea:focus, select:focus {
 	border: 1px solid #058cf5;
 	.box-shadow(0 0 4px 1px #058cf5);
 	background: #e8fefe;
 }
-	
+
 .select:after {
 	background: #ccc;
 	color: white;

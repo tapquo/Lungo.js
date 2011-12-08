@@ -1,11 +1,12 @@
-/** 
+/**
  * Stylesheet
- * 
+ *
  * @namespace LUNGO.Theme
  * @class Default
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
+/* Mixin */
 /* @group layout */
 .app {
   font-size: 13px;
@@ -16,7 +17,7 @@ article {
 }
 /* @group <header> & <footer> */
 header {
-  background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #006b41));
+  background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #016a37));
   -webkit-border-radius: 6px 6px 0 0;
   -moz-border-radius: 6px 6px 0 0;
   border-radius: 6px 6px 0 0;
