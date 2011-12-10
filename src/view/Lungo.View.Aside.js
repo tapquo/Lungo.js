@@ -19,13 +19,15 @@ LUNGO.View.Aside = (function(lng, undefined) {
     };
 
     var _show = function(section_id) {
-        lng.Dom.query(section_id + ' aside').addClass('show');
+        lng.Dom.query(section_id + ' aside').toggleClass('show');
 
         var articles = lng.Dom.query(section_id + ' article');
         articles.toggleClass('aside');
     };
 
     var _hide = function(section_id) {
+        lng.Dom.query(section_id + ' aside').toggleClass('show');
+        
         var articles = lng.Dom.query(section_id + ' article');
         articles.toggleClass('aside');
     };
