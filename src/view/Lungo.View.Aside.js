@@ -2,7 +2,7 @@
  * Initialize the <articles> layout of a certain <section>
  *
  * @namespace LUNGO.View
- * @class Article
+ * @class Aside
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
