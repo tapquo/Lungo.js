@@ -285,8 +285,13 @@
 	</section>
 
 	<section id="demo_forms">
-		<header data-back="home"></header>
-		<article>
+		<header data-back="home" data-title="Form Plain">
+            <nav class="onright">
+                <a href="#form-plain" data-target="article" class="current" data-icon="picture" data-title="Form Plain"></a>
+                <a href="#form-margin" data-target="article" data-icon="wifi" data-title="Form Margin"></a>
+            </nav>
+        </header>
+		<article id="form-plain">
 		    <scroll id="scroll_forms">
 			<form>
 				<input type="text" placeholder="Input text"/>
@@ -322,6 +327,10 @@
 			</form>
 			</scroll>
 		</article>
+
+        <article id="form-margin" class="margin">
+
+        </article>
 	</section>
 
 	<section id="demo_sugars">
