@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.0.3"
+VERSION="1.0.4"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
@@ -63,7 +63,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     #Attributes
     DIR=$LUNGO_SOURCES"attributes/"$LUNGO_NAMESPACE"Attributes."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"attributes/"
-    FILES=(Data.js Section.js)
+    FILES=(Data.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
