@@ -33,15 +33,48 @@
 </head>
 
 <body class="app">
-    <section id="login" class="splash">
-		<article>
-			<h1>Lungo<span class="semi-opacity">js</span></h1>
-			<div class="form">
-				<input type="text" placeholder="Type your user"/>
-				<input type="password" placeholder="Type your password"/>
-				<a href="#demo" data-target="section" class="button big blue" data-icon="play">Go to demo!</a>
-			</div>
-			<div class="copyright">Copyright TapQuo Inc, 2011</div>
+    <section id="test-spaced">
+        <header data-title="test rounded"></header>
+		<article class="list indented">
+		    <scroll id="prueba">
+		        <div>
+		    <ul>
+	            <li><a href="#demo_header_footer" data-target="section" class="arrow" data-icon="wifi">
+    				<strong>Header + Footer + Articles</strong><small>paodapod</small></a></li>
+			
+    			<li><a href="#demo_toolbar" data-target="section" class="arrow" data-icon="download">
+    				<strong>Toolbar</strong><small>Toolbar</small></a></li>
+    			<li><a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note">
+                    <div class="bubble highlight">3 types</div>
+    				<strong>Lists</strong>
+    				<small>paodapod</small></a></li>
+    			<li class="toolbar contrasted">
+                    <nav>
+                        <a href="#list_sample" data-target="article" class="current" data-icon="note"></a>
+        				<a href="#list_grouped_sample" data-target="article" data-icon="folder"></a>
+        				<a href="#list_info_sample" data-target="article" data-icon="cloudup"></a>
+        				<a href="#x" data-target="article" data-icon="cloudup"></a>
+                    </nav>
+                </li>
+    	    </ul>
+    	        
+    	    <ul>
+    			<li><a href="#demo_events" data-target="section" class="arrow" data-icon="user">
+    					<strong>Events handler</strong><small>paodapod</small></a></li>
+    			<li><a href="#demo_scroll" data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points">
+    					<strong>Scroll</strong><small>paodapod</strong></small></a></li>
+    			<li><a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus">
+    					<strong>Buttons</strong><small>paodapod</small></a></li>
+    			<li><a href="#demo_forms" data-target="section" class="arrow" data-icon="write">
+                    <strong>Forms</strong><small>paodapod</small></a></li>
+    			<li class="anchor" data-icon="key">Tapquo Sugars</li>
+    			
+    			<li><a href="#demo_sugars" data-target="section" data-icon="box">
+    				<strong>Sugars</strong><small>paodapod</small></a></li>
+				
+			</ul>
+			    </div>
+			</scroll>
 		</article>
 	</section>
 
@@ -198,7 +231,7 @@
 		<footer data-title="COUNT:*"></footer>
 		
 		<article id="list_sample" class="list"></article>
-		<article id="list_grouped_sample" class="list"></article>
+		<article id="list_grouped_sample" class="list indented"></article>
 		<article id="list_info_sample" class="list">
 		    <ul>
 		         <li class="info">
