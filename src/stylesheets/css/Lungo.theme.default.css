@@ -27,7 +27,7 @@ header {
 }
 footer {
   background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d));
-  -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, 0.5), 0px -1px 2px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0px 1px rgba(0, 0, 0, 0.5);
 }
 .title {
   color: #fff;
@@ -70,26 +70,27 @@ aside a .icon {
 /* @end */
 /* @group .list */
 .list {
-  background: #c5c5c5;
+  background: #e2e2e2;
+  color: #787878;
 }
 .list li:not(.info) {
   background: #fff;
-  border-bottom: 1px inset #c3c4c6;
+  border-bottom: 1px inset #e6e6e6;
   color: #333;
+}
+.list li:last-child {
+  border-bottom: none;
 }
 .list li.toolbar {
   border-bottom-color: rgba(0, 0, 0, 0.2);
 }
 .list li:not(.toolbar) a {
-  color: #333;
+  color: #787878;
   text-shadow: #fff 0px 1px 1px;
   -webkit-tap-highlight-color: #242525;
 }
 .list strong {
-  color: #2343be;
-}
-.list small {
-  opacity: 0.75;
+  color: #333;
 }
 .list .bubble {
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -99,6 +100,7 @@ aside a .icon {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
+  background: #ccc;
   color: #fff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
