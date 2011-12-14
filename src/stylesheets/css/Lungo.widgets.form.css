@@ -1,12 +1,13 @@
-.form,form{position:relative;margin:8px;font-size:1.15em;font-weight:bold;}
-input:not([type=checkbox]),textarea,select{display:inline-block;padding:6px 6px 5px;width:95%;margin-bottom:8px;outline:none;-webkit-appearance:none;font-size:1.0em;font-weight:bold;line-height:1.25em;}
-input[type=search]{width:100%;z-index:1;margin:0px;}
+.form,form{font-size:0.95em;}
+label:not(.checkbox){display:block;margin-bottom:2px;}
+input:not([type=checkbox]),textarea,select{display:inline-block;padding:5px;width:95%;margin-bottom:2px;outline:none;-webkit-appearance:none;font-size:1.0em;font-weight:bold;line-height:1.25em;}
+input[type=search]{width:100%;}
 input[type=search]:before{content:"hola";}
 select{width:100%;}
 label.select{position:relative;display:inline-block;width:100%;}
 .select:after{padding:0 7px;position:absolute;top:0;right:0;bottom:0;height:30px;content:"▼";pointer-events:none;font-size:60%;line-height:32px;}
 .no-pointer-events .select:after{content:none;}
-input[type="checkbox"],input[type="radio"]{width:74px;float:left;z-index:1;}
+input[type="checkbox"],input[type="radio"]{width:74px;float:left;z-index:2;}
 input[type="checkbox"]+span::after,input[type="radio"]+span::after{content:"off";}
 input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{content:"on";}
 .iphone-toggle-buttons{-moz-user-select:none;-webkit-user-select:none;user-select:none;}

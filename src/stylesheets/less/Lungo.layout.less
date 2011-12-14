@@ -104,39 +104,6 @@ section header a.button.icon, section footer a.button.icon  {
 }
 /* @end */
 
-/* @group <nav> */
-nav  {
-	height: inherit;
-	text-align: center;
-	font-weight: normal;
-}
-
-nav a  {
-	display: inline-block;
-	padding: 0 6px;
-	height: inherit;
-	float: left;
-	font-size: 2.0em;
-}
-
-nav a abbr {
-	position: relative;
-	bottom: 3px;
-	margin-left: 2px;
-	display: none;
-	font-size: 0.5em;
-	font-weight: bold;
-}
-
-nav a.current abbr {
-	display: inline;
-}
-
-nav a.current {
-	.transition(all 0.3s ease-in-out);
-}
-/* @end */
-
 /* @group <aside> */
 aside {
 	position: absolute;
@@ -173,7 +140,7 @@ aside a{
 	line-height: 40px;
 }
 
-	aside a .icon {
+	aside .icon {
 		width: 28px;
 		height: 28px;
 		float: left;
@@ -182,6 +149,11 @@ aside a{
 	    font-size: 1.9em;
 	    line-height: 1.0em;
 	    text-align: center;
+	}
+	
+	aside .anchor {
+		font-weight: bold;
+    	padding: 6px 10px;
 	}
 
 @media handheld, only screen and (min-width: 768px) {
@@ -194,7 +166,9 @@ aside a{
 	}
 
 	aside ~ article{
+		width: auto !important;
     	left: 256px;
+    	right:  0px !important;
 	}
 }
 /* @end */
@@ -202,8 +176,8 @@ aside a{
 /* @group <article> */
 article {
 	position: absolute;
-	width: 100%;
-	height: auto;
+	width: inherit;
+	height: inherit;
 	top: 0px;
 	bottom: 0px;
 	display: block;
@@ -211,71 +185,95 @@ article {
 	opacity: 0;
 }
 	
-	header ~ article {
-		top: 40px;
-	}
+	header ~ article { top: 40px; }	
 	
-	footer ~ article {
-		bottom: 40px;
-	}
+	footer ~ article { bottom: 40px; }
 
 	article.current {
 		z-index: 1;
 		opacity: 1;
 	}
 	
-	article.aside {
-	    left: 256px !important;
+	article.aside { left: 256px !important; }
+	
+	article.indented > *:only-child{
+    	padding: 10px;
+    	width: auto;
 	}
 	
-	article.indented {
-		background-color: #e2e2e2;
+	article .title {
+		font-size: 15px;
+		margin: 0 4px 4px;
 	}
-		.indented ul, .indented form {
-			margin: 10px;
-			.border-radius(4px);
-			border: 1px solid #c5c5c5;
-			box-shadow: 0px 0px 8px #ccc;
-		}
 		
-		.indented li:first-child {
-			border-top-left-radius: 4px;
-			border-top-right-radius: 4px;
-		}
-		
-		.indented li:last-child {
-			border-bottom-left-radius: 4px;
-			border-bottom-right-radius: 4px;
-		}
-		
-		.list .contrasted {
-			background-color: #f4f4f4 !important;
-			box-shadow: inset 0px 1px 0px #fff;
-		}
-		
-		.list .toolbar a {
-			box-shadow: 1px 0px 0px #d9d9d9 ;
-		}
-		
-		.list .toolbar a:last-child {
-			box-shadow: none;
-		}
-		
-		.list .toolbar a.current {
-			color: #419ad9;
-		}
+		article .title .icon { margin-right: 4px; }
+				
 /* @end */
 
-
-
-.toolbar{
-	height:48px;
-	line-height:44px;
-	display:block;
+/* @group <nav> */
+nav  {
+	height: inherit;
+	text-align: center;
+	font-weight: normal;
 }
 
-.toolbar a{
-	float:left;
-	padding:0;
-	font-size:2.0em;
+nav a  {
+	display: inline-block;
+	padding: 0 6px;
+	height: inherit;
+	float: left;
+	font-size: 2.0em;
+	line-height: 38px;
 }
+
+nav .icon {
+    
+}
+
+nav a abbr {
+	position: relative;
+	bottom: 3px;
+	margin-left: 2px;
+	display: none;
+	font-size: 0.5em;
+	font-weight: bold;
+}
+
+nav a.current abbr {
+	display: inline;
+}
+
+nav a.current {
+	.transition(all 0.3s ease-in-out);
+}
+
+
+.toolbar {
+	height: 48px;
+	display: block;
+}
+
+.toolbar a {
+	float: left;
+	padding: 0;
+	font-size: 2.2em;
+}
+
+.toolbar .icon {
+	display: block;
+	
+	line-height: 52px;
+}
+.toolbar .bubble {
+	position: relative;
+    top:  -60px;
+    left: 12px;
+    padding: 1px 4px;
+    display: inline;
+    
+    font-size: 0.45em;
+    
+    .border-radius(12px);
+}
+
+/* @end */

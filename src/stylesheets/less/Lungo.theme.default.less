@@ -11,12 +11,12 @@
 
 /* @group layout */
 .app {
-	font-size:13px;
+	font-size: 13px;
     background: #000;
 }
 
 article {
-	background: #fff;
+	background-color: #e2e2e2;
 }
 	
 /* @group <header> & <footer> */
@@ -35,6 +35,8 @@ footer {
 	-webkit-box-shadow: inset 0px 1px rgba(0,0,0,0.5);
 }
 
+
+
 .title {
 	color: #fff;
 	text-shadow: rgba(0,0,0,0.5) 0 -1px 0px; 
@@ -44,11 +46,7 @@ footer {
 /* @group <nav> */
 nav a {
 	color: rgba(0,0,0,0.5);
-	text-shadow: rgba(255,255,255,0.35) 0 1px 1px;
-}
-	
-header:not(.toolbar) nav a, footer:not(.toolbar) nav a {
-	line-height: 38px;
+	//text-shadow: rgba(255,255,255,0.35) 0 1px 1px;
 }
 
 nav a.current {
@@ -56,8 +54,25 @@ nav a.current {
 	text-shadow: 0px 1px 0px #000 !important;
 }
 
+.toolbar {
+    //background: #f00;
+    box-shadow: inset 0px 1px #1c1c1c;
+}
+
+.toolbar a {
+    //line-height: 44px;
+}
+
 .toolbar a.current{
-	background: rgba(255,255,255,0.15);
+	background: #1c1c1c;
+	color: #fff;
+	
+	box-shadow: inset 0px 0px 8px #101010;
+	text-shadow: 0px 1px 4px #000;
+}
+
+.toolbar .bubble {
+    text-shadow: none;
 }
 	
 /* @end */
@@ -83,99 +98,75 @@ aside a .icon {
 	opacity: 0.5;
 }
 
+aside .anchor {
+    background: #151515;
+	color:  #666;
+}
+
 /* @end */
 
 /* @group .list */
-.list {
-	background: #e2e2e2;
-	color: #787878;
-}
-
-.list li:not(.info) {
-	background: #fff;
-	border-bottom: 1px inset #e6e6e6;
+.list, .list li:not(.toolbar) a {
 	color: #333;
 }
-
-.list li:last-child {
-	border-bottom: none;
-}
-	
-.list li.toolbar {
-	border-bottom-color: rgba(0,0,0,0.2);
-}
-
-.list li:not(.toolbar) a { 
-	color: #787878;
-	text-shadow: #fff 0px 1px 1px; 
-	-webkit-tap-highlight-color: #242525;
-}
-
-.list strong {
-	color: #333;
-}
-	
-.list .bubble {
-	border: 1px solid rgba(0,0,0,0.15);
-	.border-radius(2px);
-	background: #ccc;
-	
-	color: #fff; 
-	text-shadow: 0 -1px 0 rgba(0,0,0,.3);
-}	
-
-.list .button {
-	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.3); 
-}
-
-.list .arrow:before {
-	color: #a9a9a9;
-}
-
-/* @group .anchor */
-.list li.anchor {
-	background: #f4f4f4;
-	color: #222;
-}
-/* @end */
-
-/* @group .anchor */
-.list li.search {
-	border: none;
-	-webkit-box-shadow: 
-		inset 0px 1px 0px rgba(255,255,255,0.1), 
-		inset 0px -1px 0px rgba(0,0,0,0.25);
+	.list li {
+		background: #fff;
+		border-bottom: 1px inset #e6e6e6;
 	}
-/* @end */
-
-/* @group .info */
-.list li.info {	
-	border: none;
-	-webkit-box-shadow: 
-		inset 0px 1px 0px rgba(255,255,255,0.1), 
-		inset 0px -1px 0px rgba(0,0,0,0.25);
-	background: #cbcbcb;
-}
 	
-.list .info strong{	
-	color: #333;
-}
+	.list li:last-child { border-bottom: none; }
+	
+	.list .darker {
+		background-color: #2c2c2d;	
+		color: #fff;
+		text-shadow: 0px 1px 0px #000;
+	}
+	
+		.list li.darker a{ color: #fff !important; }
+	
+	.list .dark {
+	    background-color: #f4f4f4;
+		box-shadow: inset 0px 1px 0px #fff;			
+		text-shadow: 0px 1px 0px #fff;
+	}
 
-.list .info.contrast strong {	
-	color: #fff;
-}
-/* @end */
-/* @end */
-.list .contrast {
-	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d)) !important;
-	text-shadow: 0px 1px 1px rgba(0,0,0,0.25);
-	color: #fff;
-}
+	.list small, .list .onright {
+		color: #999;
+	}
+	
+	.list .tip {
+		color: #7a7a7a;
+	}
+	
+	.list .anchor {
+		background: #f4f4f4;
+		color: #222;
+	}
+	
+	.list .toolbar {
+		border-bottom-color: rgba(0,0,0,0.2);
+	}
 
-.list .highlight {
-	background: #499dc4 -webkit-gradient(linear, left top, left bottom, color-stop(0, #499dc4), color-stop(1, #0e8eb6)) !important;
-}
+	.list .bubble {
+		color: #fff; 
+		text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+		box-shadow: inset 0px 0px 1px #000;
+	}	
+	
+	.list .arrow:before {
+		color: #a9a9a9;
+	}
+	
+	.list .toolbar a { box-shadow: 1px 0px 0px #d9d9d9; }
+		
+		.list .toolbar a:last-child { box-shadow: none; }
+		
+		.list .toolbar a.current {
+			background: transparent;
+			color: #333;
+			text-shadow: none !important;
+		}
+
 /* @end */
 
 /* @group widgets */
@@ -207,4 +198,14 @@ input:focus, textarea:focus, select:focus {
 	.border-radius(0 2px 2px 0);
 }
 /* @end */
+/* @end */
+
+/* @group Article */
+
+article .title {
+    color: #797979;
+    text-shadow: 0px 1px 0px #fff;
+}
+    		
+
 /* @end */
