@@ -9,18 +9,20 @@
 
 @import "mixins.less";
 
-.form, form { 
-	position: relative; 
-	margin: 8px; 
-	font-size: 1.15em;
-	font-weight: bold;
+.form, form {
+	font-size: 0.95em;
+}
+
+label:not(.checkbox) {
+    display: block;
+    margin-bottom: 2px;
 }
 
 input:not([type=checkbox]), textarea, select {  
 	display: inline-block; 
-	padding: 6px 6px 5px;
-	width: 95%; 
-	margin-bottom: 8px; 
+	padding: 5px;
+	width: 95%;
+	margin-bottom: 2px;
 	
 	outline: none; 	
 	-webkit-appearance: none;
@@ -29,12 +31,9 @@ input:not([type=checkbox]), textarea, select {
 	font-weight: bold;
 	line-height: 1.25em;
 }
-	
 
 input[type=search] {
 	width: 100%;
-	z-index: 1;
-	margin: 0px;
 }
 
 input[type=search]:before {
@@ -74,7 +73,7 @@ label.select {
 input[type="checkbox"], input[type="radio"]{
 	width: 74px;
 	float: left;
-	z-index: 1;
+	z-index: 2;
 }
 
 input[type="checkbox"] + span::after,
