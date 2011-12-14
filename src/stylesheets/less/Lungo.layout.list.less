@@ -7,79 +7,68 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
  
-.list li:not(.toolbar) {
-	padding: 8px 6px;
-	list-style-type: none;
+ @import "mixins.less";
+ 
+.list {
+    font-size: 1.2em;
+    font-weight: bold;
+    width: inherit;
 }
-
-.list li:not(.toolbar) a {
-	width: auto; 
-	display: block;
-}
-
-.list li:not(.toolbar) img, .list li:not(.toolbar) .icon {
-	float: left;
-	width: 32px;
-	height: 32px;
-	margin-right: 6px;	
-	font-size: 36px;
-	font-weight: normal;
-	line-height: 32px;
-}
+ 
+	.list li:not(.toolbar) {
+		padding: 8px 6px;
+		list-style-type: none;
+	}
 	
-.list strong, .list small {
-	overflow: hidden;  
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
+	.list a{
+	    display: block;
+	}
 	
-.list strong {
-	width: 75%;
-	font-size: 1.1em;
-}
-
-.list small {
-	display: block;
-	font-size: 0.9em;
-	font-style: normal;
-}
-
-/* @group .anchor */
-.list li.anchor { 	
-	font-size: 0.9em; 
-	font-weight: bold;
-	padding-top: 3px;
-	padding-bottom: 3px;
-}
+	.list li:not(.toolbar) img, .list li:not(.toolbar) .icon {
+		float: left;
+		width: 32px;
+		height: 32px;
+		margin-right: 6px;	
+		font-size: 36px;
+		font-weight: normal;
+	}
 	
-.list .anchor a {
-	padding: 0px;
-}
+	.list small {
+		display: block;
+		overflow: hidden;  
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-size: 0.85em;
+		font-weight: normal;
+	}
+	
+	.list .icon {
+	    display: inline-block;
+	}
+	
+	.list .tip {
+    	font-size: 0.85em;
+    	font-weight: bold;
+	}
+	
+	.list .light {
+    	font-size: 0.9em;
+    	font-weight: normal;
+	}
 
-.list .anchor .icon {
-	width: 14px !important;
-	height: 14px !important;	
-	margin-right: 4px !important; 	
-	font-size:  1.3em !important;
-	font-weight: normal;
-	line-height: 16px !important;	
-}
+	.list .anchor { 	
+		font-size: 0.75em;
+		padding: 3px 6px !important;
+	}
+		.list .anchor .icon {
+			width: 14px !important;
+			height: 14px !important;	
+			margin-right: 4px !important; 	
+			font-size:  1.3em !important;
+			line-height: 16px !important;	
+		}
 
-.list .anchor .bubble {
-	display: none;
-}
-/* @end */
-
-/* @group .info */
-.list li.info {
-	min-height: 48px;
-}
-
-.list li.info img, .list li.info .icon {
-	height: 48px;
-	width: 48px;
-	line-height: 48px;
-}
+		.list .anchor .bubble { display: none; }
 /* @end */
 
 /* @group .search */
@@ -115,15 +104,25 @@
 }
 /* @end */
 
-/* @group .bubble */
-.list .bubble { 
-	position: relative; 
-	right: 2px;
-	top: 6px;
-	float: right;
-	padding: 2px 3px 3px;	
-	line-height: 1.0em;
-	font-weight: bold; 
+/* @group .onright */
+.list .onright {
 	font-size: 0.85em;
 }
+	.list .onright .icon {
+    	font-size: 1.2em !important;
+    	height: 12px !important;
+    	width: 12px !important;
+    	margin: 0px;
+	}
+/* @end */
+
+/* @group .indented */
+	.indented ul {
+		border: 1px solid #c5c5c5;
+		box-shadow: 0px 0px 6px #bbb;
+		margin-bottom: 10px;
+	}
+	.indented.rounded ul { .border-radius(4px); }	
+	.indented.rounded li:first-child { .border-radius(4px 4px 0px 0px); }
+	.indented.rounded li:last-child { .border-radius(0px 0px 4px 4px); }
 /* @end */
