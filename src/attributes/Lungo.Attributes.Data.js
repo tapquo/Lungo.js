@@ -9,27 +9,32 @@
  */
 
 LUNGO.Attributes.Data = {
-    search: {
+    Search: {
         tag: 'search',
         selector: '.list',
         html: '<li class="search {{value}}"><input type="search" placeholder="Search..."><a href="#" class="button" data-icon="search"></a></li>'
     },
-    icon: {
+    Count: {
+        tag: 'count',
+        selector: '*',
+        html: '<span class="bubble green">{{value}}</span>'
+    },
+    Icon: {
         tag: 'icon',
         selector: '*',
         html: '<span class="icon {{value}}"></span>'
     },
-    image: {
+    Image: {
         tag: 'image',
         selector: '*',
         html: '<img src="{{value}}" class="icon" />'
     },
-    title: {
+    Title: {
         tag: 'title',
         selector: 'header, footer',
         html: '<h1 class="title">{{value}}</h1>'
     },
-    back: {
+    Back: {
         tag: 'back',
         selector: 'header, footer',
         html: '<a href="#back" data-target="section" class="back onleft button icon {{value}}"></a>'
