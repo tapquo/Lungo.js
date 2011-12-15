@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LungoJS - Kitchen Sink</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icon@2x.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
+    <link rel="apple-touch-startup-image" href="assets/images/default.png">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.base.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.list.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.splash.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.button.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.form.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.colour.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="assets/stylesheets/app.css?v=1">
+</head>
+
+<body class="app">
+    <section id="demo" class="_static">
+        <header data-title="Demo">
+            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
+        </header>
+
+        <footer class="toolbar">
+            <nav>
+                <a href="#one" id="btn-one" data-target="article" class="current" data-icon="user"></a>
+                <a href="#two" id="btn-two" data-target="article" data-icon="cloudup"></a>
+                <a href="#three" id="btn-three" data-target="article" data-icon="user" data-count="42"></a>
+            </nav>
+        </footer>
+
+        <aside>
+            <a href="#demo_header_footer" data-target="section" data-icon="wifi">Header and footer</a>
+            <a href="#demo_toolbar" data-target="section" data-icon="download"></a>
+            <a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note" data-count="3">List examples</a>
+            <a href="#demo_events" data-target="section" class="arrow" data-icon="user"></a>
+            <a href="#demo_scroll" data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points"></a>
+            <a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus"></a>
+            <a href="#demo_forms" data-target="section" class="arrow" data-icon="write"></a>
+            <div class="anchor">Sugars</div>
+            <a href="#demo_sugars" data-target="section" data-icon="message">Growl</a>
+            <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
+        </aside>
+
+		<article id="one" class="list indented">
+            <scroll id="main_scroll">
+                <div class="title" data-icon="home">Principal</div>
+                <ul>
+    				<li class="dark tip" data-icon="info">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                    </li>
+    				<li data-icon="download">
+                        <a href="#" class="onright button green" data-icon="twitter">follow</a>
+    					<strong>Toolbar</strong>
+                        <small>Toolbar</small>
+                    </li>
+    				<li data-icon="note">
+                        <div class="onright bubble blue">3 types</div>
+    					<strong>Lists</strong>
+    					<small>paodapod</small>
+                    </li>
+                    <li data-icon="cloudup">
+                        <div class="onright" data-icon="time">1 hour</div>
+                        <strong>Lists</strong>
+                        <small>paodapod</small>
+                    </li>
+
+                    <li class="toolbar dark">
+                        <nav>
+                            <a href="#" class="current" data-icon="picture"></a>
+                            <a href="#" data-icon="cloudup"></a>
+                            <a href="#" data-icon="user"></a>
+                        </nav>
+                    </li>
+                </ul>
+
+                <div class="title" data-icon="twitter">Twitters</div>
+                <ul>
+    				<li><a href="#demo_events" data-target="section" data-icon="user">
+    						<strong>Events handler</strong><small>paodapod</small></a></li>
+                    <li class="anchor" data-icon="user">alskdad</li>
+                    <li class="anchor" data-icon="user"><a href="#">alskdad</a></li>
+    				<li><a href="#demo_scroll" data-target="section" id="load_scroll_mocks" data-icon="points">
+    						<strong>Scroll</strong><small>paodapod</strong></small></a></li>
+    				<li><a href="#demo_buttons" data-target="section" data-icon="plus">
+    						<strong>Buttons</strong><small>paodapod</small></a></li>
+    				<li><a href="#demo_forms" data-target="section" data-icon="write">
+                        <strong>Forms</strong><small>paodapod</small></a></li>
+    				<li class="anchor" data-icon="key">Tapquo Sugars</li>
+    				<li><a href="#demo_sugars" data-target="section" data-icon="box">
+    					<strong>Sugars</strong><small>paodapod</small></a></li>
+    			</ul>
+			</scroll>
+        </article>
+
+
+
+        <article id="two"></article>
+
+        <article id="three" class="list">
+            <ul>
+                <li data-image="assets/images/avatars/1.jpg">
+                    Javi Jimenez
+                    <small>asdasd</small>
+                </li>
+                <li data-image="assets/images/avatars/2.jpg">
+                    Iker
+                    <small>asdasd</small>
+                </li>
+            </ul>
+        </article>
+    </section>
+
+    <section id="settings">
+        <header data-back="home" data-title="Settings">
+            <nav class="onright">
+                <a href="#settings_main" data-target="article" class="current" data-title="Settings" data-icon="user"></a>
+                <a href="#settings_second" data-target="article" data-title="Chat" data-icon="chat"></a>
+                <a href="#settings_third" data-target="article" data-title="Share Methods" data-icon="earth"></a>
+            </nav>
+        </header>
+
+        <article id="settings_main">s</article>
+        <article id="settings_second">s</article>
+        <article id="settings_third">s</article>
+
+        <footer class="toolbar">
+            <nav>
+                <a href="#" class="current" data-icon="substract"></a>
+                <a href="#" class="current" data-icon="add"></a>
+            </nav>
+        </footer>
+    </section>
+
+
+    <!-- Third parties dependencies -->
+    <script src="../../src/lib/zepto.js"></script>
+    <script src="../../src/lib/iscroll.js"></script>
+    <!-- LungoJS Libraries (Development mode)-->
+    <script src="../../src/Lungo.js"></script>
+    <script src="../../src/Lungo.App.js" ></script>
+    <script src="../../src/Lungo.Environment.js" ></script>
+    <script src="../../src/Lungo.Core.js"></script>
+    <script src="../../src/Lungo.Events.js"></script>
+    <script src="../../src/Lungo.Service.js"></script>
+    <script src="../../src/router/Lungo.Router.js"></script>
+    <script src="../../src/router/Lungo.Router.History.js" ></script>
+    <script src="../../src/view/Lungo.View.Resize.js"></script>
+    <script src="../../src/view/Lungo.View.Article.js" ></script>
+    <script src="../../src/view/Lungo.View.Aside.js" ></script>
+    <script src="../../src/view/Lungo.View.Scroll.js"></script>
+    <script src="../../src/view/Lungo.View.Element.js"></script>
+    <script src="../../src/view/Lungo.View.Template.js"></script>
+    <script src="../../src/view/Lungo.View.Template.Binding.js"></script>
+    <script src="../../src/view/Lungo.View.Template.List.js"></script>
+    <script src="../../src/dom/Lungo.Dom.js"></script>
+    <script src="../../src/dom/Lungo.Dom.Event.js"></script>
+    <script src="../../src/data/Lungo.Data.Cache.js"></script>
+    <script src="../../src/data/Lungo.Data.Sql.js"></script>
+    <script src="../../src/data/Lungo.Data.Storage.js"></script>
+    <script src="../../src/attributes/Lungo.Attributes.Data.js"></script>
+    <script src="../../src/boot/Lungo.Boot.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Layout.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Events.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Data.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Section.js"></script>
+    <script src="../../src/boot/Lungo.Boot.Article.js"></script>
+    <!-- LungoJS - Sandbox App -->
+    <script src="app/app.js"></script>
+</body>
+</html>
