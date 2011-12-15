@@ -10,7 +10,7 @@
 LUNGO.View.Element = (function(lng, undefined) {
 
     var SELECTORS = {
-        BUBBLE: '.bubble'
+        BUBBLE: '.bubble.count'
     };
     var BINDING_START = '{{';
     var BINDING_END = '}}';
@@ -33,9 +33,7 @@ LUNGO.View.Element = (function(lng, undefined) {
         var total_bubbles = bubbles.length;
 
         if (total_bubbles > 0) {
-            for (i=0, len = total_bubbles.length; i < len; i++) {
-                bubbles.html(count);
-            }
+            bubbles.html(count);
         } else {
             var count_html = LUNGO.Attributes.Data.Count.html;
             var html_binded = count_html.replace(BINDING_START + 'value' + BINDING_END, count);
