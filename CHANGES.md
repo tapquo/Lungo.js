@@ -5,6 +5,10 @@
 
 - Optimized layout: No JavaScript resizes (full CSS3 selectors)
 - Better transformations between <sections>
+- Remove Jasmine Test Framework
+- New Data-Attribute "count" (API JavaScript support)
+- New Optimized .toolbar
+- New Kitchen Sink 1.0.4 (in GitHub Repository)
 
 ## Changes in Version 1.0.3
 
