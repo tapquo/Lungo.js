@@ -15,7 +15,7 @@
 .list a.arrow:before{float:right;content:">";position:relative;top:6px;font-size:16px;font-family:"Courier New",Courier,mono;font-weight:bold;}
 .list .onright{font-size:0.85em;}
 .list .onright .icon{font-size:1.2em !important;height:12px !important;width:12px !important;margin:0px;}
-.indented ul{border:1px solid #c5c5c5;box-shadow:0px 0px 6px #bbb;margin-bottom:10px;}
+.indented ul{margin-bottom:10px;}
 .indented.rounded ul{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
 .indented.rounded li:first-child{-webkit-border-radius:4px 4px 0px 0px;-moz-border-radius:4px 4px 0px 0px;border-radius:4px 4px 0px 0px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
 .indented.rounded li:last-child{-webkit-border-radius:0px 0px 4px 4px;-moz-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
