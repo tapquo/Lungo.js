@@ -29,11 +29,175 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
     <!-- App Stylesheet -->
-    <link rel="stylesheet" href="assets/stylesheets/app.css?v=1">
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
 </head>
 
 <body class="app">
-    <section id="demo" class="_static">
+    <!--
+    <section id="login">
+        <article class="splash indented">
+            <div>
+                <h1>Kitchen<span class="semi-opacity">Sink<span></h1>
+
+                <input type="text" placeholder="Type your user" />
+                <input type="password" placeholder="Type your password" />
+
+                <a href="#kitchen-sink" data-target="section" class="button big green" data-icon="key">Go to Kitchen Sink!</a>
+                <div class="copyright">Copyright TapQuo Inc, 2011</div>
+            </div>
+        </article>
+    </section>
+    -->
+
+    <section id="kitchen-sink">
+        <header data-title="LungoJS Kitchen Sink">
+            <a href="#" class="button green onleft aside" data-target="aside" data-icon="note"></a>
+        </header>
+
+        <aside>
+            <scroll id="main-aside">
+                <div style="height:1024px">
+                    <a href="#navigation" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
+                    <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
+                    <a href="#forms" data-target="article" data-icon="write">Forms</a>
+                    <a href="#lists" data-target="article" data-icon="note">Lists</a>
+
+                    <!--
+                    <a href="#two" data-target="article" data-icon="download"></a>
+                    <a href="#demo_list" data-target="section" id="load_list" data-icon="note" data-count="30">List examples</a>
+                    <a href="#demo_events" data-target="section" data-icon="user"></a>
+                    <a href="#demo_scroll" data-target="section" id="load_scroll_mocks" data-icon="points"></a>
+                    <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
+
+                    <div class="anchor">Sugars</div>
+                    <a href="#demo_sugars" class="current"  data-target="section" data-icon="message">Growl</a>
+                    <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
+                    -->
+                </div>
+            </scroll>
+        </aside>
+
+        <article id="forms" class="list rounded">
+            <div class="indented">
+                <h1 class="title">Example of forms</h1>
+                <ul class="form">
+                    <li class="tip dark" data-icon="home mini">Example of forms with full</li>
+                    <li class="anchor" data-icon="home">Example of forms with full</li>
+                    <li>
+                        <label>alsdkald</label>
+                        <input type="text" placeholder="Input text"/>
+                        <input type="text" placeholder="Input text"/>
+                    </li>
+                    <li><input type="password" placeholder="Input password"/></li>
+                    <li><textarea placeholder="Textarea sample"></textarea></li>
+                    <li>
+                        <label class="select">
+                            <select class="custom">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="anchor">Checbox</li>
+                    <li>
+                        <label data-icon="twitter"></label>
+                        <label class="checkbox"><input type="checkbox" id="checkbox-0"/></label>
+
+                        <label data-icon="group"></label>
+                        <label class="checkbox"><input type="checkbox" id="checkbox-1" checked="checked"/></label>
+                    </li>
+                    <li class="anchor">Radio</li>
+                    <li>
+                        <label>Radio:</label>
+                            <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
+                        <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
+                            <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
+                    </li>
+                </ul>
+
+                <a href="#" class="button big green" data-icon="check">Accept</a>
+                <a href="#" class="button big red" data-icon="cancel">Cancel</a>
+
+            </div>
+
+        </article>
+
+
+
+        <article id="lists" class="list rounded">
+            <div class="indented">
+                <ul>
+                    <li data-image="assets/images/avatars/1.jpg">
+                        <div class="onright" data-icon="calendar">31 years</div>
+                        Javi
+                        <small>CEO & Creative Leat at Tapquo</small>
+                    </li>
+                    <li data-image="assets/images/avatars/2.jpg">
+                        <div class="onright" data-icon="calendar">31 years</div>
+                        Guillermo
+                        <small>CEO & Creative Leat at Tapquo</small>
+                    </li>
+                </ul>
+            </div>
+
+        </article>
+
+        <article id="buttons">
+            <scroll id="buttons-scroll" class="indented">
+                <div style="height:680px;">
+                    <a href="#" class="button big">default</a>
+                    <a href="#" class="button big disabled">disabled</a>
+
+                    <a href="#" class="button big red">red</a>
+                    <a href="#" class="button big lightgreen">lightgreen</a>
+                    <a href="#" class="button big green">green</a>
+                    <a href="#" class="button big blue">blue</a>
+                    <a href="#" class="button big articblue">articblue</a>
+                    <a href="#" class="button big orange">orange</a>
+                    <a href="#" class="button big magenta">magenta</a>
+                    <a href="#" class="button big pink">pink</a>
+                    <a href="#" class="button big yellow">yellow</a>
+                    <a href="#" class="button big twitter" data-icon="twitter">twitter</a>
+                    <a href="#" class="button big facebook" data-icon="facebook">facebook</a>
+                </div>
+            </scroll>
+        </article>
+
+        <article id="welcome">
+            <h1>apsdaopsda</h1>
+        </article>
+
+
+
+    </section>
+
+    <section id="navigation">
+        <header data-back="left blue" data-title="Navigation">
+            <nav class="onright">
+                <a href="#" class="current" data-icon="home"><abbr>asdad</abbr></a>
+                <a href="#" data-icon="left"></a>
+                <a href="#" data-icon="up" data-count="3"></a>
+                <a href="#" data-icon="right"></a>
+                <a href="#" data-icon="down"></a>
+            </nav>
+        </header>
+
+        <footer class="toolbar">
+            <nav>
+                <a href="#" class="current" data-icon="home"><abbr>asdad</abbr></a>
+                <a href="#" data-icon="left"></a>
+                <a href="#" data-icon="up" data-count="3"></a>
+                <a href="#" data-icon="right"></a>
+                <a href="#" data-icon="down"></a>
+            </nav>
+        </footer>
+
+        <article>
+        </article>
+    </section>
+
+    <section id="kitchen-sinks" class="_static">
         <header data-title="LungoJS Kitchen Sink">
             <a href="#" class="button blue onleft aside" data-target="aside" data-icon="note"></a>
         </header>
@@ -50,11 +214,11 @@
             <scroll id="main-aside"><div style="height:1024px">
                 <a href="#one" id="aside-one" class="current" data-target="article" data-icon="wifi">Header and footer</a>
                 <a href="#two" data-target="article" data-icon="download"></a>
-                <a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note" data-count="30">List examples</a>
-                <a href="#demo_events" data-target="section" class="arrow" data-icon="user"></a>
-                <a href="#demo_scroll"  data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points"></a>
-                <a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus"></a>
-                <a href="#demo_forms" data-target="section" class="arrow" data-icon="write"></a>
+                <a href="#demo_list" data-target="section" id="load_list" data-icon="note" data-count="30">List examples</a>
+                <a href="#demo_events" data-target="section" data-icon="user"></a>
+                <a href="#demo_scroll"  data-target="section" id="load_scroll_mocks" data-icon="points"></a>
+                <a href="#demo_buttons" data-target="section" data-icon="plus"></a>
+                <a href="#demo_forms" data-target="section" data-icon="write"></a>
                 <div class="anchor">Sugars</div>
                 <a href="#demo_sugars" class="current"  data-target="section" data-icon="message">Growl</a>
                 <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
