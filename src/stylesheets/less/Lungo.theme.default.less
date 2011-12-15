@@ -144,29 +144,34 @@ aside {
 
 /* @group widgets */
 
-.splash article { 
-	background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d)) !important;
+.splash { 
+	background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #006b41));
 	color: #fff; 
-	text-shadow: rgba(0,0,0,0.5) 0 1px 1px;
+	text-shadow: 0px 1px 1px #000;
+	
 }
 
 /* @group <inputs> */
 input, textarea, select {
-	border: 1px solid #ccc;	
-	.border-radius(2px);
-	background: #fff -webkit-gradient(linear, left top, left bottom, color-stop(0, #ddd), color-stop(0.15, #fff));
+	border: 1px solid #c5c5c5;
+	
+	background: #fff -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(0.25, #fff));
+
+}
+
+.rounded input, textarea, select {
+    .border-radius(2px);
 }
 	
 input:focus, textarea:focus, select:focus { 
 	border: 1px solid #058cf5;
-	.box-shadow(0 0 4px 1px #058cf5);
+	.box-shadow(0px 0px 4px 0px #058cf5);
 	background: #e8fefe;
 }
 	
 .select:after {
 	background: #ccc;
 	color: white;
-	.border-radius(0 2px 2px 0);
 }
 /* @end */
 

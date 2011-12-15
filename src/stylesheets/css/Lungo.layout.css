@@ -28,8 +28,7 @@ header~article{top:40px;}
 footer~article{bottom:40px;}
 article.current{z-index:1;opacity:1;}
 article.aside{left:256px !important;}
-article.indented>*:only-child{padding:10px;width:auto;}
-article .title{font-size:15px;margin:0 4px 4px;}
+article .title{font-size:1.2em;margin:0 4px 4px;}
 article .title .icon{margin-right:4px;}
 nav{height:inherit;text-align:center;font-weight:normal;}
 nav a{display:inline-block;padding:0 6px;height:inherit;float:left;font-size:2.0em;line-height:38px;}
