@@ -34,8 +34,8 @@
 
 <body class="app">
     <section id="demo" class="_static">
-        <header data-title="Demo">
-            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
+        <header data-title="LungoJS Kitchen Sink">
+            <a href="#" class="button blue onleft aside" data-target="aside" data-icon="note"></a>
         </header>
 
         <footer class="toolbar">
@@ -47,16 +47,18 @@
         </footer>
 
         <aside>
-            <a href="#demo_header_footer" data-target="section" data-icon="wifi">Header and footer</a>
-            <a href="#demo_toolbar" data-target="section" data-icon="download"></a>
-            <a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note" data-count="3">List examples</a>
-            <a href="#demo_events" data-target="section" class="arrow" data-icon="user"></a>
-            <a href="#demo_scroll" data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points"></a>
-            <a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus"></a>
-            <a href="#demo_forms" data-target="section" class="arrow" data-icon="write"></a>
-            <div class="anchor">Sugars</div>
-            <a href="#demo_sugars" data-target="section" data-icon="message">Growl</a>
-            <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
+            <scroll id="main-aside"><div style="height:1024px">
+                <a href="#one" id="aside-one" class="current" data-target="article" data-icon="wifi">Header and footer</a>
+                <a href="#two" data-target="article" data-icon="download"></a>
+                <a href="#demo_list" data-target="section" class="arrow" id="load_list" data-icon="note" data-count="30">List examples</a>
+                <a href="#demo_events" data-target="section" class="arrow" data-icon="user"></a>
+                <a href="#demo_scroll"  data-target="section" class="arrow" id="load_scroll_mocks" data-icon="points"></a>
+                <a href="#demo_buttons" data-target="section" class="arrow" data-icon="plus"></a>
+                <a href="#demo_forms" data-target="section" class="arrow" data-icon="write"></a>
+                <div class="anchor">Sugars</div>
+                <a href="#demo_sugars" class="current"  data-target="section" data-icon="message">Growl</a>
+                <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
+            </div></scroll>
         </aside>
 
 		<article id="one" class="list indented">
@@ -72,7 +74,7 @@
                         <small>Toolbar</small>
                     </li>
     				<li data-icon="note">
-                        <div class="onright bubble blue">3 types</div>
+                        <div class="onright bubble blue">3.344,34 €</div>
     					<strong>Lists</strong>
     					<small>paodapod</small>
                     </li>
