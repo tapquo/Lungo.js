@@ -2,7 +2,7 @@
 .list li:not(.toolbar){padding:8px 6px;list-style-type:none;}
 .list a{display:block;}
 .list li:not(.toolbar) img,.list li:not(.toolbar) .icon{float:left;width:32px;height:32px;margin-right:6px;font-size:36px;font-weight:normal;}
-.list small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:0.85em;font-weight:normal;}
+.list small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:0.85em;font-weight:normal;line-height:0.85em;}
 .list .icon{display:inline-block;}
 .list .tip{font-size:0.85em;font-weight:bold;}
 .list .light{font-size:0.9em;font-weight:normal;}
