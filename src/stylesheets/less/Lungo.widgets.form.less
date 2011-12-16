@@ -32,13 +32,23 @@ input:not([type=checkbox]), textarea, select {
 	line-height: 1.25em;
 }
 
+/* @group search */
 input[type=search] {
-	width: 100%;
+	width: 86%;
 }
+	input[type=search] + .button {
+	    float: right;
+	    padding: 0px;
+	    width: 32px;
+	}
+	input[type=search] + .button .icon{
+	    font-size: 20px !important;
+	}
 
-input[type=search]:before {
-	content:"hola";
-}
+
+
+
+/* @end */
 
 select{ 
 	width: 100%;

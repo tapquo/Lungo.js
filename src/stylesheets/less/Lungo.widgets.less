@@ -34,9 +34,17 @@ section.copyright img{
 .onright { float: right;}
 	
 .indented {
-	padding: 10px;
     width: auto;
+	padding: 10px 10px 0;
 }
+
+.indented ul {
+		//margin-bottom: 10px;
+		height: inherit;
+	}
+	.rounded ul { .border-radius(4px); }	
+	.rounded li:first-child { .border-radius(4px 4px 0px 0px); }
+	.rounded li:last-child { .border-radius(0px 0px 4px 4px); }
 
 .margin-top-4{ margin-top: 4px; }
 /* @end */

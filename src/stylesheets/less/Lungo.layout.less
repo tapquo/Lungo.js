@@ -9,6 +9,8 @@
 
 @import "mixins.less";
 
+@defaultTrasition : @easeOutSine;
+
 /* @group <section> */
 body {
 	height: 100%;
@@ -20,42 +22,26 @@ section{
 	width: 100%;
 	height: inherit;
 	z-index: 0;
-	-webkit-backface-visibility: hidden;
-	.transform(translate3d(100%, 0, 0));
 	
-	-webkit-transition: -webkit-transform 0.3s ease-in-out;
+	.transform(translate3d(100%, 0, 0));
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
-section:first-child  {
+section:first-child {
+	.transform(translate3d(0%, 0, 0));
 	z-index: 1;
-	.transform(translate3d(0%, 0, 0));
 }
 
-section.hide  {
-	z-index: 0;
+section.hide {
 	.transform(translate3d(-100%, 0, 0));
+	z-index: 0;
+	
 }
-section.show  {
+section.show {
+	.transform(translate3d(0%, 0, 0));
 	 z-index: 1;
-	.transform(translate3d(0%, 0, 0));
 }
-
-section.static.hide  {
-	.transform(translate3d(0%, 0, 0));
-}
-
-section.popup  {
-	.transform(translate3d(0, 100%, 0));
-}
-
-section.popup.show  {
-	.transform(translate3d(0, 0%, 0));
-}
-
-section.popup.hide  {
-	.transform(translate3d(0, -100%, 0));
-}
-
 /* @end */
 
 
@@ -110,10 +96,12 @@ aside {
 	top: 0px;
 	bottom: 0px;
 	height: auto;
-	width: 0px;
+	width: 256px;
+	opacity: 0;
 }
+
 	aside.show {
-		width: 256px;
+		opacity: 1;
 	}
 
 header ~ aside {
@@ -124,12 +112,12 @@ footer ~ aside {
 	padding-bottom: 40px;
 }
 
-aside ~ article{
-	-webkit-transition: left 0.3s ease-in-out;
-	left: 0px;
+aside ~ article {
+	.transform(translate3d(0px, 0, 0));
+	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
-aside a{
+aside a {
 	display: block;
 	width: 244px;
 	height: 40px;
@@ -167,7 +155,7 @@ aside a{
 	}
 
 	aside {
-		width: 256px;
+		opacity: 1;
 	}
 
 	aside ~ article{
@@ -199,10 +187,14 @@ article {
 		opacity: 1;
 	}
 	
-	article.aside { left: 256px !important; }
+	article.aside { .transform(translate3d(256px, 0, 0)); }
+	
+	@media handheld, only screen and (min-width: 768px) {
+		article.aside { .transform(translate3d(0px, 0, 0)); }
+	}
 	
 	article .title {
-		font-size: 1.2em;
+		font-size: 1.1em;
 		margin: 0 4px 4px;
 	}
 		
@@ -243,9 +235,11 @@ nav a.current abbr {
 	display: inline;
 }
 
+/*
 nav a.current {
-	.transition(all 0.3s ease-in-out);
+	.transition(all 0.3s @easeInOutCubic);
 }
+*/
 
 
 .toolbar {
