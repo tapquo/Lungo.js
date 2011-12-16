@@ -4,11 +4,17 @@
 ## Changes in Version 1.0.4
 
 - Optimized layout: No JavaScript resizes (full CSS3 selectors)
-- Better transformations between <sections>
-- Remove Jasmine Test Framework
+- Better transformations between <sections> (with easeInOutCubic transform)
 - New Data-Attribute "count" (API JavaScript support)
 - New Optimized .toolbar
+- New system of forms with <ul> element
+- New <article> classes: indented & rounded
+- ...
 - New Kitchen Sink 1.0.4 (in GitHub Repository)
+- Remove Jasmine Test Framework
+- BUG Fixed:
+    - Scroll with form elements
+    - Multiple <aside>s
 
 ## Changes in Version 1.0.3
 
