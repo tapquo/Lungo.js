@@ -28,6 +28,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
 
         _initFirstSection(sections);
         _initAllSections(sections);
+        _initAllAsides();
 
         lng.View.Resize.toolbars();
     };
@@ -49,6 +50,10 @@ LUNGO.Boot.Section = (function(lng, undefined) {
 
     var _initFirstArticle = function(section) {
         section.children(SELECTORS.ARTICLE).first().addClass(ACTIVE_CLASS);
+    };
+
+    var _initAllAsides = function() {
+        lng.Dom.query('aside').addClass('show');
     };
 
     return {
