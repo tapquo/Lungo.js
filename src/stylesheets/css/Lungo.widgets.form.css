@@ -1,8 +1,9 @@
 .form,form{font-size:0.95em;}
 label:not(.checkbox){display:block;margin-bottom:2px;}
 input:not([type=checkbox]),textarea,select{display:inline-block;padding:5px;width:95%;margin-bottom:2px;outline:none;-webkit-appearance:none;font-size:1.0em;font-weight:bold;line-height:1.25em;}
-input[type=search]{width:100%;}
-input[type=search]:before{content:"hola";}
+input[type=search]{width:86%;}
+input[type=search]+.button{float:right;padding:0px;width:32px;}
+input[type=search]+.button .icon{font-size:20px !important;}
 select{width:100%;}
 label.select{position:relative;display:inline-block;width:100%;}
 .select:after{padding:0 7px;position:absolute;top:0;right:0;bottom:0;height:30px;content:"▼";pointer-events:none;font-size:60%;line-height:32px;}
