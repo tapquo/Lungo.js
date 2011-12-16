@@ -10,22 +10,49 @@
 //============================================================
 // Variables
 //
-// Grays
-@white:             #fff;
-@grayLighter:       #ccc;
-@grayLight:         #777;
-@gray:              #555;
-@grayDark:          #333;
-@black:             #000;
 
-// Accent Colors
-@blue:              #08b5fb;
-@green:             #46a546;
-@red:               #9d261d;
-@yellow:            #ffc40d;
-@orange:            #f89406;
-@pink:              #c3325f;
-@purple:            #7a43b6;
+@white:             #fff;
+@black:				#000;
+
+@grey:       		#ccc;
+@grey-active:		#b5b5b5;
+
+@red:         		#e33100;
+@red-active:        #c5280f;
+
+@lightgreen:        #91bd09;
+@lightgreen-active: #7ea41a;
+
+@green:         	#009600;
+@green-active:      #00770e;
+
+@blue:         		#237fd7;
+@blue-active:       #1a69b6;
+
+@arcticblue:        #2daebf;
+@arcticblue-active: #238e9e;
+
+@orange:         	#ff5c00;
+@orange-active:     #da4e15;
+
+@purple:         	#7b658d;
+@purple-active:     #574765;
+
+@magenta:         	#a9014b;
+@magenta-active:    #831239;
+
+@pink:         		#ff007f;
+@pink-active:       #de2870;
+
+@yellow:         	#ffb515;
+@yellow-active:     #dfa020;
+
+@twitter:        	#35cdff;
+@twitter-active:    #2bafda;
+
+@facebook:         	#3b5998;
+@facebook-active:   #2c4579;
+
 //============================================================
 
 //============================================================
@@ -43,11 +70,9 @@
 
 .border-radius() {
 	-webkit-border-radius: @arguments;
-		-moz-border-radius: @arguments;
 		border-radius: @arguments;
 
 	-webkit-background-clip: padding-box;
-		-moz-background-clip: padding;
 		background-clip: padding-box;
 }
 
@@ -70,7 +95,6 @@
 
 .box-shadow() {
     -webkit-box-shadow: @arguments;
-       -moz-box-shadow: @arguments;
             box-shadow: @arguments;
 }
 
@@ -91,9 +115,6 @@
 //============================================================
 .transform() {
     -webkit-transform: @arguments;
-       -moz-transform: @arguments;
-        -ms-transform: @arguments;
-         -o-transform: @arguments;
             transform: @arguments;
 }
 
@@ -112,10 +133,7 @@
 
 .translate() {
     -webkit-transform: translate(@arguments);
-       -moz-transform: translate(@arguments);
-        -ms-transform: translate(@arguments);
-         -o-transform: translate(@arguments);
-            transform: translate(@arguments);
+		transform: translate(@arguments);
 }
 
 
@@ -133,9 +151,6 @@
 
 .scale() {
     -webkit-transform: scale(@arguments);
-       -moz-transform: scale(@arguments);
-        -ms-transform: scale(@arguments);
-         -o-transform: scale(@arguments);
             transform: scale(@arguments);
 }
 
@@ -153,9 +168,6 @@
 
 .rotate() {
     -webkit-transform: rotate(@arguments);
-       -moz-transform: rotate(@arguments);
-        -ms-transform: rotate(@arguments);
-         -o-transform: rotate(@arguments);
             transform: rotate(@arguments);
 }
 
@@ -173,9 +185,6 @@
 
 .backface-visibility() {
     -webkit-backface-visibility: @arguments;
-       -moz-backface-visibility: @arguments;
-        -ms-backface-visibility: @arguments;
-         -o-backface-visibility: @arguments;
             backface-visibility: @arguments;
 }
 
@@ -196,9 +205,6 @@
 
 .transition() {
     -webkit-transition: @arguments;
-       -moz-transition: @arguments;
-        -ms-transition: @arguments;
-         -o-transition: @arguments;
             transition: @arguments;
 }
 
@@ -218,9 +224,6 @@
 
 .user-select() {
 	-webkit-user-select: @arguments; 
-	   -moz-user-select: @arguments;
-	    -ms-user-select: @arguments;
-         -o-user-select: @arguments;
             user-select: @arguments;
 }
 
