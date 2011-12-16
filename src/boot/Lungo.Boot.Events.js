@@ -29,8 +29,8 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.Dom.Event.live(target_selector, touch_start_event, _loadTarget);
     };
 
-    var _iScroll = function(event_handler) {
-        event_handler.preventDefault();
+    var _iScroll = function(event) {
+        event.preventDefault();
     };
 
     var _changeOrientation = function(event) {
@@ -38,19 +38,18 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _toggleAside = function(event) {
-        event.preventDefault();
-
         var link = lng.Dom.query(this);
         var section_id =  _getParentIdOfElement(link);
-
         lng.View.Aside.toggle(section_id);
+
+        event.preventDefault();
     };
 
     var _loadTarget = function(event) {
-        event.preventDefault();
-
         var link = lng.Dom.query(this);
         _selectTarget(link);
+
+        event.preventDefault();
     };
 
     var _selectTarget = function(link) {
