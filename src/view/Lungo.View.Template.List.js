@@ -73,7 +73,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     var _createScroll = function() {
         var container_id_for_scroll = lng.Dom.query('#' + _config.container_id).parent().attr('id');
-        var list_config = {snap:'li'};
+        var list_config = { snap: 'li' };
 
         lng.View.Scroll.create(container_id_for_scroll, list_config);
     };
