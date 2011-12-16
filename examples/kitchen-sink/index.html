@@ -49,18 +49,41 @@
     </section>
     -->
 
-    <section id="kitchen-sink">
+
+     <!--
+    <section id="kitchen-sink2">
         <header data-title="LungoJS Kitchen Sink">
-            <a href="#" class="button green onleft aside" data-target="aside" data-icon="note"></a>
+            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
         </header>
 
         <aside>
             <scroll id="main-aside">
                 <div style="height:1024px">
-                    <a href="#navigation" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
+                    <a href="#kitchen-sink" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
+                    <a href="#dosdos" data-target="article" data-icon="wifi" data-count="334">Navigation</a>
+                </div>
+            </scroll>
+        </aside>
+        <article id="unouno">unouno</article>
+        <article id="dosdos">dosdos</article>
+    </section>
+    -->
+
+    <section id="kitchen-sink">
+        <header data-title="LungoJS Kitchen Sink">
+            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
+        </header>
+
+        <aside>
+            <scroll id="main-aside">
+                <div style="height:1024px">
+                    <a href="#navigation" data-target="sections" data-icon="wifi" data-count="334">Navigation</a>
                     <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
                     <a href="#forms" data-target="article" data-icon="write">Forms</a>
                     <a href="#lists" data-target="article" data-icon="note">Lists</a>
+
+                    <a href="#kitchen-lists" data-target="section" data-icon="note">Kitchen Lists</a>
+
 
                     <!--
                     <a href="#two" data-target="article" data-icon="download"></a>
@@ -81,8 +104,14 @@
             <div class="indented">
                 <h1 class="title">Example of forms</h1>
                 <ul class="form">
+
+
                     <li class="tip dark" data-icon="home mini">Example of forms with full</li>
                     <li class="anchor" data-icon="home">Example of forms with full</li>
+                    <li class="dark">
+                        <input type="search" />
+                        <a href="#" id="btn-prueba" class="button" data-icon="search"></a>
+                    </li>
                     <li>
                         <label>alsdkald</label>
                         <input type="text" placeholder="Input text"/>
@@ -90,6 +119,7 @@
                     </li>
                     <li><input type="password" placeholder="Input password"/></li>
                     <li><textarea placeholder="Textarea sample"></textarea></li>
+
                     <li>
                         <label class="select">
                             <select class="custom">
@@ -153,7 +183,7 @@
                     <a href="#" class="button big lightgreen">lightgreen</a>
                     <a href="#" class="button big green">green</a>
                     <a href="#" class="button big blue">blue</a>
-                    <a href="#" class="button big articblue">articblue</a>
+                    <a href="#" class="button big arcticblue">articblue</a>
                     <a href="#" class="button big orange">orange</a>
                     <a href="#" class="button big magenta">magenta</a>
                     <a href="#" class="button big pink">pink</a>
@@ -167,131 +197,38 @@
         <article id="welcome">
             <h1>apsdaopsda</h1>
         </article>
-
-
-
     </section>
 
     <section id="navigation">
-        <header data-back="left blue" data-title="Navigation">
+        <header data-back="home" data-title="Navigation">
             <nav class="onright">
-                <a href="#" class="current" data-icon="home"><abbr>asdad</abbr></a>
-                <a href="#" data-icon="left"></a>
-                <a href="#" data-icon="up" data-count="3"></a>
-                <a href="#" data-icon="right"></a>
-                <a href="#" data-icon="down"></a>
+                <a href="#navigation-secondary" data-target="section" data-icon="home"></a>
             </nav>
         </header>
 
         <footer class="toolbar">
             <nav>
-                <a href="#" class="current" data-icon="home"><abbr>asdad</abbr></a>
-                <a href="#" data-icon="left"></a>
-                <a href="#" data-icon="up" data-count="3"></a>
-                <a href="#" data-icon="right"></a>
-                <a href="#" data-icon="down"></a>
+                <a href="#nav-1" data-target="article" class="current" data-icon="user"></a>
+                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17"></a>
+                <a href="#nav-3" data-target="article" data-icon="mail"></a>
+                <a href="#nav-4" data-target="article" data-icon="twitter"></a>
             </nav>
         </footer>
 
-        <article>
-        </article>
+        <article id="nav-1" data-title="Article 1"></article>
+        <article id="nav-2" data-title="Article 2"></article>
+        <article id="nav-3" data-title="Article 3"></article>
+        <article id="nav-4" data-title="Article 4"></article>
     </section>
 
-    <section id="kitchen-sinks" class="_static">
-        <header data-title="LungoJS Kitchen Sink">
-            <a href="#" class="button blue onleft aside" data-target="aside" data-icon="note"></a>
-        </header>
+    <section id="navigation-secondary">
+        <header data-back="left" data-title="Navigation"></header>
+        <article></article>
+    </section>
 
-        <footer class="toolbar">
-            <nav>
-                <a href="#one" id="btn-one" data-target="article" class="current" data-icon="user"></a>
-                <a href="#two" id="btn-two" data-target="article" data-icon="cloudup"></a>
-                <a href="#three" id="btn-three" data-target="article" data-icon="user" data-count="42"></a>
-            </nav>
-        </footer>
-
-        <aside>
-            <scroll id="main-aside"><div style="height:1024px">
-                <a href="#one" id="aside-one" class="current" data-target="article" data-icon="wifi">Header and footer</a>
-                <a href="#two" data-target="article" data-icon="download"></a>
-                <a href="#demo_list" data-target="section" id="load_list" data-icon="note" data-count="30">List examples</a>
-                <a href="#demo_events" data-target="section" data-icon="user"></a>
-                <a href="#demo_scroll"  data-target="section" id="load_scroll_mocks" data-icon="points"></a>
-                <a href="#demo_buttons" data-target="section" data-icon="plus"></a>
-                <a href="#demo_forms" data-target="section" data-icon="write"></a>
-                <div class="anchor">Sugars</div>
-                <a href="#demo_sugars" class="current"  data-target="section" data-icon="message">Growl</a>
-                <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
-            </div></scroll>
-        </aside>
-
-		<article id="one" class="list indented">
-            <scroll id="main_scroll">
-                <div class="title" data-icon="home">Principal</div>
-                <ul>
-    				<li class="dark tip" data-icon="info">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    </li>
-    				<li data-icon="download">
-                        <a href="#" class="onright button green" data-icon="twitter">follow</a>
-    					<strong>Toolbar</strong>
-                        <small>Toolbar</small>
-                    </li>
-    				<li data-icon="note">
-                        <div class="onright bubble blue">3.344,34 €</div>
-    					<strong>Lists</strong>
-    					<small>paodapod</small>
-                    </li>
-                    <li data-icon="cloudup">
-                        <div class="onright" data-icon="time">1 hour</div>
-                        <strong>Lists</strong>
-                        <small>paodapod</small>
-                    </li>
-
-                    <li class="toolbar dark">
-                        <nav>
-                            <a href="#" class="current" data-icon="picture"></a>
-                            <a href="#" data-icon="cloudup"></a>
-                            <a href="#" data-icon="user"></a>
-                        </nav>
-                    </li>
-                </ul>
-
-                <div class="title" data-icon="twitter">Twitters</div>
-                <ul>
-    				<li><a href="#demo_events" data-target="section" data-icon="user">
-    						<strong>Events handler</strong><small>paodapod</small></a></li>
-                    <li class="anchor" data-icon="user">alskdad</li>
-                    <li class="anchor" data-icon="user"><a href="#">alskdad</a></li>
-    				<li><a href="#demo_scroll" data-target="section" id="load_scroll_mocks" data-icon="points">
-    						<strong>Scroll</strong><small>paodapod</strong></small></a></li>
-    				<li><a href="#demo_buttons" data-target="section" data-icon="plus">
-    						<strong>Buttons</strong><small>paodapod</small></a></li>
-    				<li><a href="#demo_forms" data-target="section" data-icon="write">
-                        <strong>Forms</strong><small>paodapod</small></a></li>
-    				<li class="anchor" data-icon="key">Tapquo Sugars</li>
-    				<li><a href="#demo_sugars" data-target="section" data-icon="box">
-    					<strong>Sugars</strong><small>paodapod</small></a></li>
-    			</ul>
-			</scroll>
-        </article>
-
-
-
-        <article id="two"></article>
-
-        <article id="three" class="list">
-            <ul>
-                <li data-image="assets/images/avatars/1.jpg">
-                    Javi Jimenez
-                    <small>asdasd</small>
-                </li>
-                <li data-image="assets/images/avatars/2.jpg">
-                    Iker
-                    <small>asdasd</small>
-                </li>
-            </ul>
-        </article>
+    <section id="kitchen-lists">
+        <header data-back="home" data-title="List"></header>
+        <article id="profiles-list" class="list"></article>
     </section>
 
     <section id="settings">
@@ -350,5 +287,10 @@
     <script src="../../src/boot/Lungo.Boot.Article.js"></script>
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
+    <script src="app/events.js"></script>
+    <script src="app/view.js"></script>
+    <script src="app/data.js"></script>
+    <script src="app/services.js"></script>
+
 </body>
 </html>
