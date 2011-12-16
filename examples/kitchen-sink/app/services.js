@@ -1,18 +1,24 @@
 App.Services = (function(lng, App, undefined) {
-    
-    
-    var getMockList = function(){
-        var mock = new Array(); 
-        for (var i=1; i <= 6; i++) {
-            mock.push({id:i, name:'name nº'+i, description:'description nº'+i, avatar:'resources/images/avatar.jpg'});
-        }
-        for (var i=7; i <= 12; i++) {
-            mock.push({id:i, name:'surname nº'+i, description:'description nº'+i});
-        }
-        for (var i=13; i <= 32; i++) {
-            mock.push({id:i, name:'name nº'+i, description:'description nº'+i});
-        }
 
+    var mockProfiles = function() {
+        var profiles = [];
+        for (var i=1, len=12; i <= len; i++ ) {
+            profiles.push({
+                id:i,
+                name: 'Profile nº' + i,
+                description: 'Description nº' + i,
+                avatar: 'assets/images/avatars/' + i + '.jpg'
+            })
+        }
+        console.error('profiles', profiles);
+
+        lng.View.Template.List.create({
+            container_id: 'profiles-list',
+            template_id: 'profile-tmp',
+            data: profiles
+        });
+
+        /*
         lng.View.Template.List.create({
             container_id: 'list_sample',
             template_id: 'list-tmp',
@@ -26,10 +32,13 @@ App.Services = (function(lng, App, undefined) {
             order_field: 'name',
             order_type: 'desc'
         });
-    }
+        */
+    };
+
+    mockProfiles();
 
     return {
-        getMockList: getMockList
+        mockProfiles: mockProfiles
     }
 
 })(LUNGO, App);

@@ -1,11 +1,11 @@
 App.View = (function(lng, App, undefined) {
 
     lng.View.Template.create(
-        'list-tmp', 
+        'profile-tmp',
         '<li class="{{anchor}}">\
-            <a href="#">\
-                <div class="bubble articblue onright">{{id}} €</div>\
-                <strong>{{name}}{{anchor_name}}</strong>\
+                <img src="{{avatar}}" />\
+                <div class="onright">{{name}}</div>\
+                {{name}}\
                 <small>{{description}}</small>\
             </a>\
         </li>'
