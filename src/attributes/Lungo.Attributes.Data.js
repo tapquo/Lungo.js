@@ -19,6 +19,11 @@ LUNGO.Attributes.Data = {
         selector: '*',
         html: '<span class="bubble count">{{value}}</span>'
     },
+    Search: {
+        tag: 'search',
+        selector: '*',
+        html: '<input type="search" placeholder="{{value}}"/><a href="#" class="button" data-icon="search"></a>'
+    },
     Icon: {
         tag: 'icon',
         selector: '*',
