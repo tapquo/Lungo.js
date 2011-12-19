@@ -13,7 +13,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
 
     var SELECTORS = {
         LIST_IN_ARTICLE: 'article.list',
-        SCROLL_IN_ARTICLE: 'scroll',
+        SCROLL_IN_ARTICLE: '.scrollable',
         CHECKBOX_IN_ARTICLE: '.checkbox, .radio'
     };
 
