@@ -18,10 +18,15 @@
     <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
     <link rel="apple-touch-startup-image" href="assets/images/default.png">
     <!-- Main Stylesheet -->
+
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.base.css">
+    <!--
+
+    -->
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.list.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.css">
+
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.splash.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.button.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.form.css">
@@ -30,13 +35,13 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="assets/stylesheets/app.css">
+
 </head>
 
 <body class="app">
-    <!--
     <section id="login">
-        <article class="splash indented">
-            <div>
+        <article class="splash">
+            <div class="indented">
                 <h1>Kitchen<span class="semi-opacity">Sink<span></h1>
 
                 <input type="text" placeholder="Type your user" />
@@ -47,71 +52,168 @@
             </div>
         </article>
     </section>
-    -->
 
-
-     <!--
-    <section id="kitchen-sink2">
-        <header data-title="LungoJS Kitchen Sink">
-            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
-        </header>
-
-        <aside>
-            <scroll id="main-aside">
-                <div style="height:1024px">
-                    <a href="#kitchen-sink" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
-                    <a href="#dosdos" data-target="article" data-icon="wifi" data-count="334">Navigation</a>
-                </div>
-            </scroll>
-        </aside>
-        <article id="unouno">unouno</article>
-        <article id="dosdos">dosdos</article>
-    </section>
-    -->
+    <!-- ============================= kitchen-sink ============================= -->
 
     <section id="kitchen-sink">
         <header data-title="LungoJS Kitchen Sink">
             <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
         </header>
 
-        <aside>
-            <scroll id="main-aside">
-                <div style="height:1024px">
-                    <a href="#navigation" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
-                    <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
-                    <a href="#forms" data-target="article" data-icon="write">Forms</a>
-                    <a href="#lists" data-target="article" data-icon="note">Lists</a>
+        <aside id="kitchen-sink-scroll" class="scrollable">
+            <div>
+            <a href="#welcome" data-target="article" class="current" data-icon="wifi">Welcome</a>
+            <a href="#navigation" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
+            <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
+            <a href="#icons-images" data-target="section" data-icon="picture">Icons & Images</a>
+            <a href="#data-attributes" data-target="section" data-icon="picture">Data Attributes</a>
+            <a href="#forms" data-target="article" data-icon="write">Forms</a>
+            <a href="#lists" data-target="article" data-icon="note">Lists</a>
 
-                    <a href="#kitchen-lists" data-target="section" data-icon="note">Kitchen Lists</a>
-
-
-                    <!--
-                    <a href="#two" data-target="article" data-icon="download"></a>
-                    <a href="#demo_list" data-target="section" id="load_list" data-icon="note" data-count="30">List examples</a>
-                    <a href="#demo_events" data-target="section" data-icon="user"></a>
-                    <a href="#demo_scroll" data-target="section" id="load_scroll_mocks" data-icon="points"></a>
-                    <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
-
-                    <div class="anchor">Sugars</div>
-                    <a href="#demo_sugars" class="current"  data-target="section" data-icon="message">Growl</a>
-                    <a href="#demo_sugars" data-target="section" data-icon="calendar">Calendar</a>
-                    -->
-                </div>
-            </scroll>
+            <a href="#kitchen-lists" data-target="section" data-icon="note">Kitchen Lists</a>
+            </div>
         </aside>
 
-        <article id="forms" class="list rounded">
+        <article id="welcome" class="list scrollable">
+            <div class="indented">
+                <h1 class="title" data-icon="home">Welcome to LungoJS KitchenSink</h1>
+                <p class="text">Meet the first Mobile Framework that uses the actual features of #HTML5, #CSS3 and #JavaScript.</p>
+
+<pre><code>asdlkja lkdjalkd jkladjl
+lsakdjkla
+</code></pre>
+            </div>
+        </article>
+
+        <article id="lists" class="list scrollable">
+
+        </article>
+
+        <article id="buttons" class="scrollable">
+            <div class="indented">
+                <a href="#" class="button big">default</a>
+                <a href="#" class="button big disabled">disabled</a>
+                <a href="#" class="button big red">red</a>
+                <a href="#" class="button big lightgreen">lightgreen</a>
+                <a href="#" class="button big green">green</a>
+                <a href="#" class="button big blue">blue</a>
+                <a href="#" class="button big arcticblue">articblue</a>
+                <a href="#" class="button big orange">orange</a>
+                <a href="#" class="button big magenta">magenta</a>
+                <a href="#" class="button big pink">pink</a>
+                <a href="#" class="button big yellow">yellow</a>
+                <a href="#" class="button big twitter" data-icon="twitter">twitter</a>
+                <a href="#" class="button big facebook" data-icon="facebook">facebook</a>
+
+                <div class="text">You can view other examples push in the next button</div>
+
+                <a href="#buttons-extra" data-target="section" class="button black big" data-icon="add">View other Examples</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- ============================= buttons extra ============================= -->
+
+    <section id="buttons-extra">
+        <header data-back="home" data-title="Example of buttons">
+            <a href="#" class="button red onright" data-icon="add">With icon</a>
+            <a href="#" class="button arcticblue onright">Text</a>
+        </header>
+
+        <footer>
+            <a href="#" class="button blue onleft">Text</a>
+            <a href="#" class="button yellow onleft" data-icon="left"></a>
+            <a href="#" class="button orange onright" data-icon="right">onright</a>
+        </footer>
+
+        <article></article>
+    </section>
+
+    <!-- ============================= navigation ============================= -->
+    <section id="navigation">
+        <header data-back="home" data-title="Navigation">
+            <nav class="onright">
+                <a href="#back" data-target="section" data-icon="left"></a>
+                <a href="#navigation-secondary" data-target="section" data-icon="right"></a>
+            </nav>
+        </header>
+
+        <footer class="toolbar">
+            <nav>
+                <a href="#nav-1" data-target="article" class="current" data-icon="user"></a>
+                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17"></a>
+                <a href="#nav-3" data-target="article" data-icon="mail"></a>
+                <a href="#nav-4" data-target="article" data-icon="twitter"></a>
+            </nav>
+        </footer>
+
+        <article id="nav-1" class="list scrollable">
+            <ul>
+                <li>Other example</li>
+            </ul>
+        </article>
+        <article id="nav-2" data-title="Article 2"></article>
+        <article id="nav-3" data-title="Article 3"></article>
+        <article id="nav-4" data-title="Article 4"></article>
+    </section>
+
+    <section id="navigation-secondary">
+        <header data-back="left" data-title="Navigation"></header>
+
+        <footer>
+            <nav class="onleft">
+                <a href="#nav-1" data-target="article" class="current" data-icon="user"></a>
+                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17"></a>
+                <a href="#nav-3" data-target="article" data-icon="mail"></a>
+            </nav>
+        </footer>
+
+        <article id="nav-1" data-title="Article 1"></article>
+        <article id="nav-2" data-title="Article 2"></article>
+        <article id="nav-3" data-title="Article 3"></article>
+    </section>
+    <!-- ============================= header footer ============================= -->
+
+    <section id="kitchen-sink2">
+        <header data-title="LungoJS Kitchen Sink">
+            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
+        </header>
+
+        <aside>
+            <a href="#navigation" data-target="section" data-icon="wifi" data-count="334">Navigation</a>
+            <a href="#buttons" data-target="article" data-icon="plus">Buttons & Colours</a>
+            <a href="#forms" data-target="article" data-icon="write">Forms</a>
+            <a href="#lists" data-target="article" data-icon="note">Lists</a>
+
+            <a href="#kitchen-lists" data-target="section" data-icon="note">Kitchen Lists</a>
+        </aside>
+
+        <article id="forms" class="list scrollable">
             <div class="indented">
                 <h1 class="title">Example of forms</h1>
                 <ul class="form">
-
-
+                    <li class="red" data-image="assets/images/avatars/1.jpg">
+                        <div class="bubble red onright">1,23 €</div>
+                        Javi jimenez perez
+                        <small>CEO & Cjaa jajajajpppwwPP Tapquo</small>
+                    </li>
+                    <li data-icon="user">
+                        <div class="onright" data-icon="calendar">31 years</div>
+                        Javi jimenez perez
+                        <small>CEO & Cjaa jajajajpppwwPP Tapquo</small>
+                    </li>
+                    <li>
+                        <div class="onright" data-icon="calendar">31 years</div>
+                        Guillermo
+                        <small>CEO & Creative Leat at Tapquo</small>
+                    </li>
                     <li class="tip dark" data-icon="home mini">Example of forms with full</li>
                     <li class="anchor" data-icon="home">Example of forms with full</li>
                     <li class="dark">
                         <input type="search" />
                         <a href="#" id="btn-prueba" class="button" data-icon="search"></a>
                     </li>
+                    <li class="dark" data-search="Introduce texto a buscar"></li>
                     <li>
                         <label>alsdkald</label>
                         <input type="text" placeholder="Input text"/>
@@ -148,20 +250,16 @@
 
                 <a href="#" class="button big green" data-icon="check">Accept</a>
                 <a href="#" class="button big red" data-icon="cancel">Cancel</a>
-
             </div>
-
         </article>
 
-
-
-        <article id="lists" class="list rounded">
+        <article id="lists" class="list scrollable">
             <div class="indented">
                 <ul>
                     <li data-image="assets/images/avatars/1.jpg">
                         <div class="onright" data-icon="calendar">31 years</div>
-                        Javi
-                        <small>CEO & Creative Leat at Tapquo</small>
+                        Javi jimenez perez
+                        <small>CEO & Cjaa 's's'ssssreative Leat at Tapquo</small>
                     </li>
                     <li data-image="assets/images/avatars/2.jpg">
                         <div class="onright" data-icon="calendar">31 years</div>
@@ -170,65 +268,18 @@
                     </li>
                 </ul>
             </div>
-
-        </article>
-
-        <article id="buttons">
-            <scroll id="buttons-scroll" class="indented">
-                <div style="height:680px;">
-                    <a href="#" class="button big">default</a>
-                    <a href="#" class="button big disabled">disabled</a>
-
-                    <a href="#" class="button big red">red</a>
-                    <a href="#" class="button big lightgreen">lightgreen</a>
-                    <a href="#" class="button big green">green</a>
-                    <a href="#" class="button big blue">blue</a>
-                    <a href="#" class="button big arcticblue">articblue</a>
-                    <a href="#" class="button big orange">orange</a>
-                    <a href="#" class="button big magenta">magenta</a>
-                    <a href="#" class="button big pink">pink</a>
-                    <a href="#" class="button big yellow">yellow</a>
-                    <a href="#" class="button big twitter" data-icon="twitter">twitter</a>
-                    <a href="#" class="button big facebook" data-icon="facebook">facebook</a>
-                </div>
-            </scroll>
-        </article>
-
-        <article id="welcome">
-            <h1>apsdaopsda</h1>
         </article>
     </section>
 
-    <section id="navigation">
-        <header data-back="home" data-title="Navigation">
-            <nav class="onright">
-                <a href="#navigation-secondary" data-target="section" data-icon="home"></a>
-            </nav>
-        </header>
 
-        <footer class="toolbar">
-            <nav>
-                <a href="#nav-1" data-target="article" class="current" data-icon="user"></a>
-                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17"></a>
-                <a href="#nav-3" data-target="article" data-icon="mail"></a>
-                <a href="#nav-4" data-target="article" data-icon="twitter"></a>
-            </nav>
-        </footer>
 
-        <article id="nav-1" data-title="Article 1"></article>
-        <article id="nav-2" data-title="Article 2"></article>
-        <article id="nav-3" data-title="Article 3"></article>
-        <article id="nav-4" data-title="Article 4"></article>
-    </section>
-
-    <section id="navigation-secondary">
-        <header data-back="left" data-title="Navigation"></header>
-        <article></article>
-    </section>
 
     <section id="kitchen-lists">
         <header data-back="home" data-title="List"></header>
-        <article id="profiles-list" class="list"></article>
+        <footer class="toolbar"></footer>
+        <article id="profiles-list" class="list ">
+
+        </article>
     </section>
 
     <section id="settings">
@@ -255,7 +306,8 @@
 
     <!-- Third parties dependencies -->
     <script src="../../src/lib/zepto.js"></script>
-    <script src="../../src/lib/iscroll.js"></script>
+    <script src="../../src/lib/iscroll-lite.js"></script>
+
     <!-- LungoJS Libraries (Development mode)-->
     <script src="../../src/Lungo.js"></script>
     <script src="../../src/Lungo.App.js" ></script>
@@ -291,6 +343,8 @@
     <script src="app/view.js"></script>
     <script src="app/data.js"></script>
     <script src="app/services.js"></script>
+
+
 
 </body>
 </html>
