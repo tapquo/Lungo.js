@@ -1,6 +1,6 @@
 a.grey,.grey{background-color:#cccccc;}
 a.grey:active{background-color:#b5b5b5;}
-a.black,.grey{background-color:#2c2c2d;}
+a.black,.grey{background-color:#000000;}
 a.black:active{background-color:#000000;}
 a.red,.red{background-color:#e33100;}
 a.red:active{background-color:#c5280f;}
@@ -27,7 +27,7 @@ a.twitter:active{background-color:#2bafda;}
 a.facebook,.facebook:not(span){background-color:#3b5998;}
 a.facebook:active{background-color:#2c4579;}
 li.grey{box-shadow:inset 3px 0px 0px #cccccc;}
-li.black{box-shadow:inset 3px 0px 0px #2c2c2d;}
+li.black{box-shadow:inset 3px 0px 0px #000000;}
 li.red{box-shadow:inset 3px 0px 0px #e33100;}
 li.lightgreen{box-shadow:inset 3px 0px 0px #91bd09;}
 li.green{box-shadow:inset 3px 0px 0px #009600;}
