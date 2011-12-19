@@ -9,16 +9,25 @@
 
 @import "mixins.less";
 
-.scroll, scroll { 
-	position: relative; 
-	display: block; 
-	width: 100%; 
+/* @group scroll */
+
+.scrollable { 
+	position: absolute;
+	display: block;
+	width: 100%;
 	height: 100%;
+	
 }
 
-section.copyright img{
-	max-height: 128px;
+.scroll {
+  	overflow: scroll;
+  	-webkit-overflow-scrolling: touch;
 }
+
+.scroll .vertical {
+    
+}
+/* @end */
 
 /* @group .position */
 .onleft { float: left; }
@@ -27,12 +36,15 @@ section.copyright img{
 	
 .indented {
     width: auto;
-	padding: 10px 10px 0;
+    height: auto;
+	padding: 10px 10px 0px;
 }
 
 .indented ul {
 		margin-bottom: 10px;
-		height: inherit;
+		height: auto;
+		width: inherit;
+		
 	}
 	.rounded ul { .border-radius(4px); }	
 	.rounded li:first-child { .border-radius(4px 4px 0px 0px); }
@@ -78,10 +90,4 @@ section.copyright img{
 	font-size: 0.8em;
 	font-weight: bold;		
 	line-height: 1.0em;
-}
-
-
-.scroll {
-  	overflow: scroll;
-  	-webkit-overflow-scrolling: touch;
 }
