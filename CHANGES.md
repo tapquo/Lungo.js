@@ -9,8 +9,9 @@
 - New Optimized .toolbar
 - New system of forms with <ul> element
 - New <article> classes: indented & rounded
-- ...
+- Discontinued <scroll> element becoming in the new .scrollable class
 - New Kitchen Sink 1.0.4 (in GitHub Repository)
+- Remove iScroll reference, now LungoJS uses iScroll-Lite
 - Remove Jasmine Test Framework
 - BUG Fixed:
     - Scroll with form elements
