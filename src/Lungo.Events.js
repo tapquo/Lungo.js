@@ -26,7 +26,7 @@ LUNGO.Events = (function(lng, undefined) {
             TOUCH_END: 'mouseup',
             TAP: 'click',
             DOUBLE_TAP: 'dblclick',
-            ORIENTATION_CHANGE: 'orientationchange'
+            ORIENTATION_CHANGE: 'resize'
         }
     };
 
