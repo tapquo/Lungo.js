@@ -4,7 +4,7 @@ Copyright (c) 2011 TapQuo Inc (Javier Jimenez Villar)
 ===============================================================================
 
 OPEN SOURCE LICENSE FOR LUNGOJS
-Version 1.0.3
+Version 1.0.4
 
 LungoJS is an avid supporter of open source software. This is the appropriate
 option if you are creating an open source application with a license compatible
@@ -31,7 +31,7 @@ THE SOFTWARE IS LICENSED, NOT SOLD.
 ===============================================================================
 
 OPEN SOURCE LICENSE FAQ
-Version 1.0.3
+Version 1.0.4
 
 This document is for guidance purposes only and is not a legal document and is
 not legally binding. We encourage you to read the GPL v3 and the Quick Guide to
@@ -42,7 +42,7 @@ advice.
 ===============================================================================
 
 LUNGOJS AND THE GPL v3
-Version 1.0.3
+Version 1.0.4
 
 -------------------------------------------------------------------------------
 What is the GPL v3?
