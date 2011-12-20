@@ -25,7 +25,7 @@ article.current{z-index:1;opacity:1;}
 article.aside{-webkit-transform:translate3d(256px, 0, 0);transform:translate3d(256px, 0, 0);}
 @media handheld, only screen and (min-width: 768px){article.aside{-webkit-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);}}article .title{font-size:1.1em;margin:0px 0 4px;}
 article .title .icon{margin-right:4px;}
-article .text{margin:4px 0;display:block;font-size:0.9em;font-weight:normal;}
+article .text{margin:4px 0 8px;display:block;font-size:0.9em;font-weight:normal;line-height:1.4em;}
 nav{height:inherit;text-align:center;font-weight:normal;}
 nav a{display:inline-block;padding:0 6px;height:inherit;float:left;font-size:2.0em;line-height:38px;}
 nav a abbr{position:relative;bottom:3px;margin-left:2px;display:none;font-size:0.5em;font-weight:bold;}
