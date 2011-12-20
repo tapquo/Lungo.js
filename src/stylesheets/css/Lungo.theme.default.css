@@ -104,7 +104,7 @@ aside ~ article {
 .list .tip {
   color: #7a7a7a;
 }
-.list .anchor {
+.list li.anchor {
   background: #f4f4f4;
   color: #222;
 }
