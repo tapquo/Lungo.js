@@ -16,13 +16,29 @@ App.Services = (function(lng, App, undefined) {
             }
         }
 
-        lng.View.Template.List.create({
-            container_id: 'profiles-list',
+        //Normal List
+        var parameters = {
+            container_id: 'list-plain',
             template_id: 'profile-tmp',
-            data: profiles,
-            order_field: 'id',
-            order_type: 'asc'
-        });
+            data: profiles
+        };
+        lng.View.Template.List.create(parameters);
+
+        //Indented List
+        //parameters.container_id = 'list-indented-container';
+        //lng.View.Template.List.create(parameters);
+        lng.View.Template.Binding.create('list-indented-container', 'profile-tmp', profiles);
+
+        //Rounded List
+        //parameters.container_id = 'list-rounded';
+        //lng.View.Template.List.create(parameters);
+        lng.View.Template.Binding.create('list-rounded-container', 'profile-tmp', profiles);
+
+        //Ordered List
+        parameters.container_id = 'list-ordered';
+        parameters.order_field = 'name';
+        parameters.order_type = 'asc';
+        lng.View.Template.List.create(parameters);
     };
 
     mockProfiles();
