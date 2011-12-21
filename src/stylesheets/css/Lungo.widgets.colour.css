@@ -1,5 +1,7 @@
-a.grey,.grey{background-color:#ccc;}
+a.grey,.grey{background-color:#cccccc;}
 a.grey:active{background-color:#b5b5b5;}
+a.black,.grey{background-color:#000000;}
+a.black:active{background-color:#000000;}
 a.red,.red{background-color:#e33100;}
 a.red:active{background-color:#c5280f;}
 a.lightgreen,.lightgreen{background-color:#91bd09;}
@@ -24,3 +26,17 @@ a.twitter,.twitter:not(span){background-color:#35cdff;}
 a.twitter:active{background-color:#2bafda;}
 a.facebook,.facebook:not(span){background-color:#3b5998;}
 a.facebook:active{background-color:#2c4579;}
+li.grey{box-shadow:inset 3px 0px 0px #cccccc;}
+li.black{box-shadow:inset 3px 0px 0px #000000;}
+li.red{box-shadow:inset 3px 0px 0px #e33100;}
+li.lightgreen{box-shadow:inset 3px 0px 0px #91bd09;}
+li.green{box-shadow:inset 3px 0px 0px #009600;}
+li.blue{box-shadow:inset 3px 0px 0px #237fd7;}
+li.arcticblue{box-shadow:inset 3px 0px 0px #2daebf;}
+li.orange{box-shadow:inset 3px 0px 0px #ff5c00;}
+li.purple{box-shadow:inset 3px 0px 0px #7b658d;}
+li.magenta{box-shadow:inset 3px 0px 0px #a9014b;}
+li.pink{box-shadow:inset 3px 0px 0px #ff007f;}
+li.yellow{box-shadow:inset 3px 0px 0px #ffb515;}
+li.twitter{box-shadow:inset 3px 0px 0px #35cdff;}
+li.facebook{box-shadow:inset 3px 0px 0px #3b5998;}

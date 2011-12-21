@@ -1,6 +1,6 @@
-/** 
+/**
  * Lungo UI events Manager
- * 
+ *
  * @namespace LUNGO
  * @class Event
  * @requires Zepto
@@ -21,12 +21,12 @@ LUNGO.Events = (function(lng, undefined) {
             ORIENTATION_CHANGE: 'orientationchange'
         },
         desktop: {
-            TOUCH_START: 'click',
+            TOUCH_START: 'mousedown',
             TOUCH_MOVE: 'mousemove',
             TOUCH_END: 'mouseup',
             TAP: 'click',
             DOUBLE_TAP: 'dblclick',
-            ORIENTATION_CHANGE: 'orientationchange'
+            ORIENTATION_CHANGE: 'resize'
         }
     };
 

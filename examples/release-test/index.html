@@ -1,0 +1,50 @@
+<!doctype html>
+<html manifest="index.appcache">
+<head>
+    <meta charset="utf-8">
+    <title>LungoJS</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- For iPhone 4 with high-resolution Retina display: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icon@2x.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icon-72.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
+    <link rel="apple-touch-startup-image" href="assets/images/default.png">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../release/lungo-1.0.4.min.css">
+    <link rel="stylesheet" href="../../release/lungo-1.0.4.min.icons.css">
+    <link rel="stylesheet" href="../../release/lungo.theme.default.css">
+</head>
+
+<body class="app">
+    <!--
+        First, you have to do is create a LungoJS Application instance in the file app.js.
+        ...and use a Webkit browser as Chrome or Safari.
+    -->
+    <section id="hello_world">
+        <header data-title="Hello world!"></header>
+
+        <footer></footer>
+
+        <aside></aside>
+
+        <article></article>
+    </section>
+
+    <!-- LungoJS (Production mode) -->
+    <script src="../../release/lungo-1.0.4.packed.js"></script>
+    <!-- LungoJS - Sandbox App -->
+    <script src="app/app.js"></script>
+    <script src="app/data.js"></script>
+    <script src="app/events.js"></script>
+    <script src="app/services.js"></script>
+    <script src="app/view.js"></script>
+</body>
+</html>
