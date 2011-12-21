@@ -9,51 +9,35 @@
 
 @import "mixins.less";
 
-/* @group <section> */
-body {
-	height: 100%;
-}
+@defaultTrasition : @easeOutSine;
 
+/* @group <section> */
 section{
 	position: absolute;
 	position: fixed;
 	width: 100%;
 	height: inherit;
 	z-index: 0;
-	-webkit-backface-visibility: hidden;
+	
 	.transform(translate3d(100%, 0, 0));
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
-section:first-child  {
+section:first-child {
+	.transform(translate3d(0%, 0, 0));
 	z-index: 1;
-	.transform(translate3d(0%, 0, 0));
 }
 
-section.hide  {
-	z-index: 0;
+section.hide {
 	.transform(translate3d(-100%, 0, 0));
+	z-index: 0;
+	
 }
-section.show  {
+section.show {
+	.transform(translate3d(0%, 0, 0));
 	 z-index: 1;
-	.transform(translate3d(0%, 0, 0));
 }
-
-section.static.hide  {
-	.transform(translate3d(0%, 0, 0));
-}
-
-section.popup  {
-	.transform(translate3d(0, 100%, 0));
-}
-
-section.popup.show  {
-	.transform(translate3d(0, 0%, 0));
-}
-
-section.popup.hide  {
-	.transform(translate3d(0, -100%, 0));
-}
-
 /* @end */
 
 
@@ -62,10 +46,10 @@ header, footer  {
 	position: absolute;
 	left: 0px;
 	width: 100%;
-	height: 40px;
+	height: 38px;
 	display: block;
 	z-index: 2;
-	line-height: 40px;
+	line-height: 38px;
 }
 
 header  {
@@ -92,7 +76,7 @@ header .title {
 }
 
 section header a.button, section footer a.button  {
-	margin: 4px 3px auto;
+	margin: 3px 3px auto 4px;
 }
 
 section header a.button.icon, section footer a.button.icon  {
@@ -100,6 +84,125 @@ section header a.button.icon, section footer a.button.icon  {
 	font-size: 1.5em;
 	font-weight: normal;
 }
+/* @end */
+
+/* @group <aside> */
+aside {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	height: auto;
+	width: 256px;
+	opacity: 0;
+}
+
+	aside.show {
+		opacity: 1;
+	}
+
+header ~ aside {
+	padding-top: 40px;
+}
+
+footer ~ aside {
+	padding-bottom: 40px;
+}
+
+aside ~ article {
+	.transform(translate3d(0px, 0, 0));
+	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
+}
+
+aside a {
+	display: block;
+	width: 244px;
+	height: 40px;
+	padding: 0 6px;
+
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+	aside .icon {
+		width: 28px;
+		height: 28px;
+		float: left;
+		margin: 8px 6px 0 0;
+
+	    font-size: 1.9em;
+	    line-height: 1.0em;
+	    text-align: center;
+	}
+	
+	aside .anchor {
+		font-weight: bold;
+    	padding: 3px 10px 4px;
+	}
+	
+	aside .bubble {
+    	float: right;
+		margin: 12px 4px 0 0;
+	}
+
+@media handheld, only screen and (min-width: 768px) {
+	[data-target="aside"] {
+		display: none !important;
+	}
+
+	aside {
+		opacity: 1;
+	}
+
+	aside ~ article{
+		width: auto !important;
+    	left: 256px;
+    	right:  0px !important;
+	}
+}
+/* @end */
+
+/* @group <article> */
+article {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	top: 0px;
+	bottom: 0px;
+	display: block;
+	z-index: 0;
+	opacity: 0;
+}
+	
+	header ~ article { top: 40px; }	
+	
+	footer ~ article { bottom: 40px; }
+
+	article.current {
+		z-index: 1;
+		opacity: 1;
+	}
+	
+	article.aside { .transform(translate3d(256px, 0, 0)); }
+	
+	@media handheld, only screen and (min-width: 768px) {
+		article.aside { .transform(translate3d(0px, 0, 0)); }
+	}
+	
+	article .title {
+		font-size: 1.1em;
+		 margin: 0px 0 4px;
+	}
+		
+		article .title .icon { margin-right: 4px; }
+	
+	article .text {
+		margin: 4px 0 8px;
+		display: block;
+    	font-size: 0.9em;
+    	font-weight: normal;
+    	line-height: 1.4em;
+	}			
 /* @end */
 
 /* @group <nav> */
@@ -115,6 +218,11 @@ nav a  {
 	height: inherit;
 	float: left;
 	font-size: 2.0em;
+	line-height: 38px;
+}
+
+nav .icon {
+    
 }
 
 nav a abbr {
@@ -130,103 +238,42 @@ nav a.current abbr {
 	display: inline;
 }
 
+/*
 nav a.current {
-	.transition(all 0.3s ease-in-out);
+	.transition(all 0.3s @easeInOutCubic);
 }
-/* @end */
+*/
 
-/* @group <aside> */
-aside {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	height: auto;
-	width: 0px;
-}
-	aside.show {
-		width: 256px;
-	}
 
-header ~ aside {
-	padding-top: 40px;
-}
-
-footer ~ aside {
-	padding-bottom: 40px;
-}
-
-aside ~ article{
-	-webkit-transition: left 0.3s ease-in-out;
-	left: 0px;
-}
-
-aside a{
+.toolbar {
+	height: 48px;
 	display: block;
-	width: 244px;
-	height: 40px;
-	padding: 0 6px;
-
-	font-size: 1.1em;
-	font-weight: bold;
-	line-height: 40px;
 }
 
-	aside a .icon {
-		width: 28px;
-		height: 28px;
-		float: left;
-		margin: 8px 6px 0 0;
-
-	    font-size: 1.9em;
-	    line-height: 1.0em;
-	    text-align: center;
-	}
-
-@media handheld, only screen and (min-width: 768px) {
-	[data-target="aside"] {
-		display: none !important;
-	}
-
-	aside {
-		width: 256px;
-	}
-
-	aside ~ article{
-    	left: 256px;
-	}
+.toolbar a {
+	float: left;
+	padding: 0;
+	font-size: 2.2em;
 }
-/* @end */
 
-/* @group <article> */
-article {
-	position: absolute;
-	width: 100%;
-	height: auto;
-	top: 0px;
-	bottom: 0px;
+.toolbar .icon {
 	display: block;
-	z-index: 0;
-	opacity: 0;
+	
+	line-height: 52px;
 }
 
-article.current {
-	z-index: 1;
-	opacity: 1;
+nav .bubble {
+    position: relative;
+    top:  -10px;
+    left: -10px;
+    margin-right: -16px;       
+    font-size: 0.4em;    
 }
 
-.toolbar{
-	height:48px;
-	line-height:44px;
-	display:block;
+.toolbar .bubble {
+    top:  -60px;
+    left: 12px;
+    padding: 1px 4px;
 }
 
-.toolbar a{
-	float:left;
-	padding:0;
-	font-size:2.0em;
-}
-
-article.aside {
-    left: 256px !important;
-}
 /* @end */

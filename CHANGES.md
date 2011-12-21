@@ -1,6 +1,22 @@
 # LungoJS
 ### HTML5 Mobile Framework, and stuff.
 
+## Changes in Version 1.0.4
+
+- Optimized layout: No JavaScript resizes (full CSS3 selectors)
+- Better transformations between <sections> (with easeInOutCubic transform)
+- New Data-Attribute "count" (API JavaScript support)
+- New Optimized .toolbar
+- New system of forms with <ul> element
+- New <article> classes: indented & rounded
+- Discontinued <scroll> element becoming in the new .scrollable class
+- New Kitchen Sink 1.0.4 (in GitHub Repository)
+- Remove iScroll reference, now LungoJS uses iScroll-Lite
+- Remove Jasmine Test Framework
+- BUG Fixed:
+    - Scroll with form elements
+    - Multiple <aside>s
+
 ## Changes in Version 1.0.3
 
 - Fixed error in method List.create() when result is a object

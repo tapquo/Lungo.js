@@ -1,6 +1,6 @@
-/** 
+/**
  * Wrapper of the third library iScroll
- * 
+ *
  * @namespace LUNGO.View
  * @class Scroll
  * @requires Zepto
@@ -27,6 +27,8 @@ LUNGO.View.Scroll = (function(lng, undefined) {
 
     var CACHE_KEY = 'scrolls';
 
+    var HEADER_FOOTER_BLEEDING = 90;
+
     /**
      * Creates a new iScroll element.
      *
@@ -38,13 +40,15 @@ LUNGO.View.Scroll = (function(lng, undefined) {
     var create = function(id, properties) {
         if (id) {
             var scroll = lng.Dom.query('#' + id);
-            var scroll_children = scroll.children();
-            var need_scroll = (scroll_children.height() >= scroll.height());
 
-            if (scroll_children.length > 0 && need_scroll) {
-                properties = _mixProperties(scroll, properties);
-                _saveScrollInCache(id, properties);
-            }
+            //ToDo >> Refactor
+            setTimeout(function() {
+                if (_needScroll(scroll)) {
+                    properties = _mixProperties(scroll, properties);
+                    _saveScrollInCache(id, properties);
+                }
+            }, 100);
+
         } else {
             lng.Core.log(3, 'ERROR: Impossible to create a <scroll> without ID');
         }
@@ -95,6 +99,24 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      */
     var isHorizontal = function(scroll) {
         return (scroll.hasClass(HORIZONTAL_CLASS)) ? true : false;
+    };
+
+    var _needScroll = function(scroll) {
+        var is_necessary = false;
+
+        var element = scroll[0];
+        if (element.clientHeight < element.scrollHeight) {
+            is_necessary = true;
+            var child_height = element.scrollHeight + HEADER_FOOTER_BLEEDING;
+            _resizeChildContainer(element, child_height);
+        }
+
+        return is_necessary;
+    };
+
+    var _resizeChildContainer = function(element, height) {
+        var child_container = lng.Dom.query(element).children().first();
+        child_container.css('height', height + 'px');
     };
 
     var _saveScrollInCache = function(id, properties) {

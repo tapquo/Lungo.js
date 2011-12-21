@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.0.3"
+VERSION="1.0.4"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
@@ -43,7 +43,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     #View
     DIR=$LUNGO_SOURCES"view/"$LUNGO_NAMESPACE"View."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"view/"
-    FILES=(Article.js Resize.js Template.js Template.Binding.js Template.List.js Scroll.js Aside.js)
+    FILES=(Article.js Resize.js Template.js Template.Binding.js Template.List.js Scroll.js Aside.js Element.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -63,7 +63,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     #Attributes
     DIR=$LUNGO_SOURCES"attributes/"$LUNGO_NAMESPACE"Attributes."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"attributes/"
-    FILES=(Data.js Section.js)
+    FILES=(Data.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -99,7 +99,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
 
     #PACKED Version
-    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/zepto.js --js "$LUNGO_SOURCES"lib/iscroll.js"$FILES_TO_COMPILE
+    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/zepto.js --js "$LUNGO_SOURCES"lib/iscroll-lite.js"$FILES_TO_COMPILE
     java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$PACKED.js
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$PACKED.js"\033[0m"
 fi
@@ -122,7 +122,8 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
 
         FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
-    FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
+    #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
+    cat $DIR$LUNGO_NAMESPACE"widgets.icon.css" > $BUILDPATH/lungo-$VERSION.$MINIFIED.icons.css
 	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.$MINIFIED.css
 
     #for file in "${FILES[@]}"

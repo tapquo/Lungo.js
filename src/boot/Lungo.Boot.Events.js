@@ -19,18 +19,19 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     var start = function() {
         var touch_move_event  = 'TOUCH_MOVE';
         var touch_start_event = 'TOUCH_START';
+        var tap = 'TAP';
         var orientation_change = 'ORIENTATION_CHANGE';
         var target_selector = 'a[href][data-target]';
-        var target_selector_from_aside = 'ASIDE a[href][data-target]';
+        var target_selector_from_aside = 'aside a[href][data-target]';
 
         lng.Dom.Event.listener(document, touch_move_event, _iScroll);
         lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
         lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _toggleAside);
-        lng.Dom.Event.live(target_selector, touch_start_event, _loadTarget);
+        lng.Dom.Event.live(target_selector, tap, _loadTarget);
     };
 
-    var _iScroll = function(event_handler) {
-        event_handler.preventDefault();
+    var _iScroll = function(event) {
+        event.preventDefault();
     };
 
     var _changeOrientation = function(event) {
@@ -38,19 +39,18 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _toggleAside = function(event) {
-        event.preventDefault();
-
         var link = lng.Dom.query(this);
         var section_id =  _getParentIdOfElement(link);
-
         lng.View.Aside.toggle(section_id);
+
+        event.preventDefault();
     };
 
     var _loadTarget = function(event) {
-        event.preventDefault();
-
         var link = lng.Dom.query(this);
         _selectTarget(link);
+
+        event.preventDefault();
     };
 
     var _selectTarget = function(link) {

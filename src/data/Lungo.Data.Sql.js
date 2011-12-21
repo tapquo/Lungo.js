@@ -1,6 +1,6 @@
-/** 
+/**
  * Wrapper for using WebSql (HTML5 feature)
- * 
+ *
  * @namespace LUNGO.Data
  * @class Sql
  *
@@ -43,7 +43,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
      * @method select
      *
      * @param {string} Name of the table in the database
-     * @param {object} [OPTIONAL] Object selection condition 
+     * @param {object} [OPTIONAL] Object selection condition
      * @param {Function} Callback when the process is complete
      */
     var select = function(table, where_obj, callback) {
@@ -54,7 +54,6 @@ LUNGO.Data.Sql = (function(lng, undefined) {
             for (var i = 0, len = rs.rows.length; i < len; i++) {
                 result.push(rs.rows.item(i));
             }
-			if (result.length === 1) result = result[0]; 
 
             _callbackResponse(callback, result);
         });
@@ -68,7 +67,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
      * @param {string} Name of the table in the database
      * @param {object} Data object to insert in table
      */
-    var insert = function(table, data_obj) {
+    var insert = function(table, data_obj, callback) {
         var fields = '';
         var values = '';
 
@@ -92,9 +91,9 @@ LUNGO.Data.Sql = (function(lng, undefined) {
      *
      * @param {string} Name of the table in the database
      * @param {object} Data object to update in table
-     * @param {object} [OPTIONAL] Object selection condition 
+     * @param {object} [OPTIONAL] Object selection condition
      */
-    var update = function(table, data_obj, where_obj) {
+    var update = function(table, data_obj, where_obj, callback) {
         var sql = 'UPDATE ' + table + ' SET ' + _convertToSql(data_obj, ',');
         if (where_obj) sql += ' WHERE ' + _convertToSql(where_obj, 'AND');
 
@@ -107,9 +106,9 @@ LUNGO.Data.Sql = (function(lng, undefined) {
      * @method drop
      *
      * @param {string} Name of the table in the database
-     * @param {object} [OPTIONAL] Object selection condition 
+     * @param {object} [OPTIONAL] Object selection condition
      */
-    var drop = function(table, where_obj) {
+    var drop = function(table, where_obj, callback) {
         var where = (where_obj) ? ' WHERE ' + _convertToSql(where_obj, 'AND') : '';
 
         execute('DELETE FROM ' + table + where + ';');
