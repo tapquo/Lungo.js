@@ -4,7 +4,7 @@ App.View = (function(lng, App, undefined) {
         '<li id="{{id}}">\
             <a href="#">\
                 <span class="icon check"></span>\
-                <strong>{{name}}</strong>\
+                {{name}}\
                 <small>{{description}}</small>\
             </a>\
         </li>'
@@ -14,7 +14,7 @@ App.View = (function(lng, App, undefined) {
         '<li id="{{id}}">\
             <a href="#">\
                 <span class="icon folder"></span>\
-                <strong>{{name}}</strong>\
+                {{name}}\
                 <small>{{description}}</small>\
             </a>\
         </li>'
@@ -22,8 +22,8 @@ App.View = (function(lng, App, undefined) {
 
     var todo = function(id) {
         lng.Data.Sql.select('todo', {id:id}, function(result){
-            if (result){
-                var data = result;
+            if (result.length > 0) {
+                var data = result[0];
                 lng.Data.Cache.set('current_todo', data);
 
                 $('#txtEditName').val(data.name);
@@ -53,6 +53,7 @@ App.View = (function(lng, App, undefined) {
             template_id: template,
             data: rows
         });
+        lng.View.Element.count('a[href="#' + container + '"]', rows.length);
     };
 
     return{
