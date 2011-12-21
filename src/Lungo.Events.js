@@ -30,8 +30,13 @@ LUNGO.Events = (function(lng, undefined) {
         }
     };
 
+    /*
     var current_environment = lng.Environment.current();
     var current_events = EVENTS[current_environment];
+    */
+    var current_environment = null;
+    var current_events = null;
+
 
     /**
      * Returns the touch event based on an enumeration of LungoJS
@@ -46,8 +51,14 @@ LUNGO.Events = (function(lng, undefined) {
         return current_events[eventName];
     };
 
+    var init = function() {
+        current_environment = lng.Environment.current();
+        current_events = EVENTS[current_environment];
+    };
+
     return {
-        get: get
+        get: get,
+        init: init
     };
 
 })(LUNGO);

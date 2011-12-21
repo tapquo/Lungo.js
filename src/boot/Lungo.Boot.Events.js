@@ -24,6 +24,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var target_selector = 'a[href][data-target]';
         var target_selector_from_aside = 'aside a[href][data-target]';
 
+        lng.Events.init();
         lng.Dom.Event.listener(document, touch_move_event, _iScroll);
         lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
         lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _toggleAside);

@@ -1,7 +1,7 @@
-/** 
+/**
  * Set environment (Desktop or Mobile) automatically, depending on the
  * environment the subscribed events wil be different.
- * 
+ *
  * @namespace LUNGO
  * @class Environment
  *
@@ -31,7 +31,7 @@ LUNGO.Environment = (function(lng, undefined) {
     /**
      * Gets the current environment for LungoJS
      *
-     * @method init
+     * @method current
      *
      * @return {String} Current environment enumerator
      */
@@ -54,14 +54,14 @@ LUNGO.Environment = (function(lng, undefined) {
      * Save in LungoJS.com the use of the service for further ranking
      *
      * @method _saveStatsInLungoJS
-     */    
+     */
     var _saveStatsInLungoJS = function() {
         lng.Service.post( 'http://www.lungojs.com/stats/', {
             name: lng.App.get('name'),
             version: lng.App.get('version'),
             icon: lng.App.get('icon')
         });
-    }
+    };
 
     return {
         start: start,
