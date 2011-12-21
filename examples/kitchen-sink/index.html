@@ -66,8 +66,12 @@
                 <a href="#data-attributes" data-target="article" data-icon="picture" data-count="6">Data Attributes</a>
                 <a href="#forms" data-target="section" data-icon="write" data-count="7">Form Elements</a>
                 <a href="#lists" data-target="section" data-icon="note" data-count="5">Lists</a>
+                <a href="#events" data-target="article" data-icon="user">Events</a>
+                <a href="#scrolls" data-target="article" data-icon="points">Scrolls</a>
             </div>
         </aside>
+
+        <!-- ============================= welcome ============================= -->
 
         <article id="welcome" class="list scrollable">
             <div class="indented">
@@ -78,6 +82,8 @@
                     The main premise in Lungo is to create a semantic structure in the whole project, starting from the markup language HTML, through a well organized CSS< and ending with the JavaScript API</p>
             </div>
         </article>
+
+        <!-- ============================= authors ============================= -->
 
         <article id="authors" class="list scrollable">
             <div class="indented">
@@ -292,6 +298,43 @@
                     </li>
                 </ul>
             </div>
+        </article>
+
+        <!-- ============================= events ============================= -->
+
+        <article id="events" class="list scrollable">
+            <div class="indented">
+                <ul>
+                    <li class="tip darker" data-icon="user">
+                        Test events
+                        <small>... in each row.</small>
+                    </li>
+                    <li class="anchor">Common Events</li>
+                    <li id="event_touchstart">Touchstart me!</li>
+                    <li id="event_touchend">Touchend me!</li>
+                    <li id="event_tap">Tap me!</li>
+                    <li id="event_doubletap">Double-Tap me!</li>
+                    <li class="anchor">Special Events</li>
+                    <li id="swipe" data-icon="user">
+                        Swipe me!
+                        <small>Drag in any direction</small></li>
+                    <li id="swipe_left" data-icon="left">Swipe-Left me!
+                        <small>Drag in any direction</small></li>
+                    <li id="swipe_right" data-icon="right">Swipe-Right me!
+                        <small>Drag in any direction</small></li>
+                    <li id="swipe_up" data-icon="up">Swipe-Up me!
+                        <small>Drag in any direction</small></li>
+                    <li id="swipe_down" data-icon="down">Swipe-Down me!
+                        <small>Drag in any direction</small></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================= scrolls ============================= -->
+
+        <article id="scrolls">
+            <div id="scroll_vertical" class="container-scroll vertical scrollable"></div>
+            <div id="scroll_horizontal" class="container-scroll horizontal scrollable"></div>
         </article>
 
     </section>
