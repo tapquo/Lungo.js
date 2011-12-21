@@ -109,7 +109,7 @@ LUNGO.Environment = (function(lng, undefined) {
     /**
      * Gets the current environment for LungoJS
      *
-     * @method init
+     * @method current
      *
      * @return {String} Current environment enumerator
      */
@@ -139,7 +139,7 @@ LUNGO.Environment = (function(lng, undefined) {
             version: lng.App.get('version'),
             icon: lng.App.get('icon')
         });
-    }
+    };
 
     return {
         start: start,
@@ -329,8 +329,13 @@ LUNGO.Events = (function(lng, undefined) {
         }
     };
 
+    /*
     var current_environment = lng.Environment.current();
     var current_events = EVENTS[current_environment];
+    */
+    var current_environment = null;
+    var current_events = null;
+
 
     /**
      * Returns the touch event based on an enumeration of LungoJS
@@ -345,8 +350,14 @@ LUNGO.Events = (function(lng, undefined) {
         return current_events[eventName];
     };
 
+    var init = function() {
+        current_environment = lng.Environment.current();
+        current_events = EVENTS[current_environment];
+    };
+
     return {
-        get: get
+        get: get,
+        init: init
     };
 
 })(LUNGO);
@@ -423,7 +434,9 @@ LUNGO.Service = (function(lng, $, undefined) {
         post: post
     };
 
-})(LUNGO, Zepto);/**
+})(LUNGO, Zepto);
+
+/**
  * Handles the <sections> and <articles> to show
  *
  * @namespace LUNGO
@@ -1973,6 +1986,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var target_selector = 'a[href][data-target]';
         var target_selector_from_aside = 'aside a[href][data-target]';
 
+        lng.Events.init();
         lng.Dom.Event.listener(document, touch_move_event, _iScroll);
         lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
         lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _toggleAside);
