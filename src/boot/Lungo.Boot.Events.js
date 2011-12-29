@@ -27,7 +27,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.Events.init();
         lng.Dom.Event.listener(document, touch_move_event, _iScroll);
         lng.Dom.Event.listener(window, orientation_change, _changeOrientation);
-        lng.Dom.Event.live(target_selector_from_aside, touch_start_event, _toggleAside);
+        lng.Dom.Event.live(target_selector_from_aside, tap, _toggleAside);
         lng.Dom.Event.live(target_selector, tap, _loadTarget);
     };
 
