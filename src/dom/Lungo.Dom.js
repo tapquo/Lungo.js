@@ -1,6 +1,6 @@
-/** 
+/**
  * LungoJS Dom Handler
- * 
+ *
  * @namespace LUNGO
  * @class Dom
  *
@@ -8,7 +8,7 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Dom = (function(lng, $, undefined) {
+LUNGO.Dom = (function(lng, $$, undefined) {
 
     /**
      * Add an event listener
@@ -19,11 +19,11 @@ LUNGO.Dom = (function(lng, $, undefined) {
      * @return {Object} Zepto <element> instance
      */
     var query = function(selector) {
-        return $(selector);
+        return $$(selector);
     };
 
     return {
         query: query
     };
 
-})(LUNGO, Zepto);
+})(LUNGO, Quo);
