@@ -1,6 +1,6 @@
-/** 
+/**
  * Handles the <sections> and <articles> to show
- * 
+ *
  * @namespace LUNGO
  * @class Router
  * @requires Zepto
@@ -66,7 +66,7 @@ LUNGO.Router = (function(lng, undefined) {
     var _existsTarget = function(target) {
         var exists = false;
 
-        if ($(target).length > 0) {
+        if (lng.Dom.query(target).length > 0) {
             exists = true;
         } else {
             lng.Core.log(3, 'Lungo.Router ERROR: The target ' + target + ' does not exists.');
