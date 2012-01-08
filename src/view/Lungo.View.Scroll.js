@@ -116,7 +116,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
 
     var _resizeChildContainer = function(element, height) {
         var child_container = lng.Dom.query(element).children().first();
-        child_container.css('height', height + 'px');
+        child_container.style('height', height + 'px');
     };
 
     var _saveScrollInCache = function(id, properties) {

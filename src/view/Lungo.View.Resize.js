@@ -44,7 +44,7 @@ LUNGO.View.Resize = (function(lng, undefined) {
 
         if (element.length > 0) {
             var reference_dimension = element[reference]();
-            section.children(ARTICLE).css(property, reference_dimension + 'px');
+            section.children(ARTICLE).style(property, reference_dimension + 'px');
         }
     };
 
@@ -62,13 +62,13 @@ LUNGO.View.Resize = (function(lng, undefined) {
             var toolbar_children = toolbar.children();
             var toolbar_children_width = (toolbar.width() / toolbar_children.length);
 
-            toolbar_children.css('width', toolbar_children_width + 'px');
+            toolbar_children.style('width', toolbar_children_width + 'px');
         }
     };
 
     var _resizeScrollContainerWidth = function(container, child) {
         var scroll_width = (container.children().length * child.width());
-        container.css('width', scroll_width + 'px');
+        container.style('width', scroll_width + 'px');
     };
 
     var _resizeScrollContainerHeight = function(scroll, container, child) {
@@ -77,7 +77,7 @@ LUNGO.View.Resize = (function(lng, undefined) {
         var total_rows = Math.ceil(total_children / children_in_scroll_width);
 
         var scroll_height = (total_rows * child.height());
-        container.css('height', scroll_height + 'px');
+        container.style('height', scroll_height + 'px');
     };
 
     return {
