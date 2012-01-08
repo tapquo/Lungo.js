@@ -1,6 +1,6 @@
-/** 
+/**
  * Contains all the common functions used in Lungo.
- * 
+ *
  * @namespace LUNGO
  * @class Core
  *
@@ -8,11 +8,9 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Core = (function(lng, $, undefined) {
+LUNGO.Core = (function(lng, $$, undefined) {
 
     var ARRAY_PROTO = Array.prototype;
-    var OBJ_PROTO   = Object.prototype;
-    var SUPPORTED_OS = ['ios', 'android', 'blackberry', 'webos'];
 
     /**
      * Console system to display messages when you are in debug mode.
@@ -61,14 +59,14 @@ LUNGO.Core = (function(lng, $, undefined) {
             return method.apply(object, toArray(arguments));
         };
     };
-        
+
     /**
      * Copy from any number of objects and mix them all into a new object.
      * The implementation is simple; just loop through arguments and
      * copy every property of every object passed to the function.
      *
      * @method mix
-     *  
+     *
      * @param {object} arguments to mix them all into a new object.
      * @return {object} child a new object with all the objects from the arguments mixed.
      */
@@ -84,7 +82,7 @@ LUNGO.Core = (function(lng, $, undefined) {
         }
         return child;
     };
-    
+
     /**
      * Every object descended from Object inherits the hasOwnProperty method.
      * This method can be used to determine whether an object has the specified property
@@ -95,7 +93,7 @@ LUNGO.Core = (function(lng, $, undefined) {
      * @return {boolean} indicating whether the object has the specified property.
      */
     var isOwnProperty = function(object, property) {
-        return OBJ_PROTO.hasOwnProperty.call(object, property);
+        return $$.isOwnProperty(object, property);
     };
 
     /**
@@ -105,7 +103,7 @@ LUNGO.Core = (function(lng, $, undefined) {
      * @return {string} with the internal JavaScript [[Class]] of itself.
      */
     var toType = function(obj) {
-        return OBJ_PROTO.toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
+        return $$.toType(obj);
     };
 
     /**
@@ -119,18 +117,14 @@ LUNGO.Core = (function(lng, $, undefined) {
     };
 
     /**
-     * 
+     * Determine if the current environment is a mobile environment
      *
+     * @method isMobile
+     *
+     * @return {boolean} true if is mobile environment, false if not.
      */
     var isMobile = function() {
-        var result = false;
-
-        for (var i = 0, len = SUPPORTED_OS.length; i < len && !result; i++) {
-            var mobile_os = SUPPORTED_OS[i];
-            $.os[mobile_os] && (result = true);
-        }
-
-        return result;
+        return $$.isMobile();
     };
 
     return {
@@ -144,4 +138,4 @@ LUNGO.Core = (function(lng, $, undefined) {
         isMobile: isMobile
     };
 
-})(LUNGO, Zepto);
+})(LUNGO, Quo);
