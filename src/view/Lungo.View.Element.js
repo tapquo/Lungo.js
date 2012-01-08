@@ -21,7 +21,7 @@ LUNGO.View.Element = (function(lng, undefined) {
 
         if (element ) {
             if (count > 0) {
-                _setBubble (element, count);
+                _setBubble(element, count);
             } else {
                 element.children(SELECTORS.BUBBLE).remove();
             }
