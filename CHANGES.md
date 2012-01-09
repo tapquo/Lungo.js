@@ -1,6 +1,17 @@
 # LungoJS
 ### HTML5 Mobile Framework, and stuff.
 
+## Changes in Version 1.1
+
+- @QuoJS Library implemented, Zepto.js deprecated.
+- Saved more than 20 Kb (60% of the original size)
+- New DOM namespace
+- Synchronized service calls in lng.Service
+- New Events: touch, tap, doubleTap, longTap...
+- New <input type="checkbox"> style (as iOS style).
+- BUG FIXED:
+    - Scroll with form elements
+
 ## Changes in Version 1.0.4
 
 - Optimized layout: No JavaScript resizes (full CSS3 selectors)
@@ -10,11 +21,10 @@
 - New system of forms with <ul> element
 - New <article> classes: indented & rounded
 - Discontinued <scroll> element becoming in the new .scrollable class
-- New Kitchen Sink 1.0.4 (in GitHub Repository)
+- New Kitchen Sink 1.1 (in GitHub Repository)
 - Remove iScroll reference, now LungoJS uses iScroll-Lite
 - Remove Jasmine Test Framework
 - BUG Fixed:
-    - Scroll with form elements
     - Multiple <aside>s
 
 ## Changes in Version 1.0.3
