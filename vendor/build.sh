@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.0.4"
+VERSION="1.1"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
@@ -23,7 +23,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES
-    FILES=(js App.js Environment.js Core.js Events.js Service.js)
+    FILES=(js App.js Core.js Dom.js Service.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -44,16 +44,6 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     DIR=$LUNGO_SOURCES"view/"$LUNGO_NAMESPACE"View."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"view/"
     FILES=(Article.js Resize.js Template.js Template.Binding.js Template.List.js Scroll.js Aside.js Element.js)
-    for file in "${FILES[@]}"
-    do
-        FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
-        FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
-    done
-
-    #Dom
-    DIR=$LUNGO_SOURCES"dom/"$LUNGO_NAMESPACE"Dom."
-    echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"dom/"
-    FILES=(js Event.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -83,7 +73,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     #Dom
     DIR=$LUNGO_SOURCES"boot/"$LUNGO_NAMESPACE"Boot."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"boot/"
-    FILES=(js Layout.js Article.js Data.js Events.js Section.js)
+    FILES=(js Stats.js Layout.js Article.js Data.js Events.js Section.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -99,7 +89,7 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
 
     #PACKED Version
-    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/zepto.js --js "$LUNGO_SOURCES"lib/iscroll-lite.js"$FILES_TO_COMPILE
+    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/QuoJS.js --js "$LUNGO_SOURCES"lib/iscroll-lite.js"$FILES_TO_COMPILE
     java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$PACKED.js
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$PACKED.js"\033[0m"
 fi
