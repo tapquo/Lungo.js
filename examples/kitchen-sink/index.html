@@ -64,7 +64,7 @@
                 <a href="#buttons" data-target="article" data-icon="plus" data-count="14">Buttons & Colours</a>
                 <a href="#icons" data-target="article" data-icon="picture" data-count="94">Icons</a>
                 <a href="#data-attributes" data-target="article" data-icon="picture" data-count="6">Data Attributes</a>
-                <a href="#forms" data-target="section" data-icon="write" data-count="7">Form Elements</a>
+                <a href="#forms" data-target="article" data-icon="write" data-count="7">Form Elements</a>
                 <a href="#lists" data-target="section" data-icon="note" data-count="5">Lists</a>
                 <a href="#events" data-target="article" data-icon="user">Events</a>
                 <a href="#scrolls" data-target="article" data-icon="points">Scrolls</a>
@@ -302,6 +302,80 @@
 
         <!-- ============================= events ============================= -->
 
+        <article id="forms" class="list scrollable">
+            <div class="container indented">
+                <ul class="form">
+                    <li class="tip darker" data-icon="write mini">Example of inputs</li>
+                    <li>
+                        <label>type="text"</label>
+                        <input type="text" placeholder="Input text"/>
+                    </li>
+                    <li>
+                        <label>type="password"</label>
+                        <input type="password" placeholder="Input password"/>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li class="tip darker" data-icon="write mini">Example of search</li>
+                    <li data-search="Type a search..."></li>
+                    <li class="tip dark" data-icon="help mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
+                </ul>
+
+                <ul>
+                    <li class="tip darker" data-icon="write mini">Example of textarea</li>
+                    <li><textarea placeholder="Textarea sample"></textarea></li>
+                    <li class="anchor" data-icon="write">Example of select</li>
+                    <li>
+                        <label>Select a number:</label>
+                        <label class="select">
+                            <select class="custom">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </label>
+                    </li>
+                    <li class="tip dark" data-icon="help mini">It's a special form element you must set the label with class "select"</li>
+                </ul>
+
+                <ul>
+                    <li class="tip darker" data-icon="write mini">Example of checkbox</li>
+                    <li style="height: 32px;">
+                        <label class="onleft" data-icon="twitter"></label>
+                        <label class="checkbox onleft"><input type="checkbox" id="checkbox-0"/></label>
+                    </li>
+                </ul>
+
+                <ul class="form">
+                    <li class="tip darker" data-icon="write mini">Example of radio</li>
+                    <li>
+                        <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
+                        <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
+                        <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
+                    </li>
+                </ul>
+
+                <ul class="form">
+                    <li class="tip darker">Examples of tips</li>
+                    <li class="tip" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+                    <li class="tip dark" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+                    <li class="tip darker" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+
+                    <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                    <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                    <li class="tip darker" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                </ul>
+
+                <ul class="form">
+                    <li class="tip darker" data-icon="home mini">Example of anchor</li>
+                    <li><label>Example of label</label></li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- ============================= events ============================= -->
+
         <article id="events" class="list scrollable">
             <div class="indented">
                 <ul>
@@ -406,140 +480,6 @@
 
 
     <!-- ============================= header footer ============================= -->
-
-    <!-- ============================= forms ============================= -->
-
-    <section id="forms">
-        <header data-back="home" data-title="Form Elements">
-            <a href="#" class="button onleft aside" data-target="aside" data-icon="note"></a>
-        </header>
-
-        <aside id="forms-scroll" class="scrollable">
-            <div class="container">
-                <a href="#form-input" data-target="article" class="current" data-title="Inputs" data-icon="write">Inputs</a>
-                <a href="#form-search" data-target="article" data-title="Search" data-icon="search">Search</a>
-                <a href="#form-textarea" data-target="article" data-title="Textarea" data-icon="write">Textarea</a>
-                <a href="#form-select" data-target="article" data-title="Select" data-icon="box">Select</a>
-                <a href="#form-checkbox" data-target="article" data-title="Checkbox" data-icon="accept">Checkbox</a>
-                <a href="#form-radio" data-target="article" data-title="Radio" data-icon="radar">Radio</a>
-                <a href="#form-label" data-target="article" data-title="Labels, Anchors & Tips" data-icon="label">Labels, Anchors...</a>
-            </div>
-        </aside>
-
-        <article id="form-input" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of inputs</li>
-                    <li>
-                        <label>type="text"</label>
-                        <input type="text" placeholder="Input text"/>
-                    </li>
-                    <li>
-                        <label>type="password"</label>
-                        <input type="password" placeholder="Input password"/>
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-search" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of search</li>
-                    <li data-search="Type a search..."></li>
-                    <li class="tip darker" data-icon="help mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-textarea" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of textarea</li>
-                    <li><textarea placeholder="Textarea sample"></textarea></li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-select" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of select</li>
-                    <li>
-                        <label>Select a number:</label>
-                        <label class="select">
-                            <select class="custom">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </label>
-                    </li>
-                    <li class="tip darker" data-icon="help mini">It's a special form element you must set the label with class "select"</li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-checkbox" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of checkbox</li>
-                    <li style="height: 32px;">
-                        <label class="onleft" data-icon="twitter"></label>
-                        <label class="checkbox onleft"><input type="checkbox" id="checkbox-0"/></label>
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-radio" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of radio</li>
-                    <li>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-radio" class="list">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="write">Example of radio</li>
-                    <li>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
-                    </li>
-                </ul>
-            </div>
-        </article>
-
-        <article id="form-label" class="list scrollable">
-            <div class="container indented" style="height: 512px;">
-                <h1 class="title">Tips examples</h1>
-                <ul class="form">
-                    <li class="anchor">Examples of tips</li>
-                    <li class="tip" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
-                    <li class="tip dark" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
-                    <li class="tip darker" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
-
-                    <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                    <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                    <li class="tip darker" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                </ul>
-
-                <h1 class="title">Anchor & Label example</h1>
-                <ul class="form">
-                    <li class="anchor" data-icon="home">Example of anchor</li>
-                    <li><label>Example of label</label></li>
-                </ul>
-            </div>
-        </article>
-    </section>
 
     <!-- ============================= lists ============================= -->
 
