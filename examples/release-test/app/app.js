@@ -4,7 +4,7 @@ var App = (function(lng, undefined) {
 
     lng.App.init({
         name: 'Release-Test',
-        version: '1.0.4'
+        version: '1.1'
     });
 
     return {

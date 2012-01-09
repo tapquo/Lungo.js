@@ -1,13 +1,13 @@
 App.Events = (function(lng, undefined) {
 
     //Login
-    lng.Dom.Event.live('#btnLogin', 'TAP', function(evet) {
+    lng.Dom('#btnLogin').tap(function(evet) {
         lng.Router.section('main');
         App.Data.refresh();
     });
 
     //Create new todo
-    lng.Dom.Event.live('#btnNewTodo', 'TAP', function(event) {
+    lng.Dom('#btnNewTodo').tap(function(event) {
 
         var name = lng.dom('#txtNewName');
         var description = lng.dom('#txtNewDescription');
@@ -27,13 +27,13 @@ App.Events = (function(lng, undefined) {
     });
 
     //View ToDo
-    lng.Dom.Event.live('#done li, #pending li', 'TAP', function(event) {
+    lng.Dom('#done li, #pending li').tap(function(event) {
         var todo_id = lng.dom(this).attr('id');
         App.View.todo(todo_id)
     });
 
     //Done ToDo
-    lng.Dom.Event.live('#btnDoneTodo', 'TAP', function(event) {
+    lng.Dom('#btnDoneTodo').tap(function(event) {
         var current_todo = lng.Data.Cache.get('current_todo');
 
         App.Data.doneTodo(current_todo.id);
@@ -41,7 +41,7 @@ App.Events = (function(lng, undefined) {
     });
 
     //Update ToDo
-    lng.Dom.Event.live('#btnUpdateTodo', 'TAP', function(event) {
+    lng.Dom('#btnUpdateTodo').tap(function(event) {
         var current_todo = lng.Data.Cache.get('current_todo');
         var name = lng.dom('#txtEditName');
         var description = lng.dom('#txtEditDescription');
@@ -56,7 +56,7 @@ App.Events = (function(lng, undefined) {
     });
 
     //Delete ToDo
-    lng.Dom.Event.live('#btnDeleteTodo', 'TAP', function(event) {
+    lng.Dom('#btnDeleteTodo').tap(function(event) {
         var current_todo = lng.Data.Cache.get('current_todo');
 
         var options = [
