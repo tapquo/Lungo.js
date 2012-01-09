@@ -19,7 +19,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
      *
      */
     var start = function() {
-        if (!lng.Environment.isDesktop()) {
+        if (lng.Core.isMobile()) {
             _window = window;
             _document = _window.document;
 
