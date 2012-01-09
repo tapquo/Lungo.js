@@ -8,22 +8,14 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Dom = (function(lng, $$, undefined) {
-
-    /**
+/**
      * Add an event listener
      *
-     * @method query
+     * @method dom
      *
      * @param  {string} <Markup> element selector
      * @return {Object} Zepto <element> instance
-     */
-    var query = function(selector) {
-        return $$(selector);
-    };
-
-    return {
-        query: query
-    };
-
-})(LUNGO, Quo);
+*/
+LUNGO.dom = function(selector) {
+    return $$(selector);
+};
