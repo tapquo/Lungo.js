@@ -1,6 +1,6 @@
-/** 
+/**
  * External Data & Services Manager
- * 
+ *
  * @namespace LUNGO
  * @class Service
  * @requires Zepto
@@ -9,7 +9,7 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Service = (function(lng, $, undefined) {
+LUNGO.Service = (function(lng, $$, undefined) {
 
     /**
      * Load data from the server using a HTTP GET request.
@@ -19,18 +19,10 @@ LUNGO.Service = (function(lng, $, undefined) {
      * @param  {string} Containing the URL to which the request is sent
      * @param  {object} A map or string that is sent to the server with the request
      * @param  {Function} [OPTIONAL] Callback function after the request
+     * @param  {string} [OPTIONAL] Mime-Tipe: json, xml, html, or text
      */
-    var get = function(url, data, callback) {
-        var parameters = '?';
-        for (var parameter in data) {
-            if (lng.Core.isOwnProperty(data, parameter)) {
-                if (parameters !== '?') parameters += '&';
-                parameters += parameter + '=' + data[parameter];
-            }
-        }
-        url = url + parameters;
-
-        _ajax('GET', url, null, callback);
+    var get = function(url, data, success, dataType) {
+        return $$.get(url, data, success, dataType);
     };
 
     /**
@@ -41,33 +33,30 @@ LUNGO.Service = (function(lng, $, undefined) {
      * @param  {string} Containing the URL to which the request is sent
      * @param  {object} A map or string that is sent to the server with the request
      * @param  {Function} [OPTIONAL] Callback function after the request
+     * @param  {string} [OPTIONAL] Mime-Tipe: json, xml, html, or text
      */
-    var post = function(url, data, callback) {
-        _ajax('POST', url, data, callback);
+    var post = function(url, data, success, dataType) {
+        return $$.post(url, data, success, dataType);
     };
 
-    var _ajax = function(type, url, data, callback, error) {
-        $.ajax({
-            type: type,
-            url: url,
-            data: data,
-            dataType: 'json',
-            success: function(response) {
-                if (lng.Core.toType(callback) === 'function') {
-                    setTimeout(callback, 100, response);
-                }
-            },
-            error: function(xhr, type) {
-                if (error) {
-                    setTimeout(error, 100, result);
-                }
-            }
-        });
+    /**
+     * Load data from the server using a HTTP GET request.
+     *
+     * @method json
+     *
+     * @param  {string} Containing the URL to which the request is sent
+     * @param  {object} A map or string that is sent to the server with the request
+     * @param  {Function} [OPTIONAL] Callback function after the request
+     */
+    var json = function(url, data, success) {
+        return $$.json(url, data, success);
     };
 
     return {
         get: get,
-        post: post
+        post: post,
+        json: json,
+        Settings: $$.ajaxSettings
     };
 
-})(LUNGO, Zepto);
+})(LUNGO, Quo);
