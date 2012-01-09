@@ -21,7 +21,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
      * @param {string} Message to show in console
      */
     var log = function(severity, message) {
-        if (lng.Environment.isDesktop()) {
+        if (!lng.Core.isMobile()) {
             console[(severity === 1) ? 'log' : (severity === 2) ? 'warn' : 'error'](message);
         } else {
             // @todo : send to the server
