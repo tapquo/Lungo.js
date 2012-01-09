@@ -29,10 +29,10 @@ LUNGO.Boot.Article = (function(lng, undefined) {
     };
 
     var _initElement = function(selector, callback) {
-        var found_elements = lng.Dom.query(selector);
+        var found_elements = lng.dom(selector);
 
         for (var i = 0, len = found_elements.length; i < len; i++) {
-            var element = lng.Dom.query(found_elements[i]);
+            var element = lng.dom(found_elements[i]);
             lng.Core.execute(callback, element);
         }
     };

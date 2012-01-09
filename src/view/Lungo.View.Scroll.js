@@ -39,7 +39,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      */
     var create = function(id, properties) {
         if (id) {
-            var scroll = lng.Dom.query('#' + id);
+            var scroll = lng.dom('#' + id);
 
             //ToDo >> Refactor
             setTimeout(function() {
@@ -63,7 +63,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      * @param {string} Markup content
      */
     var update = function(id, content) {
-        var scroll = lng.Dom.query('#' + id);
+        var scroll = lng.dom('#' + id);
         var container = scroll.children().first();
 
         if (container.length === 0) {
@@ -115,7 +115,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
     };
 
     var _resizeChildContainer = function(element, height) {
-        var child_container = lng.Dom.query(element).children().first();
+        var child_container = lng.dom(element).children().first();
         child_container.style('height', height + 'px');
     };
 

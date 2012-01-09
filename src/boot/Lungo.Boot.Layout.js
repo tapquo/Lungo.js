@@ -31,7 +31,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
         if (_window.innerHeight == 356) {
             var _height = 416;
 
-            lng.Dom.query('body').style('height', _height + 'px');
+            lng.dom('body').style('height', _height + 'px');
             _hideNavigationBar();
         }
     };

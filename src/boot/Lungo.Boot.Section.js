@@ -24,7 +24,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
      * @method init
      */
     var start = function() {
-        var sections = lng.Dom.query(SELECTORS.SECTION);
+        var sections = lng.dom(SELECTORS.SECTION);
 
         _initFirstSection(sections);
         _initAllSections(sections);
@@ -43,7 +43,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
 
     var _initAllSections = function(sections) {
         for (var i = 0, len = sections.length; i < len; i++) {
-            var section = lng.Dom.query(sections[i]);
+            var section = lng.dom(sections[i]);
             _initFirstArticle(section);
         }
     };
@@ -53,7 +53,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initAllAsides = function() {
-        lng.Dom.query('aside').addClass('show');
+        lng.dom('aside').addClass('show');
     };
 
     return {

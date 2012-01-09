@@ -1,7 +1,7 @@
-/** 
+/**
  * Make an analysis of Data attributes in HTML elements and creates a <markup>
  * based on each data type.
- * 
+ *
  * @namespace LUNGO.Boot
  * @class Data
  * @requires Zepto
@@ -17,7 +17,7 @@ LUNGO.Boot.Data = (function(lng, undefined) {
      *
      * @method init
      *
-     * 
+     *
      */
     var start = function() {
         var attributes = lng.Attributes.Data;
@@ -30,10 +30,10 @@ LUNGO.Boot.Data = (function(lng, undefined) {
     };
 
     var _findElements = function(attribute) {
-        var elements = lng.Dom.query(attribute.selector);
+        var elements = lng.dom(attribute.selector);
 
         for (var i = 0, len = elements.length; i < len; i++) {
-            var element = lng.Dom.query(elements[i]);
+            var element = lng.dom(elements[i]);
             lng.View.Template.Binding.dataAttribute(element, attribute);
         }
     };
