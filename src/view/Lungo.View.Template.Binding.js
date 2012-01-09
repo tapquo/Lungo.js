@@ -81,7 +81,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     };
 
     var _render = function(container_id, markup) {
-        var container = lng.Dom.query('#' + container_id);
+        var container = lng.dom('#' + container_id);
         container.html(markup);
     };
 

@@ -11,7 +11,7 @@
 LUNGO.View.Aside = (function(lng, undefined) {
 
     var toggle = function(section_id) {
-        var articles = lng.Dom.query(section_id + ' article');
+        var articles = lng.dom(section_id + ' article');
         articles.toggleClass('aside');
     };
 

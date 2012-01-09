@@ -23,7 +23,7 @@ LUNGO.View.Article = (function(lng, undefined) {
         var nav_items = section_id + ' ' + SELECTORS.NAVIGATION_ITEM;
         _disableNavItems(nav_items);
 
-        var current_nav_item = lng.Dom.query(nav_items + '[href="' + article_id + '"]');
+        var current_nav_item = lng.dom(nav_items + '[href="' + article_id + '"]');
         current_nav_item.addClass(CSS_CLASSES.ACTIVE);
         _setTitle(section_id, current_nav_item);
 
@@ -31,13 +31,13 @@ LUNGO.View.Article = (function(lng, undefined) {
     };
 
     var _disableNavItems = function(items) {
-        lng.Dom.query(items).removeClass(CSS_CLASSES.ACTIVE);
+        lng.dom(items).removeClass(CSS_CLASSES.ACTIVE);
     };
 
     var _showContainer = function(section_id, article_id) {
         var section_articles = section_id + ' ' + SELECTORS.ARTICLE;
-        lng.Dom.query(section_articles).removeClass(CSS_CLASSES.ACTIVE);
-        lng.Dom.query(article_id).addClass(CSS_CLASSES.ACTIVE);
+        lng.dom(section_articles).removeClass(CSS_CLASSES.ACTIVE);
+        lng.dom(article_id).addClass(CSS_CLASSES.ACTIVE);
     };
 
     var _setTitle = function(id, item) {
@@ -45,7 +45,7 @@ LUNGO.View.Article = (function(lng, undefined) {
 
         if (title) {
             var section_title = id + ' header .title, ' + id + ' footer .title';
-            lng.Dom.query(section_title).text(title);
+            lng.dom(section_title).text(title);
         }
     };
 

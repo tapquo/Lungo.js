@@ -28,8 +28,8 @@ LUNGO.Router = (function(lng, undefined) {
         var target = 'section' + section_id;
 
         if (_existsTarget(target)) {
-            lng.Dom.query(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW).addClass(CSS_CLASSES.HIDE);
-            lng.Dom.query(section_id).addClass(CSS_CLASSES.SHOW);
+            lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW).addClass(CSS_CLASSES.HIDE);
+            lng.dom(section_id).addClass(CSS_CLASSES.SHOW);
 
             lng.Router.History.add(section_id);
         }
@@ -57,16 +57,16 @@ LUNGO.Router = (function(lng, undefined) {
      * @method back
      */
     var back = function() {
-        lng.Dom.query(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW);
+        lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW);
         lng.Router.History.removeLast();
 
-        lng.Dom.query(_getHistoryCurrent()).removeClass(CSS_CLASSES.HIDE).addClass(CSS_CLASSES.SHOW);
+        lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.HIDE).addClass(CSS_CLASSES.SHOW);
     };
 
     var _existsTarget = function(target) {
         var exists = false;
 
-        if (lng.Dom.query(target).length > 0) {
+        if (lng.dom(target).length > 0) {
             exists = true;
         } else {
             lng.Core.log(3, 'Lungo.Router ERROR: The target ' + target + ' does not exists.');

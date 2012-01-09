@@ -17,7 +17,7 @@ LUNGO.View.Element = (function(lng, undefined) {
 
 
     var count = function(selector, count) {
-        var element = lng.Dom.query(selector);
+        var element = lng.dom(selector);
 
         if (element ) {
             if (count > 0) {

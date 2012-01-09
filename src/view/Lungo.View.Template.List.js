@@ -35,12 +35,12 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     var _validateConfig = function() {
         var checked = false;
-        var container_exists = !! lng.Dom.query(_config.container_id);
+        var container_exists = !! lng.dom(_config.container_id);
         var template_exists = lng.View.Template.exists(_config.template_id);
 
         if (container_exists && template_exists) {
             //@ToDo >> Refactor to other method
-            lng.Dom.query("#"+_config.container_id).html('');
+            lng.dom("#"+_config.container_id).html('');
 
             var type = lng.Core.toType(_config.data);
             if (type === 'array' || type === 'object') {
@@ -72,7 +72,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
     };
 
     var _createScroll = function() {
-        var container_id_for_scroll = lng.Dom.query('#' + _config.container_id).parent().attr('id');
+        var container_id_for_scroll = lng.dom('#' + _config.container_id).parent().attr('id');
         var list_config = { snap: 'li' };
 
         lng.View.Scroll.create(container_id_for_scroll, list_config);
