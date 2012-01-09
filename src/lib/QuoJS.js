@@ -135,7 +135,7 @@ window.Quo = Quo;
         for (var arg = 0, len = arguments.length; arg < len; arg++) {
             var argument = arguments[arg];
             for (var prop in argument) {
-                if ($$.isOwnProperty(argument, prop)) {
+                if ($$.isOwnProperty(argument, prop) && argument[prop] !== undefined) {
                     child[prop] = argument[prop];
                 }
             }
@@ -197,11 +197,7 @@ window.Quo = Quo;
         return array.length > 0 ? [].concat.apply([], array) : array
     }
 
-})(Quo);/*
-  QuoJS 1.0
-  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
-  http://quojs.tapquo.com
-*/
+})(Quo);
 
 (function($$) {
 
@@ -731,7 +727,6 @@ window.Quo = Quo;
      */
     $$.json = function(url, data, success) {
         url += _serializeParameters(data);
-        console.error('json ', url);
 
         return $$.ajax({
             url: url,
