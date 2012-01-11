@@ -105,15 +105,13 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     for file in "${FILES[@]}"
     do
         echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
-
         #Compressing via YUI
         #java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
         #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
 
         FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
-    #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
-    cat $DIR$LUNGO_NAMESPACE"widgets.icon.css" > $BUILDPATH/lungo-$VERSION.$MINIFIED.icons.css
+    FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
 	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.$MINIFIED.css
 
     #for file in "${FILES[@]}"
