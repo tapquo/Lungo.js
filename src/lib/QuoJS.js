@@ -1,7 +1,7 @@
 /*!
  * QuoJS 1.0 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
- * Released under MIT license, http://cubiq.org/license
+ * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
 
 var Quo = (function() {
@@ -237,6 +237,20 @@ window.Quo = Quo;
     /**
      * ?
      */
+    $$.fn.show = function() {
+        return this.style("display", "block")
+    };
+
+    /**
+     * ?
+     */
+    $$.fn.hide = function() {
+        return this.style("display", "none")
+    };
+
+    /**
+     * ?
+     */
     $$.fn.height = function() {
         var offset = this.offset();
         return offset.height;
@@ -275,7 +289,11 @@ window.Quo = Quo;
         });
     };
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.0
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -349,7 +367,11 @@ window.Quo = Quo;
         return detected_os;
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.0
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -583,7 +605,7 @@ window.Quo = Quo;
      */
     $.fn.style = function(property, value) {
         return (!value) ?
-            this[0].style[property]
+            this[0].style[property] || _computedStyle(this[0], property)
             :
             this.each(function() {
                 this.style[property] = value;
@@ -597,6 +619,10 @@ window.Quo = Quo;
 
     function _generateRemoveClass(name) {
         return new RegExp("(^|\\s+)" + name + "(\\s+|$)");
+    }
+
+    function _computedStyle(element, property) {
+        return document.defaultView.getComputedStyle(element, '')[property];
     }
 
 })(Quo);
