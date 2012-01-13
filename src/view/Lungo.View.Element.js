@@ -15,7 +15,14 @@ LUNGO.View.Element = (function(lng, undefined) {
     var BINDING_START = '{{';
     var BINDING_END = '}}';
 
-
+    /**
+     * Set a counter to the element
+     *
+     * @method count
+     *
+     * @param  {string} Element query selector
+     * @param  {number} Value for counter
+     */
     var count = function(selector, count) {
         var element = lng.dom(selector);
 
@@ -40,7 +47,7 @@ LUNGO.View.Element = (function(lng, undefined) {
 
             element.append(html_binded);
         }
-    }
+    };
 
     return {
         count: count
