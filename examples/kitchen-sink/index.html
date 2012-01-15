@@ -35,7 +35,8 @@
 </head>
 
 <body class="app">
-    <section id="login">
+    <!--
+        <section id="login">
         <article class="splash">
             <div class="indented">
                 <h1>Kitchen<span class="semi-opacity">Sink<span></h1>
@@ -43,17 +44,26 @@
                 <input type="text" placeholder="Type your user" />
                 <input type="password" placeholder="Type your password" />
 
-                <a href="#kitchen-sink" data-target="section" class="button big green" data-icon="key">Go to Kitchen Sink!</a>
+                <a href="#kitchen-sink" data-target="section" class="button big" data-icon="key">Go to Kitchen Sink!</a>
                 <div class="copyright">Copyright TapQuo Inc, 2011</div>
+
+
+
+                <div class="switch">
+                    <span class="thumb"></span>
+                    <input type="checkbox" checked="off" />
+                </div>
+
             </div>
         </article>
     </section>
+    -->
 
     <!-- ============================= kitchen-sink ============================= -->
 
     <section id="kitchen-sink">
         <header data-title="LungoJS Kitchen Sink">
-            <a href="#" class="button onleft aside" data-target="aside" data-icon="items"></a>
+            <a href="#" class="button" data-target="aside" data-icon="items"></a>
         </header>
 
         <aside id="kitchen-sink-scroll" class="scrollable">
@@ -256,7 +266,7 @@
         <article id="forms" class="list scrollable">
             <div class="container indented">
                 <ul class="form">
-                    <li class="tip darker" data-icon="edit mini">Example of inputs</li>
+                    <li class="tip dark" data-icon="edit mini">Example of inputs</li>
                     <li>
                         <label>type="text"</label>
                         <input type="text" placeholder="Input text"/>
@@ -268,13 +278,13 @@
                 </ul>
 
                 <ul>
-                    <li class="tip darker" data-icon="edit mini">Example of search</li>
+                    <li class="tip dark" data-icon="edit mini">Example of search</li>
                     <li data-search="Type a search..."></li>
-                    <li class="tip dark" data-icon="help mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
+                    <li class="tip dark" data-icon="question mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
                 </ul>
 
                 <ul>
-                    <li class="tip darker" data-icon="edit mini">Example of textarea</li>
+                    <li class="tip dark" data-icon="edit mini">Example of textarea</li>
                     <li><textarea placeholder="Textarea sample"></textarea></li>
                     <li class="anchor" data-icon="edit">Example of select</li>
                     <li>
@@ -287,14 +297,14 @@
                             </select>
                         </label>
                     </li>
-                    <li class="tip dark" data-icon="help mini">It's a special form element you must set the label with class "select"</li>
+                    <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
                 </ul>
 
                 <ul>
                     <li class="tip darker" data-icon="edit mini">Example of checkbox</li>
-                    <li style="height: 32px;">
-                        <label class="onleft" data-icon="twitter"></label>
-                        <label class="checkbox onleft"><input type="checkbox" id="checkbox-0"/></label>
+                    <li>
+                        <label>You like LungoJS forms?</label>
+                        <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
                     </li>
                 </ul>
 
