@@ -1,11 +1,11 @@
-section{position:absolute;position:fixed;width:100%;height:inherit;z-index:0;-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}
-section:first-child{-webkit-transform:translate3d(0%, 0, 0);transform:translate3d(0%, 0, 0);z-index:1;}
-section.hide{-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);z-index:0;}
-section.show{-webkit-transform:translate3d(0%, 0, 0);transform:translate3d(0%, 0, 0);z-index:1;}
+section{position:absolute;position:fixed;width:100%;height:inherit;z-index:0;-webkit-transform:translate3d(320px, 0, 0);transform:translate3d(320px, 0, 0);-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}
+section:first-child{-webkit-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);z-index:1;}
+section.hide{-webkit-transform:translate3d(-320px, 0, 0);transform:translate3d(-320px, 0, 0);z-index:0;}
+section.show{-webkit-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);z-index:1;}
 header,footer{position:absolute;left:0px;width:100%;height:38px;display:block;z-index:2;line-height:38px;}
 header{top:0px;}
 footer{bottom:0px;}
-header .title,footer .title{float:left;margin:0 8px;font-size:1.3em;}
+header .title,footer .title{float:left;margin:0 8px;}
 header .title{position:absolute;left:0px;width:100%;margin:0px auto;text-align:center;z-index:-1;}
 section header a.button,section footer a.button{margin:3px 3px auto 4px;}
 section header a.button.icon,section footer a.button.icon{width:17px;font-size:1.5em;font-weight:normal;}
@@ -27,11 +27,12 @@ article.aside{-webkit-transform:translate3d(256px, 0, 0);transform:translate3d(2
 article .title .icon{margin-right:4px;}
 article .text{margin:4px 0 8px;display:block;font-size:0.9em;font-weight:normal;line-height:1.4em;}
 nav{height:inherit;text-align:center;font-weight:normal;}
-nav a{display:inline-block;padding:0 6px;height:inherit;float:left;font-size:2.0em;line-height:38px;}
-nav a abbr{position:relative;bottom:3px;margin-left:2px;display:none;font-size:0.5em;font-weight:bold;}
+nav a{display:inline-block;padding:0 6px;height:inherit;float:left;}
+nav .icon{font-size:2.4em;line-height:38px;}
+nav a abbr{position:relative;bottom:6px;margin-left:4px;display:none;font-size:0.8em;font-weight:bold;}
 nav a.current abbr{display:inline;}
 .toolbar{height:48px;display:block;}
-.toolbar a{float:left;padding:0;font-size:2.2em;}
-.toolbar .icon{display:block;line-height:52px;}
-nav .bubble{position:relative;top:-10px;left:-10px;margin-right:-16px;font-size:0.4em;}
-.toolbar .bubble{top:-60px;left:12px;padding:1px 4px;}
+.toolbar a{float:left;padding:0;}
+.toolbar .icon{display:block;font-size:2.5em;line-height:52px;}
+nav .bubble{position:relative;top:-14px;left:-10px;margin-right:-16px;}
+.toolbar .bubble{top:-58px;left:12px;padding:1px 4px;}

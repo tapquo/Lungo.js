@@ -19,23 +19,30 @@ section{
 	height: inherit;
 	z-index: 0;
 	
-	.transform(translate3d(100%, 0, 0));
+	//.transform(translate3d(100%, 0, 0));
+	.transform(translate3d(320px, 0, 0));
+	
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
 section:first-child {
-	.transform(translate3d(0%, 0, 0));
+	//.transform(translate3d(0%, 0, 0));
+	.transform(translate3d(0px, 0, 0));
+	
 	z-index: 1;
 }
 
 section.hide {
-	.transform(translate3d(-100%, 0, 0));
+	//.transform(translate3d(-100%, 0, 0));
+	.transform(translate3d(-320px, 0, 0));
 	z-index: 0;
 	
 }
 section.show {
-	.transform(translate3d(0%, 0, 0));
+	//.transform(translate3d(0%, 0, 0));
+	.transform(translate3d(0px, 0, 0));
+	
 	 z-index: 1;
 }
 /* @end */
@@ -63,7 +70,6 @@ footer  {
 header .title, footer .title  {
 	float: left;
 	margin: 0 8px;
-	font-size: 1.3em;
 }
 
 header .title {
@@ -217,20 +223,21 @@ nav a  {
 	padding: 0 6px;
 	height: inherit;
 	float: left;
-	font-size: 2.0em;
-	line-height: 38px;
+	//font-size: 2.0em;
+	//line-height: 38px;
 }
 
 nav .icon {
-    
+    font-size: 2.4em;
+    line-height: 38px;
 }
 
 nav a abbr {
 	position: relative;
-	bottom: 3px;
-	margin-left: 2px;
+	bottom: 6px;
+	margin-left: 4px;
 	display: none;
-	font-size: 0.5em;
+	font-size: 0.8em;
 	font-weight: bold;
 }
 
@@ -253,25 +260,23 @@ nav a.current {
 .toolbar a {
 	float: left;
 	padding: 0;
-	font-size: 2.2em;
 }
 
 .toolbar .icon {
 	display: block;
-	
+	font-size: 2.5em;
 	line-height: 52px;
 }
 
 nav .bubble {
     position: relative;
-    top:  -10px;
+    top:  -14px;
     left: -10px;
-    margin-right: -16px;       
-    font-size: 0.4em;    
+    margin-right: -16px;     
 }
 
 .toolbar .bubble {
-    top:  -60px;
+    top:  -58px;
     left: 12px;
     padding: 1px 4px;
 }
