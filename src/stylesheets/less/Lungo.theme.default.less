@@ -8,6 +8,24 @@
  */
 
 @import "mixins.less";
+/*
+//ARTIC
+@master-color: #2daf96;
+	@master-color-light: #35d2b3;
+	@master-color-dark: #22937d;
+*/
+
+/*
+//GREEN
+@master-color: #2ea03c;
+	@master-color-light: #34b745;
+	@master-color-dark: #248831;
+*/
+@master-color:  #05b8e2;
+	@master-color-light: #05bde9;
+	@master-color-dark: #07acd0;
+
+@secondary-color: #2c2c2d;
 
 .app {
     background: @black;
@@ -15,10 +33,10 @@
 	
 /* @group <header> & <footer> & <article> */
 header {
-	background-color: #72be4b;
-	
-	border-top: 1px solid #84dd56;	
-	border-bottom: 1px solid #589739;
+	background-color: @master-color;
+	border-top: 1px solid @master-color-light;	
+	border-bottom: 1px solid @master-color-dark;
+	box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
 }
 	
 footer {
@@ -27,12 +45,13 @@ footer {
 }
 
 .title {
-	color: #fff;
+	color: @white;
+	font-size: 1.1em;
 	//text-shadow: 0px -1px 0px rgba(0,0,0,0.5) ;
-	text-shadow: 0px 1px 0px #589739; 
+	text-shadow: 0px 1px 0px @master-color-dark;
 }
 
-article { background-color: #e2e2e2; }
+article { background-color: #e8e8e8; }
 	
 	article .title {
     	color: #797979;
@@ -43,7 +62,7 @@ article { background-color: #e2e2e2; }
 /* @group <nav> */
 nav a { color: rgba(0,0,0,0.5); }
 
-nav a.current { color: #fff; }
+nav a.current { color: @white; }
 
 .toolbar a.current{
 	background: #1c1c1c;
@@ -149,16 +168,13 @@ aside {
 /* @group widgets */
 
 .splash { 
-	background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #006b41));
+	background: @master-color -webkit-gradient(linear, left top, left bottom, color-stop(0.1, @master-color-light), color-stop(1, @master-color-dark));
 	color: #fff; 
 	text-shadow: 0px 1px 1px #000;
 }
 
 /* @group .button */
-
 a.button {
-	
-	
 	box-shadow: inset 0 1px 0 rgba(34,57,100,0.6), inset 1px 0 0 rgba(34,57,100,0.4), inset -1px 0 0 rgba(34,57,100,0.5), inset 0 -1px 0 rgba(34,57,100,0.6), inset 0 2px 0 rgba(255,255,255,0.2), 0px 1px 0px rgba(255,255,255,0.2);
 }
 
@@ -169,32 +185,51 @@ a.button:active {
 
 /* @group <inputs> */
 input, textarea, select {
-	border: 1px solid #c5c5c5;
-	
-	background: #fff -webkit-gradient(linear, left top, left bottom, color-stop(0, #eee), color-stop(0.25, #fff));
-
-}
-
-.rounded input, textarea, select {
-    .border-radius(2px);
+	border: 1px solid #e1e1e1;
+	border-radius: 0px;
+	color: #858585;
 }
 	
 input:focus, textarea:focus, select:focus { 
-	border: 1px solid #058cf5;
-	.box-shadow(0px 0px 4px 0px #058cf5);
-	background: #e8fefe;
+	border-color: @master-color;
+	color:  @master-color;
+}
+
+label {
+	font-size: 0.75em;
+	color: @master-color;
+	text-transform: uppercase;
 }
 	
 .select:after {
-	background: #ccc;
+	background: #858585;
 	color: white;
 }
+
+input[type="checkbox"] + span, input[type="radio"] + span {
+	color: #fff;
+	background: #a0a0a0;
+}
+	input[type="checkbox"] + span::before, 
+	input[type="radio"] + span::before {
+		background: #c1c1c1;
+	}
+	
+	input[type="checkbox"]:checked + span, 
+	input[type="radio"]:checked + span {
+		background: #29a2c2;
+	}
+
+
 /* @end */
 
 .bubble {
 	color: #fff;
 	text-shadow: none;
 	box-shadow: inset 0px 0px 2px rgba(0,0,0,0.7);
+}	
+	header .bubble.count {
+    background: @secondary-color;
 }
-	.bubble.count { background: #e33100; }
+	.bubble.count { background: @master-color; }
 /* @end */
