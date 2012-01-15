@@ -6,25 +6,39 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
+/*
+//ARTIC
+@master-color: #2daf96;
+	@master-color-light: #35d2b3;
+	@master-color-dark: #22937d;
+*/
+/*
+//GREEN
+@master-color: #2ea03c;
+	@master-color-light: #34b745;
+	@master-color-dark: #248831;
+*/
 .app {
   background: #000000;
 }
 /* @group <header> & <footer> & <article> */
 header {
-  background-color: #72be4b;
-  border-top: 1px solid #84dd56;
-  border-bottom: 1px solid #589739;
+  background-color: #05b8e2;
+  border-top: 1px solid #05bde9;
+  border-bottom: 1px solid #07acd0;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
 footer {
   background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d));
   border-top: 1px inset #1c1c1c;
 }
 .title {
-  color: #fff;
-  text-shadow: 0px 1px 0px #589739;
+  color: #ffffff;
+  font-size: 1.1em;
+  text-shadow: 0px 1px 0px #07acd0;
 }
 article {
-  background-color: #e2e2e2;
+  background-color: #e8e8e8;
 }
 article .title {
   color: #797979;
@@ -36,7 +50,7 @@ nav a {
   color: rgba(0, 0, 0, 0.5);
 }
 nav a.current {
-  color: #fff;
+  color: #ffffff;
 }
 .toolbar a.current {
   background: #1c1c1c;
@@ -128,7 +142,7 @@ aside ~ article {
 /* @end */
 /* @group widgets */
 .splash {
-  background: #019d5e -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #019d5e), color-stop(1, #006b41));
+  background: #05b8e2 -webkit-gradient(linear, left top, left bottom, color-stop(0.1, #05bde9), color-stop(1, #07acd0));
   color: #fff;
   text-shadow: 0px 1px 1px #000;
 }
@@ -142,24 +156,32 @@ a.button:active {
 /* @end */
 /* @group <inputs> */
 input, textarea, select {
-  border: 1px solid #c5c5c5;
-  background: #ffffff -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(0.25, #ffffff));
-}
-.rounded input, textarea, select {
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
+  border: 1px solid #e1e1e1;
+  border-radius: 0px;
+  color: #858585;
 }
 input:focus, textarea:focus, select:focus {
-  border: 1px solid #058cf5;
-  -webkit-box-shadow: 0px 0px 4px 0px #058cf5;
-  box-shadow: 0px 0px 4px 0px #058cf5;
-  background: #e8fefe;
+  border-color: #05b8e2;
+  color: #05b8e2;
+}
+label {
+  font-size: 0.75em;
+  color: #05b8e2;
+  text-transform: uppercase;
 }
 .select:after {
-  background: #ccc;
+  background: #858585;
   color: white;
+}
+input[type="checkbox"] + span, input[type="radio"] + span {
+  color: #fff;
+  background: #a0a0a0;
+}
+input[type="checkbox"] + span::before, input[type="radio"] + span::before {
+  background: #c1c1c1;
+}
+input[type="checkbox"]:checked + span, input[type="radio"]:checked + span {
+  background: #29a2c2;
 }
 /* @end */
 .bubble {
@@ -167,7 +189,10 @@ input:focus, textarea:focus, select:focus {
   text-shadow: none;
   box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.7);
 }
+header .bubble.count {
+  background: #2c2c2d;
+}
 .bubble.count {
-  background: #e33100;
+  background: #05b8e2;
 }
 /* @end */
