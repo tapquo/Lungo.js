@@ -60,15 +60,15 @@ article { background-color: #e8e8e8; }
 /* @end */
 
 /* @group <nav> */
-nav a { color: rgba(0,0,0,0.5); }
+nav a { color: rgba(255,255,255,0.5); }
+	nav a.current, nav a:active { color: @white; }
 
-nav a.current { color: @white; }
-
-.toolbar a.current{
-	background: #1c1c1c;
-	box-shadow: inset 0px 0px 8px #101010;
-	text-shadow: 0px 1px 4px #000;
-}	
+.toolbar a {  color: rgba(255,255,255,0.2); }
+	.toolbar a.current, .toolbar nav a:active {
+		background: #1c1c1c;
+		box-shadow: inset 0px 0px 8px #101010;
+		text-shadow: 0px 1px 4px #000;
+	}
 /* @end */
 
 /* @group <aside> */
@@ -175,11 +175,12 @@ aside {
 
 /* @group .button */
 a.button {
-	box-shadow: inset 0 1px 0 rgba(34,57,100,0.6), inset 1px 0 0 rgba(34,57,100,0.4), inset -1px 0 0 rgba(34,57,100,0.5), inset 0 -1px 0 rgba(34,57,100,0.6), inset 0 2px 0 rgba(255,255,255,0.2), 0px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -1px 0 rgba(0,0,0,0.3), 0 1px 1px rgba(0,0,0,0.2);
+	
 }
 
 a.button:active {
-	box-shadow:inset 0 1px 0 rgba(10,10,10,0.5), inset 1px 0 0 rgba(10,10,10,0.3), inset -1px 0 0 rgba(10,10,10,0.4), inset 0 -1px 0 rgba(10,10,10,0.5),inset 0 1px 5px rgba(0,0,0,0.3),0 1px 0 rgba(255,255,255, 0.3);
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(0,0,0,0.1), inset 0 0 4px rgba(0,0,0,0.3);
 }
 /* @end */
 
@@ -219,8 +220,6 @@ input[type="checkbox"] + span, input[type="radio"] + span {
 	input[type="radio"]:checked + span {
 		background: #29a2c2;
 	}
-
-
 /* @end */
 
 .bubble {
@@ -228,8 +227,7 @@ input[type="checkbox"] + span, input[type="radio"] + span {
 	text-shadow: none;
 	box-shadow: inset 0px 0px 2px rgba(0,0,0,0.7);
 }	
-	header .bubble.count {
-    background: @secondary-color;
+	header .bubble.count {background: @secondary-color;
 }
 	.bubble.count { background: @master-color; }
 /* @end */
