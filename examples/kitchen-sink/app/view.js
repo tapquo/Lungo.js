@@ -2,7 +2,7 @@ App.View = (function(lng, App, undefined) {
 
     lng.View.Template.create(
         'profile-tmp',
-        '<li class="{{anchor}}">\
+        '<li class="selectable {{anchor}}">\
                 <img src="{{avatar}}" />\
                 <div class="onright">{{name}}</div>\
                 {{name}}\
