@@ -19,22 +19,22 @@ section{
 	height: inherit;
 	z-index: 0;
 	
-	.transform(translate3d(100%, 0, 0));
-	//.transform(translate3d(320px, 0, 0));
+	//.transform(translate3d(100%, 0, 0));
+	.transform(translate3d(320px, 0, 0));
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
 section:first-child, section.show {	
 	z-index: 1;
-	.transform(translate3d(0%, 0, 0));
-	//.transform(translate3d(0px, 0, 0));
+	//.transform(translate3d(0%, 0, 0));
+	.transform(translate3d(0px, 0, 0));
 }
 
 section.hide {
 	z-index: 0;
-	.transform(translate3d(-100%, 0, 0));
-	//.transform(translate3d(-320px, 0, 0));
+	//.transform(translate3d(-100%, 0, 0));
+	.transform(translate3d(-320px, 0, 0));
 }
 /* @end */
 
