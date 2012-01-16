@@ -201,8 +201,13 @@ input[type="checkbox"]:checked + span, input[type="radio"]:checked + span {
 /* @end */
 .bubble {
   color: #fff;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
   text-shadow: none;
-  box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.7);
+  font-weight: bold !important;
+  box-shadow: inset 0px 0px 1px #000000;
 }
 header .bubble.count {
   background: #2c2c2d;
