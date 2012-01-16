@@ -11,9 +11,8 @@
  
 .list {
     width: inherit;
-    font-size: 1.2em;
-    line-height: 1.05em;
-    font-weight: bold;
+    font-size: 1.15em;
+    //line-height: 1.15em;
 }
 	.list li:not(.toolbar) {
 		padding: 8px 6px 8px 8px;
@@ -24,7 +23,7 @@
 	    display: block;
 	}
 	
-	.list li:not(.toolbar) img, .list li:not(.toolbar) .icon {
+	.list li:not(.toolbar) .icon, .list li:not(.toolbar) img {
 		float: left;
 		width: 32px;
 		height: 32px;
@@ -39,9 +38,7 @@
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		font-size: 0.85em;
-		font-weight: normal;
 	}
-	
 	
 	.list .icon {
 	    display: inline-block;
@@ -51,22 +48,17 @@
     	font-size: 0.85em;
     	font-weight: bold;
 	}
-	
-	.list .light {
-    	font-size: 0.9em;
-    	font-weight: normal;
-	}
 
 	.list li.anchor { 	
-		font-size: 0.75em;
-		padding: 3px 6px !important;
+		font-size: 0.8em;
+		padding: 4px 4px 3px;
 	}
 		.list .anchor .icon {
 			width: 14px !important;
 			height: 14px !important;	
-			margin-right: 4px !important; 	
-			font-size:  1.3em !important;
-			line-height: 16px !important;	
+			margin-right: 2px !important; 	
+			font-size:  1.6em !important;
+			line-height: 14px !important;	
 		}
 
 		.list .anchor .bubble { display: none; }
@@ -93,26 +85,16 @@
 }
 /* @end */
 
-/* @group .arrow */
-.list a.arrow:before {
-	float: right;
-	content: ">";
-	position: relative;
-	top: 6px;
-	font-size: 16px;
-	font-family: "Courier New", Courier, mono;
-	font-weight: bold;
-}
-/* @end */
-
 /* @group .onright */
 .list .onright {
-	font-size: 0.85em;
+	font-size: 0.75em;
+	line-height: 16px;
 }
-	.list .onright .icon {
-    	font-size: 1.2em !important;
-    	height: 12px !important;
-    	width: 12px !important;
-    	margin: 0px;
-	}
+	.list .onright .icon, .list small .icon {
+    	font-size: 1.4em !important;
+    	line-height: 16px;
+    	height: 14px !important;
+    	width: 14px !important;
+    	margin-right: 0px !important;
+    }
 /* @end */

@@ -19,31 +19,22 @@ section{
 	height: inherit;
 	z-index: 0;
 	
-	//.transform(translate3d(100%, 0, 0));
-	.transform(translate3d(320px, 0, 0));
-	
+	.transform(translate3d(100%, 0, 0));
+	//.transform(translate3d(320px, 0, 0));
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
-section:first-child {
-	//.transform(translate3d(0%, 0, 0));
-	.transform(translate3d(0px, 0, 0));
-	
+section:first-child, section.show {	
 	z-index: 1;
+	.transform(translate3d(0%, 0, 0));
+	//.transform(translate3d(0px, 0, 0));
 }
 
 section.hide {
-	//.transform(translate3d(-100%, 0, 0));
-	.transform(translate3d(-320px, 0, 0));
 	z-index: 0;
-	
-}
-section.show {
-	//.transform(translate3d(0%, 0, 0));
-	.transform(translate3d(0px, 0, 0));
-	
-	 z-index: 1;
+	.transform(translate3d(-100%, 0, 0));
+	//.transform(translate3d(-320px, 0, 0));
 }
 /* @end */
 
@@ -69,7 +60,8 @@ footer  {
 
 header .title, footer .title  {
 	float: left;
-	margin: 0 8px;
+	margin: 0 8px;	
+	font-size: 1.15em;
 }
 
 header .title {
@@ -77,8 +69,8 @@ header .title {
 	left: 0px;
 	width: 100%;
 	margin:0px auto;
-	text-align: center;
 	z-index: -1;
+	text-align: center;
 }
 
 section header a.button, section footer a.button  {
@@ -87,8 +79,6 @@ section header a.button, section footer a.button  {
 
 section header a.button.icon, section footer a.button.icon  {
 	width: 17px;
-	font-size: 1.5em;
-	font-weight: normal;
 }
 /* @end */
 
@@ -105,67 +95,56 @@ aside {
 	aside.show {
 		opacity: 1;
 	}
-
-header ~ aside {
-	padding-top: 40px;
-}
-
-footer ~ aside {
-	padding-bottom: 40px;
-}
-
-aside ~ article {
-	.transform(translate3d(0px, 0, 0));
-	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
-}
-
-aside a {
-	display: block;
-	width: 244px;
-	height: 40px;
-	padding: 0 6px;
-
-	font-size: 1.1em;
-	font-weight: bold;
-	line-height: 40px;
-}
-
-	aside .icon {
-		width: 28px;
-		height: 28px;
-		float: left;
-		margin: 8px 6px 0 0;
-
-	    font-size: 1.9em;
-	    line-height: 1.0em;
-	    text-align: center;
-	}
 	
-	aside .anchor {
+	header ~ aside { padding-top: 40px; }
+	
+	footer ~ aside { padding-bottom: 40px; }
+	
+	aside ~ article {
+		.transform(translate3d(0px, 0, 0));
+		-webkit-transition: -webkit-transform 250ms @defaultTrasition;
+	}
+
+	aside a {
+		display: block;
+		width: 244px;
+		height: 40px;
+		padding: 0 6px;
+	
+		font-size: 1.1em;
 		font-weight: bold;
-    	padding: 3px 10px 4px;
+		line-height: 40px;
 	}
+		aside .icon {
+			width: 28px;
+			height: 28px;
+			float: left;
+			margin: 8px 6px 0 0;
 	
-	aside .bubble {
-    	float: right;
-		margin: 12px 4px 0 0;
-	}
-
-@media handheld, only screen and (min-width: 768px) {
-	[data-target="aside"] {
-		display: none !important;
-	}
-
-	aside {
-		opacity: 1;
-	}
-
-	aside ~ article{
-		width: auto !important;
-    	left: 256px;
-    	right:  0px !important;
-	}
-}
+		    font-size: 1.9em;
+		    line-height: 1.0em;
+		    text-align: center;
+		}
+		aside .anchor {
+			font-weight: bold;
+	    	padding: 3px 10px 4px;
+		}
+		aside .bubble {
+	    	float: right;
+			margin: 12px 4px 0 0;
+		}
+	
+		@media handheld, only screen and (min-width: 768px) {
+			[data-target="aside"] {
+				display: none !important;
+			}		
+			aside { opacity: 1; }		
+			aside ~ article{
+				width: auto !important;
+		    	left: 256px;
+		    	right:  0px !important;
+			}
+		}
 /* @end */
 
 /* @group <article> */
@@ -212,44 +191,31 @@ article {
 /* @end */
 
 /* @group <nav> */
+ 
 nav  {
 	height: inherit;
 	text-align: center;
-	font-weight: normal;
 }
 
-nav a  {
-	display: inline-block;
-	padding: 0 6px;
-	height: inherit;
-	float: left;
-	//font-size: 2.0em;
-	//line-height: 38px;
-}
-
-nav .icon {
-    font-size: 2.4em;
-    line-height: 38px;
-}
-
-nav a abbr {
-	position: relative;
-	bottom: 6px;
-	margin-left: 4px;
-	display: none;
-	font-size: 0.8em;
-	font-weight: bold;
-}
-
-nav a.current abbr {
-	display: inline;
-}
-
-/*
-nav a.current {
-	.transition(all 0.3s @easeInOutCubic);
-}
-*/
+	nav a {
+		display: inline-block;
+		padding: 0 6px;
+		height: inherit;
+		float: left;
+	}
+	nav .icon {
+	    font-size: 2.2em;
+	    line-height: 38px;
+	}
+	nav a abbr {
+		position: relative;
+		bottom: 5px;
+		margin-left: 2px;
+		display: none;
+		
+		font-size: 1.05em;
+	}
+	nav a.current abbr { display: inline; }
 
 
 .toolbar {
@@ -265,7 +231,7 @@ nav a.current {
 .toolbar .icon {
 	display: block;
 	font-size: 2.5em;
-	line-height: 52px;
+	line-height: 48px;
 }
 
 nav .bubble {

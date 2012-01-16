@@ -1,5 +1,5 @@
-a.button{display:inline-block;height:31px;padding:0 9px 0 8px;color:#fff !important;outline:none;-webkit-user-select:none;user-select:none;-webkit-border-radius:1px;border-radius:1px;-webkit-background-clip:padding-box;background-clip:padding-box;background:#5a5a5a;font-weight:bold !important;line-height:32px;text-align:center;text-decoration:none;}
+a.button{display:inline-block;height:31px;padding:0 9px 0 8px;color:#fff !important;outline:none;-webkit-user-select:none;user-select:none;-webkit-border-radius:1px;border-radius:1px;-webkit-background-clip:padding-box;background-clip:padding-box;background:#5a5a5a;font-weight:bold;line-height:32px;text-align:center;text-decoration:none;}
 a.button:disabled,a.button.disabled{background:rgba(255, 255, 255, 0.2);color:#999 !important;}
-a.button .icon{float:left;width:17px;height:30px;font-weight:normal;font-size:1.5em;line-height:31px;}
+a.button .icon{float:left;width:17px;height:30px;font-size:1.5em;line-height:31px;}
 a.button.big{position:relative;height:30px;width:100%;margin-bottom:4px;padding:6px 0;font-size:16px;line-height:31px;}
 a.button.big .icon{width:20px;height:28px;line-height:32px;margin-left:0.6em;margin-right:-48px;}
