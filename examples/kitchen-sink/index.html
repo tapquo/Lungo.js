@@ -35,8 +35,8 @@
 </head>
 
 <body class="app">
-    <!--
-        <section id="login">
+
+    <section id="login">
         <article class="splash">
             <div class="indented">
                 <h1>Kitchen<span class="semi-opacity">Sink<span></h1>
@@ -44,7 +44,7 @@
                 <input type="text" placeholder="Type your user" />
                 <input type="password" placeholder="Type your password" />
 
-                <a href="#kitchen-sink" data-target="section" class="button big" data-icon="key">Go to Kitchen Sink!</a>
+                <a href="#kitchen-sink" data-target="section" class="button big" data-icon="check">Go to Kitchen Sink!</a>
                 <div class="copyright">Copyright TapQuo Inc, 2011</div>
 
 
@@ -57,7 +57,7 @@
             </div>
         </article>
     </section>
-    -->
+
 
     <!-- ============================= kitchen-sink ============================= -->
 
@@ -87,7 +87,7 @@
             <div class="indented">
                 <h1 class="title" data-icon="home">Welcome to LungoJS KitchenSink</h1>
                 <p class="text">
-                    The first Mobile Framework that uses the actual features of #HTML5, #CSS3 and #JavaScript.</p>
+                    The first <strong>Mobile Framework</strong> that uses the actual features of #HTML5, #CSS3 and #JavaScript.</p>
                 <p class="text">
                     The main premise in Lungo is to create a semantic structure in the whole project, starting from the markup language HTML, through a well organized CSS< and ending with the JavaScript API</p>
             </div>
@@ -98,14 +98,14 @@
         <article id="authors" class="list scrollable">
             <div class="indented">
                 <ul>
-                    <li class="anchor" data-icon="key">Author</li>
+                    <li class="anchor" data-icon="pencil">Author</li>
                     <li data-image="assets/images/avatars/soyjavi.jpg">
                         Javi Jim&eacute;nez Villar
                         <small>CEO & Creative Lead at Tapquo</small></li>
                 </ul>
 
                 <ul>
-                    <li class="anchor" data-icon="key">CoreTeam</li>
+                    <li class="anchor" data-icon="star">CoreTeam</li>
                     <li data-image="assets/images/avatars/pasku.jpg">
                         Guillermo Pascual
                         <small>@pasku1</small></li>
@@ -115,7 +115,7 @@
                 </ul>
 
                 <ul>
-                    <li class="anchor" data-icon="key">Contributors</li>
+                    <li class="anchor" data-icon="group">Contributors</li>
                     <li data-image="https://secure.gravatar.com/avatar/b374f3bd05b1db4a974585ba57661815?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
                         Jorge Casar
                         <small>jorgecasar</small></li>
@@ -266,7 +266,7 @@
         <article id="forms" class="list scrollable">
             <div class="container indented">
                 <ul class="form">
-                    <li class="tip dark" data-icon="edit mini">Example of inputs</li>
+                    <li class="anchor" data-icon="edit">Example of inputs</li>
                     <li>
                         <label>type="text"</label>
                         <input type="text" placeholder="Input text"/>
@@ -277,18 +277,20 @@
                     </li>
                 </ul>
 
-                <ul>
-                    <li class="tip dark" data-icon="edit mini">Example of search</li>
+                <ul class="form">
+                    <li class="anchor" data-icon="edit">Example of search</li>
                     <li data-search="Type a search..."></li>
-                    <li class="tip dark" data-icon="question mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
+                    <li class="tip darker" data-icon="question mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
                 </ul>
 
-                <ul>
-                    <li class="tip dark" data-icon="edit mini">Example of textarea</li>
+                <ul class="form">
+                    <li class="anchor" data-icon="edit">Example of textarea</li>
                     <li><textarea placeholder="Textarea sample"></textarea></li>
+                </ul>
+
+                <ul class="form">
                     <li class="anchor" data-icon="edit">Example of select</li>
                     <li>
-                        <label>Select a number:</label>
                         <label class="select">
                             <select class="custom">
                                 <option value="1">One</option>
@@ -300,8 +302,8 @@
                     <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
                 </ul>
 
-                <ul>
-                    <li class="tip darker" data-icon="edit mini">Example of checkbox</li>
+                <ul class="form">
+                    <li class="anchor" data-icon="edit">Example of checkbox</li>
                     <li>
                         <label>You like LungoJS forms?</label>
                         <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
@@ -309,7 +311,7 @@
                 </ul>
 
                 <ul class="form">
-                    <li class="tip darker" data-icon="edit mini">Example of radio</li>
+                    <li class="anchor" data-icon="edit">Example of radio</li>
                     <li>
                         <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
                         <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
@@ -318,7 +320,7 @@
                 </ul>
 
                 <ul class="form">
-                    <li class="tip darker">Examples of tips</li>
+                    <li class="anchor">Examples of tips</li>
                     <li class="tip" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
                     <li class="tip dark" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
                     <li class="tip darker" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
@@ -329,7 +331,7 @@
                 </ul>
 
                 <ul class="form">
-                    <li class="tip darker" data-icon="home mini">Example of anchor</li>
+                    <li class="anchor" data-icon="home">Example of anchor</li>
                     <li><label>Example of label</label></li>
                 </ul>
             </div>
@@ -382,6 +384,7 @@
     <section id="navigation">
         <header data-back="home" data-title="Navigation">
             <nav class="onright">
+                <a href="#" class="current" data-count="23" data-icon="star"></a>
                 <a href="#back" data-target="section" data-icon="left"></a>
                 <a href="#navigation-secondary" data-target="section" data-icon="right"></a>
             </nav>
