@@ -15,42 +15,47 @@ a.button {
 	padding: 0 9px 0 8px;
 	color: #fff !important;
 	outline: none;
+	background: #5a5a5a;	
 	.user-select(none);
 	.border-radius(1px);
-	background: #5a5a5a;
 	font-weight: bold;
 	line-height: 32px;
 	text-align: center; 
 	text-decoration: none;
-}
 
-a.button:disabled, a.button.disabled {
-	background: rgba(255,255,255,0.2);
-	color: #999 !important; 
-}
-
-a.button .icon{ 
-	float: left;
-	width: 17px;
-	height: 30px;	
-	font-size: 1.5em;
-	line-height: 31px;}
+	&:active { 
+		background: #4b4b4b; 
+	}
 	
-a.button.big { 
-	position: relative; 
-	height: 30px; 
-	width: 100%; 
-	margin-bottom: 4px;
-	padding: 6px 0;
+	&:disabled, &.disabled {
+    	background: rgba(255,255,255,0.2);
+		color: #999 !important; 
+	}
 	
-	font-size: 16px;
-	line-height: 31px;
-}
+	& .icon {
+    	float: left;
+		width: 17px;
+		height: 30px;	
+		font-size: 1.5em;
+		line-height: 31px;
+	}
 	
-a.button.big .icon {	
-	width: 20px;
-	height: 28px;
-	line-height: 32px;
-	margin-left: 0.6em; 
-	margin-right: -48px;
+	&.big {
+    	position: relative; 
+		height: 30px; 
+		width: 100%; 
+		margin-bottom: 4px;
+		padding: 6px 0;
+		
+		font-size: 16px;
+		line-height: 31px;
+		
+		& .icon {
+    		width: 20px;
+			height: 28px;
+			line-height: 32px;
+			margin-left: 0.6em; 
+			margin-right: -48px;    	
+		}
+	}
 }

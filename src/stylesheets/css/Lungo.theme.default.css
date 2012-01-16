@@ -8,16 +8,9 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 /*
-//ARTIC
-@master-color: #2daf96;
-	@master-color-light: #35d2b3;
-	@master-color-dark: #22937d;
-*/
-/*
-//GREEN
-@master-color: #2ea03c;
-	@master-color-light: #34b745;
-	@master-color-dark: #248831;
+@theme: #2daf96;
+	@theme-light: #35d2b3;
+	@theme-dark: #22937d;
 */
 .app {
   background: #000000;
@@ -31,7 +24,7 @@ header {
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
 }
 footer {
-  background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1d1d));
+  background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1c1c));
   border-top: 1px inset #1c1c1c;
 }
 .title {
@@ -56,7 +49,7 @@ nav a.current, nav a:active {
 .toolbar a {
   color: rgba(255, 255, 255, 0.2);
 }
-.toolbar a.current, .toolbar nav a:active {
+.toolbar a.current, .toolbar a:active {
   background: #1c1c1c;
   box-shadow: inset 0px 0px 8px #101010;
   text-shadow: 0px 1px 4px #000;
@@ -85,7 +78,7 @@ aside .anchor {
   background: #101010;
   color: #7a7a7a;
 }
-aside ~ article {
+aside  ~ article {
   box-shadow: -1px 0px 4px #000000;
 }
 /* @end */
@@ -105,51 +98,47 @@ aside ~ article {
   color: #1b6777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-.indented ul {
-  border: 1px solid #e1e1e1;
-}
-.list .darker {
-  background-color: #2c2c2d;
-  color: #fff;
-  text-shadow: 0px 1px 0px #000;
-}
-.list li.darker a {
-  color: #fff !important;
-}
-.list .dark {
-  background-color: #f4f4f4;
-  box-shadow: inset 0px 1px 0px #fff;
-  text-shadow: 0px 1px 0px #fff;
-}
-.list small, .list .onright:not(.bubble) {
-  color: #888;
-}
 .list li.selectable:active small, .list li.selectable:active .onright:not(.bubble) {
-  color: #34bcd7;
   color: #ffffff;
 }
-.list .tip {
-  color: #7a7a7a;
+.list li small, .list li .onright:not(.bubble) {
+  color: #888;
 }
-.list li.anchor {
+.list .indented ul {
+  border: 1px solid #e1e1e1;
+}
+.list .anchor {
   background: #93d6e7;
   color: #1b6777;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
   border: none;
 }
+.list .tip {
+  color: #7a7a7a;
+}
+.list .tip.darker {
+  background-color: #2c2c2d;
+  color: #fff;
+  text-shadow: 0px 1px 0px #000;
+}
+.list .tip.darker a {
+  color: #fff !important;
+}
+.list .tip.dark {
+  background-color: #f4f4f4;
+  box-shadow: inset 0px 1px 0px #fff;
+  text-shadow: 0px 1px 0px #fff;
+}
 .list .toolbar {
   border-bottom-color: rgba(0, 0, 0, 0.2);
 }
-.list .arrow:before {
-  color: #a9a9a9;
-}
-.list .toolbar a {
+.list .toolbar .toolbar a {
   box-shadow: 1px 0px 0px #d9d9d9;
 }
-.list .toolbar a:last-child {
+.list .toolbar .toolbar a:last-child {
   box-shadow: none;
 }
-.list .toolbar a.current {
+.list .toolbar .toolbar a.current {
   background: transparent;
   color: #333;
   text-shadow: none !important;
