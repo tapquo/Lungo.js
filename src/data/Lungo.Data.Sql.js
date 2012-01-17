@@ -65,22 +65,16 @@ LUNGO.Data.Sql = (function(lng, undefined) {
      * @method insert
      *
      * @param {string} Name of the table in the database
-     * @param {object} Data object to insert in table
+     * @param {object} Object (or Array of objects) to insert in table
      */
-    var insert = function(table, data_obj, callback) {
-        var fields = '';
-        var values = '';
-
-        for (var field in data_obj) {
-            if (lng.Core.isOwnProperty(data_obj, field)) {
-                var value = data_obj[field];
-                fields += (fields) ? ', ' + field : field;
-                if (values) values += ', ';
-                values += (isNaN(value)) ? '"' + value + '"' : value;
+    var insert = function(table, data, callback) {
+        if (lng.Core.toType(data) === 'object') {
+            _insertRow(table, data);
+        } else {
+            for (row in data) {
+                _insertRow(table, data[row]);
             }
         }
-
-        execute('INSERT INTO ' + table + ' (' + fields + ') VALUES (' + values + ')');
     };
 
     /**
@@ -186,6 +180,22 @@ LUNGO.Data.Sql = (function(lng, undefined) {
             setTimeout(callback, 100, response);
         }
     };
+
+    var _insertRow = function(table, row) {
+        var fields = '';
+        var values = '';
+
+        for (var field in row) {
+            if (lng.Core.isOwnProperty(row, field)) {
+                var value = row[field];
+                fields += (fields) ? ', ' + field : field;
+                if (values) values += ', ';
+                values += (isNaN(value)) ? '"' + value + '"' : value;
+            }
+        }
+
+        execute('INSERT INTO ' + table + ' (' + fields + ') VALUES (' + values + ')');
+    }
 
     var _throwError = function(transaction, error) {
         lng.Core.log(3, 'lng.Data.Sql >> ' + error.code + ': ' + error.message);
