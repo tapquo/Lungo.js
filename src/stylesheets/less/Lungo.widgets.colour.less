@@ -9,9 +9,9 @@
 
 @import "mixins.less";
 
-a.grey, .grey{background-color: @grey;}
-a.grey:active{background-color: @grey-active;}
-a.black, .grey{background-color: @black;}
+a.grey,.grey{background-color:#cccccc;}
+a.grey:active{background-color:#b5b5b5;}
+a.black, .black{background-color: @black;}
 a.black:active{background-color: @black-active;}
 a.red, .red{background-color: @red;}
 a.red:active{background-color: @red-active;}
@@ -38,17 +38,47 @@ a.twitter:active{background-color: @twitter-active;}
 a.facebook, .facebook:not(span){background-color: @facebook;}
 a.facebook:active{background-color: @facebook-active;}
 
-li.grey{ box-shadow: inset 3px 0px 0px @grey;}
-li.black{ box-shadow: inset 3px 0px 0px @black;}
-li.red{ box-shadow: inset 3px 0px 0px @red;}
-li.lightgreen{ box-shadow: inset 3px 0px 0px @lightgreen;}
-li.green{ box-shadow: inset 3px 0px 0px @green;}
-li.blue{ box-shadow: inset 3px 0px 0px @blue;}
-li.arcticblue{ box-shadow: inset 3px 0px 0px @arcticblue;}
-li.orange{ box-shadow: inset 3px 0px 0px @orange;}
-li.purple{ box-shadow: inset 3px 0px 0px @purple;}
-li.magenta{ box-shadow: inset 3px 0px 0px @magenta;}
-li.pink{ box-shadow: inset 3px 0px 0px @pink;}
-li.yellow{ box-shadow: inset 3px 0px 0px @yellow;}
-li.twitter{ box-shadow: inset 3px 0px 0px @twitter;}
-li.facebook{ box-shadow: inset 3px 0px 0px @facebook;}
+li {
+    &.grey {
+        box-shadow: inset 3px 0px 0px @grey;
+    }
+    &.black {
+        box-shadow: inset 3px 0px 0px @black;
+    }
+    &.red {
+        box-shadow: inset 3px 0px 0px @red;
+    }
+    &.lightgreen {
+        box-shadow: inset 3px 0px 0px @lightgreen;
+    }
+    &.green {
+        box-shadow: inset 3px 0px 0px @green;
+    }
+    &.blue {
+        box-shadow: inset 3px 0px 0px @blue;
+    }
+    &.arcticblue {
+        box-shadow: inset 3px 0px 0px @arcticblue;
+    }
+    &.orange {
+        box-shadow: inset 3px 0px 0px @orange;
+    }
+    &.purple {
+        box-shadow: inset 3px 0px 0px @purple;
+    }
+    &.magenta {
+        box-shadow: inset 3px 0px 0px @magenta;
+    }
+    &.pink {
+        box-shadow: inset 3px 0px 0px @pink;
+    }
+    &.yellow {
+        box-shadow: inset 3px 0px 0px @yellow;
+    }
+    &.twitter {
+        box-shadow: inset 3px 0px 0px @twitter;
+    }
+    &.facebook {
+        box-shadow: inset 3px 0px 0px @facebook;
+    }
+}

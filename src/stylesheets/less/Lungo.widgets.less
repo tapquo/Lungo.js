@@ -38,17 +38,23 @@
     width: auto;
     height: auto;
 	padding: 10px 10px 0px;
-}
-
-.indented ul {
+    ul {
 		margin-bottom: 10px;
 		height: auto;
 		width: inherit;
-		
 	}
-	.rounded ul { .border-radius(4px); }	
-	.rounded li:first-child { .border-radius(4px 4px 0px 0px); }
-	.rounded li:last-child { .border-radius(0px 0px 4px 4px); }
+}
+.rounded ul {
+    .border-radius(4px);
+    li {
+        &:first-child {
+            .border-radius(4px 4px 0px 0px);
+        }
+        &:last-child {
+            .border-radius(0px 0px 4px 4px);
+        }
+    }
+}
 
 .margin-top-4{ margin-top: 4px; }
 /* @end */
