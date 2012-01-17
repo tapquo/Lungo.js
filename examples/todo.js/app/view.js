@@ -26,9 +26,9 @@ App.View = (function(lng, App, undefined) {
                 var data = result[0];
                 lng.Data.Cache.set('current_todo', data);
 
-                $('#txtEditName').val(data.name);
-                $('#txtEditDescription').val(data.description);
-                $('#txtEditName').val(data.name);
+                lng.dom('#txtEditName').val(data.name);
+                lng.dom('#txtEditDescription').val(data.description);
+                lng.dom('#txtEditName').val(data.name);
 
                 lng.Router.section('view');
             }
@@ -36,15 +36,13 @@ App.View = (function(lng, App, undefined) {
     };
 
     var returnToMain = function(message, icon) {
-        lng.Sugar.Growl.notify(message, 'Tap to close', icon, 'error', 5);
-
-        //lng.Sugar.Growl.show(message, icon, true);
+        lng.Sugar.Growl.show(message, 'Please wait...', icon, true, 2);
         App.Data.refresh();
 
         setTimeout(function() {
             lng.Router.back();
             lng.Sugar.Growl.hide();
-        }, 1000);
+        }, 2000);
     };
 
     var list = function(container, template, rows) {
