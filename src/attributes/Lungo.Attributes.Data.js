@@ -37,7 +37,7 @@ LUNGO.Attributes.Data = {
     Title: {
         tag: 'title',
         selector: 'header, footer, article',
-        html: '<h1 class="title">{{value}}</h1>'
+        html: '<span class="title">{{value}}</span>'
     },
     Back: {
         tag: 'back',
