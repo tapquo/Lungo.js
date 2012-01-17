@@ -1,6 +1,6 @@
 .form,form{width:inherit !important;}
-label{font-size:0.75em;line-height:27px;}
-input:not([type=checkbox]),textarea,select{display:inline-block;padding:5px;width:95%;margin-bottom:2px;outline:none;-webkit-appearance:none;border-radius:0px;font-size:14px;font-weight:bold;line-height:1.25em;}
+label{font-size:0.8em;line-height:27px;}
+input:not([type=checkbox]),textarea,select{display:inline-block;padding:5px;width:95%;margin-bottom:2px;outline:none;-webkit-appearance:none;border-radius:0px;font-size:15px;line-height:15px;font-weight:bold;}
 input[type=search]{width:86%;}input[type=search] +.button{float:right;padding:0px;width:32px;height:30px;}input[type=search] +.button .icon{font-size:22px !important;line-height:30px;}
 select{width:100%;}
 label.select{position:relative;display:inline-block;width:100%;padding-top:2px;}
