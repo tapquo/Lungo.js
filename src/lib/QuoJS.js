@@ -354,7 +354,7 @@ window.Quo = Quo;
             if (supported) {
                 detected_os = {
                     name: (os === 'iphone' || os === 'ipad') ? 'ios' : os,
-                    version: supported[2]
+                    version: supported[2].replace('_', '.')
                 }
                 break;
             }
