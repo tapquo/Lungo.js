@@ -196,7 +196,6 @@ input[type="checkbox"]:checked + span, input[type="radio"]:checked + span {
   background-clip: padding-box;
   text-shadow: none;
   font-weight: bold !important;
-  box-shadow: inset 0px 0px 1px #000000;
 }
 header .bubble.count {
   background: #2c2c2d;
