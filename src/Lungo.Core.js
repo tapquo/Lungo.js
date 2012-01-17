@@ -127,6 +127,17 @@ LUNGO.Core = (function(lng, $$, undefined) {
         return $$.isMobile();
     };
 
+    /**
+     * Returns information of execute environment
+     *
+     * @method environment
+     *
+     * @return {object} Environment information
+     */
+    var environment = function() {
+        return $$.environment();
+    };
+
     return {
         log: log,
         execute: execute,
@@ -135,7 +146,8 @@ LUNGO.Core = (function(lng, $$, undefined) {
         isOwnProperty: isOwnProperty,
         toType: toType,
         toArray: toArray,
-        isMobile: isMobile
+        isMobile: isMobile,
+        environment: environment
     };
 
 })(LUNGO, Quo);
