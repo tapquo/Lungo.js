@@ -7,21 +7,16 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/*
-@theme: #2daf96;
-	@theme-light: #35d2b3;
-	@theme-dark: #22937d;
-*/
 .app {
   background: #000000;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 /* @group <header> & <footer> & <article> */
 header {
-  background-color: #05b8e2;
-  border-top: 1px solid #05bde9;
-  border-bottom: 1px solid #07acd0;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  background-color: #91bd09;
+  border-top: 1px solid #b7de3f;
+  border-bottom: 1px solid #758e29;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 footer {
   background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1c1c));
@@ -41,15 +36,15 @@ article .title {
 /* @end */
 /* @group <nav> */
 nav a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 nav a.current, nav a:active {
   color: #ffffff;
 }
-.toolbar a {
+footer a, .toolbar a {
   color: rgba(255, 255, 255, 0.2);
 }
-.toolbar a.current, .toolbar a:active {
+.toolbar a .current, .toolbar a:active {
   background: #1c1c1c;
   box-shadow: inset 0px 0px 8px #101010;
   text-shadow: 0px 1px 4px #000;
@@ -94,8 +89,8 @@ aside  ~ article {
   border-bottom: none;
 }
 .list li.selectable:active {
-  background: #93d6e7;
-  color: #1b6777;
+  background: #c1de6a;
+  color: #5d7b03;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .list li.selectable:active small, .list li.selectable:active .onright:not(.bubble) {
@@ -109,8 +104,8 @@ aside  ~ article {
   border: 1px solid #e1e1e1;
 }
 .list .anchor {
-  background: #93d6e7;
-  color: #1b6777;
+  background: #c1de6a;
+  color: #5d7b03;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   border: none;
 }
@@ -147,7 +142,7 @@ aside  ~ article {
 /* @end */
 /* @group widgets */
 .splash {
-  background: #07acd0;
+  background: #758e29;
   color: #fff;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
@@ -166,11 +161,11 @@ input, textarea, select {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 input:focus, textarea:focus, select:focus {
-  border-color: #05b8e2;
-  color: #05b8e2;
+  border-color: #91bd09;
+  color: #91bd09;
 }
 label {
-  color: #05b8e2;
+  color: #91bd09;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -186,7 +181,7 @@ input[type="checkbox"] + span::before, input[type="radio"] + span::before {
   background: #c1c1c1;
 }
 input[type="checkbox"]:checked + span, input[type="radio"]:checked + span {
-  background: #07acd0;
+  background: #758e29;
 }
 /* @end */
 .bubble {
@@ -202,6 +197,6 @@ header .bubble.count {
   background: #2c2c2d;
 }
 .bubble.count {
-  background: #05b8e2;
+  background: #91bd09;
 }
 /* @end */

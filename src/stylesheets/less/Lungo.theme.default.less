@@ -10,22 +10,15 @@
 @import "mixins.less";
 @import "Lungo.theme.default.font.css";
 
-//ARTIC
-/*
-@theme: #2daf96;
-	@theme-light: #35d2b3;
-	@theme-dark: #22937d;
-*/
-
-@theme:  #05b8e2;
-	@theme-light: #05bde9;
-	@theme-dark: #07acd0;
-	@theme-highlight: #93d6e7;
-		@theme-highlight-color: #1b6777;
+@theme: #91bd09;
+	@theme-light: #B7DE3F;
+	@theme-dark: #758E29;
+	@theme-highlight: #C1DE6A;
+		@theme-highlight-color: #5D7B03;
 		@theme-highlight-text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 	@theme-secondary: #2c2c2d;
 		@theme-secondary-dark: #1c1c1c;
-		
+
 .app {
     background: @black;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -36,7 +29,7 @@ header {
 	background-color: @theme;
 	border-top: 1px solid @theme-light;	
 	border-bottom: 1px solid @theme-dark;
-	box-shadow: 0px 1px 0px rgba(0,0,0,0.1);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
 }
 	
 footer {
@@ -61,19 +54,20 @@ article {
 
 /* @group <nav> */
 nav a { 
-	color: rgba(255,255,255,0.5); 	
+	color: rgba(255,255,255,0.6); 	
 	&.current, &:active { 
 		color: @white; 
 	}
 }
 
-.toolbar a {  
-	color: rgba(255,255,255,0.2); 
-	&.current, &:active {
-		background: #1c1c1c;
-		box-shadow: inset 0px 0px 8px #101010;
-		text-shadow: 0px 1px 4px #000;
-	}
+footer a, .toolbar a{
+    color: rgba(255,255,255,0.2); 
+}
+
+.toolbar a .current, .toolbar a:active {
+	background: #1c1c1c;
+	box-shadow: inset 0px 0px 8px #101010;
+	text-shadow: 0px 1px 4px #000;
 }
 /* @end */
 
