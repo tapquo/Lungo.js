@@ -1,13 +1,13 @@
 App.Events = (function(lng, undefined) {
 
     //Login
-    lng.Dom('#btnLogin').tap(function(evet) {
+    lng.dom('#btnLogin').tap(function(event) {
         lng.Router.section('main');
         App.Data.refresh();
     });
 
     //Create new todo
-    lng.Dom('#btnNewTodo').tap(function(event) {
+    lng.dom('#btnNewTodo').tap(function(event) {
 
         var name = lng.dom('#txtNewName');
         var description = lng.dom('#txtNewDescription');
@@ -27,13 +27,13 @@ App.Events = (function(lng, undefined) {
     });
 
     //View ToDo
-    lng.Dom('#done li, #pending li').tap(function(event) {
+    lng.dom('#done li, #pending li').tap(function(event) {
         var todo_id = lng.dom(this).attr('id');
         App.View.todo(todo_id)
     });
 
     //Done ToDo
-    lng.Dom('#btnDoneTodo').tap(function(event) {
+    lng.dom('#btnDoneTodo').tap(function(event) {
         var current_todo = lng.Data.Cache.get('current_todo');
 
         App.Data.doneTodo(current_todo.id);
@@ -41,7 +41,7 @@ App.Events = (function(lng, undefined) {
     });
 
     //Update ToDo
-    lng.Dom('#btnUpdateTodo').tap(function(event) {
+    lng.dom('#btnUpdateTodo').tap(function(event) {
         var current_todo = lng.Data.Cache.get('current_todo');
         var name = lng.dom('#txtEditName');
         var description = lng.dom('#txtEditDescription');
@@ -52,11 +52,11 @@ App.Events = (function(lng, undefined) {
             description: description.val()
         });
 
-        App.View.returnToMain('ToDo updated', 'write');
+        App.View.returnToMain('ToDo updated', 'pencil');
     });
 
     //Delete ToDo
-    lng.Dom('#btnDeleteTodo').tap(function(event) {
+    lng.dom('#btnDeleteTodo').tap(function(event) {
         var current_todo = lng.Data.Cache.get('current_todo');
 
         var options = [
@@ -67,6 +67,14 @@ App.Events = (function(lng, undefined) {
                 callback: function(){
                     App.Data.removeTodo(current_todo.id);
                     App.View.returnToMain('ToDo deleted', 'trash');
+                }
+            },
+            {
+                name: '...No, sorry.',
+                icon: 'home',
+                color: 'red',
+                callback: function() {
+                    lng.Sugar.Growl.hide();
                 }
             }
         ];

@@ -19,30 +19,29 @@
     <link rel="apple-touch-startup-image" href="assets/images/default.png">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../../release/lungo-1.1.min.css">
-    <link rel="stylesheet" href="../../release/lungo-1.1.min.icons.css">
     <link rel="stylesheet" href="../../release/lungo.theme.default.css">
     <!-- Sugars :) -->
-    <link rel="stylesheet" href="assets/sugars/lungo.sugar.growl.css">
+    <link rel="stylesheet" href="assets/sugars/lungo.sugar.growl.min.css">
 </head>
 
 <body class="app">
-
     <section id="login">
         <article class="splash">
             <div class="indented">
-                <h1>ToDo<span class="semi-opacity">.js</span></h1>
-            <div class="form">
-                <input type="text" placeholder="Type your user" disabled/>
-                <input type="password" placeholder="Type your password" disabled/>
-                <a href="#" id="btnLogin" class="button big blue" data-icon="key">Test Demo!</a>
+                <h1>ToDo.<span class="semi-opacity">js<span></h1>
+                <input type="text" placeholder="Type your user" />
+                <input type="password" placeholder="Type your password" />
+                <a href="#" id="btnLogin" class="button big" data-icon="key">Test Demo!</a>
+                <div class="copyright">Copyright TapQuo Inc, 2011</div>
             </div>
-            <div class="copyright">Copyright TapQuo Inc, 2011</div>
         </article>
     </section>
 
 	<section id="main">
 		<header data-title="ToDo.js">
-			<a href="#new" data-target="section" class="button onright articblue" data-icon="add">&nbsp;New</a>
+            <nav class="onright">
+			     <a href="#new" data-target="section" data-icon="add"></a>
+            </nav>
 		</header>
 
         <article id="pending" class="list"></article>
@@ -50,24 +49,25 @@
 
         <footer class="toolbar">
             <nav>
-                <a href="#pending" data-target="article" class="current" data-title="Pending ToDo's" data-icon="inbox"></a>
-                <a href="#done" data-target="article" data-title="Done ToDo's" data-icon="folder"></a>
+                <a href="#pending" data-target="article" class="current" data-title="Pending ToDo's" data-icon="folder"></a>
+                <a href="#done" data-target="article" data-title="Done ToDo's" data-icon="trash"></a>
             </nav>
         </footer>
     </section>
 
     <section id="view">
-        <header data-back="home articblue" data-title="View ToDo's" >
-            <a href="#" id="btnDoneTodo" class="button onright blue" data-icon="check">&nbsp;Done</a>
+        <header data-back="home articblue" data-title="View" >
+            <nav class="onright">
+                <a href="#" id="btnDeleteTodo" data-icon="trash"></a>
+            </nav>
         </header>
         <article class="list">
             <div class="indented">
                 <ul class="form">
+                    <li class="tip dark" data-icon="pencil mini">Edit ToDo</li>
                     <li class="dark">
                         <label>Name</label>
                         <input type="text" id="txtEditName" placeholder="Input text"/>
-                    </li>
-                    <li>
                         <label>Description</label>
                         <textarea id="txtEditDescription" placeholder="Textarea sample"></textarea>
                     </li>
@@ -82,14 +82,18 @@
                         </label>
                     </li>
                 </ul>
-                <a href="#" id="btnUpdateTodo" class="button big green" data-icon="write">Update</a>
-                <a href="#" id="btnDeleteTodo" class="button big red" data-icon="trash">Delete</a>
+                <a href="#" id="btnUpdateTodo" class="button big" data-icon="pencil">Update</a>
+                <a href="#" id="btnDoneTodo" class="button big red" data-icon="check">Done</a>
             </div>
         </article>
     </section>
 
     <section id="new">
-		<header data-back="home articblue" data-title="New ToDo"></header>
+		<header data-title="New ToDo">
+            <nav>
+                <a href="#back" data-target="section" class="current" data-icon="left"><abbr>Back</abbr></a>
+            </nav>
+        </header>
 		<article class="list">
             <div class="indented">
                 <ul class="form">
@@ -105,15 +109,14 @@
                         <label>Type</label>
                         <label class="select">
                             <select id="txtNewType">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option value="1">Personal</option>
+                                <option value="2">Someday</option>
+                                <option value="3">Tomorrow</option>
                             </select>
                         </label>
                     </li>
                 </ul>
-                <a href="#" id="btnNewTodo" class="button big blue" data-icon="check">Add ToDo</a>
-                <a href="#back" data-target="section" class="button big red" data-icon="cancel">Cancel</a>
+                <a href="#" id="btnNewTodo" class="button big" data-icon="check">Add ToDo</a>
             </div>
 		</article>
 	</section>
@@ -121,7 +124,7 @@
     <!-- LungoJS (Production mode) -->
     <script src="../../release/lungo-1.1.packed.js"></script>
 
-    <script src="assets/sugars/lungo.sugar.growl.js"></script>
+    <script src="assets/sugars/lungo.sugar.growl.min.js"></script>
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
     <script src="app/data.js"></script>

@@ -5,8 +5,6 @@ var App = (function(lng, undefined) {
         version: '0.1'
     });
 
-    
-
     return {
 
     };
