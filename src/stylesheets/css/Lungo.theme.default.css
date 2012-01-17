@@ -96,10 +96,11 @@ aside  ~ article {
 .list li.selectable:active {
   background: #93d6e7;
   color: #1b6777;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 .list li.selectable:active small, .list li.selectable:active .onright:not(.bubble) {
   color: #ffffff;
+  text-shadow: none;
 }
 .list li small, .list li .onright:not(.bubble) {
   color: #888;
@@ -110,7 +111,7 @@ aside  ~ article {
 .list .anchor {
   background: #93d6e7;
   color: #1b6777;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   border: none;
 }
 .list .tip {
