@@ -1,42 +1,42 @@
-a.grey,.grey{background-color:#cccccc;}
-a.grey:active{background-color:#b5b5b5;}
-a.black,.grey{background-color:#000000;}
-a.black:active{background-color:#000000;}
-a.red,.red{background-color:#e33100;}
-a.red:active{background-color:#c5280f;}
-a.lightgreen,.lightgreen{background-color:#91bd09;}
-a.lightgreen:active{background-color:#7ea41a;}
-a.green,.green{background-color:#009600;}
-a.green:active{background-color:#00770e;}
-a.blue,.blue{background-color:#237fd7;}
-a.blue:active{background-color:#1a69b6;}
-a.arcticblue,.arcticblue{background-color:#2daebf;}
-a.arcticblue:active{background-color:#238e9e;}
-a.orange,.orange{background-color:#ff5c00;}
-a.orange:active{background-color:#da4e15;}
-a.purple,.purple{background-color:#7b658d;}
-a.purple:active{background-color:#574765;}
-a.magenta,.magenta{background-color:#a9014b;}
-a.magenta:active{background-color:#831239;}
-a.pink,.pink{background-color:#ff007f;}
-a.pink:active{background-color:#de2870;}
-a.yellow,.yellow{background-color:#ffb515;}
-a.yellow:active{background-color:#dfa020;}
-a.twitter,.twitter:not(span){background-color:#35cdff;}
-a.twitter:active{background-color:#2bafda;}
-a.facebook,.facebook:not(span){background-color:#3b5998;}
-a.facebook:active{background-color:#2c4579;}
-li.grey{box-shadow:inset 3px 0px 0px #cccccc;}
-li.black{box-shadow:inset 3px 0px 0px #000000;}
-li.red{box-shadow:inset 3px 0px 0px #e33100;}
-li.lightgreen{box-shadow:inset 3px 0px 0px #91bd09;}
-li.green{box-shadow:inset 3px 0px 0px #009600;}
-li.blue{box-shadow:inset 3px 0px 0px #237fd7;}
-li.arcticblue{box-shadow:inset 3px 0px 0px #2daebf;}
-li.orange{box-shadow:inset 3px 0px 0px #ff5c00;}
-li.purple{box-shadow:inset 3px 0px 0px #7b658d;}
-li.magenta{box-shadow:inset 3px 0px 0px #a9014b;}
-li.pink{box-shadow:inset 3px 0px 0px #ff007f;}
-li.yellow{box-shadow:inset 3px 0px 0px #ffb515;}
-li.twitter{box-shadow:inset 3px 0px 0px #35cdff;}
-li.facebook{box-shadow:inset 3px 0px 0px #3b5998;}
+a.grey,.grey{background-color:#ccc}
+a.grey:active{background-color:#b5b5b5}
+a.black,.black{background-color:#000}
+a.black:active{background-color:#000}
+a.red,.red{background-color:#e33100}
+a.red:active{background-color:#c5280f}
+a.lightgreen,.lightgreen{background-color:#91bd09}
+a.lightgreen:active{background-color:#7ea41a}
+a.green,.green{background-color:#009600}
+a.green:active{background-color:#00770e}
+a.blue,.blue{background-color:#237fd7}
+a.blue:active{background-color:#1a69b6}
+a.arcticblue,.arcticblue{background-color:#2daebf}
+a.arcticblue:active{background-color:#238e9e}
+a.orange,.orange{background-color:#ff5c00}
+a.orange:active{background-color:#da4e15}
+a.purple,.purple{background-color:#7b658d}
+a.purple:active{background-color:#574765}
+a.magenta,.magenta{background-color:#a9014b}
+a.magenta:active{background-color:#831239}
+a.pink,.pink{background-color:#ff007f}
+a.pink:active{background-color:#de2870}
+a.yellow,.yellow{background-color:#ffb515}
+a.yellow:active{background-color:#dfa020}
+a.twitter,.twitter:not(span){background-color:#35cdff}
+a.twitter:active{background-color:#2bafda}
+a.facebook,.facebook:not(span){background-color:#3b5998}
+a.facebook:active{background-color:#2c4579}
+li.grey{box-shadow:inset 3px 0 0 #ccc}
+li.black{box-shadow:inset 3px 0 0 #000}
+li.red{box-shadow:inset 3px 0 0 #e33100}
+li.lightgreen{box-shadow:inset 3px 0 0 #91bd09}
+li.green{box-shadow:inset 3px 0 0 #009600}
+li.blue{box-shadow:inset 3px 0 0 #237fd7}
+li.arcticblue{box-shadow:inset 3px 0 0 #2daebf}
+li.orange{box-shadow:inset 3px 0 0 #ff5c00}
+li.purple{box-shadow:inset 3px 0 0 #7b658d}
+li.magenta{box-shadow:inset 3px 0 0 #a9014b}
+li.pink{box-shadow:inset 3px 0 0 #ff007f}
+li.yellow{box-shadow:inset 3px 0 0 #ffb515}
+li.twitter{box-shadow:inset 3px 0 0 #35cdff}
+li.facebook{box-shadow:inset 3px 0 0 #3b5998}
