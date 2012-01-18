@@ -1,17 +1,17 @@
-.scrollable{position:absolute;display:block;width:100%;height:100%;}
-.scroll{overflow:scroll;-webkit-overflow-scrolling:touch;}
-.onleft{float:left;}
-.onright{float:right;}
-.indented{width:auto;height:auto;padding:10px 10px 0px;}
-.indented ul{margin-bottom:10px;height:auto;width:inherit;}
-.rounded ul{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.rounded li:first-child{-webkit-border-radius:4px 4px 0px 0px;border-radius:4px 4px 0px 0px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.rounded li:last-child{-webkit-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.margin-top-4{margin-top:4px;}
-.hidden{display:none;}
-.semi-opacity{opacity:0.5;}
-.size32{font-size:32px;height:32px;width:32px;line-height:32px;}
-.mini{font-size:20px !important;height:16px !important;width:16px !important;line-height:16px !important;}
-.framed{border:2px solid #fff;}
-.round{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.bubble{padding:2px 4px 3px;-webkit-border-radius:2px;border-radius:2px;-webkit-background-clip:padding-box;background-clip:padding-box;font-size:0.8em;font-weight:bold;line-height:1.0em;}
+.scrollable{position:absolute;display:block;width:100%;height:100%}
+.scroll{overflow:scroll;-webkit-overflow-scrolling:touch}
+.onleft{float:left}
+.onright{float:right}
+.indented{width:auto;height:auto;padding:10px 10px 0}
+.indented ul{margin-bottom:10px;height:auto;width:inherit}
+.round{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box}
+.round ul{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box}
+.round ul li:first-child{-webkit-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;-webkit-background-clip:padding-box;background-clip:padding-box}
+.round ul li:last-child{-webkit-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;-webkit-background-clip:padding-box;background-clip:padding-box}
+.margin-top-4{margin-top:4px}
+.hidden{display:none}
+.semi-opacity{opacity:.5}
+.size32{font-size:32px;height:32px;width:32px;line-height:32px}
+.mini{font-size:20px!important;height:16px!important;width:16px!important;line-height:16px!important}
+.framed{border:2px solid #fff}
+.bubble{padding:2px 4px 3px;-webkit-border-radius:2px;border-radius:2px;-webkit-background-clip:padding-box;background-clip:padding-box;font-size:.8em;font-weight:700;line-height:1.0em}
