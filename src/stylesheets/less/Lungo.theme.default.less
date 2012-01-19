@@ -1,6 +1,6 @@
-/** 
+/**
  * Stylesheet
- * 
+ *
  * @namespace LUNGO.Theme
  * @class Default
  *
@@ -8,7 +8,6 @@
  */
 
 @import "mixins.less";
-@import "Lungo.theme.default.font.css";
 
 @theme: #91bd09;
 	@theme-light: #B7DE3F;
@@ -21,19 +20,18 @@
 
 .app {
     background: @black;
-    font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
-	
+
 /* @group <header> & <footer> & <article> */
 header {
 	background-color: @theme;
-	border-top: 1px solid @theme-light;	
+	border-top: 1px solid @theme-light;
 	border-bottom: 1px solid @theme-dark;
 	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
 }
-	
+
 footer {
-	background: @theme-secondary -webkit-gradient(linear, left top, left bottom, color-stop(0.25, @theme-secondary), color-stop(1, @theme-secondary-dark));	
+	background: @theme-secondary -webkit-gradient(linear, left top, left bottom, color-stop(0.25, @theme-secondary), color-stop(1, @theme-secondary-dark));
 	border-top: 1px inset @theme-secondary-dark;
 }
 
@@ -42,9 +40,9 @@ footer {
 	text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
 }
 
-article { 
-	background-color: #f9f9f9; 
-	
+article {
+	background-color: #f9f9f9;
+
 	& .title {
     	color: #797979;
     	text-shadow: 0px 1px 0px #fff;
@@ -53,51 +51,51 @@ article {
 /* @end */
 
 /* @group <nav> */
-nav a { 
-	color: rgba(255,255,255,0.6); 	
-	&.current, &:active { 
-		color: @white; 
+nav a {
+	color: rgba(255,255,255,0.5);
+	&.current, &:active {
+		color: @white;
 	}
 }
 
-footer a, .toolbar a{
-    color: rgba(255,255,255,0.2); 
-}
+.toolbar a {
+	color: rgba(255,255,255,0.2);
 
-.toolbar a .current, .toolbar a:active {
-	background: #1c1c1c;
-	box-shadow: inset 0px 0px 8px #101010;
-	text-shadow: 0px 1px 4px #000;
+	&.current, &:active {
+		background: #1c1c1c;
+		box-shadow: inset 0px 0px 8px #101010;
+		text-shadow: 0px 1px 4px #000;
+	}
 }
 /* @end */
 
 /* @group <aside> */
 aside {
     background: #252525;
-    
+
     & a {
     	color: #fff;
-	    text-shadow: 0px 1px 0px #000;    
+	    text-shadow: 0px 1px 0px #000;
 	    border-bottom: 1px inset #101010;
 		border-top: 1px inset #868686;
-		
+
 		&.current {
     		background: #1c1c1c;
 			box-shadow: inset 0px 0px 8px #101010;
 			border-top: 1px inset #1c1c1c;
 		}
-		
+
 		& .icon {
-    		text-shadow: none; 
+    		text-shadow: none;
 			color: #7a7a7a;
 		}
 	}
-	
+
 	& .anchor {
     	background: #101010;
 		color:  #7a7a7a;
 	}
-	
+
 	& ~ article {
 		box-shadow: -1px 0px 4px #000;
 	}
@@ -105,60 +103,62 @@ aside {
 /* @end */
 
 /* @group .list */
-.list, .list li:not(.toolbar) a { color: #2a2a2a; }
-
 .list {
+	&, & li:not(.toolbar) a {
+    	color: #2a2a2a;
+	}
+	
     & li {
 		background: #fff;
 		border-bottom: 1px inset #e1e1e1;
-		
+
 		&:last-child { border-bottom: none; }
-		
+
 		&.selectable:active {
     		background: @theme-highlight;
 			color: @theme-highlight-color;
 			text-shadow: @theme-highlight-text-shadow;
-			
+
 			& small, & .onright:not(.bubble) {
     			color: @white;
     			text-shadow: none;
-			} 
+			}
 		}
-		
+
 		& small, & .onright:not(.bubble) { color: #888; }
-	} 
-		
+	}
+
 	& .indented ul { border: 1px solid #e1e1e1; }
-	
+
     & .anchor {
 		background: @theme-highlight;
 		color: @theme-highlight-color;
 		text-shadow: @theme-highlight-text-shadow;
 		border: none;
 	}
-	
-	& .tip { color: #7a7a7a; 
+
+	& .tip { color: #7a7a7a;
 		&.darker {
-			background-color: #2c2c2d;	
+			background-color: #2c2c2d;
 			color: #fff;
 			text-shadow: 0px 1px 0px #000;
-			
+
 			& a { color: #fff !important; }
 		}
-		
+
 		&.dark {
 		    background-color: #f4f4f4;
-			box-shadow: inset 0px 1px 0px #fff;			
+			box-shadow: inset 0px 1px 0px #fff;
 			text-shadow: 0px 1px 0px #fff;
 		}
-	}	
-	
+	}
+
 	& .toolbar {
 		border-bottom-color: rgba(0,0,0,0.2);
-		
-		& .toolbar a { 
-			box-shadow: 1px 0px 0px #d9d9d9; 
-			
+
+		& .toolbar a {
+			box-shadow: 1px 0px 0px #d9d9d9;
+
 			&:last-child { box-shadow: none; }
 			&.current {
 				background: transparent;
@@ -172,16 +172,16 @@ aside {
 /* @end */
 
 /* @group widgets */
-.splash { 
-	background: @theme-dark;
-	color: #fff; 
+.splash {
+	background: @theme;
+	color: #fff;
 	text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
 }
 
 /* @group .button */
 a.button {
 	box-shadow: inset 0 1px 0 rgba(0,0,0,0.3), inset 0 2px 0px rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.1);
-	
+
 	&:active { box-shadow: inset 0 0 8px rgba(0,0,0,0.4); }
 }
 /* @end */
@@ -192,8 +192,8 @@ input, textarea, select {
 	color: #858585;
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
-	
-input:focus, textarea:focus, select:focus { 
+
+input:focus, textarea:focus, select:focus {
 	border-color: @theme;
 	color:  @theme;
 }
@@ -203,7 +203,7 @@ label {
 	text-transform: uppercase;
 	font-weight: bold;
 }
-	
+
 .select:after {
 	background: #858585;
 	color: white;
@@ -213,12 +213,12 @@ input[type="checkbox"] + span, input[type="radio"] + span {
 	color: #fff;
 	background: #a0a0a0;
 }
-	input[type="checkbox"] + span::before, 
+	input[type="checkbox"] + span::before,
 	input[type="radio"] + span::before {
 		background: #c1c1c1;
 	}
-	
-	input[type="checkbox"]:checked + span, 
+
+	input[type="checkbox"]:checked + span,
 	input[type="radio"]:checked + span {
 		background: @theme-dark;
 	}
@@ -229,7 +229,7 @@ input[type="checkbox"] + span, input[type="radio"] + span {
 	.border-radius(2px);
 	text-shadow: none;
 	font-weight: bold !important;
-}	
+}
 	header .bubble.count {background: @theme-secondary;}
 	.bubble.count { background: @theme; }
 /* @end */

@@ -1,7 +1,6 @@
-@import "Lungo.theme.default.font.css";
-/** 
+/**
  * Stylesheet
- * 
+ *
  * @namespace LUNGO.Theme
  * @class Default
  *
@@ -9,7 +8,6 @@
  */
 .app {
   background: #000000;
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 /* @group <header> & <footer> & <article> */
 header {
@@ -36,15 +34,15 @@ article .title {
 /* @end */
 /* @group <nav> */
 nav a {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
 }
 nav a.current, nav a:active {
   color: #ffffff;
 }
-footer a, .toolbar a {
+.toolbar a {
   color: rgba(255, 255, 255, 0.2);
 }
-.toolbar a .current, .toolbar a:active {
+.toolbar a.current, .toolbar a:active {
   background: #1c1c1c;
   box-shadow: inset 0px 0px 8px #101010;
   text-shadow: 0px 1px 4px #000;
@@ -142,7 +140,7 @@ aside  ~ article {
 /* @end */
 /* @group widgets */
 .splash {
-  background: #758e29;
+  background: #91bd09;
   color: #fff;
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
