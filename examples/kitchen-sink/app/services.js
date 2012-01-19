@@ -78,10 +78,11 @@ App.Services = (function(lng, App, undefined) {
         console.error('SYNC', response);
     };
 
-    mockProfiles();
-
+    //mockProfiles();
+/*
     return {
         mockProfiles: mockProfiles
     }
+    */
 
 })(LUNGO, App);
