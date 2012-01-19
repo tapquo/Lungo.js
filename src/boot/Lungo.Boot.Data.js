@@ -4,7 +4,6 @@
  *
  * @namespace LUNGO.Boot
  * @class Data
- * @requires Zepto
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1

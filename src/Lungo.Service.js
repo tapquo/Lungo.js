@@ -3,7 +3,7 @@
  *
  * @namespace LUNGO
  * @class Service
- * @requires Zepto
+ * @requires QuoJS
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
@@ -18,8 +18,8 @@ LUNGO.Service = (function(lng, $$, undefined) {
      *
      * @param  {string} Containing the URL to which the request is sent
      * @param  {object} A map or string that is sent to the server with the request
-     * @param  {Function} [OPTIONAL] Callback function after the request
-     * @param  {string} [OPTIONAL] Mime-Tipe: json, xml, html, or text
+     * @param  {Function} Callback function after the request [OPTIONAL]
+     * @param  {string} Mime-Type: json, xml, html, or text [OPTIONAL]
      */
     var get = function(url, data, success, dataType) {
         return $$.get(url, data, success, dataType);
@@ -32,8 +32,8 @@ LUNGO.Service = (function(lng, $$, undefined) {
      *
      * @param  {string} Containing the URL to which the request is sent
      * @param  {object} A map or string that is sent to the server with the request
-     * @param  {Function} [OPTIONAL] Callback function after the request
-     * @param  {string} [OPTIONAL] Mime-Tipe: json, xml, html, or text
+     * @param  {Function} Callback function after the request [OPTIONAL]
+     * @param  {string} Mime-Type: json, xml, html, or text [OPTIONAL]
      */
     var post = function(url, data, success, dataType) {
         return $$.post(url, data, success, dataType);
