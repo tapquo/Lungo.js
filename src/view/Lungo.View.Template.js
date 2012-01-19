@@ -3,7 +3,6 @@
  *
  * @namespace LUNGO.View
  * @class Template
- * @requires Zepto
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1

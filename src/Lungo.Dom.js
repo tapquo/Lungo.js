@@ -14,7 +14,7 @@
      * @method dom
      *
      * @param  {string} <Markup> element selector
-     * @return {Object} Zepto <element> instance
+     * @return {Object} QuoJS <element> instance
 */
 LUNGO.dom = function(selector) {
     return $$(selector);

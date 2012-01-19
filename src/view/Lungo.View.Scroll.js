@@ -3,7 +3,6 @@
  *
  * @namespace LUNGO.View
  * @class Scroll
- * @requires Zepto
  * @requires iScroll
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
