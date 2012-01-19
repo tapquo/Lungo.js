@@ -25,4 +25,5 @@ App.View = (function(lng, App, undefined) {
         mockScrolls: mockScrolls
     }
 
+
 })(LUNGO, App);

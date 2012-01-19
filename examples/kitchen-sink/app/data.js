@@ -1,5 +1,6 @@
 App.Data = (function(lng, App, undefined) {
 
+
     lng.Data.Sql.init({
         name: 'lungo.js',
         version: '1.0',
@@ -22,5 +23,6 @@ App.Data = (function(lng, App, undefined) {
             {name:'iker', done:'1'}
         ]
     );
+
 
 })(LUNGO, App);
