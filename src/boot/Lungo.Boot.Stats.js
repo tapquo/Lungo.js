@@ -31,7 +31,7 @@ LUNGO.Boot.Stats = (function(lng, undefined) {
             name: lng.App.get('name'),
             version: lng.App.get('version'),
             icon: lng.App.get('icon')
-        });
+        }, function(response) {});
     };
 
     return {
