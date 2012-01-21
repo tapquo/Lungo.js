@@ -8,7 +8,7 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Template.Binding = (function(lng, undefined) {
+LUNGO.View.Template.Binding = (function(lng, $$, undefined) {
 
     var BINDING_START = '{{';
     var BINDING_END = '}}';
@@ -25,10 +25,28 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
      * @param {Function} Callback when the process is complete
      */
     var create = function(container_id, template_id, data, callback) {
+      _compileAndRender($$.fn.html, container_id, template_id, data, callback);
+    };
+
+    /**
+     * Performs databinding process for a data set and a given template
+     *
+     * @method append
+     *
+     * @param {String} Id of the container showing the result of databinding
+     * @param {String} Databinding Template Id
+     * @param {Object} Data for binding
+     * @param {Function} Callback when the process is complete
+     */
+    var append = function(container_id, template_id, data, callback) {
+      _compileAndRender($$.fn.append, container_id, template_id, data, callback);
+    };
+
+    var _compileAndRender = function(dom_fnc, container_id, template_id, data, callback) {
         if (lng.View.Template.exists(template_id)) {
             var template = lng.View.Template.get(template_id);
             var markup = _processData(data, template);
-            _render(container_id, markup);
+            _render(dom_fnc, container_id, markup);
             lng.Core.execute(callback);
         } else {
             lng.Core.log(3, 'lng.View.Template.binding: id ' + template_id + ' not exists');
@@ -79,14 +97,15 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         return template.replace(BINDING_PARSER, '');
     };
 
-    var _render = function(container_id, markup) {
+    var _render = function(dom_fnc, container_id, markup) {
         var container = lng.dom('#' + container_id);
-        container.html(markup);
+        dom_fnc.call(container, markup);
     };
 
     return {
         create: create,
+        append: append,
         dataAttribute: dataAttribute
     };
 
-})(LUNGO);
+})(LUNGO, Quo);
