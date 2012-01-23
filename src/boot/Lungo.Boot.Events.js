@@ -26,6 +26,8 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.dom(window).on(orientation_change, _changeOrientation);
         lng.dom(target_selector_from_aside).tap(_toggleAside);
         lng.dom(target_selector).tap(_loadTarget);
+
+        _buttonsFeedbackInAndroid();
     };
 
     var _iScroll = function(event) {
@@ -49,6 +51,22 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         _selectTarget(link);
 
         event.preventDefault();
+    };
+
+    var _buttonsFeedbackInAndroid = function() {
+        var environment = lng.Core.environment();
+        if (environment.isMobile && environment.os.name === 'android') {
+            lng.dom(document.body).on('touchstart', '.button', _addClassActiveToButton);
+            lng.dom(document.body).on('touchend', '.button', _removeClassActiveToButton);
+        }
+    };
+
+    var _addClassActiveToButton = function(element) {
+        lng.dom(this).addClass('active');
+    };
+
+    var _removeClassActiveToButton = function(element) {
+        lng.dom(this).removeClass('active');
     };
 
     var _selectTarget = function(link) {
