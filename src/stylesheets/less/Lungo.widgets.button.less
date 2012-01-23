@@ -11,18 +11,20 @@
 
 a.button {
 	display: inline-block;
-	height: 31px;
+	height: 30px;
 	padding: 0 9px 0 8px;
 	color: #fff !important;
 	outline: none;
-	background: #5a5a5a;	
+	
+	background: #5a5a5a;
+	
 	.user-select(none);
 	font-weight: bold;
 	line-height: 32px;
 	text-align: center; 
 	text-decoration: none;
 
-	&:active { 
+	&:active, &.active { 
 		background: #4b4b4b; 
 	}
 	
@@ -32,29 +34,25 @@ a.button {
 	}
 	
 	& .icon {
-    	float: left;
-		width: 17px;
-		height: 30px;	
+    	float: left;	
 		font-size: 1.5em;
-		line-height: 31px;
+		line-height: 32px;
 	}
 	
 	&.big {
     	position: relative; 
-		height: 30px; 
 		width: 100%; 
 		margin-bottom: 4px;
 		padding: 6px 0;
 		
 		font-size: 16px;
-		line-height: 31px;
+		line-height: 32px;
 		
 		& .icon {
-    		width: 20px;
-			height: 28px;
-			line-height: 32px;
-			margin-left: 0.6em; 
-			margin-right: -48px;    	
+			display: inline-block;
+			float: none;
+			margin-right: 4px;			
+			line-height: 14px;
 		}
 	}
 }
