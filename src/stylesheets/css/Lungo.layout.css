@@ -15,7 +15,7 @@ nav .bubble{position:relative;top:-16px;left:-10px;margin-right:-20px;}
 .toolbar a{padding:0;}
 .toolbar .icon{display:block;font-size:2.5em;line-height:48px;}
 .toolbar .bubble{top:-54px;left:6px;padding:1px 4px;}
-aside{position:absolute;top:0px;bottom:0px;height:auto;width:256px;opacity:0;z-index:0;}
+aside{position:absolute;top:0px;bottom:0px;height:auto;width:256px;max-width:256px;opacity:0;z-index:0;}
 aside.show{opacity:1;}
 header~aside{padding-top:40px;}
 footer~aside{padding-bottom:40px;}
