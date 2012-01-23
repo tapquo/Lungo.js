@@ -27,7 +27,7 @@ header {
 	background-color: @theme;
 	border-top: 1px solid @theme-light;
 	border-bottom: 1px solid @theme-dark;
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0 1px 0 rgba(0,0,0,0.2);
 }
 
 footer {
@@ -72,6 +72,7 @@ nav a {
 /* @group <aside> */
 aside {
     background: #252525;
+	box-shadow: inset -1px 0 4px rgba(0,0,0,0.2);
 
     & a {
     	color: #fff;
@@ -94,10 +95,6 @@ aside {
 	& .anchor {
     	background: #101010;
 		color:  #7a7a7a;
-	}
-
-	& ~ article {
-		box-shadow: -1px 0px 4px #000;
 	}
 }
 /* @end */
@@ -179,10 +176,22 @@ aside {
 }
 
 /* @group .button */
-a.button {
-	box-shadow: inset 0 1px 0 rgba(0,0,0,0.3), inset 0 2px 0px rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.1);
-
-	&:active { box-shadow: inset 0 0 8px rgba(0,0,0,0.4); }
+.button {
+	border-bottom: 1px inset rgba(0,0,0,0.2);		
+	.border-radius(1px);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.2);	
+	
+	&:active, &.active { 
+		-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 0 2px rgba(0,0,0,0.2);
+		border-bottom-color: rgba(0,0,0,0);
+	}
+	
+	header &:active, footer &:active, 
+	header &:active, footer &:active {
+    	height: 29px;
+		position: relative;
+		top:  1px; 
+	}
 }
 /* @end */
 
