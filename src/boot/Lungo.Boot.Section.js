@@ -43,7 +43,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     var _initAllSections = function(sections) {
 
         if (lng.Core.isMobile()) {
-            _setPositionFixedInIOS5(sections);
+            _setPositionFixedInIOS(sections);
         }
 
         for (var i = 0, len = sections.length; i < len; i++) {
@@ -60,10 +60,10 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         lng.dom('aside').addClass('show');
     };
 
-    var _setPositionFixedInIOS5 = function(sections) {
+    var _setPositionFixedInIOS = function(sections) {
         var environment = lng.Core.environment();
 
-        if (environment.os.name === 'ios' && environment.os.version >= '5.') {
+        if (environment.os.name === 'ios' && environment.os.version >= '4.') {
             sections.style('position', 'fixed');
         }
     }
