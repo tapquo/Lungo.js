@@ -25,7 +25,7 @@ footer {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 article {
-  background-color: #f9f9f9;
+  background-color: #ededed;
 }
 article .title {
   color: #797979;
@@ -162,6 +162,12 @@ footer .button:active {
   height: 29px;
   position: relative;
   top: 1px;
+}
+.button.default {
+  background: #5a5a5a;
+}
+.button.default:active, .button.default.active {
+  background: #4b4b4b;
 }
 /* @end */
 /* @group <inputs> */
