@@ -8,8 +8,8 @@ header .title{position:absolute;left:0px;right:0px;text-align:center;display:inl
 section header a.button,section footer a.button{margin:3px 3px auto 4px;}
 section header a.button.icon,section footer a.button.icon{width:17px;}
 nav{height:inherit;text-align:center;}nav a{padding:0 6px;z-index:1000;float:left;}nav a .icon{font-size:2.1em;line-height:38px;display:inline-block;}
-nav a abbr,nav a .description{position:relative;bottom:5px;margin-left:2px;display:none;font-size:1.0em;}
-nav a.current abbr{display:inline;}
+nav a abbr{position:relative;bottom:5px;margin-left:2px;display:none;font-size:1.0em;}
+nav a.current abbr,nav a.active abbr{display:inline;}
 nav .bubble{position:relative;top:-16px;left:-10px;margin-right:-20px;}
 .toolbar{height:48px;display:block;}.toolbar nav{display:block;}
 .toolbar a{padding:0;}

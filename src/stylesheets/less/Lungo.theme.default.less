@@ -53,15 +53,14 @@ article {
 /* @group <nav> */
 nav a {
 	color: rgba(255,255,255,0.5);
-	&.current, &:active {
-		color: @white;
-	}
+	
+	&.current, &.active { color: @white; }
 }
 
 .toolbar a {
 	color: rgba(255,255,255,0.2);
 
-	&.current, &:active {
+	&.current, &.active {
 		background: #1c1c1c;
 		box-shadow: inset 0px 0px 8px #101010;
 		text-shadow: 0px 1px 4px #000;

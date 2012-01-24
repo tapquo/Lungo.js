@@ -36,13 +36,13 @@ article .title {
 nav a {
   color: rgba(255, 255, 255, 0.5);
 }
-nav a.current, nav a:active {
+nav a.current, nav a.active {
   color: #ffffff;
 }
 .toolbar a {
   color: rgba(255, 255, 255, 0.2);
 }
-.toolbar a.current, .toolbar a:active {
+.toolbar a.current, .toolbar a.active {
   background: #1c1c1c;
   box-shadow: inset 0px 0px 8px #101010;
   text-shadow: 0px 1px 4px #000;
