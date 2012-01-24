@@ -47,12 +47,17 @@ LUNGO.Boot.Section = (function(lng, undefined) {
 
         for (var i = 0, len = sections.length; i < len; i++) {
             var section = lng.dom(sections[i]);
-            _initFirstArticle(section);
+            _initArticles(section);
         }
     };
 
-    var _initFirstArticle = function(section) {
-        section.children(SELECTORS.ARTICLE).first().addClass(ACTIVE_CLASS);
+    var _initArticles = function(section) {
+        var first_article = section.children(SELECTORS.ARTICLE).first();
+        first_article.addClass(ACTIVE_CLASS);
+
+        var first_article_id = first_article.attr('id');
+        var section_id = '#' + section.attr('id');
+        lng.View.Article.showReferenceLinks(section_id, first_article_id);
     };
 
     var _initAllAsides = function() {
