@@ -36,7 +36,6 @@
 </head>
 
 <body class="app">
-
     <section id="login">
         <article class="splash">
             <div class="indented">
@@ -47,8 +46,6 @@
 
                 <a href="#kitchen-sink" data-target="section" class="button big" data-icon="check">Go to Kitchen Sink!</a>
                 <div class="copyright">Copyright TapQuo Inc, 2011</div>
-
-
 
                 <div class="switch">
                     <span class="thumb"></span>
@@ -81,6 +78,7 @@
                 <a href="#lists" data-target="section" data-icon="items" data-count="5">Lists</a>
                 <a href="#events" data-target="article" data-icon="user">Events</a>
                 <a href="#scrolls" data-target="article" data-icon="down">Scrolls</a>
+                <a href="#urls" data-target="article" data-icon="down">URL Scheme Reference</a>
             </div>
         </aside>
 
@@ -376,6 +374,40 @@
         <article id="scrolls">
             <div id="scroll_vertical" class="container-scroll vertical scrollable"></div>
             <div id="scroll_horizontal" class="container-scroll horizontal scrollable"></div>
+        </article>
+
+        <!-- ============================= authors ============================= -->
+
+        <article id="urls" class="list scrollable">
+            <div class="indented">
+                <ul>
+                    <li class="anchor" data-icon="pencil">Send a mail</li>
+                    <li data-icon="mail">
+                        <a href="mailto:javi@tapquo.com">
+                        Send a email
+                        <small>href="mailto:"</small></a></li>
+                    <li data-icon="phone">
+                        <a href="tel:+34123">
+                        Phone call
+                        <small>href="tel:"</small></a></li>
+                    <li data-icon="chat">
+                        <a href="sms:+34123">
+                        Text a message
+                        <small>href="sms:"</small></a></li>
+                </ul>
+
+                <ul>
+                    <li class="anchor" data-icon="star">Specials for iOS</li>
+                    <li data-icon="pushpin">
+                        <a href="maps:ll=38.870454,-77.055702">
+                        View a point in a map
+                        <small>href="maps:"</small></a></li>
+                    <li data-icon="target">
+                        <a href="maps:ll=38.870454,-77.055702&z=10">
+                        View a point in a map (zoom)
+                        <small>href="maps: &z=10"</small></a></li>
+                </ul>
+            </div>
         </article>
 
     </section>
