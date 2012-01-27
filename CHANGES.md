@@ -1,6 +1,12 @@
 # LungoJS
 ### HTML5 Mobile Framework, and stuff.
 
+## Changes in Version 1.1.1
+
+- BUG FIXED:
+	- Issue #58: Fixed position in iOS Devices (4+)
+    - Fixed height of a scroll when overwrite a .list
+
 ## Changes in Version 1.1
 
 - @QuoJS Library implemented, Zepto.js deprecated.

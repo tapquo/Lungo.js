@@ -14,7 +14,7 @@
  *
  * @copyright 2011 TapQuo Inc (c)
  * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
- * @version   1.1
+ * @version   1.1.1
  * @link      https://github.com/TapQuo/Lungo.js
  *
  * @author   Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
@@ -23,7 +23,7 @@
 
 var LUNGO = LUNGO || {};
 
-LUNGO.VERSION = '1.1';
+LUNGO.VERSION = '1.1.1';
 
 LUNGO.Attributes || (LUNGO.Attributes = {});
 LUNGO.Data || (LUNGO.Data = {});
@@ -963,23 +963,27 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         var element = scroll[0];
         if (element.clientHeight < element.scrollHeight) {
             is_necessary = true;
-            var child_height = element.scrollHeight + HEADER_FOOTER_BLEEDING;
-            _resizeChildContainer(element, child_height);
+            _resizeChildContainer(element);
         }
 
         return is_necessary;
     };
 
-    var _resizeChildContainer = function(element, height) {
+    var _resizeChildContainer = function(element) {
         var child_container = lng.dom(element).children().first();
-        child_container.style('height', height + 'px');
+        child_container.style('height', 'auto');
+        child_container.style('height', child_container.height() + HEADER_FOOTER_BLEEDING + 'px');
     };
 
     var _saveScrollInCache = function(id, properties) {
         _createScrollIndexInCache();
 
         var scroll = lng.Data.Cache.get(CACHE_KEY);
-        scroll[id] = new iScroll(id, properties);
+        if (!scroll[id]) {
+            scroll[id] = new iScroll(id, properties);
+        } else {
+            scroll[id].refresh();
+        }
         lng.Data.Cache.set(CACHE_KEY, scroll);
     };
 
@@ -1841,7 +1845,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     var _initAllSections = function(sections) {
 
         if (lng.Core.isMobile()) {
-            _setPositionFixedInIOS5(sections);
+            _setPositionFixedInIOS(sections);
         }
 
         for (var i = 0, len = sections.length; i < len; i++) {
@@ -1858,10 +1862,10 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         lng.dom('aside').addClass('show');
     };
 
-    var _setPositionFixedInIOS5 = function(sections) {
+    var _setPositionFixedInIOS = function(sections) {
         var environment = lng.Core.environment();
 
-        if (environment.os.name === 'ios' && environment.os.version >= '5.') {
+        if (environment.os.name === 'ios' && environment.os.version >= '4.') {
             sections.style('position', 'fixed');
         }
     }
