@@ -126,7 +126,6 @@ LUNGO.View.Scroll = (function(lng, undefined) {
             scroll[id] = new iScroll(id, properties);
         } else {
             scroll[id].refresh();
-            console.error('Refrescamos scroll[id]', id, scroll[id]);
         }
         lng.Data.Cache.set(CACHE_KEY, scroll);
     };
