@@ -72,7 +72,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         container.html(content);
 
         lng.View.Resize.scroll(scroll);
-        _refresh(id);
+        _saveScrollInCache(id);
     };
 
     /**
@@ -126,7 +126,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
             scroll[id] = new iScroll(id, properties);
         } else {
             scroll[id].refresh();
-            console.error('Refrescamos scroll[id]', id, scroll[id]);
+            scroll[id].scrollTo(0,0,300);
         }
         lng.Data.Cache.set(CACHE_KEY, scroll);
     };
@@ -145,11 +145,6 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         properties = lng.Core.mix(DEFAULT_PROPERTIES, properties);
 
         return properties;
-    };
-
-    var _refresh = function(id, properties) {
-        !lng.Data.Cache.get(CACHE_KEY, id) && _saveScrollInCache(id);
-        lng.Data.Cache.get(CACHE_KEY, id).refresh();
     };
 
     return {
