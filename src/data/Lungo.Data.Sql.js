@@ -169,7 +169,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = fields[field];
                 if (sql) sql += ' ' + separator + ' ';
                 sql += field + '=';
-                sql += (isNaN(value)) ? '"' + value + '"' : value;
+                sql += (typeof value === 'string') ? '"' + value + '"' : value;
             }
         }
         return sql;
@@ -190,7 +190,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = row[field];
                 fields += (fields) ? ', ' + field : field;
                 if (values) values += ', ';
-                values += (isNaN(value)) ? '"' + value + '"' : value;
+                values += (typeof value === 'string') ? '"' + value + '"' : value;
             }
         }
 
