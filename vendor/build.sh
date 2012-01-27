@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1"
+VERSION="1.2.BETA"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
@@ -13,9 +13,7 @@ PACKED="packed"
 #script
 clear
 echo -e "\033[0m"============================ LUNGO COMPILER ============================
-echo -e "Do you wish to compile LungoJS Framework? (Y)es or (N)o?: \c "
-read WISH
-if [[ $WISH == "Y" || $WISH == "y" ]] ; then
+
     ## Files to compile
     FILES_TO_COMPILE=""
     FILES_TO_JOIN=""
@@ -85,19 +83,16 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
 
     #MINIFIED Version
-    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$MINIFIED.js
-    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
+    #java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$MINIFIED.js
+    #echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
 
     #PACKED Version
     FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/QuoJS.js --js "$LUNGO_SOURCES"lib/iscroll-lite.js"$FILES_TO_COMPILE
     java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$PACKED.js
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$PACKED.js"\033[0m"
-fi
+
 
 FILES_TO_COMPRESS=""
-echo -e "Do you wish to compress your STYLESHEETS? (Y)es or (N)o?: \c "
-read WISH
-if [[ $WISH == "Y" || $WISH == "y" ]] ; then
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
     echo -e "\033[33m  [DIR]: "$DIR
@@ -128,5 +123,4 @@ if [[ $WISH == "Y" || $WISH == "y" ]] ; then
 		cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
 	done
 	echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED".css\033[0m"
-fi
 echo ============================ /LUNGO COMPILER ============================
