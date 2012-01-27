@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.1"
+VERSION="1.1.1"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
