@@ -106,23 +106,28 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         var element = scroll[0];
         if (element.clientHeight < element.scrollHeight) {
             is_necessary = true;
-            var child_height = element.scrollHeight + HEADER_FOOTER_BLEEDING;
-            _resizeChildContainer(element, child_height);
+            _resizeChildContainer(element);
         }
 
         return is_necessary;
     };
 
-    var _resizeChildContainer = function(element, height) {
+    var _resizeChildContainer = function(element) {
         var child_container = lng.dom(element).children().first();
-        child_container.style('height', height + 'px');
+        child_container.style('height', 'auto');
+        child_container.style('height', child_container.height() + HEADER_FOOTER_BLEEDING + 'px');
     };
 
     var _saveScrollInCache = function(id, properties) {
         _createScrollIndexInCache();
 
         var scroll = lng.Data.Cache.get(CACHE_KEY);
-        scroll[id] = new iScroll(id, properties);
+        if (!scroll[id]) {
+            scroll[id] = new iScroll(id, properties);
+        } else {
+            scroll[id].refresh();
+            console.error('Refrescamos scroll[id]', id, scroll[id]);
+        }
         lng.Data.Cache.set(CACHE_KEY, scroll);
     };
 
