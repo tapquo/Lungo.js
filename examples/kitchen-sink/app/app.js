@@ -3,7 +3,12 @@ var App = (function(lng, undefined) {
 
     lng.App.init({
         name: 'Kitchen Sink',
-        version: '1.1'
+        version: '1.1',
+        sections: [
+            'local.html',
+            'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
+            'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html',
+        ]
     });
 
     var _getEnvironmentFromQuoJS = (function() {
