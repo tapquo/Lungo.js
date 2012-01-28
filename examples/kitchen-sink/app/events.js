@@ -1,5 +1,11 @@
 App.Events = (function(lng, undefined) {
 
+    /*
+    lng.dom(document).ready(function() {
+
+    });
+    */
+
     lng.dom('#event_touchstart').touch(function(event) { alert("touchstart!"); });
     //OR
     //lng.dom('#event_touchstart').on('touchstart', function(event) { alert("TOUCH_START!"); });
