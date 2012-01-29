@@ -6,6 +6,7 @@ App.Events = (function(lng, undefined) {
     });
     */
 
+
     lng.dom('#event_touchstart').touch(function(event) { alert("touchstart!"); });
     //OR
     //lng.dom('#event_touchstart').on('touchstart', function(event) { alert("TOUCH_START!"); });
@@ -30,5 +31,18 @@ App.Events = (function(lng, undefined) {
         App.View.mockScrolls();
     });
 
+
+    //SPECIAL
+    $$('section#navigation').on('load', function(event) {
+        console.error('Load #navigation', event);
+    });
+
+    $$('section#navigation').on('unload', function(event) {
+        console.error('Unload', event);
+    });
+
+    $$('article#authors').on('load', function(event) {
+        console.error('loaded article');
+    });
 
 })(LUNGO);
