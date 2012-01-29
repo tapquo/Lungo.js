@@ -1,5 +1,5 @@
 /*!
- * QuoJS 1.0 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+ * QuoJS 1.0.1 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
  * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
@@ -789,6 +789,7 @@ window.Quo = Quo;
 
     function _parseResponse(xhr, settings) {
         var response = xhr.responseText;
+
         if (response) {
             if (settings.dataType === DEFAULT.MIME) {
                 try {
@@ -865,7 +866,7 @@ window.Quo = Quo;
     /**
      * ?
      */
-    $$.fn.ready =function(callback) {
+    $$.fn.ready = function(callback) {
         if (READY_EXPRESSION.test(document.readyState)) {
             callback($$);
         }
@@ -954,10 +955,6 @@ window.Quo = Quo;
      * ?
      */
     $$.fn.trigger = function(event) {
-        if (!$$.isMobile()) {
-            console.log('Event ' + event + ' captured.');
-        }
-
         if ($$.toType(event) === 'string') event = $$.Event(event);
         return this.each(function() {
             this.dispatchEvent(event);
@@ -999,7 +996,9 @@ window.Quo = Quo;
     }
 
     function _environmentEvent(event) {
-        return ($$.isMobile()) ? event : EVENTS_DESKTOP[event];
+        var environment_event = ($$.isMobile()) ? event : EVENTS_DESKTOP[event];
+
+        return (environment_event) || event;
     }
 
     function _createProxyCallback(delegate, callback, element) {
