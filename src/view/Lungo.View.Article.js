@@ -26,15 +26,8 @@ LUNGO.View.Article = (function(lng, undefined) {
      * @method show
      */
     var show = function(section_id, article_id) {
-        var nav_items = section_id + ' ' + SELECTORS.NAVIGATION_ITEM;
-        _disableNavItems(nav_items);
-
-        var current_nav_item = lng.dom(nav_items + '[href="' + article_id + '"]');
-        current_nav_item.addClass(CSS_CLASSES.ACTIVE);
-        _setTitle(section_id, current_nav_item);
-
+        _toggleNavItems(section_id, article_id);
         showReferenceLinks(section_id, article_id.replace('#', ''));
-
         _showContainer(section_id, article_id);
     };
 
@@ -52,12 +45,19 @@ LUNGO.View.Article = (function(lng, undefined) {
         }
     };
 
-    var _disableNavItems = function(items) {
-        lng.dom(items).removeClass(CSS_CLASSES.ACTIVE);
+    var _toggleNavItems = function(section_id, article_id) {
+        var nav_items = section_id + ' ' + SELECTORS.NAVIGATION_ITEM;
+        lng.dom(nav_items).removeClass(CSS_CLASSES.ACTIVE);
+
+        var current_nav_item = lng.dom(nav_items + '[href="' + article_id + '"]');
+        if (current_nav_item.length > 0) {
+            current_nav_item.addClass(CSS_CLASSES.ACTIVE);
+            _setTitle(section_id, current_nav_item);
+        }
     };
 
     var _showContainer = function(section_id, article_id) {
-        var section_articles = section_id + ' ' + SELECTORS.ARTICLE;
+        var section_articles = section_id + ' ' + SELECTORS.ARTICLE + '.' + CSS_CLASSES.ACTIVE;
         lng.dom(section_articles).removeClass(CSS_CLASSES.ACTIVE);
         lng.dom(article_id).addClass(CSS_CLASSES.ACTIVE);
     };
