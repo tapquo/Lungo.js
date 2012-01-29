@@ -28,7 +28,7 @@ LUNGO.Router = (function(lng, undefined) {
 
         if (_existsTarget(target)) {
             lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW).addClass(CSS_CLASSES.HIDE);
-            lng.dom(section_id).addClass(CSS_CLASSES.SHOW);
+            lng.dom(target).addClass(CSS_CLASSES.SHOW).trigger('load');
 
             lng.Router.History.add(section_id);
         }
@@ -56,7 +56,7 @@ LUNGO.Router = (function(lng, undefined) {
      * @method back
      */
     var back = function() {
-        lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW);
+        lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW).trigger('unload');
         lng.Router.History.removeLast();
 
         lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.HIDE).addClass(CSS_CLASSES.SHOW);
