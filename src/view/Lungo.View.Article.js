@@ -24,9 +24,11 @@ LUNGO.View.Article = (function(lng, undefined) {
         _disableNavItems(nav_items);
 
         var current_nav_item = lng.dom(nav_items + '[href="' + article_id + '"]');
-        current_nav_item.addClass(CSS_CLASSES.ACTIVE);
-        _setTitle(section_id, current_nav_item);
-
+        if(current_nav_item.length > 0) {
+            current_nav_item.addClass(CSS_CLASSES.ACTIVE);
+            _setTitle(section_id, current_nav_item);
+        }
+        
         _showContainer(section_id, article_id);
     };
 
