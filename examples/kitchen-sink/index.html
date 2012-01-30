@@ -478,16 +478,14 @@
     <!-- ============================= lists ============================= -->
 
     <section id="lists">
-        <header data-back="home" data-title="List"></header>
-        <footer class="toolbar">
-            <nav>
-                <a href="#list-plain" data-target="article" class="current" data-title="Normal List" data-icon="home"></a>
-                <a href="#list-ordered" data-target="article" data-title="Ordered List" data-icon="items"></a>
-                <a href="#list-indented" data-target="article" data-title="Indented List" data-icon="target"></a>
-                <a href="#list-rounded" data-target="article" data-title="Rounded List" data-icon="files"></a>
-                <a href="#list-grouped" data-target="article" data-title="Grouped List" data-icon="folder"></a>
+        <header data-back="home" data-title="Lists" class="extended">
+            <nav class="groupbar">
+                <a href="#list-plain" data-target="article" class="current">Normal</a>
+                <a href="#list-ordered" data-target="article">Ordered</a>
+                <a href="#list-indented" data-target="article">Indented</a>
+                <a href="#list-rounded" data-target="article">Rounded</a>
             </nav>
-        </footer>
+        </header>
 
         <article id="list-plain" class="list"></article>
         <article id="list-ordered" class="list"></article>
@@ -497,7 +495,6 @@
         <article id="list-rounded" class="list rounded scrollable">
             <div class="indented"><ul id="list-rounded-container"></ul></div>
         </article>
-        <article id="list-grouped" class="list">Coming Soon...</article>
     </section>
 
     <!-- ============================= forms ============================= -->
