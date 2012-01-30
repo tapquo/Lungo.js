@@ -122,7 +122,10 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         db.transaction(function(tx) {
             tx.executeSql(sql, [], function(tx, rs) {
                 _callbackResponse(callback, rs);
-            }, _throwError);
+            }, function(transaction, error){
+                transaction.executedQuery = sql;
+                _throwError.apply(null, arguments);
+            });
         });
     };
 
@@ -169,7 +172,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = fields[field];
                 if (sql) sql += ' ' + separator + ' ';
                 sql += field + '=';
-                sql += (isNaN(value)) ? '"' + value + '"' : value;
+                sql += (typeof value === 'string') ? '"' + value + '"' : value;
             }
         }
         return sql;
@@ -190,15 +193,15 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = row[field];
                 fields += (fields) ? ', ' + field : field;
                 if (values) values += ', ';
-                values += (isNaN(value)) ? '"' + value + '"' : value;
+                values += (typeof value === 'string') ? '"' + value + '"' : value;
             }
         }
 
         execute('INSERT INTO ' + table + ' (' + fields + ') VALUES (' + values + ')');
-    }
+    };
 
     var _throwError = function(transaction, error) {
-        lng.Core.log(3, 'lng.Data.Sql >> ' + error.code + ': ' + error.message);
+        lng.Core.log(3, 'lng.Data.Sql >> ' + error.code + ': ' + error.message + ' \n Executed query: ' + transaction.executedQuery);
     };
 
     return {
