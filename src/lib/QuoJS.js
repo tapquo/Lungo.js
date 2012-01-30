@@ -397,11 +397,13 @@ window.Quo = Quo;
     $$.fn.append = function(value) {
         return this.each(function() {
             if ($$.toType(value) === 'string') {
-                var div = document.createElement();
-                div.innerHTML = value;
-                this.appendChild(div.firstChild);
+                if (value) {
+                    var div = document.createElement();
+                    div.innerHTML = value;
+                    this.appendChild(div.firstChild);
+                }
             } else {
-                this.parentNode.insertBefore(value);
+                this.insertBefore(value);
             }
         });
     };
@@ -667,16 +669,9 @@ window.Quo = Quo;
             }, settings.timeout);
         }
 
-        try {
-            xhr.send(settings.data);
-            if (xhr.status !== 500) {
-                return (settings.async) ? xhr : _parseResponse(xhr, settings);
-            }
-        }
-        catch (error) {
-           xhr = error;
-           _xhrError('Resource not found', xhr, settings);
-        }
+        xhr.send(settings.data);
+
+        return (settings.async) ? xhr : _parseResponse(xhr, settings);
     };
 
     /**
@@ -799,6 +794,8 @@ window.Quo = Quo;
                     response = error;
                     _xhrError('Parse Error', xhr, settings);
                 }
+            } else if (settings.dataType === 'xml') {
+                response = xhr.responseXML;
             }
         }
 
