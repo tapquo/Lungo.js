@@ -17,6 +17,7 @@ nav .bubble{position:relative;top:-16px;left:-10px;margin-right:-20px;}
 .toolbar.with-labels .icon{line-height:40px;padding-bottom:8px;}
 .toolbar .bubble{top:-54px;left:6px;padding:1px 4px;}
 .toolbar abbr{position:absolute;top:34px;width:inherit;height:12px;display:block !important;font-size:0.9em;line-height:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.groupbar{position:absolute;top:39px;height:34px;width:100%;line-height:34px;}.groupbar a{padding:0px;}
 aside{position:absolute;top:0px;bottom:0px;height:auto;width:256px;max-width:256px;opacity:0;z-index:0;}
 aside.show{opacity:1;}
 header~aside{padding-top:40px;}
@@ -28,6 +29,7 @@ aside .anchor{font-weight:bold;padding:3px 10px 4px;}
 aside .bubble{float:right;margin:12px 4px 0 0;}
 @media handheld, only screen and (min-width: 768px){[data-target="aside"]{display:none !important;} aside{opacity:1;} aside~article{width:auto !important;left:256px;right:0px !important;}}article{position:absolute;width:inherit;height:inherit;top:0px;bottom:0px;display:block;z-index:0;opacity:0;}
 header~article{top:40px;}
+header.extended~article{top:74px;}
 footer~article{bottom:40px;}
 article.current{z-index:1;opacity:1;}
 article.aside{-webkit-transform:translate3d(256px, 0, 0);transform:translate3d(256px, 0, 0);}
