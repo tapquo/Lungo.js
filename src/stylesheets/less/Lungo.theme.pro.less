@@ -67,6 +67,19 @@ nav a {
 		text-shadow: 0px 1px 4px #000;
 	}
 }
+
+.groupbar {
+    background: #ededed;  
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+    
+    & a {
+    	color: #6e6e6e;
+    	&.current {
+			color: #6e6e6e;
+    		box-shadow: inset 0 -4px 0 @theme-light;
+    	}
+	}
+}
 /* @end */
 
 /* @group <aside> */
@@ -178,7 +191,7 @@ aside {
 /* @group .button */
 .button {
 	border-bottom: 1px inset rgba(0,0,0,0.2);		
-	.border-radius(1px);
+	.border-radius(2px);
 	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.2);	
 	
 	&:active, &.active { 

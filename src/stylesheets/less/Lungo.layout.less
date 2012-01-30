@@ -44,7 +44,8 @@ header, footer  {
 }
 
 header  {
-	top: 0px
+	top: 0px;
+	//&.extended { height: 72px; }
 }
 
 footer  {
@@ -150,6 +151,18 @@ nav {
   		text-overflow: ellipsis;
 	}
 }
+
+.groupbar {
+	position: absolute;
+	top: 39px;    
+ 	height: 34px;
+    width: 100%;
+    line-height: 34px;
+    
+    & a {
+    	padding: 0px;
+	}
+}
 /* @end */
 
 /* @group <aside> */
@@ -230,6 +243,8 @@ article {
 }
 	
 	header ~ article { top: 40px; }	
+	
+	header.extended ~ article { top: 74px; }	
 	
 	footer ~ article { bottom: 40px; }
 

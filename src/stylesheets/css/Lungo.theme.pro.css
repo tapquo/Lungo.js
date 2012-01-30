@@ -49,6 +49,17 @@ nav a.current, nav a.active {
   box-shadow: inset 0px 0px 8px #101010;
   text-shadow: 0px 1px 4px #000;
 }
+.groupbar {
+  background: #ededed;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.groupbar a {
+  color: #6e6e6e;
+}
+.groupbar a.current {
+  color: #6e6e6e;
+  box-shadow: inset 0 -4px 0 #05bde9;
+}
 /* @end */
 /* @group <aside> */
 aside {
@@ -147,8 +158,8 @@ aside .anchor {
 /* @group .button */
 .button {
   border-bottom: 1px inset rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 1px;
-  border-radius: 1px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
