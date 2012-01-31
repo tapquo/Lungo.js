@@ -3,3 +3,4 @@ a.button:disabled,a.button.disabled{background:rgba(255, 255, 255, 0.2);color:#9
 a.button .icon{position:relative;top:3px;height:16px;width:16px;font-size:22px;line-height:17px;}
 a.button img{top:0px !important;}
 a.button.big{width:100%;height:40px;padding:0px;margin-bottom:4px;font-size:16px;line-height:42px;}a.button.big .icon{margin-right:4px;font-size:24px;height:18px;width:18px;}
+a.button.big img{}
