@@ -69,11 +69,9 @@ header .title {
 }
 
 section header a.button, section footer a.button  {
-	margin: 3px 3px auto 4px;
-}
-
-section header a.button.icon, section footer a.button.icon  {
-	width: 17px;
+	margin: 3px 0 0 1px;
+	&:first-of-type { margin-left: 4px; }	
+	&:last-child { margin-right: 4px; }
 }
 /* @end */
 
@@ -87,19 +85,25 @@ nav {
 		padding: 0 6px;
 		z-index: 1000;
 		float: left;
+		line-height: 38px;
 		
 		& .icon {
-		    font-size: 2.1em;
-		    line-height: 38px;
+			position: relative;
+			top:  3px;
+		    font-size: 24px;
 		    display: inline-block;
 		}
 		
+		& img {
+    		width: 16px;
+    		height: 16px;
+    		top: 0px !important;
+		}
+		
 		& abbr {
-    		position: relative;
-			bottom: 5px;
-			margin-left: 2px;
+    		position: relative;    		
+    		margin-left: 2px;
 			display: none;
-			font-size: 1.0em;
 		}
 		
 		&.current abbr, &.active abbr { display: inline; }
@@ -107,8 +111,8 @@ nav {
 	
 	& .bubble {
     	position: relative;
-	    top:  -16px;
-	    left: -10px;
+	    top:  -8px;
+	    left: -8px;
 	    margin-right: -20px;  
 	}
 }
@@ -121,6 +125,7 @@ nav {
 	& a { padding: 0; }
 	& .icon {
     	display: block;
+    	top:  0px;
 		font-size: 2.5em;
 		line-height: 48px;
 	}
@@ -133,7 +138,6 @@ nav {
 	& .bubble {
     	top:  -54px;
 	    left: 6px;
-	    padding: 1px 4px;
 	}
 	
 	& abbr {
@@ -143,7 +147,6 @@ nav {
     	height: 12px;
     	display: block !important;
     	
-    	font-size: 0.9em;
     	line-height: 12px;
     	    	
     	overflow: hidden;
