@@ -40,7 +40,7 @@ header, footer  {
 	display: block;
 	
 	z-index: 2;
-	line-height: 38px;
+	line-height: 39px;
 }
 
 header  {
@@ -53,10 +53,10 @@ footer  {
 }
 
 header .title, footer .title  {
-	margin: 0 8px;	
-	float: left;	
+	margin: 0 4px;	
+	float: left;
 	z-index: -1;
-	font-size: 1.15em;
+	font-size: 15px;
 	font-weight: bold;
 }
 
@@ -85,7 +85,7 @@ nav {
 		padding: 0 6px;
 		z-index: 1000;
 		float: left;
-		line-height: 38px;
+		//line-height: 39px;
 		
 		& .icon {
 			position: relative;
@@ -97,7 +97,7 @@ nav {
 		& img {
     		width: 16px;
     		height: 16px;
-    		top: 0px !important;
+    		top: -1px !important;
 		}
 		
 		& abbr {
@@ -126,7 +126,7 @@ nav {
 	& .icon {
     	display: block;
     	top:  0px;
-		font-size: 2.5em;
+    	font-size: 32px;
 		line-height: 48px;
 	}
 	
@@ -136,17 +136,19 @@ nav {
 	}
 	
 	& .bubble {
-    	top:  -54px;
-	    left: 6px;
+    	top:  -52px;
+	    left: 4px;
 	}
 	
 	& abbr {
 		position: absolute;
 		top: 34px;
-    	width: inherit;
-    	height: 12px;
+		width: inherit;
+    	height: 11px;
+		margin-left: 0px;
     	display: block !important;
     	
+    	font-size: 11px;
     	line-height: 12px;
     	    	
     	overflow: hidden;
