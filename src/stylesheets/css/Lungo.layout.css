@@ -24,10 +24,10 @@ aside.show{opacity:1;}
 header~aside{padding-top:40px;}
 footer~aside{padding-bottom:40px;}
 aside~article{-webkit-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);-webkit-transition:-webkit-transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}
-aside a{display:block;width:244px;height:40px;padding:0 6px;font-size:1.1em;font-weight:bold;line-height:40px;}
-aside .icon{width:28px;height:28px;float:left;margin:8px 6px 0 0;font-size:1.9em;line-height:1.0em;text-align:center;}
+aside a{display:block;width:244px;height:40px;padding:0 6px;font-size:15px;line-height:40px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+aside .icon{width:24px;float:left;margin:8px 4px 0 0;font-size:24px;line-height:24px;text-align:center;}
 aside .anchor{font-weight:bold;padding:3px 10px 4px;}
-aside .bubble{float:right;margin:12px 4px 0 0;}
+aside .bubble{float:right;font-size:11px;margin:12px 4px 0 0;}
 @media handheld, only screen and (min-width: 768px){[data-target="aside"]{display:none !important;} aside{opacity:1;} aside~article{width:auto !important;left:256px;right:0px !important;}}article{position:absolute;width:inherit;height:inherit;top:0px;bottom:0px;display:block;z-index:0;opacity:0;}
 header~article{top:40px;}
 header.extended~article{top:74px;}
