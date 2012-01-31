@@ -5,18 +5,19 @@ header{top:0px;}
 footer{bottom:0px;}
 header .title,footer .title{margin:0 8px;float:left;z-index:-1;font-size:1.15em;font-weight:bold;}
 header .title{position:absolute;left:0px;right:0px;text-align:center;display:inline-block;}
-section header a.button,section footer a.button{margin:3px 3px auto 4px;}
-section header a.button.icon,section footer a.button.icon{width:17px;}
-nav{height:inherit;text-align:center;}nav a{padding:0 6px;z-index:1000;float:left;}nav a .icon{font-size:2.1em;line-height:38px;display:inline-block;}
-nav a abbr{position:relative;bottom:5px;margin-left:2px;display:none;font-size:1.0em;}
+section header a.button,section footer a.button{margin:3px 0 0 1px;}section header a.button:first-of-type,section footer a.button:first-of-type{margin-left:4px;}
+section header a.button:last-child,section footer a.button:last-child{margin-right:4px;}
+nav{height:inherit;text-align:center;}nav a{padding:0 6px;z-index:1000;float:left;line-height:38px;}nav a .icon{position:relative;top:3px;font-size:24px;display:inline-block;}
+nav a img{width:16px;height:16px;top:0px !important;}
+nav a abbr{position:relative;margin-left:2px;display:none;}
 nav a.current abbr,nav a.active abbr{display:inline;}
-nav .bubble{position:relative;top:-16px;left:-10px;margin-right:-20px;}
+nav .bubble{position:relative;top:-8px;left:-8px;margin-right:-20px;}
 .toolbar{height:48px;display:block;}.toolbar nav{display:block;}
 .toolbar a{padding:0;}
-.toolbar .icon{display:block;font-size:2.5em;line-height:48px;}
+.toolbar .icon{display:block;top:0px;font-size:2.5em;line-height:48px;}
 .toolbar.with-labels .icon{line-height:40px;padding-bottom:8px;}
-.toolbar .bubble{top:-54px;left:6px;padding:1px 4px;}
-.toolbar abbr{position:absolute;top:34px;width:inherit;height:12px;display:block !important;font-size:0.9em;line-height:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.toolbar .bubble{top:-54px;left:6px;}
+.toolbar abbr{position:absolute;top:34px;width:inherit;height:12px;display:block !important;line-height:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
 .groupbar{position:absolute;top:39px;height:34px;width:100%;line-height:34px;}.groupbar a{padding:0px;}
 aside{position:absolute;top:0px;bottom:0px;height:auto;width:256px;max-width:256px;opacity:0;z-index:0;}
 aside.show{opacity:1;}
