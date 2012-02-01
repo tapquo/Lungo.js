@@ -38,16 +38,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      */
     var create = function(id, properties) {
         if (id) {
-            var scroll = lng.dom('#' + id);
-
-            //ToDo >> Refactor
-            setTimeout(function() {
-                if (_needScroll(scroll)) {
-                    properties = _mixProperties(scroll, properties);
-                    _saveScrollInCache(id, properties);
-                }
-            }, 100);
-
+            refresh(id, properties);
         } else {
             lng.Core.log(3, 'ERROR: Impossible to create a <scroll> without ID');
         }
@@ -82,11 +73,11 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      *
      * @param {Object} Id of the <section>
      */
-    var refresh = function(id) {
+    var refresh = function(id, properties) {
         var scroll = lng.dom('#' + id);
         if (_needScroll(scroll)) {
-            var container = scroll.children().first();
-            _saveScrollInCache(id);
+            properties = _mixProperties(scroll, properties);
+            _saveScrollInCache(id, properties);
         }
     };
 
@@ -116,21 +107,8 @@ LUNGO.View.Scroll = (function(lng, undefined) {
     };
 
     var _needScroll = function(scroll) {
-        var is_necessary = false;
-
         var element = scroll[0];
-        if (element.clientHeight < element.scrollHeight) {
-            is_necessary = true;
-            _resizeChildContainer(element);
-        }
-
-        return is_necessary;
-    };
-
-    var _resizeChildContainer = function(element) {
-        var child_container = lng.dom(element).children().first();
-        child_container.style('height', 'auto');
-        child_container.style('height', child_container.height() + HEADER_FOOTER_BLEEDING + 'px');
+        return (element.clientHeight < element.scrollHeight);
     };
 
     var _saveScrollInCache = function(id, properties) {
