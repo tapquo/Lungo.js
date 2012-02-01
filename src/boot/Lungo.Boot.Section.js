@@ -52,13 +52,32 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initArticles = function(section) {
-        var first_article = section.children(SELECTORS.ARTICLE).first();
+        var articles = section.children(SELECTORS.ARTICLE);
+
+        _calculateArticleHeight(section, articles);
+
+        var first_article = articles.first();
         first_article.addClass(ACTIVE_CLASS);
 
         var first_article_id = first_article.attr('id');
         var section_id = '#' + section.attr('id');
         lng.View.Article.showReferenceLinks(section_id, first_article_id);
     };
+
+    var _calculateArticleHeight = function(section, articles) {
+        var footer =  section.children('footer');
+        var header = section.children('header');
+
+        var articles_height = window.innerHeight;
+        if (footer.length > 0) {
+            articles_height -= footer.height();
+        }
+        if (header.length > 0) {
+            articles_height -= header.height();
+        }
+
+        articles.style('height', articles_height + 'px');
+    }
 
     var _initAllAsides = function() {
         lng.dom('aside').addClass('show');
