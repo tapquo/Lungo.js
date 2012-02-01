@@ -241,23 +241,20 @@ aside {
 
 /* @group <article> */
 article {
-	position: absolute;
+	position: relative;
 	width: inherit;
 	height: inherit;
 	top: 0px;
-	bottom: 0px;
-	display: block;
+	display: none;
 	z-index: 0;
 	opacity: 0;
 }
 	
 	header ~ article { top: 40px; }	
-	
-	header.extended ~ article { top: 74px; }	
-	
-	footer ~ article { bottom: 40px; }
+		header.extended ~ article { top: 74px; }	
 
 	article.current {
+		display: block;
 		z-index: 1;
 		opacity: 1;
 	}
