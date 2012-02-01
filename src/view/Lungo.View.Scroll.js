@@ -78,6 +78,21 @@ LUNGO.View.Scroll = (function(lng, undefined) {
     /**
      * Removes iScroll instance.
      *
+     * @method refresh
+     *
+     * @param {Object} Id of the <section>
+     */
+    var refresh = function(id) {
+        var scroll = lng.dom('#' + id);
+        if (_needScroll(scroll)) {
+            var container = scroll.children().first();
+            _saveScrollInCache(id);
+        }
+    };
+
+    /**
+     * Removes iScroll instance.
+     *
      * @method remove
      *
      * @param {string} Id of the <section>
@@ -151,7 +166,8 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         create: create,
         update: update,
         remove: remove,
-        isHorizontal: isHorizontal
+        isHorizontal: isHorizontal,
+        refresh: refresh
     };
 
 })(LUNGO);
