@@ -29,26 +29,6 @@ LUNGO.View.Resize = (function(lng, undefined) {
     };
 
     /**
-     * Resize all <article>s from determinated <section> based on a CSS property.
-     *
-     * @method article
-     *
-     * @param {object} Object reference of a determinated <section>
-     * @param {string} Selector that refers to a section element
-     * @param {string} CSS property
-     * @param {string} Element reference for resizing
-     */
-    var article = function(section, selector, property, reference) {
-        var element = section.children(selector);
-        var ARTICLE = 'article';
-
-        if (element.length > 0) {
-            var reference_dimension = element[reference]();
-            section.children(ARTICLE).style(property, reference_dimension + 'px');
-        }
-    };
-
-    /**
      * Sets toolbars width, using total screen width
      *
      * @method toolbars
@@ -82,7 +62,6 @@ LUNGO.View.Resize = (function(lng, undefined) {
 
     return {
         scroll: scroll,
-        article: article,
         toolbars: toolbars
     };
 

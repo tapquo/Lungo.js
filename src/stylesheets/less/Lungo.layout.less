@@ -10,6 +10,10 @@
 @import "mixins.less";
 
 @defaultTrasition : @easeOutSine;
+@header_footer_height: 40px;
+	@header_extended_height: 74px;
+@footer_toolbar_height: 48px;
+
 
 /* @group <section> */
 section {
@@ -118,7 +122,7 @@ nav {
 }
 
 .toolbar {
-	height: 48px;
+	height: @footer_toolbar_height;
 	display: block;
 	
 	& nav { display: block; }
@@ -127,7 +131,7 @@ nav {
     	display: block;
     	top:  0px;
     	font-size: 32px;
-		line-height: 48px;
+		line-height: @footer_toolbar_height;
 	}
 	
 	&.with-labels .icon {
@@ -173,22 +177,27 @@ nav {
 /* @group <aside> */
 aside {
 	position: absolute;
+	width: inherit;
+	height: inherit;
 	top: 0px;
-	bottom: 0px;
-	height: auto;
+	visibility: hidden;
+	z-index: 0;
+
 	width: 256px;
 	max-width: 256px;
-	opacity: 0;
-	z-index: 0;
 }
 
 	aside.show {
-		opacity: 1;
+		visibility: visible;
 	}
 	
-	header ~ aside { padding-top: 40px; }
-	
-	footer ~ aside { padding-bottom: 40px; }
+	header:not(.extended) ~ aside { top: @header_footer_height; }	
+		header.extended ~ aside { top: @header_extended_height; }		
+	footer ~ aside { 
+		bottom: @header_footer_height; 
+		height: auto; 
+	}
+		footer.toolbar ~ aside { bottom: @footer_toolbar_height; }
 	
 	aside ~ article {
 		.transform(translate3d(0px, 0, 0));
@@ -209,14 +218,12 @@ aside {
   	}
 		aside .icon {
 			width: 24px;
-			//height: 28px;
 			float: left;
 			margin: 8px 4px 0 0;
 		
 			font-size: 24px;
 			line-height: 24px;
-		    text-align: center;
-		    
+		    text-align: center;		    
 		}
 		aside .anchor {
 			font-weight: bold;
@@ -241,23 +248,24 @@ aside {
 
 /* @group <article> */
 article {
-	position: relative;
+	position: absolute;
 	width: inherit;
-	height: inherit;
+	height: auto;
 	top: 0px;
-	display: none;
+	bottom: 0px;
+	visibility: hidden;
 	z-index: 0;
-	opacity: 0;
 }
 	
-	header ~ article { top: 40px; }	
-		header.extended ~ article { top: 74px; }	
-
 	article.current {
-		display: block;
+		visibility: visible;
 		z-index: 1;
-		opacity: 1;
 	}
+		
+	header:not(.extended) ~ article { top: @header_footer_height; }	
+		header.extended ~ article { top: @header_extended_height; }		
+	footer:not(.toolbar) ~ article { bottom: @header_footer_height; }
+		footer.toolbar ~ article { bottom: @footer_toolbar_height; }
 	
 	article.aside { .transform(translate3d(256px, 0, 0)); }
 	
