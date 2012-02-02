@@ -74,10 +74,13 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      * @param {Object} Id of the <section>
      */
     var refresh = function(id, properties) {
-        var scroll = lng.dom('#' + id);
-        if (_needScroll(scroll)) {
+        var scroll = lng.dom('#' + id).first();
+
+        if (_needScroll(scroll, properties)) {
             properties = _mixProperties(scroll, properties);
             _saveScrollInCache(id, properties);
+        } else {
+            remove(id);
         }
     };
 
@@ -89,7 +92,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      * @param {string} Id of the <section>
      */
     var remove = function(id) {
-        if (lng.Data.Cache.exists(CACHE_KEY)) {
+        if (lng.Data.Cache.exists(CACHE_KEY) && lng.Data.Cache.get(CACHE_KEY, id)) {
             lng.Data.Cache.get(CACHE_KEY, id).destroy();
             lng.Data.Cache.remove(CACHE_KEY, id);
         }
@@ -106,7 +109,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         return (scroll.hasClass(HORIZONTAL_CLASS)) ? true : false;
     };
 
-    var _needScroll = function(scroll) {
+    var _needScroll = function(scroll, properties) {
         var element = scroll[0];
         return (element.clientHeight < element.scrollHeight);
     };
