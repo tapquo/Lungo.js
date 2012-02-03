@@ -67,7 +67,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
     };
 
     var _render = function() {
-        lng.View.Template.Binding.create(_config.container_id, _config.template_id, _config.data);
+        lng.View.Template.render(_config.container_id, _config.template_id, _config.data);
     };
 
     var _createScroll = function() {
