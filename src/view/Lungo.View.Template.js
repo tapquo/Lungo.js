@@ -58,7 +58,7 @@ LUNGO.View.Template = (function(lng, undefined) {
      * @param {Object} Data for binding
      * @param {Function} Callback when the process is complete
      */
-    var binding = function(container_id, template_id, data, callback) {
+    var render = function(container_id, template_id, data, callback) {
         lng.View.Template.Binding.create(container_id, template_id, data, callback);
     };
 
@@ -66,7 +66,7 @@ LUNGO.View.Template = (function(lng, undefined) {
         create: create,
         exists: exists,
         get: get,
-        binding: binding
+        render: render
     };
 
 })(LUNGO);
