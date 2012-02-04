@@ -39,7 +39,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
     var _createListElement = function(article) {
         if (article.children().length === 0) {
             var article_id = article.attr('id');
-            article.append('<ul id="' + article_id + '_list"></ul>');
+            article.append('<ul></ul>');
         }
     };
 

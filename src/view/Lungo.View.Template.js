@@ -58,15 +58,36 @@ LUNGO.View.Template = (function(lng, undefined) {
      * @param {Object} Data for binding
      * @param {Function} Callback when the process is complete
      */
-    var render = function(container_id, template_id, data, callback) {
-        lng.View.Template.Binding.create(container_id, template_id, data, callback);
+    var render = function(element, template_id, data, callback) {
+        if (lng.View.Template.exists(template_id)) {
+            var container = lng.dom(element);
+            var markup = this.markup(template_id, data);
+            container.html(markup);
+
+            lng.Core.execute(callback);
+        } else {
+            lng.Core.log(3, 'lng.View.Template.binding: id ' + template_id + ' not exists');
+        }
+    };
+
+    /**
+     * Performs databinding process for a data set and a given template
+     *
+     * @method markup
+     *
+     * @param {String} Databinding Template Id
+     * @param {Object} Data for binding
+     */
+    var markup = function(template_id, data) {
+        return lng.View.Template.Binding.create(template_id, data);
     };
 
     return {
         create: create,
         exists: exists,
         get: get,
-        render: render
+        render: render,
+        markup: markup
     };
 
 })(LUNGO);

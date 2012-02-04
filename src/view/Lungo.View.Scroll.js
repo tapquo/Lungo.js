@@ -136,7 +136,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         }
     };
 
-    var _getScrollContainer = function(id) {
+    var _getContainer = function(id) {
         var scroll = lng.dom('#' + id);
         var container = scroll.children().first();
 
