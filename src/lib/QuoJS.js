@@ -1,5 +1,5 @@
 /*!
- * QuoJS 1.0.1 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+ * QuoJS 1.0.2 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
  * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
@@ -1102,7 +1102,9 @@ window.Quo = Quo;
             TOUCH.x1 = TOUCH.x2 = TOUCH.y1 = TOUCH.y2 = TOUCH.last = 0;
             TOUCH = {};
         } else {
-            TOUCH.el.trigger('tap');
+            if (TOUCH.el !== undefined) {
+                TOUCH.el.trigger('tap');
+            }
             TOUCH_TIMEOUT = setTimeout(function(){
                 TOUCH_TIMEOUT = null;
                 TOUCH = {};
