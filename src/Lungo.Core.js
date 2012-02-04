@@ -138,6 +138,25 @@ LUNGO.Core = (function(lng, $$, undefined) {
         return $$.environment();
     };
 
+    /**
+     * Returns information of execute environment
+     *
+     * @method environment
+     *
+     * @return {object} Environment information
+     */
+    var orderByProperty = function(data, property, order) {
+        var order_operator = (order === 'desc') ? -1 : 1;
+
+        return data.sort(function(a, b) {
+            return (a[property] < b[property]) ? - order_operator :
+                (a[property] > b[property])
+                ?
+                order_operator : 0;
+            }
+        );
+    };
+
     return {
         log: log,
         execute: execute,
@@ -147,7 +166,8 @@ LUNGO.Core = (function(lng, $$, undefined) {
         toType: toType,
         toArray: toArray,
         isMobile: isMobile,
-        environment: environment
+        environment: environment,
+        orderByProperty: orderByProperty
     };
 
 })(LUNGO, Quo);
