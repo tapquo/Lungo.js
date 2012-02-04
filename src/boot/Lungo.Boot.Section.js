@@ -67,7 +67,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     var _setPositionFixedInIOS = function(sections) {
         var environment = lng.Core.environment();
 
-        if (environment.os.name === 'ios' && environment.os.version >= '4.') {
+        if (environment.os.name === 'ios' && environment.os.version >= '4.2') {
             sections.style('position', 'fixed');
         }
     }
