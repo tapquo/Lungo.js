@@ -19,20 +19,12 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
      *
      * @method create
      *
-     * @param {String} Id of the container showing the result of databinding
      * @param {String} Databinding Template Id
      * @param {Object} Data for binding
-     * @param {Function} Callback when the process is complete
      */
-    var create = function(container_id, template_id, data, callback) {
-        if (lng.View.Template.exists(template_id)) {
-            var template = lng.View.Template.get(template_id);
-            var markup = _processData(data, template);
-            _render(container_id, markup);
-            lng.Core.execute(callback);
-        } else {
-            lng.Core.log(3, 'lng.View.Template.binding: id ' + template_id + ' not exists');
-        }
+    var create = function(template_id, data) {
+        var template = lng.View.Template.get(template_id);
+        return _processData(data, template);
     };
 
     var dataAttribute = function(element, attribute) {
@@ -77,11 +69,6 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
 
     var _removeNoBindedProperties = function(template) {
         return template.replace(BINDING_PARSER, '');
-    };
-
-    var _render = function(container_id, markup) {
-        var container = lng.dom('#' + container_id);
-        container.html(markup);
     };
 
     return {
