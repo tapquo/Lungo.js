@@ -1,0 +1,79 @@
+/**
+ * Stylesheet
+ *
+ * @namespace LUNGO.Layout
+ * @class Aside
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "mixins.less";
+
+@defaultTrasition : @easeOutSine;
+@header_footer_height: 40px;
+	@header_extended_height: 74px;
+@footer_toolbar_height: 48px;
+
+/* @group <aside> */
+
+section.aside {
+	.transform(translate3d(256px, 0, 0));
+	&.onright { .transform(translate3d(-256px, 0, 0)); }
+}
+
+aside {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	top: 0px;
+	visibility: hidden;
+	z-index: 0;
+
+	width: 256px;
+	max-width: 256px;
+	
+	&.onright { right: 0px; }
+	&.current { visibility: visible;} 
+}
+
+	aside a {
+		display: block;
+		width: 244px;
+		height: 40px;
+		padding: 0 6px;
+	
+		font-size: 15px;
+		line-height: 40px;
+		overflow: hidden;
+   		white-space: nowrap;
+  		text-overflow: ellipsis;
+  	}
+		aside .icon {
+			width: 24px;
+			float: left;
+			margin: 8px 4px 0 0;
+		
+			font-size: 24px;
+			line-height: 24px;
+		    text-align: center;		    
+		}
+		aside .anchor {
+			font-weight: bold;
+	    	padding: 3px 10px 4px;
+		}
+		aside .bubble {
+	    	float: right;
+	    	font-size: 11px;
+			margin: 12px 4px 0 0;
+		}
+	
+		@media handheld, only screen and (min-width: 768px) {
+			[data-target="aside"] { display: none !important; }		
+			aside { opacity: 1; }
+			aside ~ article{
+				width: auto !important;
+		    	left: 256px;
+		    	right:  0px !important;
+			}
+		}
+/* @end */
