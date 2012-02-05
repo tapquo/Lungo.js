@@ -85,7 +85,6 @@ nav a {
 /* @group <aside> */
 aside {
     background: #252525;
-    box-shadow: inset -1px 0 4px rgba(0,0,0,0.2);
     
     & a {
     	color: #fff;
@@ -110,6 +109,13 @@ aside {
 		color:  #7a7a7a;
 	}
 }
+
+section.aside {
+    box-shadow: -4px 0 8px rgba(0,0,0,0.5);
+    
+	&.onright { box-shadow: 4px 0 8px rgba(0,0,0,0.5); }
+}
+
 /* @end */
 
 /* @group .list */

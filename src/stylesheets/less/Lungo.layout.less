@@ -14,7 +14,6 @@
 	@header_extended_height: 74px;
 @footer_toolbar_height: 48px;
 
-
 /* @group <section> */
 section {
 	position: absolute; /* position: fixed on iOS5 & Android 4 */
@@ -22,6 +21,7 @@ section {
 	top:  0px;
 	width: 100%;
 	height: 100%;
+	z-index: 1;
 	
 	.transform(translate3d(100%, 0, 0));
 	-webkit-backface-visibility: hidden;
@@ -33,7 +33,6 @@ section {
 		.transform(translate3d(-100%, 0, 0)); }
 }
 /* @end */
-
 
 /* @group <header> & <footer> */
 header, footer  {
@@ -77,214 +76,4 @@ section header a.button, section footer a.button  {
 	&:first-of-type { margin-left: 4px; }	
 	&:last-child { margin-right: 4px; }
 }
-/* @end */
-
-/* @group <nav> */
-
-nav {
-	height: inherit;
-	text-align: center;
-    	
-	& a {
-		padding: 0 6px;
-		z-index: 1000;
-		float: left;
-		//line-height: 39px;
-		
-		& .icon {
-			position: relative;
-			top:  3px;
-		    font-size: 24px;
-		    display: inline-block;
-		}
-		
-		& img {
-    		width: 16px;
-    		height: 16px;
-    		top: -1px !important;
-		}
-		
-		& abbr {
-    		position: relative;    		
-    		margin-left: 2px;
-			display: none;
-		}
-		
-		&.current abbr, &.active abbr { display: inline; }
-	}
-	
-	& .bubble {
-    	position: relative;
-	    top:  -8px;
-	    left: -8px;
-	    margin-right: -20px;  
-	}
-}
-
-.toolbar {
-	height: @footer_toolbar_height;
-	display: block;
-	
-	& nav { display: block; }
-	& a { padding: 0; }
-	& .icon {
-    	display: block;
-    	top:  0px;
-    	font-size: 32px;
-		line-height: @footer_toolbar_height;
-	}
-	
-	&.with-labels .icon {
-    	line-height: 40px;
-		padding-bottom: 8px;
-	}
-	
-	& .bubble {
-    	top:  -52px;
-	    left: 4px;
-	}
-	
-	& abbr {
-		position: absolute;
-		top: 34px;
-		width: inherit;
-    	height: 11px;
-		margin-left: 0px;
-    	display: block !important;
-    	
-    	font-size: 11px;
-    	line-height: 12px;
-    	    	
-    	overflow: hidden;
-   		white-space: nowrap;
-  		text-overflow: ellipsis;
-	}
-}
-
-.groupbar {
-	position: absolute;
-	top: 39px;    
- 	height: 34px;
-    width: 100%;
-    line-height: 34px;
-    
-    & a {
-    	padding: 0px;
-	}
-}
-/* @end */
-
-/* @group <aside> */
-aside {
-	position: absolute;
-	width: inherit;
-	height: inherit;
-	top: 0px;
-	visibility: hidden;
-	z-index: 0;
-
-	width: 256px;
-	max-width: 256px;
-}
-
-	aside.show {
-		visibility: visible;
-	}
-	
-	header:not(.extended) ~ aside { top: @header_footer_height; }	
-		header.extended ~ aside { top: @header_extended_height; }		
-	footer ~ aside { 
-		bottom: @header_footer_height; 
-		height: auto; 
-	}
-		footer.toolbar ~ aside { bottom: @footer_toolbar_height; }
-	
-	aside ~ article {
-		.transform(translate3d(0px, 0, 0));
-		-webkit-transition: -webkit-transform 250ms @defaultTrasition;
-	}
-
-	aside a {
-		display: block;
-		width: 244px;
-		height: 40px;
-		padding: 0 6px;
-	
-		font-size: 15px;
-		line-height: 40px;
-		overflow: hidden;
-   		white-space: nowrap;
-  		text-overflow: ellipsis;
-  	}
-		aside .icon {
-			width: 24px;
-			float: left;
-			margin: 8px 4px 0 0;
-		
-			font-size: 24px;
-			line-height: 24px;
-		    text-align: center;		    
-		}
-		aside .anchor {
-			font-weight: bold;
-	    	padding: 3px 10px 4px;
-		}
-		aside .bubble {
-	    	float: right;
-	    	font-size: 11px;
-			margin: 12px 4px 0 0;
-		}
-	
-		@media handheld, only screen and (min-width: 768px) {
-			[data-target="aside"] { display: none !important; }		
-			aside { opacity: 1; }		
-			aside ~ article{
-				width: auto !important;
-		    	left: 256px;
-		    	right:  0px !important;
-			}
-		}
-/* @end */
-
-/* @group <article> */
-article {
-	position: absolute;
-	width: inherit;
-	height: auto;
-	top: 0px;
-	bottom: 0px;
-	visibility: hidden;
-	z-index: 0;
-}
-	
-	article.current {
-		visibility: visible;
-		z-index: 1;
-	}
-		
-	header:not(.extended) ~ article { top: @header_footer_height; }	
-		header.extended ~ article { top: @header_extended_height; }		
-	footer:not(.toolbar) ~ article { bottom: @header_footer_height; }
-		footer.toolbar ~ article { bottom: @footer_toolbar_height; }
-	
-	article.aside { .transform(translate3d(256px, 0, 0)); }
-	
-	@media handheld, only screen and (min-width: 768px) {
-		article.aside { .transform(translate3d(0px, 0, 0)); }
-	}
-	
-	article .title {
-		font-size: 1.1em;
-		 margin: 0px 0 4px;
-	}
-		
-		article .title .icon { margin-right: 4px; }
-	
-	article .text {
-		margin: 4px 0 8px;
-		display: block;
-    	font-size: 0.9em;
-    	font-weight: normal;
-    	line-height: 1.4em;
-	}			
 /* @end */

@@ -1,4 +1,4 @@
-section{position:absolute;left:0px;top:0px;width:100%;height:100%;-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}section:first-child,section.show{-webkit-transform:translate3d(0%, 0, 0);transform:translate3d(0%, 0, 0);}
+section{position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:1;-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);-webkit-backface-visibility:hidden;-webkit-transition:-webkit-transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}section:first-child,section.show{-webkit-transform:translate3d(0%, 0, 0);transform:translate3d(0%, 0, 0);}
 section.hide{-webkit-transform:translate3d(-100%, 0, 0);transform:translate3d(-100%, 0, 0);}
 header,footer{position:absolute;left:0px;width:100%;height:38px;display:block;z-index:2;line-height:39px;}
 header{top:0px;}
@@ -7,36 +7,3 @@ header .title,footer .title{margin:0 4px;float:left;z-index:-1;font-size:15px;fo
 header .title{position:absolute;left:0px;right:0px;text-align:center;display:inline-block;}
 section header a.button,section footer a.button{margin:3px 0 0 1px;}section header a.button:first-of-type,section footer a.button:first-of-type{margin-left:4px;}
 section header a.button:last-child,section footer a.button:last-child{margin-right:4px;}
-nav{height:inherit;text-align:center;}nav a{padding:0 6px;z-index:1000;float:left;}nav a .icon{position:relative;top:3px;font-size:24px;display:inline-block;}
-nav a img{width:16px;height:16px;top:-1px !important;}
-nav a abbr{position:relative;margin-left:2px;display:none;}
-nav a.current abbr,nav a.active abbr{display:inline;}
-nav .bubble{position:relative;top:-8px;left:-8px;margin-right:-20px;}
-.toolbar{height:48px;display:block;}.toolbar nav{display:block;}
-.toolbar a{padding:0;}
-.toolbar .icon{display:block;top:0px;font-size:32px;line-height:48px;}
-.toolbar.with-labels .icon{line-height:40px;padding-bottom:8px;}
-.toolbar .bubble{top:-52px;left:4px;}
-.toolbar abbr{position:absolute;top:34px;width:inherit;height:11px;margin-left:0px;display:block !important;font-size:11px;line-height:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-.groupbar{position:absolute;top:39px;height:34px;width:100%;line-height:34px;}.groupbar a{padding:0px;}
-aside{position:absolute;width:inherit;height:inherit;top:0px;visibility:hidden;z-index:0;width:256px;max-width:256px;}
-aside.show{visibility:visible;}
-header:not(.extended)~aside{top:40px;}
-header.extended~aside{top:74px;}
-footer~aside{bottom:40px;height:auto;}
-footer.toolbar~aside{bottom:48px;}
-aside~article{-webkit-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);-webkit-transition:-webkit-transform 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}
-aside a{display:block;width:244px;height:40px;padding:0 6px;font-size:15px;line-height:40px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-aside .icon{width:24px;float:left;margin:8px 4px 0 0;font-size:24px;line-height:24px;text-align:center;}
-aside .anchor{font-weight:bold;padding:3px 10px 4px;}
-aside .bubble{float:right;font-size:11px;margin:12px 4px 0 0;}
-@media handheld, only screen and (min-width: 768px){[data-target="aside"]{display:none !important;} aside{opacity:1;} aside~article{width:auto !important;left:256px;right:0px !important;}}article{position:absolute;width:inherit;height:auto;top:0px;bottom:0px;visibility:hidden;z-index:0;}
-article.current{visibility:visible;z-index:1;}
-header:not(.extended)~article{top:40px;}
-header.extended~article{top:74px;}
-footer:not(.toolbar)~article{bottom:40px;}
-footer.toolbar~article{bottom:48px;}
-article.aside{-webkit-transform:translate3d(256px, 0, 0);transform:translate3d(256px, 0, 0);}
-@media handheld, only screen and (min-width: 768px){article.aside{-webkit-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);}}article .title{font-size:1.1em;margin:0px 0 4px;}
-article .title .icon{margin-right:4px;}
-article .text{margin:4px 0 8px;display:block;font-size:0.9em;font-weight:normal;line-height:1.4em;}
