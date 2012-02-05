@@ -1,0 +1,58 @@
+/**
+ * Stylesheet
+ *
+ * @namespace LUNGO.Layout
+ * @class Article
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "mixins.less";
+
+@defaultTrasition : @easeOutSine;
+@header_footer_height: 40px;
+	@header_extended_height: 74px;
+@footer_toolbar_height: 48px;
+
+/* @group <article> */
+article {
+	position: absolute;
+	width: inherit;
+	height: auto;
+	top: 0px;
+	bottom: 0px;
+	visibility: hidden;
+	z-index: 0;
+}
+	
+	article.current {
+		visibility: visible;
+		z-index: 1;
+	}
+		
+	header:not(.extended) ~ article { top: @header_footer_height; }	
+		header.extended ~ article { top: @header_extended_height; }		
+	footer:not(.toolbar) ~ article { bottom: @header_footer_height; }
+		footer.toolbar ~ article { bottom: @footer_toolbar_height; }
+	
+	article.aside { .transform(translate3d(256px, 0, 0)); }
+	
+	@media handheld, only screen and (min-width: 768px) {
+		article.aside { .transform(translate3d(0px, 0, 0)); }
+	}
+	
+	article .title {
+		font-size: 1.1em;
+		 margin: 0px 0 4px;
+	}
+		
+		article .title .icon { margin-right: 4px; }
+	
+	article .text {
+		margin: 4px 0 8px;
+		display: block;
+    	font-size: 0.9em;
+    	font-weight: normal;
+    	line-height: 1.4em;
+	}			
+/* @end */
