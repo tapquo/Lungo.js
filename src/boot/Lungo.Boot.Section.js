@@ -24,10 +24,8 @@ LUNGO.Boot.Section = (function(lng, undefined) {
      */
     var start = function() {
         var sections = lng.dom(SELECTORS.SECTION);
-
         _initFirstSection(sections);
         _initAllSections(sections);
-        _initAllAsides();
 
         lng.View.Resize.toolbars();
     };
@@ -56,10 +54,6 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         var first_article_id = first_article.attr('id');
         var section_id = '#' + section.attr('id');
         lng.View.Article.showReferenceLinks(section_id, first_article_id);
-    };
-
-    var _initAllAsides = function() {
-        //lng.dom('aside').addClass('show');
     };
 
     return {

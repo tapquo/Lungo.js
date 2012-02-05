@@ -12,7 +12,8 @@ LUNGO.Router = (function(lng, undefined) {
 
     var CSS_CLASSES = {
         SHOW: 'show',
-        HIDE: 'hide'
+        HIDE: 'hide',
+        ACTIVE: 'current'
     };
 
     /**
@@ -51,6 +52,26 @@ LUNGO.Router = (function(lng, undefined) {
     };
 
     /**
+     * Displays the <aside> in a particular <section>.
+     *
+     * @method aside
+     *
+     * @param {string} <section> Id
+     * @param {string} <aside> Id
+     */
+    var aside = function(section_id, aside_id) {
+        var target = 'aside' + aside_id;
+        if (aside_id !== '#' && _existsTarget(target)) {
+            var is_visible = lng.dom(target).hasClass(CSS_CLASSES.ACTIVE);
+            if (is_visible) {
+                lng.View.Aside.hide(section_id, aside_id);
+            } else {
+                lng.View.Aside.show(section_id, aside_id);
+            }
+        }
+    };
+
+    /**
      * Return to previous section.
      *
      * @method back
@@ -80,6 +101,7 @@ LUNGO.Router = (function(lng, undefined) {
     return {
         section: section,
         article: article,
+        aside: aside,
         back: back
     };
 
