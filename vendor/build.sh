@@ -21,7 +21,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES
-    FILES=(js App.js Core.js Dom.js Service.js)
+    FILES=(js App.js Core.js Dom.js Service.js Fallback.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -96,7 +96,7 @@ FILES_TO_COMPRESS=""
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
     echo -e "\033[33m  [DIR]: "$DIR
-    FILES=(base layout layout.list widgets widgets.splash widgets.button widgets.form widgets.colour )
+    FILES=(base layout layout.nav layout.aside layout.article layout.list widgets widgets.splash widgets.button widgets.form widgets.colour )
     for file in "${FILES[@]}"
     do
         echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."

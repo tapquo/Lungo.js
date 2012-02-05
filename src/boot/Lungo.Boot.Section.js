@@ -41,9 +41,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initAllSections = function(sections) {
-        if (lng.Core.isMobile()) {
-            _setPositionFixedInIOS(sections);
-        }
+        lng.Fallback.positionFixed(sections);
 
         for (var i = 0, len = sections.length; i < len; i++) {
             var section = lng.dom(sections[i]);
@@ -61,16 +59,8 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initAllAsides = function() {
-        lng.dom('aside').addClass('show');
+        //lng.dom('aside').addClass('show');
     };
-
-    var _setPositionFixedInIOS = function(sections) {
-        var environment = lng.Core.environment();
-
-        if (environment.os.name === 'ios' && environment.os.version >= '4.2') {
-            sections.style('position', 'fixed');
-        }
-    }
 
     return {
         start: start
