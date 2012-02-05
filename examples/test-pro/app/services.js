@@ -17,20 +17,18 @@ App.Services = (function(lng, App, undefined) {
         }
 
         //Normal List
-        var parameters = {
-            container_id: 'list-plain',
-            template_id: 'profile-tmp',
-            data: profiles
-        };
-
         lng.View.Template.List.create({
-            container_id: 'list-auto',
-            template_id: 'profile-tmp',
-            data: profiles
+            el: '#list-auto',
+            template: 'profile-tmp',
+            data: profiles,
+            order: {
+                field: 'name',
+                type: 'desc'
+            }
         });
     };
 
-    mockProfiles();
+    //mockProfiles();
 
     return {
         mockProfiles: mockProfiles

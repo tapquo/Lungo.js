@@ -1,33 +1,52 @@
 App.Events = (function(lng, undefined) {
 
-    /*
-    lng.ready(function() {
+
+    lng.dom().ready(function() {
 
     });
-    */
 
-    lng.dom('#test header a.blue').tap(function(event) {
-        App.Services.mockProfiles();
+    //Toggle Aside
+
+    //Event on dinamic items
+    lng.dom('#list-auto').on('swipeLeft', 'li', function(event){
+        console.error(this, event, 'swipe');
     });
 
+    //List.Append & List.prepend
     lng.dom('#test header a.red').tap(function(event) {
-        var lista = '<li class="selectable">\
-                        <img src="assets/images/avatars/1.jpg">\
-                        <div class="onright">Profile nº1</div>\
-                        Profile nº1<small>Description nº1</small>\
-                    </li>';
-        lng.dom('#list-added_list').append(lista);
+        var param = {
+            el: '#list-added',
+            template: 'profile-tmp',
+            data: {
+                name: 'Javier Jimenez Villar',
+                description: '@soyjavi'
+            }
+        };
 
-        lng.View.Scroll.refresh('list-added');
+        if ($$(this).hasClass('prepend')) {
+            lng.View.Template.List.append(param);
+        } else {
+            lng.View.Template.List.prepend(param);
+        }
     });
 
+    //Scroll.Append & Scroll.Last // Scroll.first & Scroll.last
+    lng.dom('#test header a.green').tap(function(event) {
+        lng.View.Scroll.append('scroll-horizontal', '<span>1</span>');
+        lng.View.Scroll.first('scroll-horizontal');
+
+        lng.View.Scroll.append('scroll-vertical', '<span>1</span>');
+        lng.View.Scroll.last('scroll-vertical');
+    });
+
+    //Remove Item >> Scroll.refresh
     lng.dom('article#list-added li').tap(function(event) {
         $$(this).remove();
         lng.View.Scroll.refresh('list-added');
     });
 
     //SPECIAL
-    $$('section#next').on('load', function(event) {
+    $$('section#test').on('load', function(event) {
         console.error('Load #navigation', event);
         lng.Router.article('#next', '#files');
     });
