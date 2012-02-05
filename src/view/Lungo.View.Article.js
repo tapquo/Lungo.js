@@ -12,8 +12,9 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var SELECTORS = {
         ARTICLE: 'article',
+        SECTION: 'section',
         NAVIGATION_ITEM: 'a',
-        REFERENCE_LINK: 'a[href][data-article]'
+        REFERENCE_LINK: ' a[href][data-article]'
     };
 
     var CSS_CLASSES = {
@@ -37,7 +38,7 @@ LUNGO.View.Article = (function(lng, undefined) {
      * @method showReferenceLinks
      */
     var showReferenceLinks = function(section_id, article_id) {
-        var links = lng.dom('section' + section_id + ' ' + SELECTORS.REFERENCE_LINK);
+        var links = lng.dom(SELECTORS.SECTION + section_id + SELECTORS.REFERENCE_LINK);
 
         for (var i = 0, len = links.length; i < len; i++) {
             var link = lng.dom(links[i]);

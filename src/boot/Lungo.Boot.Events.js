@@ -24,10 +24,10 @@ LUNGO.Boot.Events = (function(lng, undefined) {
 
         lng.dom(document).on(touch_move_event, _iScroll);
         lng.dom(window).on(orientation_change, _changeOrientation);
-        lng.dom(target_selector_from_aside).tap(_toggleAside);
+        lng.dom(target_selector_from_aside).tap(_loadTargetFromAside);
         lng.dom(target_selector).tap(_loadTarget);
 
-        _buttonsFeedbackInAndroid();
+        lng.Fallback.androidButtons();
     };
 
     var _iScroll = function(event) {
@@ -38,12 +38,22 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.View.Resize.toolbars();
     };
 
-    var _toggleAside = function(event) {
+    var _loadTargetFromAside = function(event) {
         var link = lng.dom(this);
-        var section_id =  _getParentIdOfElement(link);
-        lng.View.Aside.toggle(section_id);
+        var aside_id = '#' + link.parent('aside').attr('id');
+        var section_id = '#' + lng.dom('section.aside').first().attr('id');
 
-        event.preventDefault();
+        if (link.data('target') === 'article') {
+            lng.dom('aside' + aside_id + ' a[href][data-target="article"]').removeClass('current');
+            link.addClass('current');
+        }
+        lng.View.Aside.hide(section_id, aside_id);
+
+        setTimeout(function() {
+
+            //event.preventDefault();
+        }, 1000);
+
     };
 
     var _loadTarget = function(event) {
@@ -51,22 +61,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         _selectTarget(link);
 
         event.preventDefault();
-    };
-
-    var _buttonsFeedbackInAndroid = function() {
-        var environment = lng.Core.environment();
-        if (environment.isMobile && environment.os.name === 'android') {
-            lng.dom(document.body).on('touchstart', '.button', _addClassActiveToButton);
-            lng.dom(document.body).on('touchend', '.button', _removeClassActiveToButton);
-        }
-    };
-
-    var _addClassActiveToButton = function(element) {
-        lng.dom(this).addClass('active');
-    };
-
-    var _removeClassActiveToButton = function(element) {
-        lng.dom(this).removeClass('active');
     };
 
     var _selectTarget = function(link) {
@@ -97,20 +91,16 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _goArticle = function(element) {
-        var section_id =  _getParentIdOfElement(element);
+        section_id = lng.Router.History.current();
         var article_id =  element.attr('href');
 
         lng.Router.article(section_id, article_id);
     };
 
     var _goAside = function(element) {
-        var section_id = _getParentIdOfElement(element);
-        lng.View.Aside.toggle(section_id);
-    };
-
-    var _getParentIdOfElement = function(element) {
-        var parent_id = '#' + element.parent('section').attr('id');
-        return parent_id;
+        var section_id = lng.Router.History.current();
+        var aside_id = element.attr('href');
+        lng.Router.aside(section_id, aside_id);
     };
 
     return {
