@@ -26,6 +26,14 @@ LUNGO.Fallback = (function(lng, undefined) {
         }
     };
 
+    var _addClassActiveToButton = function(element) {
+        lng.dom(this).addClass('active');
+    };
+
+    var _removeClassActiveToButton = function(element) {
+        lng.dom(this).removeClass('active');
+    };
+
     return {
     	androidButtons: androidButtons,
     	positionFixed: positionFixed
