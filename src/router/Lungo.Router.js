@@ -16,6 +16,14 @@ LUNGO.Router = (function(lng, undefined) {
         ACTIVE: 'current'
     };
 
+    var ELEMENT = {
+        SECTION: 'section',
+        ARTICLE: 'article',
+        ASIDE: 'aside'
+    }
+
+    var HASHTAG_CHARACTER = '#';
+
     /**
      * Navigate to a <section>.
      *
@@ -24,8 +32,8 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} Id of the <section>
      */
     var section = function(section_id) {
-        var section_id = (section_id.indexOf('#')) ? '#' + section_id : section_id;
-        var target = 'section' + section_id;
+        var section_id = _parseUrl(section_id);
+        var target = ELEMENT.SECTION + section_id;
 
         if (_existsTarget(target)) {
             lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.SHOW).addClass(CSS_CLASSES.HIDE);
@@ -44,7 +52,9 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <article> Id
      */
     var article = function(section_id, article_id) {
-        var target = section_id + ' article' + article_id;
+        var section_id = _parseUrl(section_id);
+        var article_id = _parseUrl(article_id);
+        var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + _parseUrl(article_id);
 
         if (_existsTarget(target)) {
             lng.View.Article.show(section_id, article_id);
@@ -60,8 +70,11 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <aside> Id
      */
     var aside = function(section_id, aside_id) {
-        var target = 'aside' + aside_id;
-        if (aside_id !== '#' && _existsTarget(target)) {
+        var section_id = _parseUrl(section_id);
+        var aside_id = _parseUrl(aside_id);
+        var target = ELEMENT.ASIDE + _parseUrl(aside_id);
+
+        if (_existsTarget(target)) {
             var is_visible = lng.dom(target).hasClass(CSS_CLASSES.ACTIVE);
             if (is_visible) {
                 lng.View.Aside.hide(section_id, aside_id);
@@ -83,6 +96,16 @@ LUNGO.Router = (function(lng, undefined) {
         lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.HIDE).addClass(CSS_CLASSES.SHOW);
     };
 
+    var _parseUrl = function(href) {
+        var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
+        if (href_hashtag > 0) {
+            href = href.substring(href_hashtag);
+        } else if (href_hashtag === -1) {
+            href = HASHTAG_CHARACTER + href ;
+        }
+        return href;
+    };
+
     var _existsTarget = function(target) {
         var exists = false;
 
@@ -91,8 +114,9 @@ LUNGO.Router = (function(lng, undefined) {
         } else {
             lng.Core.log(3, 'Lungo.Router ERROR: The target ' + target + ' does not exists.');
         }
+
         return exists;
-    }
+    };
 
     var _getHistoryCurrent = function() {
         return lng.Router.History.current();
