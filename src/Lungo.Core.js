@@ -11,6 +11,7 @@
 LUNGO.Core = (function(lng, $$, undefined) {
 
     var ARRAY_PROTO = Array.prototype;
+    var HASHTAG_CHARACTER = '#';
 
     /**
      * Console system to display messages when you are in debug mode.
@@ -157,6 +158,23 @@ LUNGO.Core = (function(lng, $$, undefined) {
         );
     };
 
+    /**
+     * Returns a correct URL using hashtag character
+     *
+     * @method parseUrl
+     *
+     * @return {string} Href
+     */
+    var parseUrl = function(href) {
+        var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
+        if (href_hashtag > 0) {
+            href = href.substring(href_hashtag);
+        } else if (href_hashtag === -1) {
+            href = HASHTAG_CHARACTER + href ;
+        }
+        return href;
+    };
+
     return {
         log: log,
         execute: execute,
@@ -167,7 +185,8 @@ LUNGO.Core = (function(lng, $$, undefined) {
         toArray: toArray,
         isMobile: isMobile,
         environment: environment,
-        orderByProperty: orderByProperty
+        orderByProperty: orderByProperty,
+        parseUrl: parseUrl
     };
 
 })(LUNGO, Quo);
