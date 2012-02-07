@@ -22,8 +22,6 @@ LUNGO.Router = (function(lng, undefined) {
         ASIDE: 'aside'
     }
 
-    var HASHTAG_CHARACTER = '#';
-
     /**
      * Navigate to a <section>.
      *
@@ -32,7 +30,7 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} Id of the <section>
      */
     var section = function(section_id) {
-        var section_id = _parseUrl(section_id);
+        var section_id = lng.Core.parseUrl(section_id);
         var target = ELEMENT.SECTION + section_id;
 
         if (_existsTarget(target)) {
@@ -52,9 +50,9 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <article> Id
      */
     var article = function(section_id, article_id) {
-        var section_id = _parseUrl(section_id);
-        var article_id = _parseUrl(article_id);
-        var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + _parseUrl(article_id);
+        var section_id = lng.Core.parseUrl(section_id);
+        var article_id = lng.Core.parseUrl(article_id);
+        var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id;
 
         if (_existsTarget(target)) {
             lng.View.Article.show(section_id, article_id);
@@ -70,9 +68,9 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <aside> Id
      */
     var aside = function(section_id, aside_id) {
-        var section_id = _parseUrl(section_id);
-        var aside_id = _parseUrl(aside_id);
-        var target = ELEMENT.ASIDE + _parseUrl(aside_id);
+        var section_id = lng.Core.parseUrl(section_id);
+        var aside_id = lng.Core.parseUrl(aside_id);
+        var target = ELEMENT.ASIDE + aside_id;
 
         if (_existsTarget(target)) {
             var is_visible = lng.dom(target).hasClass(CSS_CLASSES.ACTIVE);
@@ -94,16 +92,6 @@ LUNGO.Router = (function(lng, undefined) {
         lng.Router.History.removeLast();
 
         lng.dom(_getHistoryCurrent()).removeClass(CSS_CLASSES.HIDE).addClass(CSS_CLASSES.SHOW);
-    };
-
-    var _parseUrl = function(href) {
-        var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
-        if (href_hashtag > 0) {
-            href = href.substring(href_hashtag);
-        } else if (href_hashtag === -1) {
-            href = HASHTAG_CHARACTER + href ;
-        }
-        return href;
     };
 
     var _existsTarget = function(target) {
