@@ -59,7 +59,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     var _bindProperties = function(element, template) {
         var binding_field;
         for (var property in element) {
-            if (lng.Core.isOwnProperty(element, property)) {
+            if (lng.Core.isOwnProperty(element, property) && element[property] !== null) {
                 binding_field = new RegExp(BINDING_START + property + BINDING_END, 'g');
                 template = template.replace(binding_field, element[property]);
             }
