@@ -49,6 +49,8 @@ header, footer  {
 header  {
 	top: 0px;
 	//&.extended { height: 72px; }
+	& .onleft { margin-left: 4px !important;}
+	& .onright {margin-right: 4px !important;}
 }
 
 footer  {
@@ -63,6 +65,7 @@ header .title, footer .title  {
 	font-weight: bold;
 }
 
+
 header .title {
 	position: absolute;
 	left: 0px;
@@ -72,8 +75,10 @@ header .title {
 }
 
 section header a.button, section footer a.button  {
-	margin: 3px 0 0 1px;
+	margin: 3px 1px 0px;
+	/*
 	&:first-of-type { margin-left: 4px; }	
 	&:last-child { margin-right: 4px; }
+	*/
 }
 /* @end */

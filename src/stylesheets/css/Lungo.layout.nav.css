@@ -9,4 +9,4 @@ nav .bubble{position:relative;top:-8px;left:-8px;margin-right:-20px;}
 .toolbar.with-labels .icon{line-height:40px;padding-bottom:8px;}
 .toolbar .bubble{top:-52px;left:4px;}
 .toolbar abbr{position:absolute;top:34px;width:inherit;height:11px;margin-left:0px;display:block !important;font-size:11px;line-height:12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-.groupbar{position:absolute;top:39px;height:34px;width:100%;line-height:34px;}.groupbar a{padding:0px;}
+.groupbar{position:absolute;top:39px;height:28px;width:100%;padding:4px 0 2px;display:block;line-height:28px;z-index:2;}.groupbar a{padding:0px;}
