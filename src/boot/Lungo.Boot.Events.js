@@ -48,12 +48,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
             link.addClass('current');
         }
         lng.View.Aside.hide(section_id, aside_id);
-
-        setTimeout(function() {
-
-            //event.preventDefault();
-        }, 1000);
-
     };
 
     var _loadTarget = function(event) {

@@ -13,7 +13,7 @@ LUNGO.View.Article = (function(lng, undefined) {
     var SELECTORS = {
         ARTICLE: 'article',
         SECTION: 'section',
-        NAVIGATION_ITEM: 'a',
+        NAVIGATION_ITEM: 'a[href][data-target="article"]',
         REFERENCE_LINK: ' a[href][data-article]'
     };
 
@@ -47,13 +47,17 @@ LUNGO.View.Article = (function(lng, undefined) {
     };
 
     var _toggleNavItems = function(section_id, article_id) {
-        var nav_items = section_id + ' ' + SELECTORS.NAVIGATION_ITEM;
-        lng.dom(nav_items).removeClass(CSS_CLASSES.ACTIVE);
+        var nav_items = lng.dom(section_id + ' ' + SELECTORS.NAVIGATION_ITEM);
+        nav_items.removeClass(CSS_CLASSES.ACTIVE);
 
-        var current_nav_item = lng.dom(nav_items + '[href="' + article_id + '"]');
-        if (current_nav_item.length > 0) {
-            current_nav_item.addClass(CSS_CLASSES.ACTIVE);
-            _setTitle(section_id, current_nav_item);
+        for (var i = 0, len = nav_items.length; i < len; i++) {
+            var nav_item = lng.dom(nav_items[i]);
+            var nav_item_parsed_url = lng.Core.parseUrl(nav_item.attr('href'));
+
+            if (nav_item_parsed_url === article_id) {
+                nav_item.addClass(CSS_CLASSES.ACTIVE);
+                _setTitle(section_id, nav_item);
+            }
         }
     };
 

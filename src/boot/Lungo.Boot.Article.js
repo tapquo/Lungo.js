@@ -16,6 +16,11 @@ LUNGO.Boot.Article = (function(lng, undefined) {
         CHECKBOX_IN_ARTICLE: '.checkbox, .radio'
     };
 
+    var ELEMENT = {
+        LIST: '<ul></ul>',
+        SPAN: '<span>&nbsp;</span>'
+    }
+
     /**
      * Initializes the markup elements of an article
      *
@@ -39,7 +44,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
     var _createListElement = function(article) {
         if (article.children().length === 0) {
             var article_id = article.attr('id');
-            article.append('<ul></ul>');
+            article.append(ELEMENT.LIST);
         }
     };
 
@@ -49,7 +54,7 @@ LUNGO.Boot.Article = (function(lng, undefined) {
     };
 
     var _createCheckboxElement = function(checkbox) {
-        checkbox.append('<span>&nbsp;</span>');
+        checkbox.append(ELEMENT.SPAN);
     };
 
     return {
