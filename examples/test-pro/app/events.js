@@ -1,8 +1,8 @@
 App.Events = (function(lng, undefined) {
 
-
-    lng.dom().ready(function() {
-
+    lng.ready(function(){
+        console.error('LUNGO.js is ready...');
+        App.Services.mockProfiles();
     });
 
     //Toggle Aside

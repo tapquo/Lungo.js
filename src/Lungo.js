@@ -30,3 +30,4 @@ LUNGO.Data || (LUNGO.Data = {});
 LUNGO.Sugar || (LUNGO.Sugar = {});
 LUNGO.View || (LUNGO.View = {});
 LUNGO.Device || (LUNGO.Device = {});
+LUNGO.ready || (LUNGO.ready = Quo().ready);
