@@ -28,8 +28,6 @@ App.Services = (function(lng, App, undefined) {
         });
     };
 
-    //mockProfiles();
-
     return {
         mockProfiles: mockProfiles
     }
