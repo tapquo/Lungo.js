@@ -1,5 +1,5 @@
 /*!
- * QuoJS 1.0.2 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+ * QuoJS 1.0.3 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
  * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
@@ -565,7 +565,7 @@ window.Quo = Quo;
     $.fn.removeClass = function(name) {
         return this.each(function() {
             if (_existsClass(name, this.className)) {
-                this.className = this.className.replace(name, ' ');
+                this.className = this.className.replace(name, ' ').replace(/\s+/gi, ' ');
             }
         });
     };
