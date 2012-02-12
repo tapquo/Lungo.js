@@ -63,8 +63,13 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var _showContainer = function(section_id, article_id) {
         var section_articles = section_id + ' ' + SELECTORS.ARTICLE + '.' + CSS_CLASSES.ACTIVE;
+        var current_active_article_id = '#' + lng.dom(section_articles).attr('id');
+
         lng.dom(section_articles).removeClass(CSS_CLASSES.ACTIVE);
+        lng.Fallback.androidInputs(current_active_article_id, false);
+
         lng.dom(article_id).addClass(CSS_CLASSES.ACTIVE);
+        lng.Fallback.androidInputs(article_id, true);
     };
 
     var _setTitle = function(id, item) {
