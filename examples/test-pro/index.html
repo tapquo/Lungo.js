@@ -14,7 +14,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
     <!-- Main Stylesheet -->
-
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.base.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.nav.css">
@@ -28,7 +27,6 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.colour.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.pro.css">
-
     <style>
         .scroll-demo {
             background: #ccc;
@@ -64,20 +62,27 @@
 
     <section id="sec-1" class="">
         <header data-title="Test Asides">
-            <a href="#asi-1" data-target="aside" class="button blue">asi-1</a>
-
+            <a href="#asi-1" data-target="aside" class="button blue onleft">asi-1</a>
             <a href="#asi-2" data-target="aside" class="button green onright">sec-2</a>
         </header>
         <footer class="toolbar">
             <nav>
-                <a href="#art-1"  class="current" data-target="article" data-icon="left"></a>
-                <a href="#art-2" data-target="article" data-icon="right"></a>
+                <a href="#art-1"  class="current" data-target="article" data-title="Art-1" data-icon="left"></a>
+                <a href="#art-2" data-target="article" data-title="Art-2" data-icon="right"></a>
                 <a href="#sec-2" data-target="section" data-icon="files"></a>
+                <a href="#test" data-target="section" data-icon="settings"></a>
             </nav>
         </footer>
 
-        <article id="art-1">Art-1</article>
-        <article id="art-2">Art-2</article>
+        <article id="art-1">Art-1
+            <input type="text" placeholder="Some text..." />
+        </article>
+        <article id="art-2">Art-2
+            <p>
+            askldjaskldjkla
+            <input type="text" placeholder="Some text..." />
+            </p>
+        </article>
     </section>
 
     <section id="sec-2">
@@ -85,7 +90,6 @@
         <article>
         </article>
     </section>
-
 
     <aside id="asi-1" class="scrollable">
         <a href="#art-1" data-target="article">Art-1</a>
@@ -99,19 +103,16 @@
     </aside>
 
 
-    <!--
     <section id="test">
-        <header data-title="LungoJS Kitchen Sink" class="extended">
-            <a href="#" data-target="aside" class="button" data-icon="refresh">&nbsp;Aside</a>
+        <header data-title="Groupbar" class="extended" data-back="home">
             <nav class="onright">
                 <a href="#" data-article="list-added" class="button red" data-icon="up"></a>
                 <a href="#" data-article="list-added" class="button red prepend" data-icon="down"></a>
-                <a href="#" data-article="list-auto" class="button blue" data-icon="plus"></a>
                 <a href="#" data-article="list-dinamics" class="button green">Append</a>
             </nav>
             <nav class="groupbar">
-                <a href="#list-added" class="current" data-target="article">Dinamic</a>
-                <a href="#list-auto" data-target="article">Automatic</a>
+                <a href="#list-auto" class="current"  data-target="article">Automatic</a>
+                <a href="#list-added" data-target="article">Dinamic</a>
                 <a href="#list-dinamics" data-target="article">Special</a>
             </nav>
         </header>
@@ -123,21 +124,10 @@
             </nav>
         </footer>
 
-        <aside id="prueba" class="scrollable">
-            <ul>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-                <a href="#a">slaka</a>
-            </ul>
-        </aside>
+        <article id="list-auto" class="list"></article>
 
         <article id="list-added" class="list"></article>
-        <article id="list-auto" class="list"></article>
+
         <article id="list-dinamics">
             <div id="scroll-horizontal" class="scroll-demo scrollable horizontal">
                 <div style="width:1036px;">
@@ -176,7 +166,7 @@
         <article id="files">Files</article>
         <article id="folder">Folder</article>
     </section>
-    -->
+
 
     <!-- Third parties dependencies -->
     <script src="../../src/lib/QuoJS.js"></script>
@@ -201,7 +191,7 @@
     <script src="../../src/data/Lungo.Data.Sql.js"></script>
     <script src="../../src/data/Lungo.Data.Storage.js"></script>
     <script src="../../src/attributes/Lungo.Attributes.Data.js"></script>
-    <script src="../../src/Lungo.fallback.js"></script>
+    <script src="../../src/Lungo.Fallback.js"></script>
     <script src="../../src/boot/Lungo.Boot.js"></script>
     <script src="../../src/boot/Lungo.Boot.Async.js" ></script>
     <script src="../../src/boot/Lungo.Boot.Stats.js" ></script>
