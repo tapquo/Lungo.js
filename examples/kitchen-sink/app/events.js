@@ -1,11 +1,8 @@
 App.Events = (function(lng, undefined) {
 
-    /*
-    lng.dom(document).ready(function() {
-
+    lng.ready(function() {
+        App.Services.mockProfiles();
     });
-    */
-
 
     lng.dom('#event_touchstart').touch(function(event) { alert("touchstart!"); });
     //OR

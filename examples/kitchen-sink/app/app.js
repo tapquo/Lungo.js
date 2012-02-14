@@ -10,6 +10,7 @@ var App = (function(lng, undefined) {
             'lists.html',
             'settings.html',
             'forms.html',
+            'buttons-extra.html',
             'aside.html',
             'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
             'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html',

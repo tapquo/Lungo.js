@@ -74,8 +74,24 @@
             </nav>
         </footer>
 
-        <article id="art-1">Art-1
-            <input type="text" placeholder="Some text..." />
+        <article id="art-1" class="list indented">
+            <ul class="form">
+                <li><input type="text" placeholder="Some text..." /></li>
+                <li> <input type="range"></li>
+            </ul>
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of select</li>
+                <li>
+                    <label class="select">
+                        <select class="custom">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </label>
+                </li>
+                <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
+            </ul>
         </article>
         <article id="art-2">Art-2
             <p>
@@ -101,7 +117,6 @@
         <a href="#art-1" data-target="article">Art-1</a>
         <a href="#sec-2" data-target="section">Sec-1</a>
     </aside>
-
 
     <section id="test">
         <header data-title="Groupbar" class="extended" data-back="home">
