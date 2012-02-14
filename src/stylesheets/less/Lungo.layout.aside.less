@@ -82,8 +82,13 @@ footer ~ aside {
 	
 		@media handheld, only screen and (min-width: 768px) {
 			[data-target="aside"] { display: none !important; }		
-			aside { opacity: 1; }
-			aside ~ article{
+			aside { visibility: visible; }
+			section.current {
+    			width: auto !important;
+		    	left: 256px;
+		    	right:  0px !important;
+			}
+			aside ~ section{
 				width: auto !important;
 		    	left: 256px;
 		    	right:  0px !important;

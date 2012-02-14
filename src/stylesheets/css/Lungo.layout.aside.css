@@ -10,4 +10,4 @@ aside a{display:block;width:244px;height:40px;padding:0 6px;font-size:15px;line-
 aside .icon{width:24px;float:left;margin:8px 4px 0 0;font-size:24px;line-height:24px;text-align:center;}
 aside .anchor{font-weight:bold;padding:3px 10px 4px;}
 aside .bubble{float:right;font-size:11px;margin:12px 4px 0 0;}
-@media handheld, only screen and (min-width: 768px){[data-target="aside"]{display:none !important;} aside{opacity:1;} aside~article{width:auto !important;left:256px;right:0px !important;}}
+@media handheld, only screen and (min-width: 768px){[data-target="aside"]{display:none !important;} aside{visibility:visible;} section.current{width:auto !important;left:256px;right:0px !important;} aside~section{width:auto !important;left:256px;right:0px !important;}}
