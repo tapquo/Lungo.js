@@ -22,7 +22,8 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var target_selector = 'a[href][data-target]';
         var target_selector_from_aside = 'aside a[href][data-target]';
 
-        lng.dom(document).on(touch_move_event, _iScroll);
+        //@ToDo: Error with input type="range"
+        //lng.dom(document).on(touch_move_event, _iScroll);
         lng.dom(window).on(resize, _changeOrientation);
         lng.dom(target_selector_from_aside).tap(_loadTargetFromAside);
         lng.dom(target_selector).tap(_loadTarget);
