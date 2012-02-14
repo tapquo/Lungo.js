@@ -5,7 +5,12 @@ var App = (function(lng, undefined) {
         name: 'Kitchen Sink',
         version: '1.1',
         sections: [
-            'local.html',
+            'navigation.html',
+            'buttons.html',
+            'lists.html',
+            'settings.html',
+            'forms.html',
+            'aside.html',
             'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
             'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html',
         ]
