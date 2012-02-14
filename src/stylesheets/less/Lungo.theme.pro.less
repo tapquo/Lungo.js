@@ -124,7 +124,7 @@ section.aside {
     & li {
 		background: #fff;
 		border-bottom: 1px inset #e1e1e1;
-		
+
 		&:last-child { border-bottom: none; }
 		
 		&.selectable:active {
@@ -141,7 +141,13 @@ section.aside {
 		& small, & .onright:not(.bubble) { color: #888; }
 	} 
 		
-	& .indented ul { border: 1px solid #e1e1e1; }
+	&.indented li { 
+		border-left: solid 1px #e1e1e1;
+		border-right: solid 1px #e1e1e1;
+		
+		&:first-child { border-top: solid 1px #e1e1e1; }
+		&:last-child { border-bottom: solid 1px  #e1e1e1; }
+	}
 	
     & .anchor {
 		background: @theme-highlight;
