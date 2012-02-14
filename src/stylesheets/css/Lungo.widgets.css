@@ -2,11 +2,10 @@
 .scroll{overflow:scroll;-webkit-overflow-scrolling:touch;}
 .onleft{float:left;}
 .onright{float:right;}
-.indented{width:auto;height:auto;padding:10px 10px 0px;}
-.indented ul{margin-bottom:10px;height:auto;width:inherit;}
-.rounded ul{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.rounded li:first-child{-webkit-border-radius:4px 4px 0px 0px;border-radius:4px 4px 0px 0px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.rounded li:last-child{-webkit-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.indented >*{padding:10px;}
+.indented.rounded ul{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.indented.rounded li:first-child{-webkit-border-radius:4px 4px 0px 0px;border-radius:4px 4px 0px 0px;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.indented.rounded li:last-child{-webkit-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
 .margin-top-4{margin-top:4px;}
 .hidden{display:none;}
 .semi-opacity{opacity:0.5;}

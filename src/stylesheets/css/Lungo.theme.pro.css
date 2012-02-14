@@ -114,8 +114,15 @@ section.aside.onright {
 .list li small, .list li .onright:not(.bubble) {
   color: #888;
 }
-.list .indented ul {
-  border: 1px solid #e1e1e1;
+.list.indented li {
+  border-left: solid 1px #e1e1e1;
+  border-right: solid 1px #e1e1e1;
+}
+.list.indented li:first-child {
+  border-top: solid 1px #e1e1e1;
+}
+.list.indented li:last-child {
+  border-bottom: solid 1px  #e1e1e1;
 }
 .list .anchor {
   background: #93d6e7;
