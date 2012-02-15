@@ -23,7 +23,7 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} Id of the <section>
      */
     var section = function(section_id) {
-        var section_id = (section_id.indexOf('#')) ? '#' + section_id : section_id;
+        var section_id = _normalized_section_id(section_id);
         var target = 'section' + section_id;
 
         if (_existsTarget(target)) {
@@ -33,6 +33,20 @@ LUNGO.Router = (function(lng, undefined) {
             lng.Router.History.add(section_id);
         }
     };
+    
+    var rewind = function(section_id) {
+      var section_id = _normalized_section_id(section_id);
+      var target = 'section' + section_id;
+      if (_existsTarget(target)) {
+        while(_getHistoryCurrent() != section_id) {
+          back();
+        }
+      }
+    }
+
+    var _normalized_section_id = function(section_id) {
+      return (section_id.indexOf('#')) ? '#' + section_id : section_id;
+    }
 
     /**
      * Displays the <article> in a particular <section>.
@@ -80,7 +94,8 @@ LUNGO.Router = (function(lng, undefined) {
     return {
         section: section,
         article: article,
-        back: back
+        back: back,
+        rewind: rewind
     };
 
 })(LUNGO);
