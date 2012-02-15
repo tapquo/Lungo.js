@@ -67,6 +67,11 @@ LUNGO.Boot.Events = (function(lng, undefined) {
             case 'aside':
                 _goAside(link);
                 break;
+                
+            case 'rewind':
+                var target_id = link.attr('href');
+                _goRewind(target_id);
+                break;
         }
     };
 
@@ -89,6 +94,10 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var section_id = _getParentIdOfElement(element);
         lng.View.Aside.toggle(section_id);
     };
+
+    var _goRewind = function(id) {
+        lng.Router.rewind(id);
+    }
 
     var _getParentIdOfElement = function(element) {
         var parent_id = '#' + element.parent('section').attr('id');
