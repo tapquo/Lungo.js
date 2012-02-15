@@ -507,7 +507,7 @@ window.Quo = Quo;
         var candidates = $$(selector);
 
         if (!candidates.length) node = null;
-        while (node && candidates.indexOf(node) < 0) {
+        while (node && candidates.indexOf(node) < 0){
             node = node !== context && node !== document && node.parentNode;
         }
 
@@ -751,7 +751,7 @@ window.Quo = Quo;
                 var response = _parseResponse(xhr, settings);
                 _xhrSuccess(response, xhr, settings);
             }
-        } else {
+        } else {
             _xhrError('QuoJS » $$.ajax', xhr, settings);
         }
     }
@@ -764,7 +764,7 @@ window.Quo = Quo;
         settings.error.call(settings.context, type, xhr, settings);
     }
 
-    function _xhrHeaders(xhr, settings) {
+    function _xhrHeaders(xhr, settings) {
         if (settings.contentType) settings.headers['Content-Type'] = settings.contentType;
         if (settings.dataType) settings.headers['Accept'] = MIME_TYPES[settings.dataType];
 
@@ -773,7 +773,7 @@ window.Quo = Quo;
         }
     }
 
-    function _xhrTimeout(xhr, settings) {
+    function _xhrTimeout(xhr, settings) {
         xhr.onreadystatechange = {};
         xhr.abort();
         _xhrError('QuoJS » $$.ajax : timeout exceeded', xhr, settings);
