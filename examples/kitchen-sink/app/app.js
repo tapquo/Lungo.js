@@ -4,17 +4,18 @@ var App = (function(lng, undefined) {
     lng.App.init({
         name: 'Kitchen Sink',
         version: '1.1',
-        sections: [
-            'navigation.html',
-            'buttons.html',
-            'lists.html',
-            'settings.html',
-            'forms.html',
-            'buttons-extra.html',
-            'aside.html',
-            'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
-            'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html',
-        ]
+        resources: {
+            sections: [
+                'navigation.html',
+                'buttons.html',
+                'lists.html',
+                'settings.html',
+                'forms.html',
+                'buttons-extra.html',
+                'aside.html',
+                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
+                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html']
+        }
     });
 
     var _getEnvironmentFromQuoJS = (function() {

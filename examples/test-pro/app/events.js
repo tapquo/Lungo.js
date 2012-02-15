@@ -3,6 +3,18 @@ App.Events = (function(lng, undefined) {
     lng.ready(function(){
         console.error('LUNGO.js is ready...');
         App.Services.mockProfiles();
+
+
+        var homes = [
+            {id: 1, name: 'lemoa'},
+            {id: 2, name: 'zalla'}
+        ];
+
+        lng.View.Template.List.create({
+            el: '#art-3',
+            template: 'home-tmp',
+            data: homes
+        })
     });
 
     //Toggle Aside
