@@ -17,6 +17,8 @@ LUNGO.Constants = {
     };
 
     CLASSES = {
-        ACTIVE: 'active'
+        ACTIVE: 'active',
+        SHOW: 'show',
+        HIDE: 'hide'
     };
 };
