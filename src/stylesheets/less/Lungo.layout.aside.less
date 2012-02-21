@@ -38,60 +38,60 @@ aside {
 header:not(.extended) ~ aside { top: @header_footer_height; }    
 header.extended ~ aside { top: @header_extended_height; }        
 footer ~ aside { 
-        bottom: @header_footer_height; 
-        height: auto; 
-    }
-        footer.toolbar ~ aside { bottom: @footer_toolbar_height; }
-    
-    aside ~ article {
-        .transform(translate3d(0px, 0, 0));
-        -webkit-transition: -webkit-transform 250ms @defaultTrasition;
-    }
+    bottom: @header_footer_height; 
+    height: auto; 
+}
+    footer.toolbar ~ aside { bottom: @footer_toolbar_height; }
+
+aside ~ article {
+    .transform(translate3d(0px, 0, 0));
+    -webkit-transition: -webkit-transform 250ms @defaultTrasition;
+}
 
 
-	aside a {
-		display: block;
-		width: 244px;
-		height: 40px;
-		padding: 0 6px;
+aside a {
+	display: block;
+	width: 244px;
+	height: 40px;
+	padding: 0 6px;
+
+	font-size: 15px;
+	line-height: 40px;
+	overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	aside .icon {
+		width: 24px;
+		float: left;
+		margin: 8px 4px 0 0;
 	
-		font-size: 15px;
-		line-height: 40px;
-		overflow: hidden;
-   		white-space: nowrap;
-  		text-overflow: ellipsis;
-  	}
-		aside .icon {
-			width: 24px;
-			float: left;
-			margin: 8px 4px 0 0;
+		font-size: 24px;
+		line-height: 24px;
+	    text-align: center;		    
+	}
+	aside .anchor {
+		font-weight: bold;
+    	padding: 13px 10px 11px;
+	}
+	aside .bubble {
+    	float: right;
+    	font-size: 11px;
+		margin: 12px 4px 0 0;
+	}
+
+	@media handheld, only screen and (min-width: 768px) {
+		[data-target="aside"] { display: none !important; }
 		
-			font-size: 24px;
-			line-height: 24px;
-		    text-align: center;		    
-		}
-		aside .anchor {
-			font-weight: bold;
-	    	padding: 3px 10px 4px;
-		}
-		aside .bubble {
-	    	float: right;
-	    	font-size: 11px;
-			margin: 12px 4px 0 0;
-		}
-	
-		@media handheld, only screen and (min-width: 768px) {
-			[data-target="aside"] { display: none !important; }		
-			aside { visibility: visible; }
-			section.current {
-    			width: auto !important;
-		    	left: 256px;
-		    	right:  0px !important;
-			}
-			aside ~ section{
-				width: auto !important;
-		    	left: 256px;
-		    	right:  0px !important;
+		section {
+			width: auto !important;
+	    	left: 256px;
+	    	right:  0px !important;
+	    	-webkit-transition: none;
+
+	    	&.hide {
+    			z-index: -1;
 			}
 		}
+	}
 /* @end */

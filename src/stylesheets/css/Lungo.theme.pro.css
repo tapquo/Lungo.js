@@ -90,6 +90,14 @@ section.aside {
 section.aside.onright {
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.5);
 }
+@media handheld, only screen and (min-width: 768px) {
+  section.current, section.show {
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.5);
+  }
+  section.current.onright, section.show.onright {
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.5);
+  }
+}
 /* @end */
 /* @group .list */
 .list, .list li:not(.toolbar) a {
