@@ -42,13 +42,14 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     var _loadTargetFromAside = function(event) {
         var link = lng.dom(this);
         var aside_id = '#' + link.parent('aside').attr('id');
-        var section_id = '#' + lng.dom('section.aside').first().attr('id');
+        var section_id = '#' + lng.dom('section.aside, section.current').first().attr('id');
 
         if (link.data('target') === 'article') {
-            lng.dom('aside' + aside_id + ' a[href][data-target="article"]').removeClass('current');
+            lng.dom('aside' + aside_id + ' a[href][data-target]').removeClass('current');
             link.addClass('current');
         }
-        lng.View.Aside.hide(section_id, aside_id);
+        _hideAsideIfNecesary(section_id, aside_id);
+
     };
 
     var _loadTarget = function(event) {
@@ -98,6 +99,12 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var section_id = lng.Router.History.current();
         var aside_id = element.attr('href');
         lng.Router.aside(section_id, aside_id);
+    };
+
+    var _hideAsideIfNecesary = function(section_id, aside_id) {
+        if (window.innerWidth < 768) {
+            lng.View.Aside.hide(section_id, aside_id);
+        }
     };
 
     return {
