@@ -13,6 +13,7 @@ var App = (function(lng, undefined) {
                 'forms.html',
                 'buttons-extra.html',
                 'aside.html',
+                'aside-profiles.html',
                 'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
                 'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html']
         }
