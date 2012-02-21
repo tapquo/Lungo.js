@@ -9,9 +9,10 @@
 
 LUNGO.Boot.Resources = (function(lng, $$, undefined) {
 
-    var RESOURCE_KEYS = {
-        SECTIONS: 'sections',
-        TEMPLATES: 'templates'
+    var RESOURCE = {
+        SECTION: 'sections',
+        TEMPLATE: 'templates',
+        SCRIPT: 'scripts'
     }
 
     /**
@@ -30,13 +31,9 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
     var _loadResources = function(resource_key, resources, callback) {
         for (index in resources) {
             var url = _parseUrl(resources[index], resource_key);
-            var response = _loadAsyncSection(url);
+            var response = _loadAsyncResource(url);
 
-            if (resource_key === RESOURCE_KEYS.SECTIONS) {
-                _pushSectionInLayout(response);
-            } else {
-                _createTemplate(response);
-            }
+            _factoryResources(resource_key, response);
         }
     };
 
@@ -44,7 +41,7 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
         return (/http/.test(section_url)) ? section_url : 'app/' + folder + '/' + section_url;
     };
 
-    var _loadAsyncSection = function(url) {
+    var _loadAsyncResource = function(url) {
         return $$.ajax({
             url: url,
             async: false,
@@ -53,6 +50,21 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
                 console.error('[ERROR] Loading url', arguments);
             }
         });
+    };
+
+    var _factoryResources = function(resource_key, response) {
+        switch(resource_key) {
+            case RESOURCE.SECTION:
+                _pushSectionInLayout(response);
+                break;
+
+            case RESOURCE.TEMPLATE:
+                _createTemplate(response);
+                break;
+
+            case RESOURCE.SCRIPT:
+                break;
+        }
     };
 
     var _pushSectionInLayout = function(section) {
