@@ -59,12 +59,21 @@ App.Events = (function(lng, undefined) {
 
     //SPECIAL
     $$('section#test').on('load', function(event) {
-        console.error('Load #navigation', event);
+        console.error('Load #test', event);
         lng.Router.article('#next', '#files');
     });
 
-    $$('section#next').on('unload', function(event) {
-        console.error('Unload', event);
+    $$('section#test').on('unload', function(event) {
+        console.error('Unload #test', event);
+    });
+
+    $$('article#art-2').on('load', function(event) {
+        console.error('load article', this, event);
+    });
+
+    $$('article#art-1').on('unload', function(event) {
+        console.error(LUNGO.Constants)
+        console.error('unload article', this, event);
     });
 
 })(LUNGO);

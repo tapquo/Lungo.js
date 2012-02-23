@@ -6,7 +6,8 @@ var App = (function(lng, undefined) {
         resources: {
             sections: [
                 'local.html',
-                'http://examples.tapquo.com/remote.html'],
+                'http://examples.tapquo.com/remote.html',
+                'asides.html'],
             templates: [
                 'list-home.html']
         }
