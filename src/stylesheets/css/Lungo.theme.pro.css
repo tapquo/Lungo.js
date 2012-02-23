@@ -65,6 +65,10 @@ nav a.current, nav a.active {
 aside {
   background: #252525;
 }
+aside .title {
+  background: #101010;
+  border: none;
+}
 aside a {
   color: #fff;
   text-shadow: 0px 1px 0px #000;

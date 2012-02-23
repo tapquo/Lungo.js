@@ -48,19 +48,43 @@ aside ~ article {
     -webkit-transition: -webkit-transform 250ms @defaultTrasition;
 }
 
+aside .title, aside a, aside .anchor {    
+	padding: 0 6px;
+}
+
+aside .title {    
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+	height: 40px;
+}
 
 aside a {
 	display: block;
 	width: 244px;
 	height: 40px;
-	padding: 0 6px;
 
 	font-size: 15px;
 	line-height: 40px;
 	overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-	}
+}
+
+
+	aside .bubble {
+    	float: right;
+    	font-size: 11px;
+    }
+
+aside a .bubble, aside .title .bubble {
+	margin-top: 13px;
+}
+
+aside .anchor .bubble {
+    margin-top: 2px;
+}
+	
 	aside .icon {
 		width: 24px;
 		float: left;
@@ -72,12 +96,7 @@ aside a {
 	}
 	aside .anchor {
 		font-weight: bold;
-    	padding: 13px 10px 11px;
-	}
-	aside .bubble {
-    	float: right;
-    	font-size: 11px;
-		margin: 12px 4px 0 0;
+		line-height: 19px;
 	}
 
 	@media handheld, only screen and (min-width: 768px) {
