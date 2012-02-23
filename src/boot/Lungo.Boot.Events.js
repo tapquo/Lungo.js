@@ -10,6 +10,14 @@
 
 LUNGO.Boot.Events = (function(lng, undefined) {
 
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var CLASS = lng.Constants.CLASS;
+    var ELEMENT = lng.Constants.ELEMENT;
+    var SELECTORS = {
+        HREF_TARGET: 'a[href][data-target]',
+        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
+    };
+
     /**
      * Initializes the automatic subscription events by markup of the project.
      *
@@ -19,14 +27,13 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     var start = function() {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
-        var target_selector = 'a[href][data-target]';
-        var target_selector_from_aside = 'aside a[href][data-target]';
+        console.error(SELECTORS);
 
         //@ToDo: Error with input type="range"
         //lng.dom(document).on(touch_move_event, _iScroll);
         lng.dom(window).on(resize, _changeOrientation);
-        lng.dom(target_selector_from_aside).tap(_loadTargetFromAside);
-        lng.dom(target_selector).tap(_loadTarget);
+        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
+        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
 
         lng.Fallback.androidButtons();
     };
@@ -41,12 +48,12 @@ LUNGO.Boot.Events = (function(lng, undefined) {
 
     var _loadTargetFromAside = function(event) {
         var link = lng.dom(this);
-        var aside_id = '#' + link.parent('aside').attr('id');
-        var section_id = '#' + lng.dom('section.aside, section.current').first().attr('id');
+        var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
+        var section_id = '#' + lng.dom('section.aside, section.current').first().attr(ATTRIBUTE.ID);
 
-        if (link.data('target') === 'article') {
-            lng.dom('aside' + aside_id + ' a[href][data-target]').removeClass('current');
-            link.addClass('current');
+        if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
+            lng.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
+            link.addClass(CLASS.CURRENT);
         }
         _hideAsideIfNecesary(section_id, aside_id);
 
@@ -60,19 +67,21 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _selectTarget = function(link) {
-        var target_type = link.data('target');
+        var target_type = link.data(ATTRIBUTE.TARGET);
+
+        console.error(ELEMENT, target_type);
 
         switch(target_type) {
-            case 'section':
-                var target_id = link.attr('href');
+            case ELEMENT.SECTION:
+                var target_id = link.attr(ATTRIBUTE.HREF);
                 _goSection(target_id);
                 break;
 
-            case 'article':
+            case ELEMENT.ARTICLE:
                 _goArticle(link);
                 break;
 
-            case 'aside':
+            case ELEMENT.ASIDE:
                 _goAside(link);
                 break;
         }
@@ -80,7 +89,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
 
     var _goSection = function(id) {
         id = lng.Core.parseUrl(id);
-
         if (id === '#back') {
             lng.Router.back();
         } else {
@@ -89,15 +97,16 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _goArticle = function(element) {
-        section_id = lng.Router.History.current();
-        var article_id =  element.attr('href');
+        var section_id = lng.Router.History.current();
+        var article_id =  element.attr(ATTRIBUTE.HREF);
 
         lng.Router.article(section_id, article_id);
     };
 
     var _goAside = function(element) {
         var section_id = lng.Router.History.current();
-        var aside_id = element.attr('href');
+        var aside_id = element.attr(ATTRIBUTE.HREF);
+
         lng.Router.aside(section_id, aside_id);
     };
 

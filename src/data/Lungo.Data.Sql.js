@@ -10,6 +10,7 @@
 
 LUNGO.Data.Sql = (function(lng, undefined) {
 
+    var ERROR = lng.Constants.ERROR;
     var CONFIG = {
         name: 'lungo_db',
         version: '1.0',
@@ -33,7 +34,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         if (db) {
             _createSchema();
         } else {
-            lng.Core.log(3, 'lng.Data.Sql >> Failed to connect to database.');
+            lng.Core.log(3, ERROR.DATABASE);
         }
     };
 

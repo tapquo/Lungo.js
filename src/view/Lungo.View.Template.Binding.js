@@ -10,9 +10,8 @@
 
 LUNGO.View.Template.Binding = (function(lng, undefined) {
 
-    var BINDING_START = '{{';
-    var BINDING_END = '}}';
-    var BINDING_PARSER = /\{{.*?\}}/gi;
+    var BINDING = lng.Constants.BINDING;
+    var ERROR = lng.Constants.ERROR;
 
     /**
      * Performs databinding process for a data set and a given template
@@ -31,7 +30,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         var data = element.data(attribute.tag);
 
         if (data) {
-            var html_binded = attribute.html.replace(BINDING_START + 'value' + BINDING_END, data);
+            var html_binded = attribute.html.replace(BINDING.START + BINDING.KEY + BINDING.END, data);
             element.prepend(html_binded);
         }
     };
@@ -44,7 +43,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         } else if (data_type === 'object') {
             return _bindProperties(data, template);
         } else {
-            lng.Core.log(3, 'View.Template ERROR >> No type defined.');
+            lng.Core.log(3, ERROR.BINDING_DATA_TYPE);
         }
     };
 
@@ -60,7 +59,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         var binding_field;
         for (var property in element) {
             if (lng.Core.isOwnProperty(element, property) && element[property] !== null) {
-                binding_field = new RegExp(BINDING_START + property + BINDING_END, 'g');
+                binding_field = new RegExp(BINDING.START + property + BINDING.END, 'g');
                 template = template.replace(binding_field, element[property]);
             }
         }
@@ -68,7 +67,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     };
 
     var _removeNoBindedProperties = function(template) {
-        return template.replace(BINDING_PARSER, '');
+        return template.replace(BINDING.PARSER, '');
     };
 
     return {

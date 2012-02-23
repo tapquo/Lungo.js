@@ -10,6 +10,9 @@
 
 LUNGO.View.Template.List = (function(lng, undefined) {
 
+    var ERROR = lng.Constants.ERROR;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+
     /**
      * Create a list based DataBind with a configuration object for an element <article>
 	 * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
@@ -33,7 +36,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         var container = _getContainer(config.el);
 
         container.append(markup);
-        _scroll(config.el, 'last');
+        _scroll(config.el, ATTRIBUTE.LAST);
     };
 
     var prepend = function(config) {
@@ -41,7 +44,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         var container = _getContainer(config.el);
 
         container.prepend(markup);
-        _scroll(config.el, 'first');
+        _scroll(config.el, ATTRIBUTE.FIRST);
     };
 
     var _validateConfig = function(config) {
@@ -55,7 +58,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
                 checked = true;
             }
         } else {
-            lng.Core.log(3, 'LungoJS [ERROR]: Incorrect parameters for lng.View.Template.List.create() method.');
+            lng.Core.log(3, ERROR.BINDING_LIST);
         }
 
         return checked;
@@ -77,11 +80,11 @@ LUNGO.View.Template.List = (function(lng, undefined) {
     };
 
     var _scroll = function(element, direction) {
-        var element_id = lng.dom(element).attr('id');
+        var element_id = lng.dom(element).attr(ATTRIBUTE.ID);
 
         lng.View.Scroll.init(element_id);
         if (direction) {
-            lng.View.Scroll[(direction === 'first') ? 'first' : 'last'](element_id);
+            lng.View.Scroll[(direction === ATTRIBUTE.FIRST) ? ATTRIBUTE.FIRST : ATTRIBUTE.LAST](element_id);
         }
     };
 

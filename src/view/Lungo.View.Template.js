@@ -10,6 +10,8 @@
 
 LUNGO.View.Template = (function(lng, undefined) {
 
+    var ERROR = lng.Constants.ERROR;
+
     var _templates = {};
 
     /**
@@ -66,7 +68,7 @@ LUNGO.View.Template = (function(lng, undefined) {
 
             lng.Core.execute(callback);
         } else {
-            lng.Core.log(3, 'lng.View.Template.binding: id ' + template_id + ' not exists');
+            lng.Core.log(3, ERROR.BINDING_TEMPLATE + template_id);
         }
     };
 

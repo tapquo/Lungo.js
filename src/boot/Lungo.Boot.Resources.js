@@ -9,11 +9,14 @@
 
 LUNGO.Boot.Resources = (function(lng, $$, undefined) {
 
+    var ELEMENT = lng.Constants.ELEMENT;
+    var ERROR = lng.Constants.ERROR;
+
     var RESOURCE = {
         SECTION: 'sections',
         TEMPLATE: 'templates',
         SCRIPT: 'scripts'
-    }
+    };
 
     /**
      * Start loading async sections (local & remote)
@@ -69,12 +72,12 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
 
     var _pushSectionInLayout = function(section) {
         if (lng.Core.toType(section) === 'string') {
-            lng.dom('body').append(section);
+            lng.dom(ELEMENT.BODY).append(section);
         }
     };
 
     var _createTemplate = function(markup) {
-        var div = document.createElement('DIV');
+        var div = document.createElement(ELEMENT.DIV);
         div.innerHTML = markup;
 
         var template_id = lng.dom(div.firstChild).data('template');

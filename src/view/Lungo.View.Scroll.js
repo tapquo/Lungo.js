@@ -11,6 +11,9 @@
 
 LUNGO.View.Scroll = (function(lng, undefined) {
 
+    var CLASS = lng.Constants.CLASS;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var ERROR = lng.Constants.ERROR;
     var DEFAULT_PROPERTIES = {
         hScroll: false,
         vScroll: false,
@@ -21,11 +24,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         fadeScrollbar: true,
         hideScrollbar: true
     };
-
-    var HORIZONTAL_CLASS = 'horizontal';
-
     var CACHE_KEY = 'scrolls';
-
     var SCROLL_TIMEFRAME = 250;
 
     /**
@@ -40,7 +39,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         if (id) {
             _render(id, properties);
         } else {
-            lng.Core.log(3, 'ERROR: Impossible to create a <scroll> without ID');
+            lng.Core.log(3, ERROR.CREATE_SCROLL);
         }
     };
 
@@ -128,9 +127,9 @@ LUNGO.View.Scroll = (function(lng, undefined) {
             var content_height = 0;
 
             if (_isHorizontal(element)) {
-                content_width = -(_sizeProperty(element, 'width'));
+                content_width = -(_sizeProperty(element, ATTRIBUTE.WIDTH));
             } else {
-                content_height = -(_sizeProperty(element, 'height'));
+                content_height = -(_sizeProperty(element, ATTRIBUTE.HEIGHT));
             }
             scroll.scrollTo(content_width, content_height, SCROLL_TIMEFRAME);
         }
@@ -204,7 +203,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
     };
 
     var _isHorizontal = function(scroll) {
-        return ( scroll.hasClass(HORIZONTAL_CLASS)) ? true : false;
+        return ( scroll.hasClass(CLASS.HORIZONTAL)) ? true : false;
     };
 
     return {
