@@ -10,6 +10,8 @@
 
 LUNGO.View.Resize = (function(lng, undefined) {
 
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+
     /**
      * Sets toolbars width, using total screen width
      *
@@ -24,7 +26,7 @@ LUNGO.View.Resize = (function(lng, undefined) {
             var toolbar_children = toolbar.children();
             var toolbar_children_width = (toolbar.width() / toolbar_children.length);
 
-            toolbar_children.style('width', toolbar_children_width + 'px');
+            toolbar_children.style(ATTRIBUTE.WIDTH, toolbar_children_width + ATTRIBUTE.PIXEL);
         }
     };
 

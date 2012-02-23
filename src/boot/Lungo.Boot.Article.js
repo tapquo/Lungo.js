@@ -10,16 +10,13 @@
 
 LUNGO.Boot.Article = (function(lng, undefined) {
 
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
         LIST_IN_ARTICLE: 'article.list, aside.list',
         SCROLL_IN_ARTICLE: '.scrollable',
         CHECKBOX_IN_ARTICLE: '.checkbox, .radio'
     };
-
-    var ELEMENT = {
-        LIST: '<ul></ul>',
-        SPAN: '<span>&nbsp;</span>'
-    }
 
     /**
      * Initializes the markup elements of an article
@@ -43,13 +40,13 @@ LUNGO.Boot.Article = (function(lng, undefined) {
 
     var _createListElement = function(article) {
         if (article.children().length === 0) {
-            var article_id = article.attr('id');
+            var article_id = article.attr(ATTRIBUTE.ID);
             article.append(ELEMENT.LIST);
         }
     };
 
     var _createScrollElement = function(scroll) {
-        var scroll_id = scroll.attr('id');
+        var scroll_id = scroll.attr(ATTRIBUTE.ID);
         lng.View.Scroll.init(scroll_id);
     };
 

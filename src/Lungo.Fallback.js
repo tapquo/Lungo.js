@@ -9,6 +9,7 @@
 
 LUNGO.Fallback = (function(lng, undefined) {
 
+    var CLASS = lng.Constants.CLASS;
 
     var androidButtons = function() {
     	environment = lng.Core.environment();
@@ -45,11 +46,11 @@ LUNGO.Fallback = (function(lng, undefined) {
     };
 
     var _addClassActiveToButton = function(element) {
-        lng.dom(this).addClass('active');
+        lng.dom(this).addClass(CLASS.ACTIVE);
     };
 
     var _removeClassActiveToButton = function(element) {
-        lng.dom(this).removeClass('active');
+        lng.dom(this).removeClass(CLASS.ACTIVE);
     };
 
     return {
