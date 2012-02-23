@@ -400,6 +400,7 @@ window.Quo = Quo;
                 if (value) {
                     var div = document.createElement();
                     div.innerHTML = value;
+
                     this.appendChild(div.firstChild);
                 }
             } else {
