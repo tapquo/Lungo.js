@@ -1,5 +1,5 @@
 /*!
- * QuoJS 1.0.3 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+ * QuoJS 1.0.5 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
  * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
@@ -335,6 +335,7 @@ window.Quo = Quo;
         environment.browser = _detectBrowser(user_agent);
         environment.os = _detectOS(user_agent);
         environment.isMobile = (environment.os) ? true : false;
+        environment.screen = _detectScreen();
 
         return environment;
     }
@@ -363,6 +364,13 @@ window.Quo = Quo;
         return detected_os;
     }
 
+    var _detectScreen = function() {
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+    }
+
 })(Quo);
 
 (function($$) {
@@ -383,7 +391,7 @@ window.Quo = Quo;
      * ?
      */
     $$.fn.html = function(value) {
-        return ($$.toType('value') === 'string') ?
+        return ($$.toType(value) === 'string') ?
             this.each(function() {
                 this.innerHTML = value;
             })
@@ -400,7 +408,6 @@ window.Quo = Quo;
                 if (value) {
                     var div = document.createElement();
                     div.innerHTML = value;
-
                     this.appendChild(div.firstChild);
                 }
             } else {
@@ -713,7 +720,7 @@ window.Quo = Quo;
      * ?
      */
     $$.get = function(url, data, success, dataType) {
-        url += _serializeParameters(data);
+        url += $$.serializeParameters(data);
 
         return $$.ajax({
             url: url,
@@ -740,13 +747,28 @@ window.Quo = Quo;
      * ?
      */
     $$.json = function(url, data, success) {
-        url += _serializeParameters(data);
+        url += $$.serializeParameters(data);
 
         return $$.ajax({
             url: url,
             success: success,
             dataType: DEFAULT.MIME
         });
+    };
+
+    /**
+     * ?
+     */
+    $$.serializeParameters = function(parameters) {
+        var serialize = '?';
+        for (var parameter in parameters) {
+            if (parameters.hasOwnProperty(parameter)) {
+                if (serialize !== '?') serialize += '&';
+                serialize += parameter + '=' + parameters[parameter];
+            }
+        }
+
+        return (serialize === '?') ? '' : serialize;
     };
 
     function _xhrStatus(xhr, settings) {
@@ -801,18 +823,6 @@ window.Quo = Quo;
         }
 
         return response;
-    }
-
-    var _serializeParameters = function(parameters) {
-        var serialize = '?';
-        for (var parameter in parameters) {
-            if (parameters.hasOwnProperty(parameter)) {
-                if (serialize !== '?') serialize += '&';
-                serialize += parameter + '=' + parameters[parameter];
-            }
-        }
-
-        return (serialize === '?') ? '' : serialize;
     }
 
     var _isJsonP = function(url) {
