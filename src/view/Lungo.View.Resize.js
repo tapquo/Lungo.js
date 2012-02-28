@@ -24,9 +24,9 @@ LUNGO.View.Resize = (function(lng, undefined) {
         for (var i = 0, len = all_toolbars.length; i < len; i++) {
             var toolbar = lng.dom(all_toolbars[i]);
             var toolbar_children = toolbar.children();
-            var toolbar_children_width = (toolbar.width() / toolbar_children.length);
+            var toolbar_children_percent = 100 / toolbar.children().length;
 
-            toolbar_children.style(ATTRIBUTE.WIDTH, toolbar_children_width + ATTRIBUTE.PIXEL);
+            toolbar_children.style(ATTRIBUTE.WIDTH, toolbar_children_percent + ATTRIBUTE.PERCENT);
         }
     };
 
