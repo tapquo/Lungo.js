@@ -3,7 +3,7 @@
 // LESS CSS3 Mixins by @soyjavi
 //
 // @description CSS3 mixins for LESS projects
-// @version 1.0.1
+// @version 1.2
 //
 //============================================================
 
@@ -71,10 +71,12 @@
 
 .border-radius() {
 	-webkit-border-radius: @arguments;
-		border-radius: @arguments;
+        -moz-border-radius: @arguments;
+	        border-radius: @arguments;
 
 	-webkit-background-clip: padding-box;
-		background-clip: padding-box;
+        -moz-background-clip: padding;
+	        background-clip: padding-box;
 }
 
 
@@ -96,6 +98,7 @@
 
 .box-shadow() {
     -webkit-box-shadow: @arguments;
+        -moz-box-shadow: @arguments;
             box-shadow: @arguments;
 }
 
@@ -116,6 +119,8 @@
 //============================================================
 .transform() {
     -webkit-transform: @arguments;
+        -moz-transform: @arguments;
+        -o-transform: @arguments;
             transform: @arguments;
 }
 
@@ -134,7 +139,9 @@
 
 .translate() {
     -webkit-transform: translate(@arguments);
-		transform: translate(@arguments);
+        -moz-transform: translate(@arguments);
+        -o-transform: translate(@arguments);
+		    transform: translate(@arguments);
 }
 
 
@@ -152,6 +159,8 @@
 
 .scale() {
     -webkit-transform: scale(@arguments);
+        -moz-transform: scale(@arguments);
+        -o-transform: scale(@arguments);
             transform: scale(@arguments);
 }
 
@@ -169,6 +178,8 @@
 
 .rotate() {
     -webkit-transform: rotate(@arguments);
+        -moz-transform: rotate(@arguments);
+        -o-transform: rotate(@arguments);
             transform: rotate(@arguments);
 }
 
@@ -186,6 +197,8 @@
 
 .backface-visibility() {
     -webkit-backface-visibility: @arguments;
+        -moz-backface-visibility: @arguments;
+        -o-backface-visibility: @arguments;
             backface-visibility: @arguments;
 }
 
@@ -206,6 +219,8 @@
 
 .transition() {
     -webkit-transition: @arguments;
+        -moz-transition: @arguments;
+        -o-transition: @arguments;
             transition: @arguments;
 }
 
@@ -224,7 +239,9 @@
 //============================================================
 
 .user-select() {
-	-webkit-user-select: @arguments; 
+	-webkit-user-select: @arguments;
+        -moz-user-select: @arguments;
+        -o-user-select: @arguments;
             user-select: @arguments;
 }
 
