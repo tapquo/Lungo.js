@@ -25,13 +25,25 @@ section {
 	
 	.transform(translate3d(100%, 0, 0));
 	-webkit-backface-visibility: hidden;
-	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
+	-webkit-transition: -webkit-transform 250ms @defaultTrasition;	
 	
-	&:first-child, &.show {	
-		.transform(translate3d(0%, 0, 0));
-		visibility: visible; }
-	&.hide { 
-		.transform(translate3d(-100%, 0, 0));}
+	&:first-child, &.show {	.transform(translate3d(0%, 0, 0)); }
+	&.hide { .transform(translate3d(-100%, 0, 0)); }
+	
+	&.pop {
+    	.transform(scale(0.5));
+    	opacity: 0;
+		-webkit-transition: all 250ms @defaultTrasition;
+		
+		&:first-child, &.show {	
+			.transform(scale(1));
+			opacity: 1;
+		}
+		&.hide { 
+			.transform(scale(1.2));
+			opacity: 0;
+		}
+	}
 }
 /* @end */
 
