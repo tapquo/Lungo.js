@@ -3,14 +3,14 @@
 .onleft{float:left;}
 .onright{float:right;}
 .indented >*{padding:10px;}
-.indented.rounded ul{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.indented.rounded li:first-child{-webkit-border-radius:4px 4px 0px 0px;border-radius:4px 4px 0px 0px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.indented.rounded li:last-child{-webkit-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
+.indented.rounded ul{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
+.indented.rounded li:first-child{-webkit-border-radius:4px 4px 0px 0px;-moz-border-radius:4px 4px 0px 0px;border-radius:4px 4px 0px 0px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
+.indented.rounded li:last-child{-webkit-border-radius:0px 0px 4px 4px;-moz-border-radius:0px 0px 4px 4px;border-radius:0px 0px 4px 4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
 .margin-top-4{margin-top:4px;}
 .hidden{display:none;}
 .semi-opacity{opacity:0.5;}
 .size32{font-size:32px;height:32px;width:32px;line-height:32px;}
 .mini{font-size:20px !important;height:16px !important;width:16px !important;line-height:16px !important;}
 .framed{border:2px solid #fff;}
-.round{-webkit-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;background-clip:padding-box;}
-.bubble{padding:2px 3px 1px;-webkit-border-radius:1px;border-radius:1px;-webkit-background-clip:padding-box;background-clip:padding-box;font-size:0.8em;font-weight:bold;line-height:1.0em;}
+.round{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
+.bubble{padding:2px 3px 1px;-webkit-border-radius:1px;-moz-border-radius:1px;border-radius:1px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;font-size:0.8em;font-weight:bold;line-height:1.0em;}
