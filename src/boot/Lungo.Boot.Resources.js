@@ -34,9 +34,13 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
     var _loadResources = function(resource_key, resources, callback) {
         for (index in resources) {
             var url = _parseUrl(resources[index], resource_key);
-            var response = _loadAsyncResource(url);
 
-            _factoryResources(resource_key, response);
+            try {
+                var response = _loadAsyncResource(url);
+                _factoryResources(resource_key, response);
+            } catch(error) {
+                lng.Core.log(3, ERROR.LOADING_RESOURCE + ' ' + error);
+            }
         }
     };
 
