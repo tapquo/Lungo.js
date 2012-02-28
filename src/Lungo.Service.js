@@ -91,14 +91,14 @@ LUNGO.Service = (function(lng, $$, undefined) {
 
         var url_cache_index = lng.Data.Storage.persistent(URL_CACHE_INDEX_KEY);
         if (url_cache_index) {
-            var time_between = calculateTimeSpent(url_cache_index[url]);
+            var time_between = _calculateTimeSpent(url_cache_index[url]);
             in_cache = _checkIsValidPattern(time_between, date_pattern);
         }
 
         return in_cache;
     };
 
-    var calculateTimeSpent = function(url_last_access) {
+    var _calculateTimeSpent = function(url_last_access) {
         var now = new Date().getTime();
         var service_last_access = new Date(url_last_access).getTime();
 

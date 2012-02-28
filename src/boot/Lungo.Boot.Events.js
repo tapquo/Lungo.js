@@ -27,7 +27,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     var start = function() {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
-        console.error(SELECTORS);
 
         //@ToDo: Error with input type="range"
         //lng.dom(document).on(touch_move_event, _iScroll);
@@ -68,8 +67,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
 
     var _selectTarget = function(link) {
         var target_type = link.data(ATTRIBUTE.TARGET);
-
-        console.error(ELEMENT, target_type);
 
         switch(target_type) {
             case ELEMENT.SECTION:
