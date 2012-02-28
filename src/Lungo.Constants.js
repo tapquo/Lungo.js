@@ -45,6 +45,7 @@ LUNGO.Constants = {
         WIDTH: 'width',
         HEIGHT: 'height',
         PIXEL: 'px',
+        PERCENT: '%',
         TARGET: 'target',
         FIRST: 'first',
         LAST: 'last'
@@ -63,7 +64,8 @@ LUNGO.Constants = {
         BINDING_TEMPLATE: 'ERROR: Binding Template not exists >> ',
         BINDING_LIST: 'ERROR: Processing parameters for list binding.',
         DATABASE: 'ERROR: Connecting to Data.Sql.',
-        ROUTER: 'ERROR: The target does not exists >>'
+        ROUTER: 'ERROR: The target does not exists >>',
+        LOADING_RESOURCE: 'ERROR: Loading resource.'
     }
 
 };
