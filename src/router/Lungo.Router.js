@@ -24,12 +24,12 @@ LUNGO.Router = (function(lng, undefined) {
      */
     var section = function(section_id) {
         var section_id = lng.Core.parseUrl(section_id);
+        var current = _getHistoryCurrent();
         var target = ELEMENT.SECTION + section_id;
 
         if (_existsTarget(target)) {
-            lng.dom(_getHistoryCurrent()).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-
-            lng.dom(target).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+            lng.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+            lng.dom(target).removeClass(CLASS.SHOW_REVOKE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
 
             lng.Router.History.add(section_id);
         }
@@ -83,11 +83,11 @@ LUNGO.Router = (function(lng, undefined) {
      * @method back
      */
     var back = function() {
-        var target = ELEMENT.SECTION + _getHistoryCurrent();
-        lng.dom(target).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
-        lng.Router.History.removeLast();
+        var current_section = ELEMENT.SECTION + _getHistoryCurrent();
 
-        lng.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+        lng.dom(current_section).removeClass(CLASS.SHOW).addClass(CLASS.SHOW_REVOKE).trigger(TRIGGER.UNLOAD);
+        lng.Router.History.removeLast();
+        lng.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.HIDE_REVOKE).addClass(CLASS.SHOW);
     };
 
     var _existsTarget = function(target) {
