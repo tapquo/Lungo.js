@@ -24,6 +24,14 @@ LUNGO.Attributes.Data = {
         selector: '*',
         html: '<input type="search" placeholder="{{value}}"/><a href="#" class="button" data-icon="search"></a>'
     },
+    Progress: {
+        tag: 'progress',
+        selector: '*',
+        html: '<div class="progress" id="yeal">\
+                    <span class="labels"><span></span><span></span></span>\
+                    <span class="bar"><span class="value" style="width:{{value}};"><span class="glow"></span></span></span>\
+                </div>'
+    },
     Label: {
         tag: 'label',
         selector: 'a',
