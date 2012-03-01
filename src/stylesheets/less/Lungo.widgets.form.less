@@ -8,6 +8,9 @@
  */
 
 @import "mixins.less";
+
+@defaultTrasition : @easeOutSine;
+
 .form {
 	
 }
@@ -189,7 +192,6 @@ input[type="checkbox"]:checked + span::after,
 /* @end */
 
 /* @group range */
-
 input[type="range"] {
 	-webkit-appearance:	none;
 	height: 3px;
@@ -200,31 +202,50 @@ input[type="range"] {
 	padding: 0px;
 	margin: 0px;
 	margin-bottom: 4px !important;
-	
-	background-color: #c7c7c7;
-	
 	border: 0;
 	cursor: ew-resize;
 	
-	&:active { background-color: #34b7dc; }
 	&::-webkit-slider-thumb {
 		-webkit-appearance:	none;	
 		position: relative;
-		z-index: 		1;
+		z-index: 1;
 	
 		width: 24px;
 		height: 24px;
 		border-radius: 12px;
-		border: solid 7px rgba(255,255,255, 0.5);
-		
-		background: #34b7dc;
-		//box-shadow: inset 0px 0px 1px rgba(0,0,0,0.2);
-	}
-	&:active::-webkit-slider-thumb {
-		box-shadow: 0px 0px 4px #34b7dc;
 	}
 }
 /* @end */
+
+/* @group progress */
+.progress {
+    width: 100%;
+    
+    .labels {
+    	display: block;
+		& span:last-child { float: right; }
+	}
+	
+    & .bar {
+		height:  3px;
+		display: block;
+		
+    	& .value {
+			display:block;
+	    	height: inherit;
+	    	width: 0%;
+	    	-webkit-transition: width 250ms @defaultTrasition;	
+	    	
+	    	& .glow {
+				float:right;
+				height: inherit;
+	    		width: 3px;
+	    	}
+		}
+	}
+}
+/* @end */
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	.custom-select select {padding-right:30px;}
