@@ -44,7 +44,42 @@ section {
 			opacity: 0;
 		}
 	}
+	
+	&.flow {
+    	.transform(translate3d(100%, 0, 0) scale(0.7));
+		
+		&:first-child, &.show {	 -webkit-animation: flow-show 350ms 500ms @defaultTrasition forwards; }
+		&.show-revoke { -webkit-animation: flow-show-revoke 350ms @defaultTrasition forwards; }
+		
+		&.hide { -webkit-animation: flow-hide 350ms @defaultTrasition forwards; }
+		&.hide-revoke { -webkit-animation: flow-hide-revoke 350ms 500ms @defaultTrasition forwards; }
+	}
 }
+/*
+@-webkit-keyframes flow-show {
+    0% { -webkit-transform: translateX(100%) scale(.7); }
+    50% { -webkit-transform: translateX(0%) scale(.7);}
+    100% { -webkit-transform: translateX(0%) scale(1);}
+}
+
+@-webkit-keyframes flow-show-revoke {
+    0% { -webkit-transform: translateX(0%) scale(1); }
+    50% { -webkit-transform: translateX(0%) scale(.7);}
+    100% { -webkit-transform: translateX(100%) scale(.7);}
+}
+
+@-webkit-keyframes flow-hide {
+    0% { -webkit-transform: translateX(0%) scale(1); }
+    50% { -webkit-transform: translateX(0%) scale(.7); }
+    100% { -webkit-transform: translateX(-100%) scale(.7); }
+}
+
+@-webkit-keyframes flow-hide-revoke {
+    0% { -webkit-transform: translateX(-100%) scale(.7); }
+    50% { -webkit-transform: translateX(0%) scale(.7);}
+    100% { -webkit-transform: translateX(0%) scale(1);}
+}
+*/
 /* @end */
 
 /* @group <header> & <footer> */

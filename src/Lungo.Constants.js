@@ -24,11 +24,14 @@ LUNGO.Constants = {
         ACTIVE: 'active',
         ASIDE: 'aside',
         SHOW: 'show',
+        SHOW_REVOKE: 'show-revoke',
         HIDE: 'hide',
+        HIDE_REVOKE: 'hide-revoke',
         CURRENT: 'current',
         RIGHT: 'onright',
         LEFT: 'onleft',
-        HORIZONTAL: 'horizontal'
+        HORIZONTAL: 'horizontal',
+        FLOW: 'flow'
     },
 
     TRIGGER: {
