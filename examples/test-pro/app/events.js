@@ -14,7 +14,14 @@ App.Events = (function(lng, undefined) {
             el: '#art-3',
             template: 'home-tmp',
             data: homes
-        })
+        });
+
+        setTimeout(function() {lng.View.Element.progress('.progress', 10, true, 'Downloading 1/5...');}, 500);
+        setTimeout(function() {lng.View.Element.progress('.progress', 30, true, 'Downloading 2/5...');}, 1100);
+        setTimeout(function() {lng.View.Element.progress('.progress', 40, true, 'Downloading 3/5...');}, 1600);
+        setTimeout(function() {lng.View.Element.progress('.progress', 55, true, 'Downloading 4/5...');}, 1900);
+        setTimeout(function() {lng.View.Element.progress('.progress', 70, true, 'Downloading 5/5...');}, 2200);
+        setTimeout(function() {lng.View.Element.progress('.progress', 100, true, 'Finished.');}, 3000);
     });
 
     //Toggle Aside
