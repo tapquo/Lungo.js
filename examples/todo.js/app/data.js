@@ -46,13 +46,13 @@ App.Data = (function(lng, App, undefined) {
 
     var _pendingTodos = function() {
         lng.Data.Sql.select('todo', {done:0}, function(result) {
-            App.View.list('pending', 'pending-tmp', result);
+            App.View.list('#pending', 'pending-tmp', result);
         });
     };
 
     var _doneTodos = function() {
         lng.Data.Sql.select('todo', {done:1}, function(result){
-            App.View.list('done', 'list-tmp', result);
+            App.View.list('#done', 'list-tmp', result);
         });
     };
 
