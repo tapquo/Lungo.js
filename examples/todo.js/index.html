@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
     <link rel="apple-touch-startup-image" href="assets/images/default.png">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../../release/lungo-1.1.min.css">
+    <link rel="stylesheet" href="../../release/lungo-1.2.min.css">
     <link rel="stylesheet" href="../../release/lungo.theme.default.css">
     <!-- Sugars :) -->
     <link rel="stylesheet" href="assets/sugars/lungo.sugar.growl.min.css">
@@ -26,8 +26,8 @@
 
 <body class="app">
     <section id="login">
-        <article class="splash">
-            <div class="indented">
+        <article class="splash indented">
+            <div>
                 <h1>ToDo.<span class="semi-opacity">js<span></h1>
                 <input type="text" placeholder="Type your user" />
                 <input type="password" placeholder="Type your password" />
@@ -40,51 +40,42 @@
 	<section id="main">
 		<header data-title="ToDo.js">
             <nav class="onright">
-			     <a href="#new" data-target="section" data-icon="add"></a>
+			     <a href="#new" data-target="section" class="active" data-icon="plus"><abbr>New Task</abbr></a>
             </nav>
 		</header>
 
         <article id="pending" class="list"></article>
         <article id="done" class="list"></article>
 
-        <footer class="toolbar">
+        <footer class="toolbar with-labels">
             <nav>
-                <a href="#pending" data-target="article" class="current" data-title="Pending ToDo's" data-icon="folder"></a>
-                <a href="#done" data-target="article" data-title="Done ToDo's" data-icon="trash"></a>
+                <a href="#pending" data-target="article" class="current" data-label="Pending" data-icon="folder"></a>
+                <a href="#done" data-target="article" data-label="Done" data-icon="check"></a>
             </nav>
         </footer>
     </section>
 
     <section id="view">
-        <header data-back="home articblue" data-title="View" >
+        <header data-title="View" >
+            <nav class="onleft">
+                <a href="#back" data-target="section" class="current" data-icon="left"><abbr>Back</abbr></a>
+            </nav>
             <nav class="onright">
-                <a href="#" id="btnDeleteTodo" data-icon="trash"></a>
+                <a href="#" id="btnDeleteTodo" class="active" data-icon="trash"><abbr>Delete</abbr></a>
             </nav>
         </header>
-        <article class="list">
-            <div class="indented">
-                <ul class="form">
-                    <li class="tip dark" data-icon="pencil mini">Edit ToDo</li>
-                    <li class="dark">
-                        <label>Name</label>
-                        <input type="text" id="txtEditName" placeholder="Input text"/>
-                        <label>Description</label>
-                        <textarea id="txtEditDescription" placeholder="Textarea sample"></textarea>
-                    </li>
-                    <li>
-                        <label>Type</label>
-                        <label class="select">
-                            <select id="txtEditType">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </label>
-                    </li>
-                </ul>
+        <article class="list indented">
+            <ul class="form">
+                <li class="tip dark" data-icon="pencil mini">Edit ToDo</li>
+                <li class="dark">
+                    <label>Name</label>
+                    <input type="text" id="txtEditName" placeholder="Input text"/>
+                    <label>Description</label>
+                    <textarea id="txtEditDescription" placeholder="Textarea sample"></textarea>
+                </li>
                 <a href="#" id="btnUpdateTodo" class="button big" data-icon="pencil">Update</a>
                 <a href="#" id="btnDoneTodo" class="button big red" data-icon="check">Done</a>
-            </div>
+            </ul>
         </article>
     </section>
 
@@ -94,36 +85,23 @@
                 <a href="#back" data-target="section" class="current" data-icon="left"><abbr>Back</abbr></a>
             </nav>
         </header>
-		<article class="list">
-            <div class="indented">
-                <ul class="form">
-                    <li>
-                        <label>Name</label>
-                        <input type="text" id="txtNewName" placeholder="Input text"/>
-                    </li>
-                    <li>
-                        <label>Description</label>
-                        <textarea id="txtNewDescription" placeholder="Textarea sample"></textarea>
-                    </li>
-                    <li>
-                        <label>Type</label>
-                        <label class="select">
-                            <select id="txtNewType">
-                                <option value="1">Personal</option>
-                                <option value="2">Someday</option>
-                                <option value="3">Tomorrow</option>
-                            </select>
-                        </label>
-                    </li>
-                </ul>
+		<article class="list indented">
+            <ul class="form">
+                <li>
+                    <label>Name</label>
+                    <input type="text" id="txtNewName" placeholder="Input text"/>
+                </li>
+                <li>
+                    <label>Description</label>
+                    <textarea id="txtNewDescription" placeholder="Textarea sample"></textarea>
+                </li>
                 <a href="#" id="btnNewTodo" class="button big" data-icon="check">Add ToDo</a>
-            </div>
+            </ul>
 		</article>
 	</section>
 
     <!-- LungoJS (Production mode) -->
-    <script src="../../release/lungo-1.1.packed.js"></script>
-
+    <script src="../../release/lungo-1.2.packed.js"></script>
     <script src="assets/sugars/lungo.sugar.growl.min.js"></script>
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
