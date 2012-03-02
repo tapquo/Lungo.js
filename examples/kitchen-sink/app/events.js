@@ -2,6 +2,9 @@ App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
         App.Services.mockProfiles();
+
+
+        lng.View.Aside.show('#kitchen-sink', '#kitchen-sink-scroll');
     });
 
     lng.dom('#event_touchstart').touch(function(event) { alert("touchstart!"); });
