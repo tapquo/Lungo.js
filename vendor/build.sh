@@ -1,5 +1,5 @@
 #!/bin/bash
-VERSION="1.2.BETA"
+VERSION="1.2"
 
 #define paths
 COMPILER=google-compiler/compiler.jar
@@ -115,7 +115,7 @@ FILES_TO_COMPRESS=""
     #done
 
 	DIR=$LUNGO_SOURCES"stylesheets/css/"
-	FILES=(default.css)
+	FILES=(default.css default.font.css)
 	echo -e "\033[33m  [DIR]: "$DIR
 	for file in "${FILES[@]}"
 	do
