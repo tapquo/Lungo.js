@@ -1,6 +1,20 @@
 # LungoJS
 ### HTML5 Mobile Framework, and stuff.
 
+## Changes in Version 1.2
+- New improved Scroll: Refresh, Append, Prepend...
+- New input element (iOS 5+, Android 2.3+): type="range"
+- New data-attribute: data-progress
+- New <section> transitions: pop & flow
+- ...
+- BUG FIXED:
+    -
+
+## Changes in Version 1.1.2
+- BUG FIXED:
+    - Icon repository supported in Android Honeycomb (3.0+)
+    - Icon repository supported in Android IceCream Sandwich (4.0+)
+
 ## Changes in Version 1.1.1
 
 - BUG FIXED:
