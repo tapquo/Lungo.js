@@ -22,5 +22,5 @@ input[type="checkbox"]:checked+span::before,input[type="radio"]:checked+span::be
 input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{height:27px;}
 input[type="range"]{-webkit-appearance:none;height:3px;width:100%;outline:none;border-radius:1px;position:relative;padding:0px;margin:0px;margin-bottom:4px !important;border:0;cursor:ew-resize;}input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;position:relative;z-index:1;width:24px;height:24px;border-radius:12px;}
 .progress{width:100%;}.progress .labels{display:block;}.progress .labels span:last-child{float:right;}
-.progress .bar{height:3px;display:block;}.progress .bar .value{display:block;height:inherit;width:0%;-webkit-transition:width 250ms cubic-bezier(0.39, 0.575, 0.565, 1);}.progress .bar .value .glow{float:right;height:inherit;width:3px;}
+.progress .bar{height:3px;display:block;}.progress .bar .value{display:block;height:inherit;width:0%;-webkit-transition:width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);}.progress .bar .value .glow{float:right;height:inherit;width:3px;}
 @media screen and (-webkit-min-device-pixel-ratio:0){.custom-select select{padding-right:30px;}}

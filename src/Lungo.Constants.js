@@ -51,7 +51,8 @@ LUNGO.Constants = {
         PERCENT: '%',
         TARGET: 'target',
         FIRST: 'first',
-        LAST: 'last'
+        LAST: 'last',
+        EMPTY: ''
     },
 
     BINDING: {
