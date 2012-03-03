@@ -4,7 +4,20 @@ var App = (function(lng, undefined) {
 
     lng.App.init({
         name: 'Release-Test',
-        version: '1.1'
+        version: '1.2',
+        resources: {
+            sections: [
+                'navigation.html',
+                'buttons.html',
+                'lists.html',
+                'settings.html',
+                'forms.html',
+                'buttons-extra.html',
+                'aside.html',
+                'aside-profiles.html',
+                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
+                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html']
+        }
     });
 
 

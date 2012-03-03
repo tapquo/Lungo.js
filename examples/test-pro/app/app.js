@@ -2,7 +2,7 @@ var App = (function(lng, undefined) {
 
     lng.App.init({
         name: 'Kitchen Sink',
-        version: '1.1',
+        version: '1.2',
         resources: {
             sections: [
                 'local.html',
