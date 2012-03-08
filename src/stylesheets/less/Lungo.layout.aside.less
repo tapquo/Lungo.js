@@ -33,49 +33,36 @@ aside {
 	
 	&.onright { right: 0px; }
 	&.current { visibility: visible;} 
-}
-
-header:not(.extended) ~ aside { top: @header_footer_height; }    
-header.extended ~ aside { top: @header_extended_height; }        
-footer ~ aside { 
-    bottom: @header_footer_height; 
-    height: auto; 
-}
-    footer.toolbar ~ aside { bottom: @footer_toolbar_height; }
-
-aside ~ article {
-    .transform(translate3d(0px, 0, 0));
-    -webkit-transition: -webkit-transform 250ms @defaultTrasition;
+	
+	& .title {
+    	line-height: 40px;
+	    font-size: 15px;
+	    font-weight: bold;
+		height: 40px;    	
+	}
+	
+	& a {
+    	display: block;
+		width: 244px;
+		height: 40px;
+	
+		font-size: 15px;
+		line-height: 40px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		
+	}
+	
+	& .bubble {
+    	float: right;
+    	font-size: 11px;
+	}
 }
 
 aside .title, aside a, aside .anchor {    
 	padding: 0 6px;
 }
-
-aside .title {    
-    line-height: 40px;
-    font-size: 15px;
-    font-weight: bold;
-	height: 40px;
-}
-
-aside a {
-	display: block;
-	width: 244px;
-	height: 40px;
-
-	font-size: 15px;
-	line-height: 40px;
-	overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-}
-
-
-	aside .bubble {
-    	float: right;
-    	font-size: 11px;
-    }
 
 aside a .bubble, aside .title .bubble {
 	margin-top: 13px;
@@ -102,15 +89,13 @@ aside .anchor .bubble {
 	@media handheld, only screen and (min-width: 768px) {
 		[data-target="aside"] { display: none !important; }
 		
-		section {
+		section.aside {
 			width: auto !important;
-	    	left: 256px;
-	    	right:  0px !important;
-	    	-webkit-transition: none;
+    		left: 256px !important;
+    		right: 0px !important;
+    		.transform(translate3d(0px, 0, 0));
+    		-webkit-transition: none;
 
-	    	&.hide {
-    			z-index: -1;
-			}
 		}
 	}
 /* @end */
