@@ -86,9 +86,9 @@
 
 <body class="app">
 
-    <section id="sec-1" class="flow">
+    <section id="sec-1" class="aside">
         <header data-title="Test Asides">
-            <a href="#asi-1" data-target="aside" class="button blue onleft">asi-1</a>
+            <a href="#asi-1" data-target="aside" data-article="art-1" class="button blue onleft">asi-1</a>
             <a href="#asi-2" data-target="aside" class="button green onright">sec-2</a>
         </header>
         <footer class="toolbar">
@@ -101,7 +101,8 @@
             </nav>
         </footer>
 
-        <article id="art-1" class="list indented">
+        <article id="art-1" class="list scrollable indented">
+            <div>
             <ul class="form">
                 <li> <input type="range"></li>
                 <li data-progress="0%"></li>
@@ -119,6 +120,24 @@
                 </li>
                 <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
             </ul>
+            <ul class="form">
+                <li> <input type="range"></li>
+                <li data-progress="0%"></li>
+            </ul>
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of select</li>
+                <li>
+                    <label class="select">
+                        <select class="custom">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </label>
+                </li>
+                <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
+            </ul>
+            </div>
         </article>
         <article id="art-2">Art-2
             <p>
@@ -130,7 +149,7 @@
         <article id="art-3" class="list indented scrollable"></article>
     </section>
 
-    <section id="sec-2" class="flow">
+    <section id="sec-2" class="">
         <header data-back="home"></header>
         <article>
         </article>
@@ -141,9 +160,10 @@
         <a href="#sec-2" data-target="section">Sec-1</a>
     </aside>
 
-    <section id="test" class="flow">
+    <section id="test" class="">
         <header data-title="Groupbar" class="extended" data-back="home">
             <nav class="onright">
+                <a href="#" data-article="list-auto" class="button orange" data-icon="settings"></a>
                 <a href="#" data-article="list-added" class="button red" data-icon="up"></a>
                 <a href="#" data-article="list-added" class="button red prepend" data-icon="down"></a>
                 <a href="#" data-article="list-dinamics" class="button green">Append</a>
