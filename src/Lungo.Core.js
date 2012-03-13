@@ -175,6 +175,31 @@ LUNGO.Core = (function(lng, $$, undefined) {
         return href;
     };
 
+    /**
+     * Find a Object in a list by a property value
+     *
+     * @method objectInListByProperty
+     *
+     * @param {list}
+     * @param {string}
+     * @param {} obj
+     * @return {object} Instance of object founded (if exists)
+     */
+     var objectInListByProperty = function(list, property, value) {
+        var search = null;
+
+        for (var i = 0, len = list.length; i < len; i++) {
+            var element = list[i];
+
+            if (element[property] == value) {
+                search = element;
+                break;
+            }
+        };
+
+        return search;
+    };
+
     return {
         log: log,
         execute: execute,
@@ -186,7 +211,8 @@ LUNGO.Core = (function(lng, $$, undefined) {
         isMobile: isMobile,
         environment: environment,
         orderByProperty: orderByProperty,
-        parseUrl: parseUrl
+        parseUrl: parseUrl,
+        objectInListByProperty: objectInListByProperty
     };
 
 })(LUNGO, Quo);
