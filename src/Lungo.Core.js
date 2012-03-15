@@ -140,11 +140,14 @@ LUNGO.Core = (function(lng, $$, undefined) {
     };
 
     /**
-     * Returns information of execute environment
+     * Returns a ordered list of objects by a property
      *
-     * @method environment
+     * @method orderByProperty
      *
-     * @return {object} Environment information
+     * @param {list} List of objects
+     * @param {string} Name of property
+     * @param {string} Type of order: asc (ascendent) or desc (descendent)
+     * @return {list} Ordered list
      */
     var orderByProperty = function(data, property, order) {
         var order_operator = (order === 'desc') ? -1 : 1;
@@ -163,7 +166,8 @@ LUNGO.Core = (function(lng, $$, undefined) {
      *
      * @method parseUrl
      *
-     * @return {string} Href
+     * @param {string} Url
+     * @return {string} Url parsed
      */
     var parseUrl = function(href) {
         var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
@@ -176,16 +180,16 @@ LUNGO.Core = (function(lng, $$, undefined) {
     };
 
     /**
-     * Find a Object in a list by a property value
+     * Returns a Object in a list by a property value
      *
      * @method objectInListByProperty
      *
-     * @param {list}
-     * @param {string}
-     * @param {} obj
+     * @param {list} List of objects
+     * @param {string} Name of property
+     * @param {var} Value for comparision
      * @return {object} Instance of object founded (if exists)
      */
-     var objectInListByProperty = function(list, property, value) {
+     var findByProperty = function(list, property, value) {
         var search = null;
 
         for (var i = 0, len = list.length; i < len; i++) {
@@ -212,7 +216,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
         environment: environment,
         orderByProperty: orderByProperty,
         parseUrl: parseUrl,
-        objectInListByProperty: objectInListByProperty
+        findByProperty: findByProperty
     };
 
 })(LUNGO, Quo);

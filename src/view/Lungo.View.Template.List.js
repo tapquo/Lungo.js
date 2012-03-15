@@ -31,6 +31,14 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         }
 	};
 
+    /**
+     * Append a list based DataBind with a configuration object for an element <article>
+     * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     *
+     * @method append
+     *
+     * @param {object} Id of the container showing the result of databinding
+     */
     var append = function(config) {
         var markup = lng.View.Template.markup(config.template, config.data);
         var container = _getContainer(config.el);
@@ -39,6 +47,14 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         _scroll(config.el, ATTRIBUTE.LAST);
     };
 
+    /**
+     * Prepend a list based DataBind with a configuration object for an element <article>
+     * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     *
+     * @method prepend
+     *
+     * @param {object} Id of the container showing the result of databinding
+     */
     var prepend = function(config) {
         var markup = lng.View.Template.markup(config.template, config.data);
         var container = _getContainer(config.el);
