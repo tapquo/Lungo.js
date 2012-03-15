@@ -15,10 +15,28 @@ LUNGO.Data.Storage = (function(lng, undefined) {
         SESSION: 'sessionStorage'
     };
 
+    /**
+     * Wrapper for SessionStorage
+     *
+     * @method persistent
+     *
+     * @param {string} Key
+     * @param {object} Value
+     * @return {string} If no value assigned returns the value of established key
+     */
 	var persistent = function(key, value) {
         return _handler(STORAGE.PERSISTENT, key, value);
 	};
 
+    /**
+     * Wrapper for SessionStorage
+     *
+     * @method session
+     *
+     * @param {string} Key
+     * @param {object} Value
+     * @return {string} If no value assigned returns the value of established key
+     */
 	var session = function(key, value) {
         return _handler(STORAGE.SESSION, key, value);
 	};

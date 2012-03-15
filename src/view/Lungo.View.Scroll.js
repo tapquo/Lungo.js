@@ -74,11 +74,12 @@ LUNGO.View.Scroll = (function(lng, undefined) {
     };
 
     /**
-     * Removes iScroll instance.
+     * Refresh iScroll instance.
      *
      * @method refresh
      *
-     * @param {Object} Id of the <section>
+     * @param {string} Id of the container scroll.
+     * @param {object} [OPTIONAL] Properties
      */
     var refresh = function(id, properties) {
         _render(id, properties);
@@ -89,7 +90,7 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      *
      * @method remove
      *
-     * @param {string} Id of the <section>
+     * @param {string} Id of the container scroll.
      */
     var remove = function(id) {
         if (lng.Data.Cache.exists(CACHE_KEY) && lng.Data.Cache.get(CACHE_KEY, id)) {

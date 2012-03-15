@@ -70,18 +70,18 @@ LUNGO.Service = (function(lng, $$, undefined) {
      * @param  {Function} [OPTIONAL] Callback function after the request
      * @param  {string} Mime-Type: json, xml, html, or text [OPTIONAL]
      */
-    var cache = function(url, data, date_pattern, success, dataType) {
+    var cache = function(url, data, date_pattern, callback, dataType) {
         var url_key = url + $$.serializeParameters(data);
 
         if (_urlCached(url_key, date_pattern)) {
             var value = lng.Data.Storage.persistent(url_key);
             if (value) {
-                return success.call(success, value);
+                return callback.call(callback, value);
             }
         } else {
             return $$.get(url, data, function(result) {
                 _saveServiceInCache(url_key, result);
-                success.call(success, result);
+                callback.call(callback, result);
             }, dataType);
         }
     };

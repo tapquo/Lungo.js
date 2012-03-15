@@ -15,12 +15,12 @@ LUNGO.View.Aside = (function(lng, undefined) {
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
     /**
-     * ?
+     * Display an aside element for a particular <section>
      *
      * @method show
      *
-     * @param  {string} Element query selector
-     * @param  {string} Value for counter
+     * @param  {string} Section id
+     * @param  {string} Aside id
      */
     var show = function(section_id, aside_id) {
         var aside = lng.dom(ELEMENT.ASIDE + aside_id);
@@ -32,7 +32,7 @@ LUNGO.View.Aside = (function(lng, undefined) {
     };
 
     /**
-     * ?
+     * Hide an aside element for a particular section
      *
      * @method hide
      *

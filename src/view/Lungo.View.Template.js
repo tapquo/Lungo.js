@@ -53,9 +53,9 @@ LUNGO.View.Template = (function(lng, undefined) {
     /**
      * Performs databinding process for a data set and a given template
      *
-     * @method binding
+     * @method render
      *
-     * @param {String} Id of the container showing the result of databinding
+     * @param {String} Element selector for showing the result of databinding
      * @param {String} Databinding Template Id
      * @param {Object} Data for binding
      * @param {Function} Callback when the process is complete
