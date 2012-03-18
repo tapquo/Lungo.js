@@ -1,17 +1,18 @@
 <!doctype html>
-<html manifest="index.appcache">
+<html>
 <head>
     <meta charset="utf-8">
-    <title>LungoJS</title>
+    <title>LungoJS - Kitchen Sink</title>
     <meta name="description" content="">
     <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
     <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta http-equiv="cleartype" content="on">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
     <!-- For iPhone 4 with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icon@2x.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icon-72.png">
@@ -20,6 +21,34 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../../release/lungo-1.2.min.css">
     <link rel="stylesheet" href="../../release/lungo.theme.default.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
+
+    <style>
+        @-webkit-keyframes flow-show {
+            0% { -webkit-transform: translateX(100%) scale(.7); }
+            50% { -webkit-transform: translateX(0%) scale(.7);}
+            100% { -webkit-transform: translateX(0%) scale(1);}
+        }
+
+        @-webkit-keyframes flow-show-revoke {
+            0% { -webkit-transform: translateX(0%) scale(1); }
+            50% { -webkit-transform: translateX(0%) scale(.7);}
+            100% { -webkit-transform: translateX(100%) scale(.7);}
+        }
+
+        @-webkit-keyframes flow-hide {
+            0% { -webkit-transform: translateX(0%) scale(1); }
+            50% { -webkit-transform: translateX(0%) scale(.7); }
+            100% { -webkit-transform: translateX(-100%) scale(.7); }
+        }
+
+        @-webkit-keyframes flow-hide-revoke {
+            0% { -webkit-transform: translateX(-100%) scale(.7); }
+            50% { -webkit-transform: translateX(0%) scale(.7);}
+            100% { -webkit-transform: translateX(0%) scale(1);}
+        }
+    </style>
 </head>
 
 <body class="app">
@@ -219,8 +248,42 @@
 
         <!-- ============================= scrolls ============================= -->
         <article id="scrolls">
-            <div id="scroll_vertical" class="container-scroll vertical scrollable"></div>
-            <div id="scroll_horizontal" class="container-scroll horizontal scrollable"></div>
+            <div id="scroll-horizontal" class="scroll-demo scrollable horizontal">
+                <div style="width: 1036px;">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                    <span>13</span>
+                    <span>14</span>
+                    <span>15</span>
+                </div>
+            </div>
+
+            <div id="scroll-vertical" class="scroll-demo scrollable vertical">
+                <div>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                </div>
+            </div>
         </article>
 
         <!-- ============================= authors ============================= -->
@@ -258,14 +321,13 @@
 
     </section>
 
-    <!-- LungoJS (Production mode) -->
+     <!-- LungoJS (Production mode) -->
     <script src="../../release/lungo-1.2.packed.js"></script>
-
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
-    <script src="app/data.js"></script>
     <script src="app/events.js"></script>
-    <script src="app/services.js"></script>
     <script src="app/view.js"></script>
+    <script src="app/data.js"></script>
+    <script src="app/services.js"></script>
 </body>
 </html>

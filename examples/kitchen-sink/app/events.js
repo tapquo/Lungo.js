@@ -3,8 +3,8 @@ App.Events = (function(lng, undefined) {
     lng.ready(function() {
         App.Services.mockProfiles();
 
-
         lng.View.Aside.show('#kitchen-sink', '#kitchen-sink-scroll');
+        lng.View.Element.progress('.progress', 10, true, 'Downloading 1/5...');
     });
 
     lng.dom('#event_touchstart').touch(function(event) { alert("touchstart!"); });
@@ -29,6 +29,34 @@ App.Events = (function(lng, undefined) {
 
     lng.dom('a[href="#scrolls"]').on('tap', function(event) {
         App.View.mockScrolls();
+    });
+
+    lng.dom('section#navigation-index article a').tap(function(event) {
+        var type_of_transition = lng.dom(this).attr('class') || 'normal';
+
+        lng.dom('section#navigation-index').removeClass('pop').removeClass('flow').addClass(type_of_transition);
+
+        setTimeout(function() {
+            lng.Router.section('navigation-' + type_of_transition);
+        }, 100);
+    });
+
+    //List.Append & List.prepend
+    lng.dom('section#lists header .onright a').tap(function(event) {
+        var param = {
+            el: '#list-dinamic',
+            template: 'profile-tmp',
+            data: {
+                name: 'Dinamic item list',
+                description: '@soyjavi'
+            }
+        };
+
+        if ($$(this).hasClass('prepend')) {
+            lng.View.Template.List.append(param);
+        } else {
+            lng.View.Template.List.prepend(param);
+        }
     });
 
 

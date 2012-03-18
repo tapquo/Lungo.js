@@ -7,6 +7,10 @@ var App = (function(lng, undefined) {
         resources: {
             sections: [
                 'navigation.html',
+                'navigation-index.html',
+                'navigation-normal.html',
+                'navigation-pop.html',
+                'navigation-flow.html',
                 'buttons.html',
                 'lists.html',
                 'settings.html',

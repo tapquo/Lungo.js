@@ -28,10 +28,6 @@ App.Services = (function(lng, App, undefined) {
         parameters.el = '#list-indented';
         lng.View.Template.List.create(parameters);
 
-        //Rounded List
-        parameters.el = '#list-rounded';
-        lng.View.Template.List.create(parameters);
-
         //Ordered List
         parameters.el = '#list-ordered';
         parameters.order = { field: 'name', type: 'asc' };
