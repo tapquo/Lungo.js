@@ -1,13 +1,16 @@
 var App = (function(lng, undefined) {
 
-    //Define your LungoJS Application Instance
 
     lng.App.init({
-        name: 'Release-Test',
+        name: 'Kitchen Sink',
         version: '1.2',
         resources: {
             sections: [
                 'navigation.html',
+                'navigation-index.html',
+                'navigation-normal.html',
+                'navigation-pop.html',
+                'navigation-flow.html',
                 'buttons.html',
                 'lists.html',
                 'settings.html',
@@ -20,11 +23,10 @@ var App = (function(lng, undefined) {
         }
     });
 
-
     var _getEnvironmentFromQuoJS = (function() {
         var environment = lng.Core.environment();
         if (environment.isMobile) {
-            alert('RELESE: Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
+           // alert('Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
         }
     })();
 
