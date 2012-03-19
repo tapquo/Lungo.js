@@ -9,8 +9,10 @@
 
 @import "mixins.less";
 
-.form, form {
-	width: inherit !important;
+@defaultTrasition : @easeOutSine;
+
+.form {
+	
 }
 
 label {
@@ -54,6 +56,7 @@ input[type=search] {
 
 select { 
 	width: 100%;
+	height: 29px;
 }
 
 label.select {
@@ -188,43 +191,61 @@ input[type="checkbox"]:checked + span::after,
 }
 /* @end */
 
-/* @group slider */
-/*
+/* @group range */
 input[type="range"] {
 	-webkit-appearance:	none;
-	outline: none;
 	height: 3px;
+	width: 100%;
+	outline: none;
 	border-radius: 1px;
 	position: relative;
 	padding: 0px;
 	margin: 0px;
-	
-	background-color: #c7c7c7;
-	
+	margin-bottom: 4px !important;
 	border: 0;
 	cursor: ew-resize;
-}
-	input[type="range"]:active { background-color: #34b7dc; }
-
-input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance:	none;	
-	position: relative;
-	z-index: 		1;
-
-	width: 12px;
-	height: 12px;
 	
-	border-radius: 6px;
-	background: #34b7dc;
-	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.5);
+	&::-webkit-slider-thumb {
+		-webkit-appearance:	none;	
+		position: relative;
+		z-index: 1;
 	
-}
-	input[type="range"]:hover::-webkit-slider-thumb,
-	input[type="range"]:active::-webkit-slider-thumb {
-		box-shadow: 0px 0px 8px #34b7dc;
+		width: 24px;
+		height: 24px;
+		border-radius: 12px;
 	}
-*/
+}
 /* @end */
+
+/* @group progress */
+.progress {
+    width: 100%;
+    
+    .labels {
+    	display: block;
+		& span:last-child { float: right; }
+	}
+	
+    & .bar {
+		height:  3px;
+		display: block;
+		
+    	& .value {
+			display:block;
+	    	height: inherit;
+	    	width: 0%;
+	    	-webkit-transition: width 500ms @defaultTrasition;	
+	    	
+	    	& .glow {
+				float:right;
+				height: inherit;
+	    		width: 3px;
+	    	}
+		}
+	}
+}
+/* @end */
+
 
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	.custom-select select {padding-right:30px;}

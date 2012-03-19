@@ -1,78 +1,46 @@
 <!doctype html>
-<html manifest="index.appcache">
+<html>
 <head>
     <meta charset="utf-8">
-    <title>LungoJS</title>
+    <title>LungoJS - Kitchen Sink</title>
     <meta name="description" content="">
     <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
     <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta http-equiv="cleartype" content="on">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
     <!-- For iPhone 4 with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icon@2x.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icon-72.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
     <link rel="apple-touch-startup-image" href="assets/images/default.png">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../../release/lungo-1.1.1.min.css">
-    <link rel="stylesheet" href="../../release/lungo.theme.default.css">
+    <link rel="stylesheet" href="lungojs/lungo-1.2.min.css">
+    <link rel="stylesheet" href="lungojs/lungo.theme.default.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
 </head>
 
 <body class="app">
-
-
-    <section id="login">
-        <article class="splash">
-            <div class="indented">
-                <h1>Kitchen<span class="semi-opacity">Sink<span></h1>
-
-                <input type="text" placeholder="Type your user" />
-                <input type="password" placeholder="Type your password" />
-
-                <a href="#kitchen-sink" data-target="section" class="button big" data-icon="check">Go to Kitchen Sink!</a>
-                <div class="copyright">Copyright TapQuo Inc, 2011</div>
-
-
-
-                <div class="switch">
-                    <span class="thumb"></span>
-                    <input type="checkbox" checked="off" />
-                </div>
-
-            </div>
-        </article>
-    </section>
 
     <!-- ============================= kitchen-sink ============================= -->
 
     <section id="kitchen-sink">
         <header data-title="LungoJS Kitchen Sink">
-            <a href="#" class="button" data-target="aside" data-icon="items"></a>
+            <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside" data-icon="items"></a>
+            <nav class="onright">
+                <a href="#profiles" data-target="aside" data-article="welcome" class="button">Profiles</a>
+                <a href="#buttons-extra" data-target="section" data-article="buttons" class="button">Other Examples</a>
+            </nav>
         </header>
 
-        <aside id="kitchen-sink-scroll" class="scrollable">
-            <div>
-                <a href="#welcome" data-target="article" class="current" data-icon="wifi">Welcome</a>
-                <a href="#authors" data-target="article" data-icon="group">Author & Contributors</a>
-                <a href="#navigation" data-target="section" data-icon="map">Navigation</a>
-                <a href="#buttons" data-target="article" data-icon="plus" data-count="14">Buttons & Colours</a>
-                <a href="#icons" data-target="article" data-icon="picture" data-count="94">Icons</a>
-                <a href="#data-attributes" data-target="article" data-icon="tag" data-count="6">Data Attributes</a>
-                <a href="#forms" data-target="article" data-icon="edit" data-count="7">Form Elements</a>
-                <a href="#lists" data-target="section" data-icon="items" data-count="5">Lists</a>
-                <a href="#events" data-target="article" data-icon="user">Events</a>
-                <a href="#scrolls" data-target="article" data-icon="down">Scrolls</a>
-            </div>
-        </aside>
-
         <!-- ============================= welcome ============================= -->
-
-        <article id="welcome" class="list scrollable">
-            <div class="indented">
+        <article id="welcome" class="list scrollable indented">
+            <div>
                 <h1 class="title" data-icon="home">Welcome to LungoJS KitchenSink</h1>
                 <p class="text">
                     The first <strong>Mobile Framework</strong> that uses the actual features of #HTML5, #CSS3 and #JavaScript.</p>
@@ -81,52 +49,9 @@
             </div>
         </article>
 
-        <!-- ============================= authors ============================= -->
-
-        <article id="authors" class="list scrollable">
-            <div class="indented">
-                <ul>
-                    <li class="anchor" data-icon="pencil">Author</li>
-                    <li data-image="assets/images/avatars/soyjavi.jpg">
-                        Javi Jim&eacute;nez Villar
-                        <small>CEO & Creative Lead at Tapquo</small></li>
-                </ul>
-
-                <ul>
-                    <li class="anchor" data-icon="star">CoreTeam</li>
-                    <li data-image="assets/images/avatars/pasku.jpg">
-                        Guillermo Pascual
-                        <small>@pasku1</small></li>
-                    <li data-image="assets/images/avatars/ikalbeniz.jpg">
-                        Iker Perez Albeniz
-                        <small>@ikalneniz</small></li>
-                </ul>
-
-                <ul>
-                    <li class="anchor" data-icon="group">Contributors</li>
-                    <li data-image="https://secure.gravatar.com/avatar/b374f3bd05b1db4a974585ba57661815?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
-                        Jorge Casar
-                        <small>jorgecasar</small></li>
-                    <li data-image="https://secure.gravatar.com/avatar/3d4bf44cff9779242dd82d20a0b7d0c8?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
-                        Dave Winders
-                        <small>daithiw44</small></li>
-                    <li data-image="https://secure.gravatar.com/avatar/884b5d1e91b826afc8c6b4fc3429dbd0?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
-                        GermanDZ
-                        <small>GermanDZ</small></li>
-                    <li data-image="https://secure.gravatar.com/avatar/b41d652ca9b88e636516d907599dcc87?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
-                        Juan Gallego Galisteo
-                        <small>nickel</small></li>
-                    <li data-image="https://secure.gravatar.com/avatar/a3257b495a2bc4ae15405c7880300848?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png">
-                        John McLear
-                        <small>johnyma22</small></li>
-                </ul>
-            </div>
-        </article>
-
         <!-- ============================= buttons ============================= -->
-
-        <article id="buttons" class="scrollable">
-            <div class="indented">
+        <article id="buttons" class="scrollable indented">
+            <div>
                 <a href="#" class="button big">default</a>
                 <a href="#" class="button big disabled">disabled</a>
                 <a href="#" class="button big red">red</a>
@@ -140,15 +65,10 @@
                 <a href="#" class="button big yellow">yellow</a>
                 <a href="#" class="button big twitter">twitter</a>
                 <a href="#" class="button big facebook">facebook</a>
-
-                <div class="text">You can view other examples push in the next button</div>
-
-                <a href="#buttons-extra" data-target="section" class="button black big" data-icon="add">View other Examples</a>
             </div>
         </article>
 
         <!-- ============================= icons ============================= -->
-
         <article id="icons" class="list scrollable">
             <div class="indented">
                 <h1 class="title">&lt;class&gt; icon: everything is a vector!</h1>
@@ -207,10 +127,7 @@
             </div>
         </article>
 
-
-
         <!-- ============================= data - attributes ============================= -->
-
         <article id="data-attributes" class="list scrollable">
             <div class="indented">
                 <h1 class="title">The data-attributes</h1>
@@ -228,6 +145,12 @@
                         <small>Creates a search input form</small>
                     </li>
                     <li data-search="Type your search..."></li>
+
+                    <li>
+                        data-progress
+                        <small>Creates a progress element</small>
+                    </li>
+                    <li data-progress="25%"></li>
                 </ul>
 
                 <h1 class="title">Others</h1>
@@ -250,81 +173,6 @@
         </article>
 
         <!-- ============================= events ============================= -->
-
-        <article id="forms" class="list scrollable">
-            <div class="container indented">
-                <ul class="form">
-                    <li class="anchor" data-icon="edit">Example of inputs</li>
-                    <li>
-                        <label>type="text"</label>
-                        <input type="text" placeholder="Input text"/>
-                        <label>type="password"</label>
-                        <input type="password" placeholder="Input password"/>
-                    </li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor" data-icon="edit">Example of search</li>
-                    <li data-search="Type a search..."></li>
-                    <li class="tip darker" data-icon="question mini">It's a special form element you must set the attribute data-search="Placeholder text"</li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor" data-icon="edit">Example of textarea</li>
-                    <li><textarea placeholder="Textarea sample"></textarea></li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor" data-icon="edit">Example of select</li>
-                    <li>
-                        <label class="select">
-                            <select class="custom">
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </label>
-                    </li>
-                    <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor" data-icon="edit">Example of checkbox</li>
-                    <li>
-                        <label>Do you like LungoJS forms?</label>
-                        <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
-                    </li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor" data-icon="edit">Example of radio</li>
-                    <li>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
-                        <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
-                    </li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor">Examples of tips</li>
-                    <li class="tip" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
-                    <li class="tip dark" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
-                    <li class="tip darker" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
-
-                    <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                    <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                    <li class="tip darker" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                </ul>
-
-                <ul class="form">
-                    <li class="anchor" data-icon="home">Example of anchor</li>
-                    <li><label>Example of label</label></li>
-                </ul>
-            </div>
-        </article>
-
-        <!-- ============================= events ============================= -->
-
         <article id="events" class="list scrollable">
             <div class="indented">
                 <ul>
@@ -357,112 +205,87 @@
         </article>
 
         <!-- ============================= scrolls ============================= -->
-
         <article id="scrolls">
-            <div id="scroll_vertical" class="container-scroll vertical scrollable"></div>
-            <div id="scroll_horizontal" class="container-scroll horizontal scrollable"></div>
+            <div id="scroll-horizontal" class="scroll-demo scrollable horizontal">
+                <div style="width: 1036px;">
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                    <span>13</span>
+                    <span>14</span>
+                    <span>15</span>
+                </div>
+            </div>
+
+            <div id="scroll-vertical" class="scroll-demo scrollable vertical">
+                <div>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                    <span>11</span>
+                    <span>12</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============================= authors ============================= -->
+        <article id="urls" class="list scrollable">
+            <div class="indented">
+                <ul>
+                    <li class="anchor" data-icon="pencil">Send a mail</li>
+                    <li data-icon="mail">
+                        <a href="mailto:javi@tapquo.com">
+                        Send a email
+                        <small>href="mailto:"</small></a></li>
+                    <li data-icon="phone">
+                        <a href="tel:+34123">
+                        Phone call
+                        <small>href="tel:"</small></a></li>
+                    <li data-icon="chat">
+                        <a href="sms:+34123">
+                        Text a message
+                        <small>href="sms:"</small></a></li>
+                </ul>
+
+                <ul>
+                    <li class="anchor" data-icon="star">Specials for iOS</li>
+                    <li data-icon="pushpin">
+                        <a href="maps:ll=38.870454,-77.055702">
+                        View a point in a map
+                        <small>href="maps:"</small></a></li>
+                    <li data-icon="target">
+                        <a href="maps:ll=38.870454,-77.055702&z=10">
+                        View a point in a map (zoom)
+                        <small>href="maps: &z=10"</small></a></li>
+                </ul>
+            </div>
         </article>
 
     </section>
 
-    <!-- ============================= navigation ============================= -->
-
-    <section id="navigation">
-        <header data-back="home" data-title="Navigation">
-            <nav class="onright">
-                <a href="#" class="current" class="current" data-count="23" data-icon="star"><abbr>asas</abbr></a>
-                <a href="#navigation-secondary" class="current" data-target="section" data-icon="right"><abbr>Edit</abbr></a>
-            </nav>
-        </header>
-
-        <footer class="toolbar">
-            <nav>
-                <a href="#nav-1" data-target="article" class="current" data-icon="user"></a>
-                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17"></a>
-                <a href="#nav-3" data-target="article" data-icon="mail"></a>
-                <a href="#nav-4" data-target="article" data-icon="phone"></a>
-            </nav>
-        </footer>
-
-        <article id="nav-1" data-title="Article 1"></article>
-        <article id="nav-2" data-title="Article 2"></article>
-        <article id="nav-3" data-title="Article 3"></article>
-        <article id="nav-4" data-title="Article 4"></article>
-    </section>
-
-
-    <!-- ============================= navigation-extra ============================= -->
-
-    <section id="navigation-secondary">
-        <header data-back="left" data-title="Navigation"></header>
-
-        <footer>
-            <nav class="onright">
-                <a href="#nav-extra-1" data-target="article" class="current" data-icon="user"></a>
-                <a href="#nav-extra-2" data-target="article" data-icon="calendar" data-count="17"></a>
-                <a href="#nav-extra-3" data-target="article" data-icon="mail"></a>
-            </nav>
-        </footer>
-
-        <article id="nav-extra-1" data-title="Article 1"></article>
-        <article id="nav-extra-2" data-title="Article 2"></article>
-        <article id="nav-extra-3" data-title="Article 3"></article>
-    </section>
-
-    <!-- ============================= buttons extra ============================= -->
-
-    <section id="buttons-extra">
-        <header data-back="home" data-title="Example of buttons">
-            <a href="#" class="button red onright" data-icon="add">With icon</a>
-            <a href="#" class="button arcticblue onright">Text</a>
-        </header>
-
-        <footer>
-            <a href="#" class="button blue onleft">Text</a>
-            <a href="#" class="button yellow onleft" data-icon="left"></a>
-            <a href="#" class="button orange onright" data-icon="right">onright</a>
-        </footer>
-
-        <article></article>
-    </section>
-
-
-
-    <!-- ============================= header footer ============================= -->
-
-    <!-- ============================= lists ============================= -->
-
-    <section id="lists">
-        <header data-back="home" data-title="List"></header>
-        <footer class="toolbar">
-            <nav>
-                <a href="#list-plain" data-target="article" class="current" data-title="Normal List" data-icon="home"></a>
-                <a href="#list-ordered" data-target="article" data-title="Ordered List" data-icon="items"></a>
-                <a href="#list-indented" data-target="article" data-title="Indented List" data-icon="target"></a>
-                <a href="#list-rounded" data-target="article" data-title="Rounded List" data-icon="files"></a>
-                <a href="#list-grouped" data-target="article" data-title="Grouped List" data-icon="folder"></a>
-            </nav>
-        </footer>
-
-        <article id="list-plain" class="list"></article>
-        <article id="list-ordered" class="list"></article>
-        <article id="list-indented" class="list scrollable">
-            <div class="indented"><ul id="list-indented-container"></ul></div>
-        </article>
-        <article id="list-rounded" class="list rounded scrollable">
-            <div class="indented"><ul id="list-rounded-container"></ul></div>
-        </article>
-        <article id="list-grouped" class="list">Coming Soon...</article>
-    </section>
-
-    <!-- LungoJS (Production mode) -->
-    <script src="../../release/lungo-1.1.1.packed.js"></script>
-
+     <!-- LungoJS (Production mode) -->
+    <script src="lungojs/lungo-1.2.packed.js"></script>
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
-    <script src="app/data.js"></script>
     <script src="app/events.js"></script>
-    <script src="app/services.js"></script>
     <script src="app/view.js"></script>
+    <script src="app/data.js"></script>
+    <script src="app/services.js"></script>
 </body>
 </html>

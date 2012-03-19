@@ -10,6 +10,9 @@
 @import "mixins.less";
 
 @defaultTrasition : @easeOutSine;
+@header_footer_height: 40px;
+	@header_extended_height: 74px;
+@footer_toolbar_height: 48px;
 
 /* @group <section> */
 section {
@@ -19,18 +22,79 @@ section {
 	width: 100%;
 	height: 100%;
 	
+	//display: none;
+	z-index: 1;
 	.transform(translate3d(100%, 0, 0));
-	//.transform(translate3d(320px, 0, 0));
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: -webkit-transform 250ms @defaultTrasition;
-	
+	/*
+	   -moz-transition: @keyframe @defaultTrasition;
+         -o-transition: @keyframe @defaultTrasition;
+            transition: @keyframe @defaultTrasition;
+	*/
 	&:first-child, &.show {	
-		.transform(translate3d(0%, 0, 0)); }
+		.transform(translate3d(0%, 0, 0)); 
+		//display: block; 
+		}
 	&.hide { 
-		.transform(translate3d(-100%, 0, 0)); }
+		.transform(translate3d(-100%, 0, 0)); 
+		//display: none;
+		}
+	
+	&.pop {
+    	.transform(scale(0.5));
+    	z-index: 0;
+    	opacity: 0;
+		-webkit-transition: all 250ms @defaultTrasition;
+		
+		&:first-child, &.show {	
+			z-index: 1;
+			.transform(scale(1));
+			opacity: 1;
+		}
+		&.hide { 
+			z-index: 0;
+			.transform(scale(1.2));
+			opacity: 0;
+		}
+	}
+	
+	&.flow {
+    	.transform(translate3d(100%, 0, 0) scale(0.7));
+		
+		&:first-child, &.show {	 -webkit-animation: flow-show 350ms 500ms @defaultTrasition forwards; }
+		&.show-revoke { -webkit-animation: flow-show-revoke 350ms @defaultTrasition forwards; }
+		
+		&.hide { -webkit-animation: flow-hide 350ms @defaultTrasition forwards; }
+		&.hide-revoke { -webkit-animation: flow-hide-revoke 350ms 500ms @defaultTrasition forwards; }
+	}
 }
-/* @end */
+/*
+@-webkit-keyframes flow-show {
+    0% { -webkit-transform: translateX(100%) scale(.7); }
+    50% { -webkit-transform: translateX(0%) scale(.7);}
+    100% { -webkit-transform: translateX(0%) scale(1);}
+}
 
+@-webkit-keyframes flow-show-revoke {
+    0% { -webkit-transform: translateX(0%) scale(1); }
+    50% { -webkit-transform: translateX(0%) scale(.7);}
+    100% { -webkit-transform: translateX(100%) scale(.7);}
+}
+
+@-webkit-keyframes flow-hide {
+    0% { -webkit-transform: translateX(0%) scale(1); }
+    50% { -webkit-transform: translateX(0%) scale(.7); }
+    100% { -webkit-transform: translateX(-100%) scale(.7); }
+}
+
+@-webkit-keyframes flow-hide-revoke {
+    0% { -webkit-transform: translateX(-100%) scale(.7); }
+    50% { -webkit-transform: translateX(0%) scale(.7);}
+    100% { -webkit-transform: translateX(0%) scale(1);}
+}
+*/
+/* @end */
 
 /* @group <header> & <footer> */
 header, footer  {
@@ -41,11 +105,14 @@ header, footer  {
 	display: block;
 	
 	z-index: 2;
-	line-height: 38px;
+	line-height: 39px;
 }
 
 header  {
-	top: 0px
+	top: 0px;
+	//&.extended { height: 72px; }
+	& .onleft { margin-left: 4px !important;}
+	& .onright {margin-right: 4px !important;}
 }
 
 footer  {
@@ -53,12 +120,13 @@ footer  {
 }
 
 header .title, footer .title  {
-	margin: 0 8px;	
-	float: left;	
+	margin: 0 4px;	
+	float: left;
 	z-index: -1;
-	font-size: 1.15em;
+	font-size: 15px;
 	font-weight: bold;
 }
+
 
 header .title {
 	position: absolute;
@@ -69,173 +137,10 @@ header .title {
 }
 
 section header a.button, section footer a.button  {
-	margin: 3px 3px auto 4px;
+	margin: 3px 1px 0px;
+	/*
+	&:first-of-type { margin-left: 4px; }	
+	&:last-child { margin-right: 4px; }
+	*/
 }
-
-section header a.button.icon, section footer a.button.icon  {
-	width: 17px;
-}
-/* @end */
-
-/* @group <nav> */
-
-nav {
-	height: inherit;
-	text-align: center;
-    	
-	& a {
-		padding: 0 6px;
-		z-index: 1000;
-		float: left;
-		
-		& .icon {
-		    font-size: 2.1em;
-		    line-height: 38px;
-		    display: inline-block;
-		}
-		
-		& abbr, .description {
-    		position: relative;
-			bottom: 5px;
-			margin-left: 2px;
-			display: none;
-			font-size: 1.0em;
-		}
-		
-		&.current abbr { display: inline; }
-	}
-	
-	& .bubble {
-    	position: relative;
-	    top:  -16px;
-	    left: -10px;
-	    margin-right: -20px;  
-	}
-}
-
-.toolbar {
-	height: 48px;
-	display: block;
-	
-	& nav { display: block; }
-	& a { padding: 0; }
-	& .icon {
-    	display: block;
-		font-size: 2.5em;
-		line-height: 48px;
-	}
-	
-	& .bubble {
-    	top:  -54px;
-	    left: 6px;
-	    padding: 1px 4px;
-	}
-}
-/* @end */
-
-/* @group <aside> */
-aside {
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	height: auto;
-	width: 256px;
-	opacity: 0;
-	z-index: 0;
-}
-
-	aside.show {
-		opacity: 1;
-	}
-	
-	header ~ aside { padding-top: 40px; }
-	
-	footer ~ aside { padding-bottom: 40px; }
-	
-	aside ~ article {
-		.transform(translate3d(0px, 0, 0));
-		-webkit-transition: -webkit-transform 250ms @defaultTrasition;
-	}
-
-	aside a {
-		display: block;
-		width: 244px;
-		height: 40px;
-		padding: 0 6px;
-	
-		font-size: 1.1em;
-		font-weight: bold;
-		line-height: 40px;
-	}
-		aside .icon {
-			width: 28px;
-			height: 28px;
-			float: left;
-			margin: 8px 6px 0 0;
-	
-		    font-size: 1.9em;
-		    line-height: 1.0em;
-		    text-align: center;
-		}
-		aside .anchor {
-			font-weight: bold;
-	    	padding: 3px 10px 4px;
-		}
-		aside .bubble {
-	    	float: right;
-			margin: 12px 4px 0 0;
-		}
-	
-		@media handheld, only screen and (min-width: 768px) {
-			[data-target="aside"] { display: none !important; }		
-			aside { opacity: 1; }		
-			aside ~ article{
-				width: auto !important;
-		    	left: 256px;
-		    	right:  0px !important;
-			}
-		}
-/* @end */
-
-/* @group <article> */
-article {
-	position: absolute;
-	width: inherit;
-	height: inherit;
-	top: 0px;
-	bottom: 0px;
-	display: block;
-	z-index: 0;
-	opacity: 0;
-}
-	
-	header ~ article { top: 40px; }	
-	
-	footer ~ article { bottom: 40px; }
-
-	article.current {
-		z-index: 1;
-		opacity: 1;
-	}
-	
-	article.aside { .transform(translate3d(256px, 0, 0)); }
-	
-	@media handheld, only screen and (min-width: 768px) {
-		article.aside { .transform(translate3d(0px, 0, 0)); }
-	}
-	
-	article .title {
-		font-size: 1.1em;
-		 margin: 0px 0 4px;
-	}
-		
-		article .title .icon { margin-right: 4px; }
-	
-	article .text {
-		margin: 4px 0 8px;
-		display: block;
-    	font-size: 0.9em;
-    	font-weight: normal;
-    	line-height: 1.4em;
-	}			
 /* @end */

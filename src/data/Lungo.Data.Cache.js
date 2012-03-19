@@ -1,6 +1,6 @@
-/** 
+/**
  * Temporary cache system
- * 
+ *
  * @namespace LUNGO.Data
  * @class Cache
  *
@@ -41,7 +41,7 @@ LUNGO.Data.Cache = (function(lng, undefined) {
         if (arguments.length === 1) {
             return _cache[key];
         } else {
-            return _cache[arguments[0]][arguments[1]];
+            return (_cache[arguments[0]]) ? _cache[arguments[0]][arguments[1]] : undefined;
         }
     };
 

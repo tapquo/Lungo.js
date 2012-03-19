@@ -1,5 +1,5 @@
 /*!
- * QuoJS 1.0 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+ * QuoJS 1.0.5 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
  * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
@@ -335,6 +335,7 @@ window.Quo = Quo;
         environment.browser = _detectBrowser(user_agent);
         environment.os = _detectOS(user_agent);
         environment.isMobile = (environment.os) ? true : false;
+        environment.screen = _detectScreen();
 
         return environment;
     }
@@ -363,6 +364,13 @@ window.Quo = Quo;
         return detected_os;
     }
 
+    var _detectScreen = function() {
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+    }
+
 })(Quo);
 
 (function($$) {
@@ -383,7 +391,7 @@ window.Quo = Quo;
      * ?
      */
     $$.fn.html = function(value) {
-        return ($$.toType('value') === 'string') ?
+        return ($$.toType(value) === 'string') ?
             this.each(function() {
                 this.innerHTML = value;
             })
@@ -397,11 +405,13 @@ window.Quo = Quo;
     $$.fn.append = function(value) {
         return this.each(function() {
             if ($$.toType(value) === 'string') {
-                var div = document.createElement();
-                div.innerHTML = value;
-                this.appendChild(div.firstChild);
+                if (value) {
+                    var div = document.createElement();
+                    div.innerHTML = value;
+                    this.appendChild(div.firstChild);
+                }
             } else {
-                this.parentNode.insertBefore(value);
+                this.insertBefore(value);
             }
         });
     };
@@ -563,7 +573,7 @@ window.Quo = Quo;
     $.fn.removeClass = function(name) {
         return this.each(function() {
             if (_existsClass(name, this.className)) {
-                this.className = this.className.replace(name, ' ');
+                this.className = this.className.replace(name, ' ').replace(/\s+/gi, ' ');
             }
         });
     };
@@ -666,6 +676,7 @@ window.Quo = Quo;
                 _xhrTimeout(xhr, settings);
             }, settings.timeout);
         }
+
         xhr.send(settings.data);
 
         return (settings.async) ? xhr : _parseResponse(xhr, settings);
@@ -709,7 +720,7 @@ window.Quo = Quo;
      * ?
      */
     $$.get = function(url, data, success, dataType) {
-        url += _serializeParameters(data);
+        url += $$.serializeParameters(data);
 
         return $$.ajax({
             url: url,
@@ -736,7 +747,7 @@ window.Quo = Quo;
      * ?
      */
     $$.json = function(url, data, success) {
-        url += _serializeParameters(data);
+        url += $$.serializeParameters(data);
 
         return $$.ajax({
             url: url,
@@ -745,8 +756,23 @@ window.Quo = Quo;
         });
     };
 
+    /**
+     * ?
+     */
+    $$.serializeParameters = function(parameters) {
+        var serialize = '?';
+        for (var parameter in parameters) {
+            if (parameters.hasOwnProperty(parameter)) {
+                if (serialize !== '?') serialize += '&';
+                serialize += parameter + '=' + parameters[parameter];
+            }
+        }
+
+        return (serialize === '?') ? '' : serialize;
+    };
+
     function _xhrStatus(xhr, settings) {
-        if (xhr.status === 200) {
+        if (xhr.status === 200 || xhr.status === 0) {
             if (settings.async) {
                 var response = _parseResponse(xhr, settings);
                 _xhrSuccess(response, xhr, settings);
@@ -791,22 +817,12 @@ window.Quo = Quo;
                     response = error;
                     _xhrError('Parse Error', xhr, settings);
                 }
+            } else if (settings.dataType === 'xml') {
+                response = xhr.responseXML;
             }
         }
 
         return response;
-    }
-
-    var _serializeParameters = function(parameters) {
-        var serialize = '?';
-        for (var parameter in parameters) {
-            if (parameters.hasOwnProperty(parameter)) {
-                if (serialize !== '?') serialize += '&';
-                serialize += parameter + '=' + parameters[parameter];
-            }
-        }
-
-        return (serialize === '?') ? '' : serialize;
     }
 
     var _isJsonP = function(url) {
@@ -858,7 +874,7 @@ window.Quo = Quo;
     /**
      * ?
      */
-    $$.fn.ready =function(callback) {
+    $$.fn.ready = function(callback) {
         if (READY_EXPRESSION.test(document.readyState)) {
             callback($$);
         }
@@ -947,10 +963,6 @@ window.Quo = Quo;
      * ?
      */
     $$.fn.trigger = function(event) {
-        if (!$$.isMobile()) {
-            console.log('Event ' + event + ' captured.');
-        }
-
         if ($$.toType(event) === 'string') event = $$.Event(event);
         return this.each(function() {
             this.dispatchEvent(event);
@@ -992,7 +1004,9 @@ window.Quo = Quo;
     }
 
     function _environmentEvent(event) {
-        return ($$.isMobile()) ? event : EVENTS_DESKTOP[event];
+        var environment_event = ($$.isMobile()) ? event : EVENTS_DESKTOP[event];
+
+        return (environment_event) || event;
     }
 
     function _createProxyCallback(delegate, callback, element) {
@@ -1099,7 +1113,9 @@ window.Quo = Quo;
             TOUCH.x1 = TOUCH.x2 = TOUCH.y1 = TOUCH.y2 = TOUCH.last = 0;
             TOUCH = {};
         } else {
-            TOUCH.el.trigger('tap');
+            if (TOUCH.el !== undefined) {
+                TOUCH.el.trigger('tap');
+            }
             TOUCH_TIMEOUT = setTimeout(function(){
                 TOUCH_TIMEOUT = null;
                 TOUCH = {};

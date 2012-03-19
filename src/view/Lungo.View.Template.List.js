@@ -10,7 +10,8 @@
 
 LUNGO.View.Template.List = (function(lng, undefined) {
 
-    var _config = null;
+    var ERROR = lng.Constants.ERROR;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
     /**
      * Create a list based DataBind with a configuration object for an element <article>
@@ -21,64 +22,92 @@ LUNGO.View.Template.List = (function(lng, undefined) {
      * @param {object} Id of the container showing the result of databinding
      */
      var create = function(config) {
-        _config = config;
-        _config.container_id += '_list';
+        config.container = _getContainer(config.el);
 
-        if (_validateConfig()) {
-            _order();
-            // @ToDo >> _group();
-            _render();
-            _createScroll();
+        if (_validateConfig(config)) {
+            config.data = _order(config);
+            _render(config);
+            _scroll(config.el);
         }
 	};
 
-    var _validateConfig = function() {
+    /**
+     * Append a list based DataBind with a configuration object for an element <article>
+     * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     *
+     * @method append
+     *
+     * @param {object} Id of the container showing the result of databinding
+     */
+    var append = function(config) {
+        var markup = lng.View.Template.markup(config.template, config.data);
+        var container = _getContainer(config.el);
+
+        container.append(markup);
+        _scroll(config.el, ATTRIBUTE.LAST);
+    };
+
+    /**
+     * Prepend a list based DataBind with a configuration object for an element <article>
+     * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     *
+     * @method prepend
+     *
+     * @param {object} Id of the container showing the result of databinding
+     */
+    var prepend = function(config) {
+        var markup = lng.View.Template.markup(config.template, config.data);
+        var container = _getContainer(config.el);
+
+        container.prepend(markup);
+        _scroll(config.el, ATTRIBUTE.FIRST);
+    };
+
+    var _validateConfig = function(config) {
         var checked = false;
-        var container_exists = !! lng.dom(_config.container_id);
-        var template_exists = lng.View.Template.exists(_config.template_id);
+        var container_exists = !! config.container.length > 0;
+        var template_exists = lng.View.Template.exists(config.template);
 
         if (container_exists && template_exists) {
-            //@ToDo >> Refactor to other method
-            lng.dom("#"+_config.container_id).html('');
-
-            var type = lng.Core.toType(_config.data);
+            var type = lng.Core.toType(config.data);
             if (type === 'array' || type === 'object') {
                 checked = true;
             }
+        } else {
+            lng.Core.log(3, ERROR.BINDING_LIST);
         }
 
         return checked;
     };
 
-    var _order = function() {
-        var order_field = _config.order_field;
-        var order_type  = (_config.order_type === 'desc') ? -1 : 1;
+    var _getContainer = function(element) {
+        return lng.dom(element).children().first();
+    }
 
-        if (order_field && order_type) {
-            _config.data.sort(function(a, b) {
-                return (a[order_field] < b[order_field]) ? - order_type :
-                       (a[order_field] > b[order_field]) ? order_type : 0;
-            });
+    var _order = function(config) {
+        if (config.order && config.order.field && config.order.type) {
+            config.data = lng.Core.orderByProperty(config.data, config.order.field, config.order.type);
+        }
+        return config.data;
+    };
+
+    var _render = function(config) {
+        lng.View.Template.render(config.container.selector, config.template, config.data);
+    };
+
+    var _scroll = function(element, direction) {
+        var element_id = lng.dom(element).attr(ATTRIBUTE.ID);
+
+        lng.View.Scroll.init(element_id);
+        if (direction) {
+            lng.View.Scroll[(direction === ATTRIBUTE.FIRST) ? ATTRIBUTE.FIRST : ATTRIBUTE.LAST](element_id);
         }
     };
 
-    // @ToDo >> group list by property
-    var _group = function() {
-    };
-
-    var _render = function() {
-        lng.View.Template.Binding.create(_config.container_id, _config.template_id, _config.data);
-    };
-
-    var _createScroll = function() {
-        var container_id_for_scroll = lng.dom('#' + _config.container_id).parent().attr('id');
-        var list_config = { snap: 'li' };
-
-        lng.View.Scroll.create(container_id_for_scroll, list_config);
-    };
-
     return {
-        create: create
+        create: create,
+        append: append,
+        prepend: prepend
     };
 
 })(LUNGO);
