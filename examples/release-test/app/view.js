@@ -12,13 +12,7 @@ App.View = (function(lng, App, undefined) {
     );
 
     var mockScrolls = function() {
-        var markup = '';
-        for (var i=0; i < 32; i++) {
-            markup += '<li>'+i+'</li>';
-        }
 
-        lng.View.Scroll.update('scroll_vertical', markup);
-        lng.View.Scroll.update('scroll_horizontal', markup);
     };
 
     return {
