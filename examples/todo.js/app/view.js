@@ -47,11 +47,11 @@ App.View = (function(lng, App, undefined) {
 
     var list = function(container, template, rows) {
         lng.View.Template.List.create({
-            container_id: container,
-            template_id: template,
+            el: container,
+            template: template,
             data: rows
         });
-        lng.View.Element.count('a[href="#' + container + '"]', rows.length);
+        lng.View.Element.count('a[href="' + container + '"]', rows.length);
     };
 
     return{

@@ -10,6 +10,14 @@
 
 LUNGO.Boot.Events = (function(lng, undefined) {
 
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var CLASS = lng.Constants.CLASS;
+    var ELEMENT = lng.Constants.ELEMENT;
+    var SELECTORS = {
+        HREF_TARGET: 'a[href][data-target]',
+        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
+    };
+
     /**
      * Initializes the automatic subscription events by markup of the project.
      *
@@ -18,14 +26,15 @@ LUNGO.Boot.Events = (function(lng, undefined) {
      */
     var start = function() {
         var touch_move_event  = 'touchmove';
-        var orientation_change = 'orientationchange';
-        var target_selector = 'a[href][data-target]';
-        var target_selector_from_aside = 'aside a[href][data-target]';
+        var resize = 'resize';
 
-        lng.dom(document).on(touch_move_event, _iScroll);
-        lng.dom(window).on(orientation_change, _changeOrientation);
-        lng.dom(target_selector_from_aside).tap(_toggleAside);
-        lng.dom(target_selector).tap(_loadTarget);
+        //@ToDo: Error with input type="range"
+        //lng.dom(document).on(touch_move_event, _iScroll);
+        lng.dom(window).on(resize, _changeOrientation);
+        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
+        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
+
+        lng.Fallback.androidButtons();
     };
 
     var _iScroll = function(event) {
@@ -36,12 +45,17 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.View.Resize.toolbars();
     };
 
-    var _toggleAside = function(event) {
+    var _loadTargetFromAside = function(event) {
         var link = lng.dom(this);
-        var section_id =  _getParentIdOfElement(link);
-        lng.View.Aside.toggle(section_id);
+        var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
+        var section_id = '#' + lng.dom('section.aside, section.current').first().attr(ATTRIBUTE.ID);
 
-        event.preventDefault();
+        if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
+            lng.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
+            link.addClass(CLASS.CURRENT);
+        }
+        _hideAsideIfNecesary(section_id, aside_id);
+
     };
 
     var _loadTarget = function(event) {
@@ -52,25 +66,26 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _selectTarget = function(link) {
-        var target_type = link.data('target');
+        var target_type = link.data(ATTRIBUTE.TARGET);
 
         switch(target_type) {
-            case 'section':
-                var target_id = link.attr('href');
+            case ELEMENT.SECTION:
+                var target_id = link.attr(ATTRIBUTE.HREF);
                 _goSection(target_id);
                 break;
 
-            case 'article':
+            case ELEMENT.ARTICLE:
                 _goArticle(link);
                 break;
 
-            case 'aside':
+            case ELEMENT.ASIDE:
                 _goAside(link);
                 break;
         }
     };
 
     var _goSection = function(id) {
+        id = lng.Core.parseUrl(id);
         if (id === '#back') {
             lng.Router.back();
         } else {
@@ -79,20 +94,23 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _goArticle = function(element) {
-        var section_id =  _getParentIdOfElement(element);
-        var article_id =  element.attr('href');
+        var section_id = lng.Router.History.current();
+        var article_id =  element.attr(ATTRIBUTE.HREF);
 
         lng.Router.article(section_id, article_id);
     };
 
     var _goAside = function(element) {
-        var section_id = _getParentIdOfElement(element);
-        lng.View.Aside.toggle(section_id);
+        var section_id = lng.Router.History.current();
+        var aside_id = element.attr(ATTRIBUTE.HREF);
+
+        lng.Router.aside(section_id, aside_id);
     };
 
-    var _getParentIdOfElement = function(element) {
-        var parent_id = '#' + element.parent('section').attr('id');
-        return parent_id;
+    var _hideAsideIfNecesary = function(section_id, aside_id) {
+        if (window.innerWidth < 768) {
+            lng.View.Aside.hide(section_id, aside_id);
+        }
     };
 
     return {

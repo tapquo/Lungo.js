@@ -11,18 +11,19 @@
 
 a.button {
 	display: inline-block;
-	height: 31px;
+	height: 30px;
 	padding: 0 9px 0 8px;
 	color: #fff !important;
 	outline: none;
-	background: #5a5a5a;	
+	
+	background: #5a5a5a;
+	
 	.user-select(none);
-	font-weight: bold;
-	line-height: 32px;
+	line-height: 31px;
 	text-align: center; 
 	text-decoration: none;
 
-	&:active { 
+	&:active, &.active { 
 		background: #4b4b4b; 
 	}
 	
@@ -32,29 +33,35 @@ a.button {
 	}
 	
 	& .icon {
-    	float: left;
-		width: 17px;
-		height: 30px;	
-		font-size: 1.5em;
-		line-height: 31px;
+		position: relative;
+		top: 3px;
+		height: 16px;
+		width: 16px;
+    	font-size: 22px;
+		line-height: 17px;
+	}
+	
+	& img {
+		top:  0px !important;    	
 	}
 	
 	&.big {
-    	position: relative; 
-		height: 30px; 
 		width: 100%; 
+		height: 40px;	
+		padding: 0px;	
 		margin-bottom: 4px;
-		padding: 6px 0;
 		
 		font-size: 16px;
-		line-height: 31px;
-		
+		line-height: 42px;
 		& .icon {
-    		width: 20px;
-			height: 28px;
-			line-height: 32px;
-			margin-left: 0.6em; 
-			margin-right: -48px;    	
+			margin-right: 4px;	
+			font-size: 24px;
+			height: 18px;
+			width: 18px;
+		}
+		
+		& img {
+			/* TODO */
 		}
 	}
 }

@@ -10,6 +10,7 @@
 
 LUNGO.Data.Sql = (function(lng, undefined) {
 
+    var ERROR = lng.Constants.ERROR;
     var CONFIG = {
         name: 'lungo_db',
         version: '1.0',
@@ -33,7 +34,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         if (db) {
             _createSchema();
         } else {
-            lng.Core.log(3, 'lng.Data.Sql >> Failed to connect to database.');
+            lng.Core.log(3, ERROR.DATABASE);
         }
     };
 
@@ -119,10 +120,10 @@ LUNGO.Data.Sql = (function(lng, undefined) {
     var execute = function(sql, callback) {
         lng.Core.log(1, 'lng.Data.Sql >> ' + sql);
 
-        db.transaction(function(tx) {
-            tx.executeSql(sql, [], function(tx, rs) {
+        db.transaction( function(transaction) {
+            transaction.executeSql(sql, [], function(transaction, rs) {
                 _callbackResponse(callback, rs);
-            }, function(transaction, error){
+            }, function(transaction, error) {
                 transaction.executedQuery = sql;
                 _throwError.apply(null, arguments);
             });
@@ -172,7 +173,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = fields[field];
                 if (sql) sql += ' ' + separator + ' ';
                 sql += field + '=';
-                sql += (typeof value === 'string') ? '"' + value + '"' : value;
+                sql += (isNaN(value)) ? '"' + value + '"' : value;
             }
         }
         return sql;
@@ -193,7 +194,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = row[field];
                 fields += (fields) ? ', ' + field : field;
                 if (values) values += ', ';
-                values += (typeof value === 'string') ? '"' + value + '"' : value;
+                values += (isNaN(value)) ? '"' + value + '"' : value;
             }
         }
 

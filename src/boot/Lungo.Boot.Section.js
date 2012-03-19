@@ -10,12 +10,9 @@
 
 LUNGO.Boot.Section = (function(lng, undefined) {
 
-    var SELECTORS = {
-        ARTICLE: 'article',
-        SECTION: 'section'
-    };
-
-    var ACTIVE_CLASS = 'current';
+    var ELEMENT = lng.Constants.ELEMENT;
+    var CLASS = lng.Constants.CLASS;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
     /**
      * Initializes all <section>s of the project
@@ -23,50 +20,38 @@ LUNGO.Boot.Section = (function(lng, undefined) {
      * @method init
      */
     var start = function() {
-        var sections = lng.dom(SELECTORS.SECTION);
-
+        var sections = lng.dom(ELEMENT.SECTION);
         _initFirstSection(sections);
         _initAllSections(sections);
-        _initAllAsides();
 
         lng.View.Resize.toolbars();
     };
 
     var _initFirstSection = function(sections) {
         var first_section = sections.first();
-        var first_section_id = '#' + first_section.attr('id');
+        var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
 
-        first_section.addClass(ACTIVE_CLASS);
+        first_section.addClass(CLASS.CURRENT);
         lng.Router.History.add(first_section_id);
     };
 
     var _initAllSections = function(sections) {
-
-        if (lng.Core.isMobile()) {
-            _setPositionFixedInIOS(sections);
-        }
+        lng.Fallback.positionFixed(sections);
 
         for (var i = 0, len = sections.length; i < len; i++) {
             var section = lng.dom(sections[i]);
-            _initFirstArticle(section);
+            _initArticles(section);
         }
     };
 
-    var _initFirstArticle = function(section) {
-        section.children(SELECTORS.ARTICLE).first().addClass(ACTIVE_CLASS);
+    var _initArticles = function(section) {
+        var first_article = section.children(ELEMENT.ARTICLE).first();
+        first_article.addClass(CLASS.CURRENT);
+
+        var first_article_id = first_article.attr(ATTRIBUTE.ID);
+        var section_id = '#' + section.attr(ATTRIBUTE.ID);
+        lng.View.Article.showReferenceLinks(section_id, first_article_id);
     };
-
-    var _initAllAsides = function() {
-        lng.dom('aside').addClass('show');
-    };
-
-    var _setPositionFixedInIOS = function(sections) {
-        var environment = lng.Core.environment();
-
-        if (environment.os.name === 'ios' && environment.os.version >= '4.') {
-            sections.style('position', 'fixed');
-        }
-    }
 
     return {
         start: start

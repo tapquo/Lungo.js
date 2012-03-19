@@ -1,0 +1,8 @@
+article{position:absolute;width:100% !important;height:auto;top:0px;bottom:0px;visibility:hidden;z-index:0;}article.current{visibility:visible;z-index:1;}
+article .title{font-size:1.1em;margin:0px 0 4px;}article .title .icon{margin-right:4px;}
+article .text{margin:4px 0 8px;display:block;font-size:0.9em;font-weight:normal;line-height:1.4em;}
+header:not(.extended)~article{top:40px;}
+header.extended~article{top:75px;}
+footer:not(.toolbar)~article{bottom:40px;}
+footer.toolbar~article{bottom:48px;}
+@media handheld, only screen and (min-width: 768px){article.aside{-webkit-transform:translate3d(0px, 0, 0);-moz-transform:translate3d(0px, 0, 0);-o-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);}}

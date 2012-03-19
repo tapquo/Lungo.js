@@ -11,6 +11,7 @@
 LUNGO.Core = (function(lng, $$, undefined) {
 
     var ARRAY_PROTO = Array.prototype;
+    var HASHTAG_CHARACTER = '#';
 
     /**
      * Console system to display messages when you are in debug mode.
@@ -138,6 +139,71 @@ LUNGO.Core = (function(lng, $$, undefined) {
         return $$.environment();
     };
 
+    /**
+     * Returns a ordered list of objects by a property
+     *
+     * @method orderByProperty
+     *
+     * @param {list} List of objects
+     * @param {string} Name of property
+     * @param {string} Type of order: asc (ascendent) or desc (descendent)
+     * @return {list} Ordered list
+     */
+    var orderByProperty = function(data, property, order) {
+        var order_operator = (order === 'desc') ? -1 : 1;
+
+        return data.sort(function(a, b) {
+            return (a[property] < b[property]) ? - order_operator :
+                (a[property] > b[property])
+                ?
+                order_operator : 0;
+            }
+        );
+    };
+
+    /**
+     * Returns a correct URL using hashtag character
+     *
+     * @method parseUrl
+     *
+     * @param {string} Url
+     * @return {string} Url parsed
+     */
+    var parseUrl = function(href) {
+        var href_hashtag = href.lastIndexOf(HASHTAG_CHARACTER);
+        if (href_hashtag > 0) {
+            href = href.substring(href_hashtag);
+        } else if (href_hashtag === -1) {
+            href = HASHTAG_CHARACTER + href ;
+        }
+        return href;
+    };
+
+    /**
+     * Returns a Object in a list by a property value
+     *
+     * @method objectInListByProperty
+     *
+     * @param {list} List of objects
+     * @param {string} Name of property
+     * @param {var} Value for comparision
+     * @return {object} Instance of object founded (if exists)
+     */
+     var findByProperty = function(list, property, value) {
+        var search = null;
+
+        for (var i = 0, len = list.length; i < len; i++) {
+            var element = list[i];
+
+            if (element[property] == value) {
+                search = element;
+                break;
+            }
+        };
+
+        return search;
+    };
+
     return {
         log: log,
         execute: execute,
@@ -147,7 +213,10 @@ LUNGO.Core = (function(lng, $$, undefined) {
         toType: toType,
         toArray: toArray,
         isMobile: isMobile,
-        environment: environment
+        environment: environment,
+        orderByProperty: orderByProperty,
+        parseUrl: parseUrl,
+        findByProperty: findByProperty
     };
 
 })(LUNGO, Quo);

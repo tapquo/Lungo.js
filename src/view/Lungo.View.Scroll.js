@@ -11,6 +11,9 @@
 
 LUNGO.View.Scroll = (function(lng, undefined) {
 
+    var CLASS = lng.Constants.CLASS;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var ERROR = lng.Constants.ERROR;
     var DEFAULT_PROPERTIES = {
         hScroll: false,
         vScroll: false,
@@ -21,58 +24,65 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         fadeScrollbar: true,
         hideScrollbar: true
     };
-
-    var HORIZONTAL_CLASS = 'horizontal';
-
     var CACHE_KEY = 'scrolls';
-
-    var HEADER_FOOTER_BLEEDING = 90;
+    var SCROLL_TIMEFRAME = 250;
 
     /**
      * Creates a new iScroll element.
      *
-     * @method create
+     * @method init
      *
      * @param {string} Id of the container scroll.
      * @param {object} [OPTIONAL] Properties
      */
-    var create = function(id, properties) {
+    var init = function(id, properties) {
         if (id) {
-            var scroll = lng.dom('#' + id);
-
-            //ToDo >> Refactor
-            setTimeout(function() {
-                if (_needScroll(scroll)) {
-                    properties = _mixProperties(scroll, properties);
-                    _saveScrollInCache(id, properties);
-                }
-            }, 100);
-
+            _render(id, properties);
         } else {
-            lng.Core.log(3, 'ERROR: Impossible to create a <scroll> without ID');
+            lng.Core.log(3, ERROR.CREATE_SCROLL);
         }
     };
 
     /**
      * Update iScroll element with new <markup> content.
      *
-     * @method update
+     * @method html
      *
      * @param {string} Id of the container scroll.
      * @param {string} Markup content
      */
-    var update = function(id, content) {
-        var scroll = lng.dom('#' + id);
-        var container = scroll.children().first();
-
-        if (container.length === 0) {
-            scroll.html('<div id="' + id + '_scrl"></div>');
-            container = scroll.children().first();
-        }
+    var html = function(id, content) {
+        var container = _getContainer(id);
         container.html(content);
 
-        lng.View.Resize.scroll(scroll);
-        _refresh(id);
+        _render(id);
+    };
+
+    /**
+     * Add <markup> content to iScroll instance
+     *
+     * @method append
+     *
+     * @param {string} Id of the container scroll.
+     * @param {string} Markup content
+     */
+    var append = function(id, content) {
+        var container = _getContainer(id);
+        container.append(content);
+
+        _render(id);
+    };
+
+    /**
+     * Refresh iScroll instance.
+     *
+     * @method refresh
+     *
+     * @param {string} Id of the container scroll.
+     * @param {object} [OPTIONAL] Properties
+     */
+    var refresh = function(id, properties) {
+        _render(id, properties);
     };
 
     /**
@@ -80,42 +90,89 @@ LUNGO.View.Scroll = (function(lng, undefined) {
      *
      * @method remove
      *
-     * @param {string} Id of the <section>
+     * @param {string} Id of the container scroll.
      */
     var remove = function(id) {
-        if (lng.Data.Cache.exists(CACHE_KEY)) {
+        if (lng.Data.Cache.exists(CACHE_KEY) && lng.Data.Cache.get(CACHE_KEY, id)) {
             lng.Data.Cache.get(CACHE_KEY, id).destroy();
             lng.Data.Cache.remove(CACHE_KEY, id);
         }
     };
 
     /**
-     * Removes iScroll instance.
+     * Scrolls the wrapper contents to the minimum x/y coordinates
      *
-     * @method scrollIsHorizontal
+     * @method first
      *
-     * @param {Object} Id of the <section>
+     * @param {string} Id of the <section>
      */
-    var isHorizontal = function(scroll) {
-        return (scroll.hasClass(HORIZONTAL_CLASS)) ? true : false;
+    var first = function(id) {
+        var scroll = lng.Data.Cache.get(CACHE_KEY);
+        if (scroll[id]) {
+            scroll[id].scrollTo(0, 0, SCROLL_TIMEFRAME);
+        }
     };
 
-    var _needScroll = function(scroll) {
-        var is_necessary = false;
+    /**
+     * Scrolls the wrapper contents to the maximum x/y coordinate
+     *
+     * @method down
+     *
+     * @param {string} Id of the <section>
+     */
+    var last = function(id) {
+        var scroll =  lng.Data.Cache.get(CACHE_KEY, id);
+        if (scroll) {
+            var element = lng.dom('#' + id).first();
+            var content_width = 0;
+            var content_height = 0;
 
-        var element = scroll[0];
-        if (element.clientHeight < element.scrollHeight) {
-            is_necessary = true;
-            _resizeChildContainer(element);
+            if (_isHorizontal(element)) {
+                content_width = -(_sizeProperty(element, ATTRIBUTE.WIDTH));
+            } else {
+                content_height = -(_sizeProperty(element, ATTRIBUTE.HEIGHT));
+            }
+            scroll.scrollTo(content_width, content_height, SCROLL_TIMEFRAME);
+        }
+    };
+
+    var _getContainer = function(id) {
+        var scroll = lng.dom('#' + id);
+        var container = scroll.children().first();
+
+        if (container.length === 0) {
+            scroll.html('<div></div>');
+            container = scroll.children().first();
         }
 
-        return is_necessary;
+        return container;
     };
 
-    var _resizeChildContainer = function(element) {
-        var child_container = lng.dom(element).children().first();
-        child_container.style('height', 'auto');
-        child_container.style('height', child_container.height() + HEADER_FOOTER_BLEEDING + 'px');
+    var _sizeProperty = function(element, property) {
+        var element_content = element.children().first();
+        return element_content[property]() - element[property]();
+    };
+
+    var _render = function(id, properties) {
+        var scroll = lng.dom('#' + id);
+
+        if (_needScroll(scroll, properties)) {
+            properties = _mixProperties(scroll, properties);
+            _saveScrollInCache(id, properties);
+        } else {
+            remove(id);
+        }
+    };
+
+    var _needScroll = function(scroll, properties) {
+        var element = scroll[0];
+        var is_horizontal = _isHorizontal(lng.dom(element));
+
+        if (is_horizontal) {
+            return (element.clientWidth < element.scrollWidth);
+        } else {
+            return (element.clientHeight < element.scrollHeight);
+        }
     };
 
     var _saveScrollInCache = function(id, properties) {
@@ -134,10 +191,10 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         if (!lng.Data.Cache.exists(CACHE_KEY)) {
             lng.Data.Cache.set(CACHE_KEY, {});
         }
-    }
+    };
 
     var _mixProperties = function(scroll, properties) {
-        var scroll_type = isHorizontal(scroll) ? 'hScroll' : 'vScroll';
+        var scroll_type = _isHorizontal(scroll) ? 'hScroll' : 'vScroll';
 
         properties || (properties = {});
         properties[scroll_type] = true;
@@ -146,16 +203,18 @@ LUNGO.View.Scroll = (function(lng, undefined) {
         return properties;
     };
 
-    var _refresh = function(id, properties) {
-        !lng.Data.Cache.get(CACHE_KEY, id) && _saveScrollInCache(id);
-        lng.Data.Cache.get(CACHE_KEY, id).refresh();
+    var _isHorizontal = function(scroll) {
+        return ( scroll.hasClass(CLASS.HORIZONTAL)) ? true : false;
     };
 
     return {
-        create: create,
-        update: update,
+        init: init,
         remove: remove,
-        isHorizontal: isHorizontal
+        refresh: refresh,
+        html: html,
+        append: append,
+        first: first,
+        last: last
     };
 
 })(LUNGO);

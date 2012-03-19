@@ -12,6 +12,9 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
     var _window = null;
     var _document = null;
 
+    var ELEMENT = lng.Constants.ELEMENT;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+
     /**
      * Initializes the automatic subscription events by markup of the project.
      *
@@ -31,7 +34,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
         if (_window.innerHeight == 356) {
             var _height = 416;
 
-            lng.dom('body').style('height', _height + 'px');
+            lng.dom(ELEMENT.BODY).style(ATTRIBUTE.HEIGHT, _height + ATTRIBUTE.PIXEL);
             _hideNavigationBar();
         }
     };
@@ -50,7 +53,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
                 }
             }, 15 );
 
-            _window.addEventListener( 'load', function(){
+            _window.addEventListener('load', function(){
                 setTimeout(function(){
                     _window.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
                 }, 0);

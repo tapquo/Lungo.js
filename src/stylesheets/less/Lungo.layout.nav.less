@@ -1,0 +1,112 @@
+/**
+ * Stylesheet
+ *
+ * @namespace LUNGO.Layout
+ * @class Nav
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "mixins.less";
+
+@defaultTrasition : @easeOutSine;
+@header_footer_height: 40px;
+	@header_extended_height: 74px;
+@footer_toolbar_height: 48px;
+
+/* @group <nav> */
+nav {
+	height: inherit;
+	text-align: center;
+    	
+	& a {
+		padding: 0 6px;
+		z-index: 1000;
+		float: left;
+		//line-height: 39px;
+		
+		& .icon {
+			position: relative;
+			top:  3px;
+		    font-size: 24px;
+		    display: inline-block;
+		}
+		
+		& img {
+    		width: 16px;
+    		height: 16px;
+    		top: -1px !important;
+		}
+		
+		& abbr {
+    		position: relative;    		
+    		margin-left: 2px;
+			display: none;
+		}
+		
+		&.current abbr, &.active abbr { display: inline; }
+	}
+	
+	& .bubble {
+    	position: relative;
+	    top:  -8px;
+	    left: -8px;
+	    margin-right: -20px;  
+	}
+}
+
+.toolbar {
+	height: @footer_toolbar_height;
+	display: block;
+	
+	& nav { display: block; }
+	& a { padding: 0; }
+	& .icon {
+    	display: block;
+    	top:  0px;
+    	font-size: 32px;
+		line-height: @footer_toolbar_height;
+	}
+	
+	&.with-labels .icon {
+    	line-height: 36px;
+		padding-bottom: 12px;
+	}
+	
+	& .bubble {
+    	top:  -52px;
+	    left: 4px;
+	}
+	
+	& abbr {
+		position: absolute;
+		top: 32px;
+		width: inherit;
+    	height: 14px;
+		margin-left: 0px;
+    	display: block !important;
+    	
+    	font-size: 11px;
+    	line-height: 14px;
+    	    	
+    	overflow: hidden;
+   		white-space: nowrap;
+  		text-overflow: ellipsis;
+	}
+}
+
+.groupbar {
+	position: absolute;
+	top: 39px;
+	height: 28px;
+	width: 100%;
+	padding: 4px 0 2px;	
+ 	display: block; 
+    line-height: 28px;
+    z-index: 2;
+    
+    & a {
+    	padding: 0px;
+}
+}
+/* @end */

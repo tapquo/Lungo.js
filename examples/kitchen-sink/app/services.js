@@ -18,26 +18,19 @@ App.Services = (function(lng, App, undefined) {
 
         //Normal List
         var parameters = {
-            container_id: 'list-plain',
-            template_id: 'profile-tmp',
+            el: '#list-plain',
+            template: 'profile-tmp',
             data: profiles
         };
         lng.View.Template.List.create(parameters);
 
         //Indented List
-        //parameters.container_id = 'list-indented-container';
-        //lng.View.Template.List.create(parameters);
-        lng.View.Template.Binding.create('list-indented-container', 'profile-tmp', profiles);
-
-        //Rounded List
-        //parameters.container_id = 'list-rounded';
-        //lng.View.Template.List.create(parameters);
-        lng.View.Template.Binding.create('list-rounded-container', 'profile-tmp', profiles);
+        parameters.el = '#list-indented';
+        lng.View.Template.List.create(parameters);
 
         //Ordered List
-        parameters.container_id = 'list-ordered';
-        parameters.order_field = 'name';
-        parameters.order_type = 'asc';
+        parameters.el = '#list-ordered';
+        parameters.order = { field: 'name', type: 'asc' };
         lng.View.Template.List.create(parameters);
     };
 
@@ -78,11 +71,8 @@ App.Services = (function(lng, App, undefined) {
         console.error('SYNC', response);
     };
 
-    mockProfiles();
-/*
     return {
         mockProfiles: mockProfiles
     }
-    */
 
 })(LUNGO, App);

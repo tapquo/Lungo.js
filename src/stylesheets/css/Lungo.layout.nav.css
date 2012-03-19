@@ -1,0 +1,12 @@
+nav{height:inherit;text-align:center;}nav a{padding:0 6px;z-index:1000;float:left;}nav a .icon{position:relative;top:3px;font-size:24px;display:inline-block;}
+nav a img{width:16px;height:16px;top:-1px !important;}
+nav a abbr{position:relative;margin-left:2px;display:none;}
+nav a.current abbr,nav a.active abbr{display:inline;}
+nav .bubble{position:relative;top:-8px;left:-8px;margin-right:-20px;}
+.toolbar{height:48px;display:block;}.toolbar nav{display:block;}
+.toolbar a{padding:0;}
+.toolbar .icon{display:block;top:0px;font-size:32px;line-height:48px;}
+.toolbar.with-labels .icon{line-height:36px;padding-bottom:12px;}
+.toolbar .bubble{top:-52px;left:4px;}
+.toolbar abbr{position:absolute;top:32px;width:inherit;height:14px;margin-left:0px;display:block !important;font-size:11px;line-height:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.groupbar{position:absolute;top:39px;height:28px;width:100%;padding:4px 0 2px;display:block;line-height:28px;z-index:2;}.groupbar a{padding:0px;}

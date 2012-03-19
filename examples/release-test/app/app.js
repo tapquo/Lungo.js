@@ -1,17 +1,30 @@
 var App = (function(lng, undefined) {
 
-    //Define your LungoJS Application Instance
 
     lng.App.init({
-        name: 'Release-Test',
-        version: '1.1'
+        name: 'Kitchen Sink',
+        version: '1.2',
+        resources: {
+            sections: [
+                'navigation.html',
+                'navigation-index.html',
+                'navigation-normal.html',
+                'navigation-pop.html',
+                'navigation-flow.html',
+                'lists.html',
+                'settings.html',
+                'forms.html',
+                'buttons-extra.html',
+                'aside.html',
+                'aside-profiles.html',
+                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html']
+        }
     });
-
 
     var _getEnvironmentFromQuoJS = (function() {
         var environment = lng.Core.environment();
         if (environment.isMobile) {
-            alert('RELESE: Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
+           // alert('Your phone is ' + environment.os.name + ' (' + environment.os.version + ')');
         }
     })();
 

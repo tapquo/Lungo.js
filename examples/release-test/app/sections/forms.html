@@ -1,0 +1,101 @@
+<section id="forms">
+    <header data-title="Forms" class="extended" data-back="home">
+        <nav class="groupbar">
+            <a href="#form-inputs" data-target="article" class="current">Inputs</a>
+            <a href="#form-others" data-target="article">Extras</a>
+            <a href="#form-switchs" data-target="article">Switchs</a>
+            <a href="#form-tips" data-target="article">Tips</a>
+        </nav>
+    </header>
+
+    <article id="form-inputs" class="list scrollable">
+        <div class="container indented">
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of inputs</li>
+                <li>
+                    <label>type="text"</label>
+                    <input type="text" placeholder="Input text"/>
+                    <label>type="password"</label>
+                    <input type="password" placeholder="Input password"/>
+                </li>
+            </ul>
+
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of textarea</li>
+                <li><textarea placeholder="Textarea sample"></textarea></li>
+            </ul>
+
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of select</li>
+                <li>
+                    <label class="select">
+                        <select class="custom">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </label>
+                </li>
+                <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
+            </ul>
+        </div>
+    </article>
+
+    <article id="form-others" class="list">
+        <div class="indented">
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of range</li>
+                <li> <input type="range"></li>
+                <li class="anchor" data-icon="edit">Example of type="date"</li>
+                <li>
+                    <input type="datetime" placeholder="Some datetime..." />
+                    <input type="date" placeholder="Some date..." />
+                    <input type="time" placeholder="Some time..." />
+                    <input type="month" placeholder="Some month..." />
+                </li>
+                <li class="tip dark" data-icon="question mini">Only for iOS5 & Android 2.3+ Devices"</li>
+            </ul>
+        </div>
+    </article>
+
+    <article id="form-switchs" class="list">
+        <div class="container indented">
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of checkbox</li>
+                <li>
+                    <label>Do you like LungoJS forms?</label>
+                    <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
+                </li>
+            </ul>
+
+            <ul class="form">
+                <li class="anchor" data-icon="edit">Example of radio</li>
+                <li>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <article id="form-tips" class="list scrollable">
+        <div class="container indented">
+            <ul class="form">
+                <li class="anchor">Examples of tips</li>
+                <li class="tip" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+                <li class="tip dark" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+                <li class="tip darker" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+
+                <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                <li class="tip darker" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+            </ul>
+
+            <ul class="form">
+                <li class="anchor" data-icon="home">Example of anchor</li>
+                <li><label>Example of label</label></li>
+            </ul>
+        </div>
+    </article>
+</section>
