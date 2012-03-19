@@ -11,15 +11,13 @@ var App = (function(lng, undefined) {
                 'navigation-normal.html',
                 'navigation-pop.html',
                 'navigation-flow.html',
-                'buttons.html',
                 'lists.html',
                 'settings.html',
                 'forms.html',
                 'buttons-extra.html',
                 'aside.html',
                 'aside-profiles.html',
-                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html',
-                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/error.html']
+                'http://examples.tapquo.com/examples/kitchen-sink/app/sections/remote.html']
         }
     });
 

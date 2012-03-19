@@ -19,67 +19,23 @@
     <link rel="apple-touch-icon-precomposed" href="assets/images/icon.png">
     <link rel="apple-touch-startup-image" href="assets/images/default.png">
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="../../release/lungo-1.2.min.css">
-    <link rel="stylesheet" href="../../release/lungo.theme.default.css">
+    <link rel="stylesheet" href="lungojs/lungo-1.2.min.css">
+    <link rel="stylesheet" href="lungojs/lungo.theme.default.css">
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="assets/stylesheets/app.css">
-
-    <style>
-        @-webkit-keyframes flow-show {
-            0% { -webkit-transform: translateX(100%) scale(.7); }
-            50% { -webkit-transform: translateX(0%) scale(.7);}
-            100% { -webkit-transform: translateX(0%) scale(1);}
-        }
-
-        @-webkit-keyframes flow-show-revoke {
-            0% { -webkit-transform: translateX(0%) scale(1); }
-            50% { -webkit-transform: translateX(0%) scale(.7);}
-            100% { -webkit-transform: translateX(100%) scale(.7);}
-        }
-
-        @-webkit-keyframes flow-hide {
-            0% { -webkit-transform: translateX(0%) scale(1); }
-            50% { -webkit-transform: translateX(0%) scale(.7); }
-            100% { -webkit-transform: translateX(-100%) scale(.7); }
-        }
-
-        @-webkit-keyframes flow-hide-revoke {
-            0% { -webkit-transform: translateX(-100%) scale(.7); }
-            50% { -webkit-transform: translateX(0%) scale(.7);}
-            100% { -webkit-transform: translateX(0%) scale(1);}
-        }
-    </style>
 </head>
 
 <body class="app">
-    <!--
-    <section id="login">
-        <article class="splash">
-            <div class="indented">
-                <h1>Kitchen<span class="semi-opacity">Sink<span></h1>
-
-                <input type="text" placeholder="Type your user" />
-                <input type="password" placeholder="Type your password" />
-
-                <a href="#kitchen-sink" data-target="section" class="button big" data-icon="check">Go to Kitchen Sink!</a>
-                <div class="copyright">Copyright TapQuo Inc, 2011</div>
-
-                <div class="switch">
-                    <span class="thumb"></span>
-                    <input type="checkbox" checked="off" />
-                </div>
-
-            </div>
-        </article>
-    </section>
-    -->
 
     <!-- ============================= kitchen-sink ============================= -->
 
     <section id="kitchen-sink">
         <header data-title="LungoJS Kitchen Sink">
             <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside" data-icon="items"></a>
-            <a href="#profiles" data-target="aside" data-article="welcome" class="button onright">Profiles</a>
+            <nav class="onright">
+                <a href="#profiles" data-target="aside" data-article="welcome" class="button">Profiles</a>
+                <a href="#buttons-extra" data-target="section" data-article="buttons" class="button">Other Examples</a>
+            </nav>
         </header>
 
         <!-- ============================= welcome ============================= -->
@@ -109,10 +65,6 @@
                 <a href="#" class="button big yellow">yellow</a>
                 <a href="#" class="button big twitter">twitter</a>
                 <a href="#" class="button big facebook">facebook</a>
-
-                <div class="text">You can view other examples push in the next button</div>
-
-                <a href="#buttons-extra" data-target="section" class="button black big" data-icon="add">View other Examples</a>
             </div>
         </article>
 
@@ -193,6 +145,12 @@
                         <small>Creates a search input form</small>
                     </li>
                     <li data-search="Type your search..."></li>
+
+                    <li>
+                        data-progress
+                        <small>Creates a progress element</small>
+                    </li>
+                    <li data-progress="25%"></li>
                 </ul>
 
                 <h1 class="title">Others</h1>
@@ -322,7 +280,7 @@
     </section>
 
      <!-- LungoJS (Production mode) -->
-    <script src="../../release/lungo-1.2.packed.js"></script>
+    <script src="lungojs/lungo-1.2.packed.js"></script>
     <!-- LungoJS - Sandbox App -->
     <script src="app/app.js"></script>
     <script src="app/events.js"></script>
