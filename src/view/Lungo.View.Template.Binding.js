@@ -50,7 +50,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     var _bindPropertiesInMultiplesElements = function(elements, template) {
         var markup = '';
         for (var i = 0, len = elements.length; i < len; i++) {
-            markup += _bindProperties(elements[i], template);
+            markup += _bindProperties($$.extend(elements[i],{'index':i}), template);
         }
         return markup;
     };
