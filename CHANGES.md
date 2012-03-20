@@ -3,12 +3,20 @@
 
 ## Changes in Version 1.2
 - New improved Scroll: Refresh, Append, Prepend...
+- New template system
 - New input element (iOS 5+, Android 2.3+): type="range"
 - New data-attribute: data-progress
 - New <section> transitions: pop & flow
-- ...
+- New type of header: Extended
+- New navigation type: Groupbar
+- New behavior for aside elements.
+- Asynchronous loading of sections and templates.
+- Optimized .indented class
+- Android 4.0 device support
+- New default theme with Roboto Font.
 - BUG FIXED:
-    -
+    - Fixed position in iOS 4.2+
+    - Fixed bug in cache.get() method (9adf3c2294)
 
 ## Changes in Version 1.1.2
 - BUG FIXED:
