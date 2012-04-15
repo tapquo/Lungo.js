@@ -7,16 +7,31 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
+/* @group DIMENSIONS */
+/* @end */
+/* @group COLORS */
+/* @end */
 .app {
   background: #000000;
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 /* @group <header> & <footer> & <article> */
 header {
-  background-color: #05b8e2;
-  border-top: 1px solid #05bde9;
-  border-bottom: 1px solid #07acd0;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  background: #2c8bca;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2c8bca), color-stop(100%, #154f93));
+  background: -webkit-linear-gradient(top, #2c8bca 0%, #154f93 100%);
+  -webkit-box-shadow: inset 0 1px 0 #64b9e2, inset 0 -1px 0 #2566a4;
+  box-shadow: inset 0 1px 0 #64b9e2, inset 0 -1px 0 #2566a4;
+  border-bottom: 1px solid #1a2838;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
 }
 footer {
   background: #2c2c2d -webkit-gradient(linear, left top, left bottom, color-stop(0.25, #2c2c2d), color-stop(1, #1c1c1c));
@@ -27,7 +42,7 @@ footer {
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
 }
 article {
-  background-color: #ededed;
+  background-color: #EBEBEB;
 }
 article .title {
   color: #797979;
@@ -181,26 +196,25 @@ section.aside.onright {
 }
 /* @group .button */
 .button {
-  border-bottom: 1px inset rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.05);
+}
+.button.big {
+  -webkit-box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.25), inset 0 -3px 0 rgba(255, 255, 255, 0.05), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 .button:active, .button.active {
-  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px rgba(0, 0, 0, 0.2);
-  border-bottom-color: rgba(0, 0, 0, 0);
-}
-header .button:active,
-footer .button:active,
-header .button:active,
-footer .button:active {
-  height: 29px;
-  position: relative;
-  top: 1px;
+  -webkit-box-shadow: inset 0 29px 8px rgba(0, 0, 0, 0.1);
 }
 .button.default {
   background: #5a5a5a;
@@ -274,6 +288,12 @@ input[type="range"]:active::-webkit-slider-thumb {
 /* @end */
 .bubble {
   color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
