@@ -8,11 +8,7 @@
  */
 
 @import "mixins.less";
-
-@defaultTrasition : @easeOutSine;
-@header_footer_height: 40px;
-	@header_extended_height: 74px;
-@footer_toolbar_height: 48px;
+@import "constants.less";
 
 /* @group <section> */
 section {
@@ -112,7 +108,8 @@ header, footer  {
 	position: absolute;
 	left: 0px;
 	width: 100%;
-	height: 38px;
+	//height: 38px;
+	height: @header-height;
 	display: block;
 	
 	z-index: 2;
