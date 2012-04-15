@@ -1,0 +1,27 @@
+.scroll-demo {
+    background: #ccc;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.scroll-demo.horizontal {
+    height: 68px;
+    width: inherit;
+    display: block;
+}
+
+.scroll-demo.vertical {
+    top: 72px;
+    width: 72px;
+    height: 196px;
+}
+
+.scroll-demo span {
+    height: 64px;
+    width: 64px;
+    background: #666;
+    text-align: center;
+    line-height: 64px;
+    display: inline-block;
+    margin: 2px 0px 0px 2px;
+}
