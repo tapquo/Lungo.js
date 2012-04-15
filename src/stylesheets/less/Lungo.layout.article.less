@@ -8,6 +8,8 @@
  */
 
 @import "mixins.less";
+@import "constants.less";
+
 
 @defaultTrasition : @easeOutSine;
 @header_footer_height: 40px;
@@ -45,7 +47,7 @@ article {
 	}	
 }
 		
-header:not(.extended) ~ article { top: @header_footer_height; }	
+header:not(.extended) ~ article { top: @header-height; }	
 	header.extended ~ article { top: @header_extended_height; }		
 footer:not(.toolbar) ~ article { bottom: @header_footer_height; }
 	footer.toolbar ~ article { bottom: @footer_toolbar_height; }
