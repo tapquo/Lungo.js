@@ -66,10 +66,28 @@
     <section id="test-1" class="pop">
         <header data-title="Test-1">
             <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside" data-icon="items"></a>
-            <a href="#profiles" data-target="aside" data-article="welcome" class="button onright">Profiles</a>
+            <nav class="onright">
+                <a href="#" class="active" data-icon="star"></a>
+                <a href="#" class="current" data-icon="plus">&nbsp;Add</a>
+            </nav>
         </header>
-        <article>
-            <a href="#test-2" data-target="section" class="button big red">Test 2</a>
+
+        <footer class="toolbar with-labels">
+            <nav>
+                <a href="#nav-1" data-target="article" class="current" data-icon="user" data-label="User"></a>
+                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17" data-label="Calendar"></a>
+                <a href="#nav-3" data-target="article" data-icon="mail" data-label="Emails" data-count="124"></a>
+                <a href="#nav-4" data-target="article" data-icon="phone" data-label="Calls" data-count="12"></a>
+            </nav>
+        </footer>
+
+        <article class="indented">
+            <div>
+
+                <a href="#test-2" data-target="section" class="button big">Test 2</a>
+                <a href="#test-2"  class="button big red">Test 2</a>
+                <a href="#test-2" class="button big facebook">Test 2</a>
+            </div>
         </article>
     </section>
 
