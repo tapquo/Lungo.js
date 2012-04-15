@@ -8,6 +8,8 @@
  */
 
 @import "mixins.less";
+@import "constants.less";
+
 @import "lungo.theme.default.font.css";
 
 @theme:  #05b8e2;
@@ -26,10 +28,30 @@
 
 /* @group <header> & <footer> & <article> */
 header {
-	background-color: @theme;
-	border-top: 1px solid @theme-light;
-	border-bottom: 1px solid @theme-dark;
-	box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+	//background-color: @theme;
+	
+	//border-top: 1px solid @theme-light;
+	//border-bottom: 1px solid @theme-dark;
+	//box-shadow: 0 1px 0 rgba(0,0,0,0.1);
+	
+	//height: 45px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	background: #2c8bca;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c8bca), color-stop(100%,#154f93));
+	background: -webkit-linear-gradient(top,  #2c8bca 0%,#154f93 100%);
+	
+	-webkit-box-shadow: inset 0 1px 0 #64b9e2, inset 0 -1px 0 #2566a4;
+	box-shadow: inset 0 1px 0 #64b9e2, inset 0 -1px 0 #2566a4;
+	border-bottom: 1px solid #1a2838;
+	overflow: hidden;
+	position: absolute;
+	z-index: 2;
+	
 }
 
 footer {
@@ -43,7 +65,7 @@ footer {
 }
 
 article {
-	background-color: #ededed;
+	background-color: #EBEBEB;
 	& .title {
     	color: #797979;
     	text-shadow: 0px 1px 0px #fff;
@@ -212,20 +234,18 @@ section.aside {
 
 /* @group .button */
 .button {
-	border-bottom: 1px inset rgba(0,0,0,0.2);
 	.border-radius(2px);
-	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.2);
-
-	&:active, &.active {
-		-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 0 2px rgba(0,0,0,0.2);
-		border-bottom-color: rgba(0,0,0,0);
+	//border-bottom: 1px inset rgba(0,0,0,0.2);
+	//-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 3px rgba(0,0,0,0.2);
+	-webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25), inset 0 -3px 0 rgba(255,255,255, 0.05);
+	
+	&.big {
+    	-webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25), inset 0 -3px 0 rgba(255,255,255, 0.05), 0 1px 2px rgba(0,0,0,0.3);
 	}
-
-	header &:active, footer &:active,
-	header &:active, footer &:active {
-    	height: 29px;
-		position: relative;
-		top:  1px;
+	
+	&:active, &.active {
+		//-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 0 2px rgba(0,0,0,0.2);
+		-webkit-box-shadow: inset 0 29px 8px rgba(0,0,0,0.1);
 	}
 
 	&.default {
