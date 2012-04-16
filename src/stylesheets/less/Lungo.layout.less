@@ -109,15 +109,16 @@ header, footer  {
 	left: 0px;
 	width: 100%;	
 	height: @header-height;
-	line-height: @header-height;
-	overflow: hidden;
-	
+	display: block;
 	z-index: 2;
+
+	line-height: @header-height;
+	overflow: hidden;	
 }
 
 header  {
 	top: 0px;
-		
+	
 	//&.extended { height: 72px; }
 	& .onleft { margin-left: 4px !important;}
 	& .onright {margin-right: 4px !important;}
