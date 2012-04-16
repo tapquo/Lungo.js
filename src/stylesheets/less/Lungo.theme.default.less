@@ -21,6 +21,9 @@
 	@theme-secondary: #2c2c2d;
 		@theme-secondary-dark: #1c1c1c;
 
+@background-main: #2c8bca -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c8bca), color-stop(100%,#154f93));
+@background-secondary: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c8bca), color-stop(100%,#154f93));
+
 .app {
     background: @black;
     font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -28,23 +31,15 @@
 
 /* @group <header> & <footer> & <article> */
 header {
-	//background-color: @theme;
-	
-	//border-top: 1px solid @theme-light;
-	//border-bottom: 1px solid @theme-dark;
-	//box-shadow: 0 1px 0 rgba(0,0,0,0.1);
-	
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	border-bottom: 1px solid #1a2838;
 	
-	background: #2c8bca;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c8bca), color-stop(100%,#154f93));
-	background: -webkit-linear-gradient(top,  #2c8bca 0%,#154f93 100%);
-	
+	background: @background-main;
+		
 	-webkit-box-shadow: inset 0 1px 0 #64b9e2, inset 0 -1px 0 #2566a4;
 	box-shadow: inset 0 1px 0 #64b9e2, inset 0 -1px 0 #2566a4;
-	border-bottom: 1px solid #1a2838;
-	overflow: hidden;
+	
 	position: absolute;
 	z-index: 2;
 	
@@ -93,14 +88,17 @@ nav a {
 
 
 .groupbar {
-    background: #ededed;
+    //background: #ededed;
+    background: #272a2d;
     border-bottom: solid 1px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 8px rgba(0,0,0,0.3);
 
     & a {
     	color: #6e6e6e;
     	&.current {
 			color: #6e6e6e;
-			border-bottom: solid 3px @theme-light;
+			color:  #fff;
+			border-bottom: solid 3px #2566a4;
     	}
 	}
 }
@@ -345,13 +343,10 @@ input[type="range"] {
 	
 	border: solid 1px @white;
 	box-shadow: 0 0 6px #000;	
+	
+	&.count { background: @background-main; }
 }
 	header .bubble.count {
 		background: @theme-secondary;
-	}
-	.bubble.count { 
-		//background: @theme; 
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c8bca), color-stop(100%,#154f93));
-		background: -webkit-linear-gradient(top,  #2c8bca 0%,#154f93 100%);
 	}
 /* @end */
