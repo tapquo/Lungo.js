@@ -108,6 +108,8 @@ header, footer  {
 	position: absolute;
 	left: 0px;
 	width: 100%;	
+	height: @header-height;
+	line-height: @header-height;
 	overflow: hidden;
 	
 	z-index: 2;
@@ -115,17 +117,13 @@ header, footer  {
 
 header  {
 	top: 0px;
-	height: @header-height;
-	line-height: @header-height;
-	
+		
 	//&.extended { height: 72px; }
 	& .onleft { margin-left: 4px !important;}
 	& .onright {margin-right: 4px !important;}
 }
 
-footer  {
-	bottom:0px;
-}
+footer  { bottom: 0px; }
 
 header .title, footer .title  {
 	margin: 0 4px;	

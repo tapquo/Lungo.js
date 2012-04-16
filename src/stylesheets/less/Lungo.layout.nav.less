@@ -17,70 +17,76 @@
 nav {
 	height: inherit;
 	text-align: center;
-    	
+
 	& a {
 		padding: 0 6px;
 		z-index: 1000;
 		float: left;
 		//line-height: 39px;
-		
+
 		& .icon {
 			position: relative;
 			top:  3px;
 		    font-size: 24px;
 		    display: inline-block;
 		}
-		
+
 		& img {
     		width: 16px;
     		height: 16px;
     		top: -1px !important;
 		}
-		
+
 		& abbr {
-    		position: relative;    		
+    		position: relative;
     		margin-left: 2px;
 			display: none;
 		}
-		
+
 		&.current abbr, &.active abbr { display: inline; }
 	}
-	
+
 	& .bubble {
     	position: relative;
 	    top:  -8px;
 	    left: -8px;
-	    margin-right: -20px;  
+	    margin-right: -20px;
 	}
 }
 
 .toolbar {
-	height: @toolbar-height;
-	
+	height:  40px;
+
 	& nav {
 		margin: 2px;
 		display: block;
 	}
-	& a { 
-		padding: 0; 
-		height:  47px;
+
+	& a {
+		padding: 0;
+		height:  35px;
 	}
+
+
+	&.with-labels {
+		height: @with-labels-height;
+
+		& a { height:  47px; }
+		& .icon { padding-bottom: 12px; }
+	}
+
 	& .icon {
     	display: block;
     	top:  0px;
     	font-size: 34px;
     	line-height: 34px;
 	}
-	
-	&.with-labels .icon {
-		padding-bottom: 12px;
-	}
-	
+
 	& .bubble {
     	top:  -44px;
 	    left: 4px;
 	}
-	
+
 	& abbr {
 		position: absolute;
 		top: 32px;
@@ -88,10 +94,10 @@ nav {
     	height: 14px;
 		margin-left: 0px;
     	display: block !important;
-    	
+
     	font-size: 11px;
     	line-height: 14px;
-    	    	
+
     	overflow: hidden;
    		white-space: nowrap;
   		text-overflow: ellipsis;
@@ -103,13 +109,11 @@ nav {
 	top: 39px;
 	height: 28px;
 	width: 100%;
-	padding: 4px 0 2px;	
- 	display: block; 
+	padding: 4px 0 2px;
+ 	display: block;
     line-height: 28px;
     z-index: 2;
-    
-    & a {
-    	padding: 0px;
-}
+
+    & a { padding: 0px; }
 }
 /* @end */
