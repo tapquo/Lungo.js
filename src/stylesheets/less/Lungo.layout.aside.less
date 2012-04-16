@@ -7,6 +7,7 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
+@import "constants.less";
 @import "mixins.less";
 
 @defaultTrasition : @easeOutSine;
@@ -32,37 +33,37 @@ aside {
 
 	width: 256px;
 	max-width: 256px;
-	
+
 	&.onright { right: 0px; }
-	&.current { visibility: visible;} 
-	
+	&.current { visibility: visible;}
+
 	& .title {
     	line-height: 40px;
 	    font-size: 15px;
 	    font-weight: bold;
-		height: 40px;    	
+		height: 40px;
 	}
-	
+
 	& a {
     	display: block;
 		width: 244px;
 		height: 40px;
-	
+
 		font-size: 15px;
 		line-height: 40px;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		
+
 	}
-	
+
 	& .bubble {
     	float: right;
     	font-size: 11px;
 	}
 }
 
-aside .title, aside a, aside .anchor {    
+aside .title, aside a, aside .anchor {
 	padding: 0 6px;
 }
 
@@ -73,15 +74,15 @@ aside a .bubble, aside .title .bubble {
 aside .anchor .bubble {
     margin-top: 2px;
 }
-	
+
 	aside .icon {
 		width: 24px;
 		float: left;
 		margin: 8px 4px 0 0;
-	
+
 		font-size: 24px;
 		line-height: 24px;
-	    text-align: center;		    
+	    text-align: center;
 	}
 	aside .anchor {
 		font-weight: bold;
@@ -90,7 +91,7 @@ aside .anchor .bubble {
 
 	@media handheld, only screen and (min-width: 768px) {
 		[data-target="aside"] { display: none !important; }
-		
+
 		section.aside {
 			width: auto !important;
     		left: 256px !important;
