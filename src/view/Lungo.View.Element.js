@@ -14,8 +14,7 @@ LUNGO.View.Element = (function(lng, undefined) {
     var SELECTORS = {
         BUBBLE: '.bubble.count',
         PROGRESS_VALUE: ' .value',
-        PROGRESS_PERCENTAGE: ' .value .label',
-        PROGRESS_DESCRIPTION: ' .labels'
+        PROGRESS_PERCENTAGE: ' .value .label'
     };
 
     /**
@@ -48,16 +47,14 @@ LUNGO.View.Element = (function(lng, undefined) {
      * @param  {boolean} Show the labels: description and current percentage
      * @param  {string}  Description
      */
-    var progress = function(selector, percentage, with_labels, description) {
+    var progress = function(selector, percentage, with_label) {
         var element = lng.dom(selector);
 
         if (element) {
             percentage += ATTRIBUTE.PERCENT;
 
             lng.dom(selector + SELECTORS.PROGRESS_VALUE).style(ATTRIBUTE.WIDTH, percentage);
-
-            _setProgressLabel(selector + SELECTORS.PROGRESS_PERCENTAGE, with_labels, percentage);
-            _setProgressLabel(selector + SELECTORS.PROGRESS_DESCRIPTION, with_labels, description);
+            lng.dom(selector + SELECTORS.PROGRESS_PERCENTAGE).html((with_label) ? percentage : ATTRIBUTE.EMPTY);
         }
     };
 
@@ -73,10 +70,6 @@ LUNGO.View.Element = (function(lng, undefined) {
 
             element.append(html_binded);
         }
-    };
-
-    var _setProgressLabel = function(selector, with_labels, attribute) {
-        lng.dom(selector).html((with_labels) ? attribute : ATTRIBUTE.EMPTY);
     };
 
     return {
