@@ -34,37 +34,11 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="assets/stylesheets/app.css">
-
-    <style>
-        @-webkit-keyframes flow-show {
-            0% { -webkit-transform: translateX(100%) scale(.7); }
-            50% { -webkit-transform: translateX(0%) scale(.7);}
-            100% { -webkit-transform: translateX(0%) scale(1);}
-        }
-
-        @-webkit-keyframes flow-show-revoke {
-            0% { -webkit-transform: translateX(0%) scale(1); }
-            50% { -webkit-transform: translateX(0%) scale(.7);}
-            100% { -webkit-transform: translateX(100%) scale(.7);}
-        }
-
-        @-webkit-keyframes flow-hide {
-            0% { -webkit-transform: translateX(0%) scale(1); }
-            50% { -webkit-transform: translateX(0%) scale(.7); }
-            100% { -webkit-transform: translateX(-100%) scale(.7); }
-        }
-
-        @-webkit-keyframes flow-hide-revoke {
-            0% { -webkit-transform: translateX(-100%) scale(.7); }
-            50% { -webkit-transform: translateX(0%) scale(.7);}
-            100% { -webkit-transform: translateX(0%) scale(1);}
-        }
-    </style>
 </head>
 
 <body class="app">
     <section id="test-1" class="pop">
-        <header data-title="Test-1">
+        <header data-title="Test-1" class="extended">
             <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside" data-icon="items"></a>
             <nav class="onright">
                 <a href="#" class="active" data-icon="star"></a>
@@ -72,23 +46,89 @@
             </nav>
         </header>
 
+
+        <nav class="groupbar">
+            <a href="#nav-1" data-target="article" data-icon="clock">&nbsp;Alarm</a>
+            <a href="#nav-2" data-target="article" class="current" data-icon="calendar">&nbsp;Calendar</a>
+        </nav>
+
+<!--
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" class="current" data-icon="user" data-label="User"></a>
-                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17" data-label="Calendar"></a>
+                <a href="#nav-1" data-target="article" data-icon="clock" data-label="Alarm"></a>
+                <a href="#nav-2" data-target="article" class="current" data-icon="calendar" data-count="17" data-label="Calendar"></a>
                 <a href="#nav-3" data-target="article" data-icon="mail" data-label="Emails" data-count="124"></a>
                 <a href="#nav-4" data-target="article" data-icon="phone" data-label="Calls" data-count="12"></a>
             </nav>
+        </footer> -->
+
+        <footer class="toolbar">
+            <nav>
+                <a href="#nav-1" data-target="article" class="current"  data-icon="clock"></a>
+                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17"></a>
+                <a href="#nav-3" data-target="article" data-icon="mail" data-count="124"></a>
+                <a href="#nav-4" data-target="article" data-icon="phone" data-count="12"></a>
+            </nav>
         </footer>
 
-        <article class="indented">
-            <div>
 
+
+        <article id="nav-1" class="list indented">
+            <ul class="form">
+                <li>
+                    <label>type="text"</label>
+                    <input type="text" placeholder="Input text"/>
+                    <textarea placeholder="Textarea sample"></textarea>
+                    <label class="select">
+                        <select class="custom">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </label>
+                </li>
+                <li>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
+                </li>
+                <li>
+                    <label>Do you like LungoJS forms?</label>
+                    <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
+                </li>
+
+                <li>
+                    <div id="progress-normal" data-progress="25%"></div>
+                    <div id="progress-big" data-progress="50%" class="big"></div>
+                    <label>type="range"</label>
+                    <input type="range">
+                </li>
+            </ul>
+            <ul>
+                <li class="tip theme">Examples of tips</li>
+                <li class="tip" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+                <li class="tip dark" data-icon="home mini">Lorem Ipsum is simply dummy text...</li>
+
+                <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+
+
+                <li class="tip dark" data-icon="question mini">It's a special form element you must set the label with class "select"</li>
+            </ul>
+        </article>
+
+
+        <article id="nav-2" class="list indented">
+            <div>
                 <a href="#test-2" data-target="section" class="button big">Test 2</a>
-                <a href="#test-2"  class="button big red">Test 2</a>
+                <a href="#test-2"  class="button big red ">Test 2</a>
                 <a href="#test-2" class="button big facebook">Test 2</a>
             </div>
         </article>
+
+        <article id="nav-3"></article>
+
+        <article id="nav-4"></article>
     </section>
 
     <section id="test-2" class="pop">
