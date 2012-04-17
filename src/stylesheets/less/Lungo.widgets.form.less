@@ -26,6 +26,7 @@ input:not([type=checkbox]), textarea, select {
 	font-size:  15px;
 	line-height: 15px;
 	font-weight: bold;
+	margin-bottom: 8px;
 	
 	-webkit-appearance: none;
 	-webkit-user-select: text;
@@ -58,7 +59,6 @@ label.select {
     position: relative;
     display: inline-block;
     width: 100%;
-	padding-top: 2px;
 }
 
 .select:after {
@@ -72,8 +72,7 @@ label.select {
 
 	content: "▼";
 	pointer-events:none;
-	line-height: 32px;
-	margin-top: 2px;
+	line-height: 31px;
 }
 
 .no-pointer-events .select:after {
@@ -212,6 +211,7 @@ input[type="range"] {
 /* @group progress */
 .progress {
     width: 100%;
+    margin-bottom: 8px;
 
     .labels {
     	display: block;
