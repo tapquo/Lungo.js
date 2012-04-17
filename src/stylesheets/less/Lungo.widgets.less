@@ -28,19 +28,7 @@
 
 .onright { float: right;}
 
-.indented {
-    & > * {
-    	padding: 10px;
-	}
-
-	&.rounded {
-    	& ul { .border-radius(4px); }
-    	& li {
-    		&:first-child { .border-radius(4px 4px 0px 0px); }
-			&:last-child { .border-radius(0px 0px 4px 4px); }
-		}
-	}
-}
+.indented > * { padding: 10px; }
 
 .margin-top-4{ margin-top: 4px; }
 /* @end */

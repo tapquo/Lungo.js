@@ -10,21 +10,20 @@
 @import "mixins.less";
 @import "constants.less";
 
-
-.form {
+form, .form {
 
 }
 
 label {
 	font-size: 0.8em;
-    line-height: 27px;
+    //line-height: 27px;
 }
 
 input:not([type=checkbox]), textarea, select {
 	display: inline-block;
-	padding: 5px;
-	width: 95%;
-	margin-bottom: 2px;
+	padding: 5px 0 5px 5px;
+	width: 97%;
+	//margin-bottom: 2px;
 
 	outline: none;
 	-webkit-appearance: none;
@@ -177,7 +176,6 @@ input[type="checkbox"] + span::after,
 	width: 41px;
 	height: 27px;
 	text-align: center;
-	box-shadow: 0px 1px 0px #fff, 0px 2px 0px #d2d2d2;
 }
 
 input[type="checkbox"]:checked + span::before,
@@ -194,14 +192,12 @@ input[type="checkbox"]:checked + span::after,
 /* @group range */
 input[type="range"] {
 	-webkit-appearance:	none;
-	height: 3px;
+	height: 15px;
 	width: 100%;
 	outline: none;
-	border-radius: 1px;
 	position: relative;
 	padding: 0px;
 	margin: 0px;
-	margin-bottom: 4px !important;
 	border: 0;
 	cursor: ew-resize;
 
@@ -227,7 +223,7 @@ input[type="range"] {
 	}
 
     & .bar {
-		height:  3px;
+		height:  15px;
 		display: block;
 
     	& .value {
@@ -235,14 +231,12 @@ input[type="range"] {
 	    	height: inherit;
 	    	width: 0%;
 	    	-webkit-transition: width 500ms @defaultTrasition;
-
-	    	& .glow {
-				float:right;
-				height: inherit;
-	    		width: 3px;
-	    	}
 		}
 	}
+}
+
+.big .progress .bar {
+	height:  29px;
 }
 /* @end */
 
