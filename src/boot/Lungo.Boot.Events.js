@@ -33,8 +33,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.dom(window).on(resize, _changeOrientation);
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
-
-        lng.Fallback.androidButtons();
     };
 
     var _iScroll = function(event) {
