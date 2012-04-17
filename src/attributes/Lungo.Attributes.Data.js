@@ -27,8 +27,7 @@ LUNGO.Attributes.Data = {
     Progress: {
         tag: 'progress',
         selector: '*',
-        html: '<div class="progress" id="yeal">\
-                    <span class="labels"></span>\
+        html: '<div class="progress">\
                     <span class="bar"><span class="value" style="width:{{value}};"><span class="label"></span></span></span>\
                 </div>'
     },
