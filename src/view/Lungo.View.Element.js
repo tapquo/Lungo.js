@@ -15,7 +15,7 @@ LUNGO.View.Element = (function(lng, undefined) {
         BUBBLE: '.bubble.count',
         PROGRESS_VALUE: ' .value',
         PROGRESS_PERCENTAGE: ' .value .label',
-        PROGRESS_DESCRIPTION: ' .labels span:first-child'
+        PROGRESS_DESCRIPTION: ' .labels'
     };
 
     /**
