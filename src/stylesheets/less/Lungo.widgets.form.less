@@ -7,31 +7,27 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-@import "mixins.less";
 @import "constants.less";
+@import "mixins.less";
 
-form, .form {
-
-}
+form, .form { }
 
 label {
 	font-size: 0.8em;
-    //line-height: 27px;
 }
 
 input:not([type=checkbox]), textarea, select {
 	display: inline-block;
 	padding: 5px 0 5px 5px;
 	width: 97%;
-	//margin-bottom: 2px;
 
 	outline: none;
-	-webkit-appearance: none;
-	border-radius: 0px;
+	
 	font-size:  15px;
 	line-height: 15px;
 	font-weight: bold;
-
+	
+	-webkit-appearance: none;
 	-webkit-user-select: text;
 }
 
@@ -224,6 +220,7 @@ input[type="range"] {
 
     & .bar {
 		height:  15px;
+		line-height: 16px;
 		display: block;
 
     	& .value {
@@ -237,6 +234,7 @@ input[type="range"] {
 
 .big .progress .bar {
 	height:  29px;
+	line-height: 30px;
 }
 /* @end */
 
