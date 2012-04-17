@@ -2,6 +2,11 @@ App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
 
+        setTimeout(function() {
+
+            lng.View.Element.progress('#progress-normal', 50, true, 'yeah');
+            lng.View.Element.progress('#progress-big', 75, true, 'yeah');
+        }, 1000);
     });
 
     //SPECIAL
