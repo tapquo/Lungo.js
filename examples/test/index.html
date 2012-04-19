@@ -42,14 +42,14 @@
             <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside" data-icon="items"></a>
             <nav class="onright">
                 <a href="#" class="active" data-icon="star"></a>
-                <a href="#" class="current" data-icon="plus">&nbsp;Add</a>
+                <a href="#profiles" class="active"  data-target="aside" data-icon="plus">&nbsp;Add</a>
             </nav>
         </header>
 
 
         <nav class="groupbar">
-            <a href="#nav-1" data-target="article" data-icon="clock">&nbsp;Alarm</a>
-            <a href="#nav-2" data-target="article" class="current" data-icon="calendar">&nbsp;Calendar</a>
+            <a href="#nav-1" data-target="article" class="current"  data-icon="clock">&nbsp;Alarm</a>
+            <a href="#nav-2" data-target="article" data-icon="calendar">&nbsp;Calendar</a>
         </nav>
 
 <!--
@@ -73,7 +73,8 @@
 
 
 
-        <article id="nav-1" class="list indented">
+        <article id="nav-1" class="list indented scrollable">
+
             <ul class="form">
                 <li>
                     <label>type="text"</label>
@@ -93,7 +94,7 @@
                     <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
                 </li>
                 <li>
-                    <label>Do you like LungoJS forms?</label>
+                    <label class="">Do you like LungoJS forms?</label>
                     <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
                 </li>
 
@@ -136,7 +137,6 @@
         <article>
         </article>
     </section>
-
 
     <!-- Third parties dependencies -->
     <script src="../../src/lib/QuoJS.js"></script>
