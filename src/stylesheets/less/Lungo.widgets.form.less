@@ -12,8 +12,9 @@
 
 form, .form { }
 
-label {
-	font-size: 0.8em;
+label { 
+	font-size: 0.9em;
+	line-height: 29px;
 }
 
 input:not([type=checkbox]), textarea, select {
@@ -26,10 +27,11 @@ input:not([type=checkbox]), textarea, select {
 	font-size:  15px;
 	line-height: 15px;
 	font-weight: bold;
-	margin-bottom: 8px;
 	
 	-webkit-appearance: none;
 	-webkit-user-select: text;
+	
+	margin: 0 0 6px;
 }
 
 /* @group search */
@@ -49,6 +51,8 @@ input[type=search] {
 	}
 }
 /* @end */
+
+/* @group select */
 
 select {
 	width: 100%;
@@ -79,11 +83,14 @@ label.select {
 	content: none;
 }
 
-/* @group Switch */
+/* @end */
+
+
+/* @group switch */
 
 input[type="checkbox"], input[type="radio"]{
 	width: 82px;
-	height: 27px;
+	height: 29px;
 	z-index: 2;
 }
 
@@ -149,7 +156,7 @@ input[type="checkbox"],
 input[type="checkbox"] + span,
    input[type="radio"] + span {
 	width: 82px;
-	height:27px;
+	height: 27px;
 	position: relative;
 	font-size: 11px;
 	line-height: 29px;

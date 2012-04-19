@@ -281,7 +281,19 @@ section.aside.onright {
   background: #4b4b4b;
 }
 /* @end */
-/* @group <inputs> */
+/* @group <form> */
+form,
+.form {
+  font-weight: bold;
+}
+form li,
+.form li {
+  min-height: 27px;
+}
+form label,
+.form label {
+  color: #999;
+}
 input,
 textarea,
 select {
@@ -312,12 +324,8 @@ select.underline {
 input:focus,
 textarea:focus,
 select:focus {
+  color: #64b9e2;
   border-color: #64b9e2;
-}
-label {
-  color: #e1e1e1;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 .select:after {
   background: #858585;

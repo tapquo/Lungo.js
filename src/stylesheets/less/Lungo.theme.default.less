@@ -264,9 +264,22 @@ section.aside {
 }
 /* @end */
 
-/* @group <inputs> */
+/* @group <form> */
 @box-shadow-form: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 @box-shadow-form-big: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+
+form, .form {
+	font-weight: bold;
+	
+	& li { min-height: 27px; }
+	
+	
+
+	& label {
+		color: #999;
+	}
+	
+}
 
 
 input, textarea, select {
@@ -284,14 +297,8 @@ input, textarea, select {
 }
 
 input:focus, textarea:focus, select:focus {
-	//color:  @theme;	
+	color:  @color-border-light;	
 	border-color: @color-border-light;
-}
-
-label {
-	color: #e1e1e1;
-	text-transform: uppercase;
-	font-weight: bold;
 }
 
 .select:after {
