@@ -17,10 +17,11 @@
 
 /* @group <aside> */
 section.aside {
-	//.transform(translate3d(256px, 0, 0));
-	left: 256px;
-
-	&.onright { .transform(translate3d(-256px, 0, 0)); }
+	left: @aside-width;
+	&.onright {  
+		left: 0px;	
+		.transform(translate(-@aside-width, 0)); 
+	}
 }
 
 aside {
@@ -31,8 +32,8 @@ aside {
 	visibility: hidden;
 	z-index: 0;
 
-	width: 256px;
-	max-width: 256px;
+	width: @aside-width;
+	max-width: @aside-width;
 
 	&.onright { right: 0px; }
 	&.current { visibility: visible;}
