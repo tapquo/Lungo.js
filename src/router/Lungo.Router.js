@@ -27,7 +27,7 @@ LUNGO.Router = (function(lng, undefined) {
         var current = _getHistoryCurrent();
         var target = ELEMENT.SECTION + section_id;
 
-        if (_existsTarget(target)) {
+        if (_existTarget(target) && _notCurrentTarget(target)) {
             lng.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
             lng.dom(target).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
 
@@ -48,7 +48,7 @@ LUNGO.Router = (function(lng, undefined) {
         var article_id = lng.Core.parseUrl(article_id);
         var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id;
 
-        if (_existsTarget(target)) {
+        if (_existTarget(target) && _notCurrentTarget(target)) {
             lng.dom(target).trigger(TRIGGER.LOAD);
             lng.View.Article.show(section_id, article_id);
         }
@@ -67,7 +67,7 @@ LUNGO.Router = (function(lng, undefined) {
         var aside_id = lng.Core.parseUrl(aside_id);
         var target = ELEMENT.ASIDE + aside_id;
 
-        if (_existsTarget(target)) {
+        if (_existTarget(target)) {
             var is_visible = lng.dom(target).hasClass(CLASS.CURRENT);
             if (is_visible) {
                 lng.View.Aside.hide(section_id, aside_id);
@@ -90,16 +90,20 @@ LUNGO.Router = (function(lng, undefined) {
         lng.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
     };
 
-    var _existsTarget = function(target) {
-        var exists = false;
+    var _notCurrentTarget = function(target) {
+        return lng.dom(target).hasClass(CLASS.CURRENT) ? false : true;
+    };
+
+    var _existTarget = function(target) {
+        var available = false;
 
         if (lng.dom(target).length > 0) {
-            exists = true;
+            available = true;
         } else {
             lng.Core.log(3, ERROR.ROUTER + target);
         }
 
-        return exists;
+        return available;
     };
 
     var _getHistoryCurrent = function() {
