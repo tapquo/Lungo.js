@@ -83,35 +83,35 @@ header, footer  {
 
 header  {
 	top: 0px;
-	/*& .onleft { margin-left: 4px !important;}
-	& .onright {margin-right: 4px !important;}*/
+	
+	& .title {
+		margin-left: 4px;
+		float: left;
+		z-index: -1;
+		font-size: 15px;
+		font-weight: bold;
+		
+		&.centered {
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			text-align: center;
+			display: inline-block;
+		}
+		&.with-subtitle {
+			line-height: 20px;
+			padding-top: 4px;
+		}
+	}
+	
+	& .subtitle {
+		margin-left: 4px;
+		display:block;
+		font-size: 11px;
+		line-height: 11px;
+		width: 100%;
+	}
 }
 
 footer  { bottom: 0px; }
-
-header .title, footer .title  {
-	//margin: 0 4px;	
-	z-index: -1;
-	font-size: 15px;
-	font-weight: bold;
-	display:block;
-	
-	&.centered {
-		position: absolute;
-		left: 0px;
-		right: 0px;
-		text-align: center;
-		display: inline-block;
-	}
-	&.with-subtitle {
-		line-height: 20px;
-		padding-top: 4px;
-	}
-}
-
-.subtitle {
-	display:block;
-	font-size: 11px;
-	line-height: 11px;
-}
 /* @end */
