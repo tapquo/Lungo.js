@@ -10,16 +10,13 @@
 @import "constants.less";
 @import "mixins.less";
 
-@header_footer_height: 40px;
-	@header_extended_height: 74px;
-
-/* @group <nav> */
 nav {
-	height: inherit;
+	height: auto;
 	text-align: center;
 
 	& a {
 		padding: 0 6px;
+		min-width: 28px;
 		z-index: 1000;
 		float: left;
 
@@ -38,11 +35,11 @@ nav {
 
 		& abbr {
     		position: relative;
-    		margin-left: 2px;
-			display: none;
+			display: inline;
+			font-weight: bold;
 		}
-
-		&.current abbr, &.active abbr { display: inline; }
+		
+		.icon ~ abbr { margin-left: 4px; }
 	}
 
 	& .bubble {
@@ -65,8 +62,7 @@ nav {
 		padding: 0;
 		height:  36px;
 	}
-
-
+	
 	&.with-labels {
 		height: @with-labels-height;
 
@@ -116,4 +112,3 @@ nav {
 
     & a { padding: 0px; font-weight: bold;}
 }
-/* @end */

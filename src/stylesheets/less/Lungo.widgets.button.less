@@ -12,18 +12,19 @@
 
 a.button {
 	display: inline-block;
-	height: 32px;
-	//min-width: 32px;
-	padding: 0 9px 0 8px;
+	height: 40px;
+	padding: 0 8px;
 	color: #fff !important;
-	outline: none;
 
 	background: #5a5a5a;
-
-	.user-select(none);
-	line-height: 31px;
+	
+	font-size: 16px;
 	text-align: center;
 	text-decoration: none;
+	line-height: 42px;
+	
+	outline: none;
+	.user-select(none);
 
 	&:active, &.active {
 		background: #4b4b4b;
@@ -49,21 +50,15 @@ a.button {
 
 	&.big {
 		width: 100%;
-		height: 40px;
 		padding: 0px;
 		margin-bottom: 4px;
 
-		font-size: 16px;
-		line-height: 42px;
 		& .icon {
-			margin-right: 4px;
+			margin: 8px -18px 0 12px;
+			float: left;
 			font-size: 24px;
 			height: 18px;
 			width: 18px;
-		}
-
-		& img {
-			/* TODO */
 		}
 	}
 }
