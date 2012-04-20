@@ -33,7 +33,10 @@ footer {
 }
 .title {
   color: #ffffff;
-  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
 article {
   background-color: #EBEBEB;
@@ -271,11 +274,11 @@ section.aside.onright {
   -webkit-box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.2), inset 0 -2px 4px rgba(0, 0, 0, 0.3);
 }
 .button.default {
-  background: #5a5a5a;
+  background: #2c4579;
 }
 .button.default:active,
 .button.default.active {
-  background: #4b4b4b;
+  background: #213761;
 }
 /* @end */
 /* @group <form> */

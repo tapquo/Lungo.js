@@ -83,8 +83,6 @@ header, footer  {
 
 header  {
 	top: 0px;
-	
-	//&.extended { height: 72px; }
 	& .onleft { margin-left: 4px !important;}
 	& .onright {margin-right: 4px !important;}
 }
@@ -93,20 +91,38 @@ footer  { bottom: 0px; }
 
 header .title, footer .title  {
 	margin: 0 4px;	
-	float: left;
 	z-index: -1;
 	font-size: 15px;
 	font-weight: bold;
+	display:block;
+	
+	&.centered {
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		text-align: center;
+		display: inline-block;
+	}
 }
 
-
-header .title {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	text-align: center;
-	display: inline-block;
+.with-subtitle {
+	line-height: 20px;
+	padding-top: 4px;
 }
+
+.subtitle {
+	display:block;
+	font-size: 11px;
+	line-height: 11px;
+}
+
+/*.title > .subtitle {
+	//line-height: 21px;
+	font-weight: normal;
+	font-size: 12px;
+	height: 12px;
+	line-height: 12px;
+}*/
 
 section header a.button, section footer a.button  {
 	margin: 5px 1px 0px;
