@@ -25,19 +25,20 @@ header {
   position: absolute;
   z-index: 2;
 }
+header .title {
+  color: #ffffff;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+}
+header .subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
 footer {
   background: #353b42 -webkit-gradient(linear, left top, left bottom, color-stop(0%, #353b42), color-stop(50%, #272a2d));
   border-top: 1px inset #2A2A2A;
   color: #353b42;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-}
-.title {
-  color: #ffffff;
-}
-.subtitle {
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 }
 article {
   background-color: #EBEBEB;
@@ -55,13 +56,10 @@ header nav a {
 header nav:not(.plain) a {
   box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2), inset -1px 0 0 rgba(0, 0, 0, 0.2);
 }
-header nav:not(.plain) a:active {
-  box-shadow: inset 1px 0 1px rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1), inset 0 0 42px rgba(0, 0, 0, 0.5);
-}
 header nav:not(.plain).onright a {
   box-shadow: -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 rgba(0, 0, 0, 0.2);
 }
-header nav:not(.plain).onright a:active {
+header nav:not(.plain) a:active {
   box-shadow: inset 1px 0 1px rgba(0, 0, 0, 0.1), inset -1px 0 0 rgba(0, 0, 0, 0.1), inset 0 0 42px rgba(0, 0, 0, 0.5);
 }
 header nav.plain a:active {
