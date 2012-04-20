@@ -37,16 +37,21 @@
 </head>
 
 <body class="app">
+
+
     <section id="test-1" class="pop">
-        <header data-title="Test-1" class="extended">
+        <header class="extended">
+            <nav class="onleft">
+                <a href="#kitchen-sink-scroll" class="active" data-target="aside" data-icon="home"></a>
+            </nav>
             <div class="onleft">
-                <a href="#kitchen-sink-scroll" class="button default onleft" data-target="aside" data-icon="items"></a>
-                <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside" data-icon="items">Prueba</a>
-                <a href="#kitchen-sink-scroll" class="button onleft" data-target="aside">Prueba</a>
+                <span class="title with-subtitle">Javi Jiménez</span>
+                <span class="subtitle ">@souhavi</span>
             </div>
             <nav class="onright">
-                <a href="#" class="active" data-icon="star"></a>
-                <a href="#profiles" class="active"  data-target="aside" data-icon="plus">&nbsp;Add</a>
+                <a href="#profiles" class="active" data-target="aside" data-icon="plus"></a>
+
+                <a href="#" class="active" data-icon="mail" style="background: rgba(0, 255, 0, 0.4);"data-label="ENVIAR"></a>
             </nav>
         </header>
 
@@ -126,9 +131,9 @@
 
         <article id="nav-2" class="list indented">
             <div>
-                <a href="#test-2" data-target="section" class="button big">Test 2</a>
-                <a href="#test-2"  class="button big red ">Test 2</a>
-                <a href="#test-2" class="button big facebook">Test 2</a>
+                <a href="#test-2" data-target="section" class="button big" data-icon="check">Test 2</a>
+                <a href="#test-2"  class="button big red " data-icon="check">Test 2</a>
+                <a href="#test-2" class="button big green" data-icon="check">Test 2</a>
             </div>
         </article>
 
@@ -137,10 +142,21 @@
         <article id="nav-4"></article>
     </section>
 
+
+
+
     <section id="test-2" class="pop">
-        <header data-title="Test-2" data-back="home"></header>
-        <article>
-        </article>
+        <header data-title="Auto title centered">
+            <nav class="onleft">
+                <a href="#back" data-target="section" class="current" data-icon="left"></a>
+            </nav>
+
+            <nav class="onright plain">
+                <a href="#" class="" data-icon="items" data-label="Text"></a>
+                <a href="#" class="" data-icon="remove"></a>
+            </nav>
+        </header>
+        <article></article>
     </section>
 
     <!-- Third parties dependencies -->
