@@ -37,8 +37,6 @@ footer {
   background: #353b42 -webkit-gradient(linear, left top, left bottom, color-stop(0%, #353b42), color-stop(50%, #272a2d));
   border-top: 1px inset #2A2A2A;
   color: #353b42;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 article {
   background-color: #EBEBEB;
@@ -101,22 +99,19 @@ header nav.plain a:active {
 /* @end */
 /* @group <aside> */
 aside {
-  background: #252525;
+  color: #9faab1;
 }
 aside .title {
-  background: #101010;
-  border: none;
+  background: #252525;
 }
 aside a {
-  color: #fff;
-  text-shadow: 0px 1px 0px #000;
-  border-bottom: 1px inset #101010;
-  border-top: 1px inset #868686;
+  color: #9faab1;
+  background-color: #2f353a;
+  border-bottom: 1px inset #222;
+  border-top: 1px inset rgba(255, 255, 255, 0.1);
 }
 aside a.current {
-  background: #1c1c1c;
-  box-shadow: inset 0px 0px 8px #101010;
-  border-top: 1px inset #1c1c1c;
+  color: #ffffff;
 }
 aside a .icon {
   text-shadow: none;
@@ -488,7 +483,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-clip: padding-box;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
   font-weight: bold !important;
-  border: solid 1px #ffffff;
   box-shadow: 0 0 6px #000;
 }
 .bubble.count {

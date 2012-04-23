@@ -14,8 +14,11 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
+        DOCUMENT: document,
+        WINDOW: window,
         HREF_TARGET: 'a[href][data-target]',
-        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
+        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]',
+        CURRENT_SECTION: 'section.aside, section.current'
     };
 
     /**
@@ -29,10 +32,10 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var resize = 'resize';
 
         //@ToDo: Error with input type="range"
-        //lng.dom(document).on(touch_move_event, _iScroll);
-        lng.dom(window).on(resize, _changeOrientation);
-        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
+        //lng.dom(SELECTORS.DOCUMENT).on(touch_move_event, _iScroll);
+        lng.dom(SELECTORS.WINDOW).on(resize, _changeOrientation);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
+        // lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_asideVisibility);
     };
 
     var _iScroll = function(event) {
@@ -41,24 +44,14 @@ LUNGO.Boot.Events = (function(lng, undefined) {
 
     var _changeOrientation = function(event) {
         lng.View.Resize.toolbars();
-    };
-
-    var _loadTargetFromAside = function(event) {
-        var link = lng.dom(this);
-        var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
-        var section_id = '#' + lng.dom('section.aside, section.current').first().attr(ATTRIBUTE.ID);
-
-        if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
-            lng.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
-            link.addClass(CLASS.CURRENT);
-        }
-        _hideAsideIfNecesary(section_id, aside_id);
-
+        event.preventDefault();
     };
 
     var _loadTarget = function(event) {
         var link = lng.dom(this);
+
         _selectTarget(link);
+        _asideVisibility(link)
 
         event.preventDefault();
     };
@@ -80,6 +73,25 @@ LUNGO.Boot.Events = (function(lng, undefined) {
                 _goAside(link);
                 break;
         }
+    };
+
+    var _asideVisibility = function(link) {
+        var target = lng.dom(link.data(ATTRIBUTE.TARGET) + link.attr(ATTRIBUTE.HREF));
+
+        if (target.length > 0) {
+             var parent = link.parent(ELEMENT.ASIDE);
+
+             if (parent.length > 0 && link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
+                var aside_id = '#' + parent.attr(ATTRIBUTE.ID);
+                var section_id = '#' + lng.dom(CURRENT_SECTION).first().attr(ATTRIBUTE.ID);
+
+                lng.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
+                link.addClass(CLASS.CURRENT);
+            }
+            _hideAsideIfNecesary(section_id, aside_id);
+        }
+
+        event.preventDefault();
     };
 
     var _goSection = function(id) {
