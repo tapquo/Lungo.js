@@ -64,8 +64,8 @@ footer {
 	border-top: 1px inset #2A2A2A;
 	color: #353b42;
 	
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	//border-bottom-left-radius: 5px;
+	//border-bottom-right-radius: 5px;
 }
 
 
@@ -126,23 +126,25 @@ header nav {
 
 /* @group <aside> */
 aside {
-    background: #252525;
-
+	color: #9faab1;
+	
     & .title {
-    	background: #101010;
-    	border:  none;
-	}
+    	background: #252525;
+    		}
 
     & a {
-    	color: #fff;
-	    text-shadow: 0px 1px 0px #000;
-	    border-bottom: 1px inset #101010;
-		border-top: 1px inset #868686;
+    	color: #9faab1;
+		background-color: #2f353a;
+		
+	    //text-shadow: 0px 1px 0px #000;
+	    border-bottom: 1px inset #222;
+		border-top: 1px inset rgba(255,255,255,0.1);
 
 		&.current {
-    		background: #1c1c1c;
-			box-shadow: inset 0px 0px 8px #101010;
-			border-top: 1px inset #1c1c1c;
+    		//background: #1c1c1c;
+			//box-shadow: inset 0px 0px 8px #101010;
+			//border-top: 1px inset #1c1c1c;
+			color: @white;
 		}
 
 		& .icon {
@@ -410,7 +412,7 @@ input[type="range"] {
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 	font-weight: bold !important;
 	
-	border: solid 1px @white;
+	//border: solid 1px @white;
 	box-shadow: 0 0 6px #000;	
 	
 	&.count { background: @background-main; }
