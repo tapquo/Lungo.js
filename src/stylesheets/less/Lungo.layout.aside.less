@@ -52,7 +52,7 @@ aside {
 		height: 40px;
 
 		font-size: 14px;
-    	font-weight: bold;
+    	//font-weight: bold;
 		line-height: 40px;
 		overflow: hidden;
 		white-space: nowrap;
@@ -93,7 +93,9 @@ aside .anchor .bubble {
 	}
 
 	@media handheld, only screen and (min-width: 768px) {
-		[data-target="aside"] { display: none !important; }
+		.autohide[data-target="aside"] { 
+			display: none !important; 
+		}
 
 		section.aside {
 			width: auto !important;

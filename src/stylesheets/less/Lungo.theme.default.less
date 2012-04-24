@@ -128,9 +128,7 @@ header nav {
 aside {
 	color: #9faab1;
 	
-    & .title {
-    	background: #252525;
-    		}
+    & .title { background: #252525; }
 
     & a {
     	color: #9faab1;
@@ -140,7 +138,7 @@ aside {
 	    border-bottom: 1px inset #222;
 		border-top: 1px inset rgba(255,255,255,0.1);
 
-		&.current {
+		&.current, & .icon {
     		//background: #1c1c1c;
 			//box-shadow: inset 0px 0px 8px #101010;
 			//border-top: 1px inset #1c1c1c;
@@ -412,7 +410,6 @@ input[type="range"] {
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
 	font-weight: bold !important;
 	
-	//border: solid 1px @white;
 	box-shadow: 0 0 6px #000;	
 	
 	&.count { background: @background-main; }

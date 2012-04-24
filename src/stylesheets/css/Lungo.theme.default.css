@@ -110,7 +110,8 @@ aside a {
   border-bottom: 1px inset #222;
   border-top: 1px inset rgba(255, 255, 255, 0.1);
 }
-aside a.current {
+aside a.current,
+aside a .icon {
   color: #ffffff;
 }
 aside a .icon {
