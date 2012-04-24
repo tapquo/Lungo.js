@@ -127,28 +127,19 @@ header nav {
 /* @group <aside> */
 aside {
 	color: #9faab1;
+	background-color: #2f353a;
 	
     & .title { background: #252525; }
-
+		
     & a {
     	color: #9faab1;
-		background-color: #2f353a;
-		
-	    //text-shadow: 0px 1px 0px #000;
-	    border-bottom: 1px inset #222;
+	    text-shadow: 0px 1px 0px #000;
+		&.current, &.current .icon { color: @white !important; }
+	}
+	
+	&:not(.mini) a {
+		border-bottom: 1px inset #222;
 		border-top: 1px inset rgba(255,255,255,0.1);
-
-		&.current, & .icon {
-    		//background: #1c1c1c;
-			//box-shadow: inset 0px 0px 8px #101010;
-			//border-top: 1px inset #1c1c1c;
-			color: @white;
-		}
-
-		& .icon {
-    		text-shadow: none;
-			color: #7a7a7a;
-		}
 	}
 
 	& .anchor {
@@ -168,7 +159,6 @@ section.aside {
 		&.onright { box-shadow: 4px 0 8px rgba(0,0,0,0.5); }
 	}
 }
-
 /* @end */
 
 /* @group .list */
@@ -289,17 +279,9 @@ section.aside {
 
 form, .form {
 	font-weight: bold;
-	
 	& li { min-height: 27px; }
-	
-	
-
-	& label {
-		color: #999;
-	}
-	
+	& label { color: #999; }
 }
-
 
 input, textarea, select {
 	border: 1px solid #e1e1e1;
