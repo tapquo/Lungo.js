@@ -29,7 +29,7 @@ LUNGO.Constants = {
         RIGHT: 'onright',
         LEFT: 'onleft',
         HORIZONTAL: 'horizontal',
-        FLOW: 'flow'
+        MINI: 'mini'
     },
 
     TRIGGER: {

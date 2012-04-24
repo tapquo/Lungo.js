@@ -100,23 +100,22 @@ header nav.plain a:active {
 /* @group <aside> */
 aside {
   color: #9faab1;
+  background-color: #2f353a;
 }
 aside .title {
   background: #252525;
 }
 aside a {
   color: #9faab1;
-  background-color: #2f353a;
-  border-bottom: 1px inset #222;
-  border-top: 1px inset rgba(255, 255, 255, 0.1);
+  text-shadow: 0px 1px 0px #000;
 }
 aside a.current,
-aside a .icon {
-  color: #ffffff;
+aside a.current .icon {
+  color: #ffffff !important;
 }
-aside a .icon {
-  text-shadow: none;
-  color: #7a7a7a;
+aside:not(.mini) a {
+  border-bottom: 1px inset #222;
+  border-top: 1px inset rgba(255, 255, 255, 0.1);
 }
 aside .anchor {
   background: #101010;

@@ -10,7 +10,6 @@ var App = (function(lng, undefined) {
                 'navigation-index.html',
                 'navigation-normal.html',
                 'navigation-pop.html',
-                'navigation-flow.html',
                 'lists.html',
                 'settings.html',
                 'forms.html',
