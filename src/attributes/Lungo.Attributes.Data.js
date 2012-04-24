@@ -51,6 +51,16 @@ LUNGO.Attributes.Data = {
         selector: 'header, footer, article',
         html: '<span class="title centered">{{value}}</span>'
     },
+    Loading: {
+        tag: 'loading',
+        selector: '*',
+        html: '<div class="loading {{value}}">\
+                    <span class="top"></span>\
+                    <span class="right"></span>\
+                    <span class="bottom"></span>\
+                    <span class="left"></span>\
+                </div>'
+    },
     Back: {
         tag: 'back',
         selector: 'header, footer',

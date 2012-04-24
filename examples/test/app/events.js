@@ -6,7 +6,12 @@ App.Events = (function(lng, undefined) {
 
             lng.View.Element.progress('#progress-normal', 50, true, 'yeah');
             lng.View.Element.progress('#progress-big', 75, true, 'yeah');
+
+            lng.View.Element.loading('#loading-code', 'white');
         }, 1000);
+
+
+
     });
 
     //SPECIAL

@@ -31,14 +31,13 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.form.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.colour.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.loading.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="assets/stylesheets/app.css">
 </head>
 
 <body class="app">
-
-
     <section id="test-1" class="pop">
         <header class="extended">
             <nav class="onleft">
@@ -52,7 +51,6 @@
                 <a href="#profiles" data-target="aside"  class="autohide" data-icon="group"></a>
             </nav>
         </header>
-
 
         <nav class="groupbar">
             <a href="#nav-1" data-target="article" class="current"  data-icon="clock">&nbsp;Alarm</a>
@@ -83,6 +81,8 @@
         <article id="nav-1" class="list indented scrollable">
 
             <ul class="form">
+                <li data-loading="black big"></li>
+                <li id="loading-code" style="background-color: grey;"></li>
                 <li>
                     <label>type="text"</label>
                     <input type="text" placeholder="Input text"/>
