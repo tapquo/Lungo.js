@@ -54,6 +54,12 @@ header nav a {
 header nav:not(.plain) a {
   box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2), inset -1px 0 0 rgba(0, 0, 0, 0.2);
 }
+header nav:not(.plain) a.accept {
+  background: rgba(0, 255, 0, 0.4);
+}
+header nav:not(.plain) a.cancel {
+  background: rgba(255, 0, 0, 0.4);
+}
 header nav:not(.plain).onright a {
   box-shadow: -1px 0 0 rgba(255, 255, 255, 0.2), inset 1px 0 0 rgba(0, 0, 0, 0.2);
 }

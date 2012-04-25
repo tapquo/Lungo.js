@@ -38,8 +38,6 @@ nav {
 			display: inline;
 			font-weight: bold;
 		}
-		
-		.icon ~ abbr { margin-left: 4px; }
 	}
 
 	& .bubble {
@@ -48,6 +46,10 @@ nav {
 	    left: -8px;
 	    margin-right: -20px;
 	}
+}
+
+header, footer {
+	&:not(.toolbar) nav .icon ~ abbr { margin-left: 6px; }
 }
 
 .toolbar {
