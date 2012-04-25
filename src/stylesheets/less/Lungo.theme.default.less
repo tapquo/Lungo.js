@@ -88,7 +88,12 @@ header nav {
 	}
 	
 	&:not(.plain) {
-		& a { box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2); }
+		& a { 
+			box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2); 
+			
+			&.accept { background: rgba(0, 255, 0, 0.4); }
+			&.cancel { background: rgba(255, 0, 0, 0.4); }
+		}
 		&.onright a { box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2); }
 		
 		& a:active { box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5); }
