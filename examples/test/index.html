@@ -60,8 +60,8 @@
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" data-icon="clock" data-label="Alarm"></a>
-                <a href="#nav-2" data-target="article" class="current" data-icon="calendar" data-count="17" data-label="Calendar"></a>
+                <a href="#nav-1" data-target="article" class="current"  data-icon="clock" data-label="Alarm"></a>
+                <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17" data-label="Calendar"></a>
                 <a href="#nav-3" data-target="article" data-icon="mail" data-label="Emails" data-count="124"></a>
                 <a href="#nav-4" data-target="article" data-icon="phone" data-label="Calls" data-count="12"></a>
             </nav>
@@ -100,7 +100,7 @@
                     <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
                 </li>
                 <li>
-                    <label class="">Do you like LungoJS forms?</label>
+                    <label class="pop">Do you like LungoJS forms?</label>
                     <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
                 </li>
 
@@ -139,20 +139,32 @@
     </section>
 
 
-
-
     <section id="test-2" class="pop">
+        <header data-back="home" style="display: block; visibility: visible;">
+            <a href="#back" data-target="section" class="button red onright">Pruebame</a>
+        </header>
+
+        <article>
+            <a href="#back" data-target="section" class="button big blue" data-icon="home">Volver</a>
+            <a href="#back" data-target="section" class="button red onright">Pruebame</a>
+        </article>
+    </section>
+
+
+    <!-- <section id="test-2" class="-pop">
         <header data-title="Auto title centered">
             <nav class="onleft">
-                <a href="#" class="cancel" data-icon="close"  data-label="CANCEL"></a>
+                <a href="#back" data-target="section" class="cancel" data-icon="close" data-label="CANCEL"></a>
             </nav>
 
             <nav class="onright ">
                 <a href="#" class="accept" data-icon="check" data-label="ACCEPT"></a>
             </nav>
         </header>
-        <article></article>
-    </section>
+        <article>
+            None
+        </article>
+    </section> -->
 
     <!-- Third parties dependencies -->
     <script src="../../src/lib/QuoJS.js"></script>

@@ -11,12 +11,12 @@
 @import "mixins.less";
 
 section.aside {
-	&:not(.mini) { left: @aside-width; }
-	&.mini { left: @aside-width-mini; }
+	&:not(.mini) { .transform(translate(@aside-width, 0)); }
+	&.mini { .transform(translate(@aside-width-mini, 0)); }
 	
 	&.onright {  
-		left: 0px;	
-		.transform(translate(-@aside-width, 0)); 
+		.transform(translate(-@aside-width, 0));
+		&.mini { .transform(translate(-@aside-width-mini, 0)); }
 	}
 }
 
