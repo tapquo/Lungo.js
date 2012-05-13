@@ -40,6 +40,7 @@ footer {
 }
 article {
   background-color: #EBEBEB;
+  background: none;
 }
 article .title {
   color: #797979;
