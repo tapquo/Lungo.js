@@ -23,18 +23,20 @@ article {
 	height: auto;
 	top: 0px;
 	bottom: 0px;
+	
+	display: none;
 	visibility: hidden;
 	z-index: 0;
 	
 	&.current {
     	visibility: visible;
+	    display: block;
 		z-index: 1;
 	}
 	
 	& .title {
     	font-size: 1.1em;
 		margin: 0px 0 4px;
-		
 		& .icon { margin-right: 4px; }
 	}
 	

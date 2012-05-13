@@ -11,6 +11,10 @@
 @import "mixins.less";
 
 /* @group <section> */
+html {
+    overflow: hidden;
+}
+
 section {
 	position: absolute; /* position: fixed on iOS5 & Android 4 */
 	left:  0px;
@@ -19,43 +23,36 @@ section {
 	height: 100%;
 	z-index: 0;
 	
-	display: block;
+	display: none;
 	visibility: hidden;
+	.transition(all 250ms @defaultTrasition);
 	-webkit-backface-visibility: hidden;
 	
 	&:first-child, &.show {	
 		z-index: 1;
-		//display: block;
+		display: block;
 		visibility: visible;
 	}
 	&.hide { 
 		z-index: 0;
-		//display: none;
+		display: none;
 		visibility: hidden;
 	}
 	
+	&.slide, &.pop { display: block !important; }
+	
 	&.slide {
 		.transform(translate(100%, 0));
-		//display: block;
 		visibility: visible !important;
-		
-		-webkit-transition: -webkit-transform 250ms @defaultTrasition;
-		/*
-	   -moz-transition: @keyframe @defaultTrasition;
-         -o-transition: @keyframe @defaultTrasition;
-            transition: @keyframe @defaultTrasition;
-		*/
 		
 		&:first-child, &.show {	.transform(translate(0%, 0)); }
 		&.hide { .transform(translate(-100%, 0)); }
 	}
-	
-	
+		
 	&.pop {
     	opacity: 0;
-		-webkit-transition: all 250ms @defaultTrasition;
     	.transform(scale(1.15));
-		
+    	
 		&:first-child, &.show {	
 			.transform(scale(1));
 			opacity: 1;
