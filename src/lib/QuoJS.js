@@ -1,5 +1,5 @@
 /*!
- * QuoJS 1.0.5 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+ * QuoJS 1.1 ~ Copyright (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
  * http://quojs.tapquo.com
  * Released under MIT license, https://raw.github.com/soyjavi/QuoJS/master/LICENSE.txt
  */
@@ -44,7 +44,11 @@ var Quo = (function() {
 })();
 
 window.Quo = Quo;
-'$$' in window || (window.$$ = Quo);
+'$$' in window || (window.$$ = Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -197,7 +201,11 @@ window.Quo = Quo;
         return array.length > 0 ? [].concat.apply([], array) : array
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -289,7 +297,11 @@ window.Quo = Quo;
         });
     };
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -371,7 +383,11 @@ window.Quo = Quo;
         }
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -391,7 +407,7 @@ window.Quo = Quo;
      * ?
      */
     $$.fn.html = function(value) {
-        return ($$.toType(value) === 'string') ?
+        return ($$.toType(value) === 'string' || $$.toType(value) == 'number') ?
             this.each(function() {
                 this.innerHTML = value;
             })
@@ -439,7 +455,11 @@ window.Quo = Quo;
         });
     };
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$){
 
@@ -552,7 +572,11 @@ window.Quo = Quo;
         return (selector === undefined) ? $$(nodes) : $$(nodes).filter(selector);
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($){
 
@@ -563,6 +587,7 @@ window.Quo = Quo;
         return this.each(function() {
             if (!_existsClass(name, this.className)) {
                 this.className += ' ' + name;
+                this.className = this.className.trim();
             }
         });
     };
@@ -573,7 +598,7 @@ window.Quo = Quo;
     $.fn.removeClass = function(name) {
         return this.each(function() {
             if (_existsClass(name, this.className)) {
-                this.className = this.className.replace(name, ' ').replace(/\s+/gi, ' ');
+                this.className = this.className.replace(name, ' ').replace(/\s+/gi, ' ').trim();
             }
         });
     };
@@ -587,6 +612,7 @@ window.Quo = Quo;
                 this.className = this.className.replace(name, ' ');
             } else {
                 this.className += ' ' + name;
+                this.className = this.className.trim();
             }
         });
     };
@@ -619,7 +645,11 @@ window.Quo = Quo;
         return document.defaultView.getComputedStyle(element, '')[property];
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -686,34 +716,38 @@ window.Quo = Quo;
      * ?
      */
     $$.jsonp = function(settings) {
-        var callbackName = 'jsonp' + (++JSONP_ID);
-        var script = document.createElement('script');
-        var xhr = {
-            abort: function() {
+        if (settings.async) {
+            var callbackName = 'jsonp' + (++JSONP_ID);
+            var script = document.createElement('script');
+            var xhr = {
+                abort: function() {
+                    $$(script).remove();
+                    if (callbackName in window) window[callbackName] = {};
+                }
+            };
+            var abortTimeout;
+
+            window[callbackName] = function(response) {
+                clearTimeout(abortTimeout);
                 $$(script).remove();
-                if (callbackName in window) window[callbackName] = {};
+                delete window[callbackName];
+                _xhrSuccess(response, xhr, settings);
+            };
+
+            script.src = settings.url.replace(/=\?/, '=' + callbackName);
+            $$('head').append(script);
+
+            if (settings.timeout > 0) {
+                abortTimeout = setTimeout(function() {
+                    _xhrTimeout(xhr, settings);
+                }, settings.timeout);
             }
-        };
-        var abortTimeout;
 
-        window[callbackName] = function(response) {
-            clearTimeout(abortTimeout);
-            $$(script).remove();
-            delete window[callbackName];
+            return xhr;
 
-            _xhrSuccess(response, xhr, settings);
-        };
-
-        script.src = settings.url.replace(/=\?/, '=' + callbackName);
-        $$('head').append(script);
-
-        if (settings.timeout > 0) {
-            abortTimeout = setTimeout(function() {
-                _xhrTimeout(xhr, settings);
-            }, settings.timeout);
+        } else {
+            console.error('ERROR: Unable to make jsonp synchronous call.')
         }
-
-        return xhr;
     };
 
     /**
@@ -829,7 +863,11 @@ window.Quo = Quo;
         return (/=\?/.test(url));
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -879,12 +917,16 @@ window.Quo = Quo;
             callback($$);
         }
         else {
-            document.addEventListener('DOMContentLoaded', function(){ callback($$) }, false);
+            $$.fn.addEvent(document, 'DOMContentLoaded', function(){ callback($$) } );
         }
         return this;
     };
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
@@ -905,10 +947,17 @@ window.Quo = Quo;
     /**
      * ?
      */
-    $$.Event = function(type, props) {
+    $$.Event = function(type, touch) {
         var event = document.createEvent('Events');
         event.initEvent(type, true, true, null, null, null, null, null, null, null, null, null, null, null, null);
 
+        if (touch) {
+            event.pageX = touch.x1;
+            event.pageY = touch.y1;
+            event.toX = touch.x2;
+            event.toY = touch.y2;
+            event.fingers = touch.fingers;
+        }
         return event;
     };
 
@@ -962,11 +1011,38 @@ window.Quo = Quo;
     /**
      * ?
      */
-    $$.fn.trigger = function(event) {
-        if ($$.toType(event) === 'string') event = $$.Event(event);
+    $$.fn.trigger = function(event, touch) {
+        if ($$.toType(event) === 'string') event = $$.Event(event, touch);
+
         return this.each(function() {
             this.dispatchEvent(event);
         });
+    };
+
+    /**
+     * ?
+     */
+    $$.fn.addEvent = function(element, event_name, callback) {
+        if (element.addEventListener) {
+            element.addEventListener(event_name, callback, false);
+        } else if (element.attachEvent) {
+            element.attachEvent('on' + event_name, callback );
+        } else {
+            element['on' + event_name] = callback;
+        }
+    };
+
+    /**
+     * ?
+     */
+    $$.fn.removeEvent = function(element, event_name, callback) {
+        if (element.removeEventListener) {
+            element.removeEventListener(event_name, callback, false);
+        } else if (element.detachEvent) {
+            element.detachEvent('on' + event_name, callback );
+        } else {
+            element['on' + event_name] = null;
+        }
     };
 
     function _subscribe(element, event, callback, selector, delegate_callback) {
@@ -986,7 +1062,7 @@ window.Quo = Quo;
         };
         element_handlers.push(handler);
 
-        element.addEventListener(handler.event, handler.proxy, false);
+        $$.fn.addEvent(element, handler.event, handler.proxy);
     }
 
     function _unsubscribe(element, event, callback, selector) {
@@ -995,7 +1071,8 @@ window.Quo = Quo;
         var element_id = _getElementId(element);
         _findHandlers(element_id, event, callback, selector).forEach(function(handler) {
             delete HANDLERS[element_id][handler.index];
-            element.removeEventListener(handler.event, handler.proxy, false);
+
+            $$.fn.removeEvent(element, handler.event, handler.proxy);
         });
     }
 
@@ -1045,14 +1122,22 @@ window.Quo = Quo;
         return proxy;
     }
 
-})(Quo);
+})(Quo);/*
+  QuoJS 1.1
+  (c) 2011, 2012 Javi Jiménez Villar (@soyjavi)
+  http://quojs.tapquo.com
+*/
 
 (function($$) {
 
     var TOUCH = {};
     var TOUCH_TIMEOUT;
-    var LONGTAP_DELAY = 750;
-    var GESTURES = ['swipe', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown', 'doubleTap', 'longTap'];
+    var HOLD_DELAY = 650;
+    var GESTURES = ['tap',
+                    'doubleTap',
+                    'hold',
+                    'swipe', 'swiping', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
+                    'drag'];
 
     /**
      * ?
@@ -1076,56 +1161,77 @@ window.Quo = Quo;
         environment.bind('touchstart', _onTouchStart);
         environment.bind('touchmove', _onTouchMove);
         environment.bind('touchend', _onTouchEnd);
-        environment.bind('touchcancel', _onTouchCancel);
+        environment.bind('touchcancel', _cleanGesture);
     }
 
     function _onTouchStart(event) {
         var now = Date.now();
         var delta = now - (TOUCH.last || now);
-        var first_touch = ($$.isMobile()) ? event.touches[0] : event;
+        var touch_event = _captureTouch(event);
 
         TOUCH_TIMEOUT && clearTimeout(TOUCH_TIMEOUT);
         TOUCH = {
-            el: $$(_parentIfText(first_touch.target)),
-            x1: first_touch.pageX,
-            y1: first_touch.pageY,
+            el: $$(_parentIfText(touch_event.target)),
+            x1: touch_event.pageX,
+            y1: touch_event.pageY,
             isDoubleTap: (delta > 0 && delta <= 250) ? true : false,
-            last: now
+            last: now,
+            fingers: _countFingers(event)
         }
-        setTimeout(_longTap, LONGTAP_DELAY);
+        setTimeout(_hold, HOLD_DELAY);
     }
 
     function _onTouchMove(event) {
-        var move_touch = ($$.isMobile()) ? event.touches[0] : event;
-        TOUCH.x2 = move_touch.pageX;
-        TOUCH.y2 = move_touch.pageY;
+        var touch_event = _captureTouch(event);
+        TOUCH.x2 = touch_event.pageX;
+        TOUCH.y2 = touch_event.pageY;
+
+        if (_isSwipe(event)) {
+            TOUCH.el.trigger('swiping', TOUCH);
+        }
     }
 
     function _onTouchEnd(event) {
         if (TOUCH.isDoubleTap) {
-            TOUCH.el.trigger('doubleTap');
-            TOUCH = {};
-        } else if (TOUCH.x2 > 0 || TOUCH.y2 > 0) {
-            (Math.abs(TOUCH.x1 - TOUCH.x2) > 30 || Math.abs(TOUCH.y1 - TOUCH.y2) > 30)  &&
-            TOUCH.el.trigger('swipe') &&
-            TOUCH.el.trigger('swipe' + (_swipeDirection(TOUCH.x1, TOUCH.x2, TOUCH.y1, TOUCH.y2)));
+            _trigger('doubleTap', true)
 
-            TOUCH.x1 = TOUCH.x2 = TOUCH.y1 = TOUCH.y2 = TOUCH.last = 0;
-            TOUCH = {};
-        } else {
-            if (TOUCH.el !== undefined) {
-                TOUCH.el.trigger('tap');
+        } else if (TOUCH.x2 > 0 || TOUCH.y2 > 0) {
+            if (_isSwipe(event)) {
+                if (TOUCH.fingers == 1) {
+                    _trigger('swipe', false);
+
+                    swipe_direction = _swipeDirection(TOUCH.x1, TOUCH.x2, TOUCH.y1, TOUCH.y2);
+                    _trigger(swipe_direction, false);
+                } else {
+                    _trigger('drag', false);
+                }
             }
-            TOUCH_TIMEOUT = setTimeout(function(){
-                TOUCH_TIMEOUT = null;
-                TOUCH = {};
-            }, 250);
+
+            _cleanGesture();
+        } else {
+            if (TOUCH.el) {
+                _trigger('tap');
+            }
+            TOUCH_TIMEOUT = setTimeout( _cleanGesture, 250);
         }
     }
 
-    function _onTouchCancel(event) {
+    function _trigger(type, clean) {
+        TOUCH.el.trigger(type, TOUCH);
+        clean && _cleanGesture();
+    }
+
+    function _cleanGesture(event) {
         TOUCH = {};
         clearTimeout(TOUCH_TIMEOUT);
+    }
+
+    function _isSwipe(event) {
+        return TOUCH.el && (Math.abs(TOUCH.x1 - TOUCH.x2) > 30 || Math.abs(TOUCH.y1 - TOUCH.y2) > 30);
+    };
+
+    function _captureTouch(event) {
+        return ($$.isMobile()) ? event.touches[0] : event;
     }
 
     function _parentIfText(node) {
@@ -1137,17 +1243,21 @@ window.Quo = Quo;
         var yDelta = Math.abs(y1 - y2);
 
         if (xDelta >= yDelta) {
-            return (x1 - x2 > 0 ? 'Left' : 'Right');
+            return (x1 - x2 > 0 ? 'swipeLeft' : 'swipeRight');
         } else {
-            return (y1 - y2 > 0 ? 'Up' : 'Down');
+            return (y1 - y2 > 0 ? 'swipeUp' : 'swipeDown');
         }
     }
 
-    function _longTap() {
-        if (TOUCH.last && (Date.now() - TOUCH.last >= LONGTAP_DELAY)) {
-            TOUCH.el.trigger('longTap');
-            TOUCH = {};
+    function _hold() {
+        if (TOUCH.last && (Date.now() - TOUCH.last >= HOLD_DELAY)) {
+            _trigger('hold');
+            _cleanGesture();
         }
+    }
+
+    function _countFingers(event) {
+         return event.touches ? event.touches.length : 1;
     }
 
 })(Quo);
