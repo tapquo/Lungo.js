@@ -60,9 +60,9 @@
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" class="current"  data-icon="clock" data-label="Alarm"></a>
+                <a href="#nav-1" data-target="article"  data-icon="clock" data-label="Alarm"></a>
                 <a href="#nav-2" data-target="article" data-icon="calendar" data-count="17" data-label="Calendar"></a>
-                <a href="#nav-3" data-target="article" data-icon="mail" data-label="Emails" data-count="124"></a>
+                <a href="#nav-3" data-target="article" class="current" data-icon="mail" data-label="Emails" data-count="124"></a>
                 <a href="#nav-4" data-target="article" data-icon="phone" data-label="Calls" data-count="12"></a>
             </nav>
         </footer>
@@ -77,6 +77,12 @@
             </nav>
         </footer>
         -->
+
+        <article id="nav-3" class="list">
+            <div class="container">
+                <textarea class="big" placeholder='aosidaioda'></textarea>
+            </div>
+        </article>
 
         <article id="nav-1" class="list indented scrollable">
             <ul class="form">
@@ -133,25 +139,11 @@
             </div>
         </article>
 
-        <article id="nav-3"></article>
-
         <article id="nav-4"></article>
     </section>
 
 
     <section id="test-2" class="pop">
-        <header data-back="home" style="display: block; visibility: visible;">
-            <a href="#back" data-target="section" class="button red onright">Pruebame</a>
-        </header>
-
-        <article>
-            <a href="#back" data-target="section" class="button big blue" data-icon="home">Volver</a>
-            <a href="#back" data-target="section" class="button red onright">Pruebame</a>
-        </article>
-    </section>
-
-
-    <!-- <section id="test-2" class="-pop">
         <header data-title="Auto title centered">
             <nav class="onleft">
                 <a href="#back" data-target="section" class="cancel" data-icon="close" data-label="CANCEL"></a>
@@ -164,7 +156,7 @@
         <article>
             None
         </article>
-    </section> -->
+    </section>
 
     <!-- Third parties dependencies -->
     <script src="../../src/lib/QuoJS.js"></script>
