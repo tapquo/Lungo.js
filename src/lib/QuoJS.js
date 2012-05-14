@@ -1133,8 +1133,7 @@ window.Quo = Quo;
     var TOUCH = {};
     var TOUCH_TIMEOUT;
     var HOLD_DELAY = 650;
-    var GESTURES = ['tap',
-                    'doubleTap',
+    var GESTURES = ['doubleTap',
                     'hold',
                     'swipe', 'swiping', 'swipeLeft', 'swipeRight', 'swipeUp', 'swipeDown',
                     'drag'];
