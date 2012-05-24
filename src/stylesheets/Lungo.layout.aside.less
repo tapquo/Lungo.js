@@ -1,0 +1,115 @@
+/**
+ * Stylesheet
+ *
+ * @namespace LUNGO.Layout
+ * @class Aside
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "constants.less";
+@import "mixins.less";
+
+section.aside {
+    &:not(.mini) { .transform(translate(@aside-width, 0)); }
+    &.mini { .transform(translate(@aside-width-mini, 0)); }
+
+    &.onright {
+        .transform(translate(-@aside-width, 0));
+        &.mini { .transform(translate(-@aside-width-mini, 0)); }
+    }
+}
+
+aside {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0px;
+    visibility: hidden;
+    z-index: 0;
+
+    width: @aside-width;
+    max-width: @aside-width;
+
+    &.onright { right: 0px; }
+    &.current { visibility: visible;}
+
+    & .title {
+        line-height: 42px;
+        height: 41px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    & .title, & .anchor, & a {
+        padding: 0 6px;
+    }
+
+    & a {
+        display: block;
+        height: 40px;
+
+        font-size: 14px;
+        //font-weight: bold;
+        line-height: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    & .bubble {
+        float: right;
+        font-size: 11px;
+    }
+    & *.not(.anchor) .bubble { margin-top: 13px; }
+    & *.anchor .bubble { margin-top: 2px; }
+
+    & .icon {
+        width: 24px;
+        float: left;
+        margin: 8px 4px 0 0;
+
+        font-size: 24px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    & .anchor {
+        font-weight: bold;
+        line-height: 19px;
+    }
+
+    &.mini {
+        width: @aside-width-mini;
+
+        & a {
+            padding: 0 8px;
+            height: @aside-width-mini;
+        }
+        & .icon {
+            height: 48px;
+            width: 48px;
+            font-size: 48px;
+            line-height: 48px;
+            //background: red;
+        }
+
+        & .bubble {
+            margin-top: -48px;
+        }
+    }
+}
+
+@media handheld, only screen and (min-width: 768px) {
+    .autohide[data-target="aside"] {  display: none !important; }
+
+    section.aside {
+        width: auto !important;
+        left: @aside-width;
+        right: 0px !important;
+        .transform(translate3d(0px, 0, 0));
+        -webkit-transition: none;
+
+        &.mini{ left: @aside-width-mini; }
+    }
+}
