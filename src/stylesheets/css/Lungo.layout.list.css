@@ -1,1 +1,11 @@
-.list{font-size:1.15em}.list a{display:block}.list li:not(.toolbar){padding:8px 6px 8px 8px;list-style-type:none}.list li:not(.toolbar) .icon,.list li:not(.toolbar) img{float:left;width:32px;height:32px;margin-right:6px;font-size:36px;font-weight:normal}.list .icon,.list img{display:inline-block}.list small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:.85em}.list li.anchor{font-size:.85em;padding:4px 4px 3px}.list li.anchor .icon{width:14px!important;height:14px!important;margin-right:2px!important;font-size:1.6em!important;line-height:14px!important}.list li.anchor .bubble{display:none}.list .tip{font-size:.85em;font-weight:bold}.list .search input{width:88%}.list .search a{float:right;height:30px;margin:0;padding:0}.list .search a icon{height:12px;width:30px;margin:0;font-size:1.2em;font-weight:normal}.list .onright{font-size:.75em;line-height:16px}.list .onright .icon,.list small .icon{font-size:1.4em!important;line-height:16px;height:14px!important;width:14px!important;margin-right:0!important}
+.list{font-size:1.15em;}.list a{display:block;}
+.list li:not(.toolbar){padding:8px 6px 8px 8px;list-style-type:none;}.list li:not(.toolbar) .icon,.list li:not(.toolbar) img{float:left;width:32px;height:32px;margin-right:6px;font-size:36px;font-weight:normal;}
+.list .icon,.list img{display:inline-block;}
+.list small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:0.85em;}
+.list li.anchor{font-size:0.85em;padding:4px 4px 3px;}.list li.anchor .icon{width:14px !important;height:14px !important;margin-right:2px !important;font-size:1.6em !important;line-height:14px !important;}
+.list li.anchor .bubble{display:none;}
+.list .tip{font-size:0.85em;font-weight:bold;}
+.list .search input{width:88%;}
+.list .search a{float:right;height:30px;margin:0px;padding:0px;}.list .search a icon{height:12px;width:30px;margin:0px;font-size:1.2em;font-weight:normal;}
+.list .onright{font-size:0.75em;line-height:16px;}
+.list .onright .icon,.list small .icon{font-size:1.4em !important;line-height:16px;height:14px !important;width:14px !important;margin-right:0px !important;}
