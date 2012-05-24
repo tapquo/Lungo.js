@@ -10,9 +10,10 @@
 @import "constants.less";
 @import "mixins.less";
 
-body {  overflow: hidden; }
+body {
+    overflow: hidden;
+}
 
-/* @group <section> */
 section {
     position: absolute; /* position: fixed on iOS5 & Android 4 */
     left:  0px;
@@ -61,9 +62,7 @@ section {
         }
     }
 }
-/* @end */
 
-/* @group <header> & <footer> */
 header, footer  {
     position: absolute;
     left: 0px;
@@ -108,5 +107,6 @@ header {
     }
 }
 
-footer  { bottom: 0px; }
-/* @end */
+footer  {
+    bottom: 0px;
+}
