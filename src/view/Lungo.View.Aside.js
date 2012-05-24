@@ -58,7 +58,7 @@ LUNGO.View.Aside = (function(lng, undefined) {
         //@todo: Refactor
         if (aside_class) {
             classes += (aside_class.indexOf(CLASS.RIGHT) > -1) ? CLASS.RIGHT : '';
-            classes += (aside_class.indexOf(CLASS.MINI) > -1) ? CLASS.MINI : '';
+            classes += (aside_class.indexOf(CLASS.SMALL) > -1) ? CLASS.SMALL : '';
         }
 
         return classes;
