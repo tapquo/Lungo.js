@@ -7,14 +7,17 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
+@import "mixins.less";
+
 .loading {
     position:relative;
     left: 50%;
     height: 1em;
     width: 1em;
     margin-left: -.5em;
-    -webkit-transform-origin: .5em .5em;
+    .transform-origin(.5em .5em);
     -webkit-animation:  rotatingLoader .5s  infinite  linear;
+    -moz-animation:  rotatingLoader .5s  infinite  linear;
 
     font-size: 48px;
 
@@ -32,20 +35,20 @@
             width:                    .1em;
             height:                   .25em;
             top:                      0;
-            -webkit-transform-origin: .05em .5em;
+            .transform-origin(.05em .5em);
             border-radius:            .1em;
         }
 
         &::before, &::after{ content: " "; }
 
 
-        &.top{ -webkit-transform: rotate(0deg); }
-        &.right{ -webkit-transform: rotate(90deg); }
-        &.bottom{ -webkit-transform: rotate(180deg); }
-        &.left{ -webkit-transform: rotate(270deg); }
+        &.top{ .transform(rotate(0deg)); }
+        &.right{ .transform(rotate(90deg)); }
+        &.bottom{ .transform(rotate(180deg)); }
+        &.left{ .transform(rotate(270deg)); }
 
-        &::before{ -webkit-transform: rotate(30deg); }
-        &::after{ -webkit-transform: rotate(-30deg); }
+        &::before{ .transform(rotate(30deg)); }
+        &::after{ .transform(rotate(-30deg)); }
 
         &.top           {  background-color: rgba(0,0,0,0.99); }
         &.top::after    {  background-color: rgba(0,0,0,0.90); }
@@ -78,39 +81,77 @@
 }
 
 @-webkit-keyframes rotatingLoader{
-    0%{     -webkit-transform: rotate(0deg);   }
-    8.32%{  -webkit-transform: rotate(0deg);   }
+    0%{     .transform(rotate(0deg));   }
+    8.32%{  .transform(rotate(0deg));   }
 
-    8.33%{  -webkit-transform: rotate(30deg);  }
-    16.65%{ -webkit-transform: rotate(30deg);  }
+    8.33%{  .transform(rotate(30deg));  }
+    16.65%{ .transform(rotate(30deg));  }
 
-    16.66%{ -webkit-transform: rotate(60deg);  }
-    24.99%{ -webkit-transform: rotate(60deg);  }
+    16.66%{ .transform(rotate(60deg));  }
+    24.99%{ .transform(rotate(60deg));  }
 
-    25%{    -webkit-transform: rotate(90deg);  }
-    33.32%{ -webkit-transform: rotate(90deg);  }
+    25%{    .transform(rotate(90deg));  }
+    33.32%{ .transform(rotate(90deg));  }
 
-    33.33%{ -webkit-transform: rotate(120deg); }
-    41.65%{ -webkit-transform: rotate(120deg); }
+    33.33%{ .transform(rotate(120deg)); }
+    41.65%{ .transform(rotate(120deg)); }
 
-    41.66%{ -webkit-transform: rotate(150deg); }
-    49.99%{ -webkit-transform: rotate(150deg); }
+    41.66%{ .transform(rotate(150deg)); }
+    49.99%{ .transform(rotate(150deg)); }
 
-    50%{    -webkit-transform: rotate(180deg); }
-    58.32%{ -webkit-transform: rotate(180deg); }
+    50%{    .transform(rotate(180deg)); }
+    58.32%{ .transform(rotate(180deg)); }
 
-    58.33%{ -webkit-transform: rotate(210deg); }
-    66.65%{ -webkit-transform: rotate(210deg); }
+    58.33%{ .transform(rotate(210deg)); }
+    66.65%{ .transform(rotate(210deg)); }
 
-    66.66%{ -webkit-transform: rotate(240deg); }
-    74.99%{ -webkit-transform: rotate(240deg); }
+    66.66%{ .transform(rotate(240deg)); }
+    74.99%{ .transform(rotate(240deg)); }
 
-    75%{    -webkit-transform: rotate(270deg); }
-    83.32%{ -webkit-transform: rotate(270deg); }
+    75%{    .transform(rotate(270deg)); }
+    83.32%{ .transform(rotate(270deg)); }
 
-    83.33%{ -webkit-transform: rotate(300deg); }
-    91.65%{ -webkit-transform: rotate(300deg); }
+    83.33%{ .transform(rotate(300deg)); }
+    91.65%{ .transform(rotate(300deg)); }
 
-    91.66%{ -webkit-transform: rotate(330deg); }
-    100%{   -webkit-transform: rotate(330deg); }
+    91.66%{ .transform(rotate(330deg)); }
+    100%{   .transform(rotate(330deg)); }
+}
+
+@-moz-keyframes rotatingLoader{
+    0%{     .transform(rotate(0deg));   }
+    8.32%{  .transform(rotate(0deg));   }
+
+    8.33%{  .transform(rotate(30deg));  }
+    16.65%{ .transform(rotate(30deg));  }
+
+    16.66%{ .transform(rotate(60deg));  }
+    24.99%{ .transform(rotate(60deg));  }
+
+    25%{    .transform(rotate(90deg));  }
+    33.32%{ .transform(rotate(90deg));  }
+
+    33.33%{ .transform(rotate(120deg)); }
+    41.65%{ .transform(rotate(120deg)); }
+
+    41.66%{ .transform(rotate(150deg)); }
+    49.99%{ .transform(rotate(150deg)); }
+
+    50%{    .transform(rotate(180deg)); }
+    58.32%{ .transform(rotate(180deg)); }
+
+    58.33%{ .transform(rotate(210deg)); }
+    66.65%{ .transform(rotate(210deg)); }
+
+    66.66%{ .transform(rotate(240deg)); }
+    74.99%{ .transform(rotate(240deg)); }
+
+    75%{    .transform(rotate(270deg)); }
+    83.32%{ .transform(rotate(270deg)); }
+
+    83.33%{ .transform(rotate(300deg)); }
+    91.65%{ .transform(rotate(300deg)); }
+
+    91.66%{ .transform(rotate(330deg)); }
+    100%{   .transform(rotate(330deg)); }
 }
