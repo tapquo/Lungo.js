@@ -38,6 +38,6 @@ LUNGO.Fallback = (function(lng, undefined) {
     return {
         androidInputs: androidInputs,
         positionFixed: positionFixed
-    }
+    };
 
 })(LUNGO);

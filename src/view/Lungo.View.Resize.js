@@ -18,8 +18,7 @@ LUNGO.View.Resize = (function(lng, undefined) {
      * @method toolbars
      */
     var toolbars = function() {
-        var toolbar = '.toolbar nav, .groupbar';
-        var all_toolbars = lng.dom(toolbar);
+        var all_toolbars = lng.dom('.toolbar nav, .groupbar');
 
         for (var i = 0, len = all_toolbars.length; i < len; i++) {
             var toolbar = lng.dom(all_toolbars[i]);

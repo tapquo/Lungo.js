@@ -154,9 +154,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
 
         return data.sort(function(a, b) {
             return (a[property] < b[property]) ? - order_operator :
-                (a[property] > b[property])
-                ?
-                order_operator : 0;
+                (a[property] > b[property]) ? order_operator : 0;
             }
         );
     };
@@ -199,7 +197,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
                 search = element;
                 break;
             }
-        };
+        }
 
         return search;
     };
