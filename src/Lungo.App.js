@@ -1,6 +1,6 @@
-/** 
+/**
  * Lungo sandbox APP initialization
- * 
+ *
  * @namespace LUNGO
  * @class App
  *

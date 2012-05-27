@@ -1,6 +1,6 @@
-/** 
+/**
  * Stores the displayed <sections> as a historical.
- * 
+ *
  * @namespace LUNGO.Router
  * @class History
  *

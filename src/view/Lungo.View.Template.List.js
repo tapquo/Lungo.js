@@ -82,7 +82,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     var _getContainer = function(element) {
         return lng.dom(element).children().first();
-    }
+    };
 
     var _order = function(config) {
         if (config.order && config.order.field && config.order.type) {

@@ -53,7 +53,7 @@ LUNGO.View.Aside = (function(lng, undefined) {
 
     var _asideClass = function(aside) {
         var aside_class = aside.attr(ATTRIBUTE.CLASS);
-        var classes = ''
+        var classes = '';
 
         //@todo: Refactor
         if (aside_class) {
