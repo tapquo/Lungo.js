@@ -12,6 +12,7 @@ LUNGO.Element = {
     sections: null,
     Current: {
         section: null,
-        article: null
+        article: null,
+        aside: null
     }
 };
