@@ -14,6 +14,15 @@ LUNGO.Router = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var ERROR = lng.Constants.ERROR;
     var TRIGGER = lng.Constants.TRIGGER;
+    var HASHTAG_CHARACTER = '#';
+
+    var _sections = [];
+
+    var init = function() {
+        if(!_sections) {
+            _sections = lng.dom(ELEMENT.SECTION);
+        }
+    };
 
     /**
      * Navigate to a <section>.
@@ -23,15 +32,19 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} Id of the <section>
      */
     var section = function(section_id) {
-        var section_id = lng.Core.parseUrl(section_id);
-        var current = _getHistoryCurrent();
-        var target = ELEMENT.SECTION + section_id;
+        section_id = lng.Core.parseUrl(section_id);
+        var current =  lng.Element.Current.section;
 
-        if (_exists(target) && _notCurrentTarget(target)) {
-            lng.dom(current).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-            lng.dom(target).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+        if (_notCurrentTarget(section_id, current)) {
+            var target = lng.dom(ELEMENT.SECTION + section_id);
 
-            lng.Router.History.add(section_id);
+            if (target) {
+                current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+                target.addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+
+                lng.Element.Current.section = target;
+                lng.Router.History.add(section_id);
+            }
         }
     };
 
@@ -44,8 +57,8 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <article> Id
      */
     var article = function(section_id, article_id) {
-        var section_id = lng.Core.parseUrl(section_id);
-        var article_id = lng.Core.parseUrl(article_id);
+        section_id = lng.Core.parseUrl(section_id);
+        article_id = lng.Core.parseUrl(article_id);
         var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id;
 
         if (_exists(target) && _notCurrentTarget(target)) {
@@ -63,8 +76,8 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <aside> Id
      */
     var aside = function(section_id, aside_id) {
-        var section_id = lng.Core.parseUrl(section_id);
-        var aside_id = lng.Core.parseUrl(aside_id);
+        section_id = lng.Core.parseUrl(section_id);
+        aside_id = lng.Core.parseUrl(aside_id);
         var target = ELEMENT.ASIDE + aside_id;
 
         if (_exists(target)) {
@@ -83,15 +96,18 @@ LUNGO.Router = (function(lng, undefined) {
      * @method back
      */
     var back = function() {
-        var current_section = ELEMENT.SECTION + _getHistoryCurrent();
+        var current = lng.Element.Current.section;
+        current.removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
 
-        lng.dom(current_section).removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
         lng.Router.History.removeLast();
-        lng.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+
+        target = lng.dom(_getHistoryCurrent());
+        target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+        lng.Element.Current.section = target;
     };
 
-    var _notCurrentTarget = function(target) {
-        return lng.dom(target).hasClass(CLASS.CURRENT) ? false : true;
+    var _notCurrentTarget = function(target, element) {
+        return (target !== HASHTAG_CHARACTER + element.attr('id')) ? true : false;
     };
 
     var _exists = function(target) {

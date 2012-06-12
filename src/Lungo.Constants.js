@@ -5,7 +5,6 @@
  * @class Constants
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
- * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
 LUNGO.Constants = {
