@@ -2,6 +2,8 @@ App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
 
+        console.error('LUNGO', LUNGO);
+
         setTimeout(function() {
 
             lng.View.Element.progress('#progress-normal', 50, true, 'yeah');
