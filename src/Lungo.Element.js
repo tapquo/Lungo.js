@@ -14,5 +14,6 @@ LUNGO.Element = {
         section: null,
         article: null,
         aside: null
-    }
+    },
+    toolbars: null
 };
