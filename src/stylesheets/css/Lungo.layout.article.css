@@ -1,4 +1,4 @@
-article{position:absolute;width:100% !important;height:auto;top:0px;bottom:0px;display:none;visibility:hidden;z-index:0;}article.current{visibility:visible;display:block;z-index:1;}
+article{position:fixed;width:100% !important;height:auto;top:0px;bottom:0px;display:none;visibility:hidden;z-index:0;}article.current,article:first-child{visibility:visible;display:block;z-index:1;}
 article .title{font-size:1.1em;margin:0px 0 4px;}article .title .icon{margin-right:4px;}
 article .text{margin:4px 0 8px;display:block;font-size:0.9em;font-weight:normal;line-height:1.4em;}
 header:not(.extended)~article{top:42px;}

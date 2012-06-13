@@ -18,7 +18,8 @@
 
 /* @group <article> */
 article {
-    position: absolute;
+    //position: absolute;
+    position: fixed;
     width: 100% !important;
     height: auto;
     top: 0px;
@@ -28,7 +29,7 @@ article {
     visibility: hidden;
     z-index: 0;
 
-    &.current {
+    &.current, &:first-child {
         visibility: visible;
         display: block;
         z-index: 1;
