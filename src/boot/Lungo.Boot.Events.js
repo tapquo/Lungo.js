@@ -104,7 +104,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var section_id = lng.Router.History.current();
         var article_id =  element.attr(ATTRIBUTE.HREF);
 
-        lng.Router.article(section_id, article_id);
+        lng.Router.article(section_id, article_id, element);
     };
 
     var _goAside = function(element) {

@@ -55,7 +55,8 @@ LUNGO.Boot.Section = (function(lng, undefined) {
 
         var first_article_id = first_article.attr(ATTRIBUTE.ID);
         var section_id = '#' + section.attr(ATTRIBUTE.ID);
-        lng.View.Article.showReferenceLinks(section_id, first_article_id);
+        //@todo: tenemos que inicializar la seccion actual
+        //lng.View.Article.showReferenceLinks(section_id, first_article_id);
     };
 
     return {

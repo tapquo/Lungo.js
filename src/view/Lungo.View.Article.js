@@ -31,6 +31,10 @@ LUNGO.View.Article = (function(lng, undefined) {
         }
         _toggleNavItems(section_id, article_id);
         _showReferenceLinks(section_id, article_id.replace('#', ''));
+
+        //@todo: Fallback android Inputs
+        //lng.Fallback.androidInputs(current_active_article_id, false);
+        //lng.Fallback.androidInputs(article_id, true);
     };
 
     var _showReferenceLinks = function(section_id, article_id) {
