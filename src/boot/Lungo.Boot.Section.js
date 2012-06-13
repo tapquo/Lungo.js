@@ -30,6 +30,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     var _initFirstSection = function() {
         var first_section = lng.Element.sections.first();
         lng.Element.Current.section = first_section;
+        lng.Element.Current.article = first_section.children(ELEMENT.ARTICLE).first();
 
         var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
         first_section.addClass(CLASS.CURRENT);
@@ -37,7 +38,10 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initAllSections = function() {
-        lng.Fallback.positionFixed(lng.Element.sections);
+        var art = lng.dom('* article:first-child');
+        console.error('article', art);
+        //return true;
+        //lng.Fallback.positionFixed(lng.Element.sections);
 
         for (var i = 0, len = lng.Element.sections.length; i < len; i++) {
             _initArticles(i);
@@ -48,9 +52,6 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         var section = lng.dom(lng.Element.sections[section_index]);
 
         var first_article = section.children(ELEMENT.ARTICLE).first();
-        if (!lng.Element.Current.article) {
-            lng.Element.Current.article = first_article;
-        }
         first_article.addClass(CLASS.CURRENT);
 
         var first_article_id = first_article.attr(ATTRIBUTE.ID);
