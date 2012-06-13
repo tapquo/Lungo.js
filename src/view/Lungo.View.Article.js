@@ -25,50 +25,34 @@ LUNGO.View.Article = (function(lng, undefined) {
      *
      * @method show
      */
-    var show = function(section_id, article_id) {
+    var show = function(section_id, article_id, element) {
+        if (element) {
+            _setTitle(section_id, element);
+        }
         _toggleNavItems(section_id, article_id);
-        showReferenceLinks(section_id, article_id.replace('#', ''));
-        _showContainer(section_id, article_id);
+        _showReferenceLinks(section_id, article_id.replace('#', ''));
     };
 
-    /**
-     * ?
-     *
-     * @method showReferenceLinks
-     */
-    var showReferenceLinks = function(section_id, article_id) {
+    var _showReferenceLinks = function(section_id, article_id) {
         var links = lng.dom(ELEMENT.SECTION + section_id + SELECTORS.REFERENCE_LINK);
 
         for (var i = 0, len = links.length; i < len; i++) {
             var link = lng.dom(links[i]);
-            (link.data(ATTRIBUTE.ARTICLE) === article_id) ? link.show() : link.hide();
-        }
-    };
-
-    var _toggleNavItems = function(section_id, article_id) {
-        var nav_items = lng.dom(section_id + ' ' + SELECTORS.NAVIGATION_ITEM);
-        nav_items.removeClass(CLASS.CURRENT);
-
-        for (var i = 0, len = nav_items.length; i < len; i++) {
-            var nav_item = lng.dom(nav_items[i]);
-            var nav_item_parsed_url = lng.Core.parseUrl(nav_item.attr(ATTRIBUTE.HREF));
-
-            if (nav_item_parsed_url === article_id) {
-                nav_item.addClass(CLASS.CURRENT);
-                _setTitle(section_id, nav_item);
+            if (link.data(ATTRIBUTE.ARTICLE) === article_id) {
+                link.show();
+            } else {
+                link.hide();
             }
         }
     };
 
-    var _showContainer = function(section_id, article_id) {
-        var section_articles = section_id + ' ' + ELEMENT.ARTICLE + '.' + CLASS.CURRENT;
-        var current_active_article_id = '#' + lng.dom(section_articles).attr(ATTRIBUTE.ID);
+    var _toggleNavItems = function(section_id, article_id) {
+        var links = lng.dom(ELEMENT.SECTION + section_id + ' ' + SELECTORS.NAVIGATION_ITEM);
+        links.removeClass(CLASS.CURRENT);
 
-        lng.dom(section_articles).removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
-        lng.Fallback.androidInputs(current_active_article_id, false);
-
-        lng.dom(article_id).addClass(CLASS.CURRENT);
-        lng.Fallback.androidInputs(article_id, true);
+        active_items = ELEMENT.SECTION + section_id + ' a[href="' + article_id + '"][data-target="article"]';
+        links = lng.dom(active_items);
+        links.addClass(CLASS.CURRENT);
     };
 
     var _setTitle = function(id, item) {
@@ -81,8 +65,7 @@ LUNGO.View.Article = (function(lng, undefined) {
     };
 
     return {
-        show: show,
-        showReferenceLinks: showReferenceLinks
+        show: show
     };
 
 })(LUNGO);
