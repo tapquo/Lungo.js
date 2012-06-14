@@ -38,9 +38,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
     };
 
     var _initAllSections = function() {
-        var art = lng.dom('* article:first-child');
-        console.error('article', art);
-        //return true;
+        //@todo: position fixed
         //lng.Fallback.positionFixed(lng.Element.sections);
 
         for (var i = 0, len = lng.Element.sections.length; i < len; i++) {
