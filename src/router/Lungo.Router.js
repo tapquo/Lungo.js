@@ -37,7 +37,7 @@ LUNGO.Router = (function(lng, undefined) {
 
         if (_notCurrentTarget(section_id, current)) {
             var target = lng.dom(ELEMENT.SECTION + section_id);
-            if (target) {
+            if (target.length > 0) {
                 current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE).trigger(TRIGGER.UNLOAD);
                 target.addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
                 lng.Element.Current.section = target;
@@ -61,7 +61,7 @@ LUNGO.Router = (function(lng, undefined) {
 
         if (_notCurrentTarget(article_id, current)) {
             var target = lng.dom(ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id);
-            if (target) {
+            if (target.length > 0) {
                 current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
                 target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
                 lng.Element.Current.article = target;
@@ -82,16 +82,18 @@ LUNGO.Router = (function(lng, undefined) {
     var aside = function(section_id, aside_id) {
         section_id = lng.Core.parseUrl(section_id);
         aside_id = lng.Core.parseUrl(aside_id);
-        var target = ELEMENT.ASIDE + aside_id;
+        var target = lng.dom(ELEMENT.ASIDE + aside_id);
 
-        if (_exists(target)) {
-            var is_visible = lng.dom(target).hasClass(CLASS.CURRENT);
+        if (target.length > 0) {
+            var is_visible = target.hasClass(CLASS.CURRENT);
             if (is_visible) {
-                lng.View.Aside.hide(section_id, aside_id);
+                lng.View.Aside.hide(section_id, target);
             } else {
-                lng.View.Aside.show(section_id, aside_id);
+                lng.View.Aside.show(section_id, target);
             }
         }
+
+        target = null;
     };
 
     /**
@@ -105,29 +107,13 @@ LUNGO.Router = (function(lng, undefined) {
 
         lng.Router.History.removeLast();
 
-        target = lng.dom(_getHistoryCurrent());
+        target = lng.dom(lng.Router.History.current());
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Current.section = target;
     };
 
     var _notCurrentTarget = function(target, element) {
         return (target !== HASHTAG_CHARACTER + element.attr('id')) ? true : false;
-    };
-
-    var _exists = function(target) {
-        var exists = false;
-
-        if (lng.dom(target).length > 0) {
-            exists = true;
-        } else {
-            lng.Core.log(3, ERROR.ROUTER + target);
-        }
-
-        return exists;
-    };
-
-    var _getHistoryCurrent = function() {
-        return lng.Router.History.current();
     };
 
     return {
