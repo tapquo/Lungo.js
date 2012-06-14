@@ -1,4 +1,4 @@
-.scrollable{position:absolute;display:block;}
+.scrollable{display:block;}
 .scroll{overflow:scroll;-webkit-overflow-scrolling:touch;}
 .onleft{float:left;}
 .onright{float:right;}
