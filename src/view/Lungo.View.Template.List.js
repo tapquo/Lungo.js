@@ -27,7 +27,6 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         if (_validateConfig(config)) {
             config.data = _order(config);
             _render(config);
-            _scroll(config.el);
         }
 	};
 
@@ -44,7 +43,6 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         var container = _getContainer(config.el);
 
         container.append(markup);
-        _scroll(config.el, ATTRIBUTE.LAST);
     };
 
     /**
@@ -60,7 +58,6 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         var container = _getContainer(config.el);
 
         container.prepend(markup);
-        _scroll(config.el, ATTRIBUTE.FIRST);
     };
 
     var _validateConfig = function(config) {
@@ -93,15 +90,6 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     var _render = function(config) {
         lng.View.Template.render(config.container.selector, config.template, config.data);
-    };
-
-    var _scroll = function(element, direction) {
-        var element_id = lng.dom(element).attr(ATTRIBUTE.ID);
-
-        lng.View.Scroll.init(element_id);
-        if (direction) {
-            lng.View.Scroll[(direction === ATTRIBUTE.FIRST) ? ATTRIBUTE.FIRST : ATTRIBUTE.LAST](element_id);
-        }
     };
 
     return {
