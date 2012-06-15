@@ -62,13 +62,15 @@ LUNGO.View.Aside = (function(lng, undefined) {
      */
     var hide = function() {
         var aside = lng.Element.Current.aside;
-        var aside_stylesheet = _asideStylesheet(aside);
-        lng.Element.Current.section.removeClass(CLASS.ASIDE).removeClass(aside_stylesheet);
+        if (aside) {
+            var aside_stylesheet = _asideStylesheet(aside);
+            lng.Element.Current.section.removeClass(CLASS.ASIDE).removeClass(aside_stylesheet);
 
-        setTimeout(function() {
-            aside.removeClass(CLASS.CURRENT);
-            lng.Element.Current.aside = null;
-        }, 300);
+            setTimeout(function() {
+                aside.removeClass(CLASS.CURRENT);
+                lng.Element.Current.aside = null;
+            }, 300);
+        }
     };
 
     var _asideStylesheet = function(aside) {

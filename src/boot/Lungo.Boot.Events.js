@@ -70,6 +70,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _goSection = function(id) {
+        _hideAsideIfNecesary();
         id = lng.Core.parseUrl(id);
         if (id === '#back') {
             lng.Router.back();
@@ -95,7 +96,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     var _hideAsideIfNecesary = function(event) {
         if (window.innerWidth < 768) lng.View.Aside.hide();
 
-        event.preventDefault();
+        if (event) event.preventDefault();
     };
 
     return {
