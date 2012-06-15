@@ -5,7 +5,6 @@ article .box.quarter{height:25%;}
 article .box.third{height:33.3%;}
 article .box.middle{height:50%;}
 article .box.two-thirds{height:66.7%;}
-.prueba li{list-style:none;float:left;width:48px;height:48px;background:#ccc;margin:1px;}
 header:not(.extended)~article{top:42px;}
 header.extended~article{top:75px;}
 footer:not(.with-labels)~article{bottom:41px;}

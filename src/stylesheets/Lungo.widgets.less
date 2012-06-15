@@ -26,7 +26,10 @@
         overflow-x: scroll;
         overflow-y: hidden !important;
 
-        & > * { min-width: 4096px; }
+        & > * {
+            min-width: 4096px;
+            & > * { float: left; }
+        }
     }
 }
 
