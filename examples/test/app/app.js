@@ -5,8 +5,10 @@ var App = (function(lng, undefined) {
         name: 'Kitchen Sink',
         version: '1.2',
         resources: {
+
             sections: [
                 'aside.html', 'aside-profiles.html']
+
         }
     });
 

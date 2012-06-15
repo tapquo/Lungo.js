@@ -64,9 +64,9 @@
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" data-title="a" data-icon="clock" data-label="Alarm"></a>
+                <a href="#nav-1" data-target="article" data-title="a" class="current" data-icon="clock" data-label="Alarm"></a>
                 <a href="#nav-2" data-target="article" data-title="b" data-icon="calendar" data-count="17" data-label="Calendar"></a>
-                <a href="#nav-3" data-target="article" data-title="c" class="current" data-icon="mail" data-label="Emails" data-count="1"></a>
+                <a href="#nav-3" data-target="article" data-title="c"  data-icon="mail" data-label="Emails" data-count="1"></a>
                 <a href="#nav-4" data-target="article" data-title="d" data-icon="phone" data-label="Calls" data-count="12"></a>
             </nav>
         </footer>
@@ -82,15 +82,37 @@
         </footer>
         -->
 
-        <article id="nav-3" class="list">
-            <div class="container">
-                <textarea class="big" placeholder='aosidaioda'></textarea>
+        <article id="nav-1">
+
+            <div class="box quarter">
+                hola
             </div>
-            <a href="#test-2" data-target="section" class="button big red">next section</a>
-            <a href="#test-1" data-target="section" class="button big blue">current section</a>
+            <div id = "prueba" class="box middle list scroll ">
+            <ul>
+                <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li>
+                 <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li>
+                  <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li> <li data-image="1://mobilehtml5.org/img/232x321xlogo.png.pagespeed.ic.CB96-XanN6.png"><strong>ask</strong><small>sak</small></li>
+            </ul>
+            </div>
+
+            <div class="box quarter scroll horizontal prueba">
+                <ul>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                    <li>hola</li>
+                </ul>
+            </div>
+
         </article>
 
-        <article id="nav-1" class="list indented scrollable">
+        <article id="nav-2" class="list indented scroll">
             <ul class="form">
                 <li data-loading="black big"></li>
                 <li id="loading-code" style="background-color: grey;"></li>
@@ -112,7 +134,7 @@
                     <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
                 </li>
                 <li>
-                    <label class="pop">Do you like LungoJS forms?</label>
+                    <label class="-pop">Do you like LungoJS forms?</label>
                     <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
                 </li>
 
@@ -137,7 +159,7 @@
         </article>
 
 
-        <article id="nav-2" class="list indented">
+        <article id="nav-3" class="list indented">
             <div>
                 <a href="#test-2" data-target="section" class="button big" data-icon="check">Test 2</a>
                 <a href="#test-2"  class="button big red " data-icon="check">Test 2</a>
@@ -173,7 +195,7 @@
 
     <!-- Third parties dependencies -->
     <script src="../../src/lib/QuoJS.js"></script>
-    <script src="../../src/lib/iscroll-lite.js"></script>
+    <!--<script src="../../src/lib/iscroll-lite.js"></script>-->
     <!-- LungoJS Libraries (Development mode)-->
     <script src="../../src/Lungo.js"></script>
     <script src="../../src/Lungo.App.js" ></script>
@@ -187,7 +209,7 @@
     <script src="../../src/view/Lungo.View.Resize.js"></script>
     <script src="../../src/view/Lungo.View.Article.js" ></script>
     <script src="../../src/view/Lungo.View.Aside.js" ></script>
-    <script src="../../src/view/Lungo.View.Scroll.js"></script>
+    <!--<script src="../../src/view/Lungo.View.Scroll.js"></script>-->
     <script src="../../src/view/Lungo.View.Element.js"></script>
     <script src="../../src/view/Lungo.View.Template.js"></script>
     <script src="../../src/view/Lungo.View.Template.Binding.js"></script>

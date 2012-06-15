@@ -21,12 +21,12 @@ section.aside {
 }
 
 aside {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    top: 0px;
+    position: fixed;
+    height: auto;
+    top: 0;
+    bottom: 0;
     visibility: hidden;
-    z-index: 0;
+    z-index: -1;
 
     width: @aside-width;
     max-width: @aside-width;
