@@ -15,8 +15,19 @@
 }
 
 .scroll {
-    overflow: scroll;
+    // overflow: scroll;
+    //     overflow-x: hidden;
+    //     overflow-y: scroll;
+    overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+    -webkit-box-flex: 1;
+
+    &.horizontal {
+        overflow-x: scroll;
+        overflow-y: hidden !important;
+
+        & > * { min-width: 4096px; }
+    }
 }
 
 .onleft { float: left; }

@@ -1,6 +1,11 @@
-article{position:fixed;width:100% !important;height:auto;top:0px;bottom:0px;display:none;visibility:hidden;z-index:0;}article.current,article:first-child{visibility:visible;display:block;z-index:1;}
+article{position:fixed;width:100% !important;height:auto;top:0;bottom:0;display:none;visibility:hidden;z-index:0;}article.current,article:first-child{visibility:visible;display:block;z-index:1;}
 article .title{font-size:1.1em;margin:0px 0 4px;}article .title .icon{margin-right:4px;}
 article .text{margin:4px 0 8px;display:block;font-size:0.9em;font-weight:normal;line-height:1.4em;}
+article .box.quarter{height:25%;}
+article .box.third{height:33.3%;}
+article .box.middle{height:50%;}
+article .box.two-thirds{height:66.7%;}
+.prueba li{list-style:none;float:left;width:48px;height:48px;background:#ccc;margin:1px;}
 header:not(.extended)~article{top:42px;}
 header.extended~article{top:75px;}
 footer:not(.with-labels)~article{bottom:41px;}
