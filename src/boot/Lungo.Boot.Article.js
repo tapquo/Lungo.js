@@ -14,7 +14,6 @@ LUNGO.Boot.Article = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
         LIST_IN_ARTICLE: 'article.list, aside.list',
-        SCROLL_IN_ARTICLE: '.scrollable',
         CHECKBOX_IN_ARTICLE: '.checkbox, .radio'
     };
 
@@ -25,7 +24,6 @@ LUNGO.Boot.Article = (function(lng, undefined) {
      */
     var start = function() {
         _initElement(SELECTORS.LIST_IN_ARTICLE, _createListElement);
-        _initElement(SELECTORS.SCROLL_IN_ARTICLE, _createScrollElement);
         _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _createCheckboxElement);
     };
 
@@ -43,11 +41,6 @@ LUNGO.Boot.Article = (function(lng, undefined) {
             var article_id = article.attr(ATTRIBUTE.ID);
             article.append(ELEMENT.LIST);
         }
-    };
-
-    var _createScrollElement = function(scroll) {
-        var scroll_id = scroll.attr(ATTRIBUTE.ID);
-        lng.View.Scroll.init(scroll_id);
     };
 
     var _createCheckboxElement = function(checkbox) {

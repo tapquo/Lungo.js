@@ -31,15 +31,9 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
 
-        //@ToDo: Error with input type="range"
-        lng.dom(SELECTORS.DOCUMENT).on(touch_move_event, _iScroll);
         lng.dom(SELECTORS.WINDOW).on(resize, _changeOrientation);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).touch(_asideVisibility);
-    };
-
-    var _iScroll = function(event) {
-        event.preventDefault();
     };
 
     var _changeOrientation = function(event) {
