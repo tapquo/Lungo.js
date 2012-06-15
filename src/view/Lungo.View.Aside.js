@@ -15,37 +15,59 @@ LUNGO.View.Aside = (function(lng, undefined) {
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
     /**
-     * Display an aside element for a particular <section>
+     * Toggle an aside element
      *
-     * @method show
+     * @method toggle
      *
-     * @param  {string} Section id
      * @param  {string} Aside id
      */
-    var show = function(section_id, aside) {
-        var aside_stylesheet = _asideStylesheet(aside);
-        var section = lng.dom(ELEMENT.SECTION + section_id);
+    var toggle = function(aside_id) {
+        var aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
+        if (aside.length > 0) {
+            var is_visible = aside.hasClass(CLASS.CURRENT);
+            if (is_visible) {
+                lng.View.Aside.hide();
+            } else {
+                lng.View.Aside.show(aside_id);
+            }
+        }
 
-        aside.addClass(CLASS.CURRENT);
-        section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
+        aside = null;
     };
 
     /**
-     * Hide an aside element for a particular section
+     * Display an aside element with a particular <section>
+     *
+     * @method show
+     *
+     * @param  {string} Aside id
+     */
+    var show = function(aside_id) {
+        var aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
+        if (aside.length > 0) {
+            lng.Element.Current.aside = aside;
+            var aside_stylesheet = _asideStylesheet(aside);
+
+            aside.addClass(CLASS.CURRENT);
+            lng.Element.Current.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
+        }
+
+        aside = null;
+    };
+
+    /**
+     * Hide an aside element with a particular section
      *
      * @method hide
-     *
-     * @param  {string} Element query selector
-     * @param  {string} Value for counter
      */
-    var hide = function(section_id, aside) {
+    var hide = function() {
+        var aside = lng.Element.Current.aside;
         var aside_stylesheet = _asideStylesheet(aside);
-        var section = lng.dom(ELEMENT.SECTION + section_id);
-
-        section.removeClass(CLASS.ASIDE).removeClass(aside_stylesheet);
+        lng.Element.Current.section.removeClass(CLASS.ASIDE).removeClass(aside_stylesheet);
 
         setTimeout(function() {
             aside.removeClass(CLASS.CURRENT);
+            lng.Element.Current.aside = null;
         }, 300);
     };
 
@@ -63,6 +85,7 @@ LUNGO.View.Aside = (function(lng, undefined) {
     };
 
     return {
+        toggle: toggle,
         show: show,
         hide: hide
     };
