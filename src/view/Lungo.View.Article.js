@@ -13,7 +13,6 @@ LUNGO.View.Article = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
-    var TRIGGER = lng.Constants.TRIGGER;
 
     var SELECTORS = {
         NAVIGATION_ITEM: 'a[href][data-target="article"]',
@@ -26,13 +25,9 @@ LUNGO.View.Article = (function(lng, undefined) {
      *
      * @method show
      */
-    var show = function(section_id, article_id, element) {
-        if (element) {
-            var title = element.data(ATTRIBUTE.TITLE);
-
-            if (title) {
-                lng.Element.Current.section.find(SELECTORS.TITLE_OF_ARTICLE).text(title);
-            }
+    var title = function(value) {
+        if (value) {
+            lng.Element.Current.section.find(SELECTORS.TITLE_OF_ARTICLE).text(value);
         }
         //@todo: Fallback android Inputs
         //lng.Fallback.androidInputs(current_active_article_id, false);
@@ -62,6 +57,7 @@ LUNGO.View.Article = (function(lng, undefined) {
     };
 
     return {
+        title: title,
         switchReferenceItems: switchReferenceItems,
         switchNavItems: switchNavItems
     };
