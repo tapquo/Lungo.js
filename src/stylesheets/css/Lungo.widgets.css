@@ -1,5 +1,5 @@
 .scrollable{display:block;}
-.scroll{overflow:scroll;-webkit-overflow-scrolling:touch;}
+.scroll{overflow-y:scroll;-webkit-overflow-scrolling:touch;-webkit-box-flex:1;}.scroll.horizontal{overflow-x:scroll;overflow-y:hidden !important;}.scroll.horizontal >*{min-width:4096px;}
 .onleft{float:left;}
 .onright{float:right;}
 .hidden{display:none;}

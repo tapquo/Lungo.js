@@ -22,8 +22,8 @@ article {
     position: fixed;
     width: 100% !important;
     height: auto;
-    top: 0px;
-    bottom: 0px;
+    top: 0;
+    bottom: 0;
 
     display: none;
     visibility: hidden;
@@ -48,6 +48,30 @@ article {
         font-weight: normal;
         line-height: 1.4em;
     }
+
+    & .box {
+        &.quarter {
+            height: 25%;
+        }
+        &.third {
+            height: 33.3%;
+        }
+        &.middle {
+            height: 50%;
+        }
+        &.two-thirds {
+            height: 66.7%;
+        }
+    }
+}
+
+.prueba li {
+    list-style: none;
+    float: left;
+    width: 48px;
+    height: 48px;
+    background: #ccc;
+    margin: 1px;
 }
 
 header:not(.extended) ~ article { top: @header-height; }
