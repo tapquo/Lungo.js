@@ -29,6 +29,8 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
         for (resource_key in resources) {
             _loadResources(resource_key, resources[resource_key]);
         }
+
+        _cacheDOMElements();
     };
 
     var _loadResources = function(resource_key, resources, callback) {
@@ -42,6 +44,12 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
                 lng.Core.log(3, ERROR.LOADING_RESOURCE + ' ' + error);
             }
         }
+    };
+
+    var _cacheDOMElements = function() {
+        lng.Element.sections = lng.dom(ELEMENT.SECTION);
+        lng.Element.asides = lng.dom(ELEMENT.ASIDE);
+        // lng.Element.toolbars = lng.dom(ELEMENT.ASIDE);
     };
 
     var _parseUrl = function(section_url, folder) {

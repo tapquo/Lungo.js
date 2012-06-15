@@ -17,7 +17,8 @@ LUNGO.View.Article = (function(lng, undefined) {
 
     var SELECTORS = {
         NAVIGATION_ITEM: 'a[href][data-target="article"]',
-        REFERENCE_LINK: ' a[href][data-article]'
+        REFERENCE_LINK: ' a[href][data-article]',
+        TITLE_OF_ARTICLE: 'header .title, footer .title'
     };
 
     /**
@@ -27,18 +28,28 @@ LUNGO.View.Article = (function(lng, undefined) {
      */
     var show = function(section_id, article_id, element) {
         if (element) {
-            _setTitle(section_id, element);
-        }
-        _toggleNavItems(section_id, article_id);
-        _showReferenceLinks(section_id, article_id.replace('#', ''));
+            var title = element.data(ATTRIBUTE.TITLE);
 
+            if (title) {
+                lng.Element.Current.section.find(SELECTORS.TITLE_OF_ARTICLE).text(title);
+            }
+        }
         //@todo: Fallback android Inputs
         //lng.Fallback.androidInputs(current_active_article_id, false);
         //lng.Fallback.androidInputs(article_id, true);
     };
 
-    var _showReferenceLinks = function(section_id, article_id) {
-        var links = lng.dom(ELEMENT.SECTION + section_id + SELECTORS.REFERENCE_LINK);
+    var switchNavItems = function(article_id) {
+        lng.Element.Current.section.find(SELECTORS.NAVIGATION_ITEM).removeClass(CLASS.CURRENT);
+
+        var active_nav_items = 'a[href="' + article_id + '"][data-target="article"]';
+        lng.Element.Current.section.find(active_nav_items).addClass(CLASS.CURRENT);
+    };
+
+    var switchReferenceItems = function(article_id, section) {
+        article_id = article_id.replace('#', '');
+
+        var links = section.find(SELECTORS.REFERENCE_LINK);
 
         for (var i = 0, len = links.length; i < len; i++) {
             var link = lng.dom(links[i]);
@@ -50,26 +61,9 @@ LUNGO.View.Article = (function(lng, undefined) {
         }
     };
 
-    var _toggleNavItems = function(section_id, article_id) {
-        var links = lng.dom(ELEMENT.SECTION + section_id + ' ' + SELECTORS.NAVIGATION_ITEM);
-        links.removeClass(CLASS.CURRENT);
-
-        active_items = ELEMENT.SECTION + section_id + ' a[href="' + article_id + '"][data-target="article"]';
-        links = lng.dom(active_items);
-        links.addClass(CLASS.CURRENT);
-    };
-
-    var _setTitle = function(id, item) {
-        var title = item.data(ATTRIBUTE.TITLE);
-
-        if (title) {
-            var section_title = id + ' header .title, ' + id + ' footer .title';
-            lng.dom(section_title).text(title);
-        }
-    };
-
     return {
-        show: show
+        switchReferenceItems: switchReferenceItems,
+        switchNavItems: switchNavItems
     };
 
 })(LUNGO);
