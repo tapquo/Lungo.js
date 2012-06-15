@@ -14,6 +14,7 @@ LUNGO.Router = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var ERROR = lng.Constants.ERROR;
     var TRIGGER = lng.Constants.TRIGGER;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var HASHTAG_CHARACTER = '#';
 
     /**
@@ -47,7 +48,6 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <article> Id
      */
     var article = function(section_id, article_id, element) {
-        section_id = lng.Core.parseUrl(section_id);
         article_id = lng.Core.parseUrl(article_id);
         var current =  lng.Element.Current.article;
 
@@ -57,11 +57,8 @@ LUNGO.Router = (function(lng, undefined) {
                 current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
                 target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
                 lng.Element.Current.article = target;
-                //@todo: refacto
-                /*
-                tenemos que asignar el titulo a la section activa
 
-                */
+                lng.View.Article.title(element.data(ATTRIBUTE.TITLE));
                 lng.View.Article.switchNavItems(article_id);
                 lng.View.Article.switchReferenceItems(article_id, lng.Element.Current.section);
             }
