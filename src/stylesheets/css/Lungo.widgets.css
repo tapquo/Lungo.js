@@ -1,4 +1,3 @@
-.scrollable{display:block;}
 .scroll{overflow-y:scroll;-webkit-overflow-scrolling:touch;-webkit-box-flex:1;}.scroll.horizontal{overflow-x:scroll;overflow-y:hidden !important;}.scroll.horizontal >*{min-width:4096px;}.scroll.horizontal >* >*{float:left;}
 .onleft{float:left;}
 .onright{float:right;}

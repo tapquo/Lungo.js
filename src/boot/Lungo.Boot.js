@@ -12,7 +12,8 @@ LUNGO.Boot = (function(lng, undefined) {
 
     return function() {
         lng.Boot.Resources.start();
-        lng.Boot.Layout.start();
+        //@todo: Resize Layout
+        //lng.Boot.Layout.start();
         lng.Boot.Events.start();
         lng.Boot.Data.start();
         lng.Boot.Section.start();
