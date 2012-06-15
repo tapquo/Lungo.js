@@ -8,7 +8,6 @@ LUNGO_SOURCES=../src/
 LUNGO_NAMESPACE=Lungo.
 BUILDPATH=../release/
 MINIFIED="min"
-PACKED="packed"
 
 #script
 clear
@@ -83,13 +82,9 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
 
     #MINIFIED Version
-    #java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$MINIFIED.js
-    #echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
-
-    #PACKED Version
-    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/QuoJS.js --js "$LUNGO_SOURCES"lib/iscroll-lite.js"$FILES_TO_COMPILE
-    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$PACKED.js
-    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$PACKED.js"\033[0m"
+    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/QuoJS.js "$FILES_TO_COMPILE
+    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$MINIFIED.js
+    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
 
 
 FILES_TO_COMPRESS=""
