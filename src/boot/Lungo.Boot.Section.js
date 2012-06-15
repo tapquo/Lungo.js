@@ -20,7 +20,6 @@ LUNGO.Boot.Section = (function(lng, undefined) {
      * @method init
      */
     var start = function() {
-        lng.Element.sections = lng.dom(ELEMENT.SECTION);
         _initFirstSection();
         _initAllSections();
 
@@ -53,9 +52,7 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         first_article.addClass(CLASS.CURRENT);
 
         var first_article_id = first_article.attr(ATTRIBUTE.ID);
-        var section_id = '#' + section.attr(ATTRIBUTE.ID);
-        //@todo: tenemos que inicializar la seccion actual
-        //lng.View.Article.showReferenceLinks(section_id, first_article_id);
+        if (first_article_id) lng.View.Article.switchReferenceItems(first_article_id, section);
     };
 
     return {

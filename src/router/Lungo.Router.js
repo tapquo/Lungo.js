@@ -16,14 +16,6 @@ LUNGO.Router = (function(lng, undefined) {
     var TRIGGER = lng.Constants.TRIGGER;
     var HASHTAG_CHARACTER = '#';
 
-    var _sections = [];
-
-    var init = function() {
-        if(!_sections) {
-            _sections = lng.dom(ELEMENT.SECTION);
-        }
-    };
-
     /**
      * Navigate to a <section>.
      *
@@ -36,7 +28,7 @@ LUNGO.Router = (function(lng, undefined) {
         var current =  lng.Element.Current.section;
 
         if (_notCurrentTarget(section_id, current)) {
-            var target = lng.dom(ELEMENT.SECTION + section_id);
+            var target = lng.Element.sections.siblings(ELEMENT.SECTION + section_id);
             if (target.length > 0) {
                 current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE).trigger(TRIGGER.UNLOAD);
                 target.addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
@@ -60,13 +52,18 @@ LUNGO.Router = (function(lng, undefined) {
         var current =  lng.Element.Current.article;
 
         if (_notCurrentTarget(article_id, current)) {
-            var target = lng.dom(ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id);
+            var target = lng.Element.Current.section.find(ELEMENT.ARTICLE + article_id);
             if (target.length > 0) {
                 current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
                 target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
                 lng.Element.Current.article = target;
+                //@todo: refacto
+                /*
+                tenemos que asignar el titulo a la section activa
 
-                lng.View.Article.show(section_id, article_id, element);
+                */
+                lng.View.Article.switchNavItems(article_id);
+                lng.View.Article.switchReferenceItems(article_id, lng.Element.Current.section);
             }
         }
     };
@@ -82,8 +79,8 @@ LUNGO.Router = (function(lng, undefined) {
     var aside = function(section_id, aside_id) {
         section_id = lng.Core.parseUrl(section_id);
         aside_id = lng.Core.parseUrl(aside_id);
-        var target = lng.dom(ELEMENT.ASIDE + aside_id);
 
+        var target = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
         if (target.length > 0) {
             var is_visible = target.hasClass(CLASS.CURRENT);
             if (is_visible) {
@@ -106,8 +103,7 @@ LUNGO.Router = (function(lng, undefined) {
         current.removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
 
         lng.Router.History.removeLast();
-
-        target = lng.dom(lng.Router.History.current());
+        target = lng.Element.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Current.section = target;
     };
