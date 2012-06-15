@@ -74,20 +74,8 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <aside> Id
      */
     var aside = function(section_id, aside_id) {
-        section_id = lng.Core.parseUrl(section_id);
         aside_id = lng.Core.parseUrl(aside_id);
-
-        var target = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
-        if (target.length > 0) {
-            var is_visible = target.hasClass(CLASS.CURRENT);
-            if (is_visible) {
-                lng.View.Aside.hide(section_id, target);
-            } else {
-                lng.View.Aside.show(section_id, target);
-            }
-        }
-
-        target = null;
+        lng.View.Aside.toggle(aside_id);
     };
 
     /**

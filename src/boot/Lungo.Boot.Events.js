@@ -32,8 +32,8 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var resize = 'resize';
 
         lng.dom(SELECTORS.WINDOW).on(resize, _changeOrientation);
-        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
-        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).touch(_asideVisibility);
+        lng.dom(SELECTORS.HREF_TARGET).touch(_loadTarget);
+        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
     };
 
     var _changeOrientation = function(event) {
@@ -65,22 +65,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
                 _goAside(link);
                 break;
         }
-    };
-
-    var _asideVisibility = function(event) {
-        var link = lng.dom(this);
-        var target = lng.dom(link.data(ATTRIBUTE.TARGET) + link.attr(ATTRIBUTE.HREF));
-
-        if (target.length > 0) {
-            var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
-            var section_id = '#' + lng.dom(SELECTORS.CURRENT_SECTION).first().attr(ATTRIBUTE.ID);
-
-            if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
-                lng.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
-                link.addClass(CLASS.CURRENT);
-            }
-            _hideAsideIfNecesary(section_id, aside_id);
-        }
 
         event.preventDefault();
     };
@@ -108,10 +92,10 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.Router.aside(section_id, aside_id);
     };
 
-    var _hideAsideIfNecesary = function(section_id, aside_id) {
-        if (window.innerWidth < 768) {
-            lng.View.Aside.hide(section_id, aside_id);
-        }
+    var _hideAsideIfNecesary = function(event) {
+        if (window.innerWidth < 768) lng.View.Aside.hide();
+
+        event.preventDefault();
     };
 
     return {
