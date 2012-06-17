@@ -29,22 +29,15 @@ aside {
     z-index: 0;
 
     width: @aside-width;
-    max-width: @aside-width;
 
     &.onright { right: 0px; }
     &.current { visibility: visible;}
 
-    & .title {
-        line-height: 42px;
-        height: 41px;
-        font-size: 15px;
-        font-weight: bold;
+    & header, & footer {
+        position: relative;
+        left: none;
     }
-
-    & .title, & .anchor, & a {
-        padding: 0 6px;
-    }
-
+    /*
     & a {
         display: block;
         height: 40px;
@@ -54,6 +47,7 @@ aside {
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+
 
     & .bubble {
         float: right;
@@ -96,6 +90,7 @@ aside {
             margin-top: -48px;
         }
     }
+    */
 }
 
 @media handheld, only screen and (min-width: 768px) {

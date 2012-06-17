@@ -2,7 +2,10 @@ App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
 
+        lng.View.Aside.toggle('.onright');
+
         console.error('LUNGO', LUNGO);
+
 
         setTimeout(function() {
 
