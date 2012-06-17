@@ -37,60 +37,29 @@ aside {
         position: relative;
         left: none;
     }
-    /*
-    & a {
-        display: block;
-        height: 40px;
-        font-size: 14px;
-        line-height: 40px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
-
-    & .bubble {
-        float: right;
-        padding-bottom: 0px;
-    }
-    & *.not(.anchor) .bubble { margin-top: 13px; }
-    & *.anchor .bubble { margin-top: 2px; }
-
-    & .icon {
-        width: 24px;
-        float: left;
-        margin: 8px 4px 0 0;
-
-        font-size: 24px;
-        line-height: 24px;
-        text-align: center;
-    }
-
-    & .anchor {
-        font-weight: bold;
-        line-height: 19px;
-    }
 
     &.small {
         width: @aside-width-small;
 
-        & a {
-            padding: 0 8px;
-            height: @aside-width-small;
-        }
-        & .icon {
-            height: 48px;
-            width: 48px;
-            font-size: 48px;
-            line-height: 48px;
-            //background: red;
+        & nav {
+            margin-top: @header-height;
+            & a {
+                padding: 0px;
+                width: @aside-width-small;
+                height: @aside-width-small;
+            }
+            & .icon {
+                font-size: 64px;
+                text-align: center;
+            }
+
+            & .bubble {
+                left: -24px;
+            }
         }
 
-        & .bubble {
-            margin-top: -48px;
-        }
+
     }
-    */
 }
 
 @media handheld, only screen and (min-width: 768px) {

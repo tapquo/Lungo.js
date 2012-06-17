@@ -32,7 +32,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var resize = 'resize';
 
         lng.dom(SELECTORS.WINDOW).on(resize, _changeOrientation);
-        lng.dom(SELECTORS.HREF_TARGET).touch(_loadTarget);
+        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
     };
 
