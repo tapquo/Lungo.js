@@ -57,17 +57,17 @@
         </header>
 
         <nav class="groupbar">
-            <a href="#nav-1" data-target="article" class="current"  data-icon="clock">&nbsp;Alarm</a>
-            <a href="#nav-2" data-target="article" data-icon="calendar">&nbsp;Calendar</a>
+            <a href="#nav-1" data-target="article" class="current"  data-icon="clock">&nbsp;Lists</a>
+            <a href="#nav-2" data-target="article" data-icon="calendar">&nbsp;Form</a>
         </nav>
 
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" data-title="a" class="current" data-icon="clock" data-label="Alarm"></a>
-                <a href="#nav-2" data-target="article" data-title="b" data-icon="calendar" data-count="17" data-label="Calendar"></a>
+                <a href="#nav-1" data-target="article" data-title="d" data-icon="phone" data-label="Lists" data-count="12"></a>
+                <a href="#nav-2" data-target="article" data-title="b" data-icon="calendar" data-count="17" data-label="Form"></a>
                 <a href="#nav-3" data-target="article" data-title="c"  data-icon="mail" data-label="Emails" data-count="1"></a>
-                <a href="#nav-4" data-target="article" data-title="d" data-icon="phone" data-label="Calls" data-count="12"></a>
+                <a href="#nav-4" data-target="article" data-title="a" class="current" data-icon="clock" data-label="box"></a>
             </nav>
         </footer>
 
@@ -82,7 +82,41 @@
         </footer>
         -->
 
-        <article id="nav-1">
+
+
+        <article id="nav-1" class="list">
+            <ul>
+                <li class="red" data-icon="home">
+                    <div class="bubble red onright">23.23</div>
+                    <strong>Lorem Ipsum</strong>
+                    <small>...is a traditional text</small>
+                </li>
+                <li class="red" data-icon="home">
+                    <div class="bubble green onright">23.23<span class="icon home"></span></div>
+                    <strong>Lorem Ipsum</strong>
+                    <small><span class="icon home"></span>...is a traditional text</small>
+                </li>
+                <li>
+                    <input type="text" placeholder="Input text"/>
+                    <textarea placeholder="Textarea sample"></textarea>
+                    <label class="select">
+                        <select class="custom">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </label>
+                </li>
+                <li class="red selectable" data-icon="pushpin">
+                    <div class="bubble arcticblue onright">23.23<span class="icon pushpin"></span></div>
+                    <strong>Lorem Ipsum</strong>
+                    <small><span class="icon pushpin"></span>...is a traditional text</small>
+                </li>
+            </ul>
+
+        </article>
+
+        <article id="nav-4">
 
             <div class="box quarter">
                 hola
@@ -165,15 +199,6 @@
                 <a href="#test-2"  class="button big red " data-icon="check">Test 2</a>
                 <a href="#test-2" class="button big green" data-icon="check">Test 2</a>
             </div>
-        </article>
-
-        <article id="nav-4" class="list">
-            <ul>
-                <li class="red">hola</li>
-                <li class="green">hola</li>
-                <li class="blue">hola</li>
-            </ul>
-
         </article>
     </section>
 
