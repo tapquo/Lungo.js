@@ -18,30 +18,19 @@ label {
 }
 
 input:not([type=checkbox]), textarea, select {
-    display: inline-block;
-    padding: 5px 0 5px 5px;
+    display: block;
     width: 97%;
+    margin: 0 0 2px;
+    padding: 1.5%;
 
-    outline: none;
-
-    font-size:  15px;
-    line-height: 15px;
-
+    font-size:  1.15em;
     font-weight: bold;
 
     -webkit-appearance: none;
     -webkit-user-select: text;
-
-    margin: 0 0 6px;
+    -webkit-font-smoothing: antialiased;
 }
 
-.big {
-    width: 99%;
-    height: 190px;
-    .border-radius(0px);
-    line-height: 22px;
-    //padding: 0px;
-}
 
 /* @group search */
 input[type=search] {

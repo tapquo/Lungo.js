@@ -28,12 +28,6 @@ article {
         z-index: 1;
     }
 
-    & .title {
-        font-size: 1.1em;
-        margin: 0px 0 4px;
-        & .icon { margin-right: 4px; }
-    }
-
     & .text {
         margin: 4px 0 8px;
         display: block;
@@ -43,22 +37,19 @@ article {
     }
 
     & .box {
-        .box-shadow( 0 1px 0 #e0e0e0);
-        
-        
-        
+		.box-shadow( 0 1px 0 #e0e0e0);
         &.grey {
-			color: #636363 !important;
-			text-shadow:  0 1px 0 #fff;
-			background: #efefef;
-			line-height: 1.5em;
-			
-			& .icon, & a {
-				color: #636363;
-			}
-			& .icon { 
-				font-size:  1.25em;
-			}
+            color: #636363 !important;
+            text-shadow:  0 1px 0 #fff;
+            background: #efefef;
+            line-height: 1.5em;
+
+            & .icon, & a {
+                color: #636363;
+            }
+            & .icon {
+                font-size:  1.25em;
+            }
         }
 
         &.quarter {
@@ -74,16 +65,16 @@ article {
             height: 66.7%;
         }
     }
-    
-    & .col {       
-    	float:  left;
-    	display: inline-block;
-    	height:  100%;
-    	font-size:  0.85em;
-            
-    	&:not(last-child) {
-			.box-shadow(inset 1px 0 0 #e0e0e0);
-		}
+
+    & .col {
+        float:  left;
+        display: inline-block;
+        height:  100%;
+        font-size:  0.85em;
+
+        &:not(last-child) {
+            .box-shadow(inset 1px 0 0 #e0e0e0);
+        }
         &.quarter {
             width: 25%;
         }
