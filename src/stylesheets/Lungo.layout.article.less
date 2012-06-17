@@ -10,13 +10,6 @@
 @import "mixins.less";
 @import "constants.less";
 
-
-@defaultTrasition : @easeOutSine;
-@header_footer_height: 40px;
-    @header_extended_height: 75px;
-@footer_toolbar_height: 48px;
-
-/* @group <article> */
 article {
     //position: absolute;
     position: fixed;
@@ -50,6 +43,24 @@ article {
     }
 
     & .box {
+        .box-shadow( 0 1px 0 #e0e0e0);
+        
+        
+        
+        &.grey {
+			color: #636363 !important;
+			text-shadow:  0 1px 0 #fff;
+			background: #efefef;
+			line-height: 1.5em;
+			
+			& .icon, & a {
+				color: #636363;
+			}
+			& .icon { 
+				font-size:  1.25em;
+			}
+        }
+
         &.quarter {
             height: 25%;
         }
@@ -63,14 +74,39 @@ article {
             height: 66.7%;
         }
     }
+    
+    & .col {       
+    	float:  left;
+    	display: inline-block;
+    	height:  100%;
+    	font-size:  0.85em;
+            
+    	&:not(last-child) {
+			.box-shadow(inset 1px 0 0 #e0e0e0);
+		}
+        &.quarter {
+            width: 25%;
+        }
+        &.third {
+            width: 33.3%;
+        }
+        &.middle {
+            width: 50%;
+        }
+        &.two-thirds {
+            width: 66.7%;
+        }
+    }
+}
+
+a {
 }
 
 header:not(.extended) ~ article { top: @header-height; }
-    header.extended ~ article { top: @header_extended_height; }
+    header.extended ~ article { top: @article_with_header_extended; }
 footer:not(.with-labels) ~ article { bottom: @article-bottom; }
     footer.with-labels ~ article { bottom: @article-bottom-with-labels; }
 
 @media handheld, only screen and (min-width: 768px) {
     article.aside { .transform(translate3d(0px, 0, 0)); }
 }
-/* @end */
