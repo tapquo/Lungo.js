@@ -64,9 +64,9 @@
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" data-title="d" data-icon="phone" data-label="Lists" data-count="12"></a>
-                <a href="#nav-2" data-target="article" data-title="b" data-icon="calendar" data-count="17" data-label="Form"></a>
-                <a href="#nav-3" data-target="article" data-title="c"  data-icon="mail" data-label="Emails" data-count="1"></a>
+                <a href="#nav-1" data-target="article" data-title="d" data-icon="phone" data-label="Lists" data-count="1"></a>
+                <a href="#nav-2" data-target="article" data-title="b" data-icon="calendar" data-count="12" data-label="Form"></a>
+                <a href="#nav-3" data-target="article" data-title="c"  data-icon="mail" data-label="Emails" data-count="123"></a>
                 <a href="#nav-4" data-target="article" data-title="a" class="current" data-icon="clock" data-label="box"></a>
             </nav>
         </footer>
@@ -84,19 +84,43 @@
 
 
 
-        <article id="nav-1" class="list">
+        <article id="nav-1" class="list scroll">
             <ul>
-                <li class="red" data-icon="home">
-                    <div class="bubble red onright">23.23</div>
-                    <strong>Lorem Ipsum</strong>
-                    <small>...is a traditional text</small>
-                </li>
-                <li class="red" data-icon="home">
-                    <div class="bubble green onright">23.23<span class="icon home"></span></div>
-                    <strong>Lorem Ipsum</strong>
-                    <small><span class="icon home"></span>...is a traditional text</small>
-                </li>
                 <li>
+                    <a href="#" >
+                        <strong>List: none</strong>
+                        <small>a: none</small>
+                    </a>
+                </li>
+
+                <li class=" selectable" >
+                    <a href="#" data-image="assets/images/avatars/soyjavi.jpg">
+
+                        <div class="onright" data-icon="calendar">2 days ago</div>
+                        <strong>List: .selectable</strong>
+                        <small>a: data-image</small>
+                    </a>
+                </li>
+                 <li class="arrow thumb">
+                    <a href="#" data-image="assets/images/avatars/soyjavi.jpg">
+                        <strong>List: .arrow .thumb </strong>
+                         <small>a: data-image</small>
+                    </a>
+                </li>
+                <li class="red">
+                    <a href="#"  data-icon="home">
+                        <div class="bubble red onright"><span class="icon pushpin"></span>125m</div>
+                        <strong>List: .red</strong>
+                        <small data-icon="home">a: data-icon & .bubble</small>
+                    </a>
+                </li>
+
+                <li class="padding" data-icon="user">
+                    <strong>List: .padding & data-icon</strong>
+                    <small><span class="icon home"></span>a: undefined</small>
+                </li>
+
+                <li class="padding">
                     <input type="text" placeholder="Input text"/>
                     <textarea placeholder="Textarea sample"></textarea>
                     <label class="select">
@@ -106,11 +130,6 @@
                             <option value="3">Three</option>
                         </select>
                     </label>
-                </li>
-                <li class="red selectable" data-icon="pushpin">
-                    <div class="bubble arcticblue onright">23.23<span class="icon pushpin"></span></div>
-                    <strong>Lorem Ipsum</strong>
-                    <small><span class="icon pushpin"></span>...is a traditional text</small>
                 </li>
             </ul>
 
