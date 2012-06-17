@@ -3,7 +3,10 @@
 .onright{float:right;}
 .hidden{display:none;}
 .indented>*{padding:10px;}
+.wrapper{padding:8px 8px;}
 .icon.small{font-size:20px !important;height:16px !important;width:16px !important;line-height:16px !important;}
 .framed{border:2px solid #fff;}
 .round{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;}
 .bubble{display:inline-block;padding:2px 3px;min-width:12px;font-size:0.75em;font-weight:bold;line-height:13px;}
+strong{font-size:1.15em;}
+small{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:0.8em;}

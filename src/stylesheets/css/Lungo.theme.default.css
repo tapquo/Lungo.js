@@ -283,6 +283,9 @@ section.aside.onright {
 .list li .onright:not(.bubble) {
   color: #888;
 }
+.list li strong {
+  color: #134c81;
+}
 .list.indented li {
   border-left: solid 1px #e1e1e1;
   border-right: solid 1px #e1e1e1;

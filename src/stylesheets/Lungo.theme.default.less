@@ -167,17 +167,10 @@ section.aside {
 /* @group .list */
 .list, .list li:not(.toolbar) a { color: #2a2a2a; }
 
-
 .list {
     & li {
-        //background: #f8f8f8;
         background: #fff;
-
-        //border-bottom: 1px inset #e1e1e1;
         border-bottom: 1px inset #f8f8f8;
-        //text-shadow: 0 1px 0 #fff;
-
-
         &:last-child { border-bottom: none; }
 
         &.selectable:active {
@@ -192,6 +185,10 @@ section.aside {
         }
 
         & small, & .onright:not(.bubble) { color: #888; }
+        
+        & strong {
+			color: #134c81;
+		}
     }
 
     &.indented li {

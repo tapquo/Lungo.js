@@ -33,6 +33,9 @@
 .onright { float: right;}
 .hidden { display: none; }
 .indented > * { padding: 10px; }
+.wrapper {
+    padding: 8px 8px;
+}
 
 .icon.small {
     font-size: 20px !important;
@@ -52,4 +55,16 @@
     font-size: 0.75em;
     font-weight: bold;
     line-height: 13px;
+}
+
+& strong {
+    font-size: 1.15em;
+}
+
+& small {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.8em;
 }

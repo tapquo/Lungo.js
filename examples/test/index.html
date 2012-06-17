@@ -42,7 +42,7 @@
 
 <body class="app">
     <section id="test-1" class="pop">
-        <header class="extended">
+        <header class="-extended">
             <nav class="onleft">
                 <a href="#kitchen-sink-scroll" data-target="aside" data-icon="user"></a>
                 <a href="#kitchen-sink-scroll" data-article="nav-2" data-target="aside" data-icon="heart" data-count="8"></a>
@@ -56,18 +56,20 @@
             </nav>
         </header>
 
+        <!--
         <nav class="groupbar">
             <a href="#nav-1" data-target="article" class="current"  data-icon="clock">&nbsp;Lists</a>
             <a href="#nav-2" data-target="article" data-icon="calendar">&nbsp;Form</a>
         </nav>
+        -->
 
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" data-title="d" data-icon="phone" data-label="Lists" data-count="1"></a>
+                <a href="#nav-1" data-target="article" data-title="d" data-icon="phone" class="current" data-label="boxes" data-count="1"></a>
                 <a href="#nav-2" data-target="article" data-title="b" data-icon="calendar" data-count="12" data-label="Form"></a>
                 <a href="#nav-3" data-target="article" data-title="c"  data-icon="mail" data-label="Emails" data-count="123"></a>
-                <a href="#nav-4" data-target="article" data-title="a" class="current" data-icon="clock" data-label="box"></a>
+                <a href="#nav-4" data-target="article" data-title="lists"  data-icon="clock" data-label="lists"></a>
             </nav>
         </footer>
 
@@ -83,8 +85,68 @@
         -->
 
 
+        <article id="nav-1" class="lisst">
+            <div id = "prueba" class="box middle list scroll ">
+                <img src="http://placehold.it/320x200">
+            </div>
 
-        <article id="nav-1" class="list scroll">
+            <div class="box quarter grey">
+                <div class="lisst box two-thirds">
+                    <div class="wrapper">
+                        <div class="onright" data-icon="calendar">June 9, 2012</div>
+                        <strong>LungoJS.2 Application</strong>
+                        <small>by Javi Jimenez <div class="bubble grey">PRO</div></small>
+                    </div>
+                </div>
+                <div class="box third">
+
+                    <a href="#" class="col quarter">
+                        <div class="wrapper" data-icon="heart">217 Likes</div>
+                    </a>
+
+                    <a href="#" class="col quarter">
+                        <div class="wrapper" data-icon="pushpin">4 Buckets</div>
+                    </a>
+                    <a href="#" class="col middle">
+                        <div class="wrapper" data-icon="picture">389 Views</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="box quarter  white list scroll">
+                <ul>
+                    <li class=" selectable" >
+                        <a href="#" data-image="http://placehold.it/32x32">
+
+                            <div class="onright" data-icon="calendar">2 days ago</div>
+                            <strong>List: .selectable</strong>
+                            <small>a: data-image</small>
+                        </a>
+                    </li>
+
+                    <li class=" selectable" >
+                        <a href="#" data-image="http://placehold.it/32x32">
+
+                            <div class="onright" data-icon="calendar">2 days ago</div>
+                            <strong>List: .selectable</strong>
+                            <small>a: data-image</small>
+                        </a>
+                    </li>
+
+                    <li class=" selectable" >
+                        <a href="#" data-image="http://placehold.it/32x32">
+
+                            <div class="onright" data-icon="calendar">2 days ago</div>
+                            <strong>List: .selectable</strong>
+                            <small>a: data-image</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </article>
+
+        <article id="nav-4" class="list scroll">
             <ul>
                 <li>
                     <a href="#" >
@@ -94,7 +156,7 @@
                 </li>
 
                 <li class=" selectable" >
-                    <a href="#" data-image="assets/images/avatars/soyjavi.jpg">
+                    <a href="#" data-image="http://placehold.it/32x32">
 
                         <div class="onright" data-icon="calendar">2 days ago</div>
                         <strong>List: .selectable</strong>
@@ -102,7 +164,7 @@
                     </a>
                 </li>
                  <li class="arrow thumb">
-                    <a href="#" data-image="assets/images/avatars/soyjavi.jpg">
+                    <a href="#" data-image="http://placehold.it/48x48">
                         <strong>List: .arrow .thumb </strong>
                          <small>a: data-image</small>
                     </a>
@@ -135,35 +197,7 @@
 
         </article>
 
-        <article id="nav-4">
 
-            <div class="box quarter">
-                hola
-            </div>
-            <div id = "prueba" class="box middle list scroll ">
-            <ul>
-                <li data-image=""><strong>ask</strong><small>sak</small></li>
-                 <li data-image=""><strong>ask</strong><small>sak</small></li>
-                  <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li> <li data-image=""><strong>ask</strong><small>sak</small></li>
-            </ul>
-            </div>
-
-            <div class="box quarter scroll horizontal prueba">
-                <ul>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                    <li>hola</li>
-                </ul>
-            </div>
-
-        </article>
 
         <article id="nav-2" class="list indented scroll">
             <ul class="form">
