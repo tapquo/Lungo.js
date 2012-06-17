@@ -2,7 +2,7 @@
 .onleft{float:left;}
 .onright{float:right;}
 .hidden{display:none;}
-.indented>*{padding:10px;}
+.indented>*{margin:10px;}
 .wrapper{padding:8px 8px;}
 .icon.small{font-size:20px !important;height:16px !important;width:16px !important;line-height:16px !important;}
 .framed{border:2px solid #fff;}

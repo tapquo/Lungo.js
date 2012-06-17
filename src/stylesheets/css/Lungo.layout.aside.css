@@ -4,6 +4,7 @@ section.aside.onright{-webkit-transform:translate(-256px, 0);-moz-transform:tran
 aside{position:fixed;height:auto;top:0;bottom:0;visibility:hidden;z-index:0;width:256px;}aside.onright{right:0px;}
 aside.current{visibility:visible;}
 aside header,aside footer{position:relative;left:none;}
+aside footer{position:absolute;bottom:0;}
 aside.small{width:64px;}aside.small nav{margin-top:42px;}aside.small nav a{padding:0px;width:64px;height:64px;}
 aside.small nav .icon{font-size:64px;text-align:center;}
 aside.small nav .bubble{left:-24px;}

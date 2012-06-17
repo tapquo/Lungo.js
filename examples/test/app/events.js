@@ -1,6 +1,7 @@
 App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
+        //lng.View.Aside.toggle('.onright');
 
         setTimeout(function() {
 

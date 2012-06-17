@@ -42,7 +42,7 @@
 
 <body class="app">
     <section id="test-1" class="pop">
-        <header class="-extended">
+        <header class="extended">
             <nav class="onleft">
                 <a href="#kitchen-sink-scroll" data-target="aside" data-icon="user"></a>
                 <a href="#kitchen-sink-scroll" data-article="nav-2" data-target="aside" data-icon="heart" data-count="8"></a>
@@ -56,12 +56,11 @@
             </nav>
         </header>
 
-        <!--
+
         <nav class="groupbar">
             <a href="#nav-1" data-target="article" class="current"  data-icon="clock">&nbsp;Lists</a>
             <a href="#nav-2" data-target="article" data-icon="calendar">&nbsp;Form</a>
         </nav>
-        -->
 
 
         <footer class="toolbar with-labels">
@@ -83,11 +82,54 @@
             </nav>
         </footer>
         -->
+        <article id="nav-2" class="list indented scroll">
+            <ul class="form">
+                <li data-loading="black big"></li>
+                <li id="loading-code" style="background-color: grey;"></li>
+                <li class="padding">
+                    <label>type="text"</label>
+                    <input type="text" placeholder="Input text"/>
+                    <textarea placeholder="Textarea sample"></textarea>
+                    <label class="select">
+                        <select class="custom">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </label>
+                </li>
+                <li class="padding">
+                    <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
+                    <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
+                </li>
+                <li  class="padding">
+                    <label class="-pop">Do you like LungoJS forms?</label>
+                    <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
+                </li>
 
+                <li class="padding">
+                    <div id="progress-normal" data-progress="25%"></div>
+                    <div id="progress-big" data-progress="50%" class="big"></div>
+                    <label>type="range"</label>
+                    <input type="range">
+                </li>
+            </ul>
+            <ul>
+                <li class="tip theme">Examples of tips</li>
+                <li class="tip" data-icon="home small">Lorem Ipsum is simply dummy text...</li>
+                <li class="tip dark" data-icon="home small">Lorem Ipsum is simply dummy text...</li>
+
+                <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+                <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
+
+
+                <li class="tip dark" data-icon="question small">It's a special form element you must set the label with class "select"</li>
+            </ul>
+        </article>
 
         <article id="nav-1" class="lisst">
-            <div id = "prueba" class="box middle list scroll ">
-                <img src="http://placehold.it/320x200">
+            <div id = "prueba" class="box middle list  " style="background: url(http://placehold.it/320x200);">
             </div>
 
             <div class="box quarter grey">
@@ -199,51 +241,7 @@
 
 
 
-        <article id="nav-2" class="list indented scroll">
-            <ul class="form">
-                <li data-loading="black big"></li>
-                <li id="loading-code" style="background-color: grey;"></li>
-                <li>
-                    <label>type="text"</label>
-                    <input type="text" placeholder="Input text"/>
-                    <textarea placeholder="Textarea sample"></textarea>
-                    <label class="select">
-                        <select class="custom">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                    </label>
-                </li>
-                <li>
-                    <label class="radio"><input type="radio" name="group-0" id="radio-0" checked="checked"/></label>
-                    <label class="radio"><input type="radio" name="group-0" id="radio-1"/></label>
-                    <label class="radio"><input type="radio" name="group-0" id="radio-2"/></label>
-                </li>
-                <li>
-                    <label class="-pop">Do you like LungoJS forms?</label>
-                    <label class="checkbox onright"><input type="checkbox" id="checkbox-0" checked/></label>
-                </li>
 
-                <li>
-                    <div id="progress-normal" data-progress="25%"></div>
-                    <div id="progress-big" data-progress="50%" class="big"></div>
-                    <label>type="range"</label>
-                    <input type="range">
-                </li>
-            </ul>
-            <ul>
-                <li class="tip theme">Examples of tips</li>
-                <li class="tip" data-icon="home small">Lorem Ipsum is simply dummy text...</li>
-                <li class="tip dark" data-icon="home small">Lorem Ipsum is simply dummy text...</li>
-
-                <li class="tip" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-                <li class="tip dark" data-icon="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...</li>
-
-
-                <li class="tip dark" data-icon="question small">It's a special form element you must set the label with class "select"</li>
-            </ul>
-        </article>
 
 
         <article id="nav-3" class="list indented">
