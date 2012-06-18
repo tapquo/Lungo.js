@@ -34,6 +34,8 @@ LUNGO.Router = (function(lng, undefined) {
                 current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE).trigger(TRIGGER.UNLOAD);
                 target.addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
                 lng.Element.Current.section = target;
+                lng.Element.Current.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.CURRENT);
+
                 lng.Router.History.add(section_id);
             }
         }
@@ -54,13 +56,16 @@ LUNGO.Router = (function(lng, undefined) {
         if (_notCurrentTarget(article_id, current)) {
             var target = lng.Element.Current.section.find(ELEMENT.ARTICLE + article_id);
             if (target.length > 0) {
-                current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
+                if (_sectionId(current) === _sectionId(target)) {
+                    current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
+                }
                 target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
                 lng.Element.Current.article = target;
 
-                lng.View.Article.title(element.data(ATTRIBUTE.TITLE));
                 lng.View.Article.switchNavItems(article_id);
                 lng.View.Article.switchReferenceItems(article_id, lng.Element.Current.section);
+
+                if (element) lng.View.Article.title(element.data(ATTRIBUTE.TITLE));
             }
         }
     };
@@ -95,6 +100,10 @@ LUNGO.Router = (function(lng, undefined) {
 
     var _notCurrentTarget = function(target, element) {
         return (target !== HASHTAG_CHARACTER + element.attr('id')) ? true : false;
+    };
+
+    var _sectionId = function(element) {
+        return element.parent('section').attr('id');
     };
 
     return {
