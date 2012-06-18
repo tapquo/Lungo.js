@@ -21,10 +21,9 @@ nav {
         float: left;
 
         & .icon {
-            position: relative;
-            top:  3px;
-            font-size: 24px;
-            display: inline-block;
+            //position: relative;
+            font-size: 1.7em;
+            //display: inline-block;
         }
 
         & img {
@@ -42,9 +41,33 @@ nav {
 
     & .bubble {
         position: relative;
-        top:  -5px;
+        top:  -12px;
         left: -5px;
         margin-right: -20px;
+    }
+
+    &.groupbar {
+        position: absolute;
+        top: 43px;
+        height: 28px;
+        display: block;
+        width: 100%;
+        padding: 4px 0 2px;
+        display: block;
+        line-height: 28px;
+        z-index: 2;
+
+        & a {
+            padding: 0px;
+            font-weight: bold;
+            & .icon {
+                font-size: 1.0em;
+            }
+        }
+    }
+
+    &.toolbar {
+
     }
 }
 
@@ -75,7 +98,7 @@ header, footer {
     & .icon {
         display: block;
         top:  0px;
-        font-size: 34px;
+        font-size: 2.1em;
         line-height: 34px;
     }
 
@@ -86,7 +109,7 @@ header, footer {
 
     & abbr {
         position: absolute;
-        top: 32px;
+        top: 34px;
         width: inherit;
         height: 14px;
         margin-left: 0px;
@@ -99,18 +122,4 @@ header, footer {
         white-space: nowrap;
         text-overflow: ellipsis;
     }
-}
-
-.groupbar {
-    position: absolute;
-    top: 43px;
-    height: 28px;
-    display: block;
-    width: 100%;
-    padding: 4px 0 2px;
-    display: block;
-    line-height: 28px;
-    z-index: 2;
-
-    & a { padding: 0px; font-weight: bold;}
 }
