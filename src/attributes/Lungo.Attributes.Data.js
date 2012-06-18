@@ -64,6 +64,6 @@ LUNGO.Attributes.Data = {
     Back: {
         tag: 'back',
         selector: 'header, footer',
-        html: '<a href="#back" data-target="section" class="onleft button default"><span class="icon {{value}}"></span></a>'
+        html: '<nav class="onleft"><a href="#back" data-target="section" class="onleft"><span class="icon {{value}}"></span></a></nav>'
     }
 };
