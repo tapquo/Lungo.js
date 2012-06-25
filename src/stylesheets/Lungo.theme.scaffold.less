@@ -1,0 +1,371 @@
+/**
+ * Stylesheet
+ *
+ * @namespace LUNGO.Theme
+ * @class Default
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "constants.less";
+@import "mixins.less";
+
+@theme:  #999;
+    @theme-light: #ccc;
+    @theme-dark: #333;
+
+    @theme-highlight: #93d6e7;
+        @theme-highlight-color: #1b6777;
+        @theme-highlight-text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+
+
+@color-border: #2566a4;
+    @color-border-light: #64b9e2;
+
+@color-main: #2c8bca;
+    @color-main-dark: #154f93;
+
+@color-secondary: #353b42;
+    @color-secondary-dark: #272a2d;
+
+@background-secondary: #353b42 -webkit-gradient(linear, left top, left bottom, color-stop(0%, #353b42), color-stop(100%, #272a2d));
+
+.app {
+    background: @black;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* @group <header> & <footer> & <article> */
+section > header {
+    background: @theme;
+    .box-shadow(~"inset 0 1px 0 "@theme-light~", inset 0 -1px 0 "@theme-dark);
+    z-index: 2;
+    & .title , .subtitle {
+        color: @white;
+    }
+}
+
+section > footer {
+    background: @theme-dark;
+    border-top: 1px inset @black;
+    color: @white;
+}
+
+article {
+    background: @theme-light;
+}
+/* @end */
+
+/* @group <nav> */
+header nav {
+    & a {
+        color: @white;
+    }
+
+    &:not(.plain) {
+        & a {
+            .box-shadow(~"1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)");
+            &.accept { background: rgba(0, 255, 0, 0.4); }
+            &.cancel { background: rgba(255, 0, 0, 0.4); }
+        }
+        &.onright a { .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)"); }
+
+        & a:active { .box-shadow(~"inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5)"); }
+    }
+
+    &.plain a:active { text-shadow: 0 0 4px rgba(255,255,255,0.5); }
+}
+
+.toolbar a {
+    color: @theme-light;
+
+    &.current, &.active {
+        color: @white;
+        background: @black;
+        .box-shadow(~"inset 0 1px 1px rgba(0,0,0,1), -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05)");
+    }
+}
+
+.groupbar {
+    background: @theme-dark;
+//    border-bottom: solid 1px rgba(0,0,0,1);
+
+    //.box-shadow(~"inset 0 1px 8px rgba(0,0,0,0.3)");
+
+    & a {
+        color: @theme-light;
+        &.current {
+            color:  @white;
+            border-bottom: solid 3px @color-border;
+        }
+    }
+}
+/* @end */
+
+/* @group <aside> */
+aside {
+    color:  #fff;
+    background: #272727;
+    background: #333;
+
+    & header, footer {
+        .box-shadow(~"inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1)");
+        background: #272727;
+    }
+
+    & article {
+        background: none;
+    }
+
+    & .list {
+        & ul {
+            background: none;
+        }
+
+        & li {
+            color: #F0F0F0;
+            border-bottom: 1px solid #2f2f2f;
+
+            & strong {
+                text-shadow: 0 1px 1px black;
+                color: #fff;
+            }
+
+            & small {
+                color:  rgba(255,255,255,0.3);
+            }
+        }
+    }
+
+    & a.current { background: #2f2f2f; }
+}
+
+section.aside {
+    .box-shadow(~"-4px 0 8px rgba(0,0,0,0.5)");
+    &.onright { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
+}
+
+@media handheld, only screen and (min-width: 768px) {
+    section.current, section.show {
+        .box-shadow(~"-4px 0 8px rgba(0,0,0,0.5)");
+        &.onright { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
+    }
+}
+/* @end */
+
+/* @group .list */
+.list, .list li:not(.toolbar) a { color: #2a2a2a; }
+
+.list {
+    & ul {
+        background: #fff;
+    }
+    & li {
+        //background: #fff;
+        border-bottom: 1px inset #f8f8f8;
+        &:last-child { border-bottom: none; }
+
+        &.selectable:active {
+            background: @theme-light;
+            color: @theme-dark;
+
+            & small, & .onright:not(.bubble) {
+                color: @white;
+                text-shadow: none;
+            }
+        }
+
+        & small, & .onright:not(.bubble) { color: #888; }
+
+        & strong {
+            color: #134c81;
+        }
+    }
+
+    &.indented li {
+        border-left: solid 1px #e1e1e1;
+        border-right: solid 1px #e1e1e1;
+
+        &:first-child { border-top: solid 1px #e1e1e1; }
+        &:last-child { border-bottom: solid 1px  #e1e1e1; }
+    }
+
+    & .anchor {
+        color: @white;
+        .linear-gradient(top, ~','@color-main 0%, ~','@color-main-dark 100%);
+        border: none;
+    }
+
+    & .tip {
+        color: #7a7a7a;
+        &.theme {
+            color: #fff;
+            .linear-gradient(top, ~','@color-main 0%, ~','@color-main-dark 100%);
+        }
+        &.dark {
+            .linear-gradient(top, ~','@color-secondary 0%, ~','@color-secondary-dark 100%);
+            color: #fff;
+            text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+
+            & a { color: #fff !important; }
+        }
+    }
+
+    & .toolbar {
+        border-bottom-color: rgba(0,0,0,0.2);
+
+        & .toolbar a {
+            .box-shadow(~"1px 0px 0px #d9d9d9");
+
+            &:last-child { .box-shadow(none); }
+            &.current {
+                background: transparent;
+                color: #333;
+                text-shadow: none !important;
+            }
+
+        }
+    }
+}
+/* @end */
+
+/* @group widgets */
+.splash {
+    background: @theme-dark;
+    color: #fff;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
+}
+
+&.indented {
+    & ul { .border-radius(3px); }
+    & li {
+        &:first-child { .border-radius(3px 3px 0px 0px); }
+        &:last-child {
+            .border-radius(0px 0px 3px 3px);
+            .box-shadow(0 1px 1px rgba(0,0,0,0.05));
+        }
+    }
+}
+
+
+/* @group .button */
+.button {
+    color: @white;
+    font-weight: bold;
+    &:active { }
+
+    &.default {
+        background: @theme;
+        &:active, &.active { background: @theme-dark;}
+    }
+}
+/* @end */
+
+/* @group <form> */
+form, .form {
+    & label {
+        color: #999;
+    }
+}
+input, textarea, select {
+    border: 1px solid #ccc;
+    color: @theme-dark;
+    font-family: Helvetica, Arial, sans-serif;
+
+    &:focus {
+        color: #000;
+        border-color: @theme-dark;
+    }
+}
+
+.select:after {
+    background: #ccc;
+    color: white;
+}
+
+/* @group .range */
+input[type="checkbox"] + span, input[type="radio"] + span {
+    color: #fff;
+    background: @theme;
+}
+    input[type="checkbox"] + span::before,
+    input[type="radio"] + span::before {
+        background: @theme-light;
+    }
+
+    input[type="checkbox"]:checked + span,
+    input[type="radio"]:checked + span {
+        background: @theme-dark;
+    }
+/* @end */
+
+
+
+/* @group range */
+input[type="range"] {
+    background-color: @theme-light;
+
+    &:active {
+        background: @theme;
+    }
+    &::-webkit-slider-thumb {
+        background: @theme;
+    }
+    &:active::-webkit-slider-thumb {
+        background: @theme-dark;
+    }
+}
+/* @end */
+
+/* @group .progress */
+.progress {
+    .labels {
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 18px;
+        color: @theme;
+    }
+
+    & .bar {
+        background: @theme-light;
+
+        & .value {
+            background: @theme-dark;
+
+            & .label {
+                float: right;
+                margin-right: 3px;
+                font-weight: bold;
+                color: @white;
+                font-size: 12px;
+            }
+        }
+    }
+}
+/* @end */
+
+
+/* @end */
+.bubble {
+    color: #fff;
+
+    &.count {
+        background: @theme;
+    }
+}
+    header .bubble.count {
+        background: @theme-dark;
+    }
+
+    article .list .bubble {
+        .box-shadow(~'inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3)');
+    }
+
+
+    aside .list .bubble {
+        background: rgba(0,0,0,0.25);
+                .box-shadow(~'inset 0 1px 0 #1b212a), inset 0 -1px 0 #454c56');
+        .box-shadow(~'inset 0 1px 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(255,255,255,0.2)');
+    }
+
+/* @end */
