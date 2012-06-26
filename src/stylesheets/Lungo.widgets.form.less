@@ -219,13 +219,15 @@ input[type="range"] {
     margin-bottom: 8px;
 
     .labels {
+
+        font-size: 1.0em;
         display: block;
         & span:last-child { float: right; }
     }
 
     & .bar {
         height:  15px;
-        line-height: 16px;
+        line-height: 15px;
         display: block;
 
         & .value {
@@ -233,6 +235,12 @@ input[type="range"] {
             height: inherit;
             width: 0%;
             -webkit-transition: width 500ms @defaultTrasition;
+
+            & .label {
+                float: right;
+                margin-right: 4px;
+                font-size: 0.75em;
+            }
         }
     }
 }

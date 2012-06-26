@@ -48,18 +48,19 @@ nav {
 
     &.groupbar {
         position: absolute;
-        top: 43px;
-        height: 28px;
+        top: @header-height;
+        height: @header_groupbar_height;
         display: block;
         width: 100%;
-        padding: 4px 0 2px;
-        display: block;
-        line-height: 28px;
         z-index: 2;
+
+        line-height: @header_groupbar_height;
 
         & a {
             padding: 0px;
+            margin: 0px;
             font-weight: bold;
+            height: @header_groupbar_height;
             & .icon {
                 font-size: 1.0em;
             }

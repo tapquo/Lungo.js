@@ -96,7 +96,8 @@ header nav {
         color: @theme;
         &.current {
             color:  @white;
-            border-bottom: solid 3px @white;
+            .box-shadow(inset 0 -3px 0 @white);
+            //border-bottom: inset 3px @white;
         }
     }
 }
@@ -136,8 +137,13 @@ aside {
             }
         }
     }
-
-    & a.current { background: #2f2f2f; }
+    & a {
+        color: @theme;
+    }
+    & a.current {
+        background: #2f2f2f;
+        color: @white;
+    }
 }
 
 section.aside {
@@ -194,23 +200,13 @@ section.aside {
     }
 
     & .anchor {
-        color: @white;
-        .linear-gradient(top, ~','@color-main 0%, ~','@color-main-dark 100%);
-        border: none;
-    }
+        color: @theme-dark;
+        background: @theme-light;
+        border-bottom: none;
 
-    & .tip {
-        color: #7a7a7a;
-        &.theme {
-            color: #fff;
-            .linear-gradient(top, ~','@color-main 0%, ~','@color-main-dark 100%);
-        }
-        &.dark {
-            .linear-gradient(top, ~','@color-secondary 0%, ~','@color-secondary-dark 100%);
-            color: #fff;
-            text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
-
-            & a { color: #fff !important; }
+        &.contrast {
+            background: @theme-dark;
+            color: @theme-light;
         }
     }
 
@@ -241,17 +237,14 @@ section.aside {
 
 &.indented {
     & ul {
-        //.border-radius(3px);
         border: 1px solid @theme;
 
             .box-shadow(0 1px 1px rgba(0,0,0,0.05));
     }
     & li {
         &:first-child {
-            //.border-radius(3px 3px 0px 0px);
         }
         &:last-child {
-            //.border-radius(0px 0px 3px 3px);
         }
     }
 }
@@ -279,10 +272,11 @@ form, .form {
 input, textarea, select {
     border: 1px solid #ccc;
     color: @theme-dark;
+    border-radius: 0px;
     font-family: Helvetica, Arial, sans-serif;
 
     &:focus {
-        color: #000;
+        background: @theme-light;
         border-color: @theme-dark;
     }
 }
@@ -329,24 +323,17 @@ input[type="range"] {
 /* @group .progress */
 .progress {
     .labels {
-        font-size: 12px;
         font-weight: bold;
-        line-height: 18px;
         color: @theme;
     }
 
     & .bar {
         background: @theme-light;
-
         & .value {
             background: @theme-dark;
-
             & .label {
-                float: right;
-                margin-right: 3px;
                 font-weight: bold;
                 color: @white;
-                font-size: 12px;
             }
         }
     }

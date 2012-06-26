@@ -21,22 +21,25 @@ section.aside {
 }
 
 aside {
-    position: fixed;
+    position: absolute;
     height: auto;
     top: 0;
     bottom: 0;
-    visibility: hidden;
+    display: none;
     z-index: 0;
 
     width: @aside-width;
 
     &.onright { right: 0px; }
-    &.current { visibility: visible;}
+    &.current {
+        display: block;
+    }
 
 
     & header, & footer {
         position: relative;
         left: none;
+        height: @header-height;
     }
 
     & footer {
@@ -48,19 +51,20 @@ aside {
         width: @aside-width-small;
 
         & nav {
-            margin-top: @header-height;
+            width: @aside-width-small;
             & a {
                 padding: 0px;
                 width: @aside-width-small;
                 height: @aside-width-small;
             }
             & .icon {
-                font-size: 64px;
+                font-size: 48px;
                 text-align: center;
             }
 
             & .bubble {
-                left: -24px;
+                top: -36px;
+                left: -16px;
             }
         }
 

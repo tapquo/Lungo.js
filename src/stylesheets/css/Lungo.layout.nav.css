@@ -1,13 +1,1 @@
-nav{height:auto;text-align:center;}nav a{padding:0 6px;min-width:28px;z-index:1000;float:left;}nav a .icon{font-size:1.7em;}
-nav a img{width:16px;height:16px;top:-1px !important;}
-nav a abbr{position:relative;display:inline;font-weight:bold;}
-nav .bubble{position:relative;top:-12px;left:-5px;margin-right:-20px;}
-nav.groupbar{position:absolute;top:43px;height:28px;display:block;width:100%;padding:4px 0 2px;display:block;line-height:28px;z-index:2;}nav.groupbar a{padding:0px;font-weight:bold;}nav.groupbar a .icon{font-size:1.0em;}
-header:not(.toolbar) nav .icon~abbr,footer:not(.toolbar) nav .icon~abbr{margin-left:6px;}
-.toolbar{height:40px;}.toolbar nav{margin:2px;display:block;}
-.toolbar a{padding:0;height:36px;}
-.toolbar.with-labels{height:51px;}.toolbar.with-labels a{height:47px;}
-.toolbar.with-labels .icon{padding-bottom:12px;}
-.toolbar .icon{display:block;top:0px;font-size:2.1em;line-height:34px;}
-.toolbar .bubble{top:-56px;left:4px;}
-.toolbar abbr{position:absolute;top:34px;width:inherit;height:14px;margin-left:0px;display:block !important;font-size:11px;line-height:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+nav{height:auto;text-align:center}nav a{padding:0 6px;min-width:28px;z-index:1000;float:left}nav a .icon{font-size:1.7em}nav a img{width:16px;height:16px;top:-1px!important}nav a abbr{position:relative;display:inline;font-weight:bold}nav .bubble{position:relative;top:-12px;left:-5px;margin-right:-20px}nav.groupbar{position:absolute;top:42px;height:30px;display:block;width:100%;z-index:2;line-height:30px}nav.groupbar a{padding:0;margin:0;font-weight:bold;height:30px}nav.groupbar a .icon{font-size:1.0em}header:not(.toolbar) nav .icon ~ abbr,footer:not(.toolbar) nav .icon ~ abbr{margin-left:6px}.toolbar{height:40px}.toolbar nav{margin:2px;display:block}.toolbar a{padding:0;height:36px}.toolbar.with-labels{height:51px}.toolbar.with-labels a{height:47px}.toolbar.with-labels .icon{padding-bottom:12px}.toolbar .icon{display:block;top:0;font-size:2.1em;line-height:34px}.toolbar .bubble{top:-56px;left:4px}.toolbar abbr{position:absolute;top:34px;width:inherit;height:14px;margin-left:0;display:block!important;font-size:11px;line-height:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
