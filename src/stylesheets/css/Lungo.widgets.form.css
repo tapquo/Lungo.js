@@ -20,7 +20,7 @@ input[type="checkbox"]+span::before,input[type="radio"]+span::before{content:"";
 input[type="checkbox"]+span::after,input[type="radio"]+span::after{text-indent:0;width:41px;height:27px;text-align:center;}
 input[type="checkbox"]:checked+span::before,input[type="radio"]:checked+span::before{left:auto;}
 input[type="checkbox"]:checked+span::after,input[type="radio"]:checked+span::after{height:27px;}
-input[type="range"]{-webkit-appearance:none;height:15px;width:100%;outline:none;position:relative;padding:0px;margin:0px;border:0;cursor:ew-resize;}input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;position:relative;z-index:1;width:24px;height:24px;border-radius:12px;}
+input[type="range"]{-webkit-appearance:none;height:15px;width:100%;outline:none;position:relative;padding:0px;margin:0px;border:0;cursor:ew-resize;}input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;position:relative;z-index:1;top:-1px;width:24px;height:24px;}
 .progress{width:100%;margin-bottom:8px;}.progress .labels{display:block;}.progress .labels span:last-child{float:right;}
 .progress .bar{height:15px;line-height:16px;display:block;}.progress .bar .value{display:block;height:inherit;width:0%;-webkit-transition:width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);}
 .big .progress .bar{height:29px;line-height:30px;}
