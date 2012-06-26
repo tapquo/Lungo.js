@@ -4,7 +4,6 @@ App.Events = (function(lng, undefined) {
         //lng.View.Aside.toggle('.onright');
 
         setTimeout(function() {
-
             lng.View.Element.progress('#progress-normal', 50, true, 'yeah');
             lng.View.Element.progress('#progress-big', 75, true, 'yeah');
 

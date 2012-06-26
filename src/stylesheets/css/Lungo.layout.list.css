@@ -1,11 +1,1 @@
-.list li{list-style-type:none;}.list li.padding{padding:8px;}
-.list li a{position:relative;display:block;padding:8px;}
-.list li.arrow>a::after{content:'';display:block;width:6px;height:6px;border-right:3px solid #D0D0D8;border-top:3px solid #D0D0D8;position:absolute;right:12px;top:43%;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);}
-.list li .icon,.list li img{float:left;width:32px;height:32px;margin-right:8px;font-size:2.6em;line-height:1.0em;text-align:center;}
-.list li.thumb img{margin:-8px 8px -8px -8px;height:46px;width:46px;}
-.list .bubble{padding-left:5px;padding-right:5px;}
-.list .onright{font-size:0.75em;font-weight:bold;}
-.list .onright .icon,.list small .icon{height:13px;width:auto;margin-right:1px;font-size:1.2em;line-height:0.8em;}
-.list li.anchor{font-size:0.85em;padding:4px 4px 3px;}.list li.anchor .icon{width:14px !important;height:14px !important;margin-right:2px !important;font-size:1.6em !important;line-height:14px !important;}
-.list li.anchor .bubble{display:none;}
-.list .tip{font-size:0.85em;font-weight:bold;}
+.list li{list-style-type:none}.list li.padding{padding:8px}.list li a{position:relative;display:block;padding:8px}.list li.arrow>a::after{content:'';display:block;width:6px;height:6px;border-right:3px solid #d0d0d8;border-top:3px solid #d0d0d8;position:absolute;right:12px;top:43%;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.list li .icon:not(.small),.list li img{float:left;width:32px;height:32px;margin-right:8px;font-size:2.6em;line-height:1.0em;text-align:center}.list li.thumb img{margin:-8px 8px -8px -8px;height:46px;width:46px}.list .bubble{padding-left:5px;padding-right:5px}.list .onright{font-size:.75em;font-weight:bold}.list .onright .icon,.list small .icon{height:13px;width:auto;margin-right:1px;font-size:1.2em;line-height:.8em}.list li.anchor{font-size:.85em;font-weight:bold;padding:0 4px;line-height:1.5em}.list li.anchor .icon.small{margin-right:2px}.list li.anchor .bubble{display:none}
