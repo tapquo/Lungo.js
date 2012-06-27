@@ -96,7 +96,7 @@ LUNGO.Router = (function(lng, undefined) {
 
         lng.Router.History.removeLast();
         target = lng.Element.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
-        target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+        target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
         lng.Element.Current.section = target;
     };
 
