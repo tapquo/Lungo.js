@@ -42,10 +42,10 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _loadTarget = function(event) {
+        event.preventDefault();
+
         var link = lng.dom(this);
         _selectTarget(link);
-
-        event.preventDefault();
     };
 
     var _selectTarget = function(link) {
@@ -65,8 +65,6 @@ LUNGO.Boot.Events = (function(lng, undefined) {
                 _goAside(link);
                 break;
         }
-
-        event.preventDefault();
     };
 
     var _goSection = function(id) {

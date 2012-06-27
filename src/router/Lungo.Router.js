@@ -31,12 +31,13 @@ LUNGO.Router = (function(lng, undefined) {
         if (_notCurrentTarget(section_id, current)) {
             var target = lng.Element.sections.siblings(ELEMENT.SECTION + section_id);
             if (target.length > 0) {
-                current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE).trigger(TRIGGER.UNLOAD);
-                target.addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+                current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+                target.addClass(CLASS.SHOW);
                 lng.Element.Current.section = target;
                 lng.Element.Current.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.CURRENT);
 
                 lng.Router.History.add(section_id);
+                _sectionTriggers(current, target);
             }
         }
     };
@@ -51,16 +52,19 @@ LUNGO.Router = (function(lng, undefined) {
      */
     var article = function(section_id, article_id, element) {
         article_id = lng.Core.parseUrl(article_id);
+
         var current =  lng.Element.Current.article;
 
         if (_notCurrentTarget(article_id, current)) {
+            section(section_id);
             var target = lng.Element.Current.section.find(ELEMENT.ARTICLE + article_id);
+
             if (target.length > 0) {
                 if (_sectionId(current) === _sectionId(target)) {
-                    //current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
                     current.removeClass(CLASS.CURRENT);
+                } else {
+                    lng.Element.Current.section.children(ELEMENT.ARTICLE).removeClass(CLASS.CURRENT);
                 }
-                //target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
                 target.addClass(CLASS.CURRENT);
                 lng.Element.Current.article = target;
 
@@ -92,12 +96,14 @@ LUNGO.Router = (function(lng, undefined) {
      */
     var back = function() {
         var current = lng.Element.Current.section;
-        current.removeClass(CLASS.SHOW).trigger(TRIGGER.UNLOAD);
+        current.removeClass(CLASS.SHOW);
 
         lng.Router.History.removeLast();
         target = lng.Element.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
-        target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+        target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Current.section = target;
+
+        _sectionTriggers(current, target);
     };
 
     var _notCurrentTarget = function(target, element) {
@@ -106,6 +112,11 @@ LUNGO.Router = (function(lng, undefined) {
 
     var _sectionId = function(element) {
         return element.parent('section').attr('id');
+    };
+
+    var _sectionTriggers = function(current, target) {
+        current.trigger(TRIGGER.UNLOAD);
+        target.trigger(TRIGGER.LOAD);
     };
 
     return {
