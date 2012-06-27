@@ -15,16 +15,24 @@ App.Events = (function(lng, undefined) {
     });
 
     //SPECIAL
-    $$('section#navigation').on('load', function(event) {
-        console.error('Load #navigation', event);
+    $$('section#sec-1').on('load', function(event) {
+        console.error('section#sec-1 loaded', event);
     });
 
-    $$('section#navigation').on('unload', function(event) {
-        console.error('Unload', event);
+    $$('section#sec-2').on('unload', function(event) {
+        console.error('section#sec-2 unloaded', event);
     });
 
-    $$('article#authors').on('load', function(event) {
-        console.error('loaded article');
+    $$('section#sec-2').on('load', function(event) {
+        console.error('section#sec-2 loaded', event);
+    });
+
+    $$('article#nav-1').on('load', function(event) {
+        console.error('article#nav-1 loaded', event);
+    });
+
+    $$('article#nav-3').on('unload', function(event) {
+        console.error('article#nav-1 unloaded', event);
     });
 
 })(LUNGO);

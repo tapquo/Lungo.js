@@ -57,9 +57,11 @@ LUNGO.Router = (function(lng, undefined) {
             var target = lng.Element.Current.section.find(ELEMENT.ARTICLE + article_id);
             if (target.length > 0) {
                 if (_sectionId(current) === _sectionId(target)) {
-                    current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
+                    //current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
+                    current.removeClass(CLASS.CURRENT);
                 }
-                target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
+                //target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
+                target.addClass(CLASS.CURRENT);
                 lng.Element.Current.article = target;
 
                 lng.View.Article.switchNavItems(article_id);
