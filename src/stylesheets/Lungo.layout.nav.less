@@ -19,6 +19,7 @@ nav {
         min-width: 28px;
         z-index: 1000;
         float: left;
+        height:  @header_nav_height;
 
         & .icon {
             //position: relative;
@@ -33,9 +34,11 @@ nav {
         }
 
         & abbr {
-            position: relative;
-            display: inline;
             font-weight: bold;
+        }
+
+        & .loading {
+            font-size: 20px;
         }
     }
 
@@ -73,7 +76,7 @@ nav {
 }
 
 header, footer {
-    &:not(.toolbar) nav .icon ~ abbr { margin-left: 6px; }
+   &:not(.toolbar) nav .icon ~ abbr { margin-left: 4px; float: right; }
 }
 
 .toolbar {
