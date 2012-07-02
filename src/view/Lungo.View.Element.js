@@ -61,18 +61,21 @@ LUNGO.View.Element = (function(lng, undefined) {
     /**
      * Set a progress to the element
      *
-     * @method progress
+     * @method loading
      *
      * @param  {string}  Element query selector
-     * @param  {number}  Percentage
-     * @param  {boolean} Show the labels: description and current percentage
-     * @param  {string}  Description
+     * @param  {number}  stylesheet (null for hide)
      */
     var loading = function(selector, stylesheet) {
         var element = lng.dom(selector);
 
         if (element) {
-            _bindAttribute(element, LUNGO.Attributes.Data.Loading, stylesheet);
+            if (stylesheet) {
+                _bindAttribute(element, LUNGO.Attributes.Data.Loading, stylesheet);
+            }
+            else {
+                element.children('.loading').addClass('disabled');
+            }
         }
     };
 
