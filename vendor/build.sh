@@ -77,14 +77,10 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
         FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
     done
 
-    #UNCOMPRESED Version
-    cat $FILES_TO_JOIN > $BUILDPATH/lungo-$VERSION.js
-    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
-
-    #MINIFIED Version
+    #COMPILED Version
     FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/QuoJS.js "$FILES_TO_COMPILE
-    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.$MINIFIED.js
-    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED.js"\033[0m"
+    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.js
+    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
 
 
 FILES_TO_COMPRESS=""
@@ -102,7 +98,7 @@ FILES_TO_COMPRESS=""
         FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
     FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
-	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.$MINIFIED.css
+	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.css
 
     #for file in "${FILES[@]}"
     #do
@@ -117,5 +113,5 @@ FILES_TO_COMPRESS=""
 		echo "   - [THEME] "$file
 		cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
 	done
-	echo -e "\033[32m  [BUILD]: lungo-"$VERSION.$MINIFIED".css\033[0m"
+	echo -e "\033[32m  [BUILD]: lungo-"$VERSION.".css\033[0m"
 echo ============================ /LUNGO COMPILER ============================
