@@ -10,8 +10,13 @@ App.Events = (function(lng, undefined) {
             lng.View.Element.loading('#loading-code', 'white');
         }, 1000);
 
+    });
 
 
+    $$('section#sec-1 header a .icon.cloud').tap(function(event) {
+        var el = lng.dom(this);
+        el.hide();
+        el.siblings('.loading').removeClass('disable');
     });
 
     //SPECIAL
