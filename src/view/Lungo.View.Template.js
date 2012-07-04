@@ -58,15 +58,12 @@ LUNGO.View.Template = (function(lng, undefined) {
      * @param {String} Element selector for showing the result of databinding
      * @param {String} Databinding Template Id
      * @param {Object} Data for binding
-     * @param {Function} Callback when the process is complete
      */
-    var render = function(element, template_id, data, callback) {
+    var render = function(element, template_id, data) {
         if (lng.View.Template.exists(template_id)) {
             var container = lng.dom(element);
             var markup = this.markup(template_id, data);
             container.html(markup);
-
-            lng.Core.execute(callback);
         } else {
             lng.Core.log(3, ERROR.BINDING_TEMPLATE + template_id);
         }
