@@ -61,11 +61,8 @@ LUNGO.View.Template = (function(lng, undefined) {
      */
     var render = function(element, template_id, data) {
         if (lng.View.Template.exists(template_id)) {
-            var template_markup = this.get(template_id);
-            var markup = lng.View.Template.process(template_markup, data);
-
             var container = lng.dom(element);
-            container.html(markup);
+            container.html(this.markup(template_id, data));
         } else {
             lng.Core.log(3, ERROR.BINDING_TEMPLATE + template_id);
         }
@@ -76,10 +73,23 @@ LUNGO.View.Template = (function(lng, undefined) {
      *
      * @method markup
      *
+     * @param {String} Databinding Template Id
+     * @param {Object} Data for binding
+     */
+    var markup = function(template_id, data) {
+        var template_markup = this.get(template_id);
+        return lng.View.Template.process(template_markup, data);
+    };
+
+    /**
+     * Performs databinding process for a data set and a given html
+     *
+     * @method html
+     *
      * @param {String} Markup for binding
      * @param {Object} Data for binding
      */
-    var markup = function(markup, data) {
+    var html = function(markup, data) {
         return lng.View.Template.process(markup, data);
     };
 
@@ -88,7 +98,8 @@ LUNGO.View.Template = (function(lng, undefined) {
         exists: exists,
         get: get,
         render: render,
-        markup: markup
+        markup: markup,
+        html: html
     };
 
 })(LUNGO);
