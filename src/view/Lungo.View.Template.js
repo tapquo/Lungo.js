@@ -61,8 +61,10 @@ LUNGO.View.Template = (function(lng, undefined) {
      */
     var render = function(element, template_id, data) {
         if (lng.View.Template.exists(template_id)) {
+            var template_markup = this.get(template_id);
+            var markup = lng.View.Template.process(template_markup, data);
+
             var container = lng.dom(element);
-            var markup = this.markup(template_id, data);
             container.html(markup);
         } else {
             lng.Core.log(3, ERROR.BINDING_TEMPLATE + template_id);
@@ -74,11 +76,11 @@ LUNGO.View.Template = (function(lng, undefined) {
      *
      * @method markup
      *
-     * @param {String} Databinding Template Id
+     * @param {String} Markup for binding
      * @param {Object} Data for binding
      */
-    var markup = function(template_id, data) {
-        return lng.View.Template.Binding.create(template_id, data);
+    var markup = function(markup, data) {
+        return lng.View.Template.process(markup, data);
     };
 
     return {

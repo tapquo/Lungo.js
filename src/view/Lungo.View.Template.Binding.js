@@ -16,14 +16,21 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     /**
      * Performs databinding process for a data set and a given template
      *
-     * @method create
+     * @method process
      *
-     * @param {String} Databinding Template Id
+     * @param {String} Markup for binding
      * @param {Object} Data for binding
      */
-    var create = function(template_id, data) {
-        var template = lng.View.Template.get(template_id);
-        return _processData(data, template);
+    var process = function(markup, data) {
+        var data_type = lng.Core.toType(data);
+
+        if (data_type === 'array') {
+            return _bindPropertiesInMultiplesElements(data, markup);
+        } else if (data_type === 'object') {
+            return _bindProperties(data, markup);
+        } else {
+            lng.Core.log(3, ERROR.BINDING_DATA_TYPE);
+        }
     };
 
     var dataAttribute = function(element, attribute) {
@@ -32,18 +39,6 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         if (data) {
             var html_binded = attribute.html.replace(BINDING.START + BINDING.KEY + BINDING.END, data);
             element.prepend(html_binded);
-        }
-    };
-
-    var _processData = function(data, template) {
-        var data_type = lng.Core.toType(data);
-
-        if (data_type === 'array') {
-            return _bindPropertiesInMultiplesElements(data, template);
-        } else if (data_type === 'object') {
-            return _bindProperties(data, template);
-        } else {
-            lng.Core.log(3, ERROR.BINDING_DATA_TYPE);
         }
     };
 
@@ -71,7 +66,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
     };
 
     return {
-        create: create,
+        process: process,
         dataAttribute: dataAttribute
     };
 
