@@ -22,9 +22,7 @@ nav {
         height:  @header_nav_height;
 
         & .icon {
-            //position: relative;
             font-size: 1.7em;
-            //display: inline-block;
         }
 
         & img {
@@ -37,15 +35,12 @@ nav {
             font-weight: bold;
         }
 
-        & .loading {
-            font-size: 20px;
-        }
     }
 
     & .bubble {
         position: relative;
         top:  -12px;
-        left: -5px;
+        left: -12px;
         margin-right: -20px;
     }
 
@@ -69,14 +64,16 @@ nav {
             }
         }
     }
-
-    &.toolbar {
-
-    }
 }
 
 header, footer {
-   &:not(.toolbar) nav .icon ~ abbr { margin-left: 4px; float: right; }
+    &:not(.toolbar) nav {
+        & .icon ~ abbr { margin-left: 4px; float: right; }
+        & .loading {
+            margin-top: .5em;
+            font-size: 1.6em;
+        }
+    }
 }
 
 .toolbar {
@@ -109,6 +106,11 @@ header, footer {
     & .bubble {
         top:  -56px;
         left: 4px;
+
+        & .loading {
+            top: 0;
+            font-size: 1.4em;
+        }
     }
 
     & abbr {
@@ -125,5 +127,10 @@ header, footer {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+    }
+
+    & .loading {
+        top: .1em;
+        font-size: 2.3em;
     }
 }

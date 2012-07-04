@@ -74,7 +74,7 @@ LUNGO.View.Element = (function(lng, undefined) {
                 _bindAttribute(element, LUNGO.Attributes.Data.Loading, stylesheet);
             }
             else {
-                element.children('.loading').addClass('disabled');
+                element.children('.loading').remove();
             }
         }
     };

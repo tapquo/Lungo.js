@@ -15,7 +15,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     /**
      * Create a list based DataBind with a configuration object for an element <article>
-	 * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
      *
      * @method create
      *
@@ -28,7 +28,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
             config.data = _order(config);
             _render(config);
         }
-	};
+    };
 
     /**
      * Append a list based DataBind with a configuration object for an element <article>

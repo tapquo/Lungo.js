@@ -57,7 +57,7 @@
                 <a href="#profiles" data-target="aside" data-icon="users" data-label="User"></a>
                  -->
                  <a href="#" data-icon="cloud" id="btn-toggle-loading"></a>
-                <a href="#profiles" data-target="aside" data-icon="user"></a>
+                <a href="#profiles" data-target="aside" data-icon="user" data-count="1"></a>
             </nav>
 
             <nav class="onright plain ">
@@ -73,10 +73,13 @@
 
         <footer class="toolbar with-labels">
             <nav>
-                <a href="#nav-1" data-target="article" data-title="d" data-icon="settings" class="current" data-label="boxes" data-count="1"></a>
+                <a href="#nav-0" data-target="article" data-icon="refresh" class="current" data-label="loading">
+                    <span class="bubble count" data-loading="white"></span>
+                </a>
+                <a href="#nav-1" data-target="article" data-title="d" data-icon="settings" data-label="boxes" data-count="1"></a>
                 <a href="#nav-2" data-target="article" data-title="b" data-icon="refresh" data-count="12" data-label="Form"></a>
                 <a href="#nav-3" data-target="article" data-title="c"  data-icon="share" data-label="Emails" data-count="123"></a>
-                <a href="#nav-4" data-target="article" data-title="lists"  data-icon="inbox-full" data-label="lists"></a>
+                <a href="#nav-4" data-target="article" data-title="lists" data-label="lists" data-loading="white"></a>
             </nav>
         </footer>
 
@@ -90,6 +93,10 @@
             </nav>
         </footer>
         -->
+
+        <article id="nav-0" data-loading="black">
+        </article>
+
         <article id="nav-1" class="lisst">
             <div id = "prueba" class="box middle list  " style="background: url(http://placehold.it/320x200);">
             </div>

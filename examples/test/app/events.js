@@ -16,8 +16,14 @@ App.Events = (function(lng, undefined) {
     $$('section#sec-1 header #btn-toggle-loading').tap(function(event) {
         var el = lng.dom(this);
 
-        el.children('.icon').hide();
-        lng.View.Element.loading(this, 'white');
+        if (el.children('.loading').length > 0) {
+            el.children('.icon').show();
+            lng.View.Element.loading(this);
+        } else {
+            el.children('.icon').hide();
+            lng.View.Element.loading(this, 'white');
+        }
+
     });
 
     //SPECIAL

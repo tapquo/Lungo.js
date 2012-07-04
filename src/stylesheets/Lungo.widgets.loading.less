@@ -10,16 +10,13 @@
 @import "mixins.less";
 
 .loading {
-    position:relative;
+    position: relative;
     left: 50%;
     height: 1em;
     width: 1em;
     margin-left: -.5em;
-    margin-top: .5em;
 
     .transform-origin(.5em .5em);
-    -webkit-animation:  rotatingLoader .5s  infinite  linear;
-    -moz-animation:  rotatingLoader .5s  infinite  linear;
     font-size: 48px;
 
     &.disable {
@@ -28,13 +25,9 @@
         display: none
     }
 
-    &.small { font-size: 20px;}
-    &.big { font-size: 64px; }
-
     & > span {
         left:         50%;
         margin-left:  -0.05em;
-
 
         &, &::before, &::after {
             display:                  block;
@@ -47,7 +40,6 @@
         }
 
         &::before, &::after{ content: " "; }
-
 
         &.top{ .transform(rotate(0deg)); }
         &.right{ .transform(rotate(90deg)); }
@@ -87,8 +79,9 @@
     }
 }
 
-section.current .loading {
-
+section.current .loading, .growl .loading {
+    -webkit-animation:  rotatingLoader .5s  infinite  linear;
+    -moz-animation:  rotatingLoader .5s  infinite  linear;
 }
 
 @-webkit-keyframes rotatingLoader{
