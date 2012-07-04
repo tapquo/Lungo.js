@@ -78,7 +78,7 @@ LUNGO.View.Template = (function(lng, undefined) {
      */
     var markup = function(template_id, data) {
         var template_markup = this.get(template_id);
-        return lng.View.Template.process(template_markup, data);
+        return lng.View.Template.Binding.process(template_markup, data);
     };
 
     /**
@@ -90,7 +90,7 @@ LUNGO.View.Template = (function(lng, undefined) {
      * @param {Object} Data for binding
      */
     var html = function(markup, data) {
-        return lng.View.Template.process(markup, data);
+        return lng.View.Template.Binding.process(markup, data);
     };
 
     return {
