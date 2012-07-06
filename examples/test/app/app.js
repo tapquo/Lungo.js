@@ -3,12 +3,10 @@ var App = (function(lng, undefined) {
 
     lng.App.init({
         name: 'Kitchen Sink',
-        version: '1.2',
+        version: '2.0',
         resources: {
-
             sections: [
                 'aside.html', 'aside-profiles.html']
-
         }
     });
 
