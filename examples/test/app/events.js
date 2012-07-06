@@ -1,3 +1,9 @@
+LUNGO.Events.init({
+    'section#sec-1 header #btn-toggle-loading tap': App.View.toggleLoading,
+    'a': App.View.toggleLoading
+});
+
+/*
 App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
@@ -11,6 +17,7 @@ App.Events = (function(lng, undefined) {
         }, 1000);
 
     });
+
 
 
     $$('section#sec-1 header #btn-toggle-loading').tap(function(event) {
@@ -51,4 +58,10 @@ App.Events = (function(lng, undefined) {
         console.error('article#nav-1 unloaded', event);
     });
 
+
+    return {
+        a: a
+    };
+
 })(LUNGO);
+*/
