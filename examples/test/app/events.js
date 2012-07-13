@@ -1,5 +1,9 @@
 LUNGO.Events.init({
     'section#sec-1 header #btn-toggle-loading tap': App.View.toggleLoading,
+    'section#sec-2 load': funtion(event) {
+
+    };
+
     'a': App.View.toggleLoading
 });
 
