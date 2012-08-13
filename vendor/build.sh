@@ -106,7 +106,7 @@ FILES_TO_COMPRESS=""
     #done
 
 	DIR=$LUNGO_SOURCES"stylesheets/css/"
-	FILES=(default.css default.font.css)
+	FILES=(default.css default.font.css scaffold.css)
 	echo -e "\033[33m  [DIR]: "$DIR
 	for file in "${FILES[@]}"
 	do
