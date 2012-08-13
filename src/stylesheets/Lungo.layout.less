@@ -35,17 +35,11 @@ section {
         visibility: hidden;
     }
 
-    &.slide, &.pop { display: block !important; }
-
-    &.slide {
-        .transform(translate(100%, 0));
-        visibility: visible !important;
-
-        &:first-child, &.show { .transform(translate(0%, 0)); }
-        &.hide { .transform(translate(-100%, 0)); }
+    &[data-transition] {
+        display: block !important;
     }
 
-    &.pop {
+    &[data-transition="pop"] {
         opacity: 0;
         .transform(scale(1.15));
 
@@ -53,9 +47,22 @@ section {
             .transform(scale(1));
             opacity: 1;
         }
+
         &.hide {
             .transform(scale(0.9));
             opacity: 0;
+        }
+    }
+
+    &[data-transition="slide"] {
+        .transform(translate(100%, 0));
+        visibility: visible !important;
+
+        &:first-child, &.show {
+            .transform(translate(0%, 0));
+        }
+        &.hide {
+            .transform(translate(-100%, 0));
         }
     }
 }
