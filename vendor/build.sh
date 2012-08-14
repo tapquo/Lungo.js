@@ -20,7 +20,8 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES
-    FILES=(js Constants.js App.js Core.js Dom.js Service.js Element.js Fallback.js Events.js)
+    FILES=(js Constants.js App.js Core.js Dom.js Service.js Element.js Events.js Notification.js Fallback.js)
+
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -87,23 +88,23 @@ FILES_TO_COMPRESS=""
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
     echo -e "\033[33m  [DIR]: "$DIR
-    FILES=(base layout layout.nav layout.aside layout.article layout.list widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading )
+    FILES=(base layout layout.nav layout.aside layout.article layout.list widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification)
     for file in "${FILES[@]}"
     do
         echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
         #Compressing via YUI
-        #java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
-        #FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
+        java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
+        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
 
-        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
+        # FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
     FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
 	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.css
 
-    #for file in "${FILES[@]}"
-    #do
-    #    rm $DIR$LUNGO_NAMESPACE$file".min.css"
-    #done
+    for file in "${FILES[@]}"
+    do
+       rm $DIR$LUNGO_NAMESPACE$file".min.css"
+    done
 
 	DIR=$LUNGO_SOURCES"stylesheets/css/"
 	FILES=(default.css default.font.css scaffold.css)
