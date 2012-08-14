@@ -1,0 +1,168 @@
+@import "mixins.less";
+
+@growl_opacity: rgba(0,0,0,0.5);
+@defaultTrasition : @easeOutSine;
+@keyframe: 300ms;
+
+@modal_opacity: rgba(0,0,0,0.8);
+@modal_size: 114px;
+    @modal_size_middle: 64px;
+    @modal_border_radius: 1px;
+
+@notify_font_color: #555;
+@notify_font_shadow: 0 1px 0px #fff;
+
+@font_color: #fff;
+
+.growl {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: none;
+    font-size: 0.9em;
+    color: @font_color;
+    display: none;
+
+    &.modal {
+        // background-color: @growl_opacity;
+    }
+
+    & .window {
+        position: relative;
+        opacity: 0;
+
+        //transition-property: -webkit-transform, transform, opacity;
+        .transition(all @keyframe @defaultTrasition);
+
+        &.show {
+            opacity: 1;
+            // .transition(all @keyframe @defaultTrasition);
+        }
+
+        &:not(.special) {
+            left: 50%;
+            top: 50%;
+            width: @modal_size;
+            margin: -@modal_size_middle auto auto -@modal_size_middle;
+            padding: 8px;
+            background-color: @modal_opacity;
+            text-align: center;
+
+            .border-radius(@modal_border_radius);
+            // .transform(translate3d(0, 100%, 0));
+
+
+            .transform(scale(0.85));
+
+            &.show {
+                .transform(translate3d(0, 0%, 0));
+            }
+
+            & .icon {
+                display: block;
+                font-size: 5.0em;
+                &.loading {
+                    margin-bottom: 24px;
+                }
+            }
+
+            & strong {
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+
+        &.confirm, &.notify {
+            .transform(translate3d(0, -150%, 0));
+            &.show { .transform(translate3d(0, 0%, 0)); }
+
+            & .icon {
+                float: left;
+                font-size: 2.5em;
+                margin-right: 8px;
+            }
+
+            & strong {
+                line-height: 1.5em;
+            }
+        }
+
+        &.confirm {
+            opacity: 1;
+            padding: 10px 12px;
+            top: 0;
+            top: 43px;
+            background: #333;
+
+            & hr {
+                margin: 10px 0;
+                height: 1px;
+                background: rgba(0,0,0,0.75);
+                .box-shadow(0 1px 0 rgba(255,255,255,0.25));
+            }
+
+            & .button {
+                width: 42%;
+                font-size: 15px;
+                line-height: 40px;
+               &:last-child {float: right;}
+            }
+        }
+
+        &.notify {
+            padding: 3px 0px 7px 7px;
+            top:  0;
+            color: @notify_font_color;
+            text-shadow: @notify_font_shadow;
+
+            .linear-gradient(top, ~','#e8e8e8 0%, ~','#f6f6f6 50%);
+
+            .box-shadow(0px 1px 3px rgba(0,0,0,0.5));
+
+            &.error, &.alert, &.success {
+                color: @font_color;
+                text-shadow: 0 1px 0px rgba(0,0,0,0.1);
+            }
+            &.error { .linear-gradient(top, ~','#FF4444 0%, ~','#CC0000 50%); }
+            &.alert { .linear-gradient(top, ~','#FFBB33 0%, ~','#FF8800 50%); }
+            &.success { .linear-gradient(top, ~','#99CC00 0%, ~','#669900 50%); }
+        }
+
+        &.url {
+            left: 0%;
+            top: 00%;
+            width: 280px;
+            height: auto;
+            margin: 64px auto 0px;
+            padding: 0px;
+            .transform(translate3d(0, 75%, 0));
+
+            & .close {
+                position: absolute;
+                top: -14px;
+                right: -14px;
+
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: normal;
+                width: 24px;
+                height: 24px;
+                background: #000;
+                border-radius: 14px;
+                border: solid 2px #fff;
+                box-shadow: 0 0 4px black;
+            }
+        }
+    }
+}
+
+.growl .window.working span{
+    -webkit-animation: growl-working 1s infinite;
+}
+
+@-webkit-keyframes growl-working {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
