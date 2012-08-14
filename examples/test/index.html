@@ -35,29 +35,50 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.colour.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.icon.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.loading.css">
+    <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.notification.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.scaffold.css">
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="assets/stylesheets/app.css">
 </head>
 
 <body class="app">
+<!--
     <section id="login">
         <article class="indented splash current">
-        <h1>New user</h1>
-        <form>
-            <label>Mail</label>
-            <input type="text" placeholder="Your email" id="txt-signup-mail" value="">
-            <label>Mail</label>
-            <input type="text" placeholder="Your username" id="txt-signup-name" value="">
-            <label>Mail</label>
-            <input type="password" placeholder="Your password" id="txt-signup-password" value="">
-            <a href="#" class="button blue big" id="btn-signup-call" data-icon="checkmark">Signup</a>
-            <a href="#back" data-target="section" class="button red big" data-icon="close">Return to login</a>
-            <a href="#back" data-target="section" class="button green " data-icon="user">Return to login</a>
-        </form>
-    </article>
+            <h1>New user</h1>
+            <form>
+                <label>Mail</label>
+                <input type="text" placeholder="Your email" id="txt-signup-mail" value="">
+                <label>Mail</label>
+                <input type="text" placeholder="Your username" id="txt-signup-name" value="">
+                <label>Mail</label>
+                <input type="password" placeholder="Your password" id="txt-signup-password" value="">
+                <a href="#" class="button blue big" id="btn-signup-call" data-icon="checkmark">Signup</a>
+                <a href="#back" data-target="section" class="button red big" data-icon="close">Return to login</a>
+                <a href="#back" data-target="section" class="button green " data-icon="user">Return to login</a>
+            </form>
+        </article>
     </section>
-    <section id="sec-1" class="pop">
+-->
+
+    <section id="a" data-transition="pop" >
+        <header data-title="a">
+            <nav class="onright">
+                <a href="#baaaa" data-target="section">B</a>
+            </nav>
+        </header>
+        <article class="">
+            <a href="#" class="button big" data-icon="home">Prueba</a>
+        </article>
+    </section>
+
+    <section id="baaaa" data-transition="pop" >
+        <header data-title="b" data-back="home"></header>
+             <article></article>
+    </section>
+
+
+    <section id="sec-1"  class="popa" data-transition="pop">
         <header class="extended">
             <nav class="onleft">
                 <a href="#kitchen-sink-scroll" data-target="aside" data-icon="home"></a>
@@ -68,8 +89,8 @@
                 <span class="subtitle">@soyjavi</span>
             </div>
             <nav class="onright ">
-                <!-- <a href="#profiles" data-target="aside" data-label="User"></a>
-
+                <!--
+                <a href="#profiles" data-target="aside" data-label="User"></a>
                 <a href="#profiles" data-target="aside" data-icon="users" data-label="User"></a>
                  -->
                  <a href="#" data-icon="cloud" id="btn-toggle-loading"></a>
@@ -286,7 +307,7 @@
     </section>
 
 
-    <section id="sec-2" class="pop">
+    <section id="sec-2" data-transition="pop">
         <header data-title="Auto title centered">
             <nav class="onleft">
                 <a href="#back" data-target="section" class="cancel" data-icon="close" data-label="CANCEL"></a>
@@ -312,6 +333,7 @@
     <script src="../../src/Lungo.Constants.js"></script>
     <script src="../../src/Lungo.Element.js"></script>
     <script src="../../src/Lungo.Events.js"></script>
+    <script src="../../src/Lungo.Notification.js"></script>
     <script src="../../src/router/Lungo.Router.js"></script>
     <script src="../../src/router/Lungo.Router.History.js" ></script>
     <script src="../../src/view/Lungo.View.Resize.js"></script>
