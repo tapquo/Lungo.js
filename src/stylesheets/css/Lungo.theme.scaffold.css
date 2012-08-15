@@ -284,11 +284,10 @@ section.aside.onright {
 }
 /* @end */
 /* @group <form> */
-form label,
-.form label {
+form label {
   color: #999;
 }
-input,
+input:not([type=checkbox]),
 textarea,
 select {
   border: 1px solid #ccc;
@@ -296,11 +295,21 @@ select {
   border-radius: 0px;
   font-family: Helvetica, Arial, sans-serif;
 }
-input:focus,
+input:not([type=checkbox]):focus,
 textarea:focus,
 select:focus {
   background: #cccccc;
   border-color: #333333;
+}
+input:not([type=checkbox]).rounded,
+textarea.rounded,
+select.rounded {
+  border-top: none;
+}
+input:not([type=checkbox]).rounded:last-of-type,
+textarea.rounded:last-of-type,
+select.rounded:last-of-type {
+  border-bottom: none;
 }
 .select:after {
   background: #ccc;

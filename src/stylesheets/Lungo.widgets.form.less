@@ -12,7 +12,7 @@
 
 @input-height: 29px;
 
-form, .form { }
+form { }
 
 label {
     font-size: 0.9em;
@@ -21,8 +21,8 @@ label {
 input:not([type=checkbox]), textarea, select {
     display: block;
     width: 97%;
-    margin: 0 0 2px;
-    padding: 0% 1.5% ;
+    // margin: 0 0 2px;
+    padding: 1% 1.5% ;
     height: @input-height;
     font-size: 14px;
     font-weight: bold;
@@ -30,6 +30,30 @@ input:not([type=checkbox]), textarea, select {
     -webkit-appearance: none;
     -webkit-user-select: text;
     -webkit-font-smoothing: antialiased;
+
+
+    & + input {
+        background: red !important;
+    }
+
+
+    &.rounded {
+        margin: 0px;
+        &:first-of-type {
+            .border-radius(8px 8px 0px 0px);
+        }
+        &:last-of-type {
+            .border-radius(0px 0px 8px 8px);
+        }
+    }
+
+    &:last-of-type {
+        // margin-bottom: 10px !important;
+    }
+}
+
+textarea {
+    min-height: 48px;
 }
 
 

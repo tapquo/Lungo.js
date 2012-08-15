@@ -1,1 +1,37 @@
-.splash{text-align:center;font-size:1.2em}.splash img{max-width:206px;margin:92px auto 32px}.splash h1{margin:92px auto 16px;font-size:2.2em;font-weight:bold}.splash .button.big{margin-top:16px}.splash .copyright{position:fixed;width:100%;bottom:8px;left:0;font-size:.8em;font-style:normal}
+/**
+ * Stylesheet
+ *
+ * @namespace LUNGO.Widgets
+ * @class Splash
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+.splash {
+  text-align: center;
+  font-size: 1.2em;
+}
+.splash  > form {
+  margin: 32px;
+}
+.splash img {
+  max-width: 206px;
+  margin: 92px auto 32px;
+}
+.splash h1 {
+  margin-top: 25%;
+  text-align: center;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+.splash .button {
+  margin-top: 10px;
+}
+.splash .copyright {
+  position: absolute;
+  width: 100%;
+  bottom: 8px;
+  left: 0px;
+  font-size: 0.8em;
+  font-style: normal;
+  padding: 0px;
+}

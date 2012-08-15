@@ -43,22 +43,48 @@
 </head>
 
 <body class="app">
-<!--
-    <section id="login">
-        <article class="indented splash current">
-            <h1>New user</h1>
+
+    <section id="login" data-transition="slide">
+        <article class="-indented splash ">
+
+            <!--
+            <h1>Boletus</h1>
+            <label>Login para acceder a ofertas increibles</label>
+            -->
+
             <form>
-                <label>Mail</label>
-                <input type="text" placeholder="Your email" id="txt-signup-mail" value="">
-                <label>Mail</label>
-                <input type="text" placeholder="Your username" id="txt-signup-name" value="">
-                <label>Mail</label>
-                <input type="password" placeholder="Your password" id="txt-signup-password" value="">
-                <a href="#" class="button blue big" id="btn-signup-call" data-icon="checkmark">Signup</a>
-                <a href="#back" data-target="section" class="button red big" data-icon="close">Return to login</a>
-                <a href="#back" data-target="section" class="button green " data-icon="user">Return to login</a>
+                <input type="text" class="rounded" placeholder="Your email" id="txt-signup-mail" value=""/>
+                <input type="password" class="rounded"  placeholder="Your username" id="txt-signup-name" value=""/>
+                <input type="password" class="rounded"  placeholder="Your username" id="txt-signup-name" value=""/>
+                <a href="#main" data-target="section" class="button big green" data-icon="user">Login</a>
+
             </form>
+
+            <form>
+                <input type="text" class="" placeholder="Your email" id="txt-signup-mail" value=""/>
+                <input type="password" class=""  placeholder="Your username" id="txt-signup-name" value=""/>
+                <a href="#main" data-target="section" class="button big green" data-icon="user">Login</a>
+
+            </form>
+
+            <div class="copyright">This App is made by TAPQUO</div>
         </article>
+    </section>
+
+    <section id="main" data-transition="slide">
+        <header data-title="main" data-back="home">
+
+            <nav class="left">
+                <a href="#" class="empty" data-icon="left" data-label="Volver"></a>
+            </nav>
+
+            <nav class="right">
+                <a href="#" data-icon="user"></a>
+                <a href="#" data-icon="user"></a>
+            </nav>
+        </header>
+
+        <article></article>
     </section>
 
     <section id="foundation">
@@ -102,7 +128,7 @@
              <article></article>
     </section>
 
--->
+
     <section id="sec-1"  class="popa" data-transition="pop">
         <header class="extended">
             <nav class="onleft">
