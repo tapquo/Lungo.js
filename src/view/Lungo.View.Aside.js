@@ -5,7 +5,6 @@
  * @class Aside
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
- * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
 LUNGO.View.Aside = (function(lng, undefined) {
@@ -22,16 +21,15 @@ LUNGO.View.Aside = (function(lng, undefined) {
      * @param  {string} Aside id
      */
     var toggle = function(aside_id) {
-        var aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
-        if (aside.length > 0) {
+        aside = _findAside(aside_id);
+        if (aside) {
             var is_visible = aside.hasClass(CLASS.CURRENT);
             if (is_visible) {
                 lng.View.Aside.hide();
             } else {
-                lng.View.Aside.show(aside_id);
+                lng.View.Aside.show(aside);
             }
         }
-
         aside = null;
     };
 
@@ -42,9 +40,9 @@ LUNGO.View.Aside = (function(lng, undefined) {
      *
      * @param  {string} Aside id
      */
-    var show = function(aside_id) {
-        var aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
-        if (aside.length > 0) {
+    var show = function(aside) {
+        if (lng.Core.toType(aside) == 'string') aside = _findAside(aside);
+        if (aside) {
             lng.Element.Current.aside = aside;
             var aside_stylesheet = _asideStylesheet(aside);
 
@@ -71,6 +69,23 @@ LUNGO.View.Aside = (function(lng, undefined) {
                 lng.Element.Current.aside = null;
             }, 300);
         }
+    };
+
+    var _findAside = function(aside_id) {
+        var aside = null;
+        var asides_length = lng.Element.asides.length;
+
+        if (asides_length == 1) {
+            var current_id = '#' + lng.Element.asides[0].id ;
+            if (current_id == aside_id) {
+                aside = lng.dom(lng.Element.asides[0]);
+            }
+        }
+        else if (asides_length > 1) {
+            aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
+        }
+
+        return aside;
     };
 
     var _asideStylesheet = function(aside) {
