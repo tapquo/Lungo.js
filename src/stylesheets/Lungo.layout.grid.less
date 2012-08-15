@@ -1,0 +1,48 @@
+.row {
+    width: 100%;
+    margin: 0 auto;
+    *zoom: 1;
+
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after { clear: both; }
+
+    &.one   { height: 10%; }
+    &.two   { height: 20%; }
+    &.three { height: 30%; }
+    &.four  { height: 40%; }
+    &.five  { height: 50%; }
+    &.six   { height: 60%; }
+    &.seven { height: 70%; }
+    &.eight { height: 80%; }
+    &.nine  { height: 90%; }
+    &.ten   { height: 100%; }
+}
+
+.column, .columns {
+    float: left;
+    position: relative;
+    display: block;
+    height: 100%;
+
+    &.centered {
+        float: none;
+        margin: 0 auto;
+    }
+
+    &.one   { width: 10%; }
+    &.two   { width: 20%; }
+    &.three { width: 30%; }
+    &.four  { width: 40%; }
+    &.five  { width: 50%; }
+    &.six   { width: 60%; }
+    &.seven { width: 70%; }
+    &.eight { width: 80%; }
+    &.nine  { width: 90%; }
+    &.ten   { width: 100%; }
+}
+
+[class*="column"] + [class*="column"]:last-child { float: right; }
+[class*="column"] + [class*="column"].end { float: left; }
