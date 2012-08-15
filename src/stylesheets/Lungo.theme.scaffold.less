@@ -263,12 +263,12 @@ section.aside {
 /* @end */
 
 /* @group <form> */
-form, .form {
+form {
     & label {
         color: #999;
     }
 }
-input, textarea, select {
+input:not([type=checkbox]), textarea, select {
     border: 1px solid #ccc;
     color: @theme-dark;
     border-radius: 0px;
@@ -277,6 +277,11 @@ input, textarea, select {
     &:focus {
         background: @theme-light;
         border-color: @theme-dark;
+    }
+
+    &.rounded {
+        border-top: none;
+        &:last-of-type { border-bottom: none; }
     }
 }
 

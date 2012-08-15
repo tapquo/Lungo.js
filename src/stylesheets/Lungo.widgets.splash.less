@@ -10,29 +10,41 @@
 .splash{
     text-align: center;
     font-size: 1.2em;
+
+    & > * {
+        // margin: 24px;
+    }
+
+    & > form {
+        margin: 32px;
+    }
+
+    & img {
+        max-width: 206px;
+        margin: 92px auto 32px;
+    }
+
+    & h1 {
+        // margin: 92px auto 16px;
+        margin-top: 25%;
+        text-align: center;
+        font-size: 2.2em;
+        font-weight: bold;
+    }
+
+    & .button {
+        margin-top: 10px;
+    }
+
+    & .copyright {
+        position: absolute;
+        width: 100%;
+        bottom: 8px;
+        left: 0px;
+        font-size: 0.8em;
+        font-style: normal;
+        padding: 0px;
+    }
 }
 
-.splash img {
-    max-width: 206px;
-    margin: 92px auto 32px;
-}
 
-.splash h1 {
-    margin: 92px auto 16px;
-
-    font-size: 2.2em;
-    font-weight: bold;
-}
-
-.splash .button.big {
-    margin-top: 16px;
-}
-
-.splash .copyright {
-    position: fixed;
-    width: 100%;
-    bottom: 8px;
-    left: 0px;
-    font-size: 0.8em;
-    font-style: normal;
-}
