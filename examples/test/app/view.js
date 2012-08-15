@@ -1,5 +1,9 @@
 App.View = (function(lng, App, undefined) {
 
+    growl = function() {
+        alert(1111)
+    };
+
     toggleLoading = function(event) {
         var el = lng.dom(this);
 
@@ -13,6 +17,7 @@ App.View = (function(lng, App, undefined) {
     };
 
     return {
+        growl: growl,
         toggleLoading: toggleLoading
     };
 
