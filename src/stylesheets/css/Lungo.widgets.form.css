@@ -9,14 +9,15 @@
 /* DIMENSIONS */
 /* COLORS */
 label {
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 input:not([type=checkbox]),
 textarea,
 select {
   display: block;
-  width: 97%;
-  padding: 1% 1.5% ;
+  width: 96%;
+  margin: 0 0 6px;
+  padding: 0.5% 2% ;
   height: 29px;
   font-size: 14px;
   font-weight: bold;
@@ -24,15 +25,12 @@ select {
   -webkit-user-select: text;
   -webkit-font-smoothing: antialiased;
 }
-input:not([type=checkbox])  + input,
-textarea  + input,
-select  + input {
-  background: red !important;
-}
 input:not([type=checkbox]).rounded,
 textarea.rounded,
 select.rounded {
   margin: 0px;
+  width: 94%;
+  padding: 1.0% 3% ;
 }
 input:not([type=checkbox]).rounded:first-of-type,
 textarea.rounded:first-of-type,

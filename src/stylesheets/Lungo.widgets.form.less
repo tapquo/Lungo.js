@@ -12,17 +12,23 @@
 
 @input-height: 29px;
 
-form { }
+form {
+    & .minimal {
+        input:not([type=checkbox]), textarea, select {
+
+        }
+    }
+}
 
 label {
-    font-size: 0.9em;
+    font-size: 0.85em;
 }
 
 input:not([type=checkbox]), textarea, select {
     display: block;
-    width: 97%;
-    // margin: 0 0 2px;
-    padding: 1% 1.5% ;
+    width: 96%;
+    margin: 0 0 6px;
+    padding: 0.5% 2% ;
     height: @input-height;
     font-size: 14px;
     font-weight: bold;
@@ -33,12 +39,15 @@ input:not([type=checkbox]), textarea, select {
 
 
     & + input {
-        background: red !important;
+        //background: red !important;
     }
 
 
     &.rounded {
         margin: 0px;
+        width: 94%;
+        padding: 1.0% 3% ;
+
         &:first-of-type {
             .border-radius(8px 8px 0px 0px);
         }
