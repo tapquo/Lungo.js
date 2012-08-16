@@ -8,15 +8,72 @@
  */
 /* DIMENSIONS */
 /* COLORS */
-label {
+form.wrapper input:not([type=checkbox]),
+form.wrapper textarea,
+form.wrapper select {
+  margin: 3px 0px 3px 0px;
+}
+form.rounded input:not([type=checkbox]),
+form.rounded textarea,
+form.rounded select {
+  width: 94%;
+  padding: 1.0% 3% ;
+}
+form.rounded input:not([type=checkbox]):first-of-type,
+form.rounded textarea:first-of-type,
+form.rounded select:first-of-type {
+  -webkit-border-radius: 8px 8px 0px 0px;
+  -moz-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 8px 8px 0px 0px;
+  -moz-border-radius: 8px 8px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+form.rounded input:not([type=checkbox]):last-of-type,
+form.rounded textarea:last-of-type,
+form.rounded select:last-of-type {
+  -webkit-border-radius: 0px 0px 8px 8px;
+  -moz-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 0px 0px 8px 8px;
+  -moz-border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 8px 8px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+form.rounded .button {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+label:not(.select) {
   font-size: 0.85em;
+  line-height: 1.8em;
 }
 input:not([type=checkbox]),
 textarea,
 select {
   display: block;
   width: 96%;
-  margin: 0 0 6px;
   padding: 0.5% 2% ;
   height: 29px;
   font-size: 14px;
@@ -24,45 +81,6 @@ select {
   -webkit-appearance: none;
   -webkit-user-select: text;
   -webkit-font-smoothing: antialiased;
-}
-input:not([type=checkbox]).rounded,
-textarea.rounded,
-select.rounded {
-  margin: 0px;
-  width: 94%;
-  padding: 1.0% 3% ;
-}
-input:not([type=checkbox]).rounded:first-of-type,
-textarea.rounded:first-of-type,
-select.rounded:first-of-type {
-  -webkit-border-radius: 8px 8px 0px 0px;
-  -moz-border-radius: 8px 8px 0px 0px;
-  border-radius: 8px 8px 0px 0px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 8px 8px 0px 0px;
-  -moz-border-radius: 8px 8px 0px 0px;
-  border-radius: 8px 8px 0px 0px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-input:not([type=checkbox]).rounded:last-of-type,
-textarea.rounded:last-of-type,
-select.rounded:last-of-type {
-  -webkit-border-radius: 0px 0px 8px 8px;
-  -moz-border-radius: 0px 0px 8px 8px;
-  border-radius: 0px 0px 8px 8px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 0px 0px 8px 8px;
-  -moz-border-radius: 0px 0px 8px 8px;
-  border-radius: 0px 0px 8px 8px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
 }
 textarea {
   min-height: 48px;

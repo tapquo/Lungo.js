@@ -13,21 +13,37 @@
 @input-height: 29px;
 
 form {
-    & .minimal {
-        input:not([type=checkbox]), textarea, select {
+    &.wrapper {
+        & input:not([type=checkbox]), textarea, select {
+            margin: 3px 0px 3px 0px;
+        }
+    }
 
+    @rounded-radius: 8px;
+    &.rounded {
+        & input:not([type=checkbox]), textarea, select {
+            width: 94%;
+            padding: 1.0% 3% ;
+
+            &:first-of-type { .border-radius(@rounded-radius @rounded-radius 0px 0px); }
+            &:last-of-type  { .border-radius(0px 0px @rounded-radius @rounded-radius); }
+        }
+
+        & .button {
+            .border-radius(@rounded-radius);
         }
     }
 }
 
-label {
+label:not(.select) {
     font-size: 0.85em;
+    line-height: 1.8em;
 }
 
 input:not([type=checkbox]), textarea, select {
     display: block;
     width: 96%;
-    margin: 0 0 6px;
+    // margin: 0 0 6px;
     padding: 0.5% 2% ;
     height: @input-height;
     font-size: 14px;
@@ -36,29 +52,6 @@ input:not([type=checkbox]), textarea, select {
     -webkit-appearance: none;
     -webkit-user-select: text;
     -webkit-font-smoothing: antialiased;
-
-
-    & + input {
-        //background: red !important;
-    }
-
-
-    &.rounded {
-        margin: 0px;
-        width: 94%;
-        padding: 1.0% 3% ;
-
-        &:first-of-type {
-            .border-radius(8px 8px 0px 0px);
-        }
-        &:last-of-type {
-            .border-radius(0px 0px 8px 8px);
-        }
-    }
-
-    &:last-of-type {
-        // margin-bottom: 10px !important;
-    }
 }
 
 textarea {
