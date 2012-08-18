@@ -42,7 +42,7 @@ App.Events = (function(lng, undefined) {
     });
 
     //List.Append & List.prepend
-    lng.dom('section#lists header .onright a').tap(function(event) {
+    lng.dom('section#lists header .right a').tap(function(event) {
         var param = {
             el: '#list-dinamic',
             template: 'profile-tmp',

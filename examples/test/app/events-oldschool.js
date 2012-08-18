@@ -14,7 +14,7 @@ LUNGO.Events.init({
 App.Events = (function(lng, undefined) {
 
     lng.ready(function() {
-        //lng.View.Aside.toggle('.onright');
+        //lng.View.Aside.toggle('.right');
 
         setTimeout(function() {
             lng.View.Element.progress('#progress-normal', 50, true, 'yeah');

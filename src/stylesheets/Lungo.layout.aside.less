@@ -14,7 +14,7 @@ section.aside {
     &:not(.small) { .transform(translate(@aside-width, 0)); }
     &.small { .transform(translate(@aside-width-small, 0)); }
 
-    &.onright {
+    &.right {
         .transform(translate(-@aside-width, 0));
         &.small { .transform(translate(-@aside-width-small, 0)); }
     }
@@ -30,7 +30,7 @@ aside {
 
     width: @aside-width;
 
-    &.onright { right: 0px; }
+    &.right { right: 0px; }
     &.current {
         display: block;
     }
