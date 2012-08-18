@@ -54,7 +54,7 @@ header nav:not(.plain) a.accept {
 header nav:not(.plain) a.cancel {
   background: rgba(255, 0, 0, 0.4);
 }
-header nav:not(.plain).onright a {
+header nav:not(.plain).right a {
   -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
@@ -151,7 +151,7 @@ section.aside {
   -moz-box-shadow: -4px 0 8px rgba(0,0,0,0.5);
   box-shadow: -4px 0 8px rgba(0,0,0,0.5);
 }
-section.aside.onright {
+section.aside.right {
   -webkit-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
   -moz-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
   box-shadow: 4px 0 8px rgba(0,0,0,0.5);
@@ -169,8 +169,8 @@ section.aside.onright {
     -moz-box-shadow: -4px 0 8px rgba(0,0,0,0.5);
     box-shadow: -4px 0 8px rgba(0,0,0,0.5);
   }
-  section.current.onright,
-  section.show.onright {
+  section.current.right,
+  section.show.right {
     -webkit-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
     -moz-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
     box-shadow: 4px 0 8px rgba(0,0,0,0.5);
@@ -199,13 +199,13 @@ section.aside.onright {
   color: #333333;
 }
 .list li.selectable:active small,
-.list li.selectable:active .onright:not(.bubble),
+.list li.selectable:active .right:not(.bubble),
 .list li.selectable:active strong {
   color: #ffffff;
   text-shadow: none;
 }
 .list li small,
-.list li .onright:not(.bubble) {
+.list li .right:not(.bubble) {
   color: #999999;
 }
 .list li strong {

@@ -23,12 +23,10 @@
 .scroll.horizontal  > *  > * {
   float: left;
 }
-.left,
-.onleft {
+.left {
   float: left;
 }
-.right,
-.onright {
+.right {
   float: right;
 }
 .hidden {

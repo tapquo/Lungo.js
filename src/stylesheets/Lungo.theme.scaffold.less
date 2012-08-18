@@ -68,7 +68,7 @@ header nav {
             &.accept { background: rgba(0, 255, 0, 0.4); }
             &.cancel { background: rgba(255, 0, 0, 0.4); }
         }
-        &.onright a { .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)"); }
+        &.right a { .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)"); }
 
         & a:active { .box-shadow(~"inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5)"); }
     }
@@ -148,13 +148,13 @@ aside {
 
 section.aside {
     .box-shadow(~"-4px 0 8px rgba(0,0,0,0.5)");
-    &.onright { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
+    &.right { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
 }
 
 @media handheld, only screen and (min-width: 768px) {
     section.current, section.show {
         .box-shadow(~"-4px 0 8px rgba(0,0,0,0.5)");
-        &.onright { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
+        &.right { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
     }
 }
 /* @end */
@@ -174,13 +174,13 @@ section.aside {
             background: @theme-light;
             color: @theme-dark;
 
-            & small, & .onright:not(.bubble), & strong {
+            & small, & .right:not(.bubble), & strong {
                 color: @white;
                 text-shadow: none;
             }
         }
 
-        & small, & .onright:not(.bubble) {
+        & small, & .right:not(.bubble) {
             color: @theme;
         }
 

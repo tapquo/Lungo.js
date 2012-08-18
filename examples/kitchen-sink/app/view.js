@@ -4,7 +4,7 @@ App.View = (function(lng, App, undefined) {
         'profile-tmp',
         '<li class="selectable {{anchor}}">\
                 <img src="{{avatar}}" />\
-                <div class="onright">{{name}}</div>\
+                <div class="right">{{name}}</div>\
                 {{name}}\
                 <small>{{description}}</small>\
             </a>\
