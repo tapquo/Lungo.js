@@ -34,7 +34,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         if (db) {
             _createSchema();
         } else {
-            lng.Core.log(3, ERROR.DATABASE);
+            throw new Error(ERROR.DATABASE);
         }
     };
 
@@ -202,7 +202,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
     };
 
     var _throwError = function(transaction, error) {
-        lng.Core.log(3, 'lng.Data.Sql >> ' + error.code + ': ' + error.message + ' \n Executed query: ' + transaction.executedQuery);
+        throw new Error(ERROR.DATABASE_TRANSACTION + error.code + ': ' + error.message + ' \n Executed query: ' + transaction.executedQuery);
     };
 
     return {

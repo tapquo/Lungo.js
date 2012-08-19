@@ -29,7 +29,7 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         } else if (data_type === 'object') {
             return _bindProperties(data, markup);
         } else {
-            lng.Core.log(3, ERROR.BINDING_DATA_TYPE);
+            throw new Error(ERROR.BINDING_DATA_TYPE);
         }
     };
 

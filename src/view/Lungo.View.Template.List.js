@@ -71,7 +71,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
                 checked = true;
             }
         } else {
-            lng.Core.log(3, ERROR.BINDING_LIST);
+            throw new Error(ERROR.BINDING_LIST);
         }
 
         return checked;

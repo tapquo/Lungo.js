@@ -41,7 +41,7 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
                 var response = _loadAsyncResource(url);
                 _factoryResources(resource_key, response);
             } catch(error) {
-                lng.Core.log(3, ERROR.LOADING_RESOURCE + ' ' + error);
+                lng.Core.log(3, error.message);
             }
         }
     };
@@ -62,7 +62,7 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
             async: false,
             dataType: 'html',
             error: function() {
-                console.error('[ERROR] Loading url', arguments);
+                throw new Error(ERROR.LOADING_RESOURCE + url);
             }
         });
     };
