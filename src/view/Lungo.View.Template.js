@@ -64,7 +64,7 @@ LUNGO.View.Template = (function(lng, undefined) {
             var container = lng.dom(element);
             container.html(this.markup(template_id, data));
         } else {
-            lng.Core.log(3, ERROR.BINDING_TEMPLATE + template_id);
+            throw new Error(ERROR.BINDING_TEMPLATE + template_id);
         }
     };
 

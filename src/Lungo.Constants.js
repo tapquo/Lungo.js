@@ -65,8 +65,9 @@ LUNGO.Constants = {
         BINDING_TEMPLATE: 'ERROR: Binding Template not exists >> ',
         BINDING_LIST: 'ERROR: Processing parameters for list binding.',
         DATABASE: 'ERROR: Connecting to Data.Sql.',
+        DATABASE_TRANSACTION: 'ERROR: Data.Sql >> ',
         ROUTER: 'ERROR: The target does not exists >>',
-        LOADING_RESOURCE: 'ERROR: Loading resource.'
+        LOADING_RESOURCE: 'ERROR: Loading resource: '
     }
 
 };
