@@ -54,6 +54,15 @@ header nav:not(.plain) a.accept {
 header nav:not(.plain) a.cancel {
   background: rgba(255, 0, 0, 0.4);
 }
+header nav:not(.plain) a:active.accept {
+  background: rgba(0, 255, 0, 0.2);
+}
+header nav:not(.plain) a:active.cancel {
+  background: rgba(255, 0, 0, 0.2);
+}
+header nav:not(.plain) a:active:not(.accept):not(.cancel) {
+  background: rgba(0, 0, 0, 0.25);
+}
 header nav:not(.plain).right a {
   -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
@@ -61,14 +70,6 @@ header nav:not(.plain).right a {
   -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
-}
-header nav:not(.plain) a:active {
-  -webkit-box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5);
-  -moz-box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5);
-  box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5);
-  -webkit-box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5);
-  -moz-box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5);
-  box-shadow: inset 1px 0 1px rgba(0,0,0,0.1), inset -1px 0 0 rgba(0,0,0,0.1), inset 0 0 42px rgba(0,0,0,0.5);
 }
 header nav.plain a:active {
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
