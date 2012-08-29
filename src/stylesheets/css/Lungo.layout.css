@@ -142,6 +142,9 @@ header .title {
   font-size: 15px;
   font-weight: bold;
 }
+header .title img {
+  height: 24px;
+}
 header .title.centered {
   position: absolute;
   left: 0px;
