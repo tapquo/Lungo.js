@@ -79,7 +79,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     done
 
     #COMPILED Version
-    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/QuoJS.js "$FILES_TO_COMPILE
+    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/quo.js "$FILES_TO_COMPILE
     java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.js
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
 
@@ -88,7 +88,7 @@ FILES_TO_COMPRESS=""
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
     echo -e "\033[33m  [DIR]: "$DIR
-    FILES=(base layout layout.nav layout.aside layout.article layout.list widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification)
+    FILES=(base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification)
     for file in "${FILES[@]}"
     do
         echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
