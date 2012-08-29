@@ -1,44 +1,58 @@
-.row {
+.row,
+.rows {
   width: 100%;
   margin: 0 auto;
   *zoom: 1;
 }
 .row:before,
-.row:after {
+.rows:before,
+.row:after,
+.rows:after {
   content: "";
   display: table;
 }
-.row:after {
+.row:after,
+.rows:after {
   clear: both;
 }
-.row.one {
+.row.one,
+.rows.one {
   height: 10%;
 }
-.row.two {
+.row.two,
+.rows.two {
   height: 20%;
 }
-.row.three {
+.row.three,
+.rows.three {
   height: 30%;
 }
-.row.four {
+.row.four,
+.rows.four {
   height: 40%;
 }
-.row.five {
+.row.five,
+.rows.five {
   height: 50%;
 }
-.row.six {
+.row.six,
+.rows.six {
   height: 60%;
 }
-.row.seven {
+.row.seven,
+.rows.seven {
   height: 70%;
 }
-.row.eight {
+.row.eight,
+.rows.eight {
   height: 80%;
 }
-.row.nine {
+.row.nine,
+.rows.nine {
   height: 90%;
 }
-.row.ten {
+.row.ten,
+.rows.ten {
   height: 100%;
 }
 .column,
