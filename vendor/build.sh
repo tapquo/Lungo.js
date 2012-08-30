@@ -20,8 +20,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES
-    FILES=(js Constants.js App.js Core.js Dom.js Service.js Element.js Events.js Notification.js Fallback.js)
-
+    FILES=(js App.js Core.js Dom.js Service.js Constants.js Element.js Events.js Notification.js Fallback.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -41,17 +40,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #View
     DIR=$LUNGO_SOURCES"view/"$LUNGO_NAMESPACE"View."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"view/"
-    FILES=(Article.js Resize.js Template.js Template.Binding.js Template.List.js Aside.js Element.js)
-    for file in "${FILES[@]}"
-    do
-        FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
-        FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
-    done
-
-    #Attributes
-    DIR=$LUNGO_SOURCES"attributes/"$LUNGO_NAMESPACE"Attributes."
-    echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"attributes/"
-    FILES=(Data.js)
+    FILES=(Resize.js Article.js Aside.js Element.js Template.js Template.Binding.js Template.List.js )
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -68,10 +57,20 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
         FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
     done
 
-    #Dom
+    #Attributes
+    DIR=$LUNGO_SOURCES"attributes/"$LUNGO_NAMESPACE"Attributes."
+    echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"attributes/"
+    FILES=(Data.js)
+    for file in "${FILES[@]}"
+    do
+        FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
+        FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
+    done
+
+    #Boot
     DIR=$LUNGO_SOURCES"boot/"$LUNGO_NAMESPACE"Boot."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"boot/"
-    FILES=(js Resources.js Stats.js Layout.js Article.js Data.js Events.js Section.js)
+    FILES=(js Resources.js Stats.js Layout.js Events.js Data.js Section.js Article.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -79,8 +78,9 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     done
 
     #COMPILED Version
-    FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/quo.js "$FILES_TO_COMPILE
+    #FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/quo.debug.js "$FILES_TO_COMPILE
     java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.js
+    # cat $LUNGO_SOURCES"lib/quo.debug.js" $BUILDPATH/lungo-$VERSION.standalone.js > $BUILDPATH/lungo-$VERSION.js
     echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
 
 
