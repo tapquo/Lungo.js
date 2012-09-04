@@ -194,7 +194,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
                 var value = row[field];
                 fields += (fields) ? ', ' + field : field;
                 if (values) values += ', ';
-                values += (isNaN(value)) ? '"' + value + '"' : value;
+                values += (isNaN(value) || value=='') ? '"' + value + '"' : value;
             }
         }
 
