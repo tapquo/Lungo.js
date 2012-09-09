@@ -1,6 +1,4 @@
 #!/bin/bash
-VERSION="2.0"
-
 #define paths
 COMPILER=google-compiler/compiler.jar
 COMPRESSOR=yuicompressor/yuicompressor-2.4.2.jar
@@ -79,40 +77,44 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
 
     #COMPILED Version
     #FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/quo.debug.js "$FILES_TO_COMPILE
-    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo-$VERSION.js
+    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo.js
     # cat $LUNGO_SOURCES"lib/quo.debug.js" $BUILDPATH/lungo-$VERSION.standalone.js > $BUILDPATH/lungo-$VERSION.js
-    echo -e "\033[32m  [BUILD]: lungo-"$VERSION.js"\033[0m"
+    echo -e "\033[32m  [BUILD]: lungo.js\033[0m"
 
 
 FILES_TO_COMPRESS=""
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
-    echo -e "\033[33m  [DIR]: "$DIR
+    echo -e "\033[33m  [DIR]: "$DIR" >> COMPRESSING"
     FILES=(base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification)
     for file in "${FILES[@]}"
     do
-        echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
+        # echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
         #Compressing via YUI
         java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
         FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
-
         # FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
-    FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE"widgets.icon.css"
-	cat $FILES_TO_COMPRESS > $BUILDPATH/lungo-$VERSION.css
+    cat $FILES_TO_COMPRESS > $BUILDPATH/lungo.css
+    echo -e "\033[32m    [BUILD]: lungo.css\033[0m"
 
     for file in "${FILES[@]}"
     do
        rm $DIR$LUNGO_NAMESPACE$file".min.css"
     done
 
-	DIR=$LUNGO_SOURCES"stylesheets/css/"
-	FILES=(default.css default.font.css scaffold.css)
-	echo -e "\033[33m  [DIR]: "$DIR
-	for file in "${FILES[@]}"
-	do
-		echo "   - [THEME] "$file
-		cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
-	done
-	echo -e "\033[32m  [BUILD]: lungo-"$VERSION.".css\033[0m"
+    DIR=$LUNGO_SOURCES"stylesheets/css/"
+    FILES=(css brand.css)
+    for file in "${FILES[@]}"
+    do
+        echo -e "\033[32m    [BUILD]: lungo.icon."$file"\033[0m"
+        cp $DIR"lungo.widgets.icon."$file $BUILDPATH'lungo.icon.'$file
+    done
+
+    FILES=(default.css default.font.css scaffold.css )
+    for file in "${FILES[@]}"
+    do
+        echo -e "\033[32m    [BUILD]: lungo.theme."$file"\033[0m"
+        cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
+    done
 echo ============================ /LUNGO COMPILER ============================
