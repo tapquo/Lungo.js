@@ -81,4 +81,4 @@ App.Events = (function(lng, undefined) {
         lng.Sugar.Growl.option('Are you sure?', options);
     });
 
-})(LUNGO);
+})(Lungo);

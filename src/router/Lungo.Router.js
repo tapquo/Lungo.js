@@ -1,14 +1,14 @@
 /**
  * Handles the <sections> and <articles> to show
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Router
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Router = (function(lng, undefined) {
+Lungo.Router = (function(lng, undefined) {
 
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
@@ -126,4 +126,4 @@ LUNGO.Router = (function(lng, undefined) {
         back: back
     };
 
-})(LUNGO);
+})(Lungo);

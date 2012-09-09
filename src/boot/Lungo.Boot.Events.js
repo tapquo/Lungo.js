@@ -1,14 +1,14 @@
 /**
  * Initialize the automatic DOM UI events
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Events
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Events = (function(lng, undefined) {
+Lungo.Boot.Events = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var CLASS = lng.Constants.CLASS;
@@ -101,4 +101,4 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
+})(Lungo);

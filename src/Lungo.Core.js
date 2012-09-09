@@ -1,14 +1,14 @@
 /**
  * Contains all the common functions used in Lungo.
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Core
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Core = (function(lng, $$, undefined) {
+Lungo.Core = (function(lng, $$, undefined) {
 
     var ARRAY_PROTO = Array.prototype;
     var HASHTAG_CHARACTER = '#';
@@ -217,4 +217,4 @@ LUNGO.Core = (function(lng, $$, undefined) {
         findByProperty: findByProperty
     };
 
-})(LUNGO, Quo);
+})(Lungo, Quo);

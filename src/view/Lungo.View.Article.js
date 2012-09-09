@@ -1,14 +1,14 @@
 /**
  * Initialize the <articles> layout of a certain <section>
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Article
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Article = (function(lng, undefined) {
+Lungo.View.Article = (function(lng, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
@@ -62,4 +62,4 @@ LUNGO.View.Article = (function(lng, undefined) {
         switchNavItems: switchNavItems
     };
 
-})(LUNGO);
+})(Lungo);

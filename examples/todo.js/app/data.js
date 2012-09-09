@@ -64,4 +64,4 @@ App.Data = (function(lng, App, undefined) {
         doneTodo: doneTodo
     }
 
-})(LUNGO, App);
+})(Lungo, App);

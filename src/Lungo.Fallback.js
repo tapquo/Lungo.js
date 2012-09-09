@@ -1,13 +1,13 @@
 /**
  * ?
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Fallback
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Fallback = (function(lng, undefined) {
+Lungo.Fallback = (function(lng, undefined) {
 
     var androidInputs = function(article_id, active) {
         environment = lng.Core.environment();
@@ -40,4 +40,4 @@ LUNGO.Fallback = (function(lng, undefined) {
         positionFixed: positionFixed
     };
 
-})(LUNGO);
+})(Lungo);

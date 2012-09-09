@@ -1,7 +1,7 @@
 /**
  * LungoJS Dom Handler
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Dom
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
@@ -16,6 +16,6 @@
      * @param  {string} <Markup> element selector
      * @return {Object} QuoJS <element> instance
 */
-LUNGO.dom = function(selector) {
+Lungo.dom = function(selector) {
     return $$(selector);
 };

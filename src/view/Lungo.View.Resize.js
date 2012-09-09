@@ -1,14 +1,14 @@
 /**
  *
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Resize
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Resize = (function(lng, undefined) {
+Lungo.View.Resize = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
@@ -36,4 +36,4 @@ LUNGO.View.Resize = (function(lng, undefined) {
         toolbars: toolbars
     };
 
-})(LUNGO);
+})(Lungo);

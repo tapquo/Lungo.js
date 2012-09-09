@@ -1,14 +1,14 @@
 /**
  * Auto generate lists based on Template and Data-Binding system
  *
- * @namespace LUNGO.View.Template
+ * @namespace Lungo.View.Template
  * @class List
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Template.List = (function(lng, undefined) {
+Lungo.View.Template.List = (function(lng, undefined) {
 
     var ERROR = lng.Constants.ERROR;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
@@ -98,4 +98,4 @@ LUNGO.View.Template.List = (function(lng, undefined) {
         prepend: prepend
     };
 
-})(LUNGO);
+})(Lungo);

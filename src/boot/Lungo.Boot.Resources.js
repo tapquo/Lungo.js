@@ -1,13 +1,13 @@
 /**
  * Load Resources
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Resources
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Boot.Resources = (function(lng, $$, undefined) {
+Lungo.Boot.Resources = (function(lng, $$, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var ERROR = lng.Constants.ERROR;
@@ -103,4 +103,4 @@ LUNGO.Boot.Resources = (function(lng, $$, undefined) {
         start: start
     };
 
-})(LUNGO, Quo);
+})(Lungo, Quo);

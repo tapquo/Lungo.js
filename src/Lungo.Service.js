@@ -1,7 +1,7 @@
 /**
  * External Data & Services Manager
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Service
  * @requires QuoJS
  *
@@ -9,7 +9,7 @@
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Service = (function(lng, $$, undefined) {
+Lungo.Service = (function(lng, $$, undefined) {
 
     var URL_CACHE_INDEX_KEY = 'lungojs_service_cache';
     var DATE_PATTERN = {
@@ -140,4 +140,4 @@ LUNGO.Service = (function(lng, $$, undefined) {
         Settings: $$.ajaxSettings
     };
 
-})(LUNGO, Quo);
+})(Lungo, Quo);

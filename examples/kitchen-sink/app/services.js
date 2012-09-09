@@ -75,4 +75,4 @@ App.Services = (function(lng, App, undefined) {
         mockProfiles: mockProfiles
     }
 
-})(LUNGO, App);
+})(Lungo, App);

@@ -1,13 +1,13 @@
 /**
  * ?
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Fallback
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Events = (function(lng, undefined) {
+Lungo.Events = (function(lng, undefined) {
 
     var SPACE_CHAR = ' ';
 
@@ -27,4 +27,4 @@ LUNGO.Events = (function(lng, undefined) {
         init: init
     };
 
-})(LUNGO);
+})(Lungo);
