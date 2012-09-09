@@ -1,14 +1,14 @@
 /**
  * Stores the displayed <sections> as a historical.
  *
- * @namespace LUNGO.Router
+ * @namespace Lungo.Router
  * @class History
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Router.History = (function(undefined) {
+Lungo.Router.History = (function(undefined) {
 
      var _history = [];
 

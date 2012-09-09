@@ -1,14 +1,14 @@
 /**
  * Temporary cache system
  *
- * @namespace LUNGO.Data
+ * @namespace Lungo.Data
  * @class Cache
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Data.Cache = (function(lng, undefined) {
+Lungo.Data.Cache = (function(lng, undefined) {
 
     var _cache = {};
 
@@ -80,4 +80,4 @@ LUNGO.Data.Cache = (function(lng, undefined) {
         exists: exists
     };
 
-})(LUNGO);
+})(Lungo);

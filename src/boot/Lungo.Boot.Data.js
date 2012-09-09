@@ -2,14 +2,14 @@
  * Make an analysis of Data attributes in HTML elements and creates a <markup>
  * based on each data type.
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Data
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Data = (function(lng, undefined) {
+Lungo.Boot.Data = (function(lng, undefined) {
 
     /**
      * Initialize the <markup> data-attributes analisys
@@ -41,4 +41,4 @@ LUNGO.Boot.Data = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
+})(Lungo);

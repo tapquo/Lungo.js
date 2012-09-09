@@ -1,13 +1,13 @@
 /**
  * Chain of responsability
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Element
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Element = {
+Lungo.Element = {
 
     sections: null,
     Current: {

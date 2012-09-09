@@ -1,14 +1,14 @@
 /**
  * Lungo sandbox APP initialization
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class App
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.App = (function(lng, undefined) {
+Lungo.App = (function(lng, undefined) {
 
      var default_config = {
          id: 1,
@@ -41,4 +41,4 @@ LUNGO.App = (function(lng, undefined) {
         get: get
     };
 
-})(LUNGO);
+})(Lungo);

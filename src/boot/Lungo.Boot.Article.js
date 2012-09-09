@@ -1,14 +1,14 @@
 /**
  * Initialize the <article> element
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Article
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Article = (function(lng, undefined) {
+Lungo.Boot.Article = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var ELEMENT = lng.Constants.ELEMENT;
@@ -51,4 +51,4 @@ LUNGO.Boot.Article = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
+})(Lungo);

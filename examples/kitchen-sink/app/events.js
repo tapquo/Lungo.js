@@ -73,4 +73,4 @@ App.Events = (function(lng, undefined) {
         console.error('loaded article');
     });
 
-})(LUNGO);
+})(Lungo);

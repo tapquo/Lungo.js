@@ -1,13 +1,13 @@
 /**
  * Object with data-attributes (HTML5) with a special <markup>
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Constants
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Constants = {
+Lungo.Constants = {
 
     ELEMENT: {
         SECTION: 'section',

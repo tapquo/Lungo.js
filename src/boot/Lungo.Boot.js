@@ -1,13 +1,13 @@
 /**
  * Boot for a new LungoJS Application instance
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class App
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Boot = (function(lng, undefined) {
+Lungo.Boot = (function(lng, undefined) {
 
     return function() {
         lng.Boot.Resources.start();
@@ -20,4 +20,4 @@ LUNGO.Boot = (function(lng, undefined) {
         lng.Boot.Stats.start();
     };
 
-})(LUNGO);
+})(Lungo);

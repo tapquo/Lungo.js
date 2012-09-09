@@ -26,4 +26,4 @@ App.View = (function(lng, App, undefined) {
     }
 
 
-})(LUNGO, App);
+})(Lungo, App);

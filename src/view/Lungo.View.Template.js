@@ -1,14 +1,14 @@
 /**
  * Lungo Template system
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Template
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Template = (function(lng, undefined) {
+Lungo.View.Template = (function(lng, undefined) {
 
     var ERROR = lng.Constants.ERROR;
 
@@ -102,4 +102,4 @@ LUNGO.View.Template = (function(lng, undefined) {
         html: html
     };
 
-})(LUNGO);
+})(Lungo);

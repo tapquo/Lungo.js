@@ -1,13 +1,13 @@
 /**
  * Initialize the <articles> layout of a certain <section>
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Aside
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.View.Aside = (function(lng, undefined) {
+Lungo.View.Aside = (function(lng, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
@@ -111,4 +111,4 @@ LUNGO.View.Aside = (function(lng, undefined) {
         hide: hide
     };
 
-})(LUNGO);
+})(Lungo);

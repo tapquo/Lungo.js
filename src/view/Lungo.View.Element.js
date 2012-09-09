@@ -1,13 +1,13 @@
 /**
  * Initialize the <articles> layout of a certain <section>
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Element
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.View.Element = (function(lng, undefined) {
+Lungo.View.Element = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var BINDING = lng.Constants.BINDING;
@@ -71,7 +71,7 @@ LUNGO.View.Element = (function(lng, undefined) {
 
         if (element) {
             if (stylesheet) {
-                _bindAttribute(element, LUNGO.Attributes.Data.Loading, stylesheet);
+                _bindAttribute(element, Lungo.Attributes.Data.Loading, stylesheet);
             }
             else {
                 element.children('.loading').remove();
@@ -86,7 +86,7 @@ LUNGO.View.Element = (function(lng, undefined) {
         if (total_bubbles > 0) {
             bubbles.html(count);
         } else {
-            _bindAttribute(element, LUNGO.Attributes.Data.Count, count);
+            _bindAttribute(element, Lungo.Attributes.Data.Count, count);
         }
     };
 
@@ -101,4 +101,4 @@ LUNGO.View.Element = (function(lng, undefined) {
         loading: loading
     };
 
-})(LUNGO);
+})(Lungo);

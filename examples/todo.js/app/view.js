@@ -60,4 +60,4 @@ App.View = (function(lng, App, undefined) {
         list: list
     }
 
-})(LUNGO, App);
+})(Lungo, App);

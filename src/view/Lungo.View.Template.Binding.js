@@ -1,14 +1,14 @@
 /**
  * Lungo Data-Binding system
  *
- * @namespace LUNGO.View.Template
+ * @namespace Lungo.View.Template
  * @class Binding
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Template.Binding = (function(lng, undefined) {
+Lungo.View.Template.Binding = (function(lng, undefined) {
 
     var BINDING = lng.Constants.BINDING;
     var ERROR = lng.Constants.ERROR;
@@ -70,4 +70,4 @@ LUNGO.View.Template.Binding = (function(lng, undefined) {
         dataAttribute: dataAttribute
     };
 
-})(LUNGO);
+})(Lungo);

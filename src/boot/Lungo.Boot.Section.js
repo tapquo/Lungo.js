@@ -1,14 +1,14 @@
 /**
  * Initialize the <section> element
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Section
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Section = (function(lng, undefined) {
+Lungo.Boot.Section = (function(lng, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
@@ -59,4 +59,4 @@ LUNGO.Boot.Section = (function(lng, undefined) {
         start: start
     };
 
-})(LUNGO);
+})(Lungo);

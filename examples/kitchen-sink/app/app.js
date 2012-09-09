@@ -38,4 +38,4 @@ var App = (function(lng, undefined) {
 
     };
 
-})(LUNGO);
+})(Lungo);

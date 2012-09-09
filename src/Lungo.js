@@ -21,13 +21,13 @@
  * @author   Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-var LUNGO = LUNGO || {};
+var Lungo = Lungo || {};
 
-LUNGO.VERSION = '2.0';
+Lungo.VERSION = '2.0';
 
-LUNGO.Attributes || (LUNGO.Attributes = {});
-LUNGO.Data || (LUNGO.Data = {});
-LUNGO.Sugar || (LUNGO.Sugar = {});
-LUNGO.View || (LUNGO.View = {});
-LUNGO.Device || (LUNGO.Device = {});
-LUNGO.ready || (LUNGO.ready = Quo().ready);
+Lungo.Attributes || (Lungo.Attributes = {});
+Lungo.Data || (Lungo.Data = {});
+Lungo.Sugar || (Lungo.Sugar = {});
+Lungo.View || (Lungo.View = {});
+Lungo.Device || (Lungo.Device = {});
+Lungo.ready || (Lungo.ready = Quo().ready);

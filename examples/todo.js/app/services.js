@@ -4,4 +4,4 @@ App.Services = (function(lng, App, undefined) {
 
     }
 
-})(LUNGO, App);
+})(Lungo, App);

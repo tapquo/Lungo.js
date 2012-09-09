@@ -1,10 +1,10 @@
-LUNGO.Events.init({
+Lungo.Events.init({
     'section#sec-1 header #btn-toggle-loading tap': App.View.toggleLoading,
     'section#sec-1 load': function(event) {
                             console.error('section#sec-1 loaded', event);
 
         console.error('current section', lng.Element.Current.section);
-                            LUNGO.Router.article('sec-1', 'nav-2');
+                            Lungo.Router.article('sec-1', 'nav-2');
                         },
 
     'a': App.View.toggleLoading
@@ -70,5 +70,5 @@ App.Events = (function(lng, undefined) {
         a: a
     };
 
-})(LUNGO);
+})(Lungo);
 */
