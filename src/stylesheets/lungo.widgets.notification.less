@@ -1,6 +1,7 @@
 @import "mixins.less";
+@import "constants.less";
 
-@notification_opacity: rgba(0,0,0,0.5);
+@notification_opacity: rgba(0,0,0,0.3);
 @defaultTrasition : @easeOutSine;
 @keyframe: 300ms;
 
@@ -24,15 +25,14 @@
     color: @font_color;
     display: none;
 
-    &.modal {
-        // background-color: @notification_opacity;
-    }
+    &.modal { background-color: @notification_opacity; }
 
     & .window {
         position: relative;
         opacity: 0;
 
         //transition-property: -webkit-transform, transform, opacity;
+        // @TODO: Correct vendor property;
         .transition(all @keyframe @defaultTrasition);
 
         &.show {
@@ -51,8 +51,6 @@
 
             .border-radius(@modal_border_radius);
             // .transform(translate3d(0, 100%, 0));
-
-
             .transform(scale(0.85));
 
             &.show {
@@ -63,6 +61,8 @@
                 display: block;
                 font-size: 5.0em;
                 &.loading {
+                    // margin: 24px auto;
+                    margin-top: 24px;
                     margin-bottom: 24px;
                 }
             }
@@ -92,7 +92,7 @@
             opacity: 1;
             padding: 10px 12px;
             top: 0;
-            top: 43px;
+            top: 42px;
             background: #333;
 
             & hr {
@@ -116,17 +116,15 @@
             color: @notify_font_color;
             text-shadow: @notify_font_shadow;
 
-            .linear-gradient(top, ~','#e8e8e8 0%, ~','#f6f6f6 50%);
-
             .box-shadow(0px 1px 3px rgba(0,0,0,0.5));
 
             &.error, &.alert, &.success {
                 color: @font_color;
                 text-shadow: 0 1px 0px rgba(0,0,0,0.1);
             }
-            &.error { .linear-gradient(top, ~','#FF4444 0%, ~','#CC0000 50%); }
-            &.alert { .linear-gradient(top, ~','#FFBB33 0%, ~','#FF8800 50%); }
-            &.success { .linear-gradient(top, ~','#99CC00 0%, ~','#669900 50%); }
+            &.error { .linear-gradient(top, ~','@red 0%, ~','@red-active 85%); }
+            &.alert { .linear-gradient(top, ~','@yellow 0%, ~','@yellow-active 85%); }
+            &.success { .linear-gradient(top, ~','@green 0%, ~','@green-active 85%); }
         }
 
         &.url {
@@ -143,7 +141,7 @@
                 top: -14px;
                 right: -14px;
 
-                font-size: 16px;
+                font-size: 14px;
                 line-height: 24px;
                 font-weight: normal;
                 width: 24px;
