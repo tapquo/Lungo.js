@@ -1,4 +1,4 @@
-.growl {
+.notification {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -8,7 +8,7 @@
   color: #ffffff;
   display: none;
 }
-.growl .window {
+.notification .window {
   position: relative;
   opacity: 0;
   -webkit-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -17,10 +17,10 @@
   -o-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
   transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
-.growl .window.show {
+.notification .window.show {
   opacity: 1;
 }
-.growl .window:not(.special) {
+.notification .window:not(.special) {
   left: 50%;
   top: 50%;
   width: 114px;
@@ -40,58 +40,58 @@
   -o-transform: scale(0.85);
   transform: scale(0.85);
 }
-.growl .window:not(.special).show {
+.notification .window:not(.special).show {
   -webkit-transform: translate3d(0, 0%, 0);
   -moz-transform: translate3d(0, 0%, 0);
   -ms-transform: translate3d(0, 0%, 0);
   -o-transform: translate3d(0, 0%, 0);
   transform: translate3d(0, 0%, 0);
 }
-.growl .window:not(.special) .icon {
+.notification .window:not(.special) .icon {
   display: block;
   font-size: 5.0em;
 }
-.growl .window:not(.special) .icon.loading {
+.notification .window:not(.special) .icon.loading {
   margin-bottom: 24px;
 }
-.growl .window:not(.special) strong {
+.notification .window:not(.special) strong {
   display: block;
   margin-bottom: 4px;
 }
-.growl .window.confirm,
-.growl .window.notify {
+.notification .window.confirm,
+.notification .window.notify {
   -webkit-transform: translate3d(0, -150%, 0);
   -moz-transform: translate3d(0, -150%, 0);
   -ms-transform: translate3d(0, -150%, 0);
   -o-transform: translate3d(0, -150%, 0);
   transform: translate3d(0, -150%, 0);
 }
-.growl .window.confirm.show,
-.growl .window.notify.show {
+.notification .window.confirm.show,
+.notification .window.notify.show {
   -webkit-transform: translate3d(0, 0%, 0);
   -moz-transform: translate3d(0, 0%, 0);
   -ms-transform: translate3d(0, 0%, 0);
   -o-transform: translate3d(0, 0%, 0);
   transform: translate3d(0, 0%, 0);
 }
-.growl .window.confirm .icon,
-.growl .window.notify .icon {
+.notification .window.confirm .icon,
+.notification .window.notify .icon {
   float: left;
   font-size: 2.5em;
   margin-right: 8px;
 }
-.growl .window.confirm strong,
-.growl .window.notify strong {
+.notification .window.confirm strong,
+.notification .window.notify strong {
   line-height: 1.5em;
 }
-.growl .window.confirm {
+.notification .window.confirm {
   opacity: 1;
   padding: 10px 12px;
   top: 0;
   top: 43px;
   background: #333;
 }
-.growl .window.confirm hr {
+.notification .window.confirm hr {
   margin: 10px 0;
   height: 1px;
   background: rgba(0, 0, 0, 0.75);
@@ -99,15 +99,15 @@
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-.growl .window.confirm .button {
+.notification .window.confirm .button {
   width: 42%;
   font-size: 15px;
   line-height: 40px;
 }
-.growl .window.confirm .button:last-child {
+.notification .window.confirm .button:last-child {
   float: right;
 }
-.growl .window.notify {
+.notification .window.notify {
   padding: 3px 0px 7px 7px;
   top: 0;
   color: #555555;
@@ -121,34 +121,34 @@
   -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
-.growl .window.notify.error,
-.growl .window.notify.alert,
-.growl .window.notify.success {
+.notification .window.notify.error,
+.notification .window.notify.alert,
+.notification .window.notify.success {
   color: #ffffff;
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
 }
-.growl .window.notify.error {
+.notification .window.notify.error {
   background-image: -webkit-linear-gradient(top , #ff4444 0% , #cc0000 50%);
   background-image: -moz-linear-gradient(top , #ff4444 0% , #cc0000 50%);
   background-image: -ms-linear-gradient(top , #ff4444 0% , #cc0000 50%);
   background-image: -o-linear-gradient(top , #ff4444 0% , #cc0000 50%);
   background-image: linear-gradient(top , #ff4444 0% , #cc0000 50%);
 }
-.growl .window.notify.alert {
+.notification .window.notify.alert {
   background-image: -webkit-linear-gradient(top , #ffbb33 0% , #ff8800 50%);
   background-image: -moz-linear-gradient(top , #ffbb33 0% , #ff8800 50%);
   background-image: -ms-linear-gradient(top , #ffbb33 0% , #ff8800 50%);
   background-image: -o-linear-gradient(top , #ffbb33 0% , #ff8800 50%);
   background-image: linear-gradient(top , #ffbb33 0% , #ff8800 50%);
 }
-.growl .window.notify.success {
+.notification .window.notify.success {
   background-image: -webkit-linear-gradient(top , #99cc00 0% , #669900 50%);
   background-image: -moz-linear-gradient(top , #99cc00 0% , #669900 50%);
   background-image: -ms-linear-gradient(top , #99cc00 0% , #669900 50%);
   background-image: -o-linear-gradient(top , #99cc00 0% , #669900 50%);
   background-image: linear-gradient(top , #99cc00 0% , #669900 50%);
 }
-.growl .window.url {
+.notification .window.url {
   left: 0%;
   top: 00%;
   width: 280px;
@@ -161,7 +161,7 @@
   -o-transform: translate3d(0, 75%, 0);
   transform: translate3d(0, 75%, 0);
 }
-.growl .window.url .close {
+.notification .window.url .close {
   position: absolute;
   top: -14px;
   right: -14px;
@@ -175,10 +175,10 @@
   border: solid 2px #fff;
   box-shadow: 0 0 4px black;
 }
-.growl .window.working span {
-  -webkit-animation: growl-working 1s infinite;
+.notification .window.working span {
+  -webkit-animation: notification-working 1s infinite;
 }
-@-webkit-keyframes growl-working {
+@-webkit-keyframes notification-working {
   0% {
     opacity: 1;
   }
