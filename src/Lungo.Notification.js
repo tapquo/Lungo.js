@@ -1,5 +1,5 @@
 /**
- * Growl Notification system in CSS3
+ * Notification system in CSS3
  *
  * @namespace Lungo
  * @class Notification
@@ -20,11 +20,11 @@ Lungo.Notification = (function(lng, undefined) {
 
     var SELECTOR = {
         BODY: 'body',
-        GROWL: '.growl',
-        MODAL: '.growl .window',
-        MODAL_HREF: '.growl .window a',
-        WINDOW_CLOSABLE: '.growl > .url .close',
-        CONFIRM_BUTTONS: '.growl .confirm a.button'
+        NOTIFICATION: '.notification',
+        MODAL: '.notification .window',
+        MODAL_HREF: '.notification .window a',
+        WINDOW_CLOSABLE: '.notification > .url .close',
+        CONFIRM_BUTTONS: '.notification .confirm a.button'
     };
 
     var STYLE = {
@@ -35,8 +35,8 @@ Lungo.Notification = (function(lng, undefined) {
         INPUT: 'input'
     };
 
-    var CALLBACK_HIDE = 'Lungo.Sugar.Growl.hide()';
-    var MARKUP_GROWL = '<div class="growl"><div class="window"></div></div>';
+    var CALLBACK_HIDE = 'Lungo.Notification.hide()';
+    var MARKUP_NOTIFICATION = '<div class="notification"><div class="window"></div></div>';
 
     /**
      *
@@ -128,12 +128,9 @@ Lungo.Notification = (function(lng, undefined) {
         _show(html_binded);
     };
 
-
-
-
     var _init = function() {
-        lng.dom(SELECTOR.BODY).append(MARKUP_GROWL);
-        _el = lng.dom(SELECTOR.GROWL);
+        lng.dom(SELECTOR.BODY).append(MARKUP_NOTIFICATION);
+        _el = lng.dom(SELECTOR.NOTIFICATION);
         _window = _el.children('.window');
 
         _subscribeEvents();
