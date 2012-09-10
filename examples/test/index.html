@@ -108,10 +108,10 @@
     </section>
 
 -->
-    <section id="sec-1"  class="popa" data-transition="pop">
+    <section id="sec-1"  class="popa" data-transition="slide">
         <header class="extended">
             <nav class="left">
-                <a href="#kitchen-sink-scroll" data-target="aside" data-icon="home"></a>
+                <a href="#aside-controls" data-target="aside" data-icon="menu"></a>
                 <a href="#kitchen-sink-scroll" data-article="nav-2" data-target="aside" data-icon="heart" data-count="8"></a>
             </nav>
             <div class="left">
@@ -395,5 +395,17 @@
     <script src="app/data.js"></script>
     <script src="app/services.js"></script>
     <script src="app/events.js"></script>
+        <script src="app/events.notification.js"></script>
+
+    <script>
+        Lungo.App.init({
+            name: 'Kitchen Sink',
+            version: '2.0',
+            resources: {
+                sections: [
+                    'aside.html', 'aside-profiles.html', 'notification.html']
+            }
+        });
+    </script>
 </body>
 </html>
