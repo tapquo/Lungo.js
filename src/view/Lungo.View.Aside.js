@@ -23,7 +23,7 @@ Lungo.View.Aside = (function(lng, undefined) {
     var toggle = function(aside_id) {
         aside = _findAside(aside_id);
         if (aside) {
-            var is_visible = aside.hasClass(CLASS.CURRENT);
+            var is_visible = aside.hasClass(CLASS.SHOW);
             if (is_visible) {
                 lng.View.Aside.hide();
             } else {
@@ -46,7 +46,7 @@ Lungo.View.Aside = (function(lng, undefined) {
             lng.Element.Current.aside = aside;
             var aside_stylesheet = _asideStylesheet(aside);
 
-            aside.addClass(CLASS.CURRENT);
+            aside.addClass(CLASS.SHOW);
             lng.Element.Current.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
         }
 
@@ -69,9 +69,9 @@ Lungo.View.Aside = (function(lng, undefined) {
             }
 
             setTimeout(function() {
-                aside.removeClass(CLASS.CURRENT);
+                aside.removeClass(CLASS.SHOW);
                 lng.Element.Current.aside = null;
-            }, 300);
+            }, 250);
         }
     };
 
