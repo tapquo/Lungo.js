@@ -19,7 +19,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
      *
      * @method init
      */
-    var start = function() {
+    var init = function() {
         _initFirstSection();
         _initAllSections();
 
@@ -56,7 +56,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo);

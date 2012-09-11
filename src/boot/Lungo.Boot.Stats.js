@@ -15,7 +15,7 @@ Lungo.Boot.Stats = (function(lng, undefined) {
      *
      * @method start
      */
-    var start = function() {
+    var init = function() {
         if (lng.Core.isMobile()) {
             _saveStats();
         }
@@ -35,7 +35,7 @@ Lungo.Boot.Stats = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo);

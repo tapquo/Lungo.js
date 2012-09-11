@@ -357,7 +357,7 @@
     <script src="../../release/lungo.js"></script>
     -->
     <script src="../../src/Lungo.js"></script>
-    <script src="../../src/Lungo.App.js" ></script>
+    <script src="../../src/Lungo.init.js"></script>
     <script src="../../src/Lungo.Core.js"></script>
     <script src="../../src/Lungo.Dom.js"></script>
     <script src="../../src/Lungo.Service.js"></script>
@@ -379,7 +379,9 @@
     <script src="../../src/data/Lungo.Data.Storage.js"></script>
     <script src="../../src/attributes/Lungo.Attributes.Data.js"></script>
     <script src="../../src/Lungo.Fallback.js"></script>
+    <!--
     <script src="../../src/boot/Lungo.Boot.js"></script>
+    -->
     <script src="../../src/boot/Lungo.Boot.Resources.js" ></script>
     <script src="../../src/boot/Lungo.Boot.Stats.js" ></script>
     <script src="../../src/boot/Lungo.Boot.Layout.js"></script>
@@ -387,25 +389,29 @@
     <script src="../../src/boot/Lungo.Boot.Data.js"></script>
     <script src="../../src/boot/Lungo.Boot.Section.js"></script>
     <script src="../../src/boot/Lungo.Boot.Article.js"></script>
-
+    <!--
+    <script src="../../src/Lungo.App.js" ></script>
+    -->
 
     <!-- LungoJS - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 'Kitchen Sink',
+            version: '2.0',
+            sugars: ['map', 'pull'],
+            resources: {
+                sections: ['aside.html', 'aside-profiles.html', 'notification.html'],
+                templates: [],
+                asides: []
+            }
+        });
+    </script>
+
     <script src="app/app.js"></script>
     <script src="app/view.js"></script>
     <script src="app/data.js"></script>
     <script src="app/services.js"></script>
     <script src="app/events.js"></script>
         <script src="app/events.notification.js"></script>
-
-    <script>
-        Lungo.App.init({
-            name: 'Kitchen Sink',
-            version: '2.0',
-            resources: {
-                sections: [
-                    'aside.html', 'aside-profiles.html', 'notification.html']
-            }
-        });
-    </script>
 </body>
 </html>

@@ -21,7 +21,7 @@ Lungo.Boot.Layout = (function(lng, undefined) {
      * @method init
      *
      */
-    var start = function() {
+    var init = function() {
         if (lng.Core.isMobile()) {
             _window = window;
             _document = _window.document;
@@ -62,7 +62,7 @@ Lungo.Boot.Layout = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo);
