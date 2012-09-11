@@ -186,10 +186,11 @@ section.aside.right {
 .list li:not(.toolbar) a {
   color: #2a2a2a;
 }
-.list ul {
+section .list ul,
+section .list li {
   background: #fff;
 }
-.list li {
+section .list li {
   border-bottom: 1px inset #cccccc;
 }
 .list li:last-child {

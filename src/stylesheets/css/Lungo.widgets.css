@@ -23,6 +23,9 @@
 .scroll.horizontal  > *  > * {
   float: left;
 }
+.scroll  > * {
+  -webkit-transform: translate3d(0, 0, 0);
+}
 .left {
   float: left;
 }
