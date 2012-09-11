@@ -12,9 +12,13 @@
 
 .list {
     & li {
-        position: relative;
         list-style-type: none;
         padding: 8px;
+        position: relative;
+
+        /*
+        position: relative;
+        */
 
         &.arrow::after{
             position: absolute;
@@ -30,7 +34,7 @@
 
         & a { display: block; }
 
-        & .icon:not(.small), & img {
+        & .icon, & img {
             float: left;
             width: 32px;
             height: 32px;
@@ -40,10 +44,11 @@
             text-align: center;
         }
 
-        &.thumb img {
+        &.thumb img, &.thumb .icon {
            margin: -8px 8px -8px -8px;
            height: 46px !important;
            width:46px !important;
+           font-size: 3.6em;
         }
 
         &.anchor {

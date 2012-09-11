@@ -9,9 +9,13 @@
 /* DIMENSIONS */
 /* COLORS */
 .list li {
-  position: relative;
   list-style-type: none;
   padding: 8px;
+  position: relative;
+  /*
+        position: relative;
+        */
+
 }
 .list li.arrow::after {
   position: absolute;
@@ -36,7 +40,7 @@
 .list li a {
   display: block;
 }
-.list li .icon:not(.small),
+.list li .icon,
 .list li img {
   float: left;
   width: 32px;
@@ -46,10 +50,12 @@
   line-height: 1.0em;
   text-align: center;
 }
-.list li.thumb img {
+.list li.thumb img,
+.list li.thumb .icon {
   margin: -8px 8px -8px -8px;
   height: 46px !important;
   width: 46px !important;
+  font-size: 3.6em;
 }
 .list li.anchor {
   font-size: 0.85em;

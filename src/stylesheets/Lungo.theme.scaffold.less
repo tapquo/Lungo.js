@@ -167,12 +167,15 @@ section.aside {
 /* @group .list */
 .list, .list li:not(.toolbar) a { color: #2a2a2a; }
 
-.list {
-    & ul {
-        background: #fff;
-    }
+section .list {
+    & ul, & li { background: #fff; }
     & li {
         border-bottom: 1px inset @theme-light;
+    }
+}
+
+.list {
+    & li {
         &:last-child { border-bottom: none; }
 
         &.selectable:active {

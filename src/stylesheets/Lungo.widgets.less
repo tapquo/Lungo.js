@@ -27,6 +27,9 @@
             & > * { float: left; }
         }
     }
+
+    // FIXES: position: relative childrens
+    & > * { -webkit-transform: translate3d(0, 0, 0); }
 }
 
 .left { float: left; }
