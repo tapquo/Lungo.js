@@ -21,17 +21,21 @@ section.aside {
 }
 
 aside {
-    position: absolute;
+    // @todo: section position absolute or FIXED
+    // position: absolute;
+    position: fixed;
+
     height: auto;
     top: 0;
     bottom: 0;
     display: none;
-    z-index: 0;
+    z-index: -1;
 
     width: @aside-width;
 
     &.right { right: 0px; }
-    &.current {
+    &.show {
+        z-index: 0;
         display: block;
     }
 
