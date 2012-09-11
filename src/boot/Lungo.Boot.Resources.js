@@ -37,7 +37,7 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
             var url = _parseUrl(resources[index], resource_key);
 
             try {
-                var response = _loadAsyncResource(url);
+                var response = _loadSyncResource(url);
                 _factoryResources(resource_key, response);
             } catch(error) {
                 lng.Core.log(3, error.message);
@@ -48,14 +48,15 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
     var _cacheDOMElements = function() {
         lng.Element.sections = lng.dom(ELEMENT.SECTION);
         lng.Element.asides = lng.dom(ELEMENT.ASIDE);
+        // @todo: WTF?
         // lng.Element.toolbars = lng.dom(ELEMENT.ASIDE);
     };
 
     var _parseUrl = function(section_url, folder) {
-        return (/http/.test(section_url)) ? section_url : 'app/' + folder + '/' + section_url;
+        return (/http/.test(section_url)) ? section_url : 'app/resources/' + folder + '/' + section_url;
     };
 
-    var _loadAsyncResource = function(url) {
+    var _loadSyncResource = function(url) {
         return $$.ajax({
             url: url,
             async: false,
