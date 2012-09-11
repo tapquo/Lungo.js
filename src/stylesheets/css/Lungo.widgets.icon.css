@@ -101,7 +101,7 @@
 .icon.remove:before {
   content: "\0043";
 }
-.icon.grid-view:before {
+.icon.grid:before {
   content: "\0044";
 }
 .icon.menu:before {
@@ -114,15 +114,15 @@
   content: "\0048";
 }
 .icon.star:before {
-  content: "\004a";
-}
-.icon.star-ghost:before {
   content: "\004b";
+}
+.icon.star-full:before {
+  content: "\004a";
 }
 .icon.heart:before {
   content: "\0049";
 }
-.icon.heart-ghost:before {
+.icon.heart-full:before {
   content: "\004c";
 }
 .icon.thumbs-up:before {
@@ -143,7 +143,7 @@
 .icon.cancel:before {
   content: "\0054";
 }
-.icon.checkmark:before {
+.icon.check:before {
   content: "\0051";
 }
 .icon.multiply:before,
@@ -186,7 +186,7 @@
 .icon.file:before {
   content: "\005d";
 }
-.icon.locked:before {
+.icon.lock:before {
   content: "\0046";
 }
 .icon.map:before {
