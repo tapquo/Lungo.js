@@ -18,7 +18,7 @@ Lungo.Boot.Data = (function(lng, undefined) {
      *
      *
      */
-    var start = function() {
+    var init = function() {
         var attributes = lng.Attributes.Data;
 
         for (var attribute in attributes) {
@@ -38,7 +38,7 @@ Lungo.Boot.Data = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo);

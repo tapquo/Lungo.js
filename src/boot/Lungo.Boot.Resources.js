@@ -24,8 +24,7 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
      * @method start
      *
      */
-    var start = function() {
-        var resources = lng.App.get('resources');
+    var init = function(resources) {
         for (resource_key in resources) {
             _loadResources(resource_key, resources[resource_key]);
         }
@@ -100,7 +99,7 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo, Quo);

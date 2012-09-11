@@ -27,7 +27,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
      * @method init
      *
      */
-    var start = function() {
+    var init = function() {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
 
@@ -98,7 +98,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo);

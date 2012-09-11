@@ -22,7 +22,7 @@ Lungo.Boot.Article = (function(lng, undefined) {
      *
      * @method init
      */
-    var start = function() {
+    var init = function() {
         _initElement(SELECTORS.LIST_IN_ARTICLE, _createListElement);
         _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _createCheckboxElement);
     };
@@ -48,7 +48,7 @@ Lungo.Boot.Article = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
 })(Lungo);
