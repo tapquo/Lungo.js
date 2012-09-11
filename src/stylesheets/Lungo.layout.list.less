@@ -12,32 +12,23 @@
 
 .list {
     & li {
+        position: relative;
         list-style-type: none;
+        padding: 8px;
 
-        &.padding {
-            padding: 8px;
-        }
-
-        & a {
-            display: block;
-            padding: 8px;
-        }
-
-        &.arrow > a::after{
-            content: '';
-            display: block;
+        &.arrow::after{
+            position: absolute;
+            right: 8px;
+            top: 40%;
             width: 6px;
             height: 6px;
+            content: '';
             border-right: 3px solid #D0D0D8;
             border-top: 3px solid #D0D0D8;
-            position: absolute;
-            right: 12px;
-            top: 43%;
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg);
+            .transform(rotate(45deg));
         }
+
+        & a { display: block; }
 
         & .icon:not(.small), & img {
             float: left;
@@ -53,6 +44,18 @@
            margin: -8px 8px -8px -8px;
            height: 46px !important;
            width:46px !important;
+        }
+
+        &.anchor {
+            font-size: 0.85em;
+            font-weight: bold;
+            padding: 2px 10px;
+
+            & .icon.small {
+                margin-right: 2px;
+            }
+
+            & .bubble { display: none; }
         }
     }
 
@@ -74,17 +77,4 @@
         line-height: 0.8em;
     }
 
-    //@todo: Refactor li.anchor stylesheet;
-    & li.anchor {
-        font-size: 0.85em;
-        font-weight: bold;
-        padding: 0px 4px;
-        line-height: 1.5em;
-
-        & .icon.small {
-            margin-right: 2px;
-        }
-
-        & .bubble { display: none; }
-    }
 }
