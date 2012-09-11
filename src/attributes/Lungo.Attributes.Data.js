@@ -14,15 +14,15 @@ Lungo.Attributes.Data = {
         selector: '.list',
         html: '<li class="search {{value}}"><input type="search" placeholder="Search..."><a href="#" class="button" data-icon="search"></a></li>'
     },
-    Count: {
-        tag: 'count',
-        selector: '*',
-        html: '<span class="bubble count">{{value}}</span>'
-    },
     Search: {
         tag: 'search',
         selector: '*',
         html: '<input type="search" placeholder="{{value}}"/><a href="#" class="button" data-icon="search"></a>'
+    },
+    Count: {
+        tag: 'count',
+        selector: '*',
+        html: '<span class="bubble count">{{value}}</span>'
     },
     Progress: {
         tag: 'progress',
