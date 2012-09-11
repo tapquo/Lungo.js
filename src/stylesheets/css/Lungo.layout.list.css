@@ -1,1 +1,80 @@
-.list li{list-style-type:none}.list li.padding{padding:8px}.list li a{display:block;padding:8px}.list li.arrow>a::after{content:'';display:block;width:6px;height:6px;border-right:3px solid #d0d0d8;border-top:3px solid #d0d0d8;position:absolute;right:12px;top:43%;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}.list li .icon:not(.small),.list li img{float:left;width:32px;height:32px;margin-right:8px;font-size:2.6em;line-height:1.0em;text-align:center}.list li.thumb img{margin:-8px 8px -8px -8px;height:46px!important;width:46px!important}.list .bubble{padding-left:5px;padding-right:5px}.list .right{font-size:.75em;font-weight:bold}.list .right .icon,.list small .icon{height:13px!important;width:13px!important;margin-right:1px!important;font-size:1.2em!important;line-height:.8em}.list li.anchor{font-size:.85em;font-weight:bold;padding:0 4px;line-height:1.5em}.list li.anchor .icon.small{margin-right:2px}.list li.anchor .bubble{display:none}
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class List
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+/* DIMENSIONS */
+/* COLORS */
+.list li {
+  position: relative;
+  list-style-type: none;
+  padding: 8px;
+}
+.list li.arrow::after {
+  position: absolute;
+  right: 8px;
+  top: 40%;
+  width: 6px;
+  height: 6px;
+  content: '';
+  border-right: 3px solid #D0D0D8;
+  border-top: 3px solid #D0D0D8;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.list li a {
+  display: block;
+}
+.list li .icon:not(.small),
+.list li img {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  font-size: 2.6em;
+  line-height: 1.0em;
+  text-align: center;
+}
+.list li.thumb img {
+  margin: -8px 8px -8px -8px;
+  height: 46px !important;
+  width: 46px !important;
+}
+.list li.anchor {
+  font-size: 0.85em;
+  font-weight: bold;
+  padding: 2px 10px;
+}
+.list li.anchor .icon.small {
+  margin-right: 2px;
+}
+.list li.anchor .bubble {
+  display: none;
+}
+.list .bubble {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.list .right {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.list .right .icon,
+.list small .icon {
+  height: 13px !important;
+  width: 13px !important;
+  margin-right: 1px !important;
+  font-size: 1.2em !important;
+  line-height: 0.8em;
+}
