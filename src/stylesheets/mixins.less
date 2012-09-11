@@ -44,6 +44,7 @@
 //
 // Animation:
 // @mixin transition
+// @mixin transition-delay
 // @mixin easing
 //
 //============================================================
@@ -630,7 +631,22 @@
             transition: @arguments;
 }
 
-
+//============================================================
+//
+// transition-delay
+//
+// @param delay               :  1s, 1000ms
+//
+// @see http://www.w3.org/TR/css3-transitions/
+//
+//============================================================
+.transition-delay(...) {
+    -webkit-transition-delay: @arguments;
+       -moz-transition-delay: @arguments;
+        -ms-transition-delay: @arguments;
+         -o-transition-delay: @arguments;
+            transition-delay: @arguments;
+}
 
 //============================================================
 //
