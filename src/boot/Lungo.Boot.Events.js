@@ -92,6 +92,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
     };
 
     var _hideAsideIfNecesary = function(event) {
+        //@TODO: refactor
         if (window.innerWidth < 768) lng.View.Aside.hide();
 
         if (event) event.preventDefault();

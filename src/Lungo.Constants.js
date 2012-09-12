@@ -16,6 +16,7 @@ Lungo.Constants = {
         BODY: 'body',
         DIV: 'div',
         LIST: '<ul></ul>',
+        LI: 'li',
         SPAN: '<span>&nbsp;</span>'
     },
 

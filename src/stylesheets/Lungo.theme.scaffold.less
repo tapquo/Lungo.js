@@ -132,21 +132,22 @@ aside {
             color: #F0F0F0;
             border-bottom: 1px solid #2f2f2f;
 
+            &.current { background: @theme-light; }
+
             & strong {
                 text-shadow: 0 1px 1px black;
                 color: #fff;
             }
 
-            & small {
-                color:  rgba(255,255,255,0.3);
-            }
+            & small { color:  rgba(255,255,255,0.3); }
         }
     }
     & a {
         color: @theme;
     }
+
     & a.current {
-        background: #2f2f2f;
+        background: @theme-light;
         color: @white;
     }
 }

@@ -130,6 +130,9 @@ aside .list li {
   color: #F0F0F0;
   border-bottom: 1px solid #2f2f2f;
 }
+aside .list li.current {
+  background: #cccccc;
+}
 aside .list li strong {
   text-shadow: 0 1px 1px black;
   color: #fff;
@@ -141,7 +144,7 @@ aside a {
   color: #999999;
 }
 aside a.current {
-  background: #2f2f2f;
+  background: #cccccc;
   color: #ffffff;
 }
 section.aside {

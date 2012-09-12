@@ -17,7 +17,8 @@ Lungo.View.Article = (function(lng, undefined) {
     var SELECTORS = {
         NAVIGATION_ITEM: 'a[href][data-target="article"]',
         REFERENCE_LINK: ' a[href][data-article]',
-        TITLE_OF_ARTICLE: 'header .title, footer .title'
+        TITLE_OF_ARTICLE: 'header .title, footer .title',
+        ASIDE_REFERENCE_LIST: 'li a.current, li.current'
     };
 
     /**
@@ -39,6 +40,13 @@ Lungo.View.Article = (function(lng, undefined) {
 
         var active_nav_items = 'a[href="' + article_id + '"][data-target="article"]';
         lng.Element.Current.section.find(active_nav_items).addClass(CLASS.CURRENT);
+
+        if (lng.Element.Current.aside) {
+            aside = lng.Element.Current.aside;
+
+            aside.find(SELECTORS.ASIDE_REFERENCE_LIST).removeClass(CLASS.CURRENT);
+            aside.find(active_nav_items).addClass(CLASS.CURRENT).parent().addClass(CLASS.CURRENT);
+        }
     };
 
     var switchReferenceItems = function(article_id, section) {
