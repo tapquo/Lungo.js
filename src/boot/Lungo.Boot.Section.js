@@ -22,6 +22,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
     var init = function() {
         _initFirstSection();
         _initAllSections();
+        _initAllAsides();
 
         lng.View.Resize.toolbars();
     };
@@ -42,6 +43,14 @@ Lungo.Boot.Section = (function(lng, undefined) {
 
         for (var i = 0, len = lng.Element.sections.length; i < len; i++) {
             _initArticles(i);
+        }
+    };
+
+    var _initAllAsides = function() {
+        var aside = null;
+        for (var i = 0, len = lng.Element.asides.length; i < len; i++) {
+            aside = lng.dom(lng.Element.asides[i]);
+            aside.children(ELEMENT.ARTICLE).addClass(CLASS.CURRENT);
         }
     };
 
