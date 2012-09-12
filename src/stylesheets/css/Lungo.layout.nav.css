@@ -54,6 +54,10 @@ nav.groupbar a {
 nav.groupbar a .icon {
   font-size: 1.0em;
 }
+nav.groupbar a .bubble {
+  top: -6px;
+  left: 0px;
+}
 header:not(.toolbar) nav .icon ~ abbr,
 footer:not(.toolbar) nav .icon ~ abbr {
   margin-left: 4px;
