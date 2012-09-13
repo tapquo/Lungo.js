@@ -52,11 +52,10 @@ Lungo.Notification = (function(lng, undefined) {
      *
      */
     var hide = function() {
-        _window.removeClass(STYLE.SHOW);
-
+        _window.removeClass('show');
         setTimeout(function() {
             _el.style('display', 'none').removeClass('url').removeClass('confirm').removeClass('modal');
-        }, ANIMATION_MILISECONDS - 10);
+        }, ANIMATION_MILISECONDS - 50);
     };
 
     /**
