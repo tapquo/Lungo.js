@@ -62,7 +62,8 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
             async: false,
             dataType: 'html',
             error: function() {
-                throw new Error(ERROR.LOADING_RESOURCE + url);
+                console.error(ERROR.LOADING_RESOURCE + url);
+                // throw new Error(ERROR.LOADING_RESOURCE + url);
             }
         });
     };
