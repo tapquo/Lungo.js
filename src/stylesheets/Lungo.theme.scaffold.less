@@ -18,7 +18,6 @@
         @theme-highlight-color: #1b6777;
         @theme-highlight-text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 
-
 @color-border: #2566a4;
     @color-border-light: #64b9e2;
 
@@ -93,16 +92,11 @@ header nav {
 
 .groupbar {
     background: @theme-dark;
-//    border-bottom: solid 1px rgba(0,0,0,1);
-
-    //.box-shadow(~"inset 0 1px 8px rgba(0,0,0,0.3)");
-
     & a {
         color: @theme;
         &.current {
             color:  @white;
             .box-shadow(inset 0 -3px 0 @white);
-            //border-bottom: inset 3px @white;
         }
     }
 }
@@ -111,7 +105,6 @@ header nav {
 /* @group <aside> */
 aside {
     color:  #fff;
-    background: #272727;
     background: #333;
 
     & header, footer {
@@ -131,20 +124,15 @@ aside {
         & li {
             color: #F0F0F0;
             border-bottom: 1px solid #2f2f2f;
-
             &.current { background: @theme-light; }
-
             & strong {
                 text-shadow: 0 1px 1px black;
                 color: #fff;
             }
-
             & small { color:  rgba(255,255,255,0.3); }
         }
     }
-    & a {
-        color: @theme;
-    }
+    & a { color: @theme; }
 
     & a.current {
         background: @theme-light;
