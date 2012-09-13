@@ -107,7 +107,6 @@ header nav.plain a:active {
 /* @group <aside> */
 aside {
   color: #fff;
-  background: #272727;
   background: #333;
 }
 aside header,
