@@ -8,7 +8,10 @@
  */
 
 Lungo.init = function(config) {
-    Lungo.Boot.Resources.init(config.resources);
+    if (config && config.resources) {
+        //@todo: Falta el cacheo
+        Lungo.Boot.Resources.init(config.resources);
+    }
     //@todo: Resize Layout
     //lng.Boot.Layout.init();
     Lungo.Boot.Events.init();
