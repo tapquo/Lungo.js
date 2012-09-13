@@ -14,8 +14,8 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
 
     var RESOURCE = {
         SECTION: 'sections',
-        TEMPLATE: 'templates',
-        SCRIPT: 'scripts'
+        ASIDE: 'asides',
+        TEMPLATE: 'templates'
     };
 
     /**
@@ -68,17 +68,10 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
     };
 
     var _factoryResources = function(resource_key, response) {
-        switch(resource_key) {
-            case RESOURCE.SECTION:
-                _pushSectionInLayout(response);
-                break;
-
-            case RESOURCE.TEMPLATE:
-                _createTemplate(response);
-                break;
-
-            case RESOURCE.SCRIPT:
-                break;
+        if (resource_key == RESOURCE.TEMPLATE) {
+             _createTemplate(response);
+        } else {
+            _pushSectionInLayout(response);
         }
     };
 
