@@ -10,7 +10,7 @@ Lungo.Events.init({
 
     'tap section#notification a[data-action=loading]': function() {
         Lungo.Notification.loading();
-        setTimeout(Lungo.Notification.hide, 2000);
+        // setTimeout(Lungo.Notification.hide, 2000);
     },
 
     'tap section#notification a[data-action=success]': function() {
@@ -46,7 +46,17 @@ Lungo.Events.init({
 
     'tap section#notification a[data-action=html]': function() {
         Lungo.Notification.html('<h1>Hello World</h1>', true);
-    }
+    },
 
+    'tap section#notification a[data-action=chaining]': function() {
+        Lungo.Notification.show('Title', 'Description', 'message', false, 2, function() {
+            Lungo.Notification.error('Title 2', 'Description 2', 'message',  2, function() {
+                Lungo.Notification.show('Title 3', 'Description 3', 'message', false, 2, function() {
+                    Lungo.Notification.html('<h1>Hello World</h1>', true);
+                    // Lungo.Notification.hide();
+                });
+            });
+        });
+    }
 });
 
