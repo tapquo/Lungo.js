@@ -266,10 +266,6 @@ input[type="range"]::-webkit-slider-thumb {
   margin-right: 4px;
   font-size: 0.75em;
 }
-.big .progress .bar {
-  height: 29px;
-  line-height: 30px;
-}
 /* @end */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .custom-select select {
