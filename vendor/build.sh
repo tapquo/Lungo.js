@@ -111,7 +111,7 @@ FILES_TO_COMPRESS=""
         cp $DIR"lungo.widgets.icon."$file $BUILDPATH'lungo.icon.'$file
     done
 
-    FILES=(default.css scaffold.css )
+    FILES=(default.css)
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [BUILD]: lungo.theme."$file"\033[0m"
