@@ -41,7 +41,6 @@ article {
 header:not(.extended) ~ article { top: @header-height; }
     header.extended ~ article { top: @article_with_header_extended; }
 footer:not(.with-labels) ~ article { bottom: @article-bottom; }
-    footer.with-labels ~ article { bottom: @article-bottom-with-labels; }
 
 @media handheld, only screen and (min-width: 768px) {
     article.aside { .transform(translate3d(0px, 0, 0)); }

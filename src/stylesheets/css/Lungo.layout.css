@@ -126,14 +126,14 @@ footer {
   position: fixed;
   left: 0;
   width: 100%;
-  height: 42px;
   display: block;
   z-index: 1;
-  line-height: 42px;
   overflow: hidden;
 }
 header {
   top: 0;
+  height: 42px;
+  line-height: 42px;
 }
 header .title {
   margin-left: 4px;
@@ -165,4 +165,5 @@ header .subtitle {
 }
 footer {
   bottom: 0;
+  height: 44px;
 }

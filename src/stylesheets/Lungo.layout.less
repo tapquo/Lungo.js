@@ -68,16 +68,16 @@ header, footer  {
     position: fixed;
     left: 0;
     width: 100%;
-    height: @header-height;
     display: block;
     z-index: 1;
 
-    line-height: @header-height;
     overflow: hidden;
 }
 
 header {
     top: 0;
+    height: @header-height;
+    line-height: @header-height;
 
     & .title {
         margin-left: 4px;
@@ -114,4 +114,5 @@ header {
 
 footer {
     bottom: 0;
+    height: @footer-height;
 }

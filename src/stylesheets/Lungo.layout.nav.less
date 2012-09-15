@@ -22,19 +22,15 @@ nav {
         height:  @header_nav_height;
 
         & .icon {
-            font-size: 1.7em;
-        }
+            font-size: 1.7em; }
 
         & img {
             width: 16px;
             height: 16px;
-            top: -1px !important;
-        }
+            top: -1px !important; }
 
         & abbr {
-            font-weight: bold;
-        }
-
+            font-weight: bold; }
     }
 
     & .bubble {
@@ -70,71 +66,68 @@ nav {
     }
 }
 
-header, footer {
-    &:not(.toolbar) nav {
-        & .icon ~ abbr { margin-left: 4px; float: right; }
-        & .loading {
-            margin-top: .5em;
-            font-size: 1.6em;
-        }
+header nav {
+    & .icon ~ abbr {
+        margin-left: 4px;
+        float: right; }
+
+    & .loading {
+        margin-top: .5em;
+        font-size: 1.6em;
+
+        & + .icon { display: none; }
     }
 }
 
-.toolbar {
-    height:  40px;
-
-    & nav {
-        margin: 2px;
-        display: block;
-    }
+footer nav {
+    margin: 1px;
+    display: block;
 
     & a {
         padding: 0;
-        height:  36px;
-    }
-
-    &.with-labels {
-        height: @with-labels-height;
-
-        & a { height:  47px; }
-        & .icon { padding-bottom: 12px; }
-    }
+        height:  42px; }
 
     & .icon {
         display: block;
         top:  0px;
-        font-size: 2.1em;
-        line-height: 34px;
-    }
+        font-size: 2.0em !important;
+        line-height: 40px; }
 
     & .bubble {
-        top:  -56px;
+        top:  -38px;
         left: 4px;
 
         & .loading {
             top: 0;
-            font-size: 1.4em;
-        }
+            font-size: 1.4em; }
     }
 
-    & abbr {
-        position: absolute;
-        top: 34px;
-        width: inherit;
-        height: 14px;
-        margin-left: 0px;
-        display: block !important;
-
-        font-size: 11px;
-        line-height: 14px;
-
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    abbr {
+        display: none;
     }
 
     & .loading {
         top: .1em;
-        font-size: 2.3em;
+        font-size: 2.3em; }
+
+     &.with-labels {
+        & .icon { line-height: 32px; }
+        & .bubble { top: -32px; }
+
+        & abbr {
+            display: block;
+            position: absolute;
+            top: 30px;
+            width: inherit;
+            height: 14px;
+            margin-left: 0px;
+            display: block !important;
+
+            font-size: 11px;
+            line-height: 14px;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
     }
 }
