@@ -82,6 +82,9 @@ aside footer {
   position: absolute;
   bottom: 0;
 }
+aside .bubble {
+  float: right;
+}
 aside.small {
   width: 64px;
 }
