@@ -34,11 +34,11 @@ aside {
     width: @aside-width;
 
     &.right { right: 0px; }
+
     &.show {
         z-index: 0;
         display: block;
     }
-
 
     & header, & footer {
         position: relative;
@@ -49,6 +49,10 @@ aside {
     & footer {
         position: absolute;
         bottom: 0;
+    }
+
+    & .bubble {
+        float: right;
     }
 
     &.small {
