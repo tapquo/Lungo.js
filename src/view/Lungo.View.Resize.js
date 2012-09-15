@@ -19,7 +19,7 @@ Lungo.View.Resize = (function(lng, undefined) {
      */
     var toolbars = function() {
         if (!lng.Element.toolbars)
-            lng.Element.toolbars = lng.dom('.toolbar nav, .groupbar');
+            lng.Element.toolbars = lng.dom('footer nav, .groupbar');
 
         var toolbars = lng.Element.toolbars;
 

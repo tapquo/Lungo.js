@@ -58,53 +58,56 @@ nav.groupbar a .bubble {
   top: -6px;
   left: 0px;
 }
-header:not(.toolbar) nav .icon ~ abbr,
-footer:not(.toolbar) nav .icon ~ abbr {
+header nav .icon ~ abbr {
   margin-left: 4px;
   float: right;
 }
-header:not(.toolbar) nav .loading,
-footer:not(.toolbar) nav .loading {
+header nav .loading {
   margin-top: .5em;
   font-size: 1.6em;
 }
-.toolbar {
-  height: 40px;
+header nav .loading  + .icon {
+  display: none;
 }
-.toolbar nav {
-  margin: 2px;
+footer nav {
+  margin: 1px;
   display: block;
 }
-.toolbar a {
+footer nav a {
   padding: 0;
-  height: 36px;
+  height: 42px;
 }
-.toolbar.with-labels {
-  height: 51px;
-}
-.toolbar.with-labels a {
-  height: 47px;
-}
-.toolbar.with-labels .icon {
-  padding-bottom: 12px;
-}
-.toolbar .icon {
+footer nav .icon {
   display: block;
   top: 0px;
-  font-size: 2.1em;
-  line-height: 34px;
+  font-size: 2.0em !important;
+  line-height: 40px;
 }
-.toolbar .bubble {
-  top: -56px;
+footer nav .bubble {
+  top: -38px;
   left: 4px;
 }
-.toolbar .bubble .loading {
+footer nav .bubble .loading {
   top: 0;
   font-size: 1.4em;
 }
-.toolbar abbr {
+footer nav abbr {
+  display: none;
+}
+footer nav .loading {
+  top: .1em;
+  font-size: 2.3em;
+}
+footer nav.with-labels .icon {
+  line-height: 32px;
+}
+footer nav.with-labels .bubble {
+  top: -32px;
+}
+footer nav.with-labels abbr {
+  display: block;
   position: absolute;
-  top: 34px;
+  top: 30px;
   width: inherit;
   height: 14px;
   margin-left: 0px;
@@ -114,8 +117,4 @@ footer:not(.toolbar) nav .loading {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-.toolbar .loading {
-  top: .1em;
-  font-size: 2.3em;
 }
