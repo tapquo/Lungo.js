@@ -9,7 +9,6 @@
 
 @import "constants.less";
 @import "mixins.less";
-@import "lungo.theme.default.font.css";
 
 @theme:  #05b8e2;
     @theme-light: #05bde9;
@@ -45,25 +44,19 @@ section > header {
     z-index: 2;
     & .title {
         color: @white;
-        text-shadow: 0px 1px 0px rgba(0,0,0,0.2);
-    }
+        text-shadow: 0px 1px 0px rgba(0,0,0,0.2); }
     & .subtitle {
         color: rgba(255,255,255,0.6);
-        text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
-    }
+        text-shadow: 0px -1px 0px rgba(0,0,0,0.3); }
 }
 
 section > footer {
     .linear-gradient(top, ~','@color-secondary 0%, ~','@color-secondary-dark 60%);
     border-top: 1px inset #2A2A2A;
     color: #353b42;
-    .border-radius(0px 0px @border-radius-section @border-radius-section);
-}
+    .border-radius(0px 0px @border-radius-section @border-radius-section); }
 
-article {
-	background: #efefef;
-	//background: red;
-}
+article { background: #efefef; }
 /* @end */
 
 /* @group <nav> */

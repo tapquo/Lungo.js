@@ -69,16 +69,21 @@
         </header>
 
         <footer>
-            <nav class="with-labelss">
-                <a href="#" class="current" data-label="Inicio" data-icon="info"></a>
-                <a href="#" data-icon="user" data-count="3"></a>
-                <a href="#" data-icon="user"></a>
-                <a href="#" data-icon="mail" data-label="Cuenta" data-count="3" ></a>
+            <nav class="with-label">
+                <a href="#art-1" data-target="article" class="current" data-label="Inicio" data-icon="info"></a>
+                <a href="#art-2" data-target="article"  data-icon="user" data-count="3"></a>
+                <a href="#art-3" data-target="article"  data-icon="user"></a>
+                <a href="#art-4" data-target="article"  data-icon="mail" data-label="Cuenta" data-count="3" ></a>
             </nav>
         </footer>
 
-        <article id="art-1" data-loading="black">
+        <article id="art-1" class="list scroll">
+
+
         </article>
+        <article id="art-2" data-loading="black"></article>
+        <article id="art-3" data-loading="black"></article>
+        <article id="art-4" data-loading="black"></article>
     </section>
 
     <!-- Lungo dependencies -->
@@ -124,7 +129,7 @@
             version: '2.0',
             sugars: ['map', 'pull'],
             resources: {
-                sections: [ 'notification.html', 'list.html', 'icon.html', 'grid.html'],
+                sections: [ 'notification.html', 'list.html', 'icon.html', 'grid.html', 'form.html'],
                 templates: [],
                 asides: ['features.html', 'profiles.html']
             }
