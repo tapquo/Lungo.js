@@ -69,11 +69,18 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
     var _goSection = function(id) {
         _hideAsideIfNecesary();
+
         id = lng.Core.parseUrl(id);
         if (id === '#back') {
             lng.Router.back();
         } else {
-            lng.Router.section(id);
+            if (lng.Element.Current.aside.hasClass(CLASS.SHOW)) {
+                setTimeout(function(){
+                    lng.Router.section(id);
+                }, 250);
+            } else {
+                lng.Router.section(id);
+            }
         }
     };
 
