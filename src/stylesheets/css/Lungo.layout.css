@@ -132,14 +132,14 @@ footer {
 }
 header {
   top: 0;
-  height: 42px;
-  line-height: 42px;
+  height: 44px;
+  line-height: 44px;
 }
 header .title {
   margin-left: 4px;
   float: left;
   z-index: -1;
-  font-size: 15px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 header .title img {
@@ -151,17 +151,6 @@ header .title.centered {
   right: 0px;
   text-align: center;
   display: inline-block;
-}
-header .title.with-subtitle {
-  line-height: 20px;
-  padding-top: 4px;
-}
-header .subtitle {
-  margin-left: 4px;
-  display: block;
-  font-size: 11px;
-  line-height: 11px;
-  width: 100%;
 }
 footer {
   bottom: 0;

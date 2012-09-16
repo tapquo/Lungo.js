@@ -19,7 +19,7 @@ form {
         }
     }
 
-    @rounded-radius: 8px;
+    @rounded-radius: 2px;
     &.rounded {
         & input:not([type=checkbox]), textarea, select {
             width: 94%;
@@ -27,10 +27,6 @@ form {
 
             &:first-of-type { .border-radius(@rounded-radius @rounded-radius 0px 0px); }
             &:last-of-type  { .border-radius(0px 0px @rounded-radius @rounded-radius); }
-        }
-
-        & .button {
-            .border-radius(@rounded-radius);
         }
     }
 }

@@ -19,30 +19,29 @@ nav {
         min-width: 28px;
         z-index: 1000;
         float: left;
-        height:  @header_nav_height;
+        height: @header-footer-height;
 
-        & .icon {
-            font-size: 1.7em; }
+        & .icon { font-size: 1.7em; }
 
         & img {
             width: 16px;
             height: 16px;
             top: -1px !important; }
 
-        & abbr {
-            font-weight: bold; }
-    }
+        & abbr { font-weight: bold; }
 
-    & .bubble {
-        position: relative;
-        top:  -12px;
-        left: -12px;
-        margin-right: -20px;
+        & .bubble {
+            position: relative;
+            top:  -12px;
+            left: -12px;
+            margin-right: -20px;
+        }
+
     }
 
     &.groupbar {
         position: absolute;
-        top: @header-height;
+        top: @header-footer-height;
         height: @header_groupbar_height;
         display: block;
         width: 100%;
@@ -67,6 +66,15 @@ nav {
 }
 
 header nav {
+    &.button a {
+        margin: 5px 5px 5px 0;
+        height: 32px;
+        line-height: 32px;
+        & .icon {  line-height: 33px; }
+
+        &:first-child { margin: 5px; }
+    }
+
     & .icon ~ abbr {
         margin-left: 4px;
         float: right; }
@@ -74,24 +82,20 @@ header nav {
     & .loading {
         margin-top: .5em;
         font-size: 1.6em;
-
         & + .icon { display: none; }
     }
 }
 
-footer nav {
+footer nav a {
     display: block;
-
-    & a {
-        padding: 0;
-        height:  44px;
-    }
+    padding: 0;
+    height:  @header-footer-height;
 
     & .icon {
         display: block;
         top:  0px;
         font-size: 2.0em !important;
-        line-height: 44px; }
+        line-height: @header-footer-height; }
 
     & .bubble {
         top:  -42px;
