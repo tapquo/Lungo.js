@@ -17,7 +17,7 @@ nav a {
   min-width: 28px;
   z-index: 1000;
   float: left;
-  height: 41px;
+  height: 44px;
 }
 nav a .icon {
   font-size: 1.7em;
@@ -30,7 +30,7 @@ nav a img {
 nav a abbr {
   font-weight: bold;
 }
-nav .bubble {
+nav a .bubble {
   position: relative;
   top: -12px;
   left: -12px;
@@ -38,7 +38,7 @@ nav .bubble {
 }
 nav.groupbar {
   position: absolute;
-  top: 42px;
+  top: 44px;
   height: 30px;
   display: block;
   width: 100%;
@@ -58,6 +58,17 @@ nav.groupbar a .bubble {
   top: -6px;
   left: 0px;
 }
+header nav.button a {
+  margin: 5px 5px 5px 0;
+  height: 32px;
+  line-height: 32px;
+}
+header nav.button a .icon {
+  line-height: 33px;
+}
+header nav.button a:first-child {
+  margin: 5px;
+}
 header nav .icon ~ abbr {
   margin-left: 4px;
   float: right;
@@ -69,41 +80,39 @@ header nav .loading {
 header nav .loading  + .icon {
   display: none;
 }
-footer nav {
-  display: block;
-}
 footer nav a {
+  display: block;
   padding: 0;
   height: 44px;
 }
-footer nav .icon {
+footer nav a .icon {
   display: block;
   top: 0px;
   font-size: 2.0em !important;
   line-height: 44px;
 }
-footer nav .bubble {
+footer nav a .bubble {
   top: -42px;
   left: 4px;
 }
-footer nav .bubble .loading {
+footer nav a .bubble .loading {
   top: 0;
   font-size: 1.4em;
 }
-footer nav abbr {
+footer nav a abbr {
   display: none;
 }
-footer nav .loading {
+footer nav a .loading {
   top: .1em;
   font-size: 2.3em;
 }
-footer nav.with-labels .icon {
+footer nav a.with-labels .icon {
   line-height: 36px;
 }
-footer nav.with-labels .bubble {
+footer nav a.with-labels .bubble {
   top: -34px;
 }
-footer nav.with-labels abbr {
+footer nav a.with-labels abbr {
   display: block;
   position: absolute;
   top: 30px;

@@ -53,18 +53,30 @@
 </head>
 
 <body class="app">
+<!--         <section id="login">
+        <article class="indented splash current">
+            <h1>New user</h1>
+            <form class="roundeds">
+                <input type="text" placeholder="Your email" id="txt-signup-mail" value="">
+                <input type="text" placeholder="Your username" id="txt-signup-name" value="">
+                <input type="password" placeholder="Your password" id="txt-signup-password" value="">
+                <a href="#" class="button blue big" id="btn-signup-call" data-icon="checkmark">Signup</a>
+                <a href="#back" data-target="section" class="button red big" data-icon="close">Return to login</a>
+                <a href="#back" data-target="section" class="button green " data-icon="user">Return to login</a>
+            </form>
+        </article>
+    </section> -->
 
     <section id="main" data-transition="slide">
-        <header>
-            <nav class="left">
+        <header  class="extended">
+            <nav class="left button">
                 <a href="#features" data-target="aside" data-icon="menu"></a>
             </nav>
-            <nav class="right">
-                <a href="#" data-icon="user" data-count="3"></a>
+            <nav class="right button">
+                <a href="#" data-icon="share" data-label="Share"></a>
             </nav>
             <div class="left">
-                <span class="title with-subtitle">LUNGO FRAMEWORK</span>
-                <span class="subtitle">version 2.0</span>
+                <span class="title">LUNGO FRAMEWORK</span>
             </div>
         </header>
 
@@ -77,10 +89,17 @@
             </nav>
         </footer>
 
+        <nav class="groupbar">
+            <a href="#art-1" data-target="article" class="current" data-label="Inicio"></a>
+                <a href="#art-2" data-target="article" data-label="user"></a>
+                <a href="#art-3" data-target="article" data-label="user"></a>
+                <a href="#art-4" data-target="article" data-label="Cuenta"></a>
+
+            </nav>
+
 
     <article id="list-normal" class="list scroll indented">
         <ul>
-            <li class="anchor">With right elements</li>
 
             <li>
                 <strong>&lt;li&gt; + &lt;strong&gt; </strong>
@@ -104,6 +123,10 @@
             <li class="highlight">
                 <strong>&lt;li class="highlight"&gt; + &lt;strong&gt; </strong>
             </li>
+
+        </ul>
+
+        <ul>
 
 
             <li class="anchor">.arrow class</li>
@@ -134,9 +157,9 @@
                 </a>
             </li>
 
-            <li>
+            <li class="selectable">
                 <a href="#">
-                    <div class="right bubble blue">.right.bubble</div>
+                    <div class="right">.right</div>
                     <strong>&lt;strong&gt; element</strong>
                     <small>with &lt;small&gt; element</small>
                 </a>
@@ -144,7 +167,15 @@
 
             <li>
                 <a href="#">
-                    <div class="right bubble blue" data-icon="clock">.right data-icon</div>
+                    <div class="right bubble theme">.right.bubble</div>
+                    <strong>&lt;strong&gt; element</strong>
+                    <small>with &lt;small&gt; element</small>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <div class="right bubble theme" data-icon="clock">.right data-icon</div>
                     <strong>&lt;strong&gt; element</strong>
                     <small>with &lt;small&gt; element</small>
                 </a>

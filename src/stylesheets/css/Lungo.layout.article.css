@@ -32,13 +32,13 @@ article .text {
   line-height: 1.4em;
 }
 header:not(.extended) ~ article {
-  top: 42px;
+  top: 44px;
 }
 header.extended ~ article {
-  top: 72px;
+  top: 74px;
 }
-footer:not(.with-labels) ~ article {
-  bottom: 45px;
+footer ~ article {
+  bottom: 44px;
 }
 @media handheld, only screen and (min-width: 768px) {
   article.aside {
