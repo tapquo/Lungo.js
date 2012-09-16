@@ -14,7 +14,7 @@ Lungo.Boot.Article = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
         LIST_IN_ARTICLE: 'article.list, aside.list',
-        CHECKBOX_IN_ARTICLE: '.checkbox, .radio'
+        CHECKBOX_IN_ARTICLE: '.checkbox'
     };
 
     /**
