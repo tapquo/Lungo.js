@@ -13,10 +13,8 @@
 @input-height: 29px;
 
 form {
-    &.wrapper {
-        & input:not([type=checkbox]), textarea, select {
-            margin: 3px 0px 3px 0px;
-        }
+    &.wrapper input:not([type=checkbox]), textarea, select {
+        margin: 3px 0px 3px 0px;
     }
 
     @rounded-radius: 2px;
@@ -32,15 +30,14 @@ form {
 }
 
 label:not(.select) {
-    font-size: 0.85em;
-    line-height: 1.8em;
+    font-size: 0.9em;
+    line-height: 1.5em;
 }
 
 input:not([type=checkbox]), textarea, select {
     display: block;
     width: 96%;
-    // margin: 0 0 6px;
-    padding: 0.5% 2% ;
+    padding: 0.5% 2%;
     height: @input-height;
     font-size: 14px;
     font-weight: bold;
@@ -51,23 +48,23 @@ input:not([type=checkbox]), textarea, select {
 }
 
 textarea {
-    min-height: 48px;
-}
+    padding-top: 1.5%;
+    min-height: 48px; }
 
 
 /* @group search */
 input[type=search] {
-    width: 86%;
+    width: 85%;
+    display: inline-block;
 
     & + .button {
         float: right;
         padding: 0px;
-        width: 32px;
-        height: 30px;
-
-        & .icon {
-            font-size: 22px !important;
-            line-height: 30px;
+        width: 13%;
+        height: @input-height;
+        & .icon{
+            top: -3px;
+            float: none;
         }
     }
 }
@@ -103,79 +100,28 @@ label.select {
 .no-pointer-events .select:after {
     content: none;
 }
-
 /* @end */
 
-
 /* @group switch */
-
-input[type="checkbox"], input[type="radio"]{
+input[type="checkbox"]{
     width: 82px;
     height: @input-height;
-    z-index: 2;
-}
-
-input[type="checkbox"] + span::after,
-   input[type="radio"] + span::after {
-    content: "OFF";
-}
-
-input[type="checkbox"]:checked + span::after,
-   input[type="radio"]:checked + span::after {
-    content: "ON";
-}
-
-input[type="checkbox"] + span,
-   input[type="radio"] + span,
-   input[type="checkbox"] + span::before,
-   input[type="radio"] + span::before,
-   input[type="checkbox"] + span::after,
-   input[type="radio"] + span::after {
-    display: inline-block;
-}
-
+    z-index: 2; }
+input[type="checkbox"] + span::after { content: "OFF"; }
+input[type="checkbox"]:checked + span::after { content: "ON"; }
+input[type="checkbox"] + span, input[type="checkbox"] + span::before, input[type="checkbox"] + span::after { display: inline-block; }
 input[type="checkbox"] + span::before,
-   input[type="radio"] + span::before,
    input[type="checkbox"] + span::after,
-   input[type="radio"] + span::after,
    input[type="checkbox"]:checked + span::before,
-   input[type="radio"]:checked + span::before,
-   input[type="checkbox"]:checked + span::after,
-   input[type="radio"]:checked + span::after {
-    top: 0;
-}
-
-input[type="checkbox"] + span::after,
-   input[type="radio"] + span::after,
-   input[type="checkbox"]:checked + span::before,
-   input[type="radio"]:checked + span::before {
-    right: 0;
-}
-
-input[type="checkbox"] + span::before,
-   input[type="radio"] + span::before,
-   input[type="checkbox"]:checked + span::after,
-   input[type="radio"]:checked + span::after {
-    left: 0;
-}
-
-input[type="checkbox"],
-   input[type="radio"],
-   input[type="checkbox"] + span::before,
-   input[type="radio"] + span::before,
-   input[type="checkbox"] + span::after,
-   input[type="radio"] + span::after {
-    position: absolute;
-}
-
-input[type="checkbox"],
-   input[type="radio"] {
+   input[type="checkbox"]:checked + span::after {
+    top: 0; }
+input[type="checkbox"] + span::after, input[type="checkbox"]:checked + span::before { right: 0; }
+input[type="checkbox"] + span::before, input[type="checkbox"]:checked + span::after { left: 0; }
+input[type="checkbox"], input[type="checkbox"] + span::before, input[type="checkbox"] + span::after { position: absolute; }
+input[type="checkbox"] {
     -webkit-opacity: 0;
-    opacity: 0;
-}
-
-input[type="checkbox"] + span,
-   input[type="radio"] + span {
+    opacity: 0; }
+input[type="checkbox"] + span {
     width: 82px;
     height: 27px;
     position: relative;
@@ -183,33 +129,18 @@ input[type="checkbox"] + span,
     line-height: @input-height;
     font-weight: bold;
     text-transform: uppercase;
-    text-indent: -9999px;
-}
-
-input[type="checkbox"] + span::before,
-   input[type="radio"] + span::before {
+    text-indent: -9999px; }
+input[type="checkbox"] + span::before{
     content: "";
     width: 41px;
-    height: 27px;
-}
-
-input[type="checkbox"] + span::after,
-   input[type="radio"] + span::after {
+    height: 27px; }
+input[type="checkbox"] + span::after {
     text-indent: 0;
     width: 41px;
     height: 27px;
-    text-align: center;
-}
-
-input[type="checkbox"]:checked + span::before,
-   input[type="radio"]:checked + span::before {
-    left: auto;
-}
-
-input[type="checkbox"]:checked + span::after,
-   input[type="radio"]:checked + span::after {
-    height: 27px;
-}
+    text-align: center;}
+input[type="checkbox"]:checked + span::before { left: auto; }
+input[type="checkbox"]:checked + span::after { height: 27px; }
 /* @end */
 
 /* @group range */
@@ -242,7 +173,6 @@ input[type="range"] {
     margin-bottom: 8px;
 
     .labels {
-
         font-size: 1.0em;
         display: block;
         & span:last-child { float: right; }
@@ -262,13 +192,11 @@ input[type="range"] {
             & .label {
                 float: right;
                 margin-right: 4px;
-                font-size: 0.75em;
-            }
+                font-size: 0.75em; }
         }
     }
 }
 /* @end */
-
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     .custom-select select {padding-right:30px;}
