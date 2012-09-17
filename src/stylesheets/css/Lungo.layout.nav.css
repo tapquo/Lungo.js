@@ -113,7 +113,7 @@ footer nav a.with-labels .bubble {
   top: -34px;
 }
 footer nav a.with-labels abbr {
-  display: block;
+  display: block !important;
   position: absolute;
   top: 30px;
   width: inherit;
