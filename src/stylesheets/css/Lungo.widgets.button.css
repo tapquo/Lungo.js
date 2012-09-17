@@ -8,7 +8,7 @@
  */
 /* DIMENSIONS */
 /* COLORS */
-article a.button {
+a.button {
   display: inline-block;
   height: 40px;
   padding: 0 8px;
@@ -32,16 +32,16 @@ article a.button {
   -o-user-select: none;
   user-select: none;
 }
-article a.button:active,
-article a.button.active {
+a.button:active,
+a.button.active {
   background: #4b4b4b;
 }
-article a.button:disabled,
-article a.button.disabled {
+a.button:disabled,
+a.button.disabled {
   background: rgba(255, 255, 255, 0.2);
   color: #999 !important;
 }
-article a.button .icon {
+a.button .icon {
   position: relative;
   top: 3px;
   height: 18px;
@@ -50,15 +50,15 @@ article a.button .icon {
   line-height: 18px;
   margin-right: 4px;
 }
-article a.button img {
+a.button img {
   top: 0px !important;
 }
-article a.button.big {
+a.button.big {
   width: 100%;
   padding: 0px;
   margin-bottom: 4px;
 }
-article a.button.big .icon {
+a.button.big .icon {
   margin: 8px -18px 0 12px;
   float: left;
 }
