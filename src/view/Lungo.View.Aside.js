@@ -61,7 +61,7 @@ Lungo.View.Aside = (function(lng, undefined) {
     var hide = function() {
         var aside = lng.Element.Current.aside;
         if (aside) {
-            lng.Element.Current.section.removeClass(CLASS.ASIDE);
+            lng.Element.Current.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
 
             var aside_stylesheet = _asideStylesheet(aside);
             if (aside_stylesheet) {
@@ -98,8 +98,8 @@ Lungo.View.Aside = (function(lng, undefined) {
 
         //@todo: Refactor
         if (aside_stylesheet) {
-            classes += (aside_stylesheet.indexOf(CLASS.RIGHT) > -1) ? CLASS.RIGHT : '';
-            classes += (aside_stylesheet.indexOf(CLASS.SMALL) > -1) ? CLASS.SMALL : '';
+            classes += (aside_stylesheet.indexOf(CLASS.RIGHT) > -1) ? CLASS.RIGHT + ' ': '';
+            classes += (aside_stylesheet.indexOf(CLASS.SMALL) > -1) ? CLASS.SMALL + ' ': '';
         }
 
         return classes;

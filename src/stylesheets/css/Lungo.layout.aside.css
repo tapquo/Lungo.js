@@ -101,8 +101,8 @@ aside.small nav .icon {
   text-align: center;
 }
 aside.small nav .bubble {
-  top: -36px;
-  left: -16px;
+  top: 4px;
+  left: -22px;
 }
 @media handheld, only screen and (min-width: 768px) {
   .autohide[data-target="aside"] {
