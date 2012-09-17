@@ -9,7 +9,7 @@
 
 @import "constants.less";
 @import "mixins.less";
-@import "lungo.theme.default.font.less";
+// @import "lungo.theme.default.font.less";
 
 @theme: #2A95D3;
 @theme-light:  #39ABE1;
@@ -117,6 +117,10 @@ aside {
         background: @footer-dark; }
 
     & article { background: none; }
+
+    & nav {
+        & .icon {color:white;}
+    }
 }
 
 section.aside {
@@ -172,15 +176,15 @@ aside .list {
             background: none;
             border-top: 1px solid rgba(255,255,255,0.05);
             border-bottom: 1px solid ;
+
             &.current {
                 border-top-color: @theme;
                 .linear-gradient(top, ~','@theme-light 25%, ~','@theme-dark 100%);
-                background-color: @red;
-            }
+                background-color: @red;}
             & strong {
-                text-shadow: 0 1px 1px rgba(0,0,0,0.75);
+                text-shadow: 0 1px 1px rgba(0,0,0,0.5);
                 color: @white; }
-            & small { color:  rgba(255,255,255,0.5); }
+            & small { color: @white; }
         }
     }
 
