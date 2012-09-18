@@ -74,7 +74,8 @@ Lungo.Boot.Events = (function(lng, undefined) {
         if (id === '#back') {
             lng.Router.back();
         } else {
-            if (lng.Element.Current.aside.hasClass(CLASS.SHOW)) {
+            var aside = lng.Element.Current.aside;
+            if (aside && aside.hasClass(CLASS.SHOW)) {
                 setTimeout(function(){
                     lng.Router.section(id);
                 }, 250);
