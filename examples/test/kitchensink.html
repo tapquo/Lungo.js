@@ -50,22 +50,30 @@
     <!--
     <link rel="stylesheet" href="assets/stylesheets/app.css">
 -->
+
+    <style>
+        #touchevents-console{
+            background: #292f34;
+            color: white;
+            font-size: 3.0em;
+            line-height: 2.2em;
+            text-align: center;
+        }
+
+         li {
+            padding-top: 128px !important;
+            padding-bottom: 128px !important;
+        }
+
+        #touchevents .list li:not(.anchor) {
+            padding: 64px 8px;
+        }
+    </style>
 </head>
 
 <body class="app">
-<!--         <section id="login">
-        <article class="indented splash current">
-            <h1>New user</h1>
-            <form class="roundeds">
-                <input type="text" placeholder="Your email" id="txt-signup-mail" value="">
-                <input type="text" placeholder="Your username" id="txt-signup-name" value="">
-                <input type="password" placeholder="Your password" id="txt-signup-password" value="">
-                <a href="#" class="button blue big" id="btn-signup-call" data-icon="checkmark">Signup</a>
-                <a href="#back" data-target="section" class="button red big" data-icon="close">Return to login</a>
-                <a href="#back" data-target="section" class="button green " data-icon="user">Return to login</a>
-            </form>
-        </article>
-    </section> -->
+
+
 
     <section id="main" data-transition="slide">
         <header  class="">
@@ -151,7 +159,7 @@
             version: '2.0',
             sugars: ['map', 'pull'],
             resources: {
-                sections: [ 'layout.html', 'notification.html', 'list.html', 'icon.html', 'grid.html', 'form.html', 'aside.html'],
+                sections: [ 'layout.html', 'notification.html', 'list.html', 'icon.html', 'grid.html', 'form.html', 'aside.html', 'touchevents.html'],
                 templates: [],
                 asides: ['features.html', 'left.html', 'right.html']
             }
@@ -163,5 +171,6 @@
     <script src="app/services.js"></script>
     <script src="app/events.js"></script>
         <script src="app/events.notification.js"></script>
+        <script src="app/events.touch.js"></script>
 </body>
 </html>

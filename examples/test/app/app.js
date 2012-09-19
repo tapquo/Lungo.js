@@ -7,8 +7,12 @@ var App = (function(lng, undefined) {
         }
     })();
 
-    return {
+    eventConsole = function(event) {
+        $$('#touchevents-console').html($$(event.target).data('event'));
+    };
 
+    return {
+        eventConsole: eventConsole
     };
 
 })(Lungo);
