@@ -9,7 +9,7 @@
 /* DIMENSIONS */
 /* COLORS */
 article {
-  position: fixed;
+  position: absolute;
   width: inherit;
   height: auto;
   top: 0;

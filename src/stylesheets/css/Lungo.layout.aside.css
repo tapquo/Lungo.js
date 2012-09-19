@@ -57,7 +57,7 @@ section.aside.right.small {
   transform: translate(-64px, 0);
 }
 aside {
-  position: fixed;
+  position: absolute;
   height: auto;
   top: 0;
   bottom: 0;

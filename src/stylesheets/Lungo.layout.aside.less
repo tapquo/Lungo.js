@@ -10,6 +10,7 @@
 @import "constants.less";
 @import "mixins.less";
 
+
 section.aside {
     &:not(.small) { .transform(translate(@aside-width, 0)); }
     &.small { .transform(translate(@aside-width-small, 0)); }
@@ -20,11 +21,9 @@ section.aside {
     }
 }
 
-aside {
-    // @todo: section position absolute or FIXED
-    // position: absolute;
-    position: fixed;
 
+aside {
+    position: absolute;
     height: auto;
     top: 0;
     bottom: 0;
