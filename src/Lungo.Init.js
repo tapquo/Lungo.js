@@ -12,8 +12,7 @@ Lungo.init = function(config) {
         Lungo.Boot.Resources.init(config.resources);
         // Lungo.Boot.Stats.init();
     }
-    //@todo: Resize Layout
-    //lng.Boot.Layout.init();
+    Lungo.Boot.Layout.init();
     Lungo.Boot.Events.init();
     Lungo.Boot.Data.init();
     Lungo.Boot.Section.init();

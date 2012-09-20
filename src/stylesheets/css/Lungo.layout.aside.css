@@ -58,7 +58,7 @@ section.aside.right.small {
 }
 aside {
   position: absolute;
-  height: auto;
+  height: inherit;
   top: 0;
   bottom: 0;
   display: none;
