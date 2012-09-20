@@ -32,5 +32,16 @@
     text-indent: 10px;
 }
 
-#scroll .anchor img { width: 100%; }
-#scroll .horizontal img { height: 100%; }
+#scroll img {
+    min-width: 256px;
+    min-height: 128px;
+    background: #333;
+}
+#scroll .anchor img {
+    width: 100%;
+    margin-bottom: 4px;
+}
+#scroll .horizontal img {
+    height: 100%;
+    margin-right: 4px;
+}

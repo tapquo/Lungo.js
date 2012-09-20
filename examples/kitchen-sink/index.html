@@ -18,7 +18,7 @@
     <link rel="apple-touch-startup-image" href="http://lungo.tapquo.com/resources/default.png">
 
     <!-- Main Stylesheet -->
-    <!--
+
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.base.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.layout.nav.css">
@@ -36,13 +36,13 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.loading.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.notification.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
-    -->
 
+        <!--
     <link rel="stylesheet" href="../../release/lungo.css">
     <link rel="stylesheet" href="../../release/lungo.icon.css">
     <link rel="stylesheet" href="../../release/lungo.icon.brand.css">
     <link rel="stylesheet" href="../../release/lungo.theme.default.css">
-
+    -->
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="stylesheets/app.css">
 </head>
@@ -54,7 +54,7 @@
                 <a href="#features" data-target="aside" data-icon="menu"></a>
             </nav>
             <nav class="right button">
-                <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps" data-icon="share" data-label="Share" target="_blank" ></a>
+                <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps" data-icon="share" target="_blank" ></a>
             </nav>
             <div class="left">
                 <span class="title">Lungo Framework</span>
@@ -90,10 +90,9 @@
 
     <!-- Lungo dependencies -->
     <script src="../../src/lib/quo.debug.js"></script>
-
-    <script src="../../release/lungo.js"></script>
-
     <!--
+    <script src="../../release/lungo.js"></script>
+    -->
     <script src="../../src/Lungo.js"></script>
     <script src="../../src/Lungo.init.js"></script>
     <script src="../../src/Lungo.Core.js"></script>
@@ -124,7 +123,6 @@
     <script src="../../src/boot/Lungo.Boot.Data.js"></script>
     <script src="../../src/boot/Lungo.Boot.Section.js"></script>
     <script src="../../src/boot/Lungo.Boot.Article.js"></script>
-    -->
 
     <!-- LungoJS - Sandbox App -->
     <script>
@@ -137,6 +135,10 @@
                 templates: [],
                 asides: ['features.html', 'left.html', 'right.html']
             }
+        });
+
+        Lungo.ready(function() {
+            Lungo.View.Aside.show('#features');
         });
     </script>
     <script src="app/app.js"></script>
