@@ -12,7 +12,7 @@
  *                                 |  $$$$$$/
  *                                  \______/
  *
- * @copyright 2011 TapQuo Inc (c)
+ * @copyright 2011-2012 TapQuo Inc (c)
  * @license   http://www.github.com/tapquo/lungo/blob/master/LICENSE.txt
  * @version   2.0
  * @link      https://github.com/TapQuo/Lungo.js
