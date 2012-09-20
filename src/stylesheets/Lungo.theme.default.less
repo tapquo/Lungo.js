@@ -9,7 +9,7 @@
 
 @import "constants.less";
 @import "mixins.less";
-// @import "lungo.theme.default.font.less";
+@import "lungo.theme.default.font.less";
 
 @theme: #2A95D3;
 @theme-light:  #39ABE1;
@@ -150,7 +150,10 @@ section.aside {
 
         &, & a { color: @list-color; }
 
-        &.contrast { background: @footer; }
+        &.contrast {
+            background: @footer;
+            color: @white;
+        }
 
         &.highlight { background: @list-border; }
         &.anchor {

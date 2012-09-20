@@ -86,10 +86,13 @@ header nav {
     }
 }
 
-footer nav a {
-    display: block;
-    padding: 0;
-    height:  @header-footer-height;
+footer nav {
+
+    & a {
+        display: block;
+        padding: 0;
+        height:  @header-footer-height;
+    }
 
     & .icon {
         display: block;
@@ -106,15 +109,13 @@ footer nav a {
             font-size: 1.4em; }
     }
 
-    abbr {
-        display: none;
-    }
+    abbr { display: none; }
 
     & .loading {
         top: .1em;
         font-size: 2.3em; }
 
-     &.with-labels {
+    &.with-labels {
         & .icon { line-height: 36px; }
         & .bubble { top: -34px; }
 
