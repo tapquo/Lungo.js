@@ -1163,6 +1163,7 @@
       }
     };
     _onTouchEnd = function(event) {
+        event.preventDefault();
       clearTimeout(TIMEOUT_HOLD);
       var tap_triggered = false;
       if(gesture_data.fingers === 1) {
