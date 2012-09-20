@@ -1,5 +1,5 @@
 # LungoJS
-### A framework for developers who want to design, build and share cross device applications.
+### A framework for developers who want to design, build and share cross device apps.
 
 ## Lungo Framework uses actual & future features of advanced Web Development.
 
