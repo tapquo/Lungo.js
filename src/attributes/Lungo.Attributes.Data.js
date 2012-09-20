@@ -11,11 +11,6 @@
 Lungo.Attributes.Data = {
     Search: {
         tag: 'search',
-        selector: '.list',
-        html: '<li class="search {{value}}"><input type="search" placeholder="Search..."><a href="#" class="button" data-icon="search"></a></li>'
-    },
-    Search: {
-        tag: 'search',
         selector: '*',
         html: '<input type="search" placeholder="{{value}}"/><a href="#" class="button" data-icon="search"></a>'
     },

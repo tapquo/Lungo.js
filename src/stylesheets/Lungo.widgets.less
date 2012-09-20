@@ -19,13 +19,15 @@
     -webkit-box-flex: 1;
 
     &.horizontal {
-        overflow-x: scroll;
-        overflow-y: hidden !important;
-
+        overflow-x:scroll;
+        overflow-y:hidden;
+        white-space:nowrap;
+        /*
         & > * {
             min-width: 4096px;
             & > * { float: left; }
         }
+        */
     }
 
     // FIXES: position: relative childrens

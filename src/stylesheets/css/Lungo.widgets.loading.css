@@ -161,6 +161,7 @@
 .loading.white > span.top::before {
   background-color: rgba(255, 255, 255, 0.15);
 }
+section.show .loading,
 section.current .loading,
 .notification .loading {
   -webkit-animation: rotatingLoader .6s  infinite linear;

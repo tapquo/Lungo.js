@@ -104,27 +104,19 @@ aside.small nav .bubble {
   top: 4px;
   left: -22px;
 }
+/*
+@TODO: Tablets & TV on final release
 @media handheld, only screen and (min-width: 768px) {
-  .autohide[data-target="aside"] {
-    display: none !important;
-  }
-  section.aside {
-    width: auto !important;
-    left: 256px;
-    right: 0px !important;
-    -webkit-transform: translate3d(0px, 0, 0);
-    -moz-transform: translate3d(0px, 0, 0);
-    -ms-transform: translate3d(0px, 0, 0);
-    -o-transform: translate3d(0px, 0, 0);
-    transform: translate3d(0px, 0, 0);
-    -webkit-transform: translate3d(0px, 0, 0);
-    -moz-transform: translate3d(0px, 0, 0);
-    -ms-transform: translate3d(0px, 0, 0);
-    -o-transform: translate3d(0px, 0, 0);
-    transform: translate3d(0px, 0, 0);
-    -webkit-transition: none;
-  }
-  section.aside.small {
-    left: 64px;
-  }
+    .autohide[data-target="aside"] {  display: none !important; }
+
+    section.aside {
+        width: auto !important;
+        left: @aside-width;
+        right: 0px !important;
+        .transform(translate3d(0px, 0, 0));
+        -webkit-transition: none;
+
+        &.small{ left: @aside-width-small; }
+    }
 }
+*/

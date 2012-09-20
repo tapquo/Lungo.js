@@ -15,13 +15,15 @@
 }
 .scroll.horizontal {
   overflow-x: scroll;
-  overflow-y: hidden !important;
-}
-.scroll.horizontal  > * {
-  min-width: 4096px;
-}
-.scroll.horizontal  > *  > * {
-  float: left;
+  overflow-y: hidden;
+  white-space: nowrap;
+  /*
+        & > * {
+            min-width: 4096px;
+            & > * { float: left; }
+        }
+        */
+
 }
 .scroll  > * {
   -webkit-transform: translate3d(0, 0, 0);

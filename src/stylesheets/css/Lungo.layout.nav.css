@@ -85,34 +85,34 @@ footer nav a {
   padding: 0;
   height: 44px;
 }
-footer nav a .icon {
+footer nav .icon {
   display: block;
   top: 0px;
   font-size: 2.0em !important;
   line-height: 44px;
 }
-footer nav a .bubble {
+footer nav .bubble {
   top: -42px;
   left: 4px;
 }
-footer nav a .bubble .loading {
+footer nav .bubble .loading {
   top: 0;
   font-size: 1.4em;
 }
-footer nav a abbr {
+footer nav abbr {
   display: none;
 }
-footer nav a .loading {
+footer nav .loading {
   top: .1em;
   font-size: 2.3em;
 }
-footer nav a.with-labels .icon {
+footer nav.with-labels .icon {
   line-height: 36px;
 }
-footer nav a.with-labels .bubble {
+footer nav.with-labels .bubble {
   top: -34px;
 }
-footer nav a.with-labels abbr {
+footer nav.with-labels abbr {
   display: block !important;
   position: absolute;
   top: 30px;
