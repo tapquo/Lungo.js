@@ -20,6 +20,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
      * @method init
      */
     var init = function() {
+        _cacheDOMElements();
         _initFirstSection();
         _initAllSections();
         _initAllAsides();
@@ -62,6 +63,13 @@ Lungo.Boot.Section = (function(lng, undefined) {
 
         var first_article_id = first_article.attr(ATTRIBUTE.ID);
         if (first_article_id) lng.View.Article.switchReferenceItems(first_article_id, section);
+    };
+
+    var _cacheDOMElements = function() {
+        lng.Element.sections = lng.dom(ELEMENT.SECTION);
+        lng.Element.asides = lng.dom(ELEMENT.ASIDE);
+        // @todo: WTF?
+        // lng.Element.toolbars = lng.dom(ELEMENT.ASIDE);
     };
 
     return {
