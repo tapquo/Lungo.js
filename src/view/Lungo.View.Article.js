@@ -15,7 +15,7 @@ Lungo.View.Article = (function(lng, undefined) {
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
     var SELECTORS = {
-        NAVIGATION_ITEM: 'a[href][data-target="article"]',
+        NAVIGATION_ITEM: 'a[href][data-router="article"]',
         REFERENCE_LINK: ' a[href][data-article]',
         TITLE_OF_ARTICLE: 'header .title, footer .title',
         ASIDE_REFERENCE_LIST: 'li a.current, li.current'
@@ -38,7 +38,7 @@ Lungo.View.Article = (function(lng, undefined) {
     var switchNavItems = function(article_id) {
         lng.Element.Current.section.find(SELECTORS.NAVIGATION_ITEM).removeClass(CLASS.CURRENT);
 
-        var active_nav_items = 'a[href="' + article_id + '"][data-target="article"]';
+        var active_nav_items = 'a[href="' + article_id + '"][data-router="article"]';
         lng.Element.Current.section.find(active_nav_items).addClass(CLASS.CURRENT);
 
         if (lng.Element.Current.aside) {

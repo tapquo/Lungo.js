@@ -16,8 +16,8 @@ Lungo.Boot.Events = (function(lng, undefined) {
     var SELECTORS = {
         DOCUMENT: document,
         WINDOW: window,
-        HREF_TARGET: 'a[href][data-target]',
-        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]',
+        HREF_TARGET: 'a[href][data-router]',
+        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-router]',
         CURRENT_SECTION: 'section.aside, section.current'
     };
 
@@ -37,19 +37,24 @@ Lungo.Boot.Events = (function(lng, undefined) {
     };
 
     var _changeOrientation = function(event) {
-        lng.View.Resize.toolbars();
         event.preventDefault();
+        lng.View.Resize.toolbars();
     };
 
     var _loadTarget = function(event) {
         event.preventDefault();
-
         var link = lng.dom(this);
         _selectTarget(link);
     };
 
+    var _hideAsideIfNecesary = function(event) {
+        //@TODO: refactor
+        if (window.innerWidth < 768) lng.View.Aside.hide();
+        if (event) event.preventDefault();
+    };
+
     var _selectTarget = function(link) {
-        var target_type = link.data(ATTRIBUTE.TARGET);
+        var target_type = link.data(ATTRIBUTE.ROUTER);
 
         switch(target_type) {
             case ELEMENT.SECTION:
@@ -99,12 +104,6 @@ Lungo.Boot.Events = (function(lng, undefined) {
         lng.Router.aside(section_id, aside_id);
     };
 
-    var _hideAsideIfNecesary = function(event) {
-        //@TODO: refactor
-        if (window.innerWidth < 768) lng.View.Aside.hide();
-
-        if (event) event.preventDefault();
-    };
 
     return {
         init: init

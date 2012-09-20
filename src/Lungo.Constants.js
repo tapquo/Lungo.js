@@ -47,7 +47,7 @@ Lungo.Constants = {
         HEIGHT: 'height',
         PIXEL: 'px',
         PERCENT: '%',
-        TARGET: 'target',
+        ROUTER: 'router',
         FIRST: 'first',
         LAST: 'last',
         EMPTY: ''
