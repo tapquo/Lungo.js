@@ -10,7 +10,7 @@ Lungo.Events.init({
 
     'tap section#notification a[data-action=loading]': function() {
         Lungo.Notification.loading();
-        // setTimeout(Lungo.Notification.hide, 2000);
+        setTimeout(Lungo.Notification.hide, 3000);
     },
 
     'tap section#notification a[data-action=success]': function() {
