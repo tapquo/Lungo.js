@@ -4,7 +4,7 @@ COMPILER=google-compiler/compiler.jar
 COMPRESSOR=yuicompressor/yuicompressor-2.4.2.jar
 LUNGO_SOURCES=../src/
 LUNGO_NAMESPACE=Lungo.
-BUILDPATH=../release/
+BUILDPATH=../package/
 MINIFIED="min"
 
 #script
