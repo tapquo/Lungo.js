@@ -7,9 +7,7 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-@import "constants.less";
 @import "mixins.less";
-@import "lungo.theme.default.font.less";
 
 @theme: #2A95D3;
 @theme-light:  #39ABE1;
@@ -24,7 +22,7 @@
 @section-radius: 4px;
 
 .app {
-    background: @black;
+    background: #000;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
 
@@ -40,12 +38,12 @@ section > header {
     .border-radius(@section-radius @section-radius 0px 0px);
 
     & .title {
-        color: @white;
+        color: #fff;
         text-shadow: 0 1px 0 rgba(0,0,0,0.2);
     }
 
     & .subtitle {
-        color: @white;
+        color: #fff;
         opacity: 0.7;
     }
 }
@@ -65,7 +63,7 @@ section > article { background: #f4f5f5; }
 /* @group <nav> */
 header nav {
     & a {
-        color: @white;
+        color: #fff;
         // &:active { text-shadow: 0 0 4px rgba(255,255,255,0.5); }
     }
 
@@ -75,7 +73,7 @@ header nav {
         &.cancel { background: rgba(255, 0, 0, 0.4); }
 
         &:active {
-            color: @white;
+            color: #fff;
             &.accept { background: rgba(0, 255, 0, 0.2); }
             &.cancel { background: rgba(255, 0, 0, 0.2); }
             &:not(.accept):not(.cancel) { background: rgba(0,0,0,0.1); }
@@ -96,7 +94,7 @@ header nav {
 }
 
 footer nav a.current {
-    background: @black;
+    background: #000;
     .box-shadow(~"-1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05)");
 }
 
@@ -104,8 +102,8 @@ footer nav a, nav.groupbar a{
     color: rgba(0,0,0,0.7);
     .text-shadow(0 1px 0 rgba(255,255,255,0.1));
     &.current {
-        color:  @white;
-        text-shadow: 0 0 1px @white;}
+        color:  #fff;
+        text-shadow: 0 0 1px #fff;}
 }
 
 nav.groupbar a.current { .box-shadow(inset 0 -3px 0 @theme); }
@@ -114,7 +112,7 @@ nav.groupbar a.current { .box-shadow(inset 0 -3px 0 @theme); }
 
 /* @group <aside> */
 aside {
-    color: @white;
+    color: #fff;
     background: @footer;
 
     & header, footer {
@@ -148,7 +146,7 @@ section.aside {
 
 .list {
     & li {
-        background: @white;
+        background: #fff;
         border-bottom: 1px inset @list-border;
 
         &:last-child { border-bottom: none; }
@@ -157,20 +155,20 @@ section.aside {
 
         &.contrast {
             background: @footer;
-            color: @white;
+            color: #fff;
         }
 
         &.highlight { background: @list-border; }
         &.anchor {
             background: @footer;
             border-bottom: none;
-            &, & a { color: @white !important; }
+            &, & a { color: #fff !important; }
         }
         &.selectable:active {
             background: @theme-light;
 
             &, & a {
-                color: @white;
+                color: #fff;
                 text-shadow: none;
             }
         }
@@ -187,12 +185,11 @@ aside .list {
 
             &.current {
                 border-top-color: @theme;
-                .linear-gradient(top, ~','@theme-light 25%, ~','@theme-dark 100%);
-                background-color: @red;}
+                .linear-gradient(top, ~','@theme-light 25%, ~','@theme-dark 100%);}
             & strong {
                 text-shadow: 0 1px 1px rgba(0,0,0,0.5);
-                color: @white; }
-            & small { color: @white; }
+                color: #fff; }
+            & small { color: #fff; }
         }
     }
 
@@ -332,7 +329,7 @@ input[type="range"] {
 
 /* @group .bubble */
 .bubble {
-    color: @white;
+    color: #fff;
     .border-radius(2px);
 
     &.count { .linear-gradient(top, ~','@theme-light 0%, ~','@theme-dark 100%);  }

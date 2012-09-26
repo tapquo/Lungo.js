@@ -116,6 +116,14 @@ FILES_TO_COMPRESS=""
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [BUILD]: lungo.theme."$file"\033[0m"
-        cp $DIR"lungo.theme."$file $PACKAGE_THEME'lungo.theme.'$file
+        cp $DIR"lungo.theme."$file $PACKAGE'lungo.theme.'$file
+    done
+
+    DIR=$LUNGO_SOURCES"stylesheets/"
+    FILES=(mixins.less lungo.theme.default.less)
+    for file in "${FILES[@]}"
+    do
+        echo -e "\033[32m    [COPY]: "$file"\033[0m"
+        cp $DIR$file $PACKAGE_THEME$file
     done
 echo ============================ /LUNGO COMPILER ============================
