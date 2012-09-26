@@ -68,6 +68,16 @@
 .list li.anchor .bubble {
   display: none;
 }
+.list li strong {
+  font-size: 1.15em;
+}
+.list li small {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.8em;
+}
 .list .bubble {
   padding-left: 4px;
   padding-right: 4px;

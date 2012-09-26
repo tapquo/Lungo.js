@@ -69,6 +69,10 @@ section > header .title {
   color: #ffffff;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
+section > header .subtitle {
+  color: #ffffff;
+  opacity: 0.7;
+}
 section > footer {
   background-image: -webkit-linear-gradient(top , #292f34 0% , #23282c 60%);
   background-image: -moz-linear-gradient(top , #292f34 0% , #23282c 60%);

@@ -9,6 +9,7 @@
 /* DIMENSIONS */
 /* COLORS */
 .scroll {
+  overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-box-flex: 1;
@@ -71,14 +72,4 @@
   font-weight: bold;
   line-height: 13px;
   text-align: center;
-}
-strong {
-  font-size: 1.15em;
-}
-small {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  font-size: 0.8em;
 }
