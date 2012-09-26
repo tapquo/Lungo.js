@@ -86,6 +86,9 @@
   font-size: 0.75em;
   font-weight: bold;
 }
+.list .loading .right {
+  font-size: 1.0em;
+}
 .list .right .icon,
 .list small .icon {
   height: 13px !important;

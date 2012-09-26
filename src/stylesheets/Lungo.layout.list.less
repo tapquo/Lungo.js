@@ -63,15 +63,16 @@
             & .bubble { display: none; }
         }
 
-        strong {
+        & strong {
             font-size: 1.15em; }
 
-        small {
+        & small {
             display: block;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            font-size: 0.8em; }
+            font-size: 0.8em;
+        }
 
     }
 
@@ -82,8 +83,9 @@
 
     & .right {
         font-size: 0.75em;
-        font-weight: bold;
-    }
+        font-weight: bold; }
+
+    & .loading .right { font-size: 1.0em; }
 
     & .right .icon, & small .icon {
         height: 13px !important;
