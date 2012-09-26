@@ -11,17 +11,15 @@
 @import "mixins.less";
 
 .scroll {
-    // overflow: scroll;
-    //     overflow-x: hidden;
-    //     overflow-y: scroll;
+    overflow-x: hidden;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     -webkit-box-flex: 1;
 
     &.horizontal {
-        overflow-x:scroll;
-        overflow-y:hidden;
-        white-space:nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
         /*
         & > * {
             min-width: 4096px;
@@ -30,28 +28,20 @@
         */
     }
 
-    // FIXES: position: relative childrens
+    // BUG (iOS) POSITION: relative childrens
     & > * { -webkit-transform: translate3d(0, 0, 0); }
 }
 
 .left { float: left; }
 .right { float: right;}
-.hidden { display: none; }
-.indented > * {
-    margin: 10px;
-}
-.wrapper {
-    padding: 8px 8px;
-}
 
-.icon {
-    &.small {
-        font-size: 1.3em;
-    }
-}
+.hidden { display: none; }
+.indented > * { margin: 10px; }
+.wrapper { padding: 8px 8px; }
+
+.icon.small { font-size: 1.3em; }
 
 .framed { border: 2px solid #fff;}
-
 .round { .border-radius(4px); }
 
 .bubble {
@@ -61,17 +51,4 @@
     font-size: 0.75em;
     font-weight: bold;
     line-height: 13px;
-    text-align: center;
-}
-
-& strong {
-    font-size: 1.15em;
-}
-
-& small {
-    display: block;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 0.8em;
-}
+    text-align: center; }

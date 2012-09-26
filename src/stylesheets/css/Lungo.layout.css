@@ -142,6 +142,16 @@ header .title {
   font-size: 1.2em;
   font-weight: bold;
 }
+header .title.with-subtitle {
+  line-height: 34px;
+}
+header .title.with-subtitle .subtitle {
+  position: relative;
+  top: -4px;
+  display: block;
+  font-size: 0.7em;
+  line-height: 0.7em;
+}
 header .title img {
   height: 24px;
 }
