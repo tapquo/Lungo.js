@@ -4,7 +4,8 @@ COMPILER=google-compiler/compiler.jar
 COMPRESSOR=yuicompressor/yuicompressor-2.4.2.jar
 LUNGO_SOURCES=../src/
 LUNGO_NAMESPACE=Lungo.
-BUILDPATH=../package/
+PACKAGE=../package/
+PACKAGE_THEME=../package.theme/
 MINIFIED="min"
 
 #script
@@ -77,8 +78,8 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
 
     #COMPILED Version
     #FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/quo.debug.js "$FILES_TO_COMPILE
-    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $BUILDPATH/lungo.js
-    # cat $LUNGO_SOURCES"lib/quo.debug.js" $BUILDPATH/lungo-$VERSION.standalone.js > $BUILDPATH/lungo-$VERSION.js
+    java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $PACKAGE/lungo.js
+    # cat $LUNGO_SOURCES"lib/quo.debug.js" $PACKAGE/lungo-$VERSION.standalone.js > $PACKAGE/lungo-$VERSION.js
     echo -e "\033[32m  [BUILD]: lungo.js\033[0m"
 
 
@@ -95,7 +96,7 @@ FILES_TO_COMPRESS=""
         FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
         # FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
     done
-    cat $FILES_TO_COMPRESS > $BUILDPATH/lungo.css
+    cat $FILES_TO_COMPRESS > $PACKAGE/lungo.css
     echo -e "\033[32m    [BUILD]: lungo.css\033[0m"
 
     for file in "${FILES[@]}"
@@ -108,13 +109,13 @@ FILES_TO_COMPRESS=""
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [BUILD]: lungo.icon."$file"\033[0m"
-        cp $DIR"lungo.widgets.icon."$file $BUILDPATH'lungo.icon.'$file
+        cp $DIR"lungo.widgets.icon."$file $PACKAGE'lungo.icon.'$file
     done
 
     FILES=(default.css)
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [BUILD]: lungo.theme."$file"\033[0m"
-        cp $DIR"lungo.theme."$file $BUILDPATH'lungo.theme.'$file
+        cp $DIR"lungo.theme."$file $PACKAGE_THEME'lungo.theme.'$file
     done
 echo ============================ /LUNGO COMPILER ============================
