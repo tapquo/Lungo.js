@@ -12,6 +12,7 @@ LUNGO.View.Template.List = (function(lng, undefined) {
 
     var ERROR = lng.Constants.ERROR;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var SCROLL_TO = lng.Constants.SCROLL_TO;
 
     /**
      * Create a list based DataBind with a configuration object for an element <article>
@@ -34,22 +35,34 @@ LUNGO.View.Template.List = (function(lng, undefined) {
     /**
      * Append a list based DataBind with a configuration object for an element <article>
      * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     * if the configuration has property 'scroll_to' this be considered to determine the scroll position
+     * the allowed values for this are "first"|"last"|"none" , if this property is not set the default value
+     * is "last"", if set this property with "none" the scroll position is not set and if set this property
+     * with some value not included in allowed values the scroll postion is default value.
      *
      * @method append
      *
      * @param {object} Id of the container showing the result of databinding
+     *
      */
     var append = function(config) {
         var markup = lng.View.Template.markup(config.template, config.data);
         var container = _getContainer(config.el);
-
+        
+        var scroll_to = _determineScroll(config, ATTRIBUTE.LAST);
+    
         container.append(markup);
-        _scroll(config.el, ATTRIBUTE.LAST);
+        
+        _scroll(config.el, scroll_to);
     };
 
     /**
      * Prepend a list based DataBind with a configuration object for an element <article>
      * if the config has a 'norecords' property it will display the norecords markup rather than nothing.
+     * if the configuration has property 'scroll_to' this be considered to determine the scroll position
+     * the allowed values for this are "first"|"last"|"none" , if this property is not set the default value
+     * is "FIRST"", if set this property with "none" the scroll position is not set and if set this property
+     * with some value not included in allowed values the scroll postion is default value.
      *
      * @method prepend
      *
@@ -58,10 +71,28 @@ LUNGO.View.Template.List = (function(lng, undefined) {
     var prepend = function(config) {
         var markup = lng.View.Template.markup(config.template, config.data);
         var container = _getContainer(config.el);
-
+        
+        var scroll_to = _determineScroll(config, ATTRIBUTE.FIRST);
+        
         container.prepend(markup);
-        _scroll(config.el, ATTRIBUTE.FIRST);
+        
+        _scroll(config.el, scroll_to);
     };
+    
+    var _determineScroll = function(config, default_value){
+      var scroll_to = undefined;
+      
+      if (config.scroll_to == undefined){
+        //maintains compatibility with other versions
+        scroll_to = default_value;
+      }else if(config.scroll_to.toUpperCase() in lng.Constants.SCROLL_TO){
+        scroll_to =  lng.Constants.SCROLL_TO[config.scroll_to.toUpperCase()]; 
+      }else{
+        scroll_to = default_value;
+        lng.Core.log(2, ERROR.SCROLL_TO); 
+      };
+      return scroll_to;
+    }
 
     var _validateConfig = function(config) {
         var checked = false;
