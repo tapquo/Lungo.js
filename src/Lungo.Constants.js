@@ -61,9 +61,16 @@ LUNGO.Constants = {
         KEY: 'value',
         PARSER: /\{{.*?\}}/gi
     },
+    
+    SCROLL_TO: {
+        FIRST: 'first',
+        LAST: 'last',
+        NONE: undefined
+    },
 
     ERROR: {
         CREATE_SCROLL: 'ERROR: Impossible to create a <scroll> without ID.',
+        SCROLL_TO: 'ERROR: This "scroll to" value is not included in the list of possible values. [first|last|none]',
         BINDING_DATA_TYPE: 'ERROR: Processing the type of binding data.',
         BINDING_TEMPLATE: 'ERROR: Binding Template not exists >> ',
         BINDING_LIST: 'ERROR: Processing parameters for list binding.',
