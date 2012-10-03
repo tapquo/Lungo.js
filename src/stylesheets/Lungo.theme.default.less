@@ -49,6 +49,7 @@ section > header {
         opacity: 0.7;
     }
 }
+
 section > footer {
     .linear-gradient(top, ~','@footer 0%, ~','@footer-dark 60%);
     .border-radius(0px 0px @section-radius @section-radius);
@@ -188,10 +189,8 @@ aside .list {
             &.current {
                 border-top-color: @theme;
                 .linear-gradient(top, ~','@theme-light 25%, ~','@theme-dark 100%);}
-            & strong {
-                text-shadow: 0 1px 1px rgba(0,0,0,0.5);
-                color: #fff; }
-            & small { color: #fff; }
+            & strong, & small, & .icon { color: #fff; }
+            & strong { text-shadow: 0 1px 1px rgba(0,0,0,0.5); }
         }
     }
 
