@@ -41,7 +41,7 @@ Lungo.View.Aside = (function(lng, undefined) {
      * @param  {string} Aside id
      */
     var show = function(aside) {
-        if (lng.Core.toType(aside) == 'string') aside = _findAside(aside);
+        if (lng.Core.toType(aside) == 'string') aside = _findAside(lng.Core.parseUrl(aside));
         if (aside) {
             lng.Element.Current.aside = aside;
             var aside_stylesheet = _asideStylesheet(aside);
