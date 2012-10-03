@@ -48,6 +48,20 @@
 </head>
 
 <body class="app">
+    <section id="a">
+        <header data-title="a"></header>
+        <article>
+            <a href="#b" data-router="section" class="button red big" data-label="kakaka"></a>
+        </article>
+    </section>
+
+    <section id="b">
+        <header data-title="b" data-back="home"></header>
+        <article id="b_1">b_1</article>
+        <article id="b_2">b_2</article>
+
+    </section>
+
     <section id="main" data-transition="slide">
         <header  class="">
             <nav class="left button">
@@ -145,7 +159,7 @@
         });
 
         Lungo.ready(function() {
-            Lungo.View.Aside.show('#features');
+            Lungo.View.Aside.show('features');
         });
     </script>
     <script src="app/app.js"></script>
