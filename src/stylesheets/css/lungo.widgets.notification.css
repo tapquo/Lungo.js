@@ -6,107 +6,103 @@
   height: 100%;
   z-index: 3;
   background: none;
-  font-size: 0.9em;
-  color: #ffffff;
   display: none;
 }
 .notification.modal {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .notification .window {
   position: relative;
   opacity: 0;
-  -webkit-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -ms-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -webkit-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -ms-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -ms-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -ms-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 .notification .window.show {
   opacity: 1;
-  -webkit-transition-delay: 300ms;
-  -moz-transition-delay: 300ms;
-  -ms-transition-delay: 300ms;
-  -o-transition-delay: 300ms;
-  transition-delay: 300ms;
-  -webkit-transition-delay: 300ms;
-  -moz-transition-delay: 300ms;
-  -ms-transition-delay: 300ms;
-  -o-transition-delay: 300ms;
-  transition-delay: 300ms;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+  -webkit-transition-delay: 200ms;
+  -moz-transition-delay: 200ms;
+  -ms-transition-delay: 200ms;
+  -o-transition-delay: 200ms;
+  transition-delay: 200ms;
+}
+.notification .window strong,
+.notification .window small {
+  display: block;
+}
+.notification .window small {
+  font-size: 0.7em;
 }
 .notification .window:not(.special) {
   left: 50%;
   top: 50%;
-  width: 114px;
-  margin: -64px auto auto -64px;
+  width: 104px;
+  margin: -52px auto auto -52px;
   padding: 8px;
   background-color: rgba(0, 0, 0, 0.8);
   text-align: center;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-transform: translate3d(0, 10%, 0);
-  -moz-transform: translate3d(0, 10%, 0);
-  -ms-transform: translate3d(0, 10%, 0);
-  -o-transform: translate3d(0, 10%, 0);
-  transform: translate3d(0, 10%, 0);
-  -webkit-transform: translate3d(0, 10%, 0);
-  -moz-transform: translate3d(0, 10%, 0);
-  -ms-transform: translate3d(0, 10%, 0);
-  -o-transform: translate3d(0, 10%, 0);
-  transform: translate3d(0, 10%, 0);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
 }
 .notification .window:not(.special).show {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 .notification .window:not(.special) .icon {
   display: block;
-  font-size: 5.0em;
+  font-size: 4.0em;
 }
 .notification .window:not(.special) .icon.loading {
   margin-top: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
-.notification .window:not(.special) strong {
-  display: block;
-  margin-bottom: 4px;
+.notification .window:not(.special) small {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .notification .window.confirm,
 .notification .window.notify {
-  -webkit-transform: translate3d(0, -150%, 0);
-  -moz-transform: translate3d(0, -150%, 0);
-  -ms-transform: translate3d(0, -150%, 0);
-  -o-transform: translate3d(0, -150%, 0);
-  transform: translate3d(0, -150%, 0);
-  -webkit-transform: translate3d(0, -150%, 0);
-  -moz-transform: translate3d(0, -150%, 0);
-  -ms-transform: translate3d(0, -150%, 0);
-  -o-transform: translate3d(0, -150%, 0);
-  transform: translate3d(0, -150%, 0);
+  top: 0;
+  font-size: 1.1em !important;
+  -webkit-transform: translate3d(0, -100%, 0);
+  -moz-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+  -webkit-transform: translate3d(0, -100%, 0);
+  -moz-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
 }
 .notification .window.confirm.show,
 .notification .window.notify.show {
@@ -124,110 +120,33 @@
 .notification .window.confirm .icon,
 .notification .window.notify .icon {
   float: left;
-  font-size: 2.5em;
-  margin-right: 8px;
-}
-.notification .window.confirm strong,
-.notification .window.notify strong {
-  line-height: 1.5em;
+  font-size: 2.0em;
+  margin: -3px 10px 0 0;
 }
 .notification .window.confirm {
   opacity: 1;
   padding: 10px 12px;
-  top: 0;
-  top: 42px;
-  background: #333;
 }
-.notification .window.confirm hr {
-  margin: 10px 0;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+.notification .window.confirm p {
+  height: 44px;
 }
 .notification .window.confirm .button {
   width: 42%;
-  font-size: 15px;
-  line-height: 40px;
 }
 .notification .window.confirm .button:last-child {
   float: right;
 }
 .notification .window.notify {
-  padding: 3px 0px 7px 7px;
+  padding: 8px;
   top: 0;
-  color: #555555;
-  text-shadow: 0 1px 0px #ffffff;
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-}
-.notification .window.notify.error,
-.notification .window.notify.alert,
-.notification .window.notify.success {
-  color: #ffffff;
-  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
-}
-.notification .window.notify.error {
-  background-image: -webkit-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -moz-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -ms-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -o-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -webkit-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -moz-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -ms-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: -o-linear-gradient(top , #e33100 0% , #c5280f 85%);
-  background-image: linear-gradient(top , #e33100 0% , #c5280f 85%);
-}
-.notification .window.notify.alert {
-  background-image: -webkit-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -moz-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -ms-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -o-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -webkit-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -moz-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -ms-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: -o-linear-gradient(top , #ffb515 0% , #dfa020 85%);
-  background-image: linear-gradient(top , #ffb515 0% , #dfa020 85%);
-}
-.notification .window.notify.success {
-  background-image: -webkit-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -moz-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -ms-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -o-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -webkit-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -moz-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -ms-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: -o-linear-gradient(top , #009600 0% , #00770e 85%);
-  background-image: linear-gradient(top , #009600 0% , #00770e 85%);
 }
 .notification .window.url {
-  left: 0%;
-  top: 00%;
+  left: 0;
+  top: 0;
   width: 280px;
   height: auto;
   margin: 64px auto 0px;
   padding: 0px;
-  -webkit-transform: translate3d(0, 75%, 0);
-  -moz-transform: translate3d(0, 75%, 0);
-  -ms-transform: translate3d(0, 75%, 0);
-  -o-transform: translate3d(0, 75%, 0);
-  transform: translate3d(0, 75%, 0);
-  -webkit-transform: translate3d(0, 75%, 0);
-  -moz-transform: translate3d(0, 75%, 0);
-  -ms-transform: translate3d(0, 75%, 0);
-  -o-transform: translate3d(0, 75%, 0);
-  transform: translate3d(0, 75%, 0);
 }
 .notification .window.url .close {
   position: absolute;
@@ -238,10 +157,7 @@
   font-weight: normal;
   width: 24px;
   height: 24px;
-  background: #000;
   border-radius: 14px;
-  border: solid 2px #fff;
-  box-shadow: 0 0 4px black;
 }
 .notification .window.working span {
   -webkit-animation: notification-working 1s infinite;
