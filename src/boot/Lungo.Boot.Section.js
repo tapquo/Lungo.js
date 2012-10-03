@@ -25,7 +25,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
         _initAllSections();
         _initAllAsides();
 
-        lng.View.Resize.toolbars();
+        lng.View.Resize.navigation();
     };
 
     var _initFirstSection = function() {
@@ -68,8 +68,6 @@ Lungo.Boot.Section = (function(lng, undefined) {
     var _cacheDOMElements = function() {
         lng.Element.sections = lng.dom(ELEMENT.SECTION);
         lng.Element.asides = lng.dom(ELEMENT.ASIDE);
-        // @todo: WTF?
-        // lng.Element.toolbars = lng.dom(ELEMENT.ASIDE);
     };
 
     return {
