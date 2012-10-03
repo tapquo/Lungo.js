@@ -14,7 +14,7 @@ Lungo.Notification = (function(lng, undefined) {
     var _window = null;
 
     var DELAY_TIME = 1;
-    var ANIMATION_MILISECONDS = 300;
+    var ANIMATION_MILISECONDS = 200;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var BINDING = lng.Constants.BINDING;
 
@@ -63,7 +63,7 @@ Lungo.Notification = (function(lng, undefined) {
      */
     var confirm = function(options) {
         _options = options;
-        _new_instance(false);
+        _new_instance(true);
 
         var markup = '<p>' + _markup(options.title, options.description, options.icon) + '</p><hr/>';
         markup += _button_markup(options.accept, 'accept');
@@ -167,6 +167,7 @@ Lungo.Notification = (function(lng, undefined) {
     };
 
     var _markup = function(title, description, icon) {
+        description = !description ? "&nbsp;" : description;
         return '<span class="icon ' + icon + '"></span><strong>' + title + '</strong><small>' + description + '</small>';
     };
 

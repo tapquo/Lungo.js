@@ -1,19 +1,13 @@
 @import "mixins.less";
 @import "constants.less";
 
-@notification_opacity: rgba(0,0,0,0.3);
+@notification_opacity: rgba(0,0,0,0.5);
 @defaultTrasition : @easeOutSine;
-@keyframe: 300ms;
+@keyframe: 200ms;
 
 @modal_opacity: rgba(0,0,0,0.8);
-@modal_size: 114px;
-    @modal_size_middle: 64px;
-    @modal_border_radius: 1px;
-
-@notify_font_color: #555;
-@notify_font_shadow: 0 1px 0px #fff;
-
-@font_color: #fff;
+@modal_size: 104px;
+    @modal_size_middle: 52px;
 
 .notification {
     position: absolute;
@@ -21,8 +15,6 @@
     height: 100%;
     z-index: 3;
     background: none;
-    font-size: 0.9em;
-    color: @font_color;
     display: none;
 
     &.modal { background-color: @notification_opacity; }
@@ -37,6 +29,14 @@
             .transition-delay(@keyframe);
         }
 
+        & strong, small {
+            display: block;
+        }
+
+        & small {
+            font-size: 0.7em;
+        }
+
         &:not(.special) {
             left: 50%;
             top: 50%;
@@ -45,89 +45,66 @@
             padding: 8px;
             background-color: @modal_opacity;
             text-align: center;
+            .transform(scale(0.8));
 
-            .border-radius(@modal_border_radius);
-            .transform(translate3d(0, 10%, 0));
-
-            &.show { .transform(translate3d(0, 0, 0)); }
+            &.show {
+                .transform(scale(1.0));
+            }
 
             & .icon {
                 display: block;
-                font-size: 5.0em;
+                font-size: 4.0em;
                 &.loading {
                     margin-top: 24px;
-                    margin-bottom: 24px;
+                    margin-bottom: 20px;
                 }
             }
 
-            & strong {
-                display: block;
-                margin-bottom: 4px;
+            & small {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
         }
 
         &.confirm, &.notify {
-            .transform(translate3d(0, -150%, 0));
+            top: 0;
+            font-size: 1.1em !important;
+            .transform(translate3d(0, -100%, 0));
+
             &.show { .transform(translate3d(0, 0%, 0)); }
 
             & .icon {
                 float: left;
-                font-size: 2.5em;
-                margin-right: 8px;
-            }
-
-            & strong {
-                line-height: 1.5em;
+                font-size: 2.0em;
+                margin: -3px 10px 0 0;
             }
         }
 
         &.confirm {
             opacity: 1;
             padding: 10px 12px;
-            top: 0;
-            top: 42px;
-            background: #333;
 
-            & hr {
-                margin: 10px 0;
-                height: 1px;
-                background: rgba(0,0,0,0.75);
-                .box-shadow(0 1px 0 rgba(255,255,255,0.25));
-            }
+            & p { height: 44px;}
 
             & .button {
-                width: 42%;
-                font-size: 15px;
-                line-height: 40px;
+               width: 42%;
                &:last-child {float: right;}
             }
         }
 
         &.notify {
-            padding: 3px 0px 7px 7px;
+            padding: 8px;
             top:  0;
-            color: @notify_font_color;
-            text-shadow: @notify_font_shadow;
-
-            .box-shadow(0px 1px 3px rgba(0,0,0,0.5));
-
-            &.error, &.alert, &.success {
-                color: @font_color;
-                text-shadow: 0 1px 0px rgba(0,0,0,0.1);
-            }
-            &.error { .linear-gradient(top, ~','@red 0%, ~','@red-active 85%); }
-            &.alert { .linear-gradient(top, ~','@yellow 0%, ~','@yellow-active 85%); }
-            &.success { .linear-gradient(top, ~','@green 0%, ~','@green-active 85%); }
         }
 
         &.url {
-            left: 0%;
-            top: 00%;
+            left: 0;
+            top: 0;
             width: 280px;
             height: auto;
             margin: 64px auto 0px;
             padding: 0px;
-            .transform(translate3d(0, 75%, 0));
 
             & .close {
                 position: absolute;
@@ -139,10 +116,7 @@
                 font-weight: normal;
                 width: 24px;
                 height: 24px;
-                background: #000;
                 border-radius: 14px;
-                border: solid 2px #fff;
-                box-shadow: 0 0 4px black;
             }
         }
     }

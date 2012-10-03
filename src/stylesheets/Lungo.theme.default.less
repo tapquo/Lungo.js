@@ -8,6 +8,8 @@
  */
 
 @import "mixins.less";
+@import "constants.less";
+
 
 @theme: #2A95D3;
 @theme-light:  #39ABE1;
@@ -343,3 +345,28 @@ input[type="range"] {
     }
     aside .list .bubble { background: rgba(0,0,0,0.25); }
 /* @end */
+
+/* @group .bubble */
+.notification {
+    color: #fff;
+    & .window {
+        &.confirm { background: #333; }
+
+        &.notify {
+            text-shadow: 0 1px 0px rgba(0,0,0,0.1);
+            .box-shadow(~'inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25)');
+
+            &.error { background: @red; }
+            &.alert { background: @yellow; }
+            &.success { background: @green; }
+        }
+
+        &.url {
+            & .close {
+                background: #000;
+                border: solid 2px #fff;
+                box-shadow: 0 0 4px black;
+            }
+        }
+    }
+}
