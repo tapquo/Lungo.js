@@ -38,7 +38,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
     var _changeOrientation = function(event) {
         event.preventDefault();
-        lng.View.Resize.toolbars();
+        lng.View.Resize.navigation();
     };
 
     var _loadTarget = function(event) {

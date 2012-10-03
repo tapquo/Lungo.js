@@ -16,5 +16,5 @@ Lungo.Element = {
         aside: null
     },
     asides: null,
-    toolbars: null
+    navigation: null
 };

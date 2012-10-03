@@ -17,23 +17,21 @@ Lungo.View.Resize = (function(lng, undefined) {
      *
      * @method toolbars
      */
-    var toolbars = function() {
-        if (!lng.Element.toolbars)
-            lng.Element.toolbars = lng.dom('footer nav, .groupbar');
+    var navigation = function() {
+        if (!lng.Element.navigation)
+            lng.Element.navigation = lng.dom('footer nav, .groupbar');
 
-        var toolbars = lng.Element.toolbars;
+        for (var i = 0, len = lng.Element.navigation.length; i < len; i++) {
+            var element = lng.dom(lng.Element.navigation[i]);
+            var element_children = element.children();
+            var element_children_percent = 100 / element.children().length;
 
-        for (var i = 0, len = toolbars.length; i < len; i++) {
-            var toolbar = lng.dom(toolbars[i]);
-            var toolbar_children = toolbar.children();
-            var toolbar_children_percent = 100 / toolbar.children().length;
-
-            toolbar_children.style(ATTRIBUTE.WIDTH, toolbar_children_percent + ATTRIBUTE.PERCENT);
+            element_children.style(ATTRIBUTE.WIDTH, element_children_percent + ATTRIBUTE.PERCENT);
         }
     };
 
     return {
-        toolbars: toolbars
+        navigation: navigation
     };
 
 })(Lungo);
