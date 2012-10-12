@@ -10,6 +10,7 @@
  */
 
 Lungo.Boot.Data = (function(lng, undefined) {
+    var BINDING = lng.Constants.BINDING;
 
     /**
      * Initialize the <markup> data-attributes analisys
@@ -33,7 +34,16 @@ Lungo.Boot.Data = (function(lng, undefined) {
 
         for (var i = 0, len = elements.length; i < len; i++) {
             var element = lng.dom(elements[i]);
-            lng.View.Template.Binding.dataAttribute(element, attribute);
+            _dataAttribute(element, attribute);
+        }
+    };
+
+    var _dataAttribute = function(element, attribute) {
+        var data = element.data(attribute.tag);
+
+        if (data) {
+            var html_binded = attribute.html.replace(BINDING.START + BINDING.KEY + BINDING.END, data);
+            element.prepend(html_binded);
         }
     };
 

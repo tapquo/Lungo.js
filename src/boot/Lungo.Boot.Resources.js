@@ -14,8 +14,7 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
 
     var RESOURCE = {
         SECTION: 'sections',
-        ASIDE: 'asides',
-        TEMPLATE: 'templates'
+        ASIDE: 'asides'
     };
 
     /**
@@ -36,7 +35,7 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
 
             try {
                 var response = _loadSyncResource(url);
-                _factoryResources(resource_key, response);
+                _pushResourceInBody(response);
             } catch(error) {
                 lng.Core.log(3, error.message);
             }
@@ -59,28 +58,9 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
         });
     };
 
-    var _factoryResources = function(resource_key, response) {
-        if (resource_key == RESOURCE.TEMPLATE) {
-             _createTemplate(response);
-        } else {
-            _pushSectionInLayout(response);
-        }
-    };
-
-    var _pushSectionInLayout = function(section) {
+    var _pushResourceInBody = function(section) {
         if (lng.Core.toType(section) === 'string') {
             lng.dom(ELEMENT.BODY).append(section);
-        }
-    };
-
-    var _createTemplate = function(markup) {
-        var div = document.createElement(ELEMENT.DIV);
-        div.innerHTML = markup;
-
-        var template_id = lng.dom(div.firstChild).data('template');
-
-        if (template_id) {
-            lng.View.Template.create(template_id, markup);
         }
     };
 

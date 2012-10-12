@@ -56,15 +56,10 @@ Lungo.Constants = {
     BINDING: {
         START: '{{',
         END: '}}',
-        KEY: 'value',
-        PARSER: /\{{.*?\}}/gi
+        KEY: 'value'
     },
 
     ERROR: {
-        CREATE_SCROLL: 'ERROR: Impossible to create a <scroll> without ID.',
-        BINDING_DATA_TYPE: 'ERROR: Processing the type of binding data.',
-        BINDING_TEMPLATE: 'ERROR: Binding Template not exists >> ',
-        BINDING_LIST: 'ERROR: Processing parameters for list binding.',
         DATABASE: 'ERROR: Connecting to Data.Sql.',
         DATABASE_TRANSACTION: 'ERROR: Data.Sql >> ',
         ROUTER: 'ERROR: The target does not exists >>',
