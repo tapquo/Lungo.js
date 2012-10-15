@@ -1,14 +1,14 @@
 /**
  * Contains all the common functions used in Lungo.
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Core
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Core = (function(lng, $$, undefined) {
+Lungo.Core = (function(lng, $$, undefined) {
 
     var ARRAY_PROTO = Array.prototype;
     var HASHTAG_CHARACTER = '#';
@@ -154,9 +154,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
 
         return data.sort(function(a, b) {
             return (a[property] < b[property]) ? - order_operator :
-                (a[property] > b[property])
-                ?
-                order_operator : 0;
+                (a[property] > b[property]) ? order_operator : 0;
             }
         );
     };
@@ -199,7 +197,7 @@ LUNGO.Core = (function(lng, $$, undefined) {
                 search = element;
                 break;
             }
-        };
+        }
 
         return search;
     };
@@ -219,4 +217,4 @@ LUNGO.Core = (function(lng, $$, undefined) {
         findByProperty: findByProperty
     };
 
-})(LUNGO, Quo);
+})(Lungo, Quo);

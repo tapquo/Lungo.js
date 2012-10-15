@@ -1,21 +1,20 @@
 /**
  * Initialize the <article> element
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Article
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Article = (function(lng, undefined) {
+Lungo.Boot.Article = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
         LIST_IN_ARTICLE: 'article.list, aside.list',
-        SCROLL_IN_ARTICLE: '.scrollable',
-        CHECKBOX_IN_ARTICLE: '.checkbox, .radio'
+        CHECKBOX_IN_ARTICLE: '.checkbox'
     };
 
     /**
@@ -23,9 +22,8 @@ LUNGO.Boot.Article = (function(lng, undefined) {
      *
      * @method init
      */
-    var start = function() {
+    var init = function() {
         _initElement(SELECTORS.LIST_IN_ARTICLE, _createListElement);
-        _initElement(SELECTORS.SCROLL_IN_ARTICLE, _createScrollElement);
         _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _createCheckboxElement);
     };
 
@@ -45,17 +43,12 @@ LUNGO.Boot.Article = (function(lng, undefined) {
         }
     };
 
-    var _createScrollElement = function(scroll) {
-        var scroll_id = scroll.attr(ATTRIBUTE.ID);
-        lng.View.Scroll.init(scroll_id);
-    };
-
     var _createCheckboxElement = function(checkbox) {
         checkbox.append(ELEMENT.SPAN);
     };
 
     return {
-        start: start
+        init: init
     };
 
-})(LUNGO);
+})(Lungo);

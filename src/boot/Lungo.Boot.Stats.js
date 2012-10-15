@@ -1,21 +1,21 @@
 /**
  * Save in LungoJS.com the use of the service for further ranking
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Stats
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Stats = (function(lng, undefined) {
+Lungo.Boot.Stats = (function(lng, undefined) {
 
     /**
      * Analizing if it's run in Mobile Phone and changing the type of event to subscribe.
      *
      * @method start
      */
-    var start = function() {
+    var init = function() {
         if (lng.Core.isMobile()) {
             _saveStats();
         }
@@ -35,7 +35,7 @@ LUNGO.Boot.Stats = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
-})(LUNGO);
+})(Lungo);

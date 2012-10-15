@@ -1,29 +1,25 @@
 App.View = (function(lng, App, undefined) {
 
-    lng.View.Template.create(
-        'profile-tmp',
-        '<li class="selectable {{anchor}}">\
-                <img src="{{avatar}}" />\
-                <div class="onright">{{name}}</div>\
-                {{name}}\
-                <small>{{description}}</small>\
-            </a>\
-        </li>'
-    );
+    growl = function() {
+        alert(1111)
+    };
 
-    var mockScrolls = function() {
-        var markup = '';
-        for (var i=0; i < 32; i++) {
-            markup += '<li>'+i+'</li>';
+    toggleLoading = function(event) {
+        var el = lng.dom(this);
+
+        if (el.children('.loading').length > 0) {
+            el.children('.icon').show();
+            lng.View.Element.loading(this);
+        } else {
+            el.children('.icon').hide();
+            lng.View.Element.loading(this, 'white');
         }
-
-        lng.View.Scroll.update('scroll_vertical', markup);
-        lng.View.Scroll.update('scroll_horizontal', markup);
     };
 
     return {
-        mockScrolls: mockScrolls
-    }
+        growl: growl,
+        toggleLoading: toggleLoading
+    };
 
 
-})(LUNGO, App);
+})(Lungo, App);

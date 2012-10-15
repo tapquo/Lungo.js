@@ -1,0 +1,96 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Aside
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "constants.less";
+@import "mixins.less";
+
+
+section.aside {
+    &:not(.small) { .transform(translate(@aside-width, 0)); }
+    &.small { .transform(translate(@aside-width-small, 0)); }
+
+    &.right {
+        .transform(translate(-@aside-width, 0));
+        &.small { .transform(translate(-@aside-width-small, 0)); }
+    }
+}
+
+aside {
+    position: absolute;
+    height: inherit;
+    top: 0;
+    bottom: 0;
+    display: none;
+    z-index: -1;
+
+    width: @aside-width;
+
+    &.right { right: 0px; }
+
+    &.show {
+        z-index: 0;
+        display: block;
+    }
+
+    & header, & footer {
+        position: relative;
+        left: none;
+        height: @header-footer-height;
+    }
+
+    & footer {
+        position: absolute;
+        bottom: 0;
+    }
+
+    & .bubble {
+        float: right;
+    }
+
+    &.small {
+        width: @aside-width-small;
+
+        & nav {
+            width: @aside-width-small;
+            & a {
+                padding: 0px;
+                width: @aside-width-small;
+                height: @aside-width-small;
+            }
+            & .icon {
+                font-size: 48px;
+                text-align: center;
+            }
+
+            & .bubble {
+                top: 4px;
+                left: -22px;
+            }
+        }
+
+
+    }
+}
+
+/*
+@TODO: Tablets & TV on final release
+@media handheld, only screen and (min-width: 768px) {
+    .autohide[data-router="aside"] {  display: none !important; }
+
+    section.aside {
+        width: auto !important;
+        left: @aside-width;
+        right: 0px !important;
+        .transform(translate3d(0px, 0, 0));
+        -webkit-transition: none;
+
+        &.small{ left: @aside-width-small; }
+    }
+}
+*/

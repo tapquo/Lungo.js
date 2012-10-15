@@ -1,0 +1,138 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Nav
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "constants.less";
+@import "mixins.less";
+
+nav {
+    height: auto;
+    text-align: center;
+
+    & a {
+        padding: 0 6px;
+        min-width: 28px;
+        z-index: 1000;
+        float: left;
+        height: @header-footer-height;
+
+        & .icon { font-size: 1.7em; }
+
+        & img {
+            width: 16px;
+            height: 16px;
+            top: -1px !important; }
+
+        & abbr { font-weight: bold; }
+
+        & .bubble {
+            position: relative;
+            top:  -12px;
+            left: -12px;
+            margin-right: -20px;
+        }
+
+    }
+
+    &.groupbar {
+        position: absolute;
+        top: @header-footer-height;
+        height: @header_groupbar_height;
+        display: block;
+        width: 100%;
+        z-index: 2;
+
+        line-height: @header_groupbar_height;
+
+        & a {
+            padding: 0px;
+            margin: 0px;
+            font-weight: bold;
+            height: @header_groupbar_height;
+            & .icon {
+                font-size: 1.0em;
+            }
+            & .bubble {
+                top: -6px;
+                left: 0px;
+            }
+        }
+    }
+}
+
+header nav {
+    &.button a {
+        margin: 5px 5px 5px 0;
+        height: 32px;
+        line-height: 32px;
+        & .icon {  line-height: 33px; }
+
+        &:first-child { margin: 5px; }
+    }
+
+    & .icon ~ abbr {
+        margin-left: 4px;
+        float: right; }
+
+    & .loading {
+        margin-top: .5em;
+        font-size: 1.6em;
+        & + .icon { display: none; }
+    }
+}
+
+footer nav {
+
+    & a {
+        display: block;
+        padding: 0;
+        height:  @header-footer-height;
+    }
+
+    & .icon {
+        display: block;
+        top:  0px;
+        font-size: 2.0em !important;
+        line-height: @header-footer-height; }
+
+    & .bubble {
+        top:  -42px;
+        left: 4px;
+
+        & .loading {
+            top: 0;
+            font-size: 1.4em; }
+    }
+
+    abbr { display: none; }
+
+    & .loading {
+        top: .1em;
+        font-size: 2.3em; }
+
+    &.with-labels {
+        & .icon { line-height: 36px; }
+        & .bubble { top: -34px; }
+
+        & abbr {
+            display: block !important;
+            position: absolute;
+            top: 30px;
+            width: inherit;
+            height: 14px;
+            margin-left: 0px;
+            display: block !important;
+
+            font-size: 11px;
+            line-height: 14px;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis; }
+    }
+}

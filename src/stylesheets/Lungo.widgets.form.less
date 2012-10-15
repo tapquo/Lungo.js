@@ -1,0 +1,203 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Widgets
+ * @class Form
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "constants.less";
+@import "mixins.less";
+
+@input-height: 29px;
+
+form {
+    &.wrapper input:not([type=checkbox]), textarea, select {
+        margin: 3px 0px 3px 0px;
+    }
+
+    @rounded-radius: 2px;
+    &.rounded {
+        & input:not([type=checkbox]), textarea, select {
+            width: 94%;
+            padding: 1.0% 3% ;
+
+            &:first-of-type { .border-radius(@rounded-radius @rounded-radius 0px 0px); }
+            &:last-of-type  { .border-radius(0px 0px @rounded-radius @rounded-radius); }
+        }
+    }
+}
+
+label:not(.select) {
+    font-size: 0.9em;
+    line-height: 1.5em;
+}
+
+input:not([type=checkbox]), textarea, select {
+    display: block;
+    width: 96%;
+    padding: 0.5% 2%;
+    height: @input-height;
+    font-size: 14px;
+    font-weight: bold;
+
+    -webkit-appearance: none;
+    -webkit-user-select: text;
+    -webkit-font-smoothing: antialiased;
+}
+
+textarea {
+    padding-top: 1.5%;
+    min-height: 48px; }
+
+
+/* @group search */
+input[type=search] {
+    width: 85%;
+    display: inline-block;
+
+    & + .button {
+        float: right;
+        padding: 0px;
+        width: 13%;
+        height: @input-height;
+        & .icon{
+            top: -3px;
+            float: none;
+        }
+    }
+}
+/* @end */
+
+/* @group select */
+
+select {
+    width: 100%;
+    height: @input-height;
+}
+
+label.select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select:after {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: @input-height;
+    width: @input-height;
+
+    content: "▼";
+    pointer-events:none;
+    line-height: 31px;
+}
+
+.no-pointer-events .select:after {
+    content: none;
+}
+/* @end */
+
+/* @group switch */
+input[type="checkbox"]{
+    width: 82px;
+    height: @input-height;
+    z-index: 2; }
+input[type="checkbox"] + span::after { content: "OFF"; }
+input[type="checkbox"]:checked + span::after { content: "ON"; }
+input[type="checkbox"] + span, input[type="checkbox"] + span::before, input[type="checkbox"] + span::after { display: inline-block; }
+input[type="checkbox"] + span::before,
+   input[type="checkbox"] + span::after,
+   input[type="checkbox"]:checked + span::before,
+   input[type="checkbox"]:checked + span::after {
+    top: 0; }
+input[type="checkbox"] + span::after, input[type="checkbox"]:checked + span::before { right: 0; }
+input[type="checkbox"] + span::before, input[type="checkbox"]:checked + span::after { left: 0; }
+input[type="checkbox"], input[type="checkbox"] + span::before, input[type="checkbox"] + span::after { position: absolute; }
+input[type="checkbox"] {
+    -webkit-opacity: 0;
+    opacity: 0; }
+input[type="checkbox"] + span {
+    width: 82px;
+    height: 27px;
+    position: relative;
+    font-size: 11px;
+    line-height: @input-height;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-indent: -9999px; }
+input[type="checkbox"] + span::before{
+    content: "";
+    width: 41px;
+    height: 27px; }
+input[type="checkbox"] + span::after {
+    text-indent: 0;
+    width: 41px;
+    height: 27px;
+    text-align: center;}
+input[type="checkbox"]:checked + span::before { left: auto; }
+input[type="checkbox"]:checked + span::after { height: 27px; }
+/* @end */
+
+/* @group range */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 100%;
+    outline: none;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    border: 0;
+    cursor: ew-resize;
+
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        position: relative;
+        z-index: 1;
+
+        top:-1px;
+        width: 24px;
+        height: 24px;
+    }
+}
+/* @end */
+
+/* @group progress */
+.progress {
+    width: 100%;
+    margin-bottom: 8px;
+
+    .labels {
+        font-size: 1.0em;
+        display: block;
+        & span:last-child { float: right; }
+    }
+
+    & .bar {
+        height:  15px;
+        line-height: 15px;
+        display: block;
+
+        & .value {
+            display:block;
+            height: inherit;
+            width: 0%;
+            -webkit-transition: width 500ms @defaultTrasition;
+
+            & .label {
+                float: right;
+                margin-right: 4px;
+                font-size: 0.75em; }
+        }
+    }
+}
+/* @end */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-select select {padding-right:30px;}
+}

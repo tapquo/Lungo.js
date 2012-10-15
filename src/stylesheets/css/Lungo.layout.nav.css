@@ -1,12 +1,128 @@
-nav{height:inherit;text-align:center;}nav a{padding:0 6px;z-index:1000;float:left;}nav a .icon{position:relative;top:3px;font-size:24px;display:inline-block;}
-nav a img{width:16px;height:16px;top:-1px !important;}
-nav a abbr{position:relative;margin-left:2px;display:none;}
-nav a.current abbr,nav a.active abbr{display:inline;}
-nav .bubble{position:relative;top:-8px;left:-8px;margin-right:-20px;}
-.toolbar{height:48px;display:block;}.toolbar nav{display:block;}
-.toolbar a{padding:0;}
-.toolbar .icon{display:block;top:0px;font-size:32px;line-height:48px;}
-.toolbar.with-labels .icon{line-height:36px;padding-bottom:12px;}
-.toolbar .bubble{top:-52px;left:4px;}
-.toolbar abbr{position:absolute;top:32px;width:inherit;height:14px;margin-left:0px;display:block !important;font-size:11px;line-height:14px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-.groupbar{position:absolute;top:39px;height:28px;width:100%;padding:4px 0 2px;display:block;line-height:28px;z-index:2;}.groupbar a{padding:0px;}
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Nav
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+/* DIMENSIONS */
+/* COLORS */
+nav {
+  height: auto;
+  text-align: center;
+}
+nav a {
+  padding: 0 6px;
+  min-width: 28px;
+  z-index: 1000;
+  float: left;
+  height: 44px;
+}
+nav a .icon {
+  font-size: 1.7em;
+}
+nav a img {
+  width: 16px;
+  height: 16px;
+  top: -1px !important;
+}
+nav a abbr {
+  font-weight: bold;
+}
+nav a .bubble {
+  position: relative;
+  top: -12px;
+  left: -12px;
+  margin-right: -20px;
+}
+nav.groupbar {
+  position: absolute;
+  top: 44px;
+  height: 30px;
+  display: block;
+  width: 100%;
+  z-index: 2;
+  line-height: 30px;
+}
+nav.groupbar a {
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+  height: 30px;
+}
+nav.groupbar a .icon {
+  font-size: 1.0em;
+}
+nav.groupbar a .bubble {
+  top: -6px;
+  left: 0px;
+}
+header nav.button a {
+  margin: 5px 5px 5px 0;
+  height: 32px;
+  line-height: 32px;
+}
+header nav.button a .icon {
+  line-height: 33px;
+}
+header nav.button a:first-child {
+  margin: 5px;
+}
+header nav .icon ~ abbr {
+  margin-left: 4px;
+  float: right;
+}
+header nav .loading {
+  margin-top: .5em;
+  font-size: 1.6em;
+}
+header nav .loading  + .icon {
+  display: none;
+}
+footer nav a {
+  display: block;
+  padding: 0;
+  height: 44px;
+}
+footer nav .icon {
+  display: block;
+  top: 0px;
+  font-size: 2.0em !important;
+  line-height: 44px;
+}
+footer nav .bubble {
+  top: -42px;
+  left: 4px;
+}
+footer nav .bubble .loading {
+  top: 0;
+  font-size: 1.4em;
+}
+footer nav abbr {
+  display: none;
+}
+footer nav .loading {
+  top: .1em;
+  font-size: 2.3em;
+}
+footer nav.with-labels .icon {
+  line-height: 36px;
+}
+footer nav.with-labels .bubble {
+  top: -34px;
+}
+footer nav.with-labels abbr {
+  display: block !important;
+  position: absolute;
+  top: 30px;
+  width: inherit;
+  height: 14px;
+  margin-left: 0px;
+  display: block !important;
+  font-size: 11px;
+  line-height: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

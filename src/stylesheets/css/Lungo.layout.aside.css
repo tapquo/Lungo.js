@@ -1,12 +1,122 @@
-section.aside{-webkit-transform:translate3d(256px, 0, 0);-moz-transform:translate3d(256px, 0, 0);-o-transform:translate3d(256px, 0, 0);transform:translate3d(256px, 0, 0);}section.aside.onright{-webkit-transform:translate3d(-256px, 0, 0);-moz-transform:translate3d(-256px, 0, 0);-o-transform:translate3d(-256px, 0, 0);transform:translate3d(-256px, 0, 0);}
-aside{position:absolute;width:inherit;height:inherit;top:0px;visibility:hidden;z-index:0;width:256px;max-width:256px;}aside.onright{right:0px;}
-aside.current{visibility:visible;}
-aside .title{line-height:40px;font-size:15px;font-weight:bold;height:40px;}
-aside a{display:block;width:244px;height:40px;font-size:15px;line-height:40px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
-aside .bubble{float:right;font-size:11px;}
-aside .title,aside a,aside .anchor{padding:0 6px;}
-aside a .bubble,aside .title .bubble{margin-top:13px;}
-aside .anchor .bubble{margin-top:2px;}
-aside .icon{width:24px;float:left;margin:8px 4px 0 0;font-size:24px;line-height:24px;text-align:center;}
-aside .anchor{font-weight:bold;line-height:19px;}
-@media handheld, only screen and (min-width: 768px){[data-target="aside"]{display:none !important;} section.aside{width:auto !important;left:256px !important;right:0px !important;-webkit-transform:translate3d(0px, 0, 0);-moz-transform:translate3d(0px, 0, 0);-o-transform:translate3d(0px, 0, 0);transform:translate3d(0px, 0, 0);-webkit-transition:none;}}
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Aside
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+/* DIMENSIONS */
+/* COLORS */
+section.aside:not(.small) {
+  -webkit-transform: translate(256px, 0);
+  -moz-transform: translate(256px, 0);
+  -ms-transform: translate(256px, 0);
+  -o-transform: translate(256px, 0);
+  transform: translate(256px, 0);
+  -webkit-transform: translate(256px, 0);
+  -moz-transform: translate(256px, 0);
+  -ms-transform: translate(256px, 0);
+  -o-transform: translate(256px, 0);
+  transform: translate(256px, 0);
+}
+section.aside.small {
+  -webkit-transform: translate(64px, 0);
+  -moz-transform: translate(64px, 0);
+  -ms-transform: translate(64px, 0);
+  -o-transform: translate(64px, 0);
+  transform: translate(64px, 0);
+  -webkit-transform: translate(64px, 0);
+  -moz-transform: translate(64px, 0);
+  -ms-transform: translate(64px, 0);
+  -o-transform: translate(64px, 0);
+  transform: translate(64px, 0);
+}
+section.aside.right {
+  -webkit-transform: translate(-256px, 0);
+  -moz-transform: translate(-256px, 0);
+  -ms-transform: translate(-256px, 0);
+  -o-transform: translate(-256px, 0);
+  transform: translate(-256px, 0);
+  -webkit-transform: translate(-256px, 0);
+  -moz-transform: translate(-256px, 0);
+  -ms-transform: translate(-256px, 0);
+  -o-transform: translate(-256px, 0);
+  transform: translate(-256px, 0);
+}
+section.aside.right.small {
+  -webkit-transform: translate(-64px, 0);
+  -moz-transform: translate(-64px, 0);
+  -ms-transform: translate(-64px, 0);
+  -o-transform: translate(-64px, 0);
+  transform: translate(-64px, 0);
+  -webkit-transform: translate(-64px, 0);
+  -moz-transform: translate(-64px, 0);
+  -ms-transform: translate(-64px, 0);
+  -o-transform: translate(-64px, 0);
+  transform: translate(-64px, 0);
+}
+aside {
+  position: absolute;
+  height: inherit;
+  top: 0;
+  bottom: 0;
+  display: none;
+  z-index: -1;
+  width: 256px;
+}
+aside.right {
+  right: 0px;
+}
+aside.show {
+  z-index: 0;
+  display: block;
+}
+aside header,
+aside footer {
+  position: relative;
+  left: none;
+  height: 44px;
+}
+aside footer {
+  position: absolute;
+  bottom: 0;
+}
+aside .bubble {
+  float: right;
+}
+aside.small {
+  width: 64px;
+}
+aside.small nav {
+  width: 64px;
+}
+aside.small nav a {
+  padding: 0px;
+  width: 64px;
+  height: 64px;
+}
+aside.small nav .icon {
+  font-size: 48px;
+  text-align: center;
+}
+aside.small nav .bubble {
+  top: 4px;
+  left: -22px;
+}
+/*
+@TODO: Tablets & TV on final release
+@media handheld, only screen and (min-width: 768px) {
+    .autohide[data-router="aside"] {  display: none !important; }
+
+    section.aside {
+        width: auto !important;
+        left: @aside-width;
+        right: 0px !important;
+        .transform(translate3d(0px, 0, 0));
+        -webkit-transition: none;
+
+        &.small{ left: @aside-width-small; }
+    }
+}
+*/

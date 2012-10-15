@@ -1,19 +1,21 @@
 /**
  * Handles the <sections> and <articles> to show
  *
- * @namespace LUNGO
+ * @namespace Lungo
  * @class Router
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Router = (function(lng, undefined) {
+Lungo.Router = (function(lng, undefined) {
 
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
     var ERROR = lng.Constants.ERROR;
     var TRIGGER = lng.Constants.TRIGGER;
+    var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var HASHTAG_CHARACTER = '#';
 
     /**
      * Navigate to a <section>.
@@ -23,15 +25,20 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} Id of the <section>
      */
     var section = function(section_id) {
-        var section_id = lng.Core.parseUrl(section_id);
-        var current = _getHistoryCurrent();
-        var target = ELEMENT.SECTION + section_id;
+        section_id = lng.Core.parseUrl(section_id);
+        var current =  lng.Element.Current.section;
 
-        if (_existsTarget(target)) {
-            lng.dom(current).removeClass(CLASS.HIDE_REVOKE).removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
-            lng.dom(target).removeClass(CLASS.SHOW_REVOKE).addClass(CLASS.SHOW).trigger(TRIGGER.LOAD);
+        if (_notCurrentTarget(section_id, current)) {
+            var target = lng.Element.sections.siblings(ELEMENT.SECTION + section_id);
+            if (target.length > 0) {
+                current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+                target.addClass(CLASS.SHOW);
+                lng.Element.Current.section = target;
+                lng.Element.Current.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.CURRENT);
 
-            lng.Router.History.add(section_id);
+                lng.Router.History.add(section_id);
+                _sectionTriggers(current, target);
+            }
         }
     };
 
@@ -43,14 +50,29 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <section> Id
      * @param {string} <article> Id
      */
-    var article = function(section_id, article_id) {
-        var section_id = lng.Core.parseUrl(section_id);
-        var article_id = lng.Core.parseUrl(article_id);
-        var target = ELEMENT.SECTION + section_id + ' ' + ELEMENT.ARTICLE + article_id;
+    var article = function(section_id, article_id, element) {
+        article_id = lng.Core.parseUrl(article_id);
 
-        if (_existsTarget(target)) {
-            lng.dom(target).trigger(TRIGGER.LOAD);
-            lng.View.Article.show(section_id, article_id);
+        var current =  lng.Element.Current.article;
+
+        if (_notCurrentTarget(article_id, current)) {
+            section(section_id);
+            var target = lng.Element.Current.section.find(ELEMENT.ARTICLE + article_id);
+
+            if (target.length > 0) {
+                if (_sectionId(current) === _sectionId(target)) {
+                    current.removeClass(CLASS.CURRENT);
+                } else {
+                    lng.Element.Current.section.children(ELEMENT.ARTICLE).removeClass(CLASS.CURRENT);
+                }
+                target.addClass(CLASS.CURRENT);
+                lng.Element.Current.article = target;
+
+                lng.View.Article.switchNavItems(article_id);
+                lng.View.Article.switchReferenceItems(article_id, lng.Element.Current.section);
+
+                if (element) lng.View.Article.title(element.data(ATTRIBUTE.TITLE));
+            }
         }
     };
 
@@ -63,18 +85,8 @@ LUNGO.Router = (function(lng, undefined) {
      * @param {string} <aside> Id
      */
     var aside = function(section_id, aside_id) {
-        var section_id = lng.Core.parseUrl(section_id);
-        var aside_id = lng.Core.parseUrl(aside_id);
-        var target = ELEMENT.ASIDE + aside_id;
-
-        if (_existsTarget(target)) {
-            var is_visible = lng.dom(target).hasClass(CLASS.CURRENT);
-            if (is_visible) {
-                lng.View.Aside.hide(section_id, aside_id);
-            } else {
-                lng.View.Aside.show(section_id, aside_id);
-            }
-        }
+        aside_id = lng.Core.parseUrl(aside_id);
+        lng.View.Aside.toggle(aside_id);
     };
 
     /**
@@ -83,27 +95,28 @@ LUNGO.Router = (function(lng, undefined) {
      * @method back
      */
     var back = function() {
-        var current_section = ELEMENT.SECTION + _getHistoryCurrent();
+        var current = lng.Element.Current.section;
+        current.removeClass(CLASS.SHOW);
 
-        lng.dom(current_section).removeClass(CLASS.SHOW).addClass(CLASS.SHOW_REVOKE).trigger(TRIGGER.UNLOAD);
         lng.Router.History.removeLast();
-        lng.dom(_getHistoryCurrent()).removeClass(CLASS.HIDE).addClass(CLASS.HIDE_REVOKE).addClass(CLASS.SHOW);
+        target = lng.Element.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
+        target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+        lng.Element.Current.section = target;
+
+        _sectionTriggers(current, target);
     };
 
-    var _existsTarget = function(target) {
-        var exists = false;
-
-        if (lng.dom(target).length > 0) {
-            exists = true;
-        } else {
-            lng.Core.log(3, ERROR.ROUTER + target);
-        }
-
-        return exists;
+    var _notCurrentTarget = function(target, element) {
+        return (target !== HASHTAG_CHARACTER + element.attr('id')) ? true : false;
     };
 
-    var _getHistoryCurrent = function() {
-        return lng.Router.History.current();
+    var _sectionId = function(element) {
+        return element.parent('section').attr('id');
+    };
+
+    var _sectionTriggers = function(current, target) {
+        current.trigger(TRIGGER.UNLOAD);
+        target.trigger(TRIGGER.LOAD);
     };
 
     return {
@@ -113,4 +126,4 @@ LUNGO.Router = (function(lng, undefined) {
         back: back
     };
 
-})(LUNGO);
+})(Lungo);

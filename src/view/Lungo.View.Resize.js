@@ -1,14 +1,14 @@
 /**
  *
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Resize
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Resize = (function(lng, undefined) {
+Lungo.View.Resize = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
@@ -17,21 +17,21 @@ LUNGO.View.Resize = (function(lng, undefined) {
      *
      * @method toolbars
      */
-    var toolbars = function() {
-        var toolbar = '.toolbar nav, .groupbar';
-        var all_toolbars = lng.dom(toolbar);
+    var navigation = function() {
+        if (!lng.Element.navigation)
+            lng.Element.navigation = lng.dom('footer nav, .groupbar');
 
-        for (var i = 0, len = all_toolbars.length; i < len; i++) {
-            var toolbar = lng.dom(all_toolbars[i]);
-            var toolbar_children = toolbar.children();
-            var toolbar_children_percent = 100 / toolbar.children().length;
+        for (var i = 0, len = lng.Element.navigation.length; i < len; i++) {
+            var element = lng.dom(lng.Element.navigation[i]);
+            var element_children = element.children();
+            var element_children_percent = 100 / element.children().length;
 
-            toolbar_children.style(ATTRIBUTE.WIDTH, toolbar_children_percent + ATTRIBUTE.PERCENT);
+            element_children.style(ATTRIBUTE.WIDTH, element_children_percent + ATTRIBUTE.PERCENT);
         }
     };
 
     return {
-        toolbars: toolbars
+        navigation: navigation
     };
 
-})(LUNGO);
+})(Lungo);

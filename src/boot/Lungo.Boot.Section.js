@@ -1,14 +1,14 @@
 /**
  * Initialize the <section> element
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Section
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Section = (function(lng, undefined) {
+Lungo.Boot.Section = (function(lng, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
@@ -19,42 +19,59 @@ LUNGO.Boot.Section = (function(lng, undefined) {
      *
      * @method init
      */
-    var start = function() {
-        var sections = lng.dom(ELEMENT.SECTION);
-        _initFirstSection(sections);
-        _initAllSections(sections);
+    var init = function() {
+        _cacheDOMElements();
+        _initFirstSection();
+        _initAllSections();
+        _initAllAsides();
 
-        lng.View.Resize.toolbars();
+        lng.View.Resize.navigation();
     };
 
-    var _initFirstSection = function(sections) {
-        var first_section = sections.first();
-        var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
+    var _initFirstSection = function() {
+        var first_section = lng.Element.sections.first();
+        lng.Element.Current.section = first_section;
+        lng.Element.Current.article = first_section.children(ELEMENT.ARTICLE).first();
 
+        var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
         first_section.addClass(CLASS.CURRENT);
         lng.Router.History.add(first_section_id);
     };
 
-    var _initAllSections = function(sections) {
-        lng.Fallback.positionFixed(sections);
+    var _initAllSections = function() {
+        //@todo: position fixed
+        //lng.Fallback.positionFixed(lng.Element.sections);
 
-        for (var i = 0, len = sections.length; i < len; i++) {
-            var section = lng.dom(sections[i]);
-            _initArticles(section);
+        for (var i = 0, len = lng.Element.sections.length; i < len; i++) {
+            _initArticles(i);
         }
     };
 
-    var _initArticles = function(section) {
+    var _initAllAsides = function() {
+        var aside = null;
+        for (var i = 0, len = lng.Element.asides.length; i < len; i++) {
+            aside = lng.dom(lng.Element.asides[i]);
+            aside.children(ELEMENT.ARTICLE).addClass(CLASS.CURRENT);
+        }
+    };
+
+    var _initArticles = function(section_index) {
+        var section = lng.dom(lng.Element.sections[section_index]);
+
         var first_article = section.children(ELEMENT.ARTICLE).first();
         first_article.addClass(CLASS.CURRENT);
 
         var first_article_id = first_article.attr(ATTRIBUTE.ID);
-        var section_id = '#' + section.attr(ATTRIBUTE.ID);
-        lng.View.Article.showReferenceLinks(section_id, first_article_id);
+        if (first_article_id) lng.View.Article.switchReferenceItems(first_article_id, section);
+    };
+
+    var _cacheDOMElements = function() {
+        lng.Element.sections = lng.dom(ELEMENT.SECTION);
+        lng.Element.asides = lng.dom(ELEMENT.ASIDE);
     };
 
     return {
-        start: start
+        init: init
     };
 
-})(LUNGO);
+})(Lungo);

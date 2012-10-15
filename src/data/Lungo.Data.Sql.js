@@ -1,14 +1,14 @@
 /**
  * Wrapper for using WebSql (HTML5 feature)
  *
- * @namespace LUNGO.Data
+ * @namespace Lungo.Data
  * @class Sql
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Data.Sql = (function(lng, undefined) {
+Lungo.Data.Sql = (function(lng, undefined) {
 
     var ERROR = lng.Constants.ERROR;
     var CONFIG = {
@@ -34,7 +34,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         if (db) {
             _createSchema();
         } else {
-            lng.Core.log(3, ERROR.DATABASE);
+            throw new Error(ERROR.DATABASE);
         }
     };
 
@@ -202,7 +202,7 @@ LUNGO.Data.Sql = (function(lng, undefined) {
     };
 
     var _throwError = function(transaction, error) {
-        lng.Core.log(3, 'lng.Data.Sql >> ' + error.code + ': ' + error.message + ' \n Executed query: ' + transaction.executedQuery);
+        throw new Error(ERROR.DATABASE_TRANSACTION + error.code + ': ' + error.message + ' \n Executed query: ' + transaction.executedQuery);
     };
 
     return {
@@ -214,4 +214,4 @@ LUNGO.Data.Sql = (function(lng, undefined) {
         execute: execute
     };
 
-})(LUNGO);
+})(Lungo);

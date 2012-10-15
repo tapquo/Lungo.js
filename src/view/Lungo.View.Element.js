@@ -1,21 +1,20 @@
 /**
  * Initialize the <articles> layout of a certain <section>
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Element
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.View.Element = (function(lng, undefined) {
+Lungo.View.Element = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var BINDING = lng.Constants.BINDING;
     var SELECTORS = {
         BUBBLE: '.bubble.count',
         PROGRESS_VALUE: ' .value',
-        PROGRESS_PERCENTAGE: ' .labels span:last-child',
-        PROGRESS_DESCRIPTION: ' .labels span:first-child'
+        PROGRESS_PERCENTAGE: ' .value .label'
     };
 
     /**
@@ -48,16 +47,35 @@ LUNGO.View.Element = (function(lng, undefined) {
      * @param  {boolean} Show the labels: description and current percentage
      * @param  {string}  Description
      */
-    var progress = function(selector, percentage, with_labels, description) {
+    var progress = function(selector, percentage, with_label) {
         var element = lng.dom(selector);
 
         if (element) {
             percentage += ATTRIBUTE.PERCENT;
 
             lng.dom(selector + SELECTORS.PROGRESS_VALUE).style(ATTRIBUTE.WIDTH, percentage);
+            lng.dom(selector + SELECTORS.PROGRESS_PERCENTAGE).html((with_label) ? percentage : ATTRIBUTE.EMPTY);
+        }
+    };
 
-            _setProgressLabel(selector + SELECTORS.PROGRESS_PERCENTAGE, with_labels, percentage);
-            _setProgressLabel(selector + SELECTORS.PROGRESS_DESCRIPTION, with_labels, description);
+    /**
+     * Set a progress to the element
+     *
+     * @method loading
+     *
+     * @param  {string}  Element query selector
+     * @param  {number}  stylesheet (null for hide)
+     */
+    var loading = function(selector, stylesheet) {
+        var element = lng.dom(selector);
+
+        if (element) {
+            if (stylesheet) {
+                _bindAttribute(element, Lungo.Attributes.Data.Loading, stylesheet);
+            }
+            else {
+                element.children('.loading').remove();
+            }
         }
     };
 
@@ -68,20 +86,19 @@ LUNGO.View.Element = (function(lng, undefined) {
         if (total_bubbles > 0) {
             bubbles.html(count);
         } else {
-            var count_html = LUNGO.Attributes.Data.Count.html;
-            var html_binded = count_html.replace(BINDING.START + BINDING.KEY + BINDING.END, count);
-
-            element.append(html_binded);
+            _bindAttribute(element, Lungo.Attributes.Data.Count, count);
         }
     };
 
-    var _setProgressLabel = function(selector, with_labels, attribute) {
-        lng.dom(selector).html((with_labels) ? attribute : ATTRIBUTE.EMPTY);
+    var _bindAttribute = function(element, attribute, data) {
+        var html_binded = attribute.html.replace(BINDING.START + BINDING.KEY + BINDING.END, data);
+        element.append(html_binded);
     };
 
     return {
         count: count,
-        progress: progress
+        progress: progress,
+        loading: loading
     };
 
-})(LUNGO);
+})(Lungo);

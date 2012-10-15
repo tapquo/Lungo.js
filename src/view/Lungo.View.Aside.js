@@ -1,64 +1,114 @@
 /**
  * Initialize the <articles> layout of a certain <section>
  *
- * @namespace LUNGO.View
+ * @namespace Lungo.View
  * @class Aside
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
- * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.View.Aside = (function(lng, undefined) {
+Lungo.View.Aside = (function(lng, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
 
     /**
-     * Display an aside element for a particular <section>
+     * Toggle an aside element
      *
-     * @method show
+     * @method toggle
      *
-     * @param  {string} Section id
      * @param  {string} Aside id
      */
-    var show = function(section_id, aside_id) {
-        var aside = lng.dom(ELEMENT.ASIDE + aside_id);
-        var aside_class = _classFromAside(aside);
-        var section = lng.dom(ELEMENT.SECTION + section_id);
-
-        section.addClass(aside_class).addClass(CLASS.ASIDE);
-        aside.addClass(CLASS.CURRENT);
+    var toggle = function(aside_id) {
+        aside = _findAside(aside_id);
+        if (aside) {
+            var is_visible = aside.hasClass(CLASS.SHOW);
+            if (is_visible) {
+                lng.View.Aside.hide();
+            } else {
+                lng.View.Aside.show(aside);
+            }
+        }
+        aside = null;
     };
 
     /**
-     * Hide an aside element for a particular section
+     * Display an aside element with a particular <section>
      *
-     * @method hide
+     * @method show
      *
-     * @param  {string} Element query selector
-     * @param  {string} Value for counter
+     * @param  {string} Aside id
      */
-    var hide = function(section_id, aside_id) {
-        var aside = lng.dom(ELEMENT.ASIDE + aside_id);
-        var section = lng.dom(ELEMENT.SECTION + section_id);
+    var show = function(aside) {
+        if (lng.Core.toType(aside) == 'string') aside = _findAside(lng.Core.parseUrl(aside));
+        if (aside) {
+            lng.Element.Current.aside = aside;
+            var aside_stylesheet = _asideStylesheet(aside);
 
-        section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT);
+            aside.addClass(CLASS.SHOW);
+            lng.Element.Current.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
+        }
 
-        setTimeout(function() {
-            var current_aside = ELEMENT.ASIDE + aside_id + '.' + CLASS.CURRENT;
-            lng.dom(current_aside).removeClass(CLASS.CURRENT);
-        }, 300);
+        aside = null;
     };
 
-    var _classFromAside = function(aside) {
-        var aside_class = aside.attr(ATTRIBUTE.CLASS);
-        return aside_class || '';
+    /**
+     * Hide an aside element with a particular section
+     *
+     * @method hide
+     */
+    var hide = function() {
+        var aside = lng.Element.Current.aside;
+        if (aside) {
+            lng.Element.Current.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
+
+            var aside_stylesheet = _asideStylesheet(aside);
+            if (aside_stylesheet) {
+                lng.Element.Current.section.removeClass(aside_stylesheet);
+            }
+
+            setTimeout(function() {
+                aside.removeClass(CLASS.SHOW);
+                lng.Element.Current.aside = null;
+            }, 250);
+        }
+    };
+
+    var _findAside = function(aside_id) {
+        var aside = null;
+        var asides_length = lng.Element.asides.length;
+
+        if (asides_length == 1) {
+            var current_id = '#' + lng.Element.asides[0].id ;
+            if (current_id == aside_id) {
+                aside = lng.dom(lng.Element.asides[0]);
+            }
+        }
+        else if (asides_length > 1) {
+            aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
+        }
+
+        return aside;
+    };
+
+    var _asideStylesheet = function(aside) {
+        var aside_stylesheet = aside.attr(ATTRIBUTE.CLASS);
+        var classes = '';
+
+        //@todo: Refactor
+        if (aside_stylesheet) {
+            classes += (aside_stylesheet.indexOf(CLASS.RIGHT) > -1) ? CLASS.RIGHT + ' ': '';
+            classes += (aside_stylesheet.indexOf(CLASS.SMALL) > -1) ? CLASS.SMALL + ' ': '';
+        }
+
+        return classes;
     };
 
     return {
+        toggle: toggle,
         show: show,
         hide: hide
     };
 
-})(LUNGO);
+})(Lungo);

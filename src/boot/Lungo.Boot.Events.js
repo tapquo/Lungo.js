@@ -1,21 +1,24 @@
 /**
  * Initialize the automatic DOM UI events
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Events
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-LUNGO.Boot.Events = (function(lng, undefined) {
+Lungo.Boot.Events = (function(lng, undefined) {
 
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
-        HREF_TARGET: 'a[href][data-target]',
-        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-target]'
+        DOCUMENT: document,
+        WINDOW: window,
+        HREF_TARGET: 'a[href][data-router]',
+        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-router]',
+        CURRENT_SECTION: 'section.aside, section.current'
     };
 
     /**
@@ -24,49 +27,34 @@ LUNGO.Boot.Events = (function(lng, undefined) {
      * @method init
      *
      */
-    var start = function() {
+    var init = function() {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
 
-        //@ToDo: Error with input type="range"
-        //lng.dom(document).on(touch_move_event, _iScroll);
-        lng.dom(window).on(resize, _changeOrientation);
-        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_loadTargetFromAside);
+        lng.dom(SELECTORS.WINDOW).on(resize, _changeOrientation);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
-
-        lng.Fallback.androidButtons();
-    };
-
-    var _iScroll = function(event) {
-        event.preventDefault();
+        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
     };
 
     var _changeOrientation = function(event) {
-        lng.View.Resize.toolbars();
-    };
-
-    var _loadTargetFromAside = function(event) {
-        var link = lng.dom(this);
-        var aside_id = '#' + link.parent(ELEMENT.ASIDE).attr(ATTRIBUTE.ID);
-        var section_id = '#' + lng.dom('section.aside, section.current').first().attr(ATTRIBUTE.ID);
-
-        if (link.data(ATTRIBUTE.TARGET) === ELEMENT.ARTICLE) {
-            lng.dom(ELEMENT.ASIDE + aside_id + ' ' + SELECTORS.HREF_TARGET).removeClass(CLASS.CURRENT);
-            link.addClass(CLASS.CURRENT);
-        }
-        _hideAsideIfNecesary(section_id, aside_id);
-
+        event.preventDefault();
+        lng.View.Resize.navigation();
     };
 
     var _loadTarget = function(event) {
+        event.preventDefault();
         var link = lng.dom(this);
         _selectTarget(link);
+    };
 
-        event.preventDefault();
+    var _hideAsideIfNecesary = function(event) {
+        //@TODO: refactor
+        if (window.innerWidth < 768) lng.View.Aside.hide();
+        if (event) event.preventDefault();
     };
 
     var _selectTarget = function(link) {
-        var target_type = link.data(ATTRIBUTE.TARGET);
+        var target_type = link.data(ATTRIBUTE.ROUTER);
 
         switch(target_type) {
             case ELEMENT.SECTION:
@@ -85,11 +73,20 @@ LUNGO.Boot.Events = (function(lng, undefined) {
     };
 
     var _goSection = function(id) {
+        _hideAsideIfNecesary();
+
         id = lng.Core.parseUrl(id);
         if (id === '#back') {
             lng.Router.back();
         } else {
-            lng.Router.section(id);
+            var aside = lng.Element.Current.aside;
+            if (aside && aside.hasClass(CLASS.SHOW)) {
+                setTimeout(function(){
+                    lng.Router.section(id);
+                }, 250);
+            } else {
+                lng.Router.section(id);
+            }
         }
     };
 
@@ -97,7 +94,7 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         var section_id = lng.Router.History.current();
         var article_id =  element.attr(ATTRIBUTE.HREF);
 
-        lng.Router.article(section_id, article_id);
+        lng.Router.article(section_id, article_id, element);
     };
 
     var _goAside = function(element) {
@@ -107,14 +104,9 @@ LUNGO.Boot.Events = (function(lng, undefined) {
         lng.Router.aside(section_id, aside_id);
     };
 
-    var _hideAsideIfNecesary = function(section_id, aside_id) {
-        if (window.innerWidth < 768) {
-            lng.View.Aside.hide(section_id, aside_id);
-        }
-    };
 
     return {
-        start: start
+        init: init
     };
 
-})(LUNGO);
+})(Lungo);

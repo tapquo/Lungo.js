@@ -1,13 +1,13 @@
 /**
  * Initialize the Layout of LungoJS (if it's a mobile environment)
  *
- * @namespace LUNGO.Boot
+ * @namespace Lungo.Boot
  * @class Layout
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-LUNGO.Boot.Layout = (function(lng, undefined) {
+Lungo.Boot.Layout = (function(lng, undefined) {
 
     var _window = null;
     var _document = null;
@@ -21,7 +21,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
      * @method init
      *
      */
-    var start = function() {
+    var init = function() {
         if (lng.Core.isMobile()) {
             _window = window;
             _document = _window.document;
@@ -62,7 +62,7 @@ LUNGO.Boot.Layout = (function(lng, undefined) {
     };
 
     return {
-        start: start
+        init: init
     };
 
-})(LUNGO);
+})(Lungo);
