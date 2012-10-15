@@ -24,26 +24,16 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
      *
      */
     var init = function(resources) {
-        for (resource_key in resources) {
-            _loadResources(resource_key, resources[resource_key]);
-        }
-    };
-
-    var _loadResources = function(resource_key, resources, callback) {
-        for (index in resources) {
-            var url = _parseUrl(resources[index], resource_key);
-
+        for (var i=0, len=resources.length; i < len; i++) {
+            resource = resources[i];
             try {
-                var response = _loadSyncResource(url);
+                var response = _loadSyncResource(resource);
                 _pushResourceInBody(response);
             } catch(error) {
                 lng.Core.log(3, error.message);
             }
-        }
-    };
 
-    var _parseUrl = function(section_url, folder) {
-        return (/http/.test(section_url)) ? section_url : 'app/resources/' + folder + '/' + section_url;
+        }
     };
 
     var _loadSyncResource = function(url) {
@@ -53,7 +43,6 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
             dataType: 'html',
             error: function() {
                 console.error(ERROR.LOADING_RESOURCE + url);
-                // throw new Error(ERROR.LOADING_RESOURCE + url);
             }
         });
     };

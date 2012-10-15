@@ -1,0 +1,138 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Nav
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+/* DIMENSIONS */
+/* COLORS */
+header nav,
+footer nav {
+  height: auto;
+  text-align: center;
+}
+header nav a,
+footer nav a {
+  padding: 0 6px;
+  min-width: 28px;
+  z-index: 1000;
+  float: left;
+  height: 44px;
+}
+header nav a .icon,
+footer nav a .icon {
+  font-size: 1.7em;
+}
+header nav a img,
+footer nav a img {
+  width: 16px;
+  height: 16px;
+  top: -1px !important;
+}
+header nav a abbr,
+footer nav a abbr {
+  font-weight: bold;
+}
+header nav a .bubble,
+footer nav a .bubble {
+  position: relative;
+  top: -12px;
+  left: -12px;
+  margin-right: -20px;
+}
+header nav.groupbar,
+footer nav.groupbar {
+  position: absolute;
+  top: 44px;
+  height: 30px;
+  display: block;
+  width: 100%;
+  z-index: 2;
+  line-height: 30px;
+}
+header nav.groupbar a,
+footer nav.groupbar a {
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+  height: 30px;
+}
+header nav.groupbar a .icon,
+footer nav.groupbar a .icon {
+  font-size: 1.0em;
+}
+header nav.groupbar a .bubble,
+footer nav.groupbar a .bubble {
+  top: -6px;
+  left: 0px;
+}
+header nav.button a {
+  margin: 5px 5px 5px 0;
+  height: 32px;
+  line-height: 32px;
+}
+header nav.button a .icon {
+  line-height: 33px;
+}
+header nav.button a:first-child {
+  margin: 5px;
+}
+header nav .icon ~ abbr {
+  margin-left: 4px;
+  float: right;
+}
+header nav .loading {
+  margin-top: .5em;
+  font-size: 1.6em;
+}
+header nav .loading  + .icon {
+  display: none;
+}
+footer nav a {
+  display: block;
+  padding: 0;
+  height: 44px;
+}
+footer nav .icon {
+  display: block;
+  top: 0px;
+  font-size: 2.0em !important;
+  line-height: 44px;
+}
+footer nav .bubble {
+  top: -42px;
+  left: 4px;
+}
+footer nav .bubble .loading {
+  top: 0;
+  font-size: 1.4em;
+}
+footer nav abbr {
+  display: none;
+}
+footer nav .loading {
+  top: .1em;
+  font-size: 2.3em;
+}
+footer nav.with-labels .icon {
+  line-height: 36px;
+}
+footer nav.with-labels .bubble {
+  top: -34px;
+}
+footer nav.with-labels abbr {
+  display: block !important;
+  position: absolute;
+  top: 30px;
+  width: inherit;
+  height: 14px;
+  margin-left: 0px;
+  display: block !important;
+  font-size: 11px;
+  line-height: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
