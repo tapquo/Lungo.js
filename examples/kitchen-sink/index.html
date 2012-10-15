@@ -48,20 +48,6 @@
 </head>
 
 <body class="app">
-    <section id="a">
-        <header data-title="a"></header>
-        <article>
-            <a href="#b" data-router="section" class="button red big" data-label="kakaka"></a>
-        </article>
-    </section>
-
-    <section id="b">
-        <header data-title="b" data-back="home"></header>
-        <article id="b_1">b_1</article>
-        <article id="b_2">b_2</article>
-
-    </section>
-
     <section id="main" data-transition="slide">
         <header  class="">
             <nav class="left button">
@@ -148,10 +134,28 @@
             name: 'Kitchen Sink',
             version: '2.0',
             sugars: ['map', 'pull'],
+            resources: ['app/sections/layouts.html',
+                        'app/sections/notification.html',
+                        'app/sections/list.html',
+                        'app/sections/icon.html',
+                        'app/sections/grid.html',
+                        'app/sections/form.html',
+                        'app/sections/aside.html',
+                        'app/sections/touchevents.html',
+                        'app/sections/splash.html',
+                        'app/sections/data-attribute.html',
+                        'app/sections/scroll.html',
+                        'app/sections/color.html',
+                        'app/asides/features.html',
+                        'app/asides/left.html',
+                        'app/asides/right.html']
+            /*
+            ,
             resources: {
                 sections: [ 'layout.html', 'notification.html', 'list.html', 'icon.html', 'grid.html', 'form.html', 'aside.html', 'touchevents.html', 'splash.html', 'data-attribute.html', 'scroll.html', 'color.html'],
                 asides: ['features.html', 'left.html', 'right.html']
             }
+            */
         });
 
         Lungo.ready(function() {
