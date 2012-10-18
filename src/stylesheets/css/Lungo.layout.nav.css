@@ -8,35 +8,42 @@
  */
 /* DIMENSIONS */
 /* COLORS */
-nav {
+header nav,
+footer nav {
   height: auto;
   text-align: center;
 }
-nav a {
+header nav a,
+footer nav a {
   padding: 0 6px;
   min-width: 28px;
   z-index: 1000;
   float: left;
   height: 44px;
 }
-nav a .icon {
+header nav a .icon,
+footer nav a .icon {
   font-size: 1.7em;
 }
-nav a img {
+header nav a img,
+footer nav a img {
   width: 16px;
   height: 16px;
   top: -1px !important;
 }
-nav a abbr {
+header nav a abbr,
+footer nav a abbr {
   font-weight: bold;
 }
-nav a .bubble {
+header nav a .bubble,
+footer nav a .bubble {
   position: relative;
   top: -12px;
   left: -12px;
   margin-right: -20px;
 }
-nav.groupbar {
+header nav.groupbar,
+footer nav.groupbar {
   position: absolute;
   top: 44px;
   height: 30px;
@@ -45,16 +52,19 @@ nav.groupbar {
   z-index: 2;
   line-height: 30px;
 }
-nav.groupbar a {
+header nav.groupbar a,
+footer nav.groupbar a {
   padding: 0px;
   margin: 0px;
   font-weight: bold;
   height: 30px;
 }
-nav.groupbar a .icon {
+header nav.groupbar a .icon,
+footer nav.groupbar a .icon {
   font-size: 1.0em;
 }
-nav.groupbar a .bubble {
+header nav.groupbar a .bubble,
+footer nav.groupbar a .bubble {
   top: -6px;
   left: 0px;
 }

@@ -10,6 +10,8 @@
 @import "mixins.less";
 @import "constants.less";
 
+@import "lungo.theme.default.font.less";
+
 
 @theme: #2A95D3;
 @theme-light:  #39ABE1;
@@ -65,26 +67,12 @@ section > article { background: #f4f5f5; }
 
 /* @group <nav> */
 header nav {
-    & a {
-        color: #fff;
-        // &:active { text-shadow: 0 0 4px rgba(255,255,255,0.5); }
-    }
+    & a { color: #fff; }
 
     &.box {
-        .box-shadow(~"1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)");
-        &.accept { background: rgba(0, 255, 0, 0.4); }
-        &.cancel { background: rgba(255, 0, 0, 0.4); }
-
-        &:active {
-            color: #fff;
-            &.accept { background: rgba(0, 255, 0, 0.2); }
-            &.cancel { background: rgba(255, 0, 0, 0.2); }
-            &:not(.accept):not(.cancel) { background: rgba(0,0,0,0.1); }
-        }
-
-        &.right a {
-            .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)");
-        }
+        &:not(.right) a { .box-shadow(~"1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)"); }
+        &.right a { .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)"); }
+        & a:active { background: rgba(0,0,0,0.1); }
     }
 
     &.button a {
@@ -93,7 +81,6 @@ header nav {
         box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 0 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0, 0, 0, .5);
         &:active { background: rgba(0,0,0,0.2); }
     }
-
 }
 
 footer nav a.current {
