@@ -28,22 +28,10 @@ form.rounded select:first-of-type {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px 2px 0px 0px;
-  -moz-border-radius: 2px 2px 0px 0px;
-  border-radius: 2px 2px 0px 0px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
 }
 form.rounded input:not([type=checkbox]):last-of-type,
 form.rounded textarea:last-of-type,
 form.rounded select:last-of-type {
-  -webkit-border-radius: 0px 0px 2px 2px;
-  -moz-border-radius: 0px 0px 2px 2px;
-  border-radius: 0px 0px 2px 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
   -webkit-border-radius: 0px 0px 2px 2px;
   -moz-border-radius: 0px 0px 2px 2px;
   border-radius: 0px 0px 2px 2px;

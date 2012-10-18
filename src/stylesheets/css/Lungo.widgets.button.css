@@ -25,12 +25,6 @@ a.button {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 a.button:active,
 a.button.active {
