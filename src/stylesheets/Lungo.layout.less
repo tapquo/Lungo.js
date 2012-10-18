@@ -56,20 +56,19 @@ section {
         .transform(translateX(100%));
         visibility: visible !important;
 
-        &:not(.show) > header > * {
+        & > header > *, & > article > * {
             opacity: 0;
-            .transition(opacity 300ms @defaultTrasition);
+            .transition(opacity 400ms @defaultTrasition);
         }
 
         &:first-child, &.show {
             .transform(translateX(0%));
-            & > header > * { opacity: 1; }
+            & > header > *, & > article > * { opacity: 1; }
         }
 
         &.hide {
             .transform(translateX(-100%));
-
-            & > header > * { opacity: 0; }
+            & > header > *, & > article > * { opacity: 0; }
         }
     }
 
