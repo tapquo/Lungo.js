@@ -35,34 +35,38 @@ header nav, footer nav {
             left: -12px;
             margin-right: -20px;
         }
-
     }
+}
 
-    &.groupbar {
-        position: absolute;
-        top: @header-footer-height;
-        height: @header_groupbar_height;
+nav.groupbar {
+    position: absolute;
+    top: @header-footer-height;
+    height: @header_groupbar_height;
+    display: block;
+    width: 100%;
+    z-index: 2;
+
+    line-height: @header_groupbar_height;
+
+    & a {
+        padding: 0px;
+        margin: 0px;
+        font-weight: bold;
+        height: @header_groupbar_height !important;
         display: block;
-        width: 100%;
-        z-index: 2;
-
-        line-height: @header_groupbar_height;
-
-        & a {
-            padding: 0px;
-            margin: 0px;
-            font-weight: bold;
-            height: @header_groupbar_height;
-            & .icon {
-                font-size: 1.0em;
-            }
-            & .bubble {
-                top: -6px;
-                left: 0px;
-            }
+        float: left;
+        text-align: center;
+        & .icon {
+            font-size: 1.0em;
+            margin-right: 2px;
+        }
+        & .bubble {
+            top: -6px;
+            left: 0px;
         }
     }
 }
+
 
 header nav {
     &.button a {

@@ -42,8 +42,7 @@ footer nav a .bubble {
   left: -12px;
   margin-right: -20px;
 }
-header nav.groupbar,
-footer nav.groupbar {
+nav.groupbar {
   position: absolute;
   top: 44px;
   height: 30px;
@@ -52,19 +51,20 @@ footer nav.groupbar {
   z-index: 2;
   line-height: 30px;
 }
-header nav.groupbar a,
-footer nav.groupbar a {
+nav.groupbar a {
   padding: 0px;
   margin: 0px;
   font-weight: bold;
-  height: 30px;
+  height: 30px !important;
+  display: block;
+  float: left;
+  text-align: center;
 }
-header nav.groupbar a .icon,
-footer nav.groupbar a .icon {
+nav.groupbar a .icon {
   font-size: 1.0em;
+  margin-right: 2px;
 }
-header nav.groupbar a .bubble,
-footer nav.groupbar a .bubble {
+nav.groupbar a .bubble {
   top: -6px;
   left: 0px;
 }
