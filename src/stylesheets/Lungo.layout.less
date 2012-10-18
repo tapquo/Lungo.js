@@ -73,7 +73,11 @@ section {
 
     &[data-transition="cover"] {
         .transform(translateY(110%));
-        &:first-child, &.show { .transform(translateY(0%)); }
+        // .transition-delay(0ms);
+        &:first-child, &.show, &.hide {
+            .transform(translateY(0%));
+            .transform(translateY(0%));
+        }
     }
 
     &[data-transition="fade"] {

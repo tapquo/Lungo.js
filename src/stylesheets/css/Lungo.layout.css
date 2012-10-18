@@ -114,7 +114,13 @@ section[data-transition="cover"] {
   transform: translatey(110%);
 }
 section[data-transition="cover"]:first-child,
-section[data-transition="cover"].show {
+section[data-transition="cover"].show,
+section[data-transition="cover"].hide {
+  -webkit-transform: translatey(0%);
+  -moz-transform: translatey(0%);
+  -ms-transform: translatey(0%);
+  -o-transform: translatey(0%);
+  transform: translatey(0%);
   -webkit-transform: translatey(0%);
   -moz-transform: translatey(0%);
   -ms-transform: translatey(0%);
