@@ -29,10 +29,10 @@
 .scroll  > * {
   -webkit-transform: translate3d(0, 0, 0);
 }
-.left {
+:not(.icon).left {
   float: left;
 }
-.right {
+:not(.icon).right {
   float: right;
 }
 .hidden {
