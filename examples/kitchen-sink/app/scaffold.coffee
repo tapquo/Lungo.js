@@ -7,8 +7,9 @@ sections = [
         nav:
             position: "right"
             items: [
-                href: "#",
-                "data-icon": "home"
+                href: "#", icon: "home", label: "Home", tap: App.Session
+            ,
+                href: "b", router: "section", label: "Section B"
             ]
     footer:
         nav:
@@ -34,3 +35,32 @@ sections = [
         id: "finished", class: "list scroll"
     ]
 ]
+
+
+section_main =
+    id: "main"
+    transition: "slide"
+    header:
+        title: "Lungo Scaffold"
+        subtitle: "definition"
+        nav:
+            position: "left"
+            items: [
+                href:"back", icon:"home", label:"return"
+            ]
+
+    footer:
+        nav:
+            class: "with-labels"
+            items: [
+                href:"#", icon:"user", label: "Profile", callback: -> alert "user"
+            ,
+                href:"#", icon:"map", label:"Map", callback: -> alert "map"
+             ,
+                href:"#", icon:"settings", label:"Config", callback: -> alert "Congiguration"
+            ]
+
+section_login =
+    id: "login"
+    article:
+        class: "list scroll"
