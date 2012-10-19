@@ -14,7 +14,8 @@ Lungo.Boot.Article = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
         LIST_IN_ARTICLE: 'article.list, aside.list',
-        CHECKBOX_IN_ARTICLE: '.checkbox'
+        CHECKBOX_IN_ARTICLE: '.checkbox',
+        ARTICLE_SCROLLABLE: 'article.scroll'
     };
 
     /**
@@ -25,6 +26,7 @@ Lungo.Boot.Article = (function(lng, undefined) {
     var init = function() {
         _initElement(SELECTORS.LIST_IN_ARTICLE, _createListElement);
         _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _createCheckboxElement);
+        _initElement(SELECTORS.ARTICLE_SCROLLABLE, _scrollFix)
     };
 
     var _initElement = function(selector, callback) {
@@ -45,6 +47,21 @@ Lungo.Boot.Article = (function(lng, undefined) {
 
     var _createCheckboxElement = function(checkbox) {
         checkbox.append(ELEMENT.SPAN);
+    };
+
+    var _scrollFix = function(article) {
+        console.error('_scrollFix', article[0]);
+
+        article[0].addEventListener('touchstart', function(event){
+            startY = event.touches[0].pageY;
+            scrollTop = this.scrollTop;
+
+            if(scrollTop <= 0)
+                this.scrollTop = 1;
+
+            if(scrollTop + this.offsetHeight >= this.scrollHeight)
+                this.scrollTop = this.scrollHeight - this.offsetHeight - 1;
+        }, false);
     };
 
     return {
