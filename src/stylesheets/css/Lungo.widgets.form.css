@@ -8,6 +8,9 @@
  */
 /* DIMENSIONS */
 /* COLORS */
+form {
+  margin: 3%;
+}
 form.wrapper input:not([type=checkbox]),
 form textarea,
 form select {
@@ -39,17 +42,13 @@ form.rounded select:last-of-type {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-label:not(.select) {
-  font-size: 0.9em;
-  line-height: 1.5em;
-}
 input[type=text],
 textarea,
 select {
   display: block;
   width: 96%;
-  padding: 0.5% 2%;
-  height: 29px;
+  padding: 0 2%;
+  height: 30px;
   font-size: 14px;
   font-weight: bold;
   -webkit-appearance: none;
@@ -69,7 +68,7 @@ input[type=search]  + .button {
   float: right;
   padding: 0px;
   width: 13%;
-  height: 29px;
+  height: 30px;
 }
 input[type=search]  + .button .icon {
   top: -3px;
@@ -79,7 +78,7 @@ input[type=search]  + .button .icon {
 /* @group select */
 select {
   width: 100%;
-  height: 29px;
+  height: 30px;
 }
 label.select {
   position: relative;
@@ -92,8 +91,8 @@ label.select {
   top: 0;
   right: 0;
   bottom: 0;
-  height: 29px;
-  width: 29px;
+  height: 30px;
+  width: 30px;
   content: "▼";
   pointer-events: none;
   line-height: 31px;
@@ -102,15 +101,26 @@ label.select {
   content: none;
 }
 /* @end */
-input[type=range].checkbox {
+input[type=range] {
   -webkit-appearance: none;
+  outline: none;
+}
+input[type=range]:not(.checkbox) {
+  height: 12px;
+  width: 100%;
+  padding: 0px;
+  margin: 8px 0 12px 0;
+  border: 0;
+  cursor: ew-resize;
+}
+input[type=range]:not(.checkbox)::-webkit-slider-thumb {
+  top: -1px;
+}
+input[type=range].checkbox {
   background: #aaaaaa;
-  color: rgba(255, 255, 255, 0.6);
   width: 70px;
   height: 30px;
-  padding: 1px 2px 1px 2px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 4px 0px #555 inset, 0px 1px 5px 0px #555 inset;
+  padding: 1px 2px;
   font-family: 'lungojsicon';
 }
 input[type=range].checkbox:after {
@@ -121,26 +131,21 @@ input[type=range].checkbox:after {
   padding: 0 8px;
   font-size: 1.5em;
 }
-input[type=range].checkbox.active {
-  background: #66ba28;
-}
 input[type=range].checkbox.active:after {
   float: left;
   content: "\0051";
   font-weight: bold;
 }
-input[type=range].checkbox::-webkit-slider-thumb {
+input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background-color: #444;
   width: 30px;
   height: 24px;
-  border-radius: 3px;
+  border-radius: 2px;
   position: relative;
   margin: 2px 2px 2px 2px;
-  box-shadow: 0px 1px 2px 1px #666;
-  background: #ffffff;
+  border: none;
 }
-input[type=range].checkbox::-webkit-slider-thumb::after {
+input[type=range]::-webkit-slider-thumb::after {
   width: 13px;
   height: 13px;
   display: block;
@@ -150,28 +155,8 @@ input[type=range].checkbox::-webkit-slider-thumb::after {
   z-index: 9;
   top: 5px;
   left: 9px;
-  background: #eaeaea;
 }
 /* @group range */
-input[type="range"]:not(.checkbox) {
-  -webkit-appearance: none;
-  height: 15px;
-  width: 100%;
-  outline: none;
-  position: relative;
-  padding: 0px;
-  margin: 0px;
-  border: 0;
-  cursor: ew-resize;
-}
-input[type="range"]:not(.checkbox)::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  position: relative;
-  z-index: 1;
-  top: -1px;
-  width: 24px;
-  height: 24px;
-}
 /* @end */
 /* @group progress */
 .progress {
@@ -186,8 +171,8 @@ input[type="range"]:not(.checkbox)::-webkit-slider-thumb {
   float: right;
 }
 .progress .bar {
-  height: 15px;
-  line-height: 15px;
+  height: 12px;
+  line-height: 12px;
   display: block;
 }
 .progress .bar .value {

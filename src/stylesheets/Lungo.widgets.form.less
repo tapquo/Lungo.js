@@ -9,14 +9,17 @@
 
 @import "constants.less";
 
-@input-height: 29px;
+@form-input-height: 30px;
+@rounded-radius: 2px;
+
 
 form {
+    margin: 3%;
+
     &.wrapper input:not([type=checkbox]), textarea, select {
         margin: 3px 0px 3px 0px;
     }
 
-    @rounded-radius: 2px;
     &.rounded {
         & input:not([type=checkbox]), textarea, select {
             width: 94%;
@@ -29,15 +32,14 @@ form {
 }
 
 label:not(.select) {
-    font-size: 0.9em;
-    line-height: 1.5em;
+    // font-size: 0.9em;
 }
 
 input[type=text], textarea, select {
     display: block;
     width: 96%;
-    padding: 0.5% 2%;
-    height: @input-height;
+    padding: 0 2%;
+    height: @form-input-height;
     font-size: 14px;
     font-weight: bold;
 
@@ -60,7 +62,7 @@ input[type=search] {
         float: right;
         padding: 0px;
         width: 13%;
-        height: @input-height;
+        height: @form-input-height;
         & .icon{
             top: -3px;
             float: none;
@@ -73,7 +75,7 @@ input[type=search] {
 
 select {
     width: 100%;
-    height: @input-height;
+    height: @form-input-height;
 }
 
 label.select {
@@ -88,8 +90,8 @@ label.select {
     top: 0;
     right: 0;
     bottom: 0;
-    height: @input-height;
-    width: @input-height;
+    height: @form-input-height;
+    width: @form-input-height;
 
     content: "▼";
     pointer-events:none;
@@ -100,48 +102,54 @@ label.select {
     content: none;
 }
 /* @end */
-
-
-input[type=range].checkbox {
+input[type=range] {
     -webkit-appearance: none;
-    background: #aaaaaa;
-    color: rgba(255,255,255,0.6);
-    width:70px;
-    height:30px;
-    padding:1px 2px 1px 2px;
-    border-radius:4px;
-    box-shadow:0px 0px 4px 0px #555 inset, 0px 1px 5px 0px #555 inset;
-    font-family:'lungojsicon';
+    outline: none;
 
-    &:after {
-        content: "\0055";
-        position: relative;
-        float: right;
-        top: -23px;
-        padding: 0 8px;
-        font-size: 1.5em;
+    &:not(.checkbox) {
+        height: 12px;
+        width: 100%;
+        padding: 0px;
+        margin: 8px 0 12px 0;
+        border: 0;
+        cursor: ew-resize;
+
+        &::-webkit-slider-thumb {
+            top: -1px;
+        }
     }
 
-    &.active {
-        background: rgba(102, 186, 40, 1);
+    &.checkbox {
+        background: #aaaaaa;
+        width:70px;
+
+        height: 30px;
+        padding: 1px 2px;
+        font-family:'lungojsicon';
+
         &:after {
+            content: "\0055";
+            position: relative;
+            float: right;
+            top: -23px;
+            padding: 0 8px;
+            font-size: 1.5em; }
+
+        &.active:after {
             float: left;
             content: "\0051";
-            font-weight: bold;
-        }
+            font-weight: bold; }
     }
 
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        background-color: #444;
         width: 30px;
         height: 24px;
-        border-radius:3px;
+        border-radius: 2px;
         position:relative;
         margin:2px 2px 2px 2px;
-        box-shadow:0px 1px 2px 1px #666;
-        background: rgb(255,255,255);
-    }
+        border: none; }
+
     &::-webkit-slider-thumb::after {
       width:13px;
       height:13px;
@@ -151,36 +159,12 @@ input[type=range].checkbox {
       border-radius:7.5px;
       z-index:9;
       top:5px;
-      left:9px;
-        background: rgb(234,234,234);
-    }
-
-
+      left:9px; }
 }
+
 
 
 /* @group range */
-input[type="range"]:not(.checkbox) {
-    -webkit-appearance: none;
-    height: 15px;
-    width: 100%;
-    outline: none;
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-    border: 0;
-    cursor: ew-resize;
-
-    &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        position: relative;
-        z-index: 1;
-
-        top:-1px;
-        width: 24px;
-        height: 24px;
-    }
-}
 /* @end */
 
 /* @group progress */
@@ -195,8 +179,8 @@ input[type="range"]:not(.checkbox) {
     }
 
     & .bar {
-        height:  15px;
-        line-height: 15px;
+        height:  12px;
+        line-height: 12px;
         display: block;
 
         & .value {
