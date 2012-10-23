@@ -31,14 +31,8 @@ Lungo.Boot.Events = (function(lng, undefined) {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
 
-        lng.dom(SELECTORS.WINDOW).on(resize, _changeOrientation);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
-    };
-
-    var _changeOrientation = function(event) {
-        event.preventDefault();
-        lng.View.Resize.navigation();
     };
 
     var _loadTarget = function(event) {

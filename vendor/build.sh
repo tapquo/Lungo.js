@@ -39,7 +39,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #View
     DIR=$LUNGO_SOURCES"view/"$LUNGO_NAMESPACE"View."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"view/"
-    FILES=(Resize.js Article.js Aside.js Element.js)
+    FILES=(Article.js Aside.js Element.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
