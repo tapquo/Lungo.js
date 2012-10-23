@@ -242,27 +242,11 @@ input, textarea, select {
     border-bottom-right-radius: @border-radius-form;
 }
 
-/* @group .range */
-input[type="checkbox"] + span, input[type="radio"] + span {
-    color: #fff;
-    background: #a0a0a0;
-    .border-radius(@border-radius-form);
-}
-    input[type="checkbox"] + span::before,
-    input[type="radio"] + span::before {
-        background: #c1c1c1;
-        .border-radius(@border-radius-form);
-    }
 
-    input[type="checkbox"]:checked + span,
-    input[type="radio"]:checked + span {
-        .linear-gradient(top, ~','@theme 0%, ~','@theme-dark 100%);
-        .border-radius(@border-radius-form);
-    }
-/* @end */
 
 /* @group range */
-input[type="range"] {
+
+input[type="range"]:not(.checkbox) {
     background-color: #c7c7c7;
     .border-radius(@border-radius-form);
     .box-shadow(@box-shadow-form);
@@ -278,6 +262,7 @@ input[type="range"] {
         .linear-gradient(top, ~','@theme 0%, ~','@theme-dark 100%);
     }
 }
+
 /* @end */
 
 /* @group .progress */

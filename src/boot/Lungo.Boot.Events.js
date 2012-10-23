@@ -14,11 +14,9 @@ Lungo.Boot.Events = (function(lng, undefined) {
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
-        DOCUMENT: document,
-        WINDOW: window,
         HREF_TARGET: 'a[href][data-router]',
         HREF_TARGET_FROM_ASIDE: 'aside a[href][data-router]',
-        CURRENT_SECTION: 'section.aside, section.current'
+        INPUT_CHECKBOX: 'input[type=range].checkbox'
     };
 
     /**
@@ -33,6 +31,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
+        lng.dom(SELECTORS.INPUT_CHECKBOX).touch(_changeCheckboxValue);
     };
 
     var _loadTarget = function(event) {
@@ -45,6 +44,13 @@ Lungo.Boot.Events = (function(lng, undefined) {
         //@TODO: refactor
         if (window.innerWidth < 768) lng.View.Aside.hide();
         if (event) event.preventDefault();
+    };
+
+    var _changeCheckboxValue = function(event)  {
+        event.preventDefault();
+        var el = lng.dom(this);
+        var current_value = el.val() > 0 ? 0 : 1;
+        el.toggleClass("active").attr('value', current_value);
     };
 
     var _selectTarget = function(link) {

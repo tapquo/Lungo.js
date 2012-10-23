@@ -305,45 +305,8 @@ select:focus {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* @group .range */
-input[type="checkbox"] + span,
-input[type="radio"] + span {
-  color: #fff;
-  background: #a0a0a0;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-input[type="checkbox"] + span::before,
-input[type="radio"] + span::before {
-  background: #c1c1c1;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-input[type="checkbox"]:checked + span,
-input[type="radio"]:checked + span {
-  background-image: -webkit-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-/* @end */
 /* @group range */
-input[type="range"] {
+input[type="range"]:not(.checkbox) {
   background-color: #c7c7c7;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -355,12 +318,12 @@ input[type="range"] {
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
-input[type="range"]:active {
+input[type="range"]:not(.checkbox):active {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-input[type="range"]::-webkit-slider-thumb {
+input[type="range"]:not(.checkbox)::-webkit-slider-thumb {
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
@@ -369,7 +332,7 @@ input[type="range"]::-webkit-slider-thumb {
   background-clip: padding-box;
   background: #a0a0a0;
 }
-input[type="range"]:active::-webkit-slider-thumb {
+input[type="range"]:not(.checkbox):active::-webkit-slider-thumb {
   -webkit-box-shadow: 0px 0px 4px #39abe1;
   -moz-box-shadow: 0px 0px 4px #39abe1;
   box-shadow: 0px 0px 4px #39abe1;
