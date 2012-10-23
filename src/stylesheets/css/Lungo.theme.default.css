@@ -24,20 +24,10 @@ a.theme:active {
 }
 /* @group <header> & <footer> & <article> */
 section > header {
-  background-image: -webkit-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -moz-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -ms-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -o-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: linear-gradient(top , #2a95d3 , #1984c2);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  -webkit-border-radius: 4px 4px 0px 0px;
-  -moz-border-radius: 4px 4px 0px 0px;
-  border-radius: 4px 4px 0px 0px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  background-color: #1984c2;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
 }
 section > header .title {
   color: #fff;
@@ -48,27 +38,13 @@ section > header .subtitle {
   opacity: 0.7;
 }
 section > footer {
-  background-image: -webkit-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -moz-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -ms-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -o-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: linear-gradient(top , #292f34 0% , #23282c 60%);
-  -webkit-border-radius: 0px 0px 4px 4px;
-  -moz-border-radius: 0px 0px 4px 4px;
-  border-radius: 0px 0px 4px 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+  background-color: #23282c;
   -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
   box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
 }
 section > nav.groupbar {
-  background-image: -webkit-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: -moz-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: -ms-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: -o-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: linear-gradient(top , #23282c 0% , #292f34 60%);
+  background-color: #292f34;
 }
 section > article {
   background: #f4f5f5;
@@ -92,7 +68,6 @@ header nav.box a:active {
   background: rgba(0, 0, 0, 0.1);
 }
 header nav.button a {
-  border-radius: 4px;
   background-image: -webkit-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -moz-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -ms-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
@@ -274,73 +249,74 @@ a.button:active {
 label {
   color: #999;
 }
-input,
+input[type=text],
 textarea,
 select {
   border: 1px solid #ccc;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  color: #858585;
-  font-family: Helvetica, Arial, sans-serif;
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  color: #858585;
+  font-family: Helvetica, Arial, sans-serif;
 }
-input:focus,
+input[type=text]:focus,
 textarea:focus,
 select:focus {
   color: #484a49;
   border-color: #2a95d3;
-  -webkit-box-shadow: 0 0 6px #39abe1;
-  -moz-box-shadow: 0 0 6px #39abe1;
-  box-shadow: 0 0 6px #39abe1;
+  -webkit-box-shadow: 0 0 1px #39abe1;
+  -moz-box-shadow: 0 0 1px #39abe1;
+  box-shadow: 0 0 1px #39abe1;
+}
+input[type=text][disabled],
+textarea[disabled],
+select[disabled] {
+  background: #f00;
 }
 .select:after {
   background: #ccc;
   color: white;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 /* @group range */
-input[type="range"]:not(.checkbox) {
-  background-color: #c7c7c7;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+input[type=range] {
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-}
-input[type="range"]:not(.checkbox):active {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-input[type="range"]:not(.checkbox)::-webkit-slider-thumb {
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  background: #a0a0a0;
 }
-input[type="range"]:not(.checkbox):active::-webkit-slider-thumb {
-  -webkit-box-shadow: 0px 0px 4px #39abe1;
-  -moz-box-shadow: 0px 0px 4px #39abe1;
-  box-shadow: 0px 0px 4px #39abe1;
-  background-image: -webkit-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #2a95d3 0% , #1984c2 100%);
+input[type=range]:not(.checkbox) {
+  background-color: #c7c7c7;
+}
+input[type=range]:not(.checkbox):active {
+  background-color: #39abe1;
+}
+input[type=range].checkbox {
+  background-color: #aaaaaa;
+  color: rgba(255, 255, 255, 0.6);
+}
+input[type=range].checkbox.active {
+  background-color: #39abe1;
+}
+input[type=range]::-webkit-slider-thumb {
+  border-radius: 1px;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+input[type=range]::-webkit-slider-thumb::after {
+  background: #eaeaea;
 }
 /* @end */
 /* @group .progress */
@@ -351,23 +327,22 @@ input[type="range"]:not(.checkbox):active::-webkit-slider-thumb {
   color: #858585;
 }
 .progress .bar {
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   background: #c7c7c7;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
 .progress .bar .value {
-  background-image: -webkit-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  background-color: #39abe1;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
