@@ -109,18 +109,18 @@ FILES_TO_COMPRESS=""
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [BUILD]: lungo.icon."$file"\033[0m"
-        cp $DIR"lungo.widgets.icon."$file $PACKAGE'lungo.icon.'$file
+        cp $DIR"Lungo.widgets.icon."$file $PACKAGE'lungo.icon.'$file
     done
 
     FILES=(default.css)
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [BUILD]: lungo.theme."$file"\033[0m"
-        cp $DIR"lungo.theme."$file $PACKAGE'lungo.theme.'$file
+        cp $DIR"Lungo.theme."$file $PACKAGE'lungo.theme.'$file
     done
 
     DIR=$LUNGO_SOURCES"stylesheets/"
-    FILES=(mixins.less lungo.theme.default.less)
+    FILES=(mixins.less lungo.theme.default.font.less)
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [COPY]: "$file"\033[0m"
