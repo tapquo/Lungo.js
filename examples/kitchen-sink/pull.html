@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.widgets.notification.css">
     <link rel="stylesheet" href="../../src/stylesheets/css/Lungo.theme.default.css">
 
-        <!--
+    <!--
     <link rel="stylesheet" href="../../release/lungo.css">
     <link rel="stylesheet" href="../../release/lungo.icon.css">
     <link rel="stylesheet" href="../../release/lungo.icon.brand.css">
@@ -48,7 +48,7 @@
 </head>
 
 <body class="app">
-    <section id="main" data-transition="slide">
+    <section id="main" data-transition="slide" data-pull="normal">
         <header  class="">
             <nav class="left button">
                 <a href="#features" data-router="aside" data-icon="menu"></a>
@@ -65,6 +65,37 @@
         </header>
 
         <article id="main-article" class="list indented scroll">
+            <ul>
+                <li class="contrast " data-loading="white">
+
+                </li>
+
+                <li class="contrast">
+                    <strong>
+                    A framework for developers who want to design, build and share cross device apps.
+                </strong>
+                </li>
+                <li data-icon="brand html5" class="feature">
+                    <strong>HTML5 Optimized Apps</strong>
+                    Lungo Framework supports open web standards, such as HTML5, CSS3 and JavaScript. It brings consistent browser environment across mobiles, tvs and desktop devices.
+                </li>
+                <li data-icon="brand github-2" class="feature">
+                    <strong>Open Source Project</strong>
+                    Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
+                </li>
+                <li data-icon="book" class="feature">
+                    <strong>Powerfull JavaScript API</strong>
+                    Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
+                </li>
+                <li data-icon="brand branch" class="feature">
+                    <strong>Multi-Device full support</strong>
+                    Is known that create apps for each platform is expensive, this situation is increased by the arrival of tablets and SmartTVs. Lungo will suit all of them creating a unique and amazing UX.
+                </li>
+            </ul>
+        </article>
+
+
+        <article id="second-article" class="list indented scroll"
             <ul>
                 <li class="contrast " data-loading="white">
 
@@ -115,6 +146,8 @@
     <script src="../../src/view/Lungo.View.Article.js" ></script>
     <script src="../../src/view/Lungo.View.Aside.js" ></script>
     <script src="../../src/view/Lungo.View.Element.js"></script>
+    <script src="../../src/view/Lungo.View.Pull.js"></script>
+
     <script src="../../src/data/Lungo.Data.Cache.js"></script>
     <script src="../../src/data/Lungo.Data.Sql.js"></script>
     <script src="../../src/data/Lungo.Data.Storage.js"></script>
@@ -130,34 +163,25 @@
 
     <!-- LungoJS - Sandbox App -->
     <script>
-        Lungo.init({
-            name: 'Kitchen Sink',
-            version: '2.0',
-            sugars: ['map', 'pull'],
-            resources: ['app/sections/layout.html',
-                        'app/sections/notification.html',
-                        'app/sections/list.html',
-                        'app/sections/icon.html',
-                        'app/sections/grid.html',
-                        'app/sections/form.html',
-                        'app/sections/aside.html',
-                        'app/sections/touchevents.html',
-                        'app/sections/splash.html',
-                        'app/sections/data-attribute.html',
-                        'app/sections/scroll.html',
-                        'app/sections/color.html',
-                        'app/asides/features.html',
-                        'app/asides/left.html',
-                        'app/asides/right.html']
+        Lungo.init();
 
-        });
+        var config = {
+            refresh: {
+                title: 'REFRESHING...',
+                icon: 'up',
+                callback: function() {
+                    console.error(arguments);
+                    setTimeout(function(){
+                        pull.hide();
+                        // Lungo.View.pull.hide();
 
-        Lungo.ready(function() {
-            Lungo.View.Aside.show('features');
-        });
+                    }, 1000);
+                }
+            }
+        };
+
+        var pull = Lungo.View.Pull('#main-article', config);
+
     </script>
-    <script src="app/app.js"></script>
-        <script src="app/events.notification.js"></script>
-        <script src="app/events.touch.js"></script>
 </body>
 </html>

@@ -56,6 +56,14 @@ Lungo.Attributes.Data = {
                     <span class="left"></span>\
                 </div>'
     },
+    Pull: {
+        tag: 'pull',
+        selector: 'section',
+        html: '<div class="pull {{value}}" style="position: absolute; top: 44px; width: 100%; text-align: center; padding-top: 10px; background-color: white; height: 100px; z-index: -10;">\
+                    <span class="icon home"></span>\
+                    <strong>title</strong>\
+                </div>'
+    },
     Back: {
         tag: 'back',
         selector: 'header, footer',

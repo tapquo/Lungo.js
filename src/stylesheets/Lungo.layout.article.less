@@ -7,7 +7,6 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-@import "mixins.less";
 @import "constants.less";
 
 article {
@@ -28,6 +27,10 @@ article {
         visibility: visible;
         display: block;
         z-index: 1;
+    }
+
+    &.pull {
+        .transition(all 300ms @defaultTrasition);
     }
 
     & .text {

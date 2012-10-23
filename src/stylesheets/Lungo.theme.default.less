@@ -7,8 +7,8 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-@import "mixins.less";
 @import "constants.less";
+// @import "lungo.theme.default.font.less";
 
 
 @theme: #2A95D3;
@@ -65,26 +65,12 @@ section > article { background: #f4f5f5; }
 
 /* @group <nav> */
 header nav {
-    & a {
-        color: #fff;
-        // &:active { text-shadow: 0 0 4px rgba(255,255,255,0.5); }
-    }
+    & a { color: #fff; }
 
     &.box {
-        .box-shadow(~"1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)");
-        &.accept { background: rgba(0, 255, 0, 0.4); }
-        &.cancel { background: rgba(255, 0, 0, 0.4); }
-
-        &:active {
-            color: #fff;
-            &.accept { background: rgba(0, 255, 0, 0.2); }
-            &.cancel { background: rgba(255, 0, 0, 0.2); }
-            &:not(.accept):not(.cancel) { background: rgba(0,0,0,0.1); }
-        }
-
-        &.right a {
-            .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)");
-        }
+        &:not(.right) a { .box-shadow(~"1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)"); }
+        &.right a { .box-shadow(~"-1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)"); }
+        & a:active { background: rgba(0,0,0,0.1); }
     }
 
     &.button a {
@@ -93,7 +79,6 @@ header nav {
         box-shadow: 0 1px 0 rgba(255,255,255,0.2), inset 0 0 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0, 0, 0, .5);
         &:active { background: rgba(0,0,0,0.2); }
     }
-
 }
 
 footer nav a.current {
@@ -103,10 +88,8 @@ footer nav a.current {
 
 footer nav a, nav.groupbar a{
     color: rgba(0,0,0,0.7);
-    .text-shadow(0 1px 0 rgba(255,255,255,0.1));
     &.current {
-        color:  #fff;
-        text-shadow: 0 0 1px #fff;}
+        color:  #fff;}
 }
 
 nav.groupbar a.current { .box-shadow(inset 0 -3px 0 @theme); }
@@ -259,27 +242,11 @@ input, textarea, select {
     border-bottom-right-radius: @border-radius-form;
 }
 
-/* @group .range */
-input[type="checkbox"] + span, input[type="radio"] + span {
-    color: #fff;
-    background: #a0a0a0;
-    .border-radius(@border-radius-form);
-}
-    input[type="checkbox"] + span::before,
-    input[type="radio"] + span::before {
-        background: #c1c1c1;
-        .border-radius(@border-radius-form);
-    }
 
-    input[type="checkbox"]:checked + span,
-    input[type="radio"]:checked + span {
-        .linear-gradient(top, ~','@theme 0%, ~','@theme-dark 100%);
-        .border-radius(@border-radius-form);
-    }
-/* @end */
 
 /* @group range */
-input[type="range"] {
+
+input[type="range"]:not(.checkbox) {
     background-color: #c7c7c7;
     .border-radius(@border-radius-form);
     .box-shadow(@box-shadow-form);
@@ -295,6 +262,7 @@ input[type="range"] {
         .linear-gradient(top, ~','@theme 0%, ~','@theme-dark 100%);
     }
 }
+
 /* @end */
 
 /* @group .progress */

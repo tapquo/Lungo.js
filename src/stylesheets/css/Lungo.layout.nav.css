@@ -8,55 +8,60 @@
  */
 /* DIMENSIONS */
 /* COLORS */
-nav {
-  height: auto;
-  text-align: center;
+nav.groupbar,
+footer nav {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -ms-box-pack: justify;
+  -o-box-pack: justify;
+  box-pack: justify;
 }
-nav a {
+nav.groupbar  > a,
+footer nav   > a {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -o-box;
+  display: box;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  -o-box-flex: 1;
+  box-flex: 1;
+}
+nav abbr {
+  font-weight: bold;
+}
+header nav a {
   padding: 0 6px;
   min-width: 28px;
   z-index: 1000;
   float: left;
   height: 44px;
 }
-nav a .icon {
+header nav a .icon {
   font-size: 1.7em;
 }
-nav a img {
+header nav a img {
   width: 16px;
   height: 16px;
   top: -1px !important;
 }
-nav a abbr {
-  font-weight: bold;
-}
-nav a .bubble {
+header nav a .bubble {
   position: relative;
   top: -12px;
   left: -12px;
   margin-right: -20px;
-}
-nav.groupbar {
-  position: absolute;
-  top: 44px;
-  height: 30px;
-  display: block;
-  width: 100%;
-  z-index: 2;
-  line-height: 30px;
-}
-nav.groupbar a {
-  padding: 0px;
-  margin: 0px;
-  font-weight: bold;
-  height: 30px;
-}
-nav.groupbar a .icon {
-  font-size: 1.0em;
-}
-nav.groupbar a .bubble {
-  top: -6px;
-  left: 0px;
 }
 header nav.button a {
   margin: 5px 5px 5px 0;
@@ -80,16 +85,41 @@ header nav .loading {
 header nav .loading  + .icon {
   display: none;
 }
+nav.groupbar {
+  position: absolute;
+  top: 44px;
+  height: 30px;
+  width: 100%;
+  z-index: 2;
+  line-height: 30px;
+}
+nav.groupbar  > a {
+  padding: 0px;
+  margin: 0px;
+  height: 30px !important;
+  display: block;
+  text-align: center;
+}
+nav.groupbar  > a .icon {
+  font-size: 1.0em;
+  margin-right: 2px;
+}
+nav.groupbar  > a .bubble {
+  position: relative;
+  top: -1px;
+  left: 2px;
+}
 footer nav a {
+  text-align: center;
   display: block;
   padding: 0;
   height: 44px;
 }
 footer nav .icon {
-  display: block;
-  top: 0px;
   font-size: 2.0em !important;
   line-height: 44px;
+  width: 32px;
+  display: inline-block;
 }
 footer nav .bubble {
   top: -42px;
@@ -102,24 +132,19 @@ footer nav .bubble .loading {
 footer nav abbr {
   display: none;
 }
-footer nav .loading {
-  top: .1em;
-  font-size: 2.3em;
+footer nav .bubble {
+  position: relative;
+  top: -12px;
+  left: -12px;
+  margin-right: -20px;
 }
 footer nav.with-labels .icon {
   line-height: 36px;
 }
-footer nav.with-labels .bubble {
-  top: -34px;
-}
 footer nav.with-labels abbr {
   display: block !important;
-  position: absolute;
-  top: 30px;
-  width: inherit;
-  height: 14px;
-  margin-left: 0px;
-  display: block !important;
+  margin-top: -8px;
+  z-index: 1;
   font-size: 11px;
   line-height: 14px;
   overflow: hidden;

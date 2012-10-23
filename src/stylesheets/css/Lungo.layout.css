@@ -16,40 +16,31 @@ section {
   height: 100%;
   z-index: -1;
   display: none;
-  visibility: hidden;
-  -webkit-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -ms-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -webkit-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -ms-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: all 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -ms-transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 section:first-child,
 section.show {
   z-index: 1;
   display: block;
-  visibility: visible;
 }
 section.hide {
   z-index: -1;
   display: none;
-  visibility: hidden;
 }
 section[data-transition] {
   display: block !important;
 }
 section[data-transition="pop"] {
   opacity: 0;
-  -webkit-transform: scale(1.15);
-  -moz-transform: scale(1.15);
-  -ms-transform: scale(1.15);
-  -o-transform: scale(1.15);
-  transform: scale(1.15);
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
   -ms-transform: scale(1.15);
@@ -63,11 +54,6 @@ section[data-transition="pop"].show {
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  transform: scale(1);
   opacity: 1;
 }
 section[data-transition="pop"].hide {
@@ -76,50 +62,80 @@ section[data-transition="pop"].hide {
   -ms-transform: scale(0.9);
   -o-transform: scale(0.9);
   transform: scale(0.9);
-  -webkit-transform: scale(0.9);
-  -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
-  transform: scale(0.9);
   opacity: 0;
 }
 section[data-transition="slide"] {
-  -webkit-transform: translate(100%, 0);
-  -moz-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  -o-transform: translate(100%, 0);
-  transform: translate(100%, 0);
-  -webkit-transform: translate(100%, 0);
-  -moz-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  -o-transform: translate(100%, 0);
-  transform: translate(100%, 0);
+  -webkit-transform: translatex(100%);
+  -moz-transform: translatex(100%);
+  -ms-transform: translatex(100%);
+  -o-transform: translatex(100%);
+  transform: translatex(100%);
   visibility: visible !important;
+}
+section[data-transition="slide"]  > header > *,
+section[data-transition="slide"]  > article > * {
+  opacity: 0;
+  -webkit-transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -moz-transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -ms-transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -o-transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 section[data-transition="slide"]:first-child,
 section[data-transition="slide"].show {
-  -webkit-transform: translate(0%, 0);
-  -moz-transform: translate(0%, 0);
-  -ms-transform: translate(0%, 0);
-  -o-transform: translate(0%, 0);
-  transform: translate(0%, 0);
-  -webkit-transform: translate(0%, 0);
-  -moz-transform: translate(0%, 0);
-  -ms-transform: translate(0%, 0);
-  -o-transform: translate(0%, 0);
-  transform: translate(0%, 0);
+  -webkit-transform: translatex(0%);
+  -moz-transform: translatex(0%);
+  -ms-transform: translatex(0%);
+  -o-transform: translatex(0%);
+  transform: translatex(0%);
+}
+section[data-transition="slide"]:first-child  > header > *,
+section[data-transition="slide"].show  > header > *,
+section[data-transition="slide"]:first-child  > article > *,
+section[data-transition="slide"].show  > article > * {
+  opacity: 1;
 }
 section[data-transition="slide"].hide {
-  -webkit-transform: translate(-100%, 0);
-  -moz-transform: translate(-100%, 0);
-  -ms-transform: translate(-100%, 0);
-  -o-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
-  -webkit-transform: translate(-100%, 0);
-  -moz-transform: translate(-100%, 0);
-  -ms-transform: translate(-100%, 0);
-  -o-transform: translate(-100%, 0);
-  transform: translate(-100%, 0);
+  -webkit-transform: translatex(-100%);
+  -moz-transform: translatex(-100%);
+  -ms-transform: translatex(-100%);
+  -o-transform: translatex(-100%);
+  transform: translatex(-100%);
+}
+section[data-transition="slide"].hide  > header > *,
+section[data-transition="slide"].hide  > article > * {
+  opacity: 0;
+}
+section[data-transition="cover"] {
+  -webkit-transform: translatey(110%);
+  -moz-transform: translatey(110%);
+  -ms-transform: translatey(110%);
+  -o-transform: translatey(110%);
+  transform: translatey(110%);
+}
+section[data-transition="cover"]:first-child,
+section[data-transition="cover"].show,
+section[data-transition="cover"].hide {
+  -webkit-transform: translatey(0%);
+  -moz-transform: translatey(0%);
+  -ms-transform: translatey(0%);
+  -o-transform: translatey(0%);
+  transform: translatey(0%);
+  -webkit-transform: translatey(0%);
+  -moz-transform: translatey(0%);
+  -ms-transform: translatey(0%);
+  -o-transform: translatey(0%);
+  transform: translatey(0%);
+}
+section[data-transition="fade"] {
+  opacity: 0;
+}
+section[data-transition="fade"]:first-child,
+section[data-transition="fade"].show {
+  opacity: 1;
+}
+section[data-transition="fade"]:hide {
+  opacity: 0;
 }
 header,
 footer {

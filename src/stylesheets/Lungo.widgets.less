@@ -8,7 +8,6 @@
  */
 
 @import "constants.less";
-@import "mixins.less";
 
 .scroll {
     overflow-x: hidden;
@@ -32,8 +31,11 @@
     & > * { -webkit-transform: translate3d(0, 0, 0); }
 }
 
-.left { float: left; }
-.right { float: right;}
+:not(.icon) {
+    &.left { float: left; }
+    &.right { float: right;}
+}
+
 
 .hidden { display: none; }
 .indented > * { margin: 10px; }

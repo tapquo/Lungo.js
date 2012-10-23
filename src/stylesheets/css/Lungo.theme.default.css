@@ -29,23 +29,9 @@ section > header {
   background-image: -ms-linear-gradient(top , #2a95d3 , #1984c2);
   background-image: -o-linear-gradient(top , #2a95d3 , #1984c2);
   background-image: linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -webkit-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -moz-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -ms-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: -o-linear-gradient(top , #2a95d3 , #1984c2);
-  background-image: linear-gradient(top , #2a95d3 , #1984c2);
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5);
-  -webkit-border-radius: 4px 4px 0px 0px;
-  -moz-border-radius: 4px 4px 0px 0px;
-  border-radius: 4px 4px 0px 0px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
   -webkit-border-radius: 4px 4px 0px 0px;
   -moz-border-radius: 4px 4px 0px 0px;
   border-radius: 4px 4px 0px 0px;
@@ -67,36 +53,17 @@ section > footer {
   background-image: -ms-linear-gradient(top , #292f34 0% , #23282c 60%);
   background-image: -o-linear-gradient(top , #292f34 0% , #23282c 60%);
   background-image: linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -webkit-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -moz-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -ms-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: -o-linear-gradient(top , #292f34 0% , #23282c 60%);
-  background-image: linear-gradient(top , #292f34 0% , #23282c 60%);
   -webkit-border-radius: 0px 0px 4px 4px;
   -moz-border-radius: 0px 0px 4px 4px;
   border-radius: 0px 0px 4px 4px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 0px 0px 4px 4px;
-  -moz-border-radius: 0px 0px 4px 4px;
-  border-radius: 0px 0px 4px 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
-  box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
   -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
   -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
   box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
 }
 section > nav.groupbar {
-  background-image: -webkit-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: -moz-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: -ms-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: -o-linear-gradient(top , #23282c 0% , #292f34 60%);
-  background-image: linear-gradient(top , #23282c 0% , #292f34 60%);
   background-image: -webkit-linear-gradient(top , #23282c 0% , #292f34 60%);
   background-image: -moz-linear-gradient(top , #23282c 0% , #292f34 60%);
   background-image: -ms-linear-gradient(top , #23282c 0% , #292f34 60%);
@@ -111,47 +78,21 @@ section > article {
 header nav a {
   color: #fff;
 }
-header nav.box {
+header nav.box:not(.right) a {
   -webkit-box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
   -moz-box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
   box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
-  -webkit-box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
-  -moz-box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
-  box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
-}
-header nav.box.accept {
-  background: rgba(0, 255, 0, 0.4);
-}
-header nav.box.cancel {
-  background: rgba(255, 0, 0, 0.4);
-}
-header nav.box:active {
-  color: #fff;
-}
-header nav.box:active.accept {
-  background: rgba(0, 255, 0, 0.2);
-}
-header nav.box:active.cancel {
-  background: rgba(255, 0, 0, 0.2);
-}
-header nav.box:active:not(.accept):not(.cancel) {
-  background: rgba(0, 0, 0, 0.1);
 }
 header nav.box.right a {
   -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
   box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
-  -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
-  -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
-  box-shadow: -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2);
+}
+header nav.box a:active {
+  background: rgba(0, 0, 0, 0.1);
 }
 header nav.button a {
   border-radius: 4px;
-  background-image: -webkit-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
-  background-image: -moz-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
-  background-image: -ms-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
-  background-image: -o-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
-  background-image: linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -webkit-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -moz-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -ms-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
@@ -167,25 +108,16 @@ footer nav a.current {
   -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
   -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
   box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
-  -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
-  -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
-  box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
 }
 footer nav a,
 nav.groupbar a {
   color: rgba(0, 0, 0, 0.7);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 footer nav a.current,
 nav.groupbar a.current {
   color: #fff;
-  text-shadow: 0 0 1px #fff;
 }
 nav.groupbar a.current {
-  -webkit-box-shadow: inset 0 -3px 0 #2a95d3;
-  -moz-box-shadow: inset 0 -3px 0 #2a95d3;
-  box-shadow: inset 0 -3px 0 #2a95d3;
   -webkit-box-shadow: inset 0 -3px 0 #2a95d3;
   -moz-box-shadow: inset 0 -3px 0 #2a95d3;
   box-shadow: inset 0 -3px 0 #2a95d3;
@@ -201,9 +133,6 @@ aside footer {
   -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
   -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
   box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
-  -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
-  box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
   background: #23282c;
 }
 aside article {
@@ -216,14 +145,8 @@ section.aside {
   -webkit-box-shadow: -4px 0 8px rgba(0,0,0,0.5);
   -moz-box-shadow: -4px 0 8px rgba(0,0,0,0.5);
   box-shadow: -4px 0 8px rgba(0,0,0,0.5);
-  -webkit-box-shadow: -4px 0 8px rgba(0,0,0,0.5);
-  -moz-box-shadow: -4px 0 8px rgba(0,0,0,0.5);
-  box-shadow: -4px 0 8px rgba(0,0,0,0.5);
 }
 section.aside.right {
-  -webkit-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
-  -moz-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
-  box-shadow: 4px 0 8px rgba(0,0,0,0.5);
   -webkit-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
   -moz-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
   box-shadow: 4px 0 8px rgba(0,0,0,0.5);
@@ -288,11 +211,6 @@ aside .list li.current {
   background-image: -ms-linear-gradient(top , #39abe1 25% , #1984c2 100%);
   background-image: -o-linear-gradient(top , #39abe1 25% , #1984c2 100%);
   background-image: linear-gradient(top , #39abe1 25% , #1984c2 100%);
-  background-image: -webkit-linear-gradient(top , #39abe1 25% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #39abe1 25% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #39abe1 25% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #39abe1 25% , #1984c2 100%);
-  background-image: linear-gradient(top , #39abe1 25% , #1984c2 100%);
 }
 aside .list li strong,
 aside .list li small,
@@ -320,12 +238,6 @@ aside .list li strong {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px 2px 0 0;
-  -moz-border-radius: 2px 2px 0 0;
-  border-radius: 2px 2px 0 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
 }
 .indented li:last-child {
   -webkit-border-radius: 0 0 2px 2px;
@@ -334,15 +246,6 @@ aside .list li strong {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 0 0 2px 2px;
-  -moz-border-radius: 0 0 2px 2px;
-  border-radius: 0 0 2px 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -355,15 +258,6 @@ a.button {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255, 0.2);
-  -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255, 0.2);
-  box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255, 0.2);
   -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255, 0.2);
   -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255, 0.2);
   box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255, 0.2);
@@ -371,9 +265,6 @@ a.button {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 a.button:active {
-  -webkit-box-shadow: inset 0 10px 30px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.3);
-  -moz-box-shadow: inset 0 10px 30px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.3);
-  box-shadow: inset 0 10px 30px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.3);
   -webkit-box-shadow: inset 0 10px 30px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.3);
   -moz-box-shadow: inset 0 10px 30px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.3);
   box-shadow: inset 0 10px 30px rgba(0,0,0,0.2), inset 0 -2px 4px rgba(0,0,0,0.3);
@@ -393,17 +284,8 @@ select {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
   color: #858585;
   font-family: Helvetica, Arial, sans-serif;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
@@ -416,9 +298,6 @@ select:focus {
   -webkit-box-shadow: 0 0 6px #39abe1;
   -moz-box-shadow: 0 0 6px #39abe1;
   box-shadow: 0 0 6px #39abe1;
-  -webkit-box-shadow: 0 0 6px #39abe1;
-  -moz-box-shadow: 0 0 6px #39abe1;
-  box-shadow: 0 0 6px #39abe1;
 }
 .select:after {
   background: #ccc;
@@ -426,68 +305,8 @@ select:focus {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-/* @group .range */
-input[type="checkbox"] + span,
-input[type="radio"] + span {
-  color: #fff;
-  background: #a0a0a0;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-input[type="checkbox"] + span::before,
-input[type="radio"] + span::before {
-  background: #c1c1c1;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-input[type="checkbox"]:checked + span,
-input[type="radio"]:checked + span {
-  background-image: -webkit-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -webkit-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-/* @end */
 /* @group range */
-input[type="range"] {
+input[type="range"]:not(.checkbox) {
   background-color: #c7c7c7;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -495,34 +314,16 @@ input[type="range"] {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
 }
-input[type="range"]:active {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+input[type="range"]:not(.checkbox):active {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
 }
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+input[type="range"]:not(.checkbox)::-webkit-slider-thumb {
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   border-radius: 12px;
@@ -531,18 +332,10 @@ input[type="range"]::-webkit-slider-thumb {
   background-clip: padding-box;
   background: #a0a0a0;
 }
-input[type="range"]:active::-webkit-slider-thumb {
+input[type="range"]:not(.checkbox):active::-webkit-slider-thumb {
   -webkit-box-shadow: 0px 0px 4px #39abe1;
   -moz-box-shadow: 0px 0px 4px #39abe1;
   box-shadow: 0px 0px 4px #39abe1;
-  -webkit-box-shadow: 0px 0px 4px #39abe1;
-  -moz-box-shadow: 0px 0px 4px #39abe1;
-  box-shadow: 0px 0px 4px #39abe1;
-  background-image: -webkit-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #2a95d3 0% , #1984c2 100%);
   background-image: -webkit-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
   background-image: -moz-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
   background-image: -ms-linear-gradient(top , #2a95d3 0% , #1984c2 100%);
@@ -565,12 +358,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
 }
 .progress .bar .value {
   background-image: -webkit-linear-gradient(top , #39abe1 0% , #1984c2 100%);
@@ -578,17 +365,6 @@ input[type="range"]:active::-webkit-slider-thumb {
   background-image: -ms-linear-gradient(top , #39abe1 0% , #1984c2 100%);
   background-image: -o-linear-gradient(top , #39abe1 0% , #1984c2 100%);
   background-image: linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -webkit-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -614,19 +390,8 @@ input[type="range"]:active::-webkit-slider-thumb {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
 }
 .bubble.count {
-  background-image: -webkit-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -moz-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -ms-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: -o-linear-gradient(top , #39abe1 0% , #1984c2 100%);
-  background-image: linear-gradient(top , #39abe1 0% , #1984c2 100%);
   background-image: -webkit-linear-gradient(top , #39abe1 0% , #1984c2 100%);
   background-image: -moz-linear-gradient(top , #39abe1 0% , #1984c2 100%);
   background-image: -ms-linear-gradient(top , #39abe1 0% , #1984c2 100%);
@@ -637,14 +402,8 @@ footer .bubble {
   -webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
   -moz-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
   box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
-  -webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
-  -moz-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
-  box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
 }
 article .list .bubble {
-  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);
-  -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);
-  box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);
   -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);
   -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);
   box-shadow: inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3);
@@ -662,9 +421,6 @@ aside .list .bubble {
 }
 .notification .window.notify {
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25);
-  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25);
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25);

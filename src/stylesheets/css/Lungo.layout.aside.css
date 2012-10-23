@@ -14,18 +14,8 @@ section.aside:not(.small) {
   -ms-transform: translate(256px, 0);
   -o-transform: translate(256px, 0);
   transform: translate(256px, 0);
-  -webkit-transform: translate(256px, 0);
-  -moz-transform: translate(256px, 0);
-  -ms-transform: translate(256px, 0);
-  -o-transform: translate(256px, 0);
-  transform: translate(256px, 0);
 }
 section.aside.small {
-  -webkit-transform: translate(64px, 0);
-  -moz-transform: translate(64px, 0);
-  -ms-transform: translate(64px, 0);
-  -o-transform: translate(64px, 0);
-  transform: translate(64px, 0);
   -webkit-transform: translate(64px, 0);
   -moz-transform: translate(64px, 0);
   -ms-transform: translate(64px, 0);
@@ -38,18 +28,8 @@ section.aside.right {
   -ms-transform: translate(-256px, 0);
   -o-transform: translate(-256px, 0);
   transform: translate(-256px, 0);
-  -webkit-transform: translate(-256px, 0);
-  -moz-transform: translate(-256px, 0);
-  -ms-transform: translate(-256px, 0);
-  -o-transform: translate(-256px, 0);
-  transform: translate(-256px, 0);
 }
 section.aside.right.small {
-  -webkit-transform: translate(-64px, 0);
-  -moz-transform: translate(-64px, 0);
-  -ms-transform: translate(-64px, 0);
-  -o-transform: translate(-64px, 0);
-  transform: translate(-64px, 0);
   -webkit-transform: translate(-64px, 0);
   -moz-transform: translate(-64px, 0);
   -ms-transform: translate(-64px, 0);
