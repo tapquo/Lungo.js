@@ -1,7 +1,7 @@
 /**
  * PULL & REFRESH
  *
- * @namespace Lungo.View
+ * @namespace Lungo.Element
  * @class Pull
  * @version 1.0
  *
@@ -9,7 +9,7 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-Lungo.View.Pull = function(element_selector, config_data) {
+Lungo.Element.Pull = function(element_selector, config_data) {
 
     var REFRESHING_HEIGHT = 60;
     var MAX_HEIGHT = 100;

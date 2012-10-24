@@ -23,7 +23,7 @@ Lungo.Attributes.Data = {
         tag: 'progress',
         selector: '*',
         html: '<div class="progress">\
-                    <span class="bar"><span class="value" style="width:{{value}};"><span class="label"></span></span></span>\
+                    <span class="bar"><span class="value" style="width:{{value}};"></span></span>\
                 </div>'
     },
     Label: {

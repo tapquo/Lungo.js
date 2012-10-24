@@ -56,7 +56,8 @@ Lungo.Constants = {
     BINDING: {
         START: '{{',
         END: '}}',
-        KEY: 'value'
+        KEY: 'value',
+        SELECTOR: '{{value}}'
     },
 
     ERROR: {

@@ -43,11 +43,11 @@ Lungo.View.Aside = (function(lng, undefined) {
     var show = function(aside) {
         if (lng.Core.toType(aside) == 'string') aside = _findAside(lng.Core.parseUrl(aside));
         if (aside) {
-            lng.Element.Current.aside = aside;
+            lng.Element.Cache.aside = aside;
             var aside_stylesheet = _asideStylesheet(aside);
 
             aside.addClass(CLASS.SHOW);
-            lng.Element.Current.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
+            lng.Element.Cache.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
         }
 
         aside = null;
@@ -59,34 +59,34 @@ Lungo.View.Aside = (function(lng, undefined) {
      * @method hide
      */
     var hide = function() {
-        var aside = lng.Element.Current.aside;
+        var aside = lng.Element.Cache.aside;
         if (aside) {
-            lng.Element.Current.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
+            lng.Element.Cache.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
 
             var aside_stylesheet = _asideStylesheet(aside);
             if (aside_stylesheet) {
-                lng.Element.Current.section.removeClass(aside_stylesheet);
+                lng.Element.Cache.section.removeClass(aside_stylesheet);
             }
 
             setTimeout(function() {
                 aside.removeClass(CLASS.SHOW);
-                lng.Element.Current.aside = null;
+                lng.Element.Cache.aside = null;
             }, 250);
         }
     };
 
     var _findAside = function(aside_id) {
         var aside = null;
-        var asides_length = lng.Element.asides.length;
+        var asides_length = lng.Element.Cache.asides.length;
 
         if (asides_length == 1) {
-            var current_id = '#' + lng.Element.asides[0].id ;
+            var current_id = '#' + lng.Element.Cache.asides[0].id ;
             if (current_id == aside_id) {
-                aside = lng.dom(lng.Element.asides[0]);
+                aside = lng.dom(lng.Element.Cache.asides[0]);
             }
         }
         else if (asides_length > 1) {
-            aside = lng.Element.asides.siblings(ELEMENT.ASIDE + aside_id);
+            aside = lng.Element.Cache.asides.siblings(ELEMENT.ASIDE + aside_id);
         }
 
         return aside;
