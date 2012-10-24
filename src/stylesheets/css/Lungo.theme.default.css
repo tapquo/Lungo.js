@@ -38,13 +38,22 @@ section > header .subtitle {
   opacity: 0.7;
 }
 section > footer {
-  background-color: #23282c;
-  -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
-  box-shadow: inset 0 1px 0 rgba(0,0,0,0.8), inset 0 2px 0 rgba(255,255,255,0.05);
+  background-color: #222222;
+  -webkit-box-shadow: inset 0 3px 0 #333333;
+  -moz-box-shadow: inset 0 3px 0 #333333;
+  box-shadow: inset 0 3px 0 #333333;
 }
-section > nav.groupbar {
-  background-color: #292f34;
+section > footer  > nav a {
+  -webkit-box-shadow: 1px 0 0 #151515;
+  -moz-box-shadow: 1px 0 0 #151515;
+  box-shadow: 1px 0 0 #151515;
+}
+section > footer  > nav a.current {
+  color: #ffffff;
+  background: #111111;
+  -webkit-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
+  -moz-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
+  box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
 }
 section > article {
   background: #f4f5f5;
@@ -68,6 +77,7 @@ header nav.box a:active {
   background: rgba(0, 0, 0, 0.1);
 }
 header nav.button a {
+  border-radius: 1px;
   background-image: -webkit-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -moz-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
   background-image: -ms-linear-gradient(top , rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0.1));
@@ -78,37 +88,34 @@ header nav.button a {
 header nav.button a:active {
   background: rgba(0, 0, 0, 0.2);
 }
-footer nav a.current {
-  background: #000;
-  -webkit-box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
-  -moz-box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
-  box-shadow: -1px 0 0 rgba(255,255,255,0.05), 1px 1px 0 rgba(255,255,255,0.05);
+section > nav.groupbar {
+  background-color: #222222;
 }
-footer nav a,
-nav.groupbar a {
-  color: rgba(0, 0, 0, 0.7);
-}
-footer nav a.current,
-nav.groupbar a.current {
-  color: #fff;
-}
-nav.groupbar a.current {
+section > nav.groupbar  > a.current {
   -webkit-box-shadow: inset 0 -3px 0 #2a95d3;
   -moz-box-shadow: inset 0 -3px 0 #2a95d3;
   box-shadow: inset 0 -3px 0 #2a95d3;
+}
+footer > nav > a,
+nav.groupbar > a {
+  color: #888888;
+}
+footer > nav > a.current,
+nav.groupbar > a.current {
+  color: #ffffff;
 }
 /* @end */
 /* @group <aside> */
 aside {
   color: #fff;
-  background: #292f34;
+  background: #222222;
 }
 aside header,
 aside footer {
   -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
   -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
   box-shadow: inset 0 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(255,255,255,0.1);
-  background: #23282c;
+  background: #111111;
 }
 aside article {
   background: none;
@@ -126,15 +133,6 @@ section.aside.right {
   -moz-box-shadow: 4px 0 8px rgba(0,0,0,0.5);
   box-shadow: 4px 0 8px rgba(0,0,0,0.5);
 }
-/*
-@media handheld, only screen and (min-width: 768px) {
-    section.current, section.show {
-        .box-shadow(~"-4px 0 8px rgba(0,0,0,0.5)");
-        &.right { .box-shadow(~"4px 0 8px rgba(0,0,0,0.5)"); }
-    }
-}
-*/
-/* @end */
 /* @group .list */
 .list li {
   background: #fff;
@@ -148,14 +146,14 @@ section.aside.right {
   color: #2a2a2a;
 }
 .list li.contrast {
-  background: #292f34;
+  background: #222222;
   color: #fff;
 }
 .list li.highlight {
   background: #dddddd;
 }
 .list li.anchor {
-  background: #292f34;
+  background: #222222;
   border-bottom: none;
 }
 .list li.anchor,
@@ -198,7 +196,7 @@ aside .list li strong {
 /* @end */
 /* @group widgets */
 .splash {
-  background: #292f34;
+  background: #222222;
   color: #fff;
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
 }
@@ -227,9 +225,9 @@ aside .list li strong {
 }
 /* @group .button */
 a.button {
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -253,9 +251,9 @@ input:not([type=range]),
 textarea,
 select {
   border: 1px solid #d0d4c6;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -281,17 +279,17 @@ select[disabled] {
 .select:after {
   background: #d0d4c6;
   color: white;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 /* @group range */
 input[type=range] {
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -310,7 +308,7 @@ input[type=range].checkbox.active {
   background-color: #39abe1;
 }
 input[type=range]::-webkit-slider-thumb {
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
   background: #fff;
 }
@@ -330,18 +328,18 @@ input[type=range]::-webkit-slider-thumb::after {
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   background: #c7c7c7;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
 .progress .bar .value {
   background-color: #39abe1;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -369,7 +367,7 @@ input[type=range]::-webkit-slider-thumb::after {
   background: #2a95d3;
 }
 header .count {
-  background: #292f34 !important;
+  background: #222222 !important;
 }
 footer .bubble {
   -webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
