@@ -49,7 +49,7 @@
 
 <body class="app">
     <section id="layout" data-transition="slide">
-        <header data-title="Layout" class="extended">
+        <header data-title="Layout" class="-extended">
             <nav class="button">
                 <a href="#back" data-router="section" data-label="back"></a>
             </nav>
@@ -58,15 +58,17 @@
             </nav>
         </header>
 
+        <!--
         <nav class="groupbar">
             <a href="#layout-art1" data-router="article" class="current" data-label="Profile"></a>
             <a href="#layout-art2" data-router="article" data-label="Inbox" data-count="3"></a>
             <a href="#layout-art3" data-router="article" data-label="Map"></a>
             <a href="#layout-art4" data-router="article" data-label="Settings"></a>
         </nav>
+        -->
 
         <footer>
-            <nav class="with-labels">
+            <nav >
                 <a href="#layout-art1" data-router="article" data-label="Home" class="current" data-icon="home"></a>
                 <a href="#layout-art2" data-router="article" data-icon="inbox" data-count="2"></a>
                 <a href="#layout-art3" data-router="article" data-icon="user"></a>
@@ -74,44 +76,44 @@
             </nav>
         </footer>
 
-        <article id="layout-art1" class="padding">
+        <article id="layout-art1" class="padding scroll">
             <form>
-                <label>text</label>
-                <input type="text"/>
-                <!--
-                <label>text.disabled</label>
-                <input type="text" disabled/>
-                <label>password</label>
-                <input type="password"/>
-
-                <label>textarea</label>
+                <div class="six columns">
+                    <label>Address</label>
+                    <input type="text" placeholder="placeholder"/>
+                </div>
+                <div class="three columns right">
+                    <label>Pin Code</label>
+                    <input type="password" value="value" disabled/>
+                </div>
                 <textarea></textarea>
-            -->
 
-
-                <label>Example of select</label>
+                <label>Select your skill</label>
                 <label class="select">
                     <select class="custom">
-                        <option value="1">One</option>
+                        <option value="1">HTML5 Jedi</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
                 </label>
 
 
-                <label>Example of progress</label>
+                <label>Progress of project</label>
                 <div id="progress-normal" data-progress="25%"></div>
 
-                <label>Example of range</label>
+                <label>Range 50%</label>
                 <input type="range" placeholder="type your name" />
 
-                 <input type="range" min="0" max="1" class="checkbox left" value="0">
-                <input type="range" min="0" max="1" class="checkbox right active" value="1">
-
-                </form>
-                &nbsp;
-                <form>
-                <a href="#" class="button big theme" data-label="Boton Azul" data-icon="check"></a>
+                <div class="one row">
+                    <input type="range" min="0" max="1" class="checkbox left" value="0">
+                    <input type="range" min="0" max="1" class="checkbox right active" value="1">
+                </div>
+                    <div class="four columns left">
+                        <a href="#" class="button big theme" data-label="Accept" data-icon="check"></a>
+                    </div>
+                    <div class="four columns right">
+                        <a href="#" class="button big red" data-label="Cancel" data-icon="close"></a>
+                    </div>
             </form>
         </article>
         <article id="layout-art2"></article>
