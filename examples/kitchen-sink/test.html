@@ -51,17 +51,27 @@
 
         <footer>
             <nav class="with-labelss">
-                <a href="#layout-art1" data-router="article" data-label="Home" data-icon="home"></a>
-                <a href="#layout-art2" data-router="article" data-label="Inbox" data-icon="inbox" class="current"  data-count="2"></a>
+                <a href="#layout-art1" data-router="article" data-label="Home" data-icon="home" class="current"></a>
+                <a href="#layout-art2" data-router="article" data-label="Inbox" data-icon="inbox"  data-count="2"></a>
                 <a href="#layout-art3" data-router="article" data-label="Profile" data-icon="user"></a>
-                <a href="#layout-art4" data-router="article" data-label="Settings" data-icon="settings"></a>
+                <a href="#layout-art4" id="bb"  data-router="article" data-label="Settings" data-icon="settings"></a>
             </nav>
         </footer>
 
         <article id="layout-art1" class="padding scroll">
 
+            <form>
+                <label>Progress</label>
+                <div id="kaka" data-progress="30%"></div>
+
+                <div data-loading="black"></div>
+
+                <div id="cargador"></div>
+            </form>
         </article>
-        <article id="layout-art2"></article>
+        <article id="layout-art2">
+
+        </article>
         <article id="layout-art3"></article>
         <article id="layout-art4"></article>
     </section>
@@ -72,25 +82,34 @@
     <script src="../../release/lungo.js"></script>
     -->
     <script src="../../src/Lungo.js"></script>
-    <script src="../../src/Lungo.init.js"></script>
+    <script src="../../src/Lungo.Init.js"></script>
     <script src="../../src/Lungo.Core.js"></script>
     <script src="../../src/Lungo.Dom.js"></script>
     <script src="../../src/Lungo.Service.js"></script>
     <script src="../../src/Lungo.Constants.js"></script>
-    <script src="../../src/Lungo.Element.js"></script>
     <script src="../../src/Lungo.Events.js"></script>
     <script src="../../src/Lungo.Notification.js"></script>
+    <script src="../../src/Lungo.Fallback.js"></script>
+
     <script src="../../src/router/Lungo.Router.js"></script>
     <script src="../../src/router/Lungo.Router.History.js" ></script>
-    <script src="../../src/view/Lungo.View.Resize.js"></script>
+
     <script src="../../src/view/Lungo.View.Article.js" ></script>
     <script src="../../src/view/Lungo.View.Aside.js" ></script>
-    <script src="../../src/view/Lungo.View.Element.js"></script>
+
+    <script src="../../src/element/Lungo.Element.Cache.js"></script>
+    <script src="../../src/element/Lungo.Element.Carousel.js"></script>
+    <script src="../../src/element/Lungo.Element.Count.js"></script>
+    <script src="../../src/element/Lungo.Element.Loading.js"></script>
+    <script src="../../src/element/Lungo.Element.Progress.js"></script>
+    <script src="../../src/element/Lungo.Element.Pull.js"></script>
+
     <script src="../../src/data/Lungo.Data.Cache.js"></script>
     <script src="../../src/data/Lungo.Data.Sql.js"></script>
     <script src="../../src/data/Lungo.Data.Storage.js"></script>
+
     <script src="../../src/attributes/Lungo.Attributes.Data.js"></script>
-    <script src="../../src/Lungo.Fallback.js"></script>
+
     <script src="../../src/boot/Lungo.Boot.Resources.js" ></script>
     <script src="../../src/boot/Lungo.Boot.Stats.js" ></script>
     <script src="../../src/boot/Lungo.Boot.Layout.js"></script>
@@ -102,6 +121,26 @@
     <!-- LungoJS - Sandbox App -->
     <script>
         Lungo.init();
+
+        Lungo.Element.count('#bb', 29);
+        setTimeout(function(){
+            Lungo.Element.count('#bb', 0);
+        }, 1000);
+
+
+
+        setTimeout(function(){
+            Lungo.Element.progress('#kaka', 70);
+        }, 300);
+
+        setTimeout(function(){
+            Lungo.Element.loading('#cargador', "white");
+        }, 300);
+
+
+        setTimeout(function(){
+            Lungo.Element.loading('#cargador', null);
+        }, 1300);
     </script>
 </body>
 </html>

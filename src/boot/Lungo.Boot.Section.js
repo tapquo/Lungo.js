@@ -24,14 +24,12 @@ Lungo.Boot.Section = (function(lng, undefined) {
         _initFirstSection();
         _initAllSections();
         _initAllAsides();
-
-        lng.View.Resize.navigation();
     };
 
     var _initFirstSection = function() {
-        var first_section = lng.Element.sections.first();
-        lng.Element.Current.section = first_section;
-        lng.Element.Current.article = first_section.children(ELEMENT.ARTICLE).first();
+        var first_section = lng.Element.Cache.sections.first();
+        lng.Element.Cache.section = first_section;
+        lng.Element.Cache.article = first_section.children(ELEMENT.ARTICLE).first();
 
         var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
         first_section.addClass(CLASS.CURRENT);
@@ -40,23 +38,23 @@ Lungo.Boot.Section = (function(lng, undefined) {
 
     var _initAllSections = function() {
         //@todo: position fixed
-        //lng.Fallback.positionFixed(lng.Element.sections);
+        //lng.Fallback.positionFixed(lng.Element.Cache.sections);
 
-        for (var i = 0, len = lng.Element.sections.length; i < len; i++) {
+        for (var i = 0, len = lng.Element.Cache.sections.length; i < len; i++) {
             _initArticles(i);
         }
     };
 
     var _initAllAsides = function() {
         var aside = null;
-        for (var i = 0, len = lng.Element.asides.length; i < len; i++) {
-            aside = lng.dom(lng.Element.asides[i]);
+        for (var i = 0, len = lng.Element.Cache.asides.length; i < len; i++) {
+            aside = lng.dom(lng.Element.Cache.asides[i]);
             aside.children(ELEMENT.ARTICLE).addClass(CLASS.CURRENT);
         }
     };
 
     var _initArticles = function(section_index) {
-        var section = lng.dom(lng.Element.sections[section_index]);
+        var section = lng.dom(lng.Element.Cache.sections[section_index]);
 
         var first_article = section.children(ELEMENT.ARTICLE).first();
         first_article.addClass(CLASS.CURRENT);
@@ -66,8 +64,8 @@ Lungo.Boot.Section = (function(lng, undefined) {
     };
 
     var _cacheDOMElements = function() {
-        lng.Element.sections = lng.dom(ELEMENT.SECTION);
-        lng.Element.asides = lng.dom(ELEMENT.ASIDE);
+        lng.Element.Cache.sections = lng.dom(ELEMENT.SECTION);
+        lng.Element.Cache.asides = lng.dom(ELEMENT.ASIDE);
     };
 
     return {

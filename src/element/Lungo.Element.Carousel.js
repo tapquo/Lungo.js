@@ -10,7 +10,7 @@
  */
 
 
-Lungo.View.Carousel = function(element, callback) {
+Lungo.Element.Carousel = function(element, callback) {
 
     var _instance = {
         index: 0,
@@ -27,7 +27,7 @@ Lungo.View.Carousel = function(element, callback) {
         deltaX: 0
     };
 
-    var getPos = function() {
+    var position = function() {
         return _instance.index;
     };
 
@@ -154,6 +154,6 @@ Lungo.View.Carousel = function(element, callback) {
     return {
         prev: prev,
         next: next,
-        getPos: getPos
+        position: position
     };
 };

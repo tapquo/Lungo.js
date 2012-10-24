@@ -7,14 +7,14 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-Lungo.Element = {
-
+Lungo.Element.Cache = {
     sections: null,
-    Current: {
-        section: null,
-        article: null,
-        aside: null
-    },
+    section: null,
+
+    article: null,
+
     asides: null,
+    aside: null,
+
     navigation: null
 };
