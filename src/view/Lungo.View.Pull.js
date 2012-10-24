@@ -1,14 +1,15 @@
 /**
- * Initialize the <articles> layout of a certain <section>
+ * PULL & REFRESH
  *
  * @namespace Lungo.View
- * @class Element
+ * @class Pull
+ * @version 1.0
  *
  * @author Ignacio Olalde <ina@tapquo.com> || @piniphone
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-Lungo.View.Pull = function(element_selector, data) {
+Lungo.View.Pull = function(element_selector, config_data) {
 
     var REFRESHING_HEIGHT = 60;
     var MAX_HEIGHT = 100;
@@ -16,24 +17,15 @@ Lungo.View.Pull = function(element_selector, data) {
     var CURRENT_DISTANCE = 0;
     var REFRESHING = false;
     var ELEMENT = $$(element_selector);
+    var CONFIG = undefined;
 
     var CONFIG_BASE = {
-        pull: {
-            title: 'Pull to refresh',
-            icon: 'down'
-        },
-        release: {
-            title: 'Release to...',
-            icon: 'up'
-        },
-        refresh: {
-            title: 'Refreshing',
-            icon: 'home',
-            callback: undefined
-        }
+        pull: { title: 'Pull to refresh', icon: 'down' },
+        release: { title: 'Release to...', icon: 'up' },
+        refresh: { title: 'Refreshing', icon: 'refresh', callback: undefined }
     };
 
-    CONFIG = Lungo.Core.mix(CONFIG_BASE, data);
+    CONFIG = Lungo.Core.mix(CONFIG_BASE, config_data);
 
     var hide = function() {
         _moveElementTo(0, true);
@@ -41,7 +33,7 @@ Lungo.View.Pull = function(element_selector, data) {
             REFRESHING = false;
             document.removeEventListener('touchmove', _blockGestures, false);
         }, ANIMATION_TIME);
-
+        CURRENT_DISTANCE = 0;
     };
 
     var _moveElementTo = function(posY, animate) {
@@ -60,13 +52,11 @@ Lungo.View.Pull = function(element_selector, data) {
         document.addEventListener('touchmove', _blockGestures, false);
         _setContainerHTML(CONFIG.refresh);
         _moveElementTo(REFRESHING_HEIGHT, true);
-
         CONFIG.refresh.callback.apply(this);
     };
 
     var _setContainerHTML = function(context) {
         container = ELEMENT.siblings('div.pull');
-
         container.find('span').attr('class', 'icon ' + context.icon);
         container.find('strong').html(context.title);
     };
@@ -80,30 +70,38 @@ Lungo.View.Pull = function(element_selector, data) {
         _setContainerHTML((CURRENT_DISTANCE > REFRESHING_HEIGHT) ? CONFIG.release : CONFIG.pull )
     };
 
-    _handlePullEnd = function(event) {
-        if(CURRENT_DISTANCE > REFRESHING_HEIGHT) {
-            _refreshStart();
-        } else {
-            hide();
-        }
+    var _handlePullEnd = function(event) {
+        if(CURRENT_DISTANCE > REFRESHING_HEIGHT) _refreshStart();
+        else hide();
     };
 
-    var _handleGestures = function() {
-        ELEMENT.swiping(function(event) {
-            if(ELEMENT[0].scrollTop <= 1 && !REFRESHING) {
-                CURRENT_DISTANCE = event.currentTouch.y - event.iniTouch.y;
+
+    (function() {
+        var STARTED = false;
+        var INI_Y = {};
+        ELEMENT.bind('touchstart', function(event) {
+            if(ELEMENT[0].scrollTop <= 1) {
+                STARTED = true;
+                INI_Y = $$.isMobile() ? event.touches[0].pageY : event.pageY;
+            }
+        }).bind('touchmove', function(event) {
+            if(!REFRESHING && STARTED) {
+                current_y = $$.isMobile() ? event.touches[0].pageY : event.pageY;
+                CURRENT_DISTANCE = current_y - INI_Y;
                 if(CURRENT_DISTANCE >= 0) {
                     ELEMENT.style('overflow-y', 'hidden');
                     _handlePulling();
                 }
             }
-        }).swipe(function(event) {
-            ELEMENT.style('overflow-y', 'scroll');
-            _handlePullEnd();
+        }).bind('touchend', function() {
+            if(STARTED) {
+                ELEMENT.style('overflow-y', 'scroll');
+                _handlePullEnd();
+            }
+            INI_TOUCH = {};
+            STARTED = false;
         });
-    };
-
-    _handleGestures();
+    })();
 
     return {
         hide: hide
