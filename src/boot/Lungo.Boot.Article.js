@@ -31,7 +31,6 @@ Lungo.Boot.Article = (function(lng, undefined) {
 
     var _initElement = function(selector, callback) {
         var found_elements = lng.dom(selector);
-
         for (var i = 0, len = found_elements.length; i < len; i++) {
             var element = lng.dom(found_elements[i]);
             lng.Core.execute(callback, element);
@@ -50,17 +49,14 @@ Lungo.Boot.Article = (function(lng, undefined) {
     };
 
     var _scrollFix = function(article) {
-        console.error('_scrollFix', article[0]);
-
-        article[0].addEventListener('touchstart', function(event){
-            startY = event.touches[0].pageY;
+        article[0].addEventListener('touchstart', function(event) {
             scrollTop = this.scrollTop;
-
-            if(scrollTop <= 0)
+            if(scrollTop <= 1) {
                 this.scrollTop = 1;
-
-            if(scrollTop + this.offsetHeight >= this.scrollHeight)
+            }
+            if(scrollTop + this.offsetHeight >= this.scrollHeight) {
                 this.scrollTop = this.scrollHeight - this.offsetHeight - 1;
+            }
         }, false);
     };
 
