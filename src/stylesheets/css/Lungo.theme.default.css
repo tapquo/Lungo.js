@@ -167,6 +167,13 @@ nav.groupbar > a.current {
   background: #222222;
   color: #fff;
 }
+.list li.disabled {
+  background: #EEEEEE;
+}
+.list li.disabled,
+.list li.disabled a {
+  color: #666;
+}
 .list li.highlight {
   background: #dddddd;
 }
