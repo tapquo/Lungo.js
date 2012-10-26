@@ -55,14 +55,116 @@
 
         <footer>
             <nav class="with-labelss">
-                <a href="#layout-art1" data-router="article" data-label="Home" data-icon="home" ></a>
-                <a href="#layout-art2" data-router="article" data-label="Inbox" data-icon="inbox"  data-count="2" class="current" ></a>
+                <a href="#layout-art1" class="current"  data-router="article" data-label="Home" data-icon="home" ></a>
+                <a href="#layout-art2" data-router="article" data-label="Inbox" data-icon="inbox"  data-count="2" ></a>
                 <a href="#layout-art3" data-router="article" data-label="Profile" data-icon="user"></a>
                 <a href="#layout-art4" id="bb"  data-router="article" data-label="Settings" data-icon="settings"></a>
             </nav>
         </footer>
 
-        <article id="layout-art1" class="padding scroll">
+         <article id="layout-art1" class="list scroll">
+            <ul>
+                <li class="anchor">With right elements</li>
+
+                <li>
+                    <strong>&lt;li&gt; + &lt;strong&gt; </strong>
+                </li>
+
+                <li class="selectable">
+                    <strong>&lt;li .selectable&gt; + &lt;strong&gt; </strong>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <strong>&lt;li&gt; + &lt;a&gt; + &lt;strong&gt; </strong>
+                    </a>
+                </li>
+
+                <li>
+                    <strong>&lt;li&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="anchor">.arrow class</li>
+
+                <li class="arrow">
+                    <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
+                </li>
+
+                <li class="arrow disabled">
+                    <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="arrow">
+                    <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+
+                <li class="anchor">.right element</li>
+
+                <li>
+                    <a href="#">
+                        <div class="right">.right</div>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="right bubble blue">.right.bubble</div>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="right bubble blue" data-icon="clock">.right data-icon</div>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li class="anchor">With data-icon or data-image attribute</li>
+                <li data-image="http://lungo.tapquo.com/resources/icon@2x.png">
+                    <strong>&lt;li data-image&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class=" thumb" data-image="http://lungo.tapquo.com/resources/icon@2x.png">
+                    <strong>&lt;li .thumb data-image&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li data-icon="user">
+                    <strong>&lt;li data-icon&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class="thumb" data-icon="user">
+                    <strong>&lt;li .thumb data-icon&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="anchor">With colours</li>
+                <li class="blue">
+                    <strong>&lt;li .blue&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class="green">
+                    <strong>&lt;li .green&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class="yellow">
+                    <strong>&lt;li .yellow&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+            </ul>
+
+        </article>
+
+        <article id="layout-art2" class="padding scroll">
 
             <form>
                 <input type="search" placeholder="type your search" />
@@ -85,9 +187,7 @@
                     </div>
             </form>
         </article>
-        <article id="layout-art2">
 
-        </article>
         <article id="layout-art3"></article>
         <article id="layout-art4"></article>
     </section>

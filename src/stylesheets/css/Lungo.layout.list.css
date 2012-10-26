@@ -11,11 +11,6 @@
 .list li {
   list-style-type: none;
   padding: 8px;
-  position: relative;
-  /*
-        position: relative;
-        */
-
 }
 .list li.arrow::after {
   position: absolute;
