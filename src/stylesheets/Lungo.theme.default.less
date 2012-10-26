@@ -205,7 +205,9 @@ footer > nav > a, nav.groupbar > a{
 /* @group .button */
 a.button {
     .border-radius(@form-border-radius);
-    .box-shadow(~"inset 1px 0 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255, 0.2)");
+
+    // .box-shadow(~"inset 1px 0 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255, 0.2)");
+    .box-shadow(~"inset 0 2px 0 rgba(255,255,255, 0.2)");
 
     font-weight: bold;
     text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
@@ -236,9 +238,9 @@ input:not([type=range]), textarea, select {
     }
 
     &[disabled] {
-        background: #F4F5F0;
-        color: #bbb;
-    }
+        background: #ddd;
+        border-color: #999;
+        color: #999; }
 }
 
 .select:after {

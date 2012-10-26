@@ -41,11 +41,15 @@
 <body class="app">
     <section id="layout" data-transition="slide">
         <header data-title="Layout">
-            <nav>
+            <nav class="box">
                 <a href="#features" data-router="aside" data-icon="grid"></a>
+                <a href="#features" data-router="aside" data-label="User"></a>
+
             </nav>
-            <nav class="right ">
+            <nav class="right box">
+                <a href="#splash" data-router="section" data-icon="inbox" ></a>
                 <a href="#splash" data-router="section" data-icon="user" data-count="3" ></a>
+
             </nav>
         </header>
 
@@ -61,12 +65,24 @@
         <article id="layout-art1" class="padding scroll">
 
             <form>
+                <input type="search" placeholder="type your search" />
+                <a href="#" class="button theme" data-icon="search"></a>
+
                 <label>Progress</label>
                 <div id="kaka" data-progress="30%"></div>
 
                 <div data-loading="black"></div>
 
                 <div id="cargador"></div>
+
+                <a href="#" class="button big" data-label="Send Email" data-icon="mail"></a>
+
+                <div class="four columns left">
+                        <a href="#" class="button big theme" data-label="Accept" data-icon="check"></a>
+                    </div>
+                    <div class="four columns right">
+                        <a href="#" class="button big red" data-label="Cancel" data-icon="close"></a>
+                    </div>
             </form>
         </article>
         <article id="layout-art2">
@@ -176,7 +192,7 @@
         Lungo.init();
 
         Lungo.ready(function() {
-            Lungo.View.Aside.show('features');
+            // Lungo.View.Aside.show('features');
         });
 
         Lungo.Element.count('#bb', 29);
