@@ -41,8 +41,8 @@
 <body class="app">
     <section id="layout" data-transition="slide">
         <header data-title="Layout">
-            <nav class="button">
-                <a href="#back" data-router="section" data-label="back"></a>
+            <nav>
+                <a href="#features" data-router="aside" data-icon="grid"></a>
             </nav>
             <nav class="right ">
                 <a href="#splash" data-router="section" data-icon="user" data-count="3" ></a>
@@ -51,8 +51,8 @@
 
         <footer>
             <nav class="with-labelss">
-                <a href="#layout-art1" data-router="article" data-label="Home" data-icon="home" class="current"></a>
-                <a href="#layout-art2" data-router="article" data-label="Inbox" data-icon="inbox"  data-count="2"></a>
+                <a href="#layout-art1" data-router="article" data-label="Home" data-icon="home" ></a>
+                <a href="#layout-art2" data-router="article" data-label="Inbox" data-icon="inbox"  data-count="2" class="current" ></a>
                 <a href="#layout-art3" data-router="article" data-label="Profile" data-icon="user"></a>
                 <a href="#layout-art4" id="bb"  data-router="article" data-label="Settings" data-icon="settings"></a>
             </nav>
@@ -75,6 +75,59 @@
         <article id="layout-art3"></article>
         <article id="layout-art4"></article>
     </section>
+
+    <aside id="features" class="left">
+    <header data-title="BETA Features"></header>
+    <article class="list scroll">
+        <ul>
+            <!-- Basic Layout -->
+
+            <li>
+                <strong>Suggestions</strong>
+            </li>
+
+            <li class="current">
+                <a href="#">
+                    <strong>Jobs</strong>
+                    <small>lorem</small>
+                </a>
+            </li>
+
+            <li class="arrow">
+                <strong>Network</strong>
+                <small>lorem</small>
+            </li>
+
+
+            <li>
+                <a href="#">
+                    <div class="right bubble blue">128</div>
+                    <strong>Favorites</strong>
+                    <small>with lorem element</small>
+                </a>
+            </li>
+
+            <li data-image="http://lungo.tapquo.com/resources/icon@2x.png">
+                <strong>Javi Jimenez</strong>
+                <small>small</small>
+            </li>
+            <li class=" thumb" data-image="http://lungo.tapquo.com/resources/icon@2x.png">
+                <strong>Javi Jimenez</strong>
+                <small>small</small>
+            </li>
+            <li data-icon="user">
+                <strong>Javi Jimenez</strong>
+                <small>small</small>
+            </li>
+            <li class="thumb" data-icon="user">
+                <strong>Javi Jimenez</strong>
+                <small>small</small>
+            </li>
+
+        </ul>
+    </article>
+</aside>
+
 
     <!-- Lungo dependencies -->
     <script src="../../src/lib/quo.debug.js"></script>
@@ -122,19 +175,21 @@
     <script>
         Lungo.init();
 
+        Lungo.ready(function() {
+            Lungo.View.Aside.show('features');
+        });
+
         Lungo.Element.count('#bb', 29);
         setTimeout(function(){
             Lungo.Element.count('#bb', 0);
         }, 1000);
-
-
 
         setTimeout(function(){
             Lungo.Element.progress('#kaka', 70);
         }, 300);
 
         setTimeout(function(){
-            Lungo.Element.loading('#cargador', "white");
+            Lungo.Element.loading('#cargador', "black");
         }, 300);
 
 

@@ -9,11 +9,11 @@
 /* DIMENSIONS */
 /* COLORS */
 section.aside:not(.small) {
-  -webkit-transform: translate(256px, 0);
-  -moz-transform: translate(256px, 0);
-  -ms-transform: translate(256px, 0);
-  -o-transform: translate(256px, 0);
-  transform: translate(256px, 0);
+  -webkit-transform: translate(264px, 0);
+  -moz-transform: translate(264px, 0);
+  -ms-transform: translate(264px, 0);
+  -o-transform: translate(264px, 0);
+  transform: translate(264px, 0);
 }
 section.aside.small {
   -webkit-transform: translate(64px, 0);
@@ -23,11 +23,11 @@ section.aside.small {
   transform: translate(64px, 0);
 }
 section.aside.right {
-  -webkit-transform: translate(-256px, 0);
-  -moz-transform: translate(-256px, 0);
-  -ms-transform: translate(-256px, 0);
-  -o-transform: translate(-256px, 0);
-  transform: translate(-256px, 0);
+  -webkit-transform: translate(-264px, 0);
+  -moz-transform: translate(-264px, 0);
+  -ms-transform: translate(-264px, 0);
+  -o-transform: translate(-264px, 0);
+  transform: translate(-264px, 0);
 }
 section.aside.right.small {
   -webkit-transform: translate(-64px, 0);
@@ -43,7 +43,7 @@ aside {
   bottom: 0;
   display: none;
   z-index: -1;
-  width: 256px;
+  width: 264px;
 }
 aside.right {
   right: 0px;
