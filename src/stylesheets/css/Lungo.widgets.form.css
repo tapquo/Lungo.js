@@ -63,7 +63,7 @@ form select {
   padding: 0 3%;
   height: 30px;
   font-size: 15px;
-  line-height: 14px;
+  line-height: 16px;
   font-weight: bold;
   -webkit-appearance: none;
   -webkit-user-select: text;
@@ -74,13 +74,13 @@ form textarea {
   min-height: 48px;
 }
 form input[type=search] {
-  width: 85%;
+  width: 86%;
   display: inline-block;
 }
 form input[type=search]  + .button {
   float: right;
   padding: 0px;
-  width: 13%;
+  width: 11%;
   height: 30px;
 }
 form input[type=search]  + .button .icon {

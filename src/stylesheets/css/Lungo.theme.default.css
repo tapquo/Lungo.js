@@ -228,9 +228,9 @@ a.button {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255, 0.2);
-  -moz-box-shadow: inset 1px 0 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255, 0.2);
-  box-shadow: inset 1px 0 0 rgba(0,0,0,0.2), inset 0 1px 0 rgba(0,0,0,0.2), inset -1px 0 0 rgba(0,0,0,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255, 0.2);
+  -webkit-box-shadow: inset 0 2px 0 rgba(255,255,255, 0.2);
+  -moz-box-shadow: inset 0 2px 0 rgba(255,255,255, 0.2);
+  box-shadow: inset 0 2px 0 rgba(255,255,255, 0.2);
   font-weight: bold;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
@@ -270,8 +270,9 @@ select:focus {
 input:not([type=range])[disabled],
 textarea[disabled],
 select[disabled] {
-  background: #F4F5F0;
-  color: #bbb;
+  background: #ddd;
+  border-color: #999;
+  color: #999;
 }
 .select:after {
   background: #d0d4c6;
