@@ -97,7 +97,7 @@ FILES_TO_COMPRESS=""
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
     echo -e "\033[33m  [DIR]: "$DIR" >> COMPRESSING"
-    FILES=(base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification)
+    FILES=(base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification widgets.pull)
     for file in "${FILES[@]}"
     do
         # echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
