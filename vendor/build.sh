@@ -130,7 +130,7 @@ FILES_TO_COMPRESS=""
     done
 
     DIR=$LUNGO_SOURCES"stylesheets/"
-    FILES=(mixins.less lungo.theme.default.font.less)
+    FILES=(lungo.theme.default.less mixins.less)
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [COPY]: "$file"\033[0m"
