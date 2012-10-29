@@ -6,11 +6,9 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 .app {
   background: #000;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 .theme,
 li.theme,
