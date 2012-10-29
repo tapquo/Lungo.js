@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.icon.brand.css">
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.loading.css">
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.notification.css">
+    <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.pull.css">
+
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.theme.default.css">
     <!--
     <link rel="stylesheet" href="../package/lungo.css">
@@ -48,11 +50,8 @@
 <body class="app">
     <section id="main" data-transition="slide">
         <header  class="">
-            <nav class="left ">
+            <nav class="left box">
                 <a href="#features" data-router="aside" data-icon="menu"></a>
-            </nav>
-            <nav class="right ">
-                <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps" data-icon="share" target="_blank" ></a>
             </nav>
             <div class="left">
                 <div class="centered title with-subtitle">
@@ -64,8 +63,7 @@
 
         <article id="main-article" class="list indented scroll">
             <ul>
-
-                <li class="contrast">
+                <li class="dark">
                     <strong>
                     A framework for developers who want to design, build and share cross device apps.
                 </strong>
@@ -85,6 +83,11 @@
                 <li data-icon="brand branch" class="feature">
                     <strong>Multi-Device full support</strong>
                     Is known that create apps for each platform is expensive, this situation is increased by the arrival of tablets and SmartTVs. Lungo will suit all of them creating a unique and amazing UX.
+                </li>
+
+                <li>
+                    <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps" data-icon="brand twitter" target="_blank" class="button big theme" data-label="Tweet me"></a>
+
                 </li>
             </ul>
         </article>
@@ -150,6 +153,7 @@
                         'app/sections/data-attribute.html',
                         'app/sections/scroll.html',
                         'app/sections/color.html',
+                        'app/sections/pull.html',
                         'app/asides/features.html',
                         'app/asides/left.html',
                         'app/asides/right.html']
@@ -163,5 +167,7 @@
     <script src="app/app.js"></script>
         <script src="app/events.notification.js"></script>
         <script src="app/events.touch.js"></script>
+        <script src="app/events.pull.js"></script>
+
 </body>
 </html>
