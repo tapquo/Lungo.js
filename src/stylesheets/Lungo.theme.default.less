@@ -15,12 +15,11 @@
 
 @theme: #2A95D3;
     @theme-light:  #25AEEB;
-
 @theme-dark: #222;
     @theme-dark-current: #111;
     @theme-dark-nav: #888;
     @theme-dark-nav-active: #fff;
-
+@theme-contrast: #444;
 @aside: #191919;
 
 @color: #484a49;
@@ -147,37 +146,43 @@ footer > nav > a, nav.groupbar > a{
 .list {
     & li {
         background: #fff;
-        border-bottom: 1px inset @list-border;
+        border-bottom: inset 1px @list-border;
 
         &, & a { color: @list-color; }
 
-        &.contrast {
-            background: @theme-dark;
-            color: #fff;
+        &.dark {
+            background: @theme-contrast;
+            &, & a { color: #fff; }
         }
 
-        &.disabled {
-            background: #EEEEEE;
-            &, & a { color: #666; }
-
+        &.selectable:active, &.theme {
+            background: @theme-light;
+            &, & a { color: #fff; }
         }
 
-        &.highlight { background: @list-border; }
+         &.light {
+            background:  @list-border;
+            text-shadow: 0 1px 0 #eee;
+            &, & a { color: @theme-dark-nav; }
+        }
+
         &.anchor {
             background: @theme-dark;
             border-bottom: none;
             &, & a { color: #fff !important; }
         }
-        &.selectable:active {
-            background: @theme-light;
-
-            &, & a {
-                color: #fff;
-                text-shadow: none;
-            }
-        }
 
         & small, & .right:not(.bubble) { opacity: 0.8; }
+    }
+
+    &:not(.indented) li {
+        &.dark, &.theme, &.light {
+            border-bottom-color: rgba(0,0,0,0.1);
+        }
+    }
+
+    &.indented li {
+
     }
 }
 
@@ -192,20 +197,7 @@ footer > nav > a, nav.groupbar > a{
     text-shadow: 0 1px 0px rgba(0,0,0,0.2);
 }
 
-&.indented {
-    & ul {
-        border: 1px solid @list-border;
-        box-shadow: 0 0 4px rgba(0,0,0,0.1);
-    }
 
-    & li {
-        &:first-child { .border-radius(2px 2px 0 0); }
-        &:last-child {
-            .border-radius(0 0 2px 2px);
-            .box-shadow(0 1px 1px rgba(0,0,0,0.05));
-        }
-    }
-}
 
 
 /* @group .button */
@@ -317,7 +309,7 @@ input[type=range] {
 /* @group .bubble */
 .bubble {
     color: #fff;
-    .border-radius(8px);
+    .border-radius(2px);
 
     &.count { background: @theme; }
 }
