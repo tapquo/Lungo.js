@@ -43,12 +43,12 @@ section > footer {
   -moz-box-shadow: inset 0 3px 0 #333333;
   box-shadow: inset 0 3px 0 #333333;
 }
-section > footer  > nav a {
+section > footer > nav a {
   -webkit-box-shadow: 1px 0 0 #151515;
   -moz-box-shadow: 1px 0 0 #151515;
   box-shadow: 1px 0 0 #151515;
 }
-section > footer  > nav a.current {
+section > footer > nav a.current {
   color: #ffffff;
   background: #111111;
   -webkit-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
@@ -139,7 +139,7 @@ header nav.button a:active {
 section > nav.groupbar {
   background-color: #222222;
 }
-section > nav.groupbar  > a.current {
+section > nav.groupbar > a.current {
   -webkit-box-shadow: inset 0 -3px 0 #2a95d3;
   -moz-box-shadow: inset 0 -3px 0 #2a95d3;
   box-shadow: inset 0 -3px 0 #2a95d3;
@@ -157,25 +157,36 @@ nav.groupbar > a.current {
 /* @group .list */
 .list li {
   background: #fff;
-  border-bottom: 1px inset #dddddd;
+  border-bottom: inset 1px #dddddd;
 }
 .list li,
 .list li a {
   color: #2a2a2a;
 }
-.list li.contrast {
-  background: #222222;
+.list li.dark {
+  background: #444444;
+}
+.list li.dark,
+.list li.dark a {
   color: #fff;
 }
-.list li.disabled {
-  background: #EEEEEE;
+.list li.selectable:active,
+.list li.theme {
+  background: #25aeeb;
 }
-.list li.disabled,
-.list li.disabled a {
-  color: #666;
+.list li.selectable:active,
+.list li.theme,
+.list li.selectable:active a,
+.list li.theme a {
+  color: #fff;
 }
-.list li.highlight {
+.list li.light {
   background: #dddddd;
+  text-shadow: 0 1px 0 #eee;
+}
+.list li.light,
+.list li.light a {
+  color: #888888;
 }
 .list li.anchor {
   background: #222222;
@@ -185,17 +196,14 @@ nav.groupbar > a.current {
 .list li.anchor a {
   color: #fff !important;
 }
-.list li.selectable:active {
-  background: #25aeeb;
-}
-.list li.selectable:active,
-.list li.selectable:active a {
-  color: #fff;
-  text-shadow: none;
-}
 .list li small,
 .list li .right:not(.bubble) {
   opacity: 0.8;
+}
+.list:not(.indented) li.dark,
+.list:not(.indented) li.theme,
+.list:not(.indented) li.light {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 /* @end */
 /* @group widgets */
@@ -203,29 +211,6 @@ nav.groupbar > a.current {
   background: #222222;
   color: #fff;
   text-shadow: 0 1px 0px rgba(0, 0, 0, 0.2);
-}
-.indented ul {
-  border: 1px solid #dddddd;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-}
-.indented li:first-child {
-  -webkit-border-radius: 2px 2px 0 0;
-  -moz-border-radius: 2px 2px 0 0;
-  border-radius: 2px 2px 0 0;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-.indented li:last-child {
-  -webkit-border-radius: 0 0 2px 2px;
-  -moz-border-radius: 0 0 2px 2px;
-  border-radius: 0 0 2px 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 /* @group .button */
 a.button {
@@ -361,9 +346,9 @@ input[type=range]::-webkit-slider-thumb::after {
 /* @group .bubble */
 .bubble {
   color: #fff;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
