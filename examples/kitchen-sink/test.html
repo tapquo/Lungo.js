@@ -40,7 +40,7 @@
 
 <body class="app">
     <section id="layout" data-transition="slide">
-        <header data-title="Layout">
+        <header data-title="Layout"  class="extended">
             <nav class="box">
                 <a href="#features" data-router="aside" data-icon="grid"></a>
                 <a href="#features" data-router="aside" data-label="User"></a>
@@ -62,10 +62,14 @@
             </nav>
         </footer>
 
-         <article id="layout-art1" class="list scroll">
-            <ul>
-                <li class="anchor">With right elements</li>
+        <nav class="groupbar">
+            <a href="#layout-art1" data-router="article" data-label="Normal" class="current"></a>
+            <a href="#layout-art3" data-router="article" data-label="Indented"></a>
 
+        </nav>
+
+         <article id="layout-art1" class="list indented scroll">
+            <ul>
                 <li>
                     <strong>&lt;li&gt; + &lt;strong&gt; </strong>
                 </li>
@@ -85,15 +89,27 @@
                     <small>&lt;small&gt;</small>
                 </li>
 
+                <li class="anchor">colors</li>
+
+                <li class="dark">
+                    <strong>&lt;li .dark&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="theme">
+                    <strong>&lt;li .theme&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="arrow light">
+                    <strong>&lt;li .arrow.light&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
                 <li class="anchor">.arrow class</li>
 
                 <li class="arrow">
                     <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
-                </li>
-
-                <li class="arrow disabled">
-                    <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
-                    <small>&lt;small&gt;</small>
                 </li>
 
                 <li class="arrow">
@@ -110,6 +126,14 @@
                         <div class="right">.right</div>
                         <strong>&lt;strong&gt; element</strong>
                         <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                        <div class="right">.right</div>
                     </a>
                 </li>
 
@@ -188,7 +212,30 @@
             </form>
         </article>
 
-        <article id="layout-art3"></article>
+        <article id="layout-art3" class="list indented">
+            <ul>
+                <li data-image="http://lungo.tapquo.com/resources/icon@2x.png">
+                    <strong>&lt;li data-image&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class=" thumb" data-image="http://lungo.tapquo.com/resources/icon@2x.png">
+                    <strong>&lt;li .thumb data-image&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                    <small>&lt;small&gt;</small>
+
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+
+        </article>
         <article id="layout-art4"></article>
     </section>
 

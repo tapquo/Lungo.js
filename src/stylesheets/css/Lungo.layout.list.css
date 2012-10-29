@@ -10,7 +10,8 @@
 /* COLORS */
 .list li {
   list-style-type: none;
-  padding: 8px;
+  padding: 9px;
+  position: relative;
 }
 .list li.arrow::after {
   position: absolute;
@@ -43,8 +44,8 @@
 .list li.thumb img,
 .list li.thumb .icon {
   margin: -8px 8px -8px -8px;
-  height: 46px !important;
-  width: 46px !important;
+  height: 48px !important;
+  width: 48px !important;
   font-size: 3.6em;
 }
 .list li.anchor {
@@ -59,6 +60,7 @@
   display: none;
 }
 .list li strong {
+  position: relative;
   font-size: 1.15em;
 }
 .list li small {
@@ -68,12 +70,15 @@
   text-overflow: ellipsis;
   font-size: 0.8em;
 }
+.list li small + .right {
+  margin-top: -12px;
+}
 .list .bubble {
   padding-left: 4px;
   padding-right: 4px;
 }
 .list .right {
-  font-size: 0.75em;
+  font-size: 0.8em;
   font-weight: bold;
 }
 .list .loading .right {
@@ -85,5 +90,8 @@
   width: 13px !important;
   margin-right: 1px !important;
   font-size: 1.2em !important;
-  line-height: 0.8em;
+  line-height: 1.1em;
+}
+.list.indented li {
+  margin-bottom: 10px;
 }
