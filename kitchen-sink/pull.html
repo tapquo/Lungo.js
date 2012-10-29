@@ -35,7 +35,11 @@
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.icon.brand.css">
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.loading.css">
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.notification.css">
+    <link rel="stylesheet" href="../src/stylesheets/css/Lungo.widgets.pull.css">
+
     <link rel="stylesheet" href="../src/stylesheets/css/Lungo.theme.default.css">
+
+
 
     <!--
     <link rel="stylesheet" href="../../release/lungo.css">
@@ -66,9 +70,6 @@
 
         <article id="main-article" class="list indented scroll">
             <ul>
-                <li class="contrast " data-loading="white">
-
-                </li>
 
                 <li class="contrast">
                     <strong>
@@ -175,19 +176,16 @@
         var config = {
             refresh: {
                 title: 'REFRESHING...',
-                icon: 'up',
                 callback: function() {
                     console.error(arguments);
                     setTimeout(function(){
                         pull.hide();
-                        // Lungo.View.pull.hide();
-
-                    }, 1000);
+                    }, 2000);
                 }
             }
         };
 
-        var pull = Lungo.View.Pull('#main-article', config);
+        var pull = new Lungo.Element.Pull('#main-article', config);
 
     </script>
 </body>

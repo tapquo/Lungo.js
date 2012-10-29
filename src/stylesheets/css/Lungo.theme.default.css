@@ -53,7 +53,8 @@ section > footer > nav a.current {
   -moz-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
   box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
 }
-section > article {
+section > article,
+section > [data-control="pull"] {
   background: #f4f5f5;
 }
 aside {

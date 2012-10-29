@@ -17,12 +17,13 @@ Lungo.Element.Pull = function(element_selector, config_data) {
     var CURRENT_DISTANCE = 0;
     var REFRESHING = false;
     var ELEMENT = $$(element_selector);
-    var CONFIG = undefined;
+    var CONTAINER = ELEMENT.siblings('div[data-control="pull"]');
+    var CONFIG;
 
     var CONFIG_BASE = {
-        pull: { title: 'Pull to refresh', icon: 'down' },
-        release: { title: 'Release to...', icon: 'up' },
-        refresh: { title: 'Refreshing', icon: 'refresh', callback: undefined }
+        pull: { title: 'Pull to refresh' },
+        release: { title: 'Release to...' },
+        refresh: { title: 'Refreshing', callback: undefined }
     };
 
     CONFIG = Lungo.Core.mix(CONFIG_BASE, config_data);
@@ -50,15 +51,30 @@ Lungo.Element.Pull = function(element_selector, config_data) {
     var _refreshStart = function(event) {
         REFRESHING = true;
         document.addEventListener('touchmove', _blockGestures, false);
-        _setContainerHTML(CONFIG.refresh);
+        _setContainerTitle(CONFIG.refresh.title);
+        _setContainerLoading(true);
         _moveElementTo(REFRESHING_HEIGHT, true);
         CONFIG.refresh.callback.apply(this);
     };
 
-    var _setContainerHTML = function(context) {
-        container = ELEMENT.siblings('div.pull');
-        container.find('span').attr('class', 'icon ' + context.icon);
-        container.find('strong').html(context.title);
+    var _setContainerTitle = function(title) {
+        CONTAINER.find('strong').html(title);
+    };
+
+    var _setContainerLoading = function(op) {
+        if (op) {
+            CONTAINER.addClass("refresh");
+        } else {
+            CONTAINER.removeClass("refresh");
+        }
+    };
+
+    var _setContainerOnPulling = function(op) {
+        if (op) {
+            CONTAINER.addClass("rotate");
+        } else {
+            CONTAINER.removeClass("rotate");
+        }
     };
 
     var _blockGestures = function(touchEvent) {
@@ -67,14 +83,20 @@ Lungo.Element.Pull = function(element_selector, config_data) {
 
     var _handlePulling = function(event) {
         _moveElementTo(CURRENT_DISTANCE, false);
-        _setContainerHTML((CURRENT_DISTANCE > REFRESHING_HEIGHT) ? CONFIG.release : CONFIG.pull )
+        _setContainerLoading(false);
+        if (CURRENT_DISTANCE > REFRESHING_HEIGHT) {
+            _setContainerTitle(CONFIG.release.title);
+            _setContainerOnPulling(true);
+        } else {
+            _setContainerTitle(CONFIG.pull.title);
+            _setContainerOnPulling(false);
+        }
     };
 
     var _handlePullEnd = function(event) {
         if(CURRENT_DISTANCE > REFRESHING_HEIGHT) _refreshStart();
         else hide();
     };
-
 
     (function() {
         var STARTED = false;

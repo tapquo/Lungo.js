@@ -1,0 +1,45 @@
+@import "constants.less";
+
+section > [data-control="pull"] {
+    position: absolute;
+    z-index: -1;
+    top: @header-footer-height;
+    width: 100%;
+    height: 80px;
+    padding: 10px 0;
+    color: #666;
+    text-shadow: 0 1px 0 white;
+    text-align: center;
+
+    & > .icon {
+        display: inline-block;
+        width: 48px;
+        height: 48px;
+        font-size: 44px;
+        line-height: 48px;
+
+        .transition(all 300ms @defaultTrasition);
+    }
+
+    & > .loading {
+        display: none;
+        left: 0%; }
+
+    & > strong {
+        position: relative;
+        top: -16px;
+        margin-left: 4px;
+        font-size: 1.1em;
+        text-transform: lowercase; }
+
+    &.rotate {
+        & > .icon {
+            .transform(rotate(180deg));
+        }
+
+    }
+    &.refresh {
+        & > .icon { display: none; }
+        & > .loading { display: inline-block; }
+    }
+}
