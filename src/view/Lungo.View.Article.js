@@ -28,7 +28,7 @@ Lungo.View.Article = (function(lng, undefined) {
      */
     var title = function(value) {
         if (value) {
-            lng.Element.Current.section.find(SELECTORS.TITLE_OF_ARTICLE).text(value);
+            lng.Element.Cache.section.find(SELECTORS.TITLE_OF_ARTICLE).text(value);
         }
         //@todo: Fallback android Inputs
         //lng.Fallback.androidInputs(current_active_article_id, false);
@@ -36,13 +36,13 @@ Lungo.View.Article = (function(lng, undefined) {
     };
 
     var switchNavItems = function(article_id) {
-        lng.Element.Current.section.find(SELECTORS.NAVIGATION_ITEM).removeClass(CLASS.CURRENT);
+        lng.Element.Cache.section.find(SELECTORS.NAVIGATION_ITEM).removeClass(CLASS.CURRENT);
 
         var active_nav_items = 'a[href="' + article_id + '"][data-router="article"]';
-        lng.Element.Current.section.find(active_nav_items).addClass(CLASS.CURRENT);
+        lng.Element.Cache.section.find(active_nav_items).addClass(CLASS.CURRENT);
 
-        if (lng.Element.Current.aside) {
-            aside = lng.Element.Current.aside;
+        if (lng.Element.Cache.aside) {
+            aside = lng.Element.Cache.aside;
 
             aside.find(SELECTORS.ASIDE_REFERENCE_LIST).removeClass(CLASS.CURRENT);
             aside.find(active_nav_items).addClass(CLASS.CURRENT).parent().addClass(CLASS.CURRENT);

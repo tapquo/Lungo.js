@@ -25,6 +25,7 @@ var Lungo = Lungo || {};
 Lungo.VERSION = '2.0';
 
 Lungo.Attributes || (Lungo.Attributes = {});
+Lungo.Element || (Lungo.Element = {});
 Lungo.Data || (Lungo.Data = {});
 Lungo.Sugar || (Lungo.Sugar = {});
 Lungo.View || (Lungo.View = {});

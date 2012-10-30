@@ -12,12 +12,8 @@
 .list {
     & li {
         list-style-type: none;
-        padding: 8px;
+        padding: 9px;
         position: relative;
-
-        /*
-        position: relative;
-        */
 
         &.arrow::after{
             position: absolute;
@@ -43,11 +39,13 @@
             text-align: center;
         }
 
-        &.thumb img, &.thumb .icon {
-           margin: -8px 8px -8px -8px;
-           height: 46px !important;
-           width:46px !important;
-           font-size: 3.6em;
+        &.thumb {
+            & img, & .icon {
+                margin: -9px 9px -9px -9px;
+                height: 48px !important;
+                width:48px !important;
+                font-size: 3.6em;
+            }
         }
 
         &.anchor {
@@ -63,6 +61,7 @@
         }
 
         & strong {
+            position: relative;
             font-size: 1.15em; }
 
         & small {
@@ -71,6 +70,10 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             font-size: 0.8em;
+
+            & + .right {
+                margin-top: -12px;
+            }
         }
 
     }
@@ -81,8 +84,9 @@
     }
 
     & .right {
-        font-size: 0.75em;
-        font-weight: bold; }
+        font-size: 0.8em;
+        font-weight: bold;
+    }
 
     & .loading .right { font-size: 1.0em; }
 
@@ -91,7 +95,10 @@
         width: 13px !important;
         margin-right: 1px !important;
         font-size: 1.2em !important;
-        line-height: 0.8em;
+        line-height: 1.1em;
     }
 
+    &.indented li {
+        margin-bottom: 10px;
+    }
 }

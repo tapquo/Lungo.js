@@ -26,10 +26,10 @@ Lungo.Router = (function(lng, undefined) {
      */
     var section = function(section_id) {
         section_id = lng.Core.parseUrl(section_id);
-        var current =  lng.Element.Current.section;
+        var current =  lng.Element.Cache.section;
 
         if (_notCurrentTarget(section_id, current)) {
-            var target = lng.Element.sections.siblings(ELEMENT.SECTION + section_id);
+            var target = lng.Element.Cache.sections.siblings(ELEMENT.SECTION + section_id);
             if (target.length > 0) {
 
                 target_transition = target.data('transition');
@@ -40,8 +40,8 @@ Lungo.Router = (function(lng, undefined) {
 
                 current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                 target.addClass(CLASS.SHOW);
-                lng.Element.Current.section = target;
-                lng.Element.Current.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.CURRENT);
+                lng.Element.Cache.section = target;
+                lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.CURRENT);
 
                 lng.Router.History.add(section_id);
                 _sectionTriggers(current, target);
@@ -60,23 +60,23 @@ Lungo.Router = (function(lng, undefined) {
     var article = function(section_id, article_id, element) {
         article_id = lng.Core.parseUrl(article_id);
 
-        var current =  lng.Element.Current.article;
+        var current =  lng.Element.Cache.article;
 
         if (_notCurrentTarget(article_id, current)) {
             section(section_id);
-            var target = lng.Element.Current.section.find(ELEMENT.ARTICLE + article_id);
+            var target = lng.Element.Cache.section.find(ELEMENT.ARTICLE + article_id);
 
             if (target.length > 0) {
                 if (_sectionId(current) === _sectionId(target)) {
                     current.removeClass(CLASS.CURRENT);
                 } else {
-                    lng.Element.Current.section.children(ELEMENT.ARTICLE).removeClass(CLASS.CURRENT);
+                    lng.Element.Cache.section.children(ELEMENT.ARTICLE).removeClass(CLASS.CURRENT);
                 }
                 target.addClass(CLASS.CURRENT);
-                lng.Element.Current.article = target;
+                lng.Element.Cache.article = target;
 
                 lng.View.Article.switchNavItems(article_id);
-                lng.View.Article.switchReferenceItems(article_id, lng.Element.Current.section);
+                lng.View.Article.switchReferenceItems(article_id, lng.Element.Cache.section);
 
                 if (element) lng.View.Article.title(element.data(ATTRIBUTE.TITLE));
             }
@@ -102,15 +102,15 @@ Lungo.Router = (function(lng, undefined) {
      * @method back
      */
     var back = function() {
-        var current = lng.Element.Current.section;
+        var current = lng.Element.Cache.section;
         current.removeClass(CLASS.SHOW);
 
         lng.Router.History.removeLast();
-        target = lng.Element.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
+        target = lng.Element.Cache.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
 
         _assignTransition(target, target.data('transition-origin'));
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
-        lng.Element.Current.section = target;
+        lng.Element.Cache.section = target;
 
         _sectionTriggers(current, target);
     };

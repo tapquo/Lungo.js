@@ -44,10 +44,11 @@ nav abbr {
 }
 header nav a {
   padding: 0 6px;
-  min-width: 28px;
+  min-width: 30px;
   z-index: 1000;
   float: left;
   height: 44px;
+  text-align: center;
 }
 header nav a .icon {
   font-size: 1.7em;

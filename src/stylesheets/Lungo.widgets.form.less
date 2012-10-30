@@ -9,16 +9,20 @@
 
 @import "constants.less";
 
-@input-height: 29px;
+@form-input-height: 30px;
+@rounded-radius: 2px;
+@range_progress_height: 12px;
+
 
 form {
+    margin: 3%;
+
     &.wrapper input:not([type=checkbox]), textarea, select {
         margin: 3px 0px 3px 0px;
     }
 
-    @rounded-radius: 2px;
     &.rounded {
-        & input:not([type=checkbox]), textarea, select {
+        & input:not([type=range]), textarea, select {
             width: 94%;
             padding: 1.0% 3% ;
 
@@ -26,194 +30,167 @@ form {
             &:last-of-type  { .border-radius(0px 0px @rounded-radius @rounded-radius); }
         }
     }
-}
 
-label:not(.select) {
-    font-size: 0.9em;
-    line-height: 1.5em;
-}
+    label:not(.select) {
+        font-size: 13px;
+        margin-bottom: 3px;
+        display: block; }
 
-input[type=text], textarea, select {
-    display: block;
-    width: 96%;
-    padding: 0.5% 2%;
-    height: @input-height;
-    font-size: 14px;
-    font-weight: bold;
+    input, textarea, select, .progress {
+        margin-bottom: 8px; }
 
-    -webkit-appearance: none;
-    -webkit-user-select: text;
-    -webkit-font-smoothing: antialiased;
-}
+    input:not([type=range]), textarea, select {
+        display: block;
+        width: 94%;
+        padding: 0 3%;
+        height: @form-input-height;
+        font-size: 15px;
+        line-height: 16px;
+        font-weight: bold;
 
-textarea {
-    padding-top: 1.5%;
-    min-height: 48px; }
-
-
-/* @group search */
-input[type=search] {
-    width: 85%;
-    display: inline-block;
-
-    & + .button {
-        float: right;
-        padding: 0px;
-        width: 13%;
-        height: @input-height;
-        & .icon{
-            top: -3px;
-            float: none;
-        }
-    }
-}
-/* @end */
-
-/* @group select */
-
-select {
-    width: 100%;
-    height: @input-height;
-}
-
-label.select {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-.select:after {
-    text-align: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    height: @input-height;
-    width: @input-height;
-
-    content: "▼";
-    pointer-events:none;
-    line-height: 31px;
-}
-
-.no-pointer-events .select:after {
-    content: none;
-}
-/* @end */
-
-
-input[type=range].checkbox {
-    -webkit-appearance: none;
-    background: #aaaaaa;
-    color: rgba(255,255,255,0.6);
-    width:70px;
-    height:30px;
-    padding:1px 2px 1px 2px;
-    border-radius:4px;
-    box-shadow:0px 0px 4px 0px #555 inset, 0px 1px 5px 0px #555 inset;
-    font-family:'lungojsicon';
-
-    &:after {
-        content: "\0055";
-        position: relative;
-        float: right;
-        top: -23px;
-        padding: 0 8px;
-        font-size: 1.5em;
+        -webkit-appearance: none;
+        -webkit-user-select: text;
+        -webkit-font-smoothing: antialiased;
     }
 
-    &.active {
-        background: rgba(102, 186, 40, 1);
-        &:after {
-            float: left;
-            content: "\0051";
-            font-weight: bold;
+    textarea {
+        padding-top: 1.5%;
+        min-height: 48px; }
+
+
+    /* @group search */
+    input[type=search] {
+        width: 86%;
+        display: inline-block;
+
+        & + .button {
+            float: right;
+            padding: 0px;
+            width: 11%;
+            height: @form-input-height;
+            & .icon{
+                top: -3px;
+                float: none;
+            }
         }
     }
 
-    &::-webkit-slider-thumb {
+    select {
+        width: 100%;
+        height: @form-input-height; }
+
+        label.select {
+            position: relative;
+            display: inline-block;
+            width: 100%; }
+
+        .select:after {
+            text-align: center;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            bottom: 0;
+            height: @form-input-height;
+            width: @form-input-height;
+
+            content: "▼";
+            pointer-events:none;
+            line-height: 33px; }
+
+        .no-pointer-events .select:after {
+            content: none;
+    }
+
+    input[type=range] {
         -webkit-appearance: none;
-        background-color: #444;
-        width: 30px;
-        height: 24px;
-        border-radius:3px;
-        position:relative;
-        margin:2px 2px 2px 2px;
-        box-shadow:0px 1px 2px 1px #666;
-        background: rgb(255,255,255);
-    }
-    &::-webkit-slider-thumb::after {
-      width:13px;
-      height:13px;
-      display:block;
-      content:"";
-      position:relative;
-      border-radius:7.5px;
-      z-index:9;
-      top:5px;
-      left:9px;
-        background: rgb(234,234,234);
-    }
+        outline: none;
 
+        &:not(.checkbox) {
+            height: @range_progress_height;
+            width: 100%;
+            padding: 0px;
+            margin-top: 2px;
+            border: 0;
+            cursor: ew-resize;
 
-}
+            &::-webkit-slider-thumb { top: -1px; }
+        }
 
+        &.checkbox {
+            width:70px;
+            height: 30px;
+            padding: 1px 2px;
+            font-family:'lungojsicon';
 
-/* @group range */
-input[type="range"]:not(.checkbox) {
-    -webkit-appearance: none;
-    height: 15px;
-    width: 100%;
-    outline: none;
-    position: relative;
-    padding: 0px;
-    margin: 0px;
-    border: 0;
-    cursor: ew-resize;
-
-    &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        position: relative;
-        z-index: 1;
-
-        top:-1px;
-        width: 24px;
-        height: 24px;
-    }
-}
-/* @end */
-
-/* @group progress */
-.progress {
-    width: 100%;
-    margin-bottom: 8px;
-
-    .labels {
-        font-size: 1.0em;
-        display: block;
-        & span:last-child { float: right; }
-    }
-
-    & .bar {
-        height:  15px;
-        line-height: 15px;
-        display: block;
-
-        & .value {
-            display:block;
-            height: inherit;
-            width: 0%;
-            -webkit-transition: width 500ms @defaultTrasition;
-
-            & .label {
+            &:after {
+                content: "\0055";
+                position: relative;
                 float: right;
-                margin-right: 4px;
-                font-size: 0.75em; }
+                top: -23px;
+                padding: 0 8px;
+                font-size: 1.5em; }
+
+            &.active:after {
+                float: left;
+                content: "\0051";
+                font-weight: bold;
+                font-size: 1.6em; }
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 30px;
+            height: 24px;
+            border-radius: 2px;
+            position:relative;
+            margin:2px 2px 2px 2px;
+            border: none; }
+
+        &::-webkit-slider-thumb::after {
+          width:12px;
+          height:12px;
+          display:block;
+          content:"";
+          position:relative;
+          border-radius: 8px;
+          z-index:9;
+          top:6px;
+          left:9px; }
+    }
+
+    .progress {
+        width: 100%;
+        margin-bottom: 8px;
+
+        .labels {
+            font-size: 1.0em;
+            display: block;
+            & span:last-child { float: right; }
+        }
+
+        & .bar {
+            height: @range_progress_height;
+            line-height: @range_progress_height;
+            display: block;
+
+            & .value {
+                display:block;
+                height: inherit;
+                width: 0%;
+                .transition( width 500ms @defaultTrasition);
+
+                & .label {
+                    float: right;
+                    margin-right: 4px;
+                    font-size: 0.75em; }
+            }
         }
     }
-}
-/* @end */
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-    .custom-select select {padding-right:30px;}
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+        .custom-select select {padding-right:30px;}
+    }
+
 }
+
+

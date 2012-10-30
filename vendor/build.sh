@@ -19,7 +19,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES
-    FILES=(js Init.js Core.js Dom.js Service.js Constants.js Element.js Events.js Notification.js Fallback.js)
+    FILES=(js Init.js Core.js Dom.js Service.js Constants.js Events.js Notification.js Fallback.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -39,7 +39,17 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #View
     DIR=$LUNGO_SOURCES"view/"$LUNGO_NAMESPACE"View."
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"view/"
-    FILES=(Article.js Aside.js Element.js)
+    FILES=(Article.js Aside.js)
+    for file in "${FILES[@]}"
+    do
+        FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
+        FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
+    done
+
+    #View
+    DIR=$LUNGO_SOURCES"element/"$LUNGO_NAMESPACE"Element."
+    echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES"element/"
+    FILES=(Cache.js Carousel.js Count.js Loading.js Progress.js Pull.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
@@ -87,7 +97,7 @@ FILES_TO_COMPRESS=""
     DIR=$LUNGO_SOURCES"stylesheets/css/"
 
     echo -e "\033[33m  [DIR]: "$DIR" >> COMPRESSING"
-    FILES=(base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification)
+    FILES=(base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.colour widgets.loading widgets.notification widgets.pull)
     for file in "${FILES[@]}"
     do
         # echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
@@ -120,7 +130,7 @@ FILES_TO_COMPRESS=""
     done
 
     DIR=$LUNGO_SOURCES"stylesheets/"
-    FILES=(mixins.less lungo.theme.default.font.less)
+    FILES=(lungo.theme.default.less mixins.less)
     for file in "${FILES[@]}"
     do
         echo -e "\033[32m    [COPY]: "$file"\033[0m"

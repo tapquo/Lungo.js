@@ -19,11 +19,18 @@ Lungo.Attributes.Data = {
         selector: '*',
         html: '<span class="bubble count">{{value}}</span>'
     },
+    Pull: {
+        tag: 'pull',
+        selector: 'section',
+        html: '<div class="{{value}}" data-control="pull" data-icon="down" data-loading="black">\
+                    <strong>title</strong>\
+                </div>'
+    },
     Progress: {
         tag: 'progress',
         selector: '*',
         html: '<div class="progress">\
-                    <span class="bar"><span class="value" style="width:{{value}};"><span class="label"></span></span></span>\
+                    <span class="bar"><span class="value" style="width:{{value}};"></span></span>\
                 </div>'
     },
     Label: {
@@ -54,14 +61,6 @@ Lungo.Attributes.Data = {
                     <span class="right"></span>\
                     <span class="bottom"></span>\
                     <span class="left"></span>\
-                </div>'
-    },
-    Pull: {
-        tag: 'pull',
-        selector: 'section',
-        html: '<div class="pull {{value}}" style="position: absolute; top: 44px; width: 100%; text-align: center; padding-top: 10px; background-color: white; height: 100px; z-index: -10;">\
-                    <span class="icon home"></span>\
-                    <strong>title</strong>\
                 </div>'
     },
     Back: {
