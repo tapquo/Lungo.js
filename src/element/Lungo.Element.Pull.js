@@ -20,10 +20,11 @@ Lungo.Element.Pull = function(element_selector, config_data) {
     var CONTAINER = ELEMENT.siblings('div[data-control="pull"]');
     var CONFIG;
 
-    var CONFIG_BASE = {
-        pull: { title: 'Pull to refresh' },
-        release: { title: 'Release to...' },
-        refresh: { title: 'Refreshing', callback: undefined }
+    var CONFIG_BASE ={
+        onPull: "Pull down to refresh",
+        onRelease: "Release to...",
+        onRefresh: "Loading...",
+        callback: undefined
     };
 
     CONFIG = Lungo.Core.mix(CONFIG_BASE, config_data);
@@ -51,10 +52,13 @@ Lungo.Element.Pull = function(element_selector, config_data) {
     var _refreshStart = function(event) {
         REFRESHING = true;
         document.addEventListener('touchmove', _blockGestures, false);
-        _setContainerTitle(CONFIG.refresh.title);
+        _setContainerTitle(CONFIG.onRefresh);
         _setContainerLoading(true);
         _moveElementTo(REFRESHING_HEIGHT, true);
-        CONFIG.refresh.callback.apply(this);
+
+        if (CONFIG.callback) {
+            CONFIG.callback.apply(this);
+        }
     };
 
     var _setContainerTitle = function(title) {
@@ -85,17 +89,16 @@ Lungo.Element.Pull = function(element_selector, config_data) {
         _moveElementTo(CURRENT_DISTANCE, false);
         _setContainerLoading(false);
         if (CURRENT_DISTANCE > REFRESHING_HEIGHT) {
-            _setContainerTitle(CONFIG.release.title);
+            _setContainerTitle(CONFIG.onRelease);
             _setContainerOnPulling(true);
         } else {
-            _setContainerTitle(CONFIG.pull.title);
+            _setContainerTitle(CONFIG.onPull);
             _setContainerOnPulling(false);
         }
     };
 
     var _handlePullEnd = function(event) {
-        if(CURRENT_DISTANCE > REFRESHING_HEIGHT) _refreshStart();
-        else hide();
+        if(CURRENT_DISTANCE > REFRESHING_HEIGHT) _refreshStart(); else hide();
     };
 
     (function() {
