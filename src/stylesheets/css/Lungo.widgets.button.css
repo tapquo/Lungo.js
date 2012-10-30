@@ -56,3 +56,9 @@ a.button.big .icon {
   margin: 8px -18px 0 12px;
   float: left;
 }
+a.button.small {
+  height: 20px;
+  padding: 0 6px;
+  font-size: 12px;
+  line-height: 20px;
+}
