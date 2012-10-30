@@ -1,12 +1,9 @@
-var config = {
-    refresh: {
-        title: 'REFRESHING...',
-        callback: function() {
-            setTimeout(function(){
-                pull.hide();
-            }, 1000);
-        }
+var pull = new Lungo.Element.Pull('section#pull article', {
+    onPull: "Pull down to refresh",
+    onRelease: "Release to get new data",
+    onRefresh: "Refreshing...",
+    callback: function() {
+        alert("Pull & Refresh completed!");
+        pull.hide();
     }
-};
-
-var pull = new Lungo.Element.Pull('section#pull article', config);
+});
