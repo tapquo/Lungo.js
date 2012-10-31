@@ -9,18 +9,29 @@
 
 @import "constants.less";
 
+body {
+
+}
 section {
-    // @todo: section position absolute or FIXED
-    // position: absolute; /* position: fixed on iOS5 & Android 4 */
-    position: fixed;
+    position: absolute;
     left:  0;
     top:  0;
     width: 100%;
     height: 100%;
     z-index: -1;
     display: none;
-    .transition(all 300ms @defaultTrasition);
+
+    -webkit-transition-property: opacity, z-index, -webkit-transform;
+    -moz-transition-property: opacity, z-index, -moz-transform;
+    -ms-transition-property: opacity, z-index, -ms-transform;
+    -o-transition-property: opacity, z-index, -o-transform;
+    transition-property: opacity, z-index, transform;
+    .transition-duration(300ms);
+    .transition-timing-function(@easeOutSine);
+
     .backface-visibility(hidden);
+    .transform(translateZ(0));
+
 
     &:first-child, &.show {
         z-index: 1;
@@ -53,6 +64,7 @@ section {
 
     &[data-transition="slide"] {
         .transform(translateX(100%));
+
         visibility: visible !important;
 
         & > header > *, & > article > * {
@@ -74,7 +86,6 @@ section {
     &[data-transition="cover"] {
         .transform(translateY(110%));
         &:first-child, &.show, &.hide {
-            .transform(translateY(0%));
             .transform(translateY(0%));
         }
     }
