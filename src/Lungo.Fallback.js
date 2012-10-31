@@ -20,11 +20,11 @@ Lungo.Fallback = (function(lng, undefined) {
         }
     };
 
-    var positionFixed = function(sections) {
-        environment = lng.Core.environment();
-        if (environment.isMobile && environment.os.name === 'ios' && environment.os.version >= '4.2') {
-            sections.style('position', 'fixed');
-        }
+    var fixPositionInAndroid = function() {
+        env = lng.Core.environment();
+
+        var position = (env.isMobile && env.os.name === 'Android' && env.os.version < "3") ? "absolute" : "fixed";
+        lng.Element.Cache.sections.style("position", position);
     };
 
     var _enableAndroidInput = function(input) {
@@ -37,7 +37,7 @@ Lungo.Fallback = (function(lng, undefined) {
 
     return {
         androidInputs: androidInputs,
-        positionFixed: positionFixed
+        fixPositionInAndroid: fixPositionInAndroid
     };
 
 })(Lungo);
