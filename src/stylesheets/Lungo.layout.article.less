@@ -30,7 +30,12 @@ article {
     }
 
     &.pull {
-        .transition(all 300ms @defaultTrasition);
+        -webkit-transition-property: -webkit-transform;
+        -moz-transition-property: -moz-transform;
+        -ms-transition-property: -ms-transform;
+        -o-transition-property: -o-transform;
+        transition-property: transform;
+        .transition-duration(300ms);
     }
 
     & .text {

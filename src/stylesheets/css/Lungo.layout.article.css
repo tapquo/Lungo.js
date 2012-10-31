@@ -25,11 +25,16 @@ article:first-child {
   z-index: 1;
 }
 article.pull {
-  -webkit-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -ms-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: all 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -ms-transition-property: -ms-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -ms-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
 }
 article .text {
   margin: 4px 0 8px;
