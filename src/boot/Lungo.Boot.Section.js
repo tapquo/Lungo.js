@@ -21,6 +21,8 @@ Lungo.Boot.Section = (function(lng, undefined) {
      */
     var init = function() {
         _cacheDOMElements();
+        lng.Fallback.fixPositionInAndroid();
+
         _initFirstSection();
         _initAllSections();
         _initAllAsides();
