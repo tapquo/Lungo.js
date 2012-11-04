@@ -9,32 +9,32 @@
 /* DIMENSIONS */
 /* COLORS */
 section.aside:not(.small) {
-  -webkit-transform: translateX(264px);
-  -moz-transform: translateX(264px);
-  -ms-transform: translateX(264px);
-  -o-transform: translateX(264px);
-  transform: translateX(264px);
+  -webkit-transform: translatex(264px);
+  -moz-transform: translatex(264px);
+  -ms-transform: translatex(264px);
+  -o-transform: translatex(264px);
+  transform: translatex(264px);
 }
 section.aside.small {
-  -webkit-transform: translateX(64px);
-  -moz-transform: translateX(64px);
-  -ms-transform: translateX(64px);
-  -o-transform: translateX(64px);
-  transform: translateX(64px);
+  -webkit-transform: translatex(64px);
+  -moz-transform: translatex(64px);
+  -ms-transform: translatex(64px);
+  -o-transform: translatex(64px);
+  transform: translatex(64px);
 }
 section.aside.right {
-  -webkit-transform: translateX(-264px);
-  -moz-transform: translateX(-264px);
-  -ms-transform: translateX(-264px);
-  -o-transform: translateX(-264px);
-  transform: translateX(-264px);
+  -webkit-transform: translatex(-264px);
+  -moz-transform: translatex(-264px);
+  -ms-transform: translatex(-264px);
+  -o-transform: translatex(-264px);
+  transform: translatex(-264px);
 }
 section.aside.right.small {
-  -webkit-transform: translateX(-64px);
-  -moz-transform: translateX(-64px);
-  -ms-transform: translateX(-64px);
-  -o-transform: translateX(-64px);
-  transform: translateX(-64px);
+  -webkit-transform: translatex(-64px);
+  -moz-transform: translatex(-64px);
+  -ms-transform: translatex(-64px);
+  -o-transform: translatex(-64px);
+  transform: translatex(-64px);
 }
 aside {
   position: absolute;
@@ -70,19 +70,27 @@ aside.small {
 }
 aside.small nav {
   width: 64px;
+  text-align: center;
 }
 aside.small nav a {
+  display: block;
   padding: 0px;
   width: 64px;
   height: 64px;
 }
-aside.small nav .icon {
-  font-size: 48px;
-  text-align: center;
+aside.small nav a .icon {
+  position: absolute;
+  width: inherit;
+  font-size: 38px;
+  line-height: 64px;
 }
-aside.small nav .bubble {
-  top: 4px;
-  left: -22px;
+aside.small nav a .bubble {
+  position: relative;
+  top: -54px;
+  right: 6px;
+}
+aside.small nav a:first-child {
+  margin-top: 8px;
 }
 /*
 @TODO: Tablets & TV on final release

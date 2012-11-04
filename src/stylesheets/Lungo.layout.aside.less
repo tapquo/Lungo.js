@@ -57,23 +57,26 @@ aside {
 
         & nav {
             width: @aside-width-small;
+            text-align: center;
             & a {
+                display: block;
                 padding: 0px;
                 width: @aside-width-small;
                 height: @aside-width-small;
-            }
-            & .icon {
-                font-size: 48px;
-                text-align: center;
-            }
-
-            & .bubble {
-                top: 4px;
-                left: -22px;
+                & .icon {
+                    position: absolute;
+                    width: inherit;
+                    font-size: 38px;
+                    line-height: @aside-width-small;
+                }
+                & .bubble {
+                    position: relative;
+                    top: -54px;
+                    right: 6px;
+                }
+                &:first-child {margin-top: 8px; }
             }
         }
-
-
     }
 }
 
