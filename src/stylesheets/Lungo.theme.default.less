@@ -91,8 +91,9 @@ aside {
     }
     & article { background: none; }
 
-    & nav {
-        & .icon {color:white;}
+    & nav a {
+        &.current .icon { color: white; }
+        &:not(.current) .icon {color:@theme-dark-nav;}
     }
 
     & .list li {
