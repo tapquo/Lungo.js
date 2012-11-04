@@ -46,8 +46,10 @@ Lungo.Data.Storage = (function(lng, undefined) {
 
         if (value) {
             _saveKey(storage, key, value);
+        } else if (value === null) {
+            _removeKey(storage, key);
         } else {
-            return _getKey(storage, key, value);
+            return _getKey(storage, key);
         }
     };
 
@@ -56,7 +58,11 @@ Lungo.Data.Storage = (function(lng, undefined) {
         storage.setItem(key, value);
     };
 
-    var _getKey = function(storage, key, value) {
+    var _removeKey = function(storage, key) {
+        storage.removeItem(key);
+    };
+
+    var _getKey = function(storage, key) {
         value = storage.getItem(key);
         return JSON.parse(value);
     };
