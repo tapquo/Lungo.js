@@ -29,9 +29,9 @@ Lungo.Router = (function(lng, undefined) {
         var current =  lng.Element.Cache.section;
 
         if (_notCurrentTarget(section_id, current)) {
-            var target = lng.Element.Cache.sections.siblings(ELEMENT.SECTION + section_id);
-            if (target.length > 0) {
+            var target = current.siblings(ELEMENT.SECTION + section_id);
 
+            if (target.length > 0) {
                 target_transition = target.data('transition');
                 if (target_transition) {
                     _assignTransitionOrigin(current);
@@ -106,7 +106,7 @@ Lungo.Router = (function(lng, undefined) {
         current.removeClass(CLASS.SHOW);
 
         lng.Router.History.removeLast();
-        target = lng.Element.Cache.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
+        target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
 
         _assignTransition(target, target.data('transition-origin'));
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
@@ -124,6 +124,8 @@ Lungo.Router = (function(lng, undefined) {
     };
 
     var _sectionTriggers = function(current, target) {
+
+        console.error("trigger>>", current, target);
         current.trigger(TRIGGER.UNLOAD);
         target.trigger(TRIGGER.LOAD);
     };
