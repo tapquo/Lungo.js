@@ -11,8 +11,15 @@ var App = (function(lng, undefined) {
         $$('#touchevents-console').html($$(event.target).data('event'));
     };
 
+    triggerCapture = function(event) {
+        event.stopPropagation();
+        Lungo.Notification.success("Event: " + event.type, "Layout events manager", "info", 2);
+    };
+
     return {
-        eventConsole: eventConsole
+        eventConsole: eventConsole,
+        triggerCapture: triggerCapture
+
     };
 
 })(Lungo);
