@@ -67,12 +67,13 @@ Lungo.Router = (function(lng, undefined) {
             var target = lng.Element.Cache.section.find(ELEMENT.ARTICLE + article_id);
 
             if (target.length > 0) {
-                if (_sectionId(current) === _sectionId(target)) {
-                    current.removeClass(CLASS.CURRENT);
-                } else {
-                    lng.Element.Cache.section.children(ELEMENT.ARTICLE).removeClass(CLASS.CURRENT);
+                if (_sectionId(current) !== _sectionId(target)) {
+                    current = lng.Element.Cache.section.children(ELEMENT.ARTICLE);
                 }
-                target.addClass(CLASS.CURRENT);
+
+                current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
+                target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
+
                 lng.Element.Cache.article = target;
 
                 lng.View.Article.switchNavItems(article_id);
@@ -124,8 +125,6 @@ Lungo.Router = (function(lng, undefined) {
     };
 
     var _sectionTriggers = function(current, target) {
-
-        console.error("trigger>>", current, target);
         current.trigger(TRIGGER.UNLOAD);
         target.trigger(TRIGGER.LOAD);
     };
