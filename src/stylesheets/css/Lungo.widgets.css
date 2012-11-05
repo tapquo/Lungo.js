@@ -41,6 +41,9 @@
 .indented > * {
   margin: 10px;
 }
+.margined {
+  margin: 3%;
+}
 .wrapper {
   padding: 8px 8px;
 }
