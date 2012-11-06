@@ -9,7 +9,6 @@
 /* DIMENSIONS */
 /* COLORS */
 form {
-  margin: 3%;
   /* @group search */
 
 }
@@ -77,13 +76,13 @@ form input[type=search] {
   width: 86%;
   display: inline-block;
 }
-form input[type=search]  + .button {
+form input[type=search] + .button {
   float: right;
   padding: 0px;
   width: 11%;
   height: 30px;
 }
-form input[type=search]  + .button .icon {
+form input[type=search] + .button .icon {
   top: -3px;
   float: none;
 }
