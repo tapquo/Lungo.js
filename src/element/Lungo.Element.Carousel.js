@@ -95,16 +95,16 @@ Lungo.Element.Carousel = function(element, callback) {
         window.addEventListener('resize', _setup, false);
     };
 
-    var _touchStart = function(e) {
+    var _touchStart = function(event) {
         _instance.start = {
-            pageX: e.touches[0].pageX,
-            pageY: e.touches[0].pageY,
+            pageX: event.touches[0].pageX,
+            pageY: event.touches[0].pageY,
             time: Number(new Date())
         };
         _instance.isScrolling = undefined;
         _instance.deltaX = 0;
         _instance.element.style.MozTransitionDuration = _instance.element.style.webkitTransitionDuration = 0;
-        e.stopPropagation();
+        event.stopPropagation();
     };
 
     var _touchMove = function(e) {
@@ -143,9 +143,10 @@ Lungo.Element.Carousel = function(element, callback) {
         e.stopPropagation();
     };
 
-    var _transitionEnd = function(e) {
-        if(_instance.callback != undefined)
-            _instance.callback(e, (_instance.index + 1), _instance.slides[this.index]);
+    var _transitionEnd = function(event) {
+        if(_instance.callback) {
+            _instance.callback.apply(_instance.callback, [_instance.index, _instance.slides[_instance.index]]);
+        }
     };
 
     _setup();
