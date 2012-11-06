@@ -29,9 +29,9 @@ Lungo.Router = (function(lng, undefined) {
         var current =  lng.Element.Cache.section;
 
         if (_notCurrentTarget(section_id, current)) {
-            var target = lng.Element.Cache.sections.siblings(ELEMENT.SECTION + section_id);
-            if (target.length > 0) {
+            var target = current.siblings(ELEMENT.SECTION + section_id);
 
+            if (target.length > 0) {
                 target_transition = target.data('transition');
                 if (target_transition) {
                     _assignTransitionOrigin(current);
@@ -67,12 +67,13 @@ Lungo.Router = (function(lng, undefined) {
             var target = lng.Element.Cache.section.find(ELEMENT.ARTICLE + article_id);
 
             if (target.length > 0) {
-                if (_sectionId(current) === _sectionId(target)) {
-                    current.removeClass(CLASS.CURRENT);
-                } else {
-                    lng.Element.Cache.section.children(ELEMENT.ARTICLE).removeClass(CLASS.CURRENT);
+                if (_sectionId(current) !== _sectionId(target)) {
+                    current = lng.Element.Cache.section.children(ELEMENT.ARTICLE);
                 }
-                target.addClass(CLASS.CURRENT);
+
+                current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
+                target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
+
                 lng.Element.Cache.article = target;
 
                 lng.View.Article.switchNavItems(article_id);
@@ -106,7 +107,7 @@ Lungo.Router = (function(lng, undefined) {
         current.removeClass(CLASS.SHOW);
 
         lng.Router.History.removeLast();
-        target = lng.Element.Cache.sections.siblings(ELEMENT.SECTION + lng.Router.History.current());
+        target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
 
         _assignTransition(target, target.data('transition-origin'));
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
