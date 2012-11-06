@@ -1,0 +1,1 @@
+Lungo.Element.Carousel($$('[data-control=carousel]')[0]);
