@@ -1,25 +1,31 @@
 var App = (function(lng, undefined) {
 
-    var _getEnvironmentFromQuoJS = (function() {
-        var environment = lng.Core.environment();
-        if (environment.isMobile) {
-            alert('Your Device is ' + environment.os.name + ' (' + environment.os.version + ')');
-        }
-    })();
-
     eventConsole = function(event) {
         $$('#touchevents-console').html($$(event.target).data('event'));
     };
 
     triggerCapture = function(event) {
         event.stopPropagation();
-        Lungo.Notification.success("Event: " + event.type, "Layout events manager", "info", 2);
+        lng.Notification.success("Event: " + event.type, "Layout events manager", "info", 2);
+    };
+
+    environment = function(event) {
+        var environment = lng.Core.environment();
+        var el = lng.dom("section#environment > article");
+
+        if (environment.os) {
+            el.find("#os > strong").html(environment.os.name);
+            el.find("#os > small").html(environment.os.version);
+        }
+        el.find("#resolution > strong").html(environment.screen.height + "p x " + environment.screen.width + "p");
+        el.find("#navigator > strong").html(environment.browser);
+        el.find("#navigator > small").html("Mobile: " + environment.isMobile);
     };
 
     return {
         eventConsole: eventConsole,
-        triggerCapture: triggerCapture
-
+        triggerCapture: triggerCapture,
+        environment: environment
     };
 
 })(Lungo);
