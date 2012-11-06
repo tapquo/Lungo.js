@@ -1,7 +1,7 @@
 /**
- * CAROUSEL
+ * Creates a instance of Carousel Element
  *
- * @namespace Lungo.View
+ * @namespace Lungo.Element
  * @class Carousel
  * @version 1.0
  *

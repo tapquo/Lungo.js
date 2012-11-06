@@ -1,5 +1,5 @@
 /**
- * Initialize the <articles> layout of a certain <section>
+ * Creates a loading element in any area of layout
  *
  * @namespace Lungo.Element
  * @method loading

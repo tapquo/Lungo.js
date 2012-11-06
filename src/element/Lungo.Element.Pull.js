@@ -1,5 +1,5 @@
 /**
- * PULL & REFRESH
+ * Creates a instance of Pull & Refresh Element
  *
  * @namespace Lungo.Element
  * @class Pull

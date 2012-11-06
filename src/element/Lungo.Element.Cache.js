@@ -1,8 +1,8 @@
 /**
- * Chain of responsability
+ * DOM Elements caching
  *
- * @namespace Lungo
- * @class Element
+ * @namespace Lungo.Element
+ * @class Cache
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
