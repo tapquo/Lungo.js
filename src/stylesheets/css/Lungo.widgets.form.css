@@ -149,7 +149,6 @@ form input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 30px;
   height: 24px;
-  border-radius: 2px;
   position: relative;
   margin: 2px 2px 2px 2px;
   border: none;

@@ -41,12 +41,12 @@ section > footer {
   -moz-box-shadow: inset 0 3px 0 #333333;
   box-shadow: inset 0 3px 0 #333333;
 }
-section > footer  > nav a {
+section > footer > nav a {
   -webkit-box-shadow: 1px 0 0 #151515;
   -moz-box-shadow: 1px 0 0 #151515;
   box-shadow: 1px 0 0 #151515;
 }
-section > footer  > nav a.current {
+section > footer > nav a.current {
   color: #ffffff;
   background: #111111;
   -webkit-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3;
@@ -145,7 +145,7 @@ header nav.button a:active {
 section > nav.groupbar {
   background-color: #222222;
 }
-section > nav.groupbar  > a.current {
+section > nav.groupbar > a.current {
   -webkit-box-shadow: inset 0 -3px 0 #2a95d3;
   -moz-box-shadow: inset 0 -3px 0 #2a95d3;
   box-shadow: inset 0 -3px 0 #2a95d3;
@@ -252,6 +252,9 @@ select {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   color: #858585;
   font-family: Helvetica, Arial, sans-serif;
   background: #fff;
@@ -305,7 +308,9 @@ input[type=range].checkbox.active {
 }
 input[type=range]::-webkit-slider-thumb {
   border-radius: 1px;
-  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2);
+  box-shadow: 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2);
   background: #fff;
 }
 input[type=range]::-webkit-slider-thumb::after {
