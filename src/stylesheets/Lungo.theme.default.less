@@ -235,7 +235,7 @@ label { color: #999; }
 input:not([type=range]), textarea, select {
     border: 1px solid @form-border-color;
     .border-radius(@form-border-radius);
-    // .box-shadow(@box-shadow-form);
+    .box-shadow(@box-shadow-form);
     color: #858585;
     font-family: Helvetica, Arial, sans-serif;
     background: #fff;
@@ -277,7 +277,7 @@ input[type=range] {
 
     &::-webkit-slider-thumb {
         border-radius: @form-border-radius;
-        box-shadow:0px 1px 2px 1px rgba(0,0,0,0.3);
+        .box-shadow(~"1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2)");
         background: #fff; }
 
     &::-webkit-slider-thumb::after {
