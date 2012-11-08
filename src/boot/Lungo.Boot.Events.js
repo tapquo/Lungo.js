@@ -29,8 +29,8 @@ Lungo.Boot.Events = (function(lng, undefined) {
         var touch_move_event  = 'touchmove';
         var resize = 'resize';
 
-        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
-        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
+        lng.dom(SELECTORS.HREF_TARGET).touch(_loadTarget);
+        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).touch(_hideAsideIfNecesary);
         lng.dom(SELECTORS.INPUT_CHECKBOX).touch(_changeCheckboxValue);
     };
 
