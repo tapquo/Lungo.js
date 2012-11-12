@@ -8,11 +8,13 @@
  */
 /* DIMENSIONS */
 /* COLORS */
-a.button {
+a.button,
+button {
   display: inline-block;
   height: 40px;
   padding: 0 8px;
   color: #fff !important;
+  border: none;
   background: #5a5a5a;
   font-size: 15px;
   text-align: center;
@@ -27,15 +29,20 @@ a.button {
   user-select: none;
 }
 a.button:active,
-a.button.active {
+button:active,
+a.button.active,
+button.active {
   background: #4b4b4b;
 }
 a.button:disabled,
-a.button.disabled {
+button:disabled,
+a.button.disabled,
+button.disabled {
   background: rgba(255, 255, 255, 0.2);
   color: #999 !important;
 }
-a.button .icon {
+a.button .icon,
+button .icon {
   position: relative;
   top: 3px;
   height: 18px;
@@ -44,19 +51,23 @@ a.button .icon {
   line-height: 18px;
   margin-right: 4px;
 }
-a.button img {
+a.button img,
+button img {
   top: 0px !important;
 }
-a.button.big {
+a.button.big,
+button.big {
   width: 100%;
   padding: 0px;
   margin-bottom: 4px;
 }
-a.button.big .icon {
+a.button.big .icon,
+button.big .icon {
   margin: 8px -18px 0 12px;
   float: left;
 }
-a.button.small {
+a.button.small,
+button.small {
   height: 20px;
   padding: 0 6px;
   font-size: 12px;
