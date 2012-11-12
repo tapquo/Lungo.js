@@ -12,6 +12,9 @@ MINIFIED="min"
 clear
 echo -e "\033[0m"============================ LUNGO COMPILER ============================
 
+    ## Create package directories
+    mkdir -p $PACKAGE $PACKAGE_THEME
+
     ## Files to compile
     FILES_TO_COMPILE=""
     FILES_TO_JOIN=""
