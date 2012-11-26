@@ -21,7 +21,8 @@ Is known that create apps for each platform is expensive, this situation is incr
 The idea of Lungo arose earlier this year, the author [Javi Jiménez Villar](http://twitter.com/soyjavi) saw hot existing Mobile Frameworks at that time were not powerful and not using the features of HTML5. If you want to know more about the project you have some interesting links:
 
 - Visit Lungo [Site](http://lungo.tapquo.com/)
-- [Documentation & API](http://lungo.tapquo.com/docs/)
+- [Documentation](http://lungo.tapquo.com/docs/designers)
+- [API](http://lungo.tapquo.com/docs/developers)
 
 ## Credits
 Created by [Javier Jiménez](http://twitter.com/soyjavi).
