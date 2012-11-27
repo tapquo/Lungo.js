@@ -8,6 +8,10 @@
  */
 /* DIMENSIONS */
 /* COLORS */
+.overthrow-enabled .overthrow {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .scroll {
   overflow-x: hidden;
   overflow-y: scroll;
@@ -26,7 +30,7 @@
         */
 
 }
-.scroll > * {
+.scroll  > * {
   -webkit-transform: translate3d(0, 0, 0);
 }
 :not(.icon).left {
