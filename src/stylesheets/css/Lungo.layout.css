@@ -36,11 +36,11 @@ section {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
 }
 section:first-child,
 section.show {
@@ -80,15 +80,15 @@ section[data-transition="pop"].hide {
   opacity: 0;
 }
 section[data-transition="slide"] {
-  -webkit-transform: translateX(100%);
-  -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
-  transform: translateX(100%);
+  -webkit-transform: translatex(100%);
+  -moz-transform: translatex(100%);
+  -ms-transform: translatex(100%);
+  -o-transform: translatex(100%);
+  transform: translatex(100%);
   visibility: visible !important;
 }
-section[data-transition="slide"] > header > *,
-section[data-transition="slide"] > article > * {
+section[data-transition="slide"]  > header > *,
+section[data-transition="slide"]  > article > * {
   opacity: 0;
   -webkit-transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
   -moz-transition: opacity 400ms cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -98,44 +98,44 @@ section[data-transition="slide"] > article > * {
 }
 section[data-transition="slide"]:first-child,
 section[data-transition="slide"].show {
-  -webkit-transform: translateX(0%);
-  -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
-  transform: translateX(0%);
+  -webkit-transform: translatex(0%);
+  -moz-transform: translatex(0%);
+  -ms-transform: translatex(0%);
+  -o-transform: translatex(0%);
+  transform: translatex(0%);
 }
-section[data-transition="slide"]:first-child > header > *,
-section[data-transition="slide"].show > header > *,
-section[data-transition="slide"]:first-child > article > *,
-section[data-transition="slide"].show > article > * {
+section[data-transition="slide"]:first-child  > header > *,
+section[data-transition="slide"].show  > header > *,
+section[data-transition="slide"]:first-child  > article > *,
+section[data-transition="slide"].show  > article > * {
   opacity: 1;
 }
 section[data-transition="slide"].hide {
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  transform: translateX(-100%);
+  -webkit-transform: translatex(-100%);
+  -moz-transform: translatex(-100%);
+  -ms-transform: translatex(-100%);
+  -o-transform: translatex(-100%);
+  transform: translatex(-100%);
 }
-section[data-transition="slide"].hide > header > *,
-section[data-transition="slide"].hide > article > * {
+section[data-transition="slide"].hide  > header > *,
+section[data-transition="slide"].hide  > article > * {
   opacity: 0;
 }
 section[data-transition="cover"] {
-  -webkit-transform: translateY(110%);
-  -moz-transform: translateY(110%);
-  -ms-transform: translateY(110%);
-  -o-transform: translateY(110%);
-  transform: translateY(110%);
+  -webkit-transform: translatey(110%);
+  -moz-transform: translatey(110%);
+  -ms-transform: translatey(110%);
+  -o-transform: translatey(110%);
+  transform: translatey(110%);
 }
 section[data-transition="cover"]:first-child,
 section[data-transition="cover"].show,
 section[data-transition="cover"].hide {
-  -webkit-transform: translateY(0%);
-  -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -o-transform: translateY(0%);
-  transform: translateY(0%);
+  -webkit-transform: translatey(0%);
+  -moz-transform: translatey(0%);
+  -ms-transform: translatey(0%);
+  -o-transform: translatey(0%);
+  transform: translatey(0%);
 }
 section[data-transition="fade"] {
   opacity: 0;
