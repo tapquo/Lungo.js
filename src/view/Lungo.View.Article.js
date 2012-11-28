@@ -30,9 +30,6 @@ Lungo.View.Article = (function(lng, undefined) {
         if (value) {
             lng.Element.Cache.section.find(SELECTORS.TITLE_OF_ARTICLE).text(value);
         }
-        //@todo: Fallback android Inputs
-        //lng.Fallback.androidInputs(current_active_article_id, false);
-        //lng.Fallback.androidInputs(article_id, true);
     };
 
     var switchNavItems = function(article_id) {
