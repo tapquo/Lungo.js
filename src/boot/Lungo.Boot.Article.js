@@ -26,7 +26,7 @@ Lungo.Boot.Article = (function(lng, undefined) {
     var init = function() {
         _initElement(SELECTORS.LIST_IN_ARTICLE, _createListElement);
         _initElement(SELECTORS.CHECKBOX_IN_ARTICLE, _createCheckboxElement);
-        _initElement(SELECTORS.ARTICLE_SCROLLABLE, _scrollFix)
+        _initElement(SELECTORS.ARTICLE_SCROLLABLE, _scrollFix);
     };
 
     var _initElement = function(selector, callback) {

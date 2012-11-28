@@ -3,7 +3,7 @@
 
     var doc = w.document,
         docElem = doc.documentElement,
-        classtext = "overthrow-enabled",
+        classtext = "scroll-enabled",
 
         // Touch events are used in the polyfill, and thus are a prerequisite
         canBeFilledWithPoly = "ontouchmove" in doc,
@@ -135,7 +135,7 @@
 
         // find closest overthrow (elem or a parent)
         closest = function( target, ascend ){
-            return !ascend && target.className && target.className.indexOf( "overthrow" ) > -1 && target || closest( target.parentNode );
+            return !ascend && target.className && target.className.indexOf( "scroll" ) > -1 && target || closest( target.parentNode );
         },
 
         // Intercept any throw in progress
