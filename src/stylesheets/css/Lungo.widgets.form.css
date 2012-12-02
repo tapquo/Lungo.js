@@ -6,96 +6,124 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
-form {
-  /* @group search */
-
-}
 form.wrapper input:not([type=checkbox]),
+.form.wrapper input:not([type=checkbox]),
 form textarea,
-form select {
+.form textarea,
+form select,
+.form select {
   margin: 3px 0px 3px 0px;
 }
-form.rounded input:not([type=range]),
-form.rounded textarea,
-form.rounded select {
-  width: 94%;
-  padding: 1.0% 3% ;
-}
-form.rounded input:not([type=range]):first-of-type,
-form.rounded textarea:first-of-type,
-form.rounded select:first-of-type {
-  -webkit-border-radius: 2px 2px 0px 0px;
-  -moz-border-radius: 2px 2px 0px 0px;
-  border-radius: 2px 2px 0px 0px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-form.rounded input:not([type=range]):last-of-type,
-form.rounded textarea:last-of-type,
-form.rounded select:last-of-type {
-  -webkit-border-radius: 0px 0px 2px 2px;
-  -moz-border-radius: 0px 0px 2px 2px;
-  border-radius: 0px 0px 2px 2px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-form label:not(.select) {
-  font-size: 13px;
-  margin-bottom: 3px;
-  display: block;
+form label:not(.select),
+.form label:not(.select) {
+  font-size: 0.95em;
+  font-weight: 400;
 }
 form input,
+.form input,
 form textarea,
+.form textarea,
 form select,
-form .progress {
+.form select,
+form .progress,
+.form .progress {
   margin-bottom: 8px;
 }
-form input:not([type=range]),
+form input[type="text"],
+.form input[type="text"],
+form input[type="password"],
+.form input[type="password"],
+form input[type="date"],
+.form input[type="date"],
+form input[type="datetime"],
+.form input[type="datetime"],
+form input[type="email"],
+.form input[type="email"],
+form input[type="number"],
+.form input[type="number"],
+form input[type="search"],
+.form input[type="search"],
+form input[type="tel"],
+.form input[type="tel"],
+form input[type="time"],
+.form input[type="time"],
+form input[type="url"],
+.form input[type="url"],
+form select,
+.form select,
 form textarea,
-form select {
+.form textarea {
   display: block;
-  width: 94%;
-  padding: 0 3%;
+  width: 100%;
+  padding: 6px;
   height: 30px;
-  font-size: 15px;
-  line-height: 16px;
-  font-weight: bold;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -ms-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+  font-family: inherit;
+  font-size: 14px;
   -webkit-appearance: none;
   -webkit-user-select: text;
   -webkit-font-smoothing: antialiased;
 }
-form textarea {
-  padding-top: 1.5%;
+form input[type="text"]:focus,
+.form input[type="text"]:focus,
+form input[type="password"]:focus,
+.form input[type="password"]:focus,
+form input[type="date"]:focus,
+.form input[type="date"]:focus,
+form input[type="datetime"]:focus,
+.form input[type="datetime"]:focus,
+form input[type="email"]:focus,
+.form input[type="email"]:focus,
+form input[type="number"]:focus,
+.form input[type="number"]:focus,
+form input[type="search"]:focus,
+.form input[type="search"]:focus,
+form input[type="tel"]:focus,
+.form input[type="tel"]:focus,
+form input[type="time"]:focus,
+.form input[type="time"]:focus,
+form input[type="url"]:focus,
+.form input[type="url"]:focus,
+form select:focus,
+.form select:focus,
+form textarea:focus,
+.form textarea:focus {
+  outline: none !important;
+}
+form textarea,
+.form textarea {
   min-height: 48px;
 }
-form input[type=search] {
-  width: 86%;
+form input[type=search],
+.form input[type=search] {
+  width: 89%;
   display: inline-block;
 }
-form input[type=search] + .button {
+form input[type=search] + .button,
+.form input[type=search] + .button {
   float: right;
   padding: 0px;
-  width: 11%;
+  width: 10%;
   height: 30px;
+  line-height: 30px;
 }
-form input[type=search] + .button .icon {
-  top: -3px;
-  float: none;
-}
-form select {
+form select,
+.form select {
   width: 100%;
   height: 30px;
 }
-form label.select {
+form select label.select,
+.form select label.select {
   position: relative;
   display: inline-block;
   width: 100%;
 }
-form .select:after {
+form select .select:after,
+.form select .select:after {
   text-align: center;
   position: absolute;
   top: 3px;
@@ -107,14 +135,17 @@ form .select:after {
   pointer-events: none;
   line-height: 33px;
 }
-form .no-pointer-events .select:after {
+form select .no-pointer-events .select:after,
+.form select .no-pointer-events .select:after {
   content: none;
 }
-form input[type=range] {
+form input[type=range],
+.form input[type=range] {
   -webkit-appearance: none;
   outline: none;
 }
-form input[type=range]:not(.checkbox) {
+form input[type=range]:not(.checkbox),
+.form input[type=range]:not(.checkbox) {
   height: 12px;
   width: 100%;
   padding: 0px;
@@ -122,16 +153,19 @@ form input[type=range]:not(.checkbox) {
   border: 0;
   cursor: ew-resize;
 }
-form input[type=range]:not(.checkbox)::-webkit-slider-thumb {
+form input[type=range]:not(.checkbox)::-webkit-slider-thumb,
+.form input[type=range]:not(.checkbox)::-webkit-slider-thumb {
   top: -1px;
 }
-form input[type=range].checkbox {
+form input[type=range].checkbox,
+.form input[type=range].checkbox {
   width: 70px;
   height: 30px;
   padding: 1px 2px;
   font-family: 'lungojsicon';
 }
-form input[type=range].checkbox:after {
+form input[type=range].checkbox:after,
+.form input[type=range].checkbox:after {
   content: "\0055";
   position: relative;
   float: right;
@@ -139,13 +173,15 @@ form input[type=range].checkbox:after {
   padding: 0 8px;
   font-size: 1.5em;
 }
-form input[type=range].checkbox.active:after {
+form input[type=range].checkbox.active:after,
+.form input[type=range].checkbox.active:after {
   float: left;
   content: "\0051";
   font-weight: bold;
   font-size: 1.6em;
 }
-form input[type=range]::-webkit-slider-thumb {
+form input[type=range]::-webkit-slider-thumb,
+.form input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 30px;
   height: 24px;
@@ -153,50 +189,61 @@ form input[type=range]::-webkit-slider-thumb {
   margin: 2px 2px 2px 2px;
   border: none;
 }
-form input[type=range]::-webkit-slider-thumb::after {
+form input[type=range]::-webkit-slider-thumb::after,
+.form input[type=range]::-webkit-slider-thumb::after {
   width: 12px;
   height: 12px;
   display: block;
   content: "";
   position: relative;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
   border-radius: 8px;
   z-index: 9;
   top: 6px;
   left: 9px;
 }
-form .progress {
+form .progress,
+.form .progress {
   width: 100%;
   margin-bottom: 8px;
 }
-form .progress .labels {
-  font-size: 1.0em;
+form .progress .labels,
+.form .progress .labels {
+  font-size: 1em;
   display: block;
 }
-form .progress .labels span:last-child {
+form .progress .labels span:last-child,
+.form .progress .labels span:last-child {
   float: right;
 }
-form .progress .bar {
+form .progress .bar,
+.form .progress .bar {
   height: 12px;
   line-height: 12px;
   display: block;
 }
-form .progress .bar .value {
+form .progress .bar .value,
+.form .progress .bar .value {
   display: block;
   height: inherit;
   width: 0%;
-  -webkit-transition: width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -moz-transition: width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -ms-transition: width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  -o-transition: width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
-  transition: width 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-transition: width 500ms easeOutSine;
+  -moz-transition: width 500ms easeOutSine;
+  -ms-transition: width 500ms easeOutSine;
+  -o-transition: width 500ms easeOutSine;
+  transition: width 500ms easeOutSine;
 }
-form .progress .bar .value .label {
+form .progress .bar .value .label,
+.form .progress .bar .value .label {
   float: right;
   margin-right: 4px;
   font-size: 0.75em;
 }
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  form .custom-select select {
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .custom-select select {
     padding-right: 30px;
   }
 }

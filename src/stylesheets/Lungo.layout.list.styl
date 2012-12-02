@@ -1,0 +1,92 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class List
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/constants.styl"
+@import "import/vendor.styl"
+
+.list
+  & li
+    list-style-type: none
+    padding: 9px
+    position: relative
+
+    &.arrow::after
+      position: absolute
+      right: 8px
+      top: 40%
+      width: 6px
+      height: 6px
+      content: ''
+      border-right: 3px solid #D0D0D8
+      border-top: 3px solid #D0D0D8
+      transform( rotate(45deg) )
+
+    & a
+      display: block
+
+    & .icon, & img
+      float: left
+      width: 32px
+      height: 32px
+      margin-right: 8px
+      font-size: 2.6em
+      line-height: 1.0em
+      text-align: center
+
+    &.thumb
+      & img, & .icon
+        margin: -9px 9px -9px -9px
+        height: 48px !important
+        width:48px !important
+        font-size: 3.6em
+
+    &.anchor
+      font-size: 0.85em
+      font-weight: bold
+      padding: 2px 10px
+      & .icon.small
+        margin-right: 2px
+      & .bubble
+        display: none
+
+    & strong
+      position: relative
+      font-size: 1.15em
+
+    & small
+      display: block
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      font-size: 0.8em
+      & + .right
+        margin-top: -12px
+
+
+  & .bubble
+    padding-left: 4px
+    padding-right: 4px
+
+  & .right
+    font-size: 0.8em
+    font-weight: bold
+
+
+  & .loading .right
+    font-size: 1.0em
+
+  & .right .icon, & small .icon
+    height: 13px !important
+    width: 13px !important
+    margin-right: 1px !important
+    font-size: 1.2em !important
+    line-height: 1.1em
+
+  &.indented li
+    margin-bottom: 10px

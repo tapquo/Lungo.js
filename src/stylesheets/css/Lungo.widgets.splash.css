@@ -6,13 +6,11 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 .splash {
   text-align: center;
   font-size: 1.2em;
 }
-.splash  > form {
+.splash > form {
   margin: 28px;
 }
 .splash img {

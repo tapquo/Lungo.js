@@ -1,0 +1,51 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Widgets
+ * @class Button
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/constants.styl"
+@import "import/vendor.styl"
+
+.button, button
+  display: inline-block
+  padding: 10px 16px
+  border: none
+  cursor: pointer
+
+  color: #fff !important
+  font-family: inherit
+  font-size: 1.1em
+  text-align: center
+  text-decoration: none
+  outline: none
+
+  &:disabled, &.disabled
+    background: rgba(255,255,255,0.2)
+    color: #999 !important
+
+  & .icon
+    margin-right: 4px
+
+  &.anchor
+    width: 100%
+    margin-bottom: 4px
+    & .icon
+      margin-left: 8px
+      float: left
+
+  &.large
+    height: h = 52px
+    padding: 0 24px
+    font-size: 1.45em
+    font-weight: 300
+    line-height: h
+
+  &.small
+    height: h = 28px
+    padding: 0 12px
+    font-size: 1.0em
+    line-height: (h - 2)

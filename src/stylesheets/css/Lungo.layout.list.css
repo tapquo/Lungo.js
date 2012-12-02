@@ -6,8 +6,6 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 .list li {
   list-style-type: none;
   padding: 9px;
@@ -20,8 +18,8 @@
   width: 6px;
   height: 6px;
   content: '';
-  border-right: 3px solid #D0D0D8;
-  border-top: 3px solid #D0D0D8;
+  border-right: 3px solid #d0d0d8;
+  border-top: 3px solid #d0d0d8;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -38,7 +36,7 @@
   height: 32px;
   margin-right: 8px;
   font-size: 2.6em;
-  line-height: 1.0em;
+  line-height: 1em;
   text-align: center;
 }
 .list li.thumb img,
@@ -82,7 +80,7 @@
   font-weight: bold;
 }
 .list .loading .right {
-  font-size: 1.0em;
+  font-size: 1em;
 }
 .list .right .icon,
 .list small .icon {
