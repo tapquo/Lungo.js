@@ -1,3 +1,11 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Grid
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
 .row,
 .rows {
   width: 100%;

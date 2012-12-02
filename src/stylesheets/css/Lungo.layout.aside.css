@@ -6,44 +6,42 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 section.aside:not(.small) {
-  -webkit-transform: translatex(264px);
-  -moz-transform: translatex(264px);
-  -ms-transform: translatex(264px);
-  -o-transform: translatex(264px);
-  transform: translatex(264px);
+  -webkit-transform: translateX(264px);
+  -moz-transform: translateX(264px);
+  -ms-transform: translateX(264px);
+  -o-transform: translateX(264px);
+  transform: translateX(264px);
 }
 section.aside.small {
-  -webkit-transform: translatex(64px);
-  -moz-transform: translatex(64px);
-  -ms-transform: translatex(64px);
-  -o-transform: translatex(64px);
-  transform: translatex(64px);
+  -webkit-transform: translateX(64px);
+  -moz-transform: translateX(64px);
+  -ms-transform: translateX(64px);
+  -o-transform: translateX(64px);
+  transform: translateX(64px);
 }
 section.aside.right {
-  -webkit-transform: translatex(-264px);
-  -moz-transform: translatex(-264px);
-  -ms-transform: translatex(-264px);
-  -o-transform: translatex(-264px);
-  transform: translatex(-264px);
+  -webkit-transform: translateX(-ASIDE_WIDTH);
+  -moz-transform: translateX(-ASIDE_WIDTH);
+  -ms-transform: translateX(-ASIDE_WIDTH);
+  -o-transform: translateX(-ASIDE_WIDTH);
+  transform: translateX(-ASIDE_WIDTH);
 }
 section.aside.right.small {
-  -webkit-transform: translatex(-64px);
-  -moz-transform: translatex(-64px);
-  -ms-transform: translatex(-64px);
-  -o-transform: translatex(-64px);
-  transform: translatex(-64px);
+  -webkit-transform: translateX(-ASIDE_WIDTH_SMALL);
+  -moz-transform: translateX(-ASIDE_WIDTH_SMALL);
+  -ms-transform: translateX(-ASIDE_WIDTH_SMALL);
+  -o-transform: translateX(-ASIDE_WIDTH_SMALL);
+  transform: translateX(-ASIDE_WIDTH_SMALL);
 }
 aside {
   position: absolute;
-  height: inherit;
   top: 0;
   bottom: 0;
+  height: inherit;
+  width: 264px;
   display: none;
   z-index: -1;
-  width: 264px;
 }
 aside.right {
   right: 0px;
@@ -92,19 +90,3 @@ aside.small nav a .bubble {
 aside.small nav a:first-child {
   margin-top: 8px;
 }
-/*
-@TODO: Tablets & TV on final release
-@media handheld, only screen and (min-width: 768px) {
-    .autohide[data-router="aside"] {  display: none !important; }
-
-    section.aside {
-        width: auto !important;
-        left: @aside-width;
-        right: 0px !important;
-        .transform(translate3d(0px, 0, 0));
-        -webkit-transition: none;
-
-        &.small{ left: @aside-width-small; }
-    }
-}
-*/

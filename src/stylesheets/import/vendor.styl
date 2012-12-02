@@ -1,0 +1,56 @@
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+border-radius()
+  vendor('border-radius', arguments)
+
+box-shadow()
+  vendor('box-shadow', arguments)
+
+text-shadow()
+  vendor('text-shadow', arguments)
+
+background-image()
+  vendor('background-image', arguments)
+
+backface-visibility()
+  vendor('backface-visibility', arguments)
+
+
+/* ====================== FLEXBOX ====================== */
+display-box()
+  display -webkit-box
+  display -moz-box
+  display box
+
+box-pack()
+  vendor('box-pack', arguments)
+
+box-flex()
+  vendor('box-flex', arguments)
+
+box-orient()
+  vendor('box-orient', arguments)
+
+/* ====================== TRANSITIONS ====================== */
+transition()
+  vendor('transition', arguments)
+
+transition-delay()
+  vendor('transition-delay', arguments)
+
+transition-property()
+  vendor('transition-property', arguments)
+
+transition-duration()
+  vendor('transition-duration', arguments)
+
+transition-timing-function()
+  vendor('transition-timing-function', arguments)
+
+transform()
+  vendor('transform', arguments)

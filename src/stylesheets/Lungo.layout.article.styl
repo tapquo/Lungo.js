@@ -1,0 +1,51 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Article
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/constants.styl"
+@import "import/vendor.styl"
+
+article
+  position: absolute
+  top: 0
+  bottom: 0
+  width: inherit
+  height: auto
+  display: none
+  visibility: hidden
+  z-index: 0
+
+  &.current, &:first-child
+    visibility: visible
+    display: block
+    z-index: 1
+
+  &.pull
+    transition-property(transform)
+    transition-duration(300ms)
+
+  & .text
+    margin: 4px 0 8px
+    display: block
+    font-size: 0.9em
+    font-weight: normal
+    line-height: 1.4em
+
+
+header
+  &:not(.extended) ~ article
+    top: HEADER_FOOTER_HEIGHT
+  &.extended ~ article
+    top: ARTICLE_WITH_HEADER_EXTENDED
+
+footer ~ article
+  bottom: HEADER_FOOTER_HEIGHT
+
+@media handheld, only screen and (min-width: 768px)
+  article.aside
+    transform(translate3d(0px, 0, 0))

@@ -6,14 +6,12 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 article {
   position: absolute;
-  width: inherit;
-  height: auto;
   top: 0;
   bottom: 0;
+  width: inherit;
+  height: auto;
   display: none;
   visibility: hidden;
   z-index: 0;
@@ -25,10 +23,10 @@ article:first-child {
   z-index: 1;
 }
 article.pull {
-  -webkit-transition-property: -webkit-transform;
-  -moz-transition-property: -moz-transform;
-  -ms-transition-property: -ms-transform;
-  -o-transition-property: -o-transform;
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -ms-transition-property: transform;
+  -o-transition-property: transform;
   transition-property: transform;
   -webkit-transition-duration: 300ms;
   -moz-transition-duration: 300ms;

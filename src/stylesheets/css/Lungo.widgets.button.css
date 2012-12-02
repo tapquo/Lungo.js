@@ -6,59 +6,52 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
-a.button {
+.button,
+button {
   display: inline-block;
-  height: 40px;
-  padding: 0 8px;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
   color: #fff !important;
-  background: #5a5a5a;
-  font-size: 15px;
+  font-family: inherit;
+  font-size: 1.1em;
   text-align: center;
   text-decoration: none;
-  line-height: 40px;
   outline: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
-a.button:active,
-a.button.active {
-  background: #4b4b4b;
-}
-a.button:disabled,
-a.button.disabled {
-  background: rgba(255, 255, 255, 0.2);
+.button:disabled,
+button:disabled,
+.button.disabled,
+button.disabled {
+  background: rgba(255,255,255,0.2);
   color: #999 !important;
 }
-a.button .icon {
-  position: relative;
-  top: 3px;
-  height: 18px;
-  width: 18px;
-  font-size: 18px;
-  line-height: 18px;
+.button .icon,
+button .icon {
   margin-right: 4px;
 }
-a.button img {
-  top: 0px !important;
-}
-a.button.big {
+.button.anchor,
+button.anchor {
   width: 100%;
-  padding: 0px;
   margin-bottom: 4px;
 }
-a.button.big .icon {
-  margin: 8px -18px 0 12px;
+.button.anchor .icon,
+button.anchor .icon {
+  margin-left: 8px;
   float: left;
 }
-a.button.small {
-  height: 20px;
-  padding: 0 6px;
-  font-size: 12px;
-  line-height: 20px;
+.button.large,
+button.large {
+  height: 52px;
+  padding: 0 24px;
+  font-size: 1.45em;
+  font-weight: 300;
+  line-height: 52px;
+}
+.button.small,
+button.small {
+  height: 28px;
+  padding: 0 12px;
+  font-size: 1em;
+  line-height: 26px;
 }

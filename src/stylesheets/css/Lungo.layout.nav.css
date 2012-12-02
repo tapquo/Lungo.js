@@ -6,19 +6,10 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 nav.groupbar,
 footer nav {
   display: -webkit-box;
   display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
   display: box;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
@@ -26,13 +17,8 @@ footer nav {
   -o-box-pack: justify;
   box-pack: justify;
 }
-nav.groupbar  > a,
-footer nav   > a {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-box;
-  display: -o-box;
-  display: box;
+nav.groupbar > a,
+footer nav > a {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
@@ -64,26 +50,26 @@ header nav a .bubble {
   left: -12px;
   margin-right: -20px;
 }
-header nav.button a {
+header nav a.button a {
   margin: 5px 5px 5px 0;
   height: 32px;
   line-height: 32px;
 }
-header nav.button a .icon {
+header nav a.button a .icon {
   line-height: 33px;
 }
-header nav.button a:first-child {
+header nav a.button a:first-child {
   margin: 5px;
 }
-header nav .icon ~ abbr {
+header nav a .icon ~ abbr {
   margin-left: 4px;
   float: right;
 }
-header nav .loading {
-  margin-top: .5em;
+header nav a .loading {
+  margin-top: 0.5em;
   font-size: 1.6em;
 }
-header nav .loading  + .icon {
+header nav a .loading + .icon {
   display: none;
 }
 nav.groupbar {
@@ -94,18 +80,18 @@ nav.groupbar {
   z-index: 2;
   line-height: 30px;
 }
-nav.groupbar  > a {
+nav.groupbar > a {
   padding: 0px;
   margin: 0px;
   height: 30px !important;
   display: block;
   text-align: center;
 }
-nav.groupbar  > a .icon {
-  font-size: 1.0em;
+nav.groupbar > a .icon {
+  font-size: 1em;
   margin-right: 2px;
 }
-nav.groupbar  > a .bubble {
+nav.groupbar > a .bubble {
   position: relative;
   top: -1px;
   left: 2px;
@@ -117,7 +103,7 @@ footer nav a {
   height: 44px;
 }
 footer nav .icon {
-  font-size: 2.0em !important;
+  font-size: 2em !important;
   line-height: 44px;
   width: 32px;
   display: inline-block;

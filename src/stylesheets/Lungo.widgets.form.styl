@@ -1,0 +1,172 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Widgets
+ * @class Form
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/constants.styl"
+@import "import/vendor.styl"
+
+
+FORM_INPUT_HEIGHT = 30px
+ROUNDED_RADIUS = 2px
+PROGRESS_HEIGHT = 12px
+
+form, .form
+  &.wrapper input:not([type=checkbox]), textarea, select
+    margin: 3px 0px 3px 0px
+
+  & label:not(.select)
+    font-size: 0.95em
+    font-weight: 400
+
+  & input, textarea, select, .progress
+    margin-bottom: 8px
+
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
+    display: block
+    width: 100%
+    padding: 6px
+    height: FORM_INPUT_HEIGHT
+    transition all 0.15s linear
+    font-family: inherit
+    font-size: 14px
+
+    -webkit-appearance: none
+    -webkit-user-select: text
+    -webkit-font-smoothing: antialiased
+    &:focus
+      outline: none !important;
+
+  & textarea
+    min-height: 48px
+
+  input[type=search]
+    width: 89%
+    display: inline-block
+
+    & + .button
+      float: right
+      padding: 0px
+      width: 10%
+      height: FORM_INPUT_HEIGHT
+      line-height: FORM_INPUT_HEIGHT
+
+  & select
+    width: 100%
+    height: FORM_INPUT_HEIGHT
+
+    label.select
+      position: relative
+      display: inline-block
+      width: 100%
+
+    .select:after
+      text-align: center
+      position: absolute
+      top: 3px
+      right: 0
+      bottom: 0
+      height: FORM_INPUT_HEIGHT
+      width: FORM_INPUT_HEIGHT
+
+      content: "▼"
+      pointer-events:none
+      line-height: 33px
+
+    .no-pointer-events .select:after
+      content: none
+
+
+  & input[type=range]
+    -webkit-appearance: none
+    outline: none
+
+    &:not(.checkbox)
+      height: PROGRESS_HEIGHT
+      width: 100%
+      padding: 0px
+      margin-top: 2px
+      border: 0
+      cursor: ew-resize
+
+      &::-webkit-slider-thumb
+        top: -1px
+
+    &.checkbox
+      width:70px
+      height: 30px
+      padding: 1px 2px
+      font-family:'lungojsicon'
+
+      &:after
+        content: "\0055"
+        position: relative
+        float: right
+        top: -23px
+        padding: 0 8px
+        font-size: 1.5em
+
+      &.active:after
+        float: left
+        content: "\0051"
+        font-weight: bold
+        font-size: 1.6em
+
+
+    &::-webkit-slider-thumb
+        -webkit-appearance: none
+        width: 30px
+        height: 24px
+        position:relative
+        margin:2px 2px 2px 2px
+        border: none
+
+    &::-webkit-slider-thumb::after
+      width:12px
+      height:12px
+      display:block
+      content:""
+      position:relative
+      border-radius: 8px
+      z-index:9
+      top:6px
+      left:9px
+
+
+  & .progress
+    width: 100%
+    margin-bottom: 8px
+
+    .labels
+      font-size: 1.0em
+      display: block
+      & span:last-child
+        float: right
+
+
+    & .bar
+      height: PROGRESS_HEIGHT
+      line-height: PROGRESS_HEIGHT
+      display: block
+
+      & .value
+        display:block
+        height: inherit
+        width: 0%
+        transition( width 500ms DEFAULT_TRANSITION )
+
+        & .label
+          float: right
+          margin-right: 4px
+          font-size: 0.75em
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+  .custom-select
+    select
+      padding-right:30px
+
