@@ -1,0 +1,63 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Layout
+ * @class Widgets
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/constants.styl"
+@import "import/vendor.styl"
+
+.overthrow-enabled .overthrow
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+.scroll
+  overflow-x: hidden
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  -webkit-box-flex: 1
+
+  &.horizontal
+    overflow-x: scroll
+    overflow-y: hidden
+    white-space: nowrap
+  /* BUG (iOS) POSITION: relative childrens */
+  & > *
+    -webkit-transform: translate3d(0, 0, 0)
+
+:not(.icon)
+  &.left
+    float: left
+  &.right
+    float: right
+
+.hidden
+  display: none
+.indented > *
+  margin: 10px
+.margined
+  margin: 3%
+
+.wrapper
+  padding: 8px 8px
+
+.icon.small
+  font-size: 1.3em
+
+.framed
+  border: 2px solid #fff
+
+.round
+  border-radius( 4px )
+
+.bubble
+  display: inline-block
+  padding: 2px 3px
+  min-width: 12px
+  font-size: 0.75em
+  font-weight: bold
+  line-height: 13px
+  text-align: center

@@ -1,8 +1,8 @@
 vendor(prop, args)
   -webkit-{prop} args
   -moz-{prop} args
-  -ms-{prop} args
-  -o-{prop} args
+  // -ms-{prop} args
+  // -o-{prop} args
   {prop} args
 
 border-radius()
@@ -54,3 +54,6 @@ transition-timing-function()
 
 transform()
   vendor('transform', arguments)
+
+transform-origin()
+  vendor('transform-origin', arguments)

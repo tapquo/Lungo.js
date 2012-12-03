@@ -1,13 +1,11 @@
 /**
  * Stylesheet
  *
- * @namespace Lungo
+ * @namespace Lungo.Layout
  * @class Widgets
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-/* DIMENSIONS */
-/* COLORS */
 .overthrow-enabled .overthrow {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -17,20 +15,14 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-box-flex: 1;
+/* BUG (iOS) POSITION: relative childrens */
 }
 .scroll.horizontal {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-  /*
-        & > * {
-            min-width: 4096px;
-            & > * { float: left; }
-        }
-        */
-
 }
-.scroll  > * {
+.scroll > * {
   -webkit-transform: translate3d(0, 0, 0);
 }
 :not(.icon).left {
@@ -60,10 +52,9 @@
 .round {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   border-radius: 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
 }
 .bubble {
   display: inline-block;

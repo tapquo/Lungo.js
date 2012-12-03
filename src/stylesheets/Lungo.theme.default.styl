@@ -1,0 +1,312 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Default
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/vendor.styl"
+@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
+@import url("http://fonts.googleapis.com/css?family=Exo:200,400,700");
+@import url("http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700");
+
+THEME = #0093D5
+THEME_light =  #39ABE1
+THEME = #2A95D3
+THEME_light =  #25AEEB
+THEME_dark = #222
+THEME_dark_current = #111
+THEME_dark_nav = #888
+THEME_dark_nav_active = #fff
+THEME_contrast = #444
+ASIDE_COLOR = #191919
+COLOR = #484a49
+NOTIFICATION_error = #e33100
+NOTIFICATION_alert = #ffb515
+NOTIFICATION_success = #009600
+FORM_border_radius = 1px
+
+.app
+  background: #000
+  font-family: "Titillium Web", "Exo","Open Sans Condensed", Helvetica, Arial, sans-serif
+
+.theme
+  &, li&, a&
+    background:
+      THEME-light
+    &:active
+      background: THEME
+
+
+[data-control="pull"]
+    color: #666
+    text-shadow: 0 1px 0 white
+
+
+section
+  & > header
+    background-color: THEME
+    box-shadow inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)
+    & .title
+      color: #fff
+      text-shadow 0 1px 0 rgba(0,0,0,0.2)
+    & .subtitle
+      color: #fff
+      opacity: 0.7
+
+  & > footer
+    background-color: THEME-dark
+    box-shadow inset 0 3px 0 #333
+    & > nav a
+      box-shadow 1px 0 0 #151515
+      &.current
+        color:  THEME_dark_nav_active
+        background: THEME_dark_current
+        box-shadow -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3
+
+  & > article, & > [data-control="pull"]
+    background: #f4f5f5
+
+  &.aside
+    box-shadow -1px 0 0 rgba(0,0,0,0.2)
+    &.right
+      box-shadow 4px 0 8px rgba(0,0,0,0.5)
+
+
+aside
+  color: #fff
+  background: ASIDE_COLOR
+
+  & header, footer
+    background: THEME_dark_current
+    text-shadow: none
+  & header
+    box-shadow inset 0 -1px 0 rgba(0,0,0,0.2)
+  & article
+    background: none
+  & nav a
+    &.current .icon
+      color: white
+    &:not(.current) .icon
+      color: THEME_dark_nav
+
+  & .list li
+    background: none
+    border-bottom-color: THEME_dark !important
+
+    &.current
+      background: THEME
+      border-bottom-color: THEME
+      & strong, & small, & .icon
+        color: #fff
+
+    & strong, small, .icon
+      color: THEME_dark_nav
+
+
+header nav
+  & a
+    color: #fff
+  &.box
+    &:not(.right) a
+      box-shadow 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)
+    &.right a
+      box-shadow -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)
+    & a:active
+      background: rgba(0,0,0,0.1)
+  &.button a
+    border-radius: FORM-border-radius
+
+    // linear-gradient( top,  ','rgba(0,0,0,0.0),  ','rgba(0,0,0,0.1) )
+
+    box-shadow 0 1px 0 rgba(255,255,255,0.2), inset 0 0 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0, 0, 0, .5)
+    &:active
+      background: rgba(0,0,0,0.2)
+
+
+section > nav.groupbar
+  background-color: THEME-dark
+  & > a.current
+    box-shadow inset 0 -3px 0 THEME
+
+
+footer > nav > a, nav.groupbar > a
+  color: THEME_dark_nav
+  &.current
+    color: THEME_dark_nav_active
+
+
+
+LIST-border = #ddd
+LIST-color = #2a2a2a
+
+.list
+  & li
+    background: #fff
+    border-bottom: inset 1px LIST-border
+
+    &, & a
+      color: LIST-color
+
+      &.dark
+        background: THEME_contrast
+        &, & a
+          color: #fff
+
+      &.selectable:active, &.theme
+        background: THEME_light
+        &, & a
+          color: #fff
+
+      &.light
+        background:  LIST-border
+        text-shadow: 0 1px 0 #eee
+        &, & a
+          color: THEME_dark_nav
+
+      &.anchor
+        background: THEME_dark
+        border-bottom: none
+        &, & a
+          color: #fff !important
+
+      & small, & .right:not(.bubble)
+        opacity: 0.8
+
+  &:not(.indented) li
+    &.dark, &.theme, &.light
+      border-bottom-color: rgba(0,0,0,0.1)
+
+.splash
+  background: THEME-dark
+  color: #fff
+  text-shadow: 0 1px 0px rgba(0,0,0,0.2)
+
+.button, button
+  border-radius(FORM-border-radius)
+  font-weight: bold
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3)
+  color: white
+  border-radius 1px
+  box-shadow inset 0 1px 0 rgba(255,255,255,0.2)
+  border: solid 1px rgba(0,0,0,0.1)
+
+  &:active
+    box-shadow inset 0 0 128px rgba(0,0,0,0.25)
+    border-color: none
+
+FORM_shadow_form =  'inset 0 1px 2px rgba(0,0,0,0.1)'
+FORM_shadow_form_active =  'inset 0 1px 1px rgba(0,0,0,0.1), 3px 0 #f0eeef, 0 3px #f0eeef, -3px 0 #f0eeef, 0 -3px #f0eeef'
+FORM_border_color = #D0D4C6
+
+form, .form
+  & label
+    color: #999
+
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
+    background-color: white
+    color: rgba(0, 0, 0, 0.75)
+    border: 1px solid #ddd
+    box-shadow inset 0 1px 2px rgba(0, 0, 0, 0.1)
+    border-radius (0px)
+    &.error, &:required
+      border-color: color_alert
+      color: color_alert
+      background-color: rgba(198, 15, 19, 0.1)
+    &:focus
+      background: #FAFAFA;
+      border-color: THEME;
+      color: rgba(0, 0, 0, 0.75)
+    &[disabled]
+        background: #eee
+        border-color: #aaa
+        color: #999
+
+  & .select:after
+    background: FORM_border_color
+    color: white
+    border-top-right-radius: FORM_border_radius
+    border-bottom-right-radius: FORM_border_radius
+
+  & input[type=range]
+    box-shadow  FORM_shadow_form
+    border-radius FORM_border_radius
+
+    &:not(.checkbox)
+      background-color: #c7c7c7
+      &:active
+        background-color: THEME_light
+
+
+    &.checkbox
+      background-color: #aaaaaa
+      color: rgba(255,255,255,0.6)
+      &.active
+        background-color: THEME_light
+
+
+    &::-webkit-slider-thumb
+      border-radius: FORM-border-radius
+      box-shadow 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2)
+      background: #fff
+
+    &::-webkit-slider-thumb::after
+      background: #ddd
+
+
+  & .progress
+    .labels
+      font-size: 12px
+      font-weight: bold
+      line-height: 18px
+      color: #858585
+
+    & .bar
+      background: #c7c7c7
+      & .value
+        background-color: THEME-light
+        & .label
+          float: right
+          margin-right: 3px
+          font-weight: bold
+          color: rgba(0,0,0,0.6)
+          text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important
+          font-size: 12px
+
+.bubble
+  color: #fff
+  border-radius 2px
+  &.count
+    background: THEME
+  header .count
+    background: THEME-dark !important
+  footer .bubble
+    box-shadow inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5)
+  article .list .bubble
+    box-shadow inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3)
+  aside
+    .list .bubble
+      background: rgba(0,0,0,0.25)
+
+.notification
+  color: #fff
+  & .window
+    &.confirm
+      background: #333
+    &.notify
+      text-shadow: 0 1px 0px rgba(0,0,0,0.1)
+      .box-shadow( inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -1px 0 rgba(0,0,0,0.2), 0px 1px 2px rgba(0,0,0,0.25) )
+      &.error
+        background: NOTIFICATION-error
+      &.alert
+        background: NOTIFICATION-alert
+      &.success
+        background: NOTIFICATION-success
+    &.url
+      & .close
+        background: #000
+        border: solid 2px #fff
+        box-shadow: 0 0 4px black
+

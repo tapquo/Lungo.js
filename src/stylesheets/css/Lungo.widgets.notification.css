@@ -2,7 +2,7 @@
  * Stylesheet
  *
  * @namespace Lungo.Widgets
- * @class Pull
+ * @class Notification
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
@@ -15,16 +15,16 @@
   display: none;
 }
 .notification.modal {
-  background-color: ;
+  background-color: rgba(0,0,0,0.5);
 }
 .notification .window {
   position: relative;
   opacity: 0;
-  -webkit-transition: all  easeOutSine;
-  -moz-transition: all  easeOutSine;
-  -ms-transition: all  easeOutSine;
-  -o-transition: all  easeOutSine;
-  transition: all  easeOutSine;
+  -webkit-transition: all 200ms easeOutSine;
+  -moz-transition: all 200ms easeOutSine;
+  -ms-transition: all 200ms easeOutSine;
+  -o-transition: all 200ms easeOutSine;
+  transition: all 200ms easeOutSine;
 }
 .notification .window.show {
   opacity: 1;
@@ -39,5 +39,114 @@
 .notification .window:not(.special) {
   left: 50%;
   top: 50%;
-  width: ;
+  width: 104px;
+  margin: -MODAL_SIZE_middle auto auto -MODAL_SIZE_middle;
+  padding: 8px;
+  background-color: rgba(0,0,0,0.8);
+  text-align: center;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.notification .window:not(.special).show {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+.notification .window:not(.special) .icon {
+  display: block;
+  font-size: 4em;
+}
+.notification .window:not(.special) .icon.loading {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+.notification .window:not(.special) small {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.notification .window.confirm,
+.notification .window.notify {
+  top: 0;
+  font-size: 1.1em !important;
+  -webkit-transform: translate3d(0, -100%, 0);
+  -moz-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+.notification .window.confirm.show,
+.notification .window.notify.show {
+  -webkit-transform: translate3d(0, 0%, 0);
+  -moz-transform: translate3d(0, 0%, 0);
+  -ms-transform: translate3d(0, 0%, 0);
+  -o-transform: translate3d(0, 0%, 0);
+  transform: translate3d(0, 0%, 0);
+}
+.notification .window.confirm .icon,
+.notification .window.notify .icon {
+  float: left;
+  font-size: 2em;
+  margin: -3px 10px 0 0;
+}
+.notification .window.confirm {
+  opacity: 1;
+  padding: 10px 12px;
+}
+.notification .window.confirm p {
+  height: 44px;
+}
+.notification .window.confirm .button {
+  width: 42%;
+}
+.notification .window.confirm .button:last-child {
+  float: right;
+}
+.notification .window.notify {
+  padding: 8px;
+  top: 0;
+}
+.notification .window.url {
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: auto;
+  margin: 64px auto 0px;
+  padding: 0px;
+}
+.notification .window.url .close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: normal;
+  width: 24px;
+  height: 24px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+  border-radius: 14px;
+}
+.notification .window.working span {
+  -webkit-animation: notification-working 1s infinite;
+}
+@-webkit-keyframes notification-working {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
