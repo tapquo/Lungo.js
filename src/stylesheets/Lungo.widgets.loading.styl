@@ -1,0 +1,213 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Widgets
+ * @class Loading
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "import/constants.styl"
+@import "import/vendor.styl"
+
+.loading
+  position: relative
+  left: 50%
+  height: 1em
+  width: 1em
+  margin-left: -.5em
+  transform-origin(.5em .5em)
+  font-size: 48px
+  &.disable
+    -webkit-animation: none
+    -moz-animation: none
+    display: none
+
+  & > span
+    left: 50%
+    margin-left: -0.05em
+
+    &, &::before, &::after
+      display: block
+      position: absolute
+      width: .1em
+      height: .25em
+      top: 0
+      transform-origin( .05em .5em )
+      border-radius( .1em )
+
+    &::before, &::after
+      content: " "
+
+    &.top
+      transform(rotate(0deg))
+    &.right
+      transform(rotate(90deg))
+    &.bottom
+      transform(rotate(180deg))
+    &.left
+      transform(rotate(270deg))
+    &::before
+      transform(rotate(30deg))
+    &::after
+      transform(rotate(-30deg))
+
+    &.top
+      background-color: rgba(0,0,0,0.99)
+    &.top::after
+      background-color: rgba(0,0,0,0.90)
+    &.left::before
+      background-color: rgba(0,0,0,0.80)
+    &.left
+      background-color: rgba(0,0,0,0.70)
+    &.left::after
+      background-color: rgba(0,0,0,0.60)
+    &.bottom::before
+      background-color: rgba(0,0,0,0.50)
+    &.bottom
+      background-color: rgba(0,0,0,0.40)
+    &.bottom::after
+      background-color: rgba(0,0,0,0.35)
+    &.right::before
+      background-color: rgba(0,0,0,0.30)
+    &.right
+      background-color: rgba(0,0,0,0.25)
+    &.right::after
+      background-color: rgba(0,0,0,0.20)
+    &.top::before
+      background-color: rgba(0,0,0,0.15)
+
+
+  &.white > span
+    &.top
+      background-color: rgba(255,255,255,0.99)
+    &.top::after
+      background-color: rgba(255,255,255,0.90)
+    &.left::before
+      background-color: rgba(255,255,255,0.80)
+    &.left
+      background-color: rgba(255,255,255,0.70)
+    &.left::after
+      background-color: rgba(255,255,255,0.60)
+    &.bottom::before
+      background-color: rgba(255,255,255,0.50)
+    &.bottom
+      background-color: rgba(255,255,255,0.40)
+    &.bottom::after
+      background-color: rgba(255,255,255,0.35)
+    &.right::before
+      background-color: rgba(255,255,255,0.30)
+    &.right
+      background-color: rgba(255,255,255,0.25)
+    &.right::after
+      background-color: rgba(255,255,255,0.20)
+    &.top::before
+      background-color: rgba(255,255,255,0.15)
+
+
+section.show, section.current, .notification
+  & .loading
+    -webkit-animation: rotatingLoader .5s  infinite linear
+    moz-animation:  rotatingLoader .5s  infinite linear
+
+
+@-webkit-keyframes rotatingLoader
+  0%
+    transform(rotate(0deg))
+  8.32%
+    transform(rotate(0deg))
+  8.33%
+    transform(rotate(30deg))
+  16.65%
+    transform(rotate(30deg))
+  16.66%
+    transform(rotate(60deg))
+  24.99%
+    transform(rotate(60deg))
+  25%
+    transform(rotate(90deg))
+  33.32%
+    transform(rotate(90deg))
+  33.33%
+    transform(rotate(120deg))
+  41.65%
+    transform(rotate(120deg))
+  41.66%
+    transform(rotate(150deg))
+  49.99%
+    transform(rotate(150deg))
+  50%
+    transform(rotate(180deg))
+  58.32%
+    transform(rotate(180deg))
+  58.33%
+    transform(rotate(210deg))
+  66.65%
+    transform(rotate(210deg))
+  66.66%
+    transform(rotate(240deg))
+  74.99%
+    transform(rotate(240deg))
+  75%
+    transform(rotate(270deg))
+  83.32%
+    transform(rotate(270deg))
+  83.33%
+    transform(rotate(300deg))
+  91.65%
+    transform(rotate(300deg))
+  91.66%
+    transform(rotate(330deg))
+  100%
+    transform(rotate(330deg))
+
+
+@-moz-keyframes rotatingLoader
+  0%
+    transform(rotate(0deg))
+  8.32%
+    transform(rotate(0deg))
+  8.33%
+    transform(rotate(30deg))
+  16.65%
+    transform(rotate(30deg))
+  16.66%
+    transform(rotate(60deg))
+  24.99%
+    transform(rotate(60deg))
+  25%
+    transform(rotate(90deg))
+  33.32%
+    transform(rotate(90deg))
+  33.33%
+    transform(rotate(120deg))
+  41.65%
+    transform(rotate(120deg))
+  41.66%
+    transform(rotate(150deg))
+  49.99%
+    transform(rotate(150deg))
+  50%
+    transform(rotate(180deg))
+  58.32%
+    transform(rotate(180deg))
+  58.33%
+    transform(rotate(210deg))
+  66.65%
+    transform(rotate(210deg))
+  66.66%
+    transform(rotate(240deg))
+  74.99%
+    transform(rotate(240deg))
+  75%
+    transform(rotate(270deg))
+  83.32%
+    transform(rotate(270deg))
+  83.33%
+    transform(rotate(300deg))
+  91.65%
+    transform(rotate(300deg))
+  91.66%
+    transform(rotate(330deg))
+  100%
+    transform(rotate(330deg))
