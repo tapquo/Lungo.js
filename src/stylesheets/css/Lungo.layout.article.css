@@ -25,21 +25,14 @@ article:first-child {
 article.pull {
   -webkit-transition-property: transform;
   -moz-transition-property: transform;
-  -ms-transition-property: transform;
-  -o-transition-property: transform;
   transition-property: transform;
   -webkit-transition-duration: 300ms;
   -moz-transition-duration: 300ms;
-  -ms-transition-duration: 300ms;
-  -o-transition-duration: 300ms;
   transition-duration: 300ms;
 }
 article .text {
   margin: 4px 0 8px;
   display: block;
-  font-size: 0.9em;
-  font-weight: normal;
-  line-height: 1.4em;
 }
 header:not(.extended) ~ article {
   top: 44px;
@@ -54,8 +47,6 @@ footer ~ article {
   article.aside {
     -webkit-transform: translate3d(0px, 0, 0);
     -moz-transform: translate3d(0px, 0, 0);
-    -ms-transform: translate3d(0px, 0, 0);
-    -o-transform: translate3d(0px, 0, 0);
     transform: translate3d(0px, 0, 0);
   }
 }

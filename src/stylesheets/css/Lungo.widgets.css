@@ -52,8 +52,6 @@
 .round {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
   border-radius: 4px;
 }
 .bubble {
@@ -64,4 +62,44 @@
   font-weight: bold;
   line-height: 13px;
   text-align: center;
+}
+/* ================================  TEXT  ================================ */
+.text.thin {
+  font-weight: 200;
+}
+.text.book {
+  font-weight: 300;
+}
+.text.normal {
+  font-weight: 400;
+}
+.text.bold {
+  font-weight: 700;
+}
+.text.italic {
+  font-style: italic;
+}
+.text.underline {
+  text-decoration: underline;
+}
+.text.line-through {
+  text-decoration: line-through;
+}
+.text.align_left {
+  text-align: left;
+}
+.text.align_right {
+  text-align: right;
+}
+.text.align_center {
+  text-align: center;
+}
+.text.align_justify {
+  text-align: justify;
+}
+.text.small {
+  font-size: 0.9em;
+}
+.text.big {
+  font-size: 1.1em;
 }

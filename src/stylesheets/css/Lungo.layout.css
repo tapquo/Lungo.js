@@ -16,28 +16,18 @@ section {
   display: none;
   -webkit-transition-property: opacity z-index transform;
   -moz-transition-property: opacity z-index transform;
-  -ms-transition-property: opacity z-index transform;
-  -o-transition-property: opacity z-index transform;
   transition-property: opacity z-index transform;
   -webkit-transition-duration: 300ms;
   -moz-transition-duration: 300ms;
-  -ms-transition-duration: 300ms;
-  -o-transition-duration: 300ms;
   transition-duration: 300ms;
   -webkit-transition-timing-function: easeOutSine;
   -moz-transition-timing-function: easeOutSine;
-  -ms-transition-timing-function: easeOutSine;
-  -o-transition-timing-function: easeOutSine;
   transition-timing-function: easeOutSine;
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
   backface-visibility: hidden;
 /* Transition: POP */
 /* Transition: SLIDE */
@@ -60,32 +50,24 @@ section[data-transition="pop"] {
   opacity: 0;
   -webkit-transform: scale(1.15);
   -moz-transform: scale(1.15);
-  -ms-transform: scale(1.15);
-  -o-transform: scale(1.15);
   transform: scale(1.15);
 }
 section[data-transition="pop"]:first-child,
 section[data-transition="pop"].show {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
   transform: scale(1);
   opacity: 1;
 }
 section[data-transition="pop"].hide {
   -webkit-transform: scale(0.9);
   -moz-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  -o-transform: scale(0.9);
   transform: scale(0.9);
   opacity: 0;
 }
 section[data-transition="slide"] {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
-  -ms-transform: translateX(100%);
-  -o-transform: translateX(100%);
   transform: translateX(100%);
   visibility: visible !important;
 }
@@ -94,16 +76,12 @@ section[data-transition="slide"] > article > * {
   opacity: 0;
   -webkit-transition: opacity 400ms easeOutSine;
   -moz-transition: opacity 400ms easeOutSine;
-  -ms-transition: opacity 400ms easeOutSine;
-  -o-transition: opacity 400ms easeOutSine;
   transition: opacity 400ms easeOutSine;
 }
 section[data-transition="slide"]:first-child,
 section[data-transition="slide"].show {
   -webkit-transform: translateX(0%);
   -moz-transform: translateX(0%);
-  -ms-transform: translateX(0%);
-  -o-transform: translateX(0%);
   transform: translateX(0%);
 }
 section[data-transition="slide"]:first-child > header > *,
@@ -115,8 +93,6 @@ section[data-transition="slide"].show > article > * {
 section[data-transition="slide"].hide {
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
   transform: translateX(-100%);
 }
 section[data-transition="slide"].hide > header > *,
@@ -126,8 +102,6 @@ section[data-transition="slide"].hide > article > * {
 section[data-transition="cover"] {
   -webkit-transform: translateY(110%);
   -moz-transform: translateY(110%);
-  -ms-transform: translateY(110%);
-  -o-transform: translateY(110%);
   transform: translateY(110%);
 }
 section[data-transition="cover"]:first-child,
@@ -135,8 +109,6 @@ section[data-transition="cover"].show,
 section[data-transition="cover"].hide {
   -webkit-transform: translateY(0%);
   -moz-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  -o-transform: translateY(0%);
   transform: translateY(0%);
 }
 section[data-transition="fade"] {
@@ -166,26 +138,16 @@ header .title {
   margin-left: 4px;
   float: left;
   z-index: -1;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-header .title.with-subtitle {
-  line-height: 34px;
-}
-header .title.with-subtitle .subtitle {
-  position: relative;
-  top: -4px;
-  display: block;
-  font-size: 0.7em;
-  line-height: 0.7em;
+  font-size: 1.1em;
+  font-weight: 400;
 }
 header .title img {
   height: 24px;
 }
 header .title.centered {
   position: absolute;
-  left: 0px;
-  right: 0px;
+  left: 32px;
+  right: 32px;
   text-align: center;
   display: inline-block;
 }

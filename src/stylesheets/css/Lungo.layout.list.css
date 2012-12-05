@@ -11,6 +11,12 @@
   padding: 9px;
   position: relative;
 }
+.list li,
+.list li a,
+.list li small,
+.list li .right {
+  font-weight: 300;
+}
 .list li.arrow::after {
   position: absolute;
   right: 8px;
@@ -22,8 +28,6 @@
   border-top: 3px solid #d0d0d8;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .list li a {
@@ -47,8 +51,6 @@
   font-size: 3.6em;
 }
 .list li.anchor {
-  font-size: 0.85em;
-  font-weight: bold;
   padding: 2px 10px;
 }
 .list li.anchor .icon.small {
@@ -59,25 +61,25 @@
 }
 .list li strong {
   position: relative;
-  font-size: 1.15em;
+  font-weight: 400;
 }
 .list li small {
   display: block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 0.8em;
 }
 .list li small + .right {
   margin-top: -12px;
 }
+.list li small,
+.list li.anchor,
+.list li .right {
+  font-size: 0.9em;
+}
 .list .bubble {
   padding-left: 4px;
   padding-right: 4px;
-}
-.list .right {
-  font-size: 0.8em;
-  font-weight: bold;
 }
 .list .loading .right {
   font-size: 1em;

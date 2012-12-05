@@ -16,6 +16,9 @@
     padding: 9px
     position: relative
 
+    &, & a, & small, & .right
+      font-weight: 300
+
     &.arrow::after
       position: absolute
       right: 8px
@@ -47,8 +50,6 @@
         font-size: 3.6em
 
     &.anchor
-      font-size: 0.85em
-      font-weight: bold
       padding: 2px 10px
       & .icon.small
         margin-right: 2px
@@ -57,26 +58,23 @@
 
     & strong
       position: relative
-      font-size: 1.15em
+      font-weight: 400
 
     & small
       display: block
       overflow: hidden
       white-space: nowrap
       text-overflow: ellipsis
-      font-size: 0.8em
       & + .right
         margin-top: -12px
+
+    & small, &.anchor, & .right
+      font-size: 0.9em
 
 
   & .bubble
     padding-left: 4px
     padding-right: 4px
-
-  & .right
-    font-size: 0.8em
-    font-weight: bold
-
 
   & .loading .right
     font-size: 1.0em

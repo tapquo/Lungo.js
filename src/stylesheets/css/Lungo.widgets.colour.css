@@ -65,98 +65,70 @@ a.facebook,
 li.grey {
   -webkit-box-shadow: inset 4px 0px 0px #ccc;
   -moz-box-shadow: inset 4px 0px 0px #ccc;
-  -ms-box-shadow: inset 4px 0px 0px #ccc;
-  -o-box-shadow: inset 4px 0px 0px #ccc;
   box-shadow: inset 4px 0px 0px #ccc;
 }
 li.dark-grey {
   -webkit-box-shadow: inset 4px 0px 0px #000;
   -moz-box-shadow: inset 4px 0px 0px #000;
-  -ms-box-shadow: inset 4px 0px 0px #000;
-  -o-box-shadow: inset 4px 0px 0px #000;
   box-shadow: inset 4px 0px 0px #000;
 }
 li.red {
   -webkit-box-shadow: inset 4px 0px 0px #e33100;
   -moz-box-shadow: inset 4px 0px 0px #e33100;
-  -ms-box-shadow: inset 4px 0px 0px #e33100;
-  -o-box-shadow: inset 4px 0px 0px #e33100;
   box-shadow: inset 4px 0px 0px #e33100;
 }
 li.lightgreen {
   -webkit-box-shadow: inset 4px 0px 0px #91bd09;
   -moz-box-shadow: inset 4px 0px 0px #91bd09;
-  -ms-box-shadow: inset 4px 0px 0px #91bd09;
-  -o-box-shadow: inset 4px 0px 0px #91bd09;
   box-shadow: inset 4px 0px 0px #91bd09;
 }
 li.green {
   -webkit-box-shadow: inset 4px 0px 0px #009600;
   -moz-box-shadow: inset 4px 0px 0px #009600;
-  -ms-box-shadow: inset 4px 0px 0px #009600;
-  -o-box-shadow: inset 4px 0px 0px #009600;
   box-shadow: inset 4px 0px 0px #009600;
 }
 li.blue {
   -webkit-box-shadow: inset 4px 0px 0px #237fd7;
   -moz-box-shadow: inset 4px 0px 0px #237fd7;
-  -ms-box-shadow: inset 4px 0px 0px #237fd7;
-  -o-box-shadow: inset 4px 0px 0px #237fd7;
   box-shadow: inset 4px 0px 0px #237fd7;
 }
 li.arcticblue {
   -webkit-box-shadow: inset 4px 0px 0px #2daebf;
   -moz-box-shadow: inset 4px 0px 0px #2daebf;
-  -ms-box-shadow: inset 4px 0px 0px #2daebf;
-  -o-box-shadow: inset 4px 0px 0px #2daebf;
   box-shadow: inset 4px 0px 0px #2daebf;
 }
 li.orange {
   -webkit-box-shadow: inset 4px 0px 0px #ff5c00;
   -moz-box-shadow: inset 4px 0px 0px #ff5c00;
-  -ms-box-shadow: inset 4px 0px 0px #ff5c00;
-  -o-box-shadow: inset 4px 0px 0px #ff5c00;
   box-shadow: inset 4px 0px 0px #ff5c00;
 }
 li.purple {
   -webkit-box-shadow: inset 4px 0px 0px #7b658d;
   -moz-box-shadow: inset 4px 0px 0px #7b658d;
-  -ms-box-shadow: inset 4px 0px 0px #7b658d;
-  -o-box-shadow: inset 4px 0px 0px #7b658d;
   box-shadow: inset 4px 0px 0px #7b658d;
 }
 li.magenta {
   -webkit-box-shadow: inset 4px 0px 0px #a9014b;
   -moz-box-shadow: inset 4px 0px 0px #a9014b;
-  -ms-box-shadow: inset 4px 0px 0px #a9014b;
-  -o-box-shadow: inset 4px 0px 0px #a9014b;
   box-shadow: inset 4px 0px 0px #a9014b;
 }
 li.pink {
   -webkit-box-shadow: inset 4px 0px 0px #ff007f;
   -moz-box-shadow: inset 4px 0px 0px #ff007f;
-  -ms-box-shadow: inset 4px 0px 0px #ff007f;
-  -o-box-shadow: inset 4px 0px 0px #ff007f;
   box-shadow: inset 4px 0px 0px #ff007f;
 }
 li.yellow {
   -webkit-box-shadow: inset 4px 0px 0px #ffb515;
   -moz-box-shadow: inset 4px 0px 0px #ffb515;
-  -ms-box-shadow: inset 4px 0px 0px #ffb515;
-  -o-box-shadow: inset 4px 0px 0px #ffb515;
   box-shadow: inset 4px 0px 0px #ffb515;
 }
 li.twitter {
   -webkit-box-shadow: inset 4px 0px 0px #35cdff;
   -moz-box-shadow: inset 4px 0px 0px #35cdff;
-  -ms-box-shadow: inset 4px 0px 0px #35cdff;
-  -o-box-shadow: inset 4px 0px 0px #35cdff;
   box-shadow: inset 4px 0px 0px #35cdff;
 }
 li.facebook {
   -webkit-box-shadow: inset 4px 0px 0px #3b5998;
   -moz-box-shadow: inset 4px 0px 0px #3b5998;
-  -ms-box-shadow: inset 4px 0px 0px #3b5998;
-  -o-box-shadow: inset 4px 0px 0px #3b5998;
   box-shadow: inset 4px 0px 0px #3b5998;
 }

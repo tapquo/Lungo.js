@@ -13,20 +13,16 @@ footer nav {
   display: box;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
-  -ms-box-pack: justify;
-  -o-box-pack: justify;
   box-pack: justify;
 }
 nav.groupbar > a,
 footer nav > a {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -ms-box-flex: 1;
-  -o-box-flex: 1;
   box-flex: 1;
 }
-nav abbr {
-  font-weight: bold;
+header nav {
+  font-weigth: 700;
 }
 header nav a {
   padding: 0 6px;
@@ -49,6 +45,10 @@ header nav a .bubble {
   top: -12px;
   left: -12px;
   margin-right: -20px;
+}
+header nav a abbr {
+  font-size: 0.9em;
+  font-weight: 700;
 }
 header nav a.button a {
   margin: 5px 5px 5px 0;

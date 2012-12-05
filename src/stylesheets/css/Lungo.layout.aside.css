@@ -9,29 +9,21 @@
 section.aside:not(.small) {
   -webkit-transform: translateX(264px);
   -moz-transform: translateX(264px);
-  -ms-transform: translateX(264px);
-  -o-transform: translateX(264px);
   transform: translateX(264px);
 }
 section.aside.small {
   -webkit-transform: translateX(64px);
   -moz-transform: translateX(64px);
-  -ms-transform: translateX(64px);
-  -o-transform: translateX(64px);
   transform: translateX(64px);
 }
 section.aside.right {
   -webkit-transform: translateX(-ASIDE_WIDTH);
   -moz-transform: translateX(-ASIDE_WIDTH);
-  -ms-transform: translateX(-ASIDE_WIDTH);
-  -o-transform: translateX(-ASIDE_WIDTH);
   transform: translateX(-ASIDE_WIDTH);
 }
 section.aside.right.small {
   -webkit-transform: translateX(-ASIDE_WIDTH_SMALL);
   -moz-transform: translateX(-ASIDE_WIDTH_SMALL);
-  -ms-transform: translateX(-ASIDE_WIDTH_SMALL);
-  -o-transform: translateX(-ASIDE_WIDTH_SMALL);
   transform: translateX(-ASIDE_WIDTH_SMALL);
 }
 aside {
@@ -79,7 +71,6 @@ aside.small nav a {
 aside.small nav a .icon {
   position: absolute;
   width: inherit;
-  font-size: 38px;
   line-height: 64px;
 }
 aside.small nav a .bubble {
