@@ -6,12 +6,14 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700");
-@import url("http://fonts.googleapis.com/css?family=Exo:200,400,700");
 @import url("http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700");
-.app {
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700");
+body {
   background: #000;
-  font-family: "Titillium Web", "Exo", "Open Sans Condensed", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", "Titillium Web", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.3em;
 }
 .theme,
 li.theme,
@@ -37,9 +39,6 @@ section > header {
 }
 section > header .title {
   color: #fff;
-  -webkit-text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-  -moz-text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
 }
 section > header .subtitle {
   color: #fff;
@@ -169,7 +168,7 @@ nav.groupbar > a.current {
 }
 .list li,
 .list li a {
-  color: #2a2a2a;
+  color: #333;
 }
 .list li.dark,
 .list li a.dark {
@@ -239,15 +238,12 @@ nav.groupbar > a.current {
   -moz-text-shadow: 0 1px 0px rgba(0,0,0,0.2);
   text-shadow: 0 1px 0px rgba(0,0,0,0.2);
 }
+/* ____________________ BUTTONS ____________________ */
 .button,
 button {
   -webkit-border-radius: FORM-border-radius;
   -moz-border-radius: FORM-border-radius;
   border-radius: FORM-border-radius;
-  font-weight: bold;
-  -webkit-text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
-  -moz-text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
-  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
   color: #fff;
   -webkit-border-radius: 1px;
   -moz-border-radius: 1px;
@@ -448,9 +444,6 @@ form input[type=range]::-webkit-slider-thumb,
   -webkit-border-radius: FORM-border-radius;
   -moz-border-radius: FORM-border-radius;
   border-radius: FORM-border-radius;
-  -webkit-box-shadow: 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2);
-  -moz-box-shadow: 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2);
-  box-shadow: 1px 0 rgba(0,0,0,0.2), -1px 0 rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.2), 0 -1px rgba(0,0,0,0.2);
   background: #fff;
 }
 form input[type=range]::-webkit-slider-thumb::after,
@@ -460,7 +453,6 @@ form input[type=range]::-webkit-slider-thumb::after,
 form .progress .labels,
 .form .progress .labels {
   font-size: 12px;
-  font-weight: bold;
   line-height: 18px;
   color: #858585;
 }
@@ -476,7 +468,6 @@ form .progress .bar .value .label,
 .form .progress .bar .value .label {
   float: right;
   margin-right: 3px;
-  font-weight: bold;
   color: rgba(0,0,0,0.6);
   -webkit-text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important;
   -moz-text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important;

@@ -6,18 +6,9 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-form.wrapper input:not([type=checkbox]),
-.form.wrapper input:not([type=checkbox]),
-form textarea,
-.form textarea,
-form select,
-.form select {
-  margin: 3px 0px 3px 0px;
-}
 form label:not(.select),
 .form label:not(.select) {
-  font-size: 0.95em;
-  font-weight: 400;
+  font-size: 0.9em;
 }
 form input,
 .form input,
@@ -59,11 +50,9 @@ form textarea,
   height: 30px;
   -webkit-transition: all 0.15s linear;
   -moz-transition: all 0.15s linear;
-  -ms-transition: all 0.15s linear;
-  -o-transition: all 0.15s linear;
   transition: all 0.15s linear;
   font-family: inherit;
-  font-size: 14px;
+  font-size: inherit;
   -webkit-appearance: none;
   -webkit-user-select: text;
   -webkit-font-smoothing: antialiased;
@@ -177,7 +166,6 @@ form input[type=range].checkbox.active:after,
 .form input[type=range].checkbox.active:after {
   float: left;
   content: "\0051";
-  font-weight: bold;
   font-size: 1.6em;
 }
 form input[type=range]::-webkit-slider-thumb,
@@ -198,8 +186,6 @@ form input[type=range]::-webkit-slider-thumb::after,
   position: relative;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
   border-radius: 8px;
   z-index: 9;
   top: 6px;
@@ -232,8 +218,6 @@ form .progress .bar .value,
   width: 0%;
   -webkit-transition: width 500ms easeOutSine;
   -moz-transition: width 500ms easeOutSine;
-  -ms-transition: width 500ms easeOutSine;
-  -o-transition: width 500ms easeOutSine;
   transition: width 500ms easeOutSine;
 }
 form .progress .bar .value .label,
