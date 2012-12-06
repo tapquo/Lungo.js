@@ -7,13 +7,12 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 @import url("http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700");
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 body {
   background: #000;
   font-family: "Open Sans", "Source Sans Pro", "Titillium Web", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.3em;
 }
 .theme,
@@ -24,7 +23,7 @@ a.theme {
 .theme:active,
 li.theme:active,
 a.theme:active {
-  background: #ddd;
+  background: #0093d5;
 }
 [data-control="pull"] {
   color: #666;
@@ -33,13 +32,13 @@ a.theme:active {
   text-shadow: 0 1px 0 #fff;
 }
 section > header {
-  background-color: #ddd;
+  background-color: #0093d5;
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.1);
 }
 section > header .title {
-  color: #333;
+  color: #fff;
 }
 section > footer {
   background-color: THEME-dark;
@@ -104,8 +103,8 @@ aside .list li {
   border-bottom-color: #222 !important;
 }
 aside .list li.current {
-  background: #ddd;
-  border-bottom-color: #ddd;
+  background: #0093d5;
+  border-bottom-color: #0093d5;
 }
 aside .list li.current strong,
 aside .list li.current small,
@@ -118,7 +117,7 @@ aside .list li .icon {
   color: #888;
 }
 header nav a {
-  color: #666;
+  color: #fff;
 }
 header nav.box:not(.right) a {
   -webkit-box-shadow: 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2);
@@ -148,9 +147,9 @@ section > nav.groupbar {
   background-color: THEME-dark;
 }
 section > nav.groupbar > a.current {
-  -webkit-box-shadow: inset 0 -3px 0 #ddd;
-  -moz-box-shadow: inset 0 -3px 0 #ddd;
-  box-shadow: inset 0 -3px 0 #ddd;
+  -webkit-box-shadow: inset 0 -3px 0 #0093d5;
+  -moz-box-shadow: inset 0 -3px 0 #0093d5;
+  box-shadow: inset 0 -3px 0 #0093d5;
 }
 footer > nav > a,
 nav.groupbar > a {
@@ -373,7 +372,7 @@ form select:focus,
 form textarea:focus,
 .form textarea:focus {
   background: #fafafa;
-  border-color: #ddd;
+  border-color: #0093d5;
   color: rgba(0,0,0,0.75);
 }
 form input[type="text"][disabled],
@@ -479,7 +478,7 @@ form .progress .bar .value .label,
   border-radius: 2px;
 }
 .bubble.count {
-  background: #ddd;
+  background: #0093d5;
 }
 .bubble header .count {
   background: THEME-dark !important;

@@ -61,7 +61,8 @@
 }
 .list li strong {
   position: relative;
-  font-weight: 600;
+  font-size: 1.15em;
+  font-weight: 400;
 }
 .list li small {
   display: block;

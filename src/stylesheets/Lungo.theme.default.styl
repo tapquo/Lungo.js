@@ -9,13 +9,11 @@
 
 @import "import/vendor.styl"
 @import url("http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700")
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700")
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300,600")
-
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
 THEME = #0093D5
 THEME_light =  #39ABE1
 
-THEME = #ddd
+// THEME = #ddd
 THEME_dark = #222
 THEME_dark_current = #111
 THEME_dark_nav = #888
@@ -32,7 +30,7 @@ body
   background: #000
   font-family: "Open Sans", "Source Sans Pro","Titillium Web",  Helvetica, Arial, sans-serif
   font-weight: 400
-  font-size: 15px
+  font-size: 14px
   line-height: 1.3em
 
 
@@ -55,7 +53,7 @@ section
     background-color: THEME
     box-shadow inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.1)
     & .title
-      color: #333
+      color: #fff
 
   & > footer
     background-color: THEME-dark
@@ -110,7 +108,7 @@ aside
 
 header nav
   & a
-    color: #666
+    color: #fff
   &.box
     &:not(.right) a
       box-shadow 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)
