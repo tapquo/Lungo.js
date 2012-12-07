@@ -17,9 +17,9 @@ section {
   -webkit-transition-property: opacity z-index transform;
   -moz-transition-property: opacity z-index transform;
   transition-property: opacity z-index transform;
-  -webkit-transition-duration: 300ms;
-  -moz-transition-duration: 300ms;
-  transition-duration: 300ms;
+  -webkit-transition-duration: 400ms;
+  -moz-transition-duration: 400ms;
+  transition-duration: 400ms;
   -webkit-transition-timing-function: easeOutSine;
   -moz-transition-timing-function: easeOutSine;
   transition-timing-function: easeOutSine;
@@ -71,33 +71,16 @@ section[data-transition="slide"] {
   transform: translateX(100%);
   visibility: visible !important;
 }
-section[data-transition="slide"] > header > *,
-section[data-transition="slide"] > article > * {
-  opacity: 0;
-  -webkit-transition: opacity 400ms easeOutSine;
-  -moz-transition: opacity 400ms easeOutSine;
-  transition: opacity 400ms easeOutSine;
-}
 section[data-transition="slide"]:first-child,
 section[data-transition="slide"].show {
   -webkit-transform: translateX(0%);
   -moz-transform: translateX(0%);
   transform: translateX(0%);
 }
-section[data-transition="slide"]:first-child > header > *,
-section[data-transition="slide"].show > header > *,
-section[data-transition="slide"]:first-child > article > *,
-section[data-transition="slide"].show > article > * {
-  opacity: 1;
-}
 section[data-transition="slide"].hide {
   -webkit-transform: translateX(-100%);
   -moz-transform: translateX(-100%);
   transform: translateX(-100%);
-}
-section[data-transition="slide"].hide > header > *,
-section[data-transition="slide"].hide > article > * {
-  opacity: 0;
 }
 section[data-transition="cover"] {
   -webkit-transform: translateY(110%);
