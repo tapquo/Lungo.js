@@ -56,7 +56,7 @@
 .list li.anchor .icon.small {
   margin-right: 2px;
 }
-.list li.anchor .bubble {
+.list li.anchor .tag {
   display: none;
 }
 .list li strong {
@@ -78,8 +78,9 @@
 .list li .right {
   font-size: 0.9em;
 }
-.list .bubble {
-  padding: 1px 5px 3px 5px;
+.list .tag {
+  margin-top: 1px;
+  padding: 1px 3px 3px 3px;
 }
 .list .loading .right {
   font-size: 1em;

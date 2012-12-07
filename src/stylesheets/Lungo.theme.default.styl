@@ -137,7 +137,7 @@ header nav
 
 
 section > nav.groupbar
-  background-color: THEME-dark
+  background-color: THEME_dark
   & > a.current
     box-shadow inset 0 -3px 0 THEME
 
@@ -190,7 +190,7 @@ LIST-color-secondary = #555
         &, & a
           color: #fff !important
 
-      & small, & .right:not(.bubble)
+      & small, & .right:not(.tag)
         color: LIST-color-secondary
 
   &:not(.indented) li
@@ -226,6 +226,16 @@ LIST-color-secondary = #555
     background-color: COLOR_CANCEL
   &[disabled]
     background-color: black
+
+button, .button, .tag
+  &.theme
+    background-color: THEME
+  &.secondary
+    background-color: COLOR_SECONDARY
+  &.accept
+    background-color: COLOR_ACCEPT
+  &.cancel
+    background-color: COLOR_CANCEL
 
 FORM_shadow_form =  'inset 0 1px 2px rgba(0,0,0,0.1)'
 FORM_shadow_form_active =  'inset 0 1px 1px rgba(0,0,0,0.1), 3px 0 #f0eeef, 0 3px #f0eeef, -3px 0 #f0eeef, 0 -3px #f0eeef'
@@ -302,20 +312,18 @@ form, .form
           font-size: 12px
 
 
-.bubble
+.tag
   color: #fff
   border-radius 2px
+  font-weight: 400 !important
   &.count
     background: THEME
   header .count
     background: THEME-dark !important
-  footer .bubble
+  footer &
     box-shadow inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5)
-  article .list .bubble
+  article .list &
     box-shadow inset 1px 0 0 rgba(0,0,0,0.3), inset 0 1px 0 rgba(0,0,0,0.3), inset -1px 0 0 rgba(0,0,0,0.3), inset 0 -1px 0 rgba(0,0,0,0.3)
-  aside
-    .list .bubble
-      background: rgba(0,0,0,0.25)
 
 .notification
   color: #fff
@@ -336,7 +344,3 @@ form, .form
         background: #000
         border: solid 2px #fff
         box-shadow: 0 0 4px black
-
-
-
-

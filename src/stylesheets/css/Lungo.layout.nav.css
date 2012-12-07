@@ -40,7 +40,7 @@ header nav a img {
   height: 16px;
   top: -1px !important;
 }
-header nav a .bubble {
+header nav a .tag {
   position: relative;
   top: -12px;
   left: -12px;
@@ -91,7 +91,8 @@ nav.groupbar > a .icon {
   font-size: 1em;
   margin-right: 2px;
 }
-nav.groupbar > a .bubble {
+nav.groupbar > a .tag {
+  padding: 1px 3px 3px 3px;
   position: relative;
   top: -1px;
   left: 2px;
@@ -108,18 +109,19 @@ footer nav .icon {
   width: 32px;
   display: inline-block;
 }
-footer nav .bubble {
+footer nav .tag {
   top: -42px;
   left: 4px;
+  padding: 1px 3px 3px 3px;
 }
-footer nav .bubble .loading {
+footer nav .tag .loading {
   top: 0;
   font-size: 1.4em;
 }
 footer nav abbr {
   display: none;
 }
-footer nav .bubble {
+footer nav .tag {
   position: relative;
   top: -12px;
   left: -12px;

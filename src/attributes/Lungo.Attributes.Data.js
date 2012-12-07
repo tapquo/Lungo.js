@@ -17,7 +17,7 @@ Lungo.Attributes.Data = {
     Count: {
         tag: 'count',
         selector: '*',
-        html: '<span class="bubble count">{{value}}</span>'
+        html: '<span class="tag theme count">{{value}}</span>'
     },
     Pull: {
         tag: 'pull',
