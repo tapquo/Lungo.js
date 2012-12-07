@@ -6,8 +6,8 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-:not(header) .button,
-:not(header) button {
+.button,
+button {
   display: inline-block;
   padding: 10px 16px;
   border: none;
@@ -20,39 +20,38 @@
   text-decoration: none;
   outline: none;
 }
-:not(header) .button:disabled,
-:not(header) button:disabled,
-:not(header) .button.disabled,
-:not(header) button.disabled {
+.button:disabled,
+button:disabled,
+.button.disabled,
+button.disabled {
   background: rgba(255,255,255,0.2);
   color: #999 !important;
 }
-:not(header) .button .icon,
-:not(header) button .icon {
-  margin-right: 4px;
+.button .icon,
+button .icon {
   font-size: 1.2em;
 }
-:not(header) .button.anchor,
-:not(header) button.anchor {
+.button.anchor,
+button.anchor {
   width: 100%;
   position: relative;
 }
-:not(header) .button.anchor .icon,
-:not(header) button.anchor .icon {
+.button.anchor .icon,
+button.anchor .icon {
   position: absolute;
   left: 8px;
 }
-:not(header) .button.large,
-:not(header) button.large {
+.button.large,
+button.large {
   height: 52px;
   padding: 0 24px;
   font-size: 1.4em;
   line-height: 52px;
 }
-:not(header) .button.small,
-:not(header) button.small {
-  height: 28px;
-  padding: 0 12px;
+.button.small,
+button.small {
+  height: 30px;
+  padding: 0 8px;
   font-size: 0.9em;
-  line-height: 26px;
+  line-height: 28px;
 }

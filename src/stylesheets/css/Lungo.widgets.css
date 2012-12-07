@@ -71,6 +71,9 @@
   font-weight: 400;
 }
 .text.bold {
+  font-weight: 600;
+}
+.text.extra-bold {
   font-weight: 700;
 }
 .text.italic {

@@ -18,50 +18,49 @@ nav
       box-flex( 1 )
 
   header &
-    font-weigth: 700
     & a
-      padding: 0 10px
+      padding: 0px 12px !important
       z-index: 1000
       float: left
-      height: HEADER_FOOTER_HEIGHT
-      text-align: center
 
-      & .icon
+    & a.button
+      margin: 6px 2px 0 2px
+      font-size: FONT_SIZE_SMALL
+      line-height: 30px
+      & > .icon
+        font-size: 1.3em
+        height: 18px
+        display: inline-block
+
+    &.right a.button:last-child
+      margin-right: 6px
+    &:not(.right) a.button:first-child
+      margin-left: 6px
+
+    & a:not(.button)
+      height: HEADER_FOOTER_HEIGHT
+      & > .icon
         font-size: 1.7em
 
-      & img
-        width: 16px
-        height: 16px
-        top: -1px !important
+    & .tag
+      position: relative
+      top:  -12px
+      left: -12px
+      margin-right: -20px
 
-      & .tag
-        position: relative
-        top:  -12px
-        left: -12px
-        margin-right: -20px
+    & abbr
+      font-size: FONT_SIZE_SMALL
+      font-weight: 700
 
-      & abbr
-        font-size: 0.9em
-        font-weight: 700
+    & .icon ~ abbr
+      margin-left: 4px
+      float: right
 
-      &.button a
-        margin: 5px 5px 5px 0
-        height: 32px
-        line-height: 32px
-        & .icon
-          line-height: 33px
-        &:first-child
-          margin: 5px
-
-      & .icon ~ abbr
-        margin-left: 4px
-        float: right
-
-      & .loading
-        margin-top: .5em
-        font-size: 1.6em
-        & + .icon
-          display: none
+    & .loading
+      margin-top: .5em
+      font-size: 1.6em
+      & + .icon
+        display: none
 
 
   &.groupbar

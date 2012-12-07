@@ -21,54 +21,52 @@ footer nav > a {
   -moz-box-flex: 1;
   box-flex: 1;
 }
-header nav {
-  font-weigth: 700;
-}
 header nav a {
-  padding: 0 10px;
+  padding: 0px 12px !important;
   z-index: 1000;
   float: left;
-  height: 44px;
-  text-align: center;
 }
-header nav a .icon {
+header nav a.button {
+  margin: 6px 2px 0 2px;
+  font-size: 0.9em;
+  line-height: 30px;
+}
+header nav a.button > .icon {
+  font-size: 1.3em;
+  height: 18px;
+  display: inline-block;
+}
+header nav.right a.button:last-child {
+  margin-right: 6px;
+}
+header nav:not(.right) a.button:first-child {
+  margin-left: 6px;
+}
+header nav a:not(.button) {
+  height: 44px;
+}
+header nav a:not(.button) > .icon {
   font-size: 1.7em;
 }
-header nav a img {
-  width: 16px;
-  height: 16px;
-  top: -1px !important;
-}
-header nav a .tag {
+header nav .tag {
   position: relative;
   top: -12px;
   left: -12px;
   margin-right: -20px;
 }
-header nav a abbr {
+header nav abbr {
   font-size: 0.9em;
   font-weight: 700;
 }
-header nav a.button a {
-  margin: 5px 5px 5px 0;
-  height: 32px;
-  line-height: 32px;
-}
-header nav a.button a .icon {
-  line-height: 33px;
-}
-header nav a.button a:first-child {
-  margin: 5px;
-}
-header nav a .icon ~ abbr {
+header nav .icon ~ abbr {
   margin-left: 4px;
   float: right;
 }
-header nav a .loading {
+header nav .loading {
   margin-top: 0.5em;
   font-size: 1.6em;
 }
-header nav a .loading + .icon {
+header nav .loading + .icon {
   display: none;
 }
 nav.groupbar {
