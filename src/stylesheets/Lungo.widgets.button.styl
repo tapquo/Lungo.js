@@ -11,44 +11,42 @@
 @import "import/vendor.styl"
 
 
-:not(header)
-  & .button, button
-    display: inline-block
-    padding: 10px 16px
-    border: none
-    cursor: pointer
+.button, button
+  display: inline-block
+  padding: 10px 16px
+  border: none
+  cursor: pointer
 
-    color: #fff !important
-    font-family: inherit
-    font-size: 1.05em
-    font-weight: 400
-    text-align: center
-    text-decoration: none
-    outline: none
+  color: #fff !important
+  font-family: inherit
+  font-size: 1.05em
+  font-weight: 400
+  text-align: center
+  text-decoration: none
+  outline: none
 
-    &:disabled, &.disabled
-      background: rgba(255,255,255,0.2)
-      color: #999 !important
+  &:disabled, &.disabled
+    background: rgba(255,255,255,0.2)
+    color: #999 !important
 
+  & .icon
+    font-size: FONT_SIZE_BIG
+
+  &.anchor
+    width: 100%
+    position: relative
     & .icon
-      margin-right: 4px
-      font-size: FONT_SIZE_BIG
+      position: absolute
+      left: 8px
 
-    &.anchor
-      width: 100%
-      position: relative
-      & .icon
-        position: absolute
-        left: 8px
+  &.large
+    height: h = 52px
+    padding: 0 24px
+    font-size: 1.4em
+    line-height: h
 
-    &.large
-      height: h = 52px
-      padding: 0 24px
-      font-size: 1.4em
-      line-height: h
-
-    &.small
-      height: h = 28px
-      padding: 0 12px
-      font-size: 0.9em
-      line-height: (h - 2)
+  &.small
+    height: h = 30px
+    padding: 0 8px
+    font-size: FONT_SIZE_SMALL
+    line-height: (h - 2)
