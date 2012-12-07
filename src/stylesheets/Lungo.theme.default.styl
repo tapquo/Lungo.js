@@ -9,9 +9,17 @@
 
 @import "import/vendor.styl"
 @import url("http://fonts.googleapis.com/css?family=Titillium+Web:200,400,700")
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,700")
-THEME = #0093D5
-THEME_light =  #39ABE1
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
+
+
+
+THEME         = #0093D5
+THEME_lighten = lighten(THEME, 15%)
+THEME_darken  = darken(THEME, 15%)
+
+DARK          = #222
+DARK_lighten = lighten(DARK, 25%)
+DARK_darken  = darken(DARK, 25%)
 
 
 
@@ -63,7 +71,7 @@ body
 section
   & > header
     background-color: THEME
-    box-shadow 0 1px 2px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.1)
+    box-shadow 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 THEME_lighten, inset 0 -1px 0 THEME_darken
     & .title
       color: #fff
 
@@ -123,19 +131,14 @@ aside
 header nav
   & a
     color: #fff
+
   &.box
     &:not(.right) a
-      box-shadow 1px 0 0 rgba(255,255,255,0.2), inset -1px 0 0 rgba(0,0,0,0.2)
+      box-shadow 1px 0 0 THEME_lighten, inset -1px 0 0 THEME_darken
     &.right a
-      box-shadow -1px 0 0 rgba(255,255,255,0.2), inset 1px 0 0 rgba(0,0,0,0.2)
+      box-shadow -1px 0 0 THEME_lighten, inset 1px 0 0 THEME_darken
     & a:active
       background: rgba(0,0,0,0.1)
-  &.button a
-    border-radius: FORM-border-radius
-    // linear-gradient( top,  ','rgba(0,0,0,0.0),  ','rgba(0,0,0,0.1) )
-    box-shadow 0 1px 0 rgba(255,255,255,0.2), inset 0 0 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0, 0, 0, .5)
-    &:active
-      background: rgba(0,0,0,0.2)
 
 
 section > nav.groupbar
@@ -176,7 +179,7 @@ LIST-color-secondary = #555
           color: #fff
 
       &.selectable:active, &.theme
-        background: THEME_light
+        background: THEME_lighten
         &, & a
           color: #fff
 
@@ -206,7 +209,7 @@ LIST-color-secondary = #555
 
 
 /* ____________________ BUTTONS ____________________ */
-.button, button
+a.button, button
   border-radius(FORM-border-radius)
   color: white
   border-radius 2px
@@ -216,22 +219,14 @@ LIST-color-secondary = #555
   &:active
     box-shadow inset 0 0 128px rgba(0,0,0,0.25)
     border-color: none
-
-  &
-    background-color: THEME
   &.secondary
     color: #666 !important
-    background-color: COLOR_SECONDARY
-  &.accept
-    background-color: COLOR_ACCEPT
-  &.cancel
-    background-color: COLOR_CANCEL
   &[disabled]
     background-color: black
 
 button, .button, .tag
-  &.theme
-    background-color: THEME
+  &
+    background-color: THEME_darken
   &.secondary
     background-color: COLOR_SECONDARY
   &.accept
@@ -279,14 +274,14 @@ form, .form
     &:not(.checkbox)
       background-color: #c7c7c7
       &:active
-        background-color: THEME_light
+        background-color: THEME_lighten
 
 
     &.checkbox
       background-color: #aaaaaa
       color: rgba(255,255,255,0.6)
       &.active
-        background-color: THEME_light
+        background-color: THEME_lighten
 
     &::-webkit-slider-thumb
       border-radius: FORM-border-radius
