@@ -5,6 +5,6 @@ Lungo.Events.init({
 });
 
 Lungo.ready(function() {
-    Lungo.View.Aside.show('features');
+    // Lungo.View.Aside.show('features');
     App.environment();
 });
