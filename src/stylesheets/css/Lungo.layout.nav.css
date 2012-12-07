@@ -25,8 +25,7 @@ header nav {
   font-weigth: 700;
 }
 header nav a {
-  padding: 0 6px;
-  min-width: 30px;
+  padding: 0 10px;
   z-index: 1000;
   float: left;
   height: 44px;

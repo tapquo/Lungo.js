@@ -100,3 +100,6 @@
 .text.big {
   font-size: 1.2em;
 }
+.text.opacity {
+  opacity: 0.5;
+}
