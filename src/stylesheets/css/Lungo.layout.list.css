@@ -33,8 +33,8 @@
 .list li a {
   display: block;
 }
-.list li .icon,
-.list li img {
+.list li > .icon,
+.list li > img {
   float: left;
   width: 32px;
   height: 32px;
