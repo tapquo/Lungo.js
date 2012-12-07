@@ -56,9 +56,9 @@ section > footer > nav a {
 section > footer > nav a.current {
   color: #fff;
   background: #111;
-  -webkit-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2a95d3;
-  -moz-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2a95d3;
-  box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2a95d3;
+  -webkit-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #0093d5;
+  -moz-box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #0093d5;
+  box-shadow: -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #0093d5;
 }
 section > article,
 section > [data-control="pull"] {
@@ -112,10 +112,12 @@ aside .list li.current small,
 aside .list li.current .icon {
   color: #fff;
 }
-aside .list li strong,
+aside .list li strong {
+  color: #999;
+}
 aside .list li small,
 aside .list li .icon {
-  color: #888;
+  color: #666;
 }
 header nav a {
   color: #fff;

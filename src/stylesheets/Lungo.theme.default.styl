@@ -13,7 +13,8 @@
 THEME = #0093D5
 THEME_light =  #39ABE1
 
-// THEME = #ddd
+
+
 THEME_dark = #222
 THEME_dark_current = #111
 THEME_dark_nav = #888
@@ -45,6 +46,7 @@ body
 
 
 
+
 .theme
   &, li&, a&
     background:
@@ -73,7 +75,7 @@ section
       &.current
         color:  THEME_dark_nav_active
         background: THEME_dark_current
-        box-shadow -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 #2A95D3
+        box-shadow -1px 0 0 #252525, 1px 0 0 #252525, inset 0 3px 0 THEME
 
   & > article, & > [data-control="pull"]
     background: #f4f5f5
@@ -112,8 +114,10 @@ aside
       & strong, & small, & .icon
         color: #fff
 
-    & strong, small, .icon
-      color: THEME_dark_nav
+    & strong
+      color: #999
+    & small, .icon
+      color: #666
 
 
 header nav
@@ -128,9 +132,7 @@ header nav
       background: rgba(0,0,0,0.1)
   &.button a
     border-radius: FORM-border-radius
-
     // linear-gradient( top,  ','rgba(0,0,0,0.0),  ','rgba(0,0,0,0.1) )
-
     box-shadow 0 1px 0 rgba(255,255,255,0.2), inset 0 0 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(0, 0, 0, .5)
     &:active
       background: rgba(0,0,0,0.2)
