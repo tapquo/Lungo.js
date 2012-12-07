@@ -62,11 +62,14 @@
   line-height: 13px
   text-align: center
 
+size = 5px
+.margin
+  &.bottom
+    margin-bottom: size
+
 /* ================================  TEXT  ================================ */
 .text
   &.thin
-    font-weight: 200
-  &.book
     font-weight: 300
   &.normal
     font-weight: 400
@@ -87,6 +90,6 @@
   &.align_justify
     text-align: justify
   &.small
-    font-size: 0.9em
+    font-size: FONT_SIZE_SMALL
   &.big
-    font-size: 1.1em
+    font-size: FONT_SIZE_BIG

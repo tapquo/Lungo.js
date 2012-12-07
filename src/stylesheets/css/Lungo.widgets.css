@@ -63,11 +63,11 @@
   line-height: 13px;
   text-align: center;
 }
+.margin.bottom {
+  margin-bottom: 5px;
+}
 /* ================================  TEXT  ================================ */
 .text.thin {
-  font-weight: 200;
-}
-.text.book {
   font-weight: 300;
 }
 .text.normal {
@@ -101,5 +101,5 @@
   font-size: 0.9em;
 }
 .text.big {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }

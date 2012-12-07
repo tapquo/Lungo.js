@@ -10,42 +10,45 @@
 @import "import/constants.styl"
 @import "import/vendor.styl"
 
-.button, button
-  display: inline-block
-  padding: 10px 16px
-  border: none
-  cursor: pointer
 
-  color: #fff !important
-  font-family: inherit
-  font-size: 1.05em
-  font-weight: 400
-  text-align: center
-  text-decoration: none
-  outline: none
+:not(header)
+  & .button, button
+    display: inline-block
+    padding: 10px 16px
+    border: none
+    cursor: pointer
 
-  &:disabled, &.disabled
-    background: rgba(255,255,255,0.2)
-    color: #999 !important
+    color: #fff !important
+    font-family: inherit
+    font-size: 1.05em
+    font-weight: 400
+    text-align: center
+    text-decoration: none
+    outline: none
 
-  & .icon
-    margin-right: 4px
+    &:disabled, &.disabled
+      background: rgba(255,255,255,0.2)
+      color: #999 !important
 
-  &.anchor
-    width: 100%
-    margin-bottom: 4px
     & .icon
-      margin-left: 8px
-      float: left
+      margin-right: 4px
+      font-size: FONT_SIZE_BIG
 
-  &.large
-    height: h = 52px
-    padding: 0 24px
-    font-size: 1.4em
-    line-height: h
+    &.anchor
+      width: 100%
+      position: relative
+      & .icon
+        position: absolute
+        left: 8px
 
-  &.small
-    height: h = 28px
-    padding: 0 12px
-    font-size: 0.9em
-    line-height: (h - 2)
+    &.large
+      height: h = 52px
+      padding: 0 24px
+      font-size: 1.4em
+      line-height: h
+
+    &.small
+      height: h = 28px
+      padding: 0 12px
+      font-size: 0.9em
+      line-height: (h - 2)

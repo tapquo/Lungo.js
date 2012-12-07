@@ -8,7 +8,7 @@
  */
 .list li {
   list-style-type: none;
-  padding: 9px;
+  padding: 10px;
   position: relative;
 }
 .list li,
@@ -61,7 +61,7 @@
 }
 .list li strong {
   position: relative;
-  font-size: 1.15em;
+  font-size: 1.2em;
   font-weight: 400;
 }
 .list li small {
@@ -79,8 +79,7 @@
   font-size: 0.9em;
 }
 .list .bubble {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 1px 5px 3px 5px;
 }
 .list .loading .right {
   font-size: 1em;

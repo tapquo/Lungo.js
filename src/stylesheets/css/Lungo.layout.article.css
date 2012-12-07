@@ -30,10 +30,6 @@ article.pull {
   -moz-transition-duration: 300ms;
   transition-duration: 300ms;
 }
-article .text {
-  margin: 4px 0 8px;
-  display: block;
-}
 header:not(.extended) ~ article {
   top: 44px;
 }
