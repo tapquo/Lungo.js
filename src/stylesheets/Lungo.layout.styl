@@ -20,7 +20,7 @@ section
   display: none
 
   transition-property( opacity, z-index, transform )
-  transition-duration( 300ms )
+  transition-duration( 400ms )
   transition-timing-function( DEFAULT_TRANSITION )
   transform( translateZ(0) )
   backface-visibility( hidden )
@@ -51,17 +51,10 @@ section
   &[data-transition="slide"]
     transform( translateX(100%) )
     visibility: visible !important
-    & > header > *, & > article > *
-      opacity: 0
-      transition( opacity 400ms DEFAULT_TRANSITION )
     &:first-child, &.show
       transform( translateX(0%) )
-      & > header > *, & > article > *
-        opacity: 1
     &.hide
       transform( translateX(-100%) )
-      & > header > *, & > article > *
-        opacity: 0
 
   /* Transition: COVER */
   &[data-transition="cover"]
