@@ -89,6 +89,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #COMPILED Version
     #FILES_TO_COMPILE=" --js "$LUNGO_SOURCES"lib/quo.debug.js "$FILES_TO_COMPILE
     java -jar $COMPILER $FILES_TO_COMPILE --js_output_file $PACKAGE/lungo.js
+    cat $FILES_TO_JOIN > $PACKAGE/lungo.debug.js
     # cat $LUNGO_SOURCES"lib/quo.debug.js" $PACKAGE/lungo-$VERSION.standalone.js > $PACKAGE/lungo-$VERSION.js
     echo -e "\033[32m  [BUILD]: lungo.js\033[0m"
 
