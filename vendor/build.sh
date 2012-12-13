@@ -19,7 +19,7 @@ echo -e "\033[0m"============================ LUNGO COMPILER ===================
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     echo -e "\033[33m  [DIR]: "$LUNGO_SOURCES
-    FILES=(js Init.js Core.js Dom.js Service.js Constants.js Events.js Notification.js Fallback.js)
+    FILES=(js Init.js Core.js Dom.js Service.js Constants.js Events.js Notification.js Fallback.js Attributes.js)
     for file in "${FILES[@]}"
     do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
