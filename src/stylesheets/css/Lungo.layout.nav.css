@@ -22,7 +22,7 @@ footer nav > a {
   box-flex: 1;
 }
 header nav a {
-  padding: 0px 12px !important;
+  padding: 0px 10px !important;
   z-index: 1000;
   float: left;
 }
