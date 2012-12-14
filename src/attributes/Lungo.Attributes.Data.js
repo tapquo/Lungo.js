@@ -50,7 +50,7 @@ Lungo.Attributes.Data = {
     },
     Title: {
         tag: 'title',
-        selector: 'header, footer, article',
+        selector: 'header',
         html: '<span class="title centered">{{value}}</span>'
     },
     Loading: {
