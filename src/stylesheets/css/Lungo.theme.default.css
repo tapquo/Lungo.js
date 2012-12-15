@@ -95,7 +95,7 @@ section > header > nav.box.right a {
 section > header > nav.box a:active {
   background: #007db5;
 }
-section > nav.groupbar > a.current {
+section > nav.groupbar > a.active {
   -webkit-box-shadow: inset 0 -3px 0 #0093d5;
   -moz-box-shadow: inset 0 -3px 0 #0093d5;
   box-shadow: inset 0 -3px 0 #0093d5;
@@ -104,8 +104,8 @@ section > footer > nav > a,
 nav.groupbar > a {
   color: #888;
 }
-section > footer > nav > a.current,
-nav.groupbar > a.current {
+section > footer > nav > a.active,
+nav.groupbar > a.active {
   color: #fff;
 }
 section > footer > nav > a {
@@ -113,17 +113,17 @@ section > footer > nav > a {
   -moz-box-shadow: 1px 0 0 #1d1d1d;
   box-shadow: 1px 0 0 #1d1d1d;
 }
-section > footer > nav > a.current {
+section > footer > nav > a.active {
   color: #fff;
   background-color: #1d1d1d;
   -webkit-box-shadow: inset 0 3px 0 #0093d5;
   -moz-box-shadow: inset 0 3px 0 #0093d5;
   box-shadow: inset 0 3px 0 #0093d5;
 }
-aside nav a.current .icon {
+aside nav a.active .icon {
   color: #fff;
 }
-aside nav a:not(.current) .icon {
+aside nav a:not(.active) .icon {
   color: #888;
 }
 aside nav.box:not(.right) a {
@@ -232,13 +232,13 @@ aside .list li:not(:first-child) {
 aside .list li:not(:last-child) {
   border-bottom: solid 1px #141414;
 }
-aside .list li.current {
+aside .list li.active {
   background: #0093d5;
   border-color: transparent;
 }
-aside .list li.current strong,
-aside .list li.current small,
-aside .list li.current .icon {
+aside .list li.active strong,
+aside .list li.active small,
+aside .list li.active .icon {
   color: #fff;
 }
 aside .list li strong {
