@@ -3,11 +3,11 @@
  *
  * @namespace Lungo.Element
  * @class Carousel
- * @version 1.1
+ * @version 1.0
  *
- * @author Abel Toledano <atabel87@gmail.com>
  * @author Ignacio Olalde <ina@tapquo.com> || @piniphone
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ * @author Abel Toledano <atabel87@gmail.com>
  */
 
 
