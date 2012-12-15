@@ -53,9 +53,6 @@
 .list li.anchor {
   padding: 2px 10px;
 }
-.list li.anchor .icon.small {
-  margin-right: 2px;
-}
 .list li.anchor .tag {
   display: none;
 }
@@ -75,12 +72,8 @@
 }
 .list li small,
 .list li.anchor,
-.list li .right {
+.list li .right:not(.tag) {
   font-size: 0.9em;
-}
-.list .tag {
-  margin-top: 1px;
-  padding: 1px 3px 3px 3px;
 }
 .list .loading .right {
   font-size: 1em;

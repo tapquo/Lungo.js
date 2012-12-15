@@ -35,7 +35,7 @@ Lungo.Attributes.Data = {
     },
     Label: {
         tag: 'label',
-        selector: 'a',
+        selector: 'a, button',
         html: '<abbr>{{value}}</abbr>'
     },
     Icon: {
