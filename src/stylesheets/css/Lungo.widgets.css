@@ -54,10 +54,12 @@
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
+/* ================================  TAG  ================================ */
 .tag {
   display: inline-block;
-  font-size: 0.9em;
-  line-height: 1.2em;
+  padding: 0 3px;
+  font-size: 11px;
+  line-height: 1.3em;
   text-align: center;
 }
 .margin.bottom {

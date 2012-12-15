@@ -51,8 +51,6 @@
 
     &.anchor
       padding: 2px 10px
-      & .icon.small
-        margin-right: 2px
       & .tag
         display: none
 
@@ -69,13 +67,8 @@
       & + .right
         margin-top: -12px
 
-    & small, &.anchor, & .right
+    & small, &.anchor, & .right:not(.tag)
       font-size: FONT_SIZE_SMALL
-
-
-  & .tag
-    margin-top: 1px
-    padding: 1px 3px 3px 3px
 
   & .loading .right
     font-size: 1.0em
