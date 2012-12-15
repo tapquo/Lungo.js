@@ -96,26 +96,26 @@ nav
       & a:active
         background: THEME_dark
 
-  section > &.groupbar > a.current
+  section > &.groupbar > a.active
     box-shadow inset 0 -3px 0 THEME
 
   section > footer > & > a, &.groupbar > a
     color: NAV_LINK
-    &.current
+    &.active
       color: NAV_LINK_ACTIVE
 
   section > footer > & > a
     box-shadow 1px 0 0 DARK_dark
-    &.current
+    &.active
       color:  NAV_LINK_ACTIVE
       background-color: DARK_dark
       box-shadow inset 0 3px 0 THEME
 
   aside &
     & a
-      &.current .icon
+      &.active .icon
         color: white
-      &:not(.current) .icon
+      &:not(.active) .icon
         color: NAV_LINK
     &.box
       &:not(.right) a
@@ -165,7 +165,7 @@ nav
       border-top: solid 1px  DARK
     &:not(:last-child)
       border-bottom: solid 1px DARKEST
-    &.current
+    &.active
       background: THEME
       border-color: transparent
       & strong, & small, & .icon

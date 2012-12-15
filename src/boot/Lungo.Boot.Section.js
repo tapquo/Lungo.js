@@ -34,7 +34,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
         lng.Element.Cache.article = first_section.children(ELEMENT.ARTICLE).first();
 
         var first_section_id = '#' + first_section.attr(ATTRIBUTE.ID);
-        first_section.addClass(CLASS.CURRENT);
+        first_section.addClass(CLASS.ACTIVE);
         lng.Router.History.add(first_section_id);
     };
 
@@ -51,7 +51,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
         var aside = null;
         for (var i = 0, len = lng.Element.Cache.asides.length; i < len; i++) {
             aside = lng.dom(lng.Element.Cache.asides[i]);
-            aside.children(ELEMENT.ARTICLE).addClass(CLASS.CURRENT);
+            aside.children(ELEMENT.ARTICLE).addClass(CLASS.ACTIVE);
         }
     };
 
@@ -59,7 +59,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
         var section = lng.dom(lng.Element.Cache.sections[section_index]);
 
         var first_article = section.children(ELEMENT.ARTICLE).first();
-        first_article.addClass(CLASS.CURRENT);
+        first_article.addClass(CLASS.ACTIVE);
 
         var first_article_id = first_article.attr(ATTRIBUTE.ID);
         if (first_article_id) lng.View.Article.switchReferenceItems(first_article_id, section);

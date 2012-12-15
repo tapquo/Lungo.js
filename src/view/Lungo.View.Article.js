@@ -18,7 +18,7 @@ Lungo.View.Article = (function(lng, undefined) {
         NAVIGATION_ITEM: 'a[href][data-router="article"]',
         REFERENCE_LINK: ' a[href][data-article]',
         TITLE_OF_ARTICLE: 'header .title, footer .title',
-        ASIDE_REFERENCE_LIST: 'li a.current, li.current'
+        ASIDE_REFERENCE_LIST: 'li a.active, li.active'
     };
 
     /**
@@ -33,16 +33,16 @@ Lungo.View.Article = (function(lng, undefined) {
     };
 
     var switchNavItems = function(article_id) {
-        lng.Element.Cache.section.find(SELECTORS.NAVIGATION_ITEM).removeClass(CLASS.CURRENT);
+        lng.Element.Cache.section.find(SELECTORS.NAVIGATION_ITEM).removeClass(CLASS.ACTIVE);
 
         var active_nav_items = 'a[href="' + article_id + '"][data-router="article"]';
-        lng.Element.Cache.section.find(active_nav_items).addClass(CLASS.CURRENT);
+        lng.Element.Cache.section.find(active_nav_items).addClass(CLASS.ACTIVE);
 
         if (lng.Element.Cache.aside) {
             aside = lng.Element.Cache.aside;
 
-            aside.find(SELECTORS.ASIDE_REFERENCE_LIST).removeClass(CLASS.CURRENT);
-            aside.find(active_nav_items).addClass(CLASS.CURRENT).parent().addClass(CLASS.CURRENT);
+            aside.find(SELECTORS.ASIDE_REFERENCE_LIST).removeClass(CLASS.ACTIVE);
+            aside.find(active_nav_items).addClass(CLASS.ACTIVE).parent().addClass(CLASS.ACTIVE);
         }
     };
 

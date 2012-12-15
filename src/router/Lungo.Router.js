@@ -41,7 +41,7 @@ Lungo.Router = (function(lng, undefined) {
                 current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                 target.addClass(CLASS.SHOW);
                 lng.Element.Cache.section = target;
-                lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.CURRENT);
+                lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.ACTIVE);
 
                 lng.Router.History.add(section_id);
                 _sectionTriggers(current, target);
@@ -71,8 +71,8 @@ Lungo.Router = (function(lng, undefined) {
                     current = lng.Element.Cache.section.children(ELEMENT.ARTICLE);
                 }
 
-                current.removeClass(CLASS.CURRENT).trigger(TRIGGER.UNLOAD);
-                target.addClass(CLASS.CURRENT).trigger(TRIGGER.LOAD);
+                current.removeClass(CLASS.ACTIVE).trigger(TRIGGER.UNLOAD);
+                target.addClass(CLASS.ACTIVE).trigger(TRIGGER.LOAD);
 
                 lng.Element.Cache.article = target;
 

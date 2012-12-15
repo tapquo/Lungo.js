@@ -25,7 +25,6 @@ Lungo.Constants = {
         ASIDE: 'aside',
         SHOW: 'show',
         HIDE: 'hide',
-        CURRENT: 'current',
         RIGHT: 'right',
         LEFT: 'left',
         HORIZONTAL: 'horizontal',
