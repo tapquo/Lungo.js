@@ -71,7 +71,7 @@ Lungo.View.Aside = (function(lng, undefined) {
             setTimeout(function() {
                 aside.removeClass(CLASS.SHOW);
                 lng.Element.Cache.aside = null;
-            }, 250);
+            }, 350);
         }
     };
 

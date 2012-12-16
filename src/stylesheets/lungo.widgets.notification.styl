@@ -11,7 +11,6 @@
 @import "import/vendor.styl"
 
 OPACITY = rgba(0,0,0,0.75)
-KEYFRAME = 300ms
 LOADING = 104px
 
 .notification
@@ -26,12 +25,12 @@ LOADING = 104px
   & .window
     position: relative
     opacity: 0
-    transition (all KEYFRAME)
+    transition (all TRANSITION_TIME)
     text-align: center
 
     &.show
       opacity: 1
-      transition-delay(KEYFRAME)
+      transition-delay(TRANSITION_TIME)
     & strong, small
       display: block
 

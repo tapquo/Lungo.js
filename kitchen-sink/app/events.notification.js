@@ -19,18 +19,17 @@ Lungo.Events.init({
 
     'tap section#notification a[data-action=confirm]': function() {
         Lungo.Notification.confirm({
-            title: 'Title',
-            description: 'Description',
-            icon: 'message',
+            icon: 'user',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo amet nulla dolorum hic eum debitis dolorem expedita? Commodi molestiae tempora totam explicabo sed deserunt cum iusto eos perspiciatis ea in.',
             accept: {
-                color: 'blue',
                 icon: 'checkmark',
-                label: 'Yes',
+                label: 'Accept',
                 callback: function(){ alert("Yes!"); }
             },
             cancel: {
                 icon: 'close',
-                label: 'No',
+                label: 'Cancel',
                 callback: function(){ alert("No!"); }
             }
         });
