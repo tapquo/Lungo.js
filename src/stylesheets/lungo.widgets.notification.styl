@@ -10,119 +10,76 @@
 @import "import/constants.styl"
 @import "import/vendor.styl"
 
-OPACITY = rgba(0,0,0,0.5)
-KEYFRAME = 200ms
-MODAL_OPACITY = rgba(0,0,0,0.8)
-MODAL_SIZE = 104px
-MODAL_SIZE_middle = 52px
+OPACITY = rgba(0,0,0,0.75)
+KEYFRAME = 300ms
+LOADING = 104px
 
 .notification
   position: absolute
   width: 100%
   height: 100%
   z-index: 3
-  background: none
-  display: none
+  // display: none
 
-  &.modal
-    background-color: OPACITY
+  background-color: OPACITY
 
   & .window
     position: relative
     opacity: 0
-    transition( all KEYFRAME DEFAULT_TRANSITION )
+    transition (all KEYFRAME)
+    text-align: center
 
     &.show
       opacity: 1
-      Transition-delay( KEYFRAME )
-
+      transition-delay(KEYFRAME)
     & strong, small
       display: block
 
-
-    & small
-      font-size: 0.7em
-
-    &:not(.special)
+    &.growl
       left: 50%
       top: 50%
-      width: MODAL_SIZE
-      margin: -MODAL_SIZE_middle auto auto -MODAL_SIZE_middle
-      padding: 8px
-      background-color: MODAL_OPACITY
-      text-align: center
-      transform( scale(0.8) )
-
+      width: LOADING
+      margin: -(LOADING / 2) auto auto -(LOADING / 2)
+      padding: 24px 8px
+      transform(scale(0.2))
       &.show
-        transform( scale(1.0) )
-
-      & .icon
-        display: block
-        font-size: 4.0em
-        &.loading
-          margin-top: 24px
-          margin-bottom: 20px
-
+        transform(scale(1.0))
+      & > .icon
+        font-size: 3.6em
+        line-height: 1.0em
+        & ~ strong
+          margin-bottom: -12px
       & small
-        overflow: hidden
-        white-space: nowrap
-        text-overflow: ellipsis
+        display: none
 
-    &.confirm, &.notify
-      top: 0
-      font-size: 1.1em !important
-      transform( translate3d(0, -100%, 0) )
-
-      &.show
-        transform( translate3d(0, 0%, 0) )
-
-      & .icon
-        float: left
-        font-size: 2.0em
-        margin: -3px 10px 0 0
-
-    &.confirm
-      opacity: 1
-      padding: 10px 12px
-      & p
-        height: 44px
-      & .button
-        width: 42%
-        &:last-child
-          float: right
-
-    &.notify
-        padding: 8px
-        top:  0
-
-    &.url
+    &:not(.growl)
+      width: 280px
       left: 0
       top: 0
-      width: 280px
-      height: auto
-      margin: 64px auto 0px
-      padding: 0px
+      margin: (HEADER_FOOTER_HEIGHT / 2) auto 0
+      transform(translateY(100%))
+      &.show
+        transform(translateY(0%))
 
-      & .close
-        position: absolute
-        top: -14px
-        right: -14px
+      &:not(.html)
+        padding-top: 24px
+        & > .icon
+          font-size: 4.0em
+          line-height: 1.0em
+        & > strong
+          font-size: FONT_SIZE_BIG
+        & > strong, & small
+          padding: 0 16px 16px 16px
 
-        font-size: 14px
-        line-height: 24px
-        font-weight: normal
-        width: 24px
-        height: 24px
-        border-radius: 14px
+      &.html
+        & .close
+          position: absolute
+          top: -14px
+          right: -14px
 
-
-  & .window.working span
-    -webkit-animation: notification-working 1s infinite
-
-@-webkit-keyframes notification-working
-    0%
-      opacity: 1
-    50%
-      opacity: 0
-    100%
-      opacity: 1
+          font-size: 14px
+          line-height: 24px
+          font-weight: normal
+          width: 24px
+          height: 24px
+          border-radius: 14px
