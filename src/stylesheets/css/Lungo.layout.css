@@ -17,9 +17,9 @@ section {
   -webkit-transition-property: opacity z-index transform;
   -moz-transition-property: opacity z-index transform;
   transition-property: opacity z-index transform;
-  -webkit-transition-duration: 400ms;
-  -moz-transition-duration: 400ms;
-  transition-duration: 400ms;
+  -webkit-transition-duration: 350ms;
+  -moz-transition-duration: 350ms;
+  transition-duration: 350ms;
   -webkit-transition-timing-function: easeOutSine;
   -moz-transition-timing-function: easeOutSine;
   transition-timing-function: easeOutSine;

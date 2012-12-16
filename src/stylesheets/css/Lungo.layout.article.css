@@ -16,8 +16,7 @@ article {
   visibility: hidden;
   z-index: 0;
 }
-article.active,
-article:first-child {
+article.active {
   visibility: visible;
   display: block;
   z-index: 1;

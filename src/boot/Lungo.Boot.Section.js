@@ -25,7 +25,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
 
         _initFirstSection();
         _initAllSections();
-        _initAllAsides();
+        // _initAllAsides();
     };
 
     var _initFirstSection = function() {

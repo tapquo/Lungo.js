@@ -36,6 +36,10 @@ Lungo.Constants = {
         UNLOAD: 'unload'
     },
 
+    TRANSITION: {
+        TIME: 350
+    },
+
     ATTRIBUTE: {
         ID: 'id',
         HREF: 'href',
