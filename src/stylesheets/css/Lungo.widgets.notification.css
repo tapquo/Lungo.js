@@ -11,105 +11,80 @@
   width: 100%;
   height: 100%;
   z-index: 3;
-  background: none;
-  display: none;
-}
-.notification.modal {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
 }
 .notification .window {
   position: relative;
   opacity: 0;
-  -webkit-transition: all 200ms easeOutSine;
-  -moz-transition: all 200ms easeOutSine;
-  transition: all 200ms easeOutSine;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+  text-align: center;
 }
 .notification .window.show {
   opacity: 1;
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  transition-delay: 300ms;
 }
 .notification .window strong,
 .notification .window small {
   display: block;
 }
-.notification .window small {
-  font-size: 0.7em;
-}
-.notification .window:not(.special) {
+.notification .window.growl {
   left: 50%;
   top: 50%;
   width: 104px;
-  margin: -MODAL_SIZE_middle auto auto -MODAL_SIZE_middle;
-  padding: 8px;
-  background-color: rgba(0,0,0,0.8);
-  text-align: center;
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  transform: scale(0.8);
+  margin: -52px auto auto -52px;
+  padding: 24px 8px;
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  transform: scale(0.2);
 }
-.notification .window:not(.special).show {
+.notification .window.growl.show {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   transform: scale(1);
 }
-.notification .window:not(.special) .icon {
-  display: block;
-  font-size: 4em;
+.notification .window.growl > .icon {
+  font-size: 3.6em;
+  line-height: 1em;
 }
-.notification .window:not(.special) .icon.loading {
-  margin-top: 24px;
-  margin-bottom: 20px;
+.notification .window.growl > .icon ~ strong {
+  margin-bottom: -12px;
 }
-.notification .window:not(.special) small {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.notification .window.growl small {
+  display: none;
 }
-.notification .window.confirm,
-.notification .window.notify {
-  top: 0;
-  font-size: 1.1em !important;
-  -webkit-transform: translate3d(0, -100%, 0);
-  -moz-transform: translate3d(0, -100%, 0);
-  transform: translate3d(0, -100%, 0);
-}
-.notification .window.confirm.show,
-.notification .window.notify.show {
-  -webkit-transform: translate3d(0, 0%, 0);
-  -moz-transform: translate3d(0, 0%, 0);
-  transform: translate3d(0, 0%, 0);
-}
-.notification .window.confirm .icon,
-.notification .window.notify .icon {
-  float: left;
-  font-size: 2em;
-  margin: -3px 10px 0 0;
-}
-.notification .window.confirm {
-  opacity: 1;
-  padding: 10px 12px;
-}
-.notification .window.confirm p {
-  height: 44px;
-}
-.notification .window.confirm .button {
-  width: 42%;
-}
-.notification .window.confirm .button:last-child {
-  float: right;
-}
-.notification .window.notify {
-  padding: 8px;
-  top: 0;
-}
-.notification .window.url {
+.notification .window:not(.growl) {
+  width: 280px;
   left: 0;
   top: 0;
-  width: 280px;
-  height: auto;
-  margin: 64px auto 0px;
-  padding: 0px;
+  margin: 22px auto 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  transform: translateY(100%);
 }
-.notification .window.url .close {
+.notification .window:not(.growl).show {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  transform: translateY(0%);
+}
+.notification .window:not(.growl):not(.html) {
+  padding-top: 24px;
+}
+.notification .window:not(.growl):not(.html) > .icon {
+  font-size: 4em;
+  line-height: 1em;
+}
+.notification .window:not(.growl):not(.html) > strong {
+  font-size: 1.2em;
+}
+.notification .window:not(.growl):not(.html) > strong,
+.notification .window:not(.growl):not(.html) small {
+  padding: 0 16px 16px 16px;
+}
+.notification .window:not(.growl).html .close {
   position: absolute;
   top: -14px;
   right: -14px;
@@ -121,20 +96,4 @@
   -webkit-border-radius: 14px;
   -moz-border-radius: 14px;
   border-radius: 14px;
-}
-.notification .window.working span {
-  -webkit-animation: notification-working 1s infinite;
-}
-@-webkit-keyframes notification-working {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }

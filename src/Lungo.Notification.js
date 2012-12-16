@@ -23,7 +23,7 @@ Lungo.Notification = (function(lng, undefined) {
         NOTIFICATION: '.notification',
         MODAL: '.notification .window',
         MODAL_HREF: '.notification .window a',
-        WINDOW_CLOSABLE: '.notification > .url .close',
+        WINDOW_CLOSABLE: '.notification > [data-action=close], .notification > .error, .notification > .success',
         CONFIRM_BUTTONS: '.notification .confirm a.button'
     };
 
@@ -41,10 +41,16 @@ Lungo.Notification = (function(lng, undefined) {
     /**
      *
      */
-    var show = function(title, description, icon, animate, seconds, callback) {
-        _new_instance(true, animate);
+    var show = function(title, icon, seconds, callback) {
+        var markup;
+        if (title !== undefined) {
+            markup = _markup(title, null, icon);
+        } else {
+            var data_loading = lng.Attributes.Data.Loading.html;
+            markup = data_loading.replace(BINDING.START + BINDING.KEY + BINDING.END, 'icon white');
+        }
 
-        _show(_markup(title, description, icon));
+        _show(markup, 'growl');
         _hide(seconds, callback);
     };
 
@@ -54,7 +60,7 @@ Lungo.Notification = (function(lng, undefined) {
     var hide = function() {
         _window.removeClass('show');
         setTimeout(function() {
-            _el.style('display', 'none').removeClass('url').removeClass('confirm').removeClass('modal');
+            _el.style('display', 'none').removeClass('html').removeClass('confirm').removeClass('notify').removeClass('growl');
         }, ANIMATION_MILISECONDS - 50);
     };
 
@@ -63,21 +69,12 @@ Lungo.Notification = (function(lng, undefined) {
      */
     var confirm = function(options) {
         _options = options;
-        _new_instance(true);
 
-        var markup = '<p>' + _markup(options.title, options.description, options.icon) + '</p><hr/>';
+        var markup = _markup(options.title, options.description, options.icon);
         markup += _button_markup(options.accept, 'accept');
         markup += _button_markup(options.cancel, 'cancel');
 
-        _window.addClass('special confirm');
-        _show(markup);
-    };
-
-    /**
-     *
-     */
-    var alert = function(title, description, icon, seconds, callback) {
-        _notify(title, description, icon, 'alert', seconds, callback);
+        _show(markup, 'confirm');
     };
 
     /**
@@ -97,35 +94,21 @@ Lungo.Notification = (function(lng, undefined) {
     /**
      *
      */
-    var _notify = function(title, description, icon, type, seconds, callback) {
-        _new_instance(false);
-
-        _window.addClass(type || 'info').addClass('special notify');
-        _show(_markup(title, description, icon));
-        _hide(seconds, callback);
+    var _notify = function(title, description, icon, stylesheet, seconds, callback) {
+        _show(_markup(title, description, icon), stylesheet);
+        if (seconds) {
+            _hide(seconds, callback);
+        }
     };
 
     /**
      *
      */
     var html = function(markup, closable) {
-        _new_instance(true);
-
-        _window.addClass('url');
-        markup += (closable) ? '<span class="icon close"></span>' : '';
-        _show(markup);
+        markup += (closable) ? '<a href="#" class="button large anchor" data-action="close">Close</a>' : '';
+        _show(markup, 'html');
     };
 
-    /**
-     *
-     */
-    var loading = function() {
-        _new_instance(true);
-
-        var data_loading = lng.Attributes.Data.Loading.html;
-        var html_binded = data_loading.replace(BINDING.START + BINDING.KEY + BINDING.END, 'icon loading white');
-        _show(html_binded);
-    };
 
     var _init = function() {
         lng.dom(SELECTOR.BODY).append(MARKUP_NOTIFICATION);
@@ -135,20 +118,13 @@ Lungo.Notification = (function(lng, undefined) {
         _subscribeEvents();
     };
 
-    var _new_instance = function(modal, animate) {
-        _el.style('display') === 'none' && _el.show();
-        modal && _el.addClass(STYLE.MODAL) || _el.removeClass(STYLE.MODAL);
-
-        _window.removeClass(STYLE.SHOW).removeClass(STYLE.WORKING);
-        _window.removeClass('url').removeClass('notify').removeClass('confirm').removeClass('special').removeClass('working');
-        _window.removeClass('error').removeClass('alert').removeClass('success');
-        if (animate) {
-            _window.addClass(STYLE.WORKING);
-        }
-    };
-
-    var _show = function(html) {
+    var _show = function(html, stylesheet) {
+        _el.show();
+        _window.removeClass(STYLE.SHOW);
+        _window.removeClass('error').removeClass('success').removeClass('html').removeClass('growl');
+        _window.addClass(stylesheet);
         _window.html(html);
+
         setTimeout(function() {
             _window.addClass(STYLE.SHOW);
         }, DELAY_TIME);
@@ -168,20 +144,14 @@ Lungo.Notification = (function(lng, undefined) {
 
     var _markup = function(title, description, icon) {
         description = !description ? "&nbsp;" : description;
-        return '<span class="icon ' + icon + '"></span><strong>' + title + '</strong><small>' + description + '</small>';
+        return '<span class="icon ' + icon + '"></span><strong class="text bold">' + title + '</strong><small>' + description + '</small>';
     };
 
     var _button_markup = function(options, callback) {
-        return '<a href="#" data-callback="' + callback + '" class="button ' + options.color + '" data-icon="' + options.icon + '">' + options.label + '</a>';
+        return '<a href="#" data-callback="' + callback + '" class="button anchor large text thin">' + options.label + '</a>';
     };
 
     var _subscribeEvents = function() {
-        _window.tap(function(event) {
-            if (_window.hasClass('notify')) {
-                hide();
-            }
-        });
-
         lng.dom(SELECTOR.CONFIRM_BUTTONS).tap(function(event) {
             var button = lng.dom(this);
             var callback = _options[button.data('callback')].callback;
@@ -198,11 +168,9 @@ Lungo.Notification = (function(lng, undefined) {
         show: show,
         hide: hide,
         error: error,
-        alert: alert,
         success: success,
         confirm: confirm,
-        html: html,
-        loading: loading
+        html: html
     };
 
 })(Lungo);
