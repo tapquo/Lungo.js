@@ -12,22 +12,26 @@ article {
   bottom: 0;
   width: inherit;
   height: auto;
-  display: none;
   visibility: hidden;
+  display: none;
   z-index: 0;
 }
-article.active {
+.show > article.active,
+.hide > article.active,
+.hiding > article.active {
   visibility: visible;
   display: block;
   z-index: 1;
 }
-article.pull {
+.show > article.active.pull,
+.hide > article.active.pull,
+.hiding > article.active.pull {
   -webkit-transition-property: transform;
   -moz-transition-property: transform;
   transition-property: transform;
-  -webkit-transition-duration: 300ms;
-  -moz-transition-duration: 300ms;
-  transition-duration: 300ms;
+  -webkit-transition-duration: 350ms;
+  -moz-transition-duration: 350ms;
+  transition-duration: 350ms;
 }
 header:not(.extended) ~ article {
   top: 44px;

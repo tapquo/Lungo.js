@@ -12,7 +12,7 @@
 Lungo.Element.Pull = function(element_selector, config_data) {
 
     var REFRESHING_HEIGHT = 60;
-    var MAX_HEIGHT = 100;
+    var MAX_HEIGHT = 80;
     var ANIMATION_TIME = 300;
     var CURRENT_DISTANCE = 0;
     var REFRESHING = false;
