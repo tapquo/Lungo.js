@@ -23,14 +23,12 @@ Lungo.Boot.Layout = (function(lng, undefined) {
      */
     var init = function() {
         if (lng.Core.isMobile()) {
-            _window = window;
-            _document = _window.document;
-
             _resizeLayout();
         }
     };
 
     var _resizeLayout = function() {
+        _window = window;
         if (_window.innerHeight == 356) {
             var _height = 416;
 
@@ -40,7 +38,9 @@ Lungo.Boot.Layout = (function(lng, undefined) {
     };
 
     var _hideNavigationBar = function() {
-        if( !location.hash || !_window.addEventListener ){
+        if( !location.hash || !_window.addEventListener ) {
+            _document = _window.document;
+
             _window.scrollTo( 0, 1 );
             var scrollTop = 1,
 

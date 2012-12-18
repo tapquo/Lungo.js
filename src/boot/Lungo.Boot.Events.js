@@ -26,24 +26,25 @@ Lungo.Boot.Events = (function(lng, undefined) {
      *
      */
     var init = function() {
-        var touch_move_event  = 'touchmove';
-        var resize = 'resize';
-
-        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
+        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.INPUT_CHECKBOX).touch(_changeCheckboxValue);
     };
 
     var _loadTarget = function(event) {
         event.preventDefault();
         var link = lng.dom(this);
-        _selectTarget(link);
+
+        if (link.data("async")) {
+            _loadAsyncTarget(link);
+        } else {
+            _selectTarget(link);
+        }
     };
 
     var _hideAsideIfNecesary = function(event) {
-        //@TODO: refactor
-        if (window.innerWidth < 768) lng.View.Aside.hide();
-        if (event) event.preventDefault();
+        event.preventDefault();
+        lng.View.Aside.hide();
     };
 
     var _changeCheckboxValue = function(event)  {
@@ -55,7 +56,6 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
     var _selectTarget = function(link) {
         var target_type = link.data(ATTRIBUTE.ROUTER);
-
         switch(target_type) {
             case ELEMENT.SECTION:
                 var target_id = link.attr(ATTRIBUTE.HREF);
@@ -72,21 +72,24 @@ Lungo.Boot.Events = (function(lng, undefined) {
         }
     };
 
-    var _goSection = function(id) {
-        _hideAsideIfNecesary();
+    var _loadAsyncTarget = function(link) {
+        lng.Notification.show();
+        lng.Boot.Resources.load(link.data("async"));
+        link[0].removeAttribute("data-async");
+        lng.Boot.Data.init( link.attr(ATTRIBUTE.HREF) );
 
+        setTimeout(function() {
+            _selectTarget(link);
+            lng.Notification.hide();
+        }, lng.Constants.TRANSITION.DURATION * 2);
+    };
+
+    var _goSection = function(id) {
         id = lng.Core.parseUrl(id);
         if (id === '#back') {
             lng.Router.back();
         } else {
-            var aside = lng.Element.Cache.aside;
-            if (aside && aside.hasClass(CLASS.SHOW)) {
-                setTimeout(function(){
-                    lng.Router.section(id);
-                }, 250);
-            } else {
-                lng.Router.section(id);
-            }
+            lng.Router.section(id);
         }
     };
 
@@ -103,7 +106,6 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
         lng.Router.aside(section_id, aside_id);
     };
-
 
     return {
         init: init

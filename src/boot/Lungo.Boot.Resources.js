@@ -25,14 +25,19 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
      */
     var init = function(resources) {
         for (var i=0, len=resources.length; i < len; i++) {
-            resource = resources[i];
-            try {
-                var response = _loadSyncResource(resource);
-                _pushResourceInBody(response);
-            } catch(error) {
-                lng.Core.log(3, error.message);
-            }
+            load(resources[i]);
+        }
+    };
 
+    /**
+     *
+     */
+    var load = function(resource) {
+        try {
+            var response = _loadSyncResource(resource);
+            _pushResourceInBody(response);
+        } catch(error) {
+            lng.Core.log(3, error.message);
         }
     };
 
@@ -54,7 +59,8 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
     };
 
     return {
-        init: init
+        init: init,
+        load: load
     };
 
 })(Lungo, Quo);

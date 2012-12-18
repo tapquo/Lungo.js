@@ -71,10 +71,11 @@
     <section id="main" data-transition="slide">
         <header>
             <nav class="left box">
-                <a href="#features" data-router="aside" data-icon="menu"></a>
+                <a href="#features" data-router="aside" data-async="app/asides/features.html" data-icon="menu"></a>
+                <a href="#layout" data-router="section" data-async="app/sections/layout.html" data-icon="down"></a>
             </nav>
             <div class="left">
-                <div class="centered title">Recibidos</div>
+                <div class="centered title">Recibidos 2</div>
             </div>
 
             <nav class="right box">
@@ -82,7 +83,7 @@
             </nav>
         </header>
 
-        <article id="second-article" class="list  scroll">
+        <article id="second-article" class=" list  scroll">
             <ul>
                 <li class="feature">
                     <div class="right  ">15:49</div>
@@ -123,7 +124,7 @@
             </ul>
         </article>
 
-        <article id="main-article" class="list indented scroll">
+        <article id="main-article" class="active list indented scroll">
             <ul>
                 <li class="dark">
                     <strong>
@@ -196,16 +197,13 @@
     <script src="../src/boot/Lungo.Boot.Section.js"></script>
     <script src="../src/boot/Lungo.Boot.Article.js"></script>
 
-    <!--
     <script src="../src/Lungo.Scroll.js"></script>
-    -->
 
     <!-- LungoJS - Sandbox App -->
     <script>
         Lungo.init({
             name: 'Kitchen Sink',
             version: '2.0',
-            sugars: ['map', 'pull'],
             resources: ['app/sections/layout.html',
                         'app/sections/notification.html',
                         'app/sections/list.html',
@@ -222,7 +220,9 @@
                         'app/sections/pull.html',
                         'app/sections/carousel.html',
                         'app/sections/environment.html',
+                        /*
                         'app/asides/features.html',
+                        */
                         'app/asides/left.html',
                         'app/asides/right.html']
 
@@ -233,6 +233,8 @@
         <script src="app/events.touch.js"></script>
         <script src="app/events.pull.js"></script>
         <script src="app/events.carousel.js"></script>
+        <!--
         <script src="app/events.trigger.js"></script>
+    -->
 </body>
 </html>

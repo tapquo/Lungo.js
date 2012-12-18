@@ -27,7 +27,7 @@ Lungo.Boot.Section = (function(lng, undefined) {
     };
 
     var _initFirstSection = function() {
-        var section = lng.Element.Cache.sections.first().addClass(CLASS.SHOW);
+        var section = lng.dom(ELEMENT.SECTION).first().addClass(CLASS.SHOW);
         lng.Element.Cache.section = section;
         lng.Element.Cache.article = section.children(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
 
@@ -36,7 +36,6 @@ Lungo.Boot.Section = (function(lng, undefined) {
     };
 
     var _cacheDOMElements = function() {
-        lng.Element.Cache.sections = lng.dom(ELEMENT.SECTION);
         lng.Element.Cache.asides = lng.dom(ELEMENT.ASIDE);
     };
 
