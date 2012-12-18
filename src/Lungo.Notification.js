@@ -46,7 +46,7 @@ Lungo.Notification = (function(lng, undefined) {
         if (title !== undefined) {
             markup = _markup(title, null, icon);
         } else {
-            var data_loading = lng.Attributes.Data.Loading.html;
+            var data_loading = lng.Attributes.Data.loading.html;
             markup = data_loading.replace(BINDING.START + BINDING.KEY + BINDING.END, 'icon white');
         }
 

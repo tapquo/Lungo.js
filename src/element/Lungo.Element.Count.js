@@ -16,7 +16,7 @@ Lungo.Element.count = function(selector, count) {
 
     if (element && count) {
         var binding = Lungo.Constants.BINDING.SELECTOR;
-        html = Lungo.Attributes.Data.Count.html.replace(binding, count);
+        html = Lungo.Attributes.Data.count.html.replace(binding, count);
         element.append(html);
     }
 };
