@@ -6,7 +6,7 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-section > [data-control="pull"] {
+section.show > [data-control="pull"] {
   position: absolute;
   z-index: -1;
   top: 44px;
@@ -15,7 +15,7 @@ section > [data-control="pull"] {
   padding: 10px 0;
   text-align: center;
 }
-section > [data-control="pull"] > .icon {
+section.show > [data-control="pull"] > .icon {
   display: inline-block;
   width: 48px;
   height: 48px;
@@ -25,24 +25,24 @@ section > [data-control="pull"] > .icon {
   -moz-transition: all 300ms;
   transition: all 300ms;
 }
-section > [data-control="pull"] > .loading {
+section.show > [data-control="pull"] > .loading {
   display: none;
   left: 0%;
 }
-section > [data-control="pull"] > strong {
+section.show > [data-control="pull"] > strong {
   position: relative;
   top: -16px;
   margin-left: 4px;
   font-size: 1.1em;
 }
-section > [data-control="pull"].rotate > .icon {
+section.show > [data-control="pull"].rotate > .icon {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   transform: rotate(180deg);
 }
-section > [data-control="pull"].refresh > .icon {
+section.show > [data-control="pull"].refresh > .icon {
   display: none;
 }
-section > [data-control="pull"].refresh > .loading {
+section.show > [data-control="pull"].refresh > .loading {
   display: inline-block;
 }
