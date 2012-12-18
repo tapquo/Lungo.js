@@ -25,6 +25,7 @@ Lungo.Constants = {
         ASIDE: 'aside',
         SHOW: 'show',
         HIDE: 'hide',
+        HIDING: 'hiding',
         RIGHT: 'right',
         LEFT: 'left',
         HORIZONTAL: 'horizontal',
@@ -37,7 +38,7 @@ Lungo.Constants = {
     },
 
     TRANSITION: {
-        TIME: 350
+        DURATION: 350
     },
 
     ATTRIBUTE: {

@@ -104,7 +104,12 @@ Lungo.Router = (function(lng, undefined) {
      */
     var back = function() {
         var current = lng.Element.Cache.section;
-        current.removeClass(CLASS.SHOW);
+        current.removeClass(CLASS.SHOW).addClass(CLASS.HIDING);
+
+        // #TODO: Refactor
+        setTimeout(function() {
+            current.removeClass(CLASS.HIDING);
+        }, lng.Constants.TRANSITION.DURATION);
 
         lng.Router.History.removeLast();
         target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());

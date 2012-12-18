@@ -10,8 +10,19 @@
 @import "import/constants.styl"
 @import "import/vendor.styl"
 
+body
+  &[data-position="absolute"] > section
+    position: absolute
+
+  &[data-position="fixed"] > section
+    position: fixed
+    &[data-transition]
+      transition-property( opacity, z-index, transform )
+      transition-duration( TRANSITION_TIME )
+      transition-timing-function( DEFAULT_TRANSITION )
+      backface-visibility( hidden )
+
 section
-  position: absolute
   top:  0
   left:  0
   width: 100%
@@ -19,13 +30,9 @@ section
   z-index: -1
   display: none
 
-  transition-property( opacity, z-index, transform )
-  transition-duration( TRANSITION_TIME )
-  transition-timing-function( DEFAULT_TRANSITION )
-  transform( translateZ(0) )
-  backface-visibility( hidden )
 
-  &:first-child, &.show
+
+  &.show
     z-index: 1
     display: block
 
@@ -40,7 +47,7 @@ section
   &[data-transition="pop"]
     opacity: 0
     transform( scale(1.15) )
-    &:first-child, &.show
+    &.show
       transform( scale(1) )
       opacity: 1
     &.hide
@@ -51,7 +58,7 @@ section
   &[data-transition="slide"]
     transform( translateX(100%) )
     visibility: visible !important
-    &:first-child, &.show
+    &.show
       transform( translateX(0%) )
     &.hide
       transform( translateX(-100%) )
@@ -59,7 +66,7 @@ section
   /* Transition: COVER */
   &[data-transition="cover"]
     transform( translateY(110%) )
-    &:first-child, &.show, &.hide
+    &.show, &.hide
       transform( translateY(0%) )
 
   /* Transition: FADE */
