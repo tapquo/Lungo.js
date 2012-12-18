@@ -5,8 +5,9 @@
  * @namespace Lungo.Boot
  * @class Data
  *
- * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
- * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
+ * @author Javier Jimenez Villar <javi@tapquo.com>  || @soyjavi
+ * @author Guillermo Pascual <pasku@tapquo.com>     || @pasku1
+ * @author Ignacio Olalde <ina@tapquo.com>          || @piniphone
  */
 
 Lungo.Boot.Data = (function(lng, undefined) {
@@ -19,32 +20,31 @@ Lungo.Boot.Data = (function(lng, undefined) {
      *
      *
      */
-    var init = function() {
-        var attributes = lng.Attributes.Data;
+    var init = function(selector) {
+        var el = lng.dom(selector || document.body);
+        if (el.length > 0) _findDataAttributesIn(el);
+    };
 
-        for (var attribute in attributes) {
-            if (lng.Core.isOwnProperty(attributes, attribute)) {
-                _findElements(attributes[attribute]);
+    var _findDataAttributesIn = function(element) {
+        for (var key in lng.Attributes.Data) {
+            if (lng.Core.isOwnProperty(lng.Attributes.Data, key)) {
+                _findElements(element, key);
             }
         }
     };
 
-    var _findElements = function(attribute) {
-        var elements = lng.dom(attribute.selector);
-
-        for (var i = 0, len = elements.length; i < len; i++) {
-            var element = lng.dom(elements[i]);
-            _dataAttribute(element, attribute);
-        }
+    var _findElements = function(element, key) {
+        attribute = lng.Attributes.Data[key];
+        var selector = attribute.selector + "[data-" + key + "]";
+        element.find(selector).each(function(index, children) {
+            var el = lng.dom(children);
+            _bindDataAttribute(el, el.data(key), attribute.html);
+        });
     };
 
-    var _dataAttribute = function(element, attribute) {
-        var data = element.data(attribute.tag);
-
-        if (data) {
-            var html_binded = attribute.html.replace(BINDING.START + BINDING.KEY + BINDING.END, data);
-            element.prepend(html_binded);
-        }
+    var _bindDataAttribute = function(element, value, html) {
+        var html_binded = html.replace(BINDING.START + BINDING.KEY + BINDING.END, value);
+        element.prepend(html_binded);
     };
 
     return {

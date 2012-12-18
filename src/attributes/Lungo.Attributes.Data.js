@@ -9,52 +9,43 @@
  */
 
 Lungo.Attributes.Data = {
-    Search: {
-        tag: 'search',
+    search: {
         selector: '*',
         html: '<input type="search" placeholder="{{value}}"/><a href="#" class="button" data-icon="search"></a>'
     },
-    Count: {
-        tag: 'count',
+    count: {
         selector: '*',
         html: '<span class="tag theme count">{{value}}</span>'
     },
-    Pull: {
-        tag: 'pull',
+    pull: {
         selector: 'section',
         html: '<div class="{{value}}" data-control="pull" data-icon="down" data-loading="black">\
                     <strong>title</strong>\
                 </div>'
     },
-    Progress: {
-        tag: 'progress',
+    progress: {
         selector: '*',
         html: '<div class="progress">\
                     <span class="bar"><span class="value" style="width:{{value}};"></span></span>\
                 </div>'
     },
-    Label: {
-        tag: 'label',
-        selector: 'a, button',
+    label: {
+        selector: '*',
         html: '<abbr>{{value}}</abbr>'
     },
-    Icon: {
-        tag: 'icon',
+    icon: {
         selector: '*',
         html: '<span class="icon {{value}}"></span>'
     },
-    Image: {
-        tag: 'image',
+    image: {
         selector: '*',
         html: '<img src="{{value}}" class="icon" />'
     },
-    Title: {
-        tag: 'title',
+    title: {
         selector: 'header',
         html: '<span class="title centered">{{value}}</span>'
     },
-    Loading: {
-        tag: 'loading',
+    loading: {
         selector: '*',
         html: '<div class="loading {{value}}">\
                     <span class="top"></span>\
@@ -63,9 +54,8 @@ Lungo.Attributes.Data = {
                     <span class="left"></span>\
                 </div>'
     },
-    Back: {
-        tag: 'back',
-        selector: 'header, footer',
+    back: {
+        selector: 'header',
         html: '<nav class="left"><a href="#back" data-router="section" class="left"><span class="icon {{value}}"></span></a></nav>'
     }
 };
