@@ -16,11 +16,11 @@ article
   bottom: 0
   width: inherit
   height: auto
-  display: none
   visibility: hidden
+  display: none
   z-index: 0
 
-  &.active
+  .show > &.active, .hide > &.active, .hiding > &.active
     visibility: visible
     display: block
     z-index: 1

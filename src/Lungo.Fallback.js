@@ -11,9 +11,11 @@ Lungo.Fallback = (function(lng, undefined) {
 
     var fixPositionInAndroid = function() {
         env = lng.Core.environment();
-
-        var position = (env.isMobile && env.os.name === 'Android' && env.os.version < "3") ? "absolute" : "fixed";
-        lng.Element.Cache.sections.style("position", position);
+        if (env.isMobile && env.os.name === 'Android' && env.os.version < "3") {
+            lng.dom(document.body).data("position", "absolute");
+        } else {
+            lng.dom(document.body).data("position", "fixed");
+        }
     };
 
     return {
