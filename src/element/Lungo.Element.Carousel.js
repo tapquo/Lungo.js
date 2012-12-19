@@ -7,6 +7,7 @@
  *
  * @author Ignacio Olalde <ina@tapquo.com> || @piniphone
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ * @author Abel Toledano <atabel87@gmail.com>
  */
 
 
@@ -33,16 +34,27 @@ Lungo.Element.Carousel = function(element, callback) {
 
     var prev = function(delay) {
         if (_instance.index) {
-            _slide(_instance.index-1, _instance.speed);
+            slide(_instance.index-1, _instance.speed);
         }
     };
 
     var next = function(delay) {
         if (_instance.index < _instance.slides_length - 1) {
-            _slide(_instance.index + 1, _instance.speed);
+            slide(_instance.index + 1, _instance.speed);
         } else {
-            _slide(0, _instance.speed);
+            slide(0, _instance.speed);
         }
+    };
+
+    var append = function(newEl) {
+        Lungo.dom(_instance.element).append(newEl);
+        _setup();
+    };
+
+    var prepend = function(newEl) {
+        Lungo.dom(_instance.element).prepend(newEl);
+        _instance.index += 1;
+        _setup();
     };
 
     var _setup = function() {
@@ -63,14 +75,17 @@ Lungo.Element.Carousel = function(element, callback) {
             el.style.display = 'table-cell';
             el.style.verticalAlign = 'top';
         }
-        _slide(_instance.index, 0);
+        slide(_instance.index, 0);
         _instance.container.style.visibility = 'visible';
     };
 
-    var _slide = function(index, duration) {
+    var slide = function(index, duration) {
         var style = _instance.element.style;
         if (duration == undefined) {
             duration = _instance.speed;
+        }
+        if (index < 0 || index >= _instance.slides_length) {
+            return null;
         }
         style.webkitTransitionDuration = style.MozTransitionDuration =
         style.msTransitionDuration = style.OTransitionDuration = style.transitionDuration =
@@ -135,7 +150,7 @@ Lungo.Element.Carousel = function(element, callback) {
             || _instance.index == _instance.slides_length - 1
             && _instance.deltaX < 0;
         if (!_instance.isScrolling) {
-            _slide( _instance.index + ( isValidSlide && !isPastBounds ? (_instance.deltaX < 0 ? 1 : -1) : 0 ), _instance.speed );
+            slide( _instance.index + ( isValidSlide && !isPastBounds ? (_instance.deltaX < 0 ? 1 : -1) : 0 ), _instance.speed );
         }
         e.stopPropagation();
     };
@@ -152,6 +167,9 @@ Lungo.Element.Carousel = function(element, callback) {
     return {
         prev: prev,
         next: next,
-        position: position
+        position: position,
+        slide: slide,
+        append: append,
+        prepend: prepend
     };
 };
