@@ -10,17 +10,16 @@
 @import "import/constants.styl"
 @import "import/vendor.styl"
 
-
 FORM_INPUT_HEIGHT = 30px
-ROUNDED_RADIUS = 2px
-PROGRESS_HEIGHT = 12px
+PROGRESS_HEIGHT = 15px
 
 form, .form
-  & label:not(.select)
-    font-size: 0.9em
+  & label
+    font-size: 1.1em
 
   & input, textarea, select, .progress
     margin-bottom: 8px
+    font-size: FONT_SIZE_BIG
 
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
     display: block
@@ -29,52 +28,53 @@ form, .form
     height: FORM_INPUT_HEIGHT
     transition all 0.15s linear
     font-family: inherit
-    font-size: inherit
     -webkit-appearance: none
     -webkit-user-select: text
     -webkit-font-smoothing: antialiased
     &:focus
-      outline: none !important;
+      outline: none !important
 
   & textarea
-    min-height: 48px
+    min-height: 64px
 
-  input[type=search]
-    width: 89%
-    display: inline-block
-
-    & + .button
-      float: right
-      padding: 0px
-      width: 10%
-      height: FORM_INPUT_HEIGHT
-      line-height: FORM_INPUT_HEIGHT
-
-  & select
-    width: 100%
-    height: FORM_INPUT_HEIGHT
-
-    label.select
-      position: relative
+  & fieldset
+    padding: 8px 8px 0 8px
+    & label
       display: inline-block
-      width: 100%
-
-    .select:after
-      text-align: center
+      float: left
+      width: 20%
+      line-height: FORM_INPUT_HEIGHT
+    & label + input
+      width: 80% !important
+    & .icon
       position: absolute
-      top: 3px
-      right: 0
-      bottom: 0
-      height: FORM_INPUT_HEIGHT
-      width: FORM_INPUT_HEIGHT
+      font-size: FONT_SIZE_BIG
+      line-height: FORM_INPUT_HEIGHT
+      right: 8px
+    & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea
+      box-shadow none
+      border: none
+      padding: 0
+      &, &:focus
+        background: none
 
-      content: "▼"
-      pointer-events:none
-      line-height: 33px
+  & label.select
+    position: relative
+    display: inline-block
+    width: 100%
+    font-size: inherit
+    line-height: inherit
 
-    .no-pointer-events .select:after
-      content: none
-
+  & .select:after
+    position: absolute
+    top: 0
+    right: 0
+    height: FORM_INPUT_HEIGHT
+    width: FORM_INPUT_HEIGHT
+    content: "▼"
+    pointer-events: none
+    text-align: center
+    line-height: 32px
 
   & input[type=range]
     -webkit-appearance: none
@@ -86,34 +86,30 @@ form, .form
       padding: 0px
       margin-top: 2px
       border: 0
-      cursor: ew-resize
-
       &::-webkit-slider-thumb
         top: -1px
 
     &.checkbox
-      width:70px
-      height: 30px
+      width: 70px
+      height: FORM_INPUT_HEIGHT
+      line-height: FORM_INPUT_HEIGHT
       padding: 1px 2px
       font-family:'lungojsicon'
 
       &:after
-        content: "\0055"
+        top: -(FORM_INPUT_HEIGHT - 1)
         position: relative
+        content: "\0055"
         float: right
-        top: -23px
         padding: 0 8px
-        font-size: 1.5em
 
       &.active:after
         float: left
         content: "\0051"
-        font-size: 1.6em
-
 
     &::-webkit-slider-thumb
         -webkit-appearance: none
-        width: 30px
+        width: FORM_INPUT_HEIGHT
         height: 24px
         position:relative
         margin:2px 2px 2px 2px
@@ -123,44 +119,26 @@ form, .form
       width:12px
       height:12px
       display:block
-      content:""
-      position:relative
+      content: ""
+      position: relative
       border-radius: 8px
-      z-index:9
-      top:6px
-      left:9px
-
+      z-index: 9
+      top: 6px
+      left: 9px
 
   & .progress
     width: 100%
-    margin-bottom: 8px
-
-    .labels
-      font-size: 1.0em
-      display: block
-      & span:last-child
-        float: right
-
-
     & .bar
       height: PROGRESS_HEIGHT
       line-height: PROGRESS_HEIGHT
       display: block
-
       & .value
-        display:block
+        display: block
         height: inherit
         width: 0%
-        transition( width 500ms DEFAULT_TRANSITION )
-
-        & .label
-          float: right
-          margin-right: 4px
-          font-size: 0.75em
-
+        transition(width TRANSITION_TIME DEFAULT_TRANSITION)
 
 @media screen and (-webkit-min-device-pixel-ratio:0)
   .custom-select
     select
       padding-right:30px
-

@@ -6,9 +6,9 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-form label:not(.select),
-.form label:not(.select) {
-  font-size: 0.9em;
+form label,
+.form label {
+  font-size: 1.1em;
 }
 form input,
 .form input,
@@ -19,6 +19,7 @@ form select,
 form .progress,
 .form .progress {
   margin-bottom: 8px;
+  font-size: 1.2em;
 }
 form input[type="text"],
 .form input[type="text"],
@@ -52,7 +53,6 @@ form textarea,
   -moz-transition: all 0.15s linear;
   transition: all 0.15s linear;
   font-family: inherit;
-  font-size: inherit;
   -webkit-appearance: none;
   -webkit-user-select: text;
   -webkit-font-smoothing: antialiased;
@@ -85,48 +85,123 @@ form textarea:focus,
 }
 form textarea,
 .form textarea {
-  min-height: 48px;
+  min-height: 64px;
 }
-form input[type=search],
-.form input[type=search] {
-  width: 89%;
+form fieldset,
+.form fieldset {
+  padding: 8px 8px 0 8px;
+}
+form fieldset label,
+.form fieldset label {
   display: inline-block;
-}
-form input[type=search] + .button,
-.form input[type=search] + .button {
-  float: right;
-  padding: 0px;
-  width: 10%;
-  height: 30px;
+  float: left;
+  width: 20%;
   line-height: 30px;
 }
-form select,
-.form select {
-  width: 100%;
-  height: 30px;
+form fieldset label + input,
+.form fieldset label + input {
+  width: 80% !important;
 }
-form select label.select,
-.form select label.select {
+form fieldset .icon,
+.form fieldset .icon {
+  position: absolute;
+  font-size: 1.2em;
+  line-height: 30px;
+  right: 8px;
+}
+form fieldset input[type="text"],
+.form fieldset input[type="text"],
+form fieldset input[type="password"],
+.form fieldset input[type="password"],
+form fieldset input[type="date"],
+.form fieldset input[type="date"],
+form fieldset input[type="datetime"],
+.form fieldset input[type="datetime"],
+form fieldset input[type="email"],
+.form fieldset input[type="email"],
+form fieldset input[type="number"],
+.form fieldset input[type="number"],
+form fieldset input[type="search"],
+.form fieldset input[type="search"],
+form fieldset input[type="tel"],
+.form fieldset input[type="tel"],
+form fieldset input[type="time"],
+.form fieldset input[type="time"],
+form fieldset input[type="url"],
+.form fieldset input[type="url"],
+form fieldset textarea,
+.form fieldset textarea {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+form fieldset input[type="text"],
+.form fieldset input[type="text"],
+form fieldset input[type="password"],
+.form fieldset input[type="password"],
+form fieldset input[type="date"],
+.form fieldset input[type="date"],
+form fieldset input[type="datetime"],
+.form fieldset input[type="datetime"],
+form fieldset input[type="email"],
+.form fieldset input[type="email"],
+form fieldset input[type="number"],
+.form fieldset input[type="number"],
+form fieldset input[type="search"],
+.form fieldset input[type="search"],
+form fieldset input[type="tel"],
+.form fieldset input[type="tel"],
+form fieldset input[type="time"],
+.form fieldset input[type="time"],
+form fieldset input[type="url"],
+.form fieldset input[type="url"],
+form fieldset textarea,
+.form fieldset textarea,
+form fieldset input[type="text"]:focus,
+.form fieldset input[type="text"]:focus,
+form fieldset input[type="password"]:focus,
+.form fieldset input[type="password"]:focus,
+form fieldset input[type="date"]:focus,
+.form fieldset input[type="date"]:focus,
+form fieldset input[type="datetime"]:focus,
+.form fieldset input[type="datetime"]:focus,
+form fieldset input[type="email"]:focus,
+.form fieldset input[type="email"]:focus,
+form fieldset input[type="number"]:focus,
+.form fieldset input[type="number"]:focus,
+form fieldset input[type="search"]:focus,
+.form fieldset input[type="search"]:focus,
+form fieldset input[type="tel"]:focus,
+.form fieldset input[type="tel"]:focus,
+form fieldset input[type="time"]:focus,
+.form fieldset input[type="time"]:focus,
+form fieldset input[type="url"]:focus,
+.form fieldset input[type="url"]:focus,
+form fieldset textarea:focus,
+.form fieldset textarea:focus {
+  background: none;
+}
+form label.select,
+.form label.select {
   position: relative;
   display: inline-block;
   width: 100%;
+  font-size: inherit;
+  line-height: inherit;
 }
-form select .select:after,
-.form select .select:after {
-  text-align: center;
+form .select:after,
+.form .select:after {
   position: absolute;
-  top: 3px;
+  top: 0;
   right: 0;
-  bottom: 0;
   height: 30px;
   width: 30px;
   content: "▼";
   pointer-events: none;
-  line-height: 33px;
-}
-form select .no-pointer-events .select:after,
-.form select .no-pointer-events .select:after {
-  content: none;
+  text-align: center;
+  line-height: 32px;
 }
 form input[type=range],
 .form input[type=range] {
@@ -135,12 +210,11 @@ form input[type=range],
 }
 form input[type=range]:not(.checkbox),
 .form input[type=range]:not(.checkbox) {
-  height: 12px;
+  height: 15px;
   width: 100%;
   padding: 0px;
   margin-top: 2px;
   border: 0;
-  cursor: ew-resize;
 }
 form input[type=range]:not(.checkbox)::-webkit-slider-thumb,
 .form input[type=range]:not(.checkbox)::-webkit-slider-thumb {
@@ -150,23 +224,22 @@ form input[type=range].checkbox,
 .form input[type=range].checkbox {
   width: 70px;
   height: 30px;
+  line-height: 30px;
   padding: 1px 2px;
   font-family: 'lungojsicon';
 }
 form input[type=range].checkbox:after,
 .form input[type=range].checkbox:after {
-  content: "\0055";
+  top: -29px;
   position: relative;
+  content: "\0055";
   float: right;
-  top: -23px;
   padding: 0 8px;
-  font-size: 1.5em;
 }
 form input[type=range].checkbox.active:after,
 .form input[type=range].checkbox.active:after {
   float: left;
   content: "\0051";
-  font-size: 1.6em;
 }
 form input[type=range]::-webkit-slider-thumb,
 .form input[type=range]::-webkit-slider-thumb {
@@ -194,21 +267,11 @@ form input[type=range]::-webkit-slider-thumb::after,
 form .progress,
 .form .progress {
   width: 100%;
-  margin-bottom: 8px;
-}
-form .progress .labels,
-.form .progress .labels {
-  font-size: 1em;
-  display: block;
-}
-form .progress .labels span:last-child,
-.form .progress .labels span:last-child {
-  float: right;
 }
 form .progress .bar,
 .form .progress .bar {
-  height: 12px;
-  line-height: 12px;
+  height: 15px;
+  line-height: 15px;
   display: block;
 }
 form .progress .bar .value,
@@ -216,15 +279,9 @@ form .progress .bar .value,
   display: block;
   height: inherit;
   width: 0%;
-  -webkit-transition: width 500ms easeOutSine;
-  -moz-transition: width 500ms easeOutSine;
-  transition: width 500ms easeOutSine;
-}
-form .progress .bar .value .label,
-.form .progress .bar .value .label {
-  float: right;
-  margin-right: 4px;
-  font-size: 0.75em;
+  -webkit-transition: width 350ms easeOutSine;
+  -moz-transition: width 350ms easeOutSine;
+  transition: width 350ms easeOutSine;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   .custom-select select {

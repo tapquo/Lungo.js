@@ -9,10 +9,6 @@
  */
 
 Lungo.Attributes.Data = {
-    search: {
-        selector: '*',
-        html: '<input type="search" placeholder="{{value}}"/><a href="#" class="button" data-icon="search"></a>'
-    },
     count: {
         selector: '*',
         html: '<span class="tag theme count">{{value}}</span>'

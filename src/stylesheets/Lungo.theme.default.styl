@@ -250,7 +250,14 @@ FORM_border_color = #D0D4C6
 
 form, .form
   & label
-    color: #999
+    color: #aaa
+    font-weight: 300
+
+  & fieldset
+    background: #fff
+    border-bottom: solid 1px #eee
+    & .icon
+      color: #ccc
 
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
     background-color: white
@@ -282,10 +289,9 @@ form, .form
     border-radius FORM_radius
 
     &:not(.checkbox)
-      background-color: #c7c7c7
+      background-color: #ddd
       &:active
         background-color: THEME_light
-
 
     &.checkbox
       background-color: #aaaaaa
@@ -295,25 +301,14 @@ form, .form
 
     &::-webkit-slider-thumb
       border-radius: FORM-border-radius
-      background: #fff
+      background: #eee
+      box-shadow(inset 0 0 1px #bbb)
 
     &::-webkit-slider-thumb::after
-      background: #ddd
-
+      background: #fff
 
   & .progress
-    .labels
-      font-size: 12px
-      line-height: 18px
-      color: #858585
-
     & .bar
-      background: #c7c7c7
+      background-color: #ddd
       & .value
-        background-color: THEME-light
-        & .label
-          float: right
-          margin-right: 3px
-          color: rgba(0,0,0,0.6)
-          text-shadow: 0 1px 0 rgba(255,255,255,0.2) !important
-          font-size: 12px
+        background-color: THEME_light
