@@ -71,15 +71,14 @@
     <section id="main" data-transition="slide">
         <header>
             <nav class="left box">
-                <a href="#features" data-router="aside" data-async="app/asides/features.html" data-icon="menu"></a>
-                <a href="#layout" data-router="section" data-async="app/sections/layout.html" data-icon="down"></a>
+                <a href="#features" data-router="aside" data-icon="menu"></a>
             </nav>
             <div class="left">
-                <div class="centered title">Recibidos 2</div>
+                <div class="centered title">Lungo Framework</div>
             </div>
 
             <nav class="right box">
-                <a href="#" class="buttons" data-icon="mail"></a>
+                <a href="#" class="buttons" data-icon="share" data-article="main-article"></a>
             </nav>
         </header>
 
@@ -154,6 +153,25 @@
                 </li>
             </ul>
         </article>
+
+        <article id="environment" class="list">
+            <ul>
+                <li id="os" class="dark" data-icon="mobile">
+                    <strong>Desktop</strong>
+                    <small>unknown</small>
+                </li>
+
+                <li id="resolution" data-icon="picture">
+                    <strong>0p x 0p</strong>
+                    <small>Screen Resolution</small>
+                </li>
+
+                <li id="navigator" data-icon="brand html5">
+                    <strong>webkit</strong>
+                    <small>Mobile: </small>
+                </li>
+            </ul>
+        </article>
     </section>
 
     <!-- Lungo dependencies -->
@@ -203,28 +221,10 @@
     <script>
         Lungo.init({
             name: 'Kitchen Sink',
-            version: '2.0',
-            resources: ['app/sections/layout.html',
-                        'app/sections/notification.html',
-                        'app/sections/list.html',
-                        'app/sections/icon.html',
-                        'app/sections/grid.html',
-                        'app/sections/form.html',
-                        'app/sections/aside.html',
-                        'app/sections/touchevents.html',
-                        'app/sections/layoutevents.html',
-                        'app/sections/splash.html',
-                        'app/sections/data-attribute.html',
-                        'app/sections/scroll.html',
-                        'app/sections/color.html',
-                        'app/sections/pull.html',
+            version: '2.1',
+            resources: ['app/sections/pull.html',
                         'app/sections/carousel.html',
-                        'app/sections/environment.html',
-                        /*
-                        'app/asides/features.html',
-                        */
-                        'app/asides/left.html',
-                        'app/asides/right.html']
+                        'app/asides/features.html']
 
         });
     </script>
@@ -233,8 +233,6 @@
         <script src="app/events.touch.js"></script>
         <script src="app/events.pull.js"></script>
         <script src="app/events.carousel.js"></script>
-        <!--
         <script src="app/events.trigger.js"></script>
-    -->
 </body>
 </html>

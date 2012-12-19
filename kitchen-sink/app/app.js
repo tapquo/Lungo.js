@@ -11,7 +11,7 @@ var App = (function(lng, undefined) {
 
     environment = function(event) {
         var environment = lng.Core.environment();
-        var el = lng.dom("section#environment > article");
+        var el = lng.dom("section > article#environment");
 
         if (environment.os) {
             el.find("#os > strong").html(environment.os.name);
