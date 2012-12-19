@@ -46,18 +46,15 @@ Lungo.Element.Carousel = function(element, callback) {
     };
 
     var _setup = function() {
-        _instance.container.style.overflow = 'hidden';
-        _instance.element.style.listStyle = 'none';
-        _instance.element.style.margin = 0;
         _instance.slides = _instance.element.children;
         _instance.slides_length = _instance.slides.length;
         if (_instance.slides_length < 2) return null;
+
         _instance.width = ("getBoundingClientRect" in _instance.container) ?
                             _instance.container.getBoundingClientRect().width :
                             _instance.container.offsetWidth;
 
         if (!_instance.width) return null;
-        _instance.container.style.visibility = 'hidden';
         _instance.element.style.width = (_instance.slides.length * _instance.width) + 'px';
         var index = _instance.slides.length;
         while (index--) {
