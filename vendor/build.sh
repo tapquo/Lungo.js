@@ -23,7 +23,7 @@ decho "============================ LUNGO COMPILER ============================"
     #Main
     DIR=$LUNGO_SOURCES$LUNGO_NAMESPACE
     decho "  [DIR]: $LUNGO_SOURCES"
-    FILES="js Init.js Core.js Dom.js Service.js Constants.js Events.js Notification.js Fallback.js"
+    FILES="js Init.js Core.js Dom.js Service.js Constants.js Events.js Notification.js Fallback.js Resource.js"
     for file in ${FILES} ; do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
         FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
@@ -78,7 +78,7 @@ decho "============================ LUNGO COMPILER ============================"
     #Boot
     DIR=$LUNGO_SOURCES"boot/"$LUNGO_NAMESPACE"Boot."
     decho "  [DIR]: ${LUNGO_SOURCES}boot/"
-    FILES="Resources.js Stats.js Layout.js Events.js Data.js Section.js Article.js"
+    FILES="Layout.js Events.js Data.js Section.js Article.js"
     for file in ${FILES} ; do
         FILES_TO_COMPILE=$FILES_TO_COMPILE" --js "$DIR$file
         FILES_TO_JOIN=$FILES_TO_JOIN" "$DIR$file
