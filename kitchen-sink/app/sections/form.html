@@ -3,13 +3,47 @@
         <nav class="box">
             <a href="#back" data-router="section" data-label="back"></a>
         </nav>
+        <nav class="right">
+            <a href="#" data-router="article" class="button" data-icon="share" data-label="Share"></a>
+        </nav>
     </header>
 
-    <article class="active scroll">
-        <form class="margined">
-            <input type="search" placeholder="type your search" />
-            <a href="#" class="button theme" data-icon="search"></a>
+    <article id="form-normal" class="active">
+        <div class="form">
+            <fieldset data-icon="plus">
+                <label>To:</label>
+                <input type="text" />
+            </fieldset>
+            <fieldset>
+                <label>Cc/Cco:</label>
+                <input type="text" />
+            </fieldset>
+            <fieldset data-icon="pencil">
+                <label>Subject:</label>
+                <input type="text" />
+            </fieldset>
+            <fieldset>
+                <label>Summary:</label>
+                <br/>
+                <input type="text" />
+            </fieldset>
+            <fieldset>
+                <textarea></textarea>
+            </fieldset>
 
+
+            <a href="#form-extras" data-router="article" class="button anchor accept" data-label="View Extra Elements"></a>
+
+        </div>
+    </article>
+
+    <article id="form-extras" class=" scroll">
+        <form>
+            <fieldset data-icon="search">
+                <input type="search" placeholder="Search..."/>
+            </fieldset>
+        </form>
+        <form  class="margined">
             <div class="six columns">
                 <label>Address</label>
                 <input type="text" placeholder="placeholder"/>
@@ -18,7 +52,6 @@
                 <label>Pin Code</label>
                 <input type="password" value="value" disabled/>
             </div>
-            <textarea></textarea>
 
             <label>Select your skill</label>
             <label class="select">
@@ -29,25 +62,17 @@
                 </select>
             </label>
 
-
-            <label>Progress of project</label>
+            <label>Progress</label>
             <div id="progress-normal" data-progress="25%"></div>
 
-            <label>Range 50%</label>
+            <label>Range</label>
             <input type="range" placeholder="type your name" />
 
-            <div class="one row">
-                <input type="range" min="0" max="1" class="checkbox left" value="0">
-                <input type="range" min="0" max="1" class="checkbox right active" value="1">
-            </div>
-                <div class="four columns s">
-                    <a href="#" class="button anchosr accept" data-label="Accept" data-icon="check"></a>
-                </div>
-                <div class="four columns s">
-                    <a href="#" class="button anchsor cancel" data-label="Cancel" data-icon="close"></a>
-                </div>
+            <label>Checkbox</label>
+            <br/>
+            <input type="range" min="0" max="1" class="checkbox active" value="1">
+
+            <a href="#form-normal" data-router="article" class="button anchor accept" data-label="Return to normal Elements"></a>
         </form>
-
-
     </article>
 </section>
