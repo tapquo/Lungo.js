@@ -74,7 +74,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
     var _loadAsyncTarget = function(link) {
         lng.Notification.show();
-        lng.Boot.Resources.load(link.data("async"));
+        lng.Resource.load(link.data("async"));
         link[0].removeAttribute("data-async");
         lng.Boot.Data.init( link.attr(ATTRIBUTE.HREF) );
 

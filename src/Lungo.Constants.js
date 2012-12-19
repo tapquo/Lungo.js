@@ -16,8 +16,12 @@ Lungo.Constants = {
         BODY: 'body',
         DIV: 'div',
         LIST: '<ul></ul>',
-        LI: 'li',
-        SPAN: '<span>&nbsp;</span>'
+        LI: 'li'
+    },
+
+    QUERY: {
+        LIST_IN_ARTICLE: 'article.list, aside.list',
+        ARTICLE_SCROLLABLE: 'article.scroll'
     },
 
     CLASS: {
