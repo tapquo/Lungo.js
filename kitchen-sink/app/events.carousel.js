@@ -1,5 +1,5 @@
 var carousel_example = Lungo.Element.Carousel($$('[data-control=carousel]')[0], function(index, element) {
-    Lungo.dom("section#carousel .subtitle span").html(index + 1);
+    Lungo.dom("section#carousel .title span").html(index + 1);
 });
 
 Lungo.Events.init({
