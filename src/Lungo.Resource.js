@@ -1,21 +1,16 @@
 /**
  * Load Resources
  *
- * @namespace Lungo.Boot
- * @class Resources
+ * @namespace Lungo
+ * @class Resource
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-Lungo.Boot.Resources = (function(lng, $$, undefined) {
+Lungo.Resource = (function(lng, $$, undefined) {
 
     var ELEMENT = lng.Constants.ELEMENT;
     var ERROR = lng.Constants.ERROR;
-
-    var RESOURCE = {
-        SECTION: 'sections',
-        ASIDE: 'asides'
-    };
 
     /**
      * Start loading async sections (local & remote)
@@ -23,16 +18,20 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
      * @method start
      *
      */
-    var init = function(resources) {
-        for (var i=0, len=resources.length; i < len; i++) {
-            load(resources[i]);
+    var load = function(resource) {
+        if (lng.Core.toType(resource) === 'array') {
+            for (var i=0, len=resource.length; i < len; i++) {
+                _load(resource[i]);
+            }
+        } else {
+            _load(resource);
         }
     };
 
     /**
      *
      */
-    var load = function(resource) {
+    var _load = function(resource) {
         try {
             var response = _loadSyncResource(resource);
             _pushResourceInBody(response);
@@ -59,7 +58,6 @@ Lungo.Boot.Resources = (function(lng, $$, undefined) {
     };
 
     return {
-        init: init,
         load: load
     };
 
