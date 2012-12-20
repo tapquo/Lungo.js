@@ -25,8 +25,8 @@ Lungo.Boot.Layout = (function(lng, undefined) {
         lng.Fallback.fixPositionInAndroid();
 
         _initFirstSection();
-        _initArticleElement(QUERY.LIST_IN_ARTICLE, _createListElement);
-        _initArticleElement(QUERY.ARTICLE_SCROLLABLE, _scrollFix);
+        _initElement(QUERY.LIST_IN_ELEMENT, _createListElement);
+        _initElement(QUERY.ELEMENT_SCROLLABLE, _scrollFix);
     };
 
     var _initFirstSection = function() {
@@ -38,7 +38,7 @@ Lungo.Boot.Layout = (function(lng, undefined) {
         lng.Router.History.add(section_id);
     };
 
-    var _initArticleElement = function(selector, callback) {
+    var _initElement = function(selector, callback) {
         var found_elements = lng.dom(selector);
         for (var i = 0, len = found_elements.length; i < len; i++) {
             var element = lng.dom(found_elements[i]);
@@ -46,16 +46,16 @@ Lungo.Boot.Layout = (function(lng, undefined) {
         }
     };
 
-    var _createListElement = function(article) {
-        if (article.children().length === 0) {
-            var article_id = article.attr(ATTRIBUTE.ID);
-            article.append(ELEMENT.LIST);
+    var _createListElement = function(element) {
+        if (element.children().length === 0) {
+            var element_id = element.attr(ATTRIBUTE.ID);
+            element.append(ELEMENT.LIST);
         }
     };
 
 
-    var _scrollFix = function(article) {
-        article[0].addEventListener('touchstart', function(event) {
+    var _scrollFix = function(element) {
+        element[0].addEventListener('touchstart', function(event) {
             scrollTop = this.scrollTop;
             if(scrollTop <= 1) {
                 this.scrollTop = 1;
