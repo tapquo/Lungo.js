@@ -12,7 +12,7 @@ body[data-position="absolute"] > section {
 body[data-position="fixed"] > section {
   position: fixed;
 }
-body[data-position="fixed"] > section[data-transition] {
+body [data-transition] {
   display: block !important;
   -webkit-transition-property: opacity z-index transform;
   -moz-transition-property: opacity z-index transform;

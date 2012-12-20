@@ -17,12 +17,12 @@ body
   &[data-position="fixed"] > section
     position: fixed
 
-    &[data-transition]
-      display: block !important
-      transition-property( opacity, z-index, transform )
-      transition-duration( TRANSITION_TIME )
-      transition-timing-function( DEFAULT_TRANSITION )
-      backface-visibility( hidden )
+  & [data-transition]
+    display: block !important
+    transition-property( opacity, z-index, transform )
+    transition-duration( TRANSITION_TIME )
+    transition-timing-function( DEFAULT_TRANSITION )
+    backface-visibility( hidden )
 
 section
   top:  0

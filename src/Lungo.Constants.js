@@ -20,8 +20,8 @@ Lungo.Constants = {
     },
 
     QUERY: {
-        LIST_IN_ARTICLE: 'article.list, aside.list',
-        ARTICLE_SCROLLABLE: 'article.scroll'
+        LIST_IN_ELEMENT: 'article.list, aside.list',
+        ELEMENT_SCROLLABLE: 'aside.scroll, article.scroll'
     },
 
     CLASS: {
