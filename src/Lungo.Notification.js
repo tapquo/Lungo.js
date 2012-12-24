@@ -23,7 +23,7 @@ Lungo.Notification = (function(lng, undefined) {
         NOTIFICATION: '.notification',
         MODAL: '.notification .window',
         MODAL_HREF: '.notification .window a',
-        WINDOW_CLOSABLE: '.notification > [data-action=close], .notification > .error, .notification > .success',
+        WINDOW_CLOSABLE: '.notification [data-action=close], .notification > .error, .notification > .success',
         CONFIRM_BUTTONS: '.notification .confirm a.button'
     };
 
@@ -104,8 +104,8 @@ Lungo.Notification = (function(lng, undefined) {
     /**
      *
      */
-    var html = function(markup, closable) {
-        markup += (closable) ? '<a href="#" class="button large anchor" data-action="close">Close</a>' : '';
+    var html = function(markup, button) {
+        markup += (button) ? '<a href="#" class="button large anchor" data-action="close">' + button + '</a>' : '';
         _show(markup, 'html');
     };
 
