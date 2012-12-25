@@ -18,7 +18,7 @@ Lungo.Element.loading = function(selector, stylesheet) {
 
         if (stylesheet) {
             var binding = Lungo.Constants.BINDING.SELECTOR;
-            html = Lungo.Attributes.Data.loading.html.replace(binding, stylesheet);
+            html = Lungo.Attributes.loading.html.replace(binding, stylesheet);
         }
         element.html(html);
     }

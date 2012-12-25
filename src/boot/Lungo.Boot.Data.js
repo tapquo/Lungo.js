@@ -26,15 +26,15 @@ Lungo.Boot.Data = (function(lng, undefined) {
     };
 
     var _findDataAttributesIn = function(element) {
-        for (var key in lng.Attributes.Data) {
-            if (lng.Core.isOwnProperty(lng.Attributes.Data, key)) {
+        for (var key in lng.Attributes) {
+            if (lng.Core.isOwnProperty(lng.Attributes, key)) {
                 _findElements(element, key);
             }
         }
     };
 
     var _findElements = function(element, key) {
-        attribute = lng.Attributes.Data[key];
+        attribute = lng.Attributes[key];
         var selector = attribute.selector + "[data-" + key + "]";
         element.find(selector).each(function(index, children) {
             var el = lng.dom(children);
