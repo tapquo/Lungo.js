@@ -1,14 +1,14 @@
 /**
  * Object with data-attributes (HTML5) with a special <markup>
  *
- * @namespace Lungo.Attributes
- * @class Data
+ * @namespace Lungo
+ * @class Attributes
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  * @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
  */
 
-Lungo.Attributes.Data = {
+Lungo.Attributes = {
     count: {
         selector: '*',
         html: '<span class="tag theme count">{{value}}</span>'
