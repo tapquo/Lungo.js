@@ -90,43 +90,4 @@ decho "============================ LUNGO COMPILER ============================"
     cat $FILES_TO_JOIN > $PACKAGE/lungo.debug.js
     # cat $LUNGO_SOURCES"lib/quo.debug.js" $PACKAGE/lungo-$VERSION.standalone.js > $PACKAGE/lungo-$VERSION.js
     becho "  [BUILD]: lungo.js"
-
-    FILES_TO_COMPRESS=""
-    DIR=$LUNGO_SOURCES"stylesheets/css/"
-
-    decho "  [DIR]: $DIR >> COMPRESSING"
-    FILES="base layout layout.nav layout.aside layout.article layout.list layout.grid widgets widgets.splash widgets.button widgets.form widgets.loading widgets.notification widgets.pull"
-    for file in ${FILES} ; do
-        # echo "    - Compressing "$DIR$LUNGO_NAMESPACE$file".css ..."
-        #Compressing via YUI
-        java -jar $COMPRESSOR $DIR$LUNGO_NAMESPACE$file".css" -o $DIR$LUNGO_NAMESPACE$file".min.css"
-        FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".min.css"
-        # FILES_TO_COMPRESS=$FILES_TO_COMPRESS" "$DIR$LUNGO_NAMESPACE$file".css"
-    done
-    cat $FILES_TO_COMPRESS > $PACKAGE/lungo.css
-    becho "    [BUILD]: lungo.css"
-
-    for file in ${FILES} ; do
-       rm $DIR$LUNGO_NAMESPACE$file".min.css"
-    done
-
-    DIR=$LUNGO_SOURCES"stylesheets/css/"
-    FILES="css brand.css"
-    for file in ${FILES} ; do
-        becho "    [BUILD]: lungo.icon.$file"
-        cp $DIR"Lungo.widgets.icon."$file $PACKAGE'lungo.icon.'$file
-    done
-
-    FILES="default.css"
-    for file in ${FILES} ; do
-        becho "    [BUILD]: lungo.theme.$file"
-        cp $DIR"Lungo.theme."$file $PACKAGE'lungo.theme.'$file
-    done
-
-    DIR=$LUNGO_SOURCES"stylesheets/"
-    FILES="lungo.theme.default.styl vendor.styl"
-    for file in ${FILES} ; do
-        becho "    [COPY]: $file"
-        cp $DIR$file $PACKAGE_THEME$file
-    done
 decho "============================ /LUNGO COMPILER ============================"

@@ -2,84 +2,58 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:package.json>',
+    pkg: '<json:packages/lungo/component.json>',
 
     meta: {
         file: "lungo",
-        name: 'JavaScript Hooker',
-        banner: '/*! <%= meta.name %> - <%= grunt.template.today("m/d/yyyy") %> */'
+        banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("m/d/yyyy") %>\n' +
+                '   <%= pkg.homepage %>\n' +
+                '   Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>' +
+                ' - Licensed <%= _.pluck(pkg.license, "type").join(", ") %> */'
     },
 
     resources: {
-        coffee: ['src/**/*.coffee'],
-        stylus: ['stylesheets/**/*.styl'],
-
-        js: ['build/src/**/*.js'],
-        css: ['src/**/*.coffee']
-    },
-
-
-    coffee: {
-      app: {
-        src: ['<config:resources.coffee>'],
-        dest: 'build',
-        options: {
-            bare: true,
-            preserve_dirs: true
-            // base_path: 'javascript'
-        }
-      }
+        stylesheets: ['src/**/*.styl']
     },
 
     stylus: {
       compile: {
-        options: {
-          compress: true
-          // paths: ['path/to/import', 'another/to/import']
-        },
+        options: { compress: true, paths: ['src/stylesheets/import'] },
         files: {
-          'dist/<%=meta.file%>.css': ['stylesheets/**/*.styl']
+          'packages/lungo/<%=meta.file%>.css': ['src/**/Lungo.*.styl']
         }
       },
       flatten: {
-        options: {
-          flatten: true
-        },
+        options: { flatten: true },
         files: {
-          'build/css/theme.default.css': ['stylesheets/**/*.styl']
+          'packages/lungo/**.css': ['src/**/theme**.styl']
         }
       }
     },
 
     concat: {
       js: {
-        src: ['<banner>', '<config:resources.js>'],
-        dest: 'dist/<%=meta.file%>.js'
+        src: ['<config:resources.js>'],
+        dest: 'package/<%=meta.file%>.js'
       }
     },
-
 
     min: {
       js: {
-        src: ['<banner>', 'dist/<%=meta.file%>.js'],
-        dest: 'dist/<%=meta.file%>.min.js'
+        src: ['<banner>', 'package/<%=meta.file%>.js'],
+        dest: 'package/<%=meta.file%>.min.js'
       }
     },
 
-
     watch: {
-      files: ['<config:resources.coffee>', '<config:resources.stylus>'],
-      tasks: 'coffee concat'
-    },
-
-
-    uglify: {}
+      files: ['<config:resources.stylesheets>'],
+      tasks: 'stylus'
+    }
   });
 
-  grunt.loadNpmTasks('grunt-coffee');
   grunt.loadNpmTasks('grunt-contrib-stylus');
 
   // Default task.
-  grunt.registerTask('default', 'coffee stylus concat min');
+  grunt.registerTask('default', 'stylus');
 
 };
