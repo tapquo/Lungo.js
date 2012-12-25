@@ -1,0 +1,23 @@
+{
+  "name": "QuoJS",
+  "description": "Micro #JavaScript Library for Mobile Devices",
+  "version": "2.2.0",
+  "homepage": "http://quojs.tapquo.com",
+  "main": [
+    "quo.js"
+  ],
+  "keywords": [
+    "mobile"
+  ],
+  "license": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "_id": "QuoJS@2.2.0",
+  "readme": "ERROR: No README.md file found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soyjavi/package-quojs.git"
+  }
+}
