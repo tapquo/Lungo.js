@@ -64,10 +64,6 @@ module.exports = function(grunt) {
       js: {
         src: ['<banner>', 'build/<%=meta.file%>.js'],
         dest: 'packages/<%=meta.file%>/<%=meta.file%>.js'
-      },
-      js: {
-        src: ['<banner>', 'build/<%=meta.file%>.device.js'],
-        dest: 'packages/<%=meta.file%>.device/<%=meta.file%>.device.js'
       }
     },
 

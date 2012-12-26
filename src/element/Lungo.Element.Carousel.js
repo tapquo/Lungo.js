@@ -27,10 +27,6 @@ Lungo.Element.Carousel = function(element, callback) {
         deltaX: 0
     };
 
-    var position = function() {
-        return _instance.index;
-    };
-
     var prev = function(delay) {
         if (_instance.index) {
             _slide(_instance.index-1, _instance.speed);
@@ -43,6 +39,14 @@ Lungo.Element.Carousel = function(element, callback) {
         } else {
             _slide(0, _instance.speed);
         }
+    };
+
+    var position = function() {
+        return _instance.index;
+    };
+
+    var refresh = function() {
+        _setup();
     };
 
     var _setup = function() {
@@ -152,6 +156,7 @@ Lungo.Element.Carousel = function(element, callback) {
     return {
         prev: prev,
         next: next,
-        position: position
+        position: position,
+        refresh: refresh
     };
 };
