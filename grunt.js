@@ -24,21 +24,28 @@ module.exports = function(grunt) {
         device: ['src/device/*.js'],
 
         javascripts: ['src/**/*.js'],
-        stylesheets: ['src/**/*.styl']
+        stylesheets: [
+            'src/**/Lungo.base.styl',
+            'src/**/Lungo.layout.styl',
+            'src/**/Lungo.layout.*.styl',
+            'src/**/Lungo.widgets.styl',
+            'src/**/Lungo.widgets.*.styl'],
+        icons: ['src/**/Lungo.icon**.styl'],
+        themes: ['src/**/theme**.styl']
     },
 
     stylus: {
-      compile: {
+      stylesheets: {
         options: { compress: true, paths: ['src/stylesheets/import'] },
-        files: {
-          'packages/<%=meta.file%>/<%=meta.file%>.css': ['src/**/Lungo.*.styl']
-        }
+        files: { 'packages/<%=meta.file%>/<%=meta.file%>.css': '<config:resources.stylesheets>' }
+      },
+      icons: {
+        options: { compress: true },
+        files: { 'packages/lungo/**.css': '<config:resources.icons>' }
       },
       flatten: {
         options: { flatten: true },
-        files: {
-          'packages/lungo/**.css': ['src/**/theme**.styl']
-        }
+        files: { 'packages/lungo/**.css': '<config:resources.themes>' }
       }
     },
 
@@ -57,6 +64,10 @@ module.exports = function(grunt) {
       js: {
         src: ['<banner>', 'build/<%=meta.file%>.js'],
         dest: 'packages/<%=meta.file%>/<%=meta.file%>.js'
+      },
+      js: {
+        src: ['<banner>', 'build/<%=meta.file%>.device.js'],
+        dest: 'packages/<%=meta.file%>.device/<%=meta.file%>.device.js'
       }
     },
 
