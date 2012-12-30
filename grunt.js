@@ -21,7 +21,6 @@ module.exports = function(grunt) {
           'src/element/*.js',
           'src/router/Lungo.Router.js', 'src/router/Lungo.Router.History.js',
           'src/view/*.js'],
-        device: ['src/device/*.js'],
 
         javascripts: ['src/**/*.js'],
         stylesheets: [
@@ -53,10 +52,6 @@ module.exports = function(grunt) {
       js: {
         src: ['<banner>', '<config:resources.core>', '<config:resources.modules>'],
         dest: 'build/<%=meta.file%>.js'
-      },
-      device: {
-        src: ['<banner>', '<config:resources.device>'],
-        dest: 'build/<%=meta.file%>.device.js'
       }
     },
 
@@ -67,6 +62,15 @@ module.exports = function(grunt) {
       }
     },
 
+    copy: {
+      target: {
+        files: { 'packages/lungo.theme/': ['<config:resources.themes>'] }
+      },
+      imports: {
+        files: { 'packages/lungo.theme/import/': ['src/**/vendor.styl'] }
+      }
+    },
+
     watch: {
       files: ['<config:resources.javascripts>', '<config:resources.stylesheets>'],
       tasks: 'concat min stylus'
@@ -74,8 +78,9 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
-  grunt.registerTask('default', 'concat min stylus');
+  grunt.registerTask('default', 'concat min stylus copy');
 
 };
