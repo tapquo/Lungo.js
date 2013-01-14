@@ -42,8 +42,8 @@ footer ~ article{bottom:44px}
 }
 section.aside:not(.small){-webkit-transform:translateX(264px);-moz-transform:translateX(264px);transform:translateX(264px)}
 section.aside.small{-webkit-transform:translateX(64px);-moz-transform:translateX(64px);transform:translateX(64px)}
-section.aside.right{-webkit-transform:translateX(-ASIDE_WIDTH);-moz-transform:translateX(-ASIDE_WIDTH);transform:translateX(-ASIDE_WIDTH);}
-section.aside.right.small{-webkit-transform:translateX(-ASIDE_WIDTH_SMALL);-moz-transform:translateX(-ASIDE_WIDTH_SMALL);transform:translateX(-ASIDE_WIDTH_SMALL)}
+section.aside.right{-webkit-transform:translateX(-264px);-moz-transform:translateX(-264px);transform:translateX(-264px);}
+section.aside.right.small{-webkit-transform:translateX(-64px);-moz-transform:translateX(-64px);transform:translateX(-64px)}
 aside{position:absolute;top:0;bottom:0;height:inherit;width:264px;display:none;z-index:-1;}
 aside.right{right:0}
 aside.show{z-index:0;display:block}
@@ -52,8 +52,8 @@ aside footer{position:absolute;bottom:0}
 aside.small{width:64px;}
 aside.small nav{width:64px;text-align:center;}
 aside.small nav a{display:block;padding:0;width:64px;height:64px;}
-aside.small nav a .icon{position:absolute;width:inherit;line-height:64px}
-aside.small nav a .tag{position:relative;top:-54px;right:6px}
+aside.small nav a .icon{position:absolute;width:inherit;font-size:48px;line-height:56px}
+aside.small nav a .tag{position:relative;top:-64px;right:-18.823529411764707px}
 aside.small nav a:first-child{margin-top:8px}
 
 .row,.rows{width:100%;margin:0 auto;*zoom:1;}
