@@ -12,14 +12,14 @@
 
 section.aside
   &:not(.small)
-    transform( translateX(ASIDE_WIDTH) )
+    transform translateX(ASIDE_WIDTH)
   &.small
-    transform( translateX(ASIDE_WIDTH_SMALL) )
+    transform translateX(ASIDE_WIDTH_SMALL)
 
   &.right
-    transform( translateX(-ASIDE_WIDTH) )
+    transform translateX(-(ASIDE_WIDTH))
     &.small
-      transform( translateX(-ASIDE_WIDTH_SMALL) )
+      transform translateX(-(ASIDE_WIDTH_SMALL))
 
 aside
   position: absolute
@@ -59,12 +59,13 @@ aside
         & .icon
           position: absolute
           width: inherit
-          line-height: ASIDE_WIDTH_SMALL
+          font-size: ASIDE_SMALL_ICON
+          line-height: (ASIDE_WIDTH_SMALL - 8)
 
         & .tag
           position: relative
-          top: -54px
-          right: 6px
+          top: -(ASIDE_WIDTH_SMALL)
+          right: -(ASIDE_WIDTH_SMALL / 3.4)
 
         &:first-child
           margin-top: 8px
