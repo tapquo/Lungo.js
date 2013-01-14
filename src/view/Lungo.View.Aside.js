@@ -77,16 +77,16 @@ Lungo.View.Aside = (function(lng, undefined) {
 
     var _findAside = function(aside_id) {
         var aside = null;
-        var asides_length = lng.Element.Cache.asides.length;
+        var asides = lng.dom(ELEMENT.ASIDE);
 
-        if (asides_length == 1) {
-            var current_id = '#' + lng.Element.Cache.asides[0].id ;
+        if (asides.length == 1) {
+            var current_id = '#' + asides[0].id ;
             if (current_id == aside_id) {
-                aside = lng.dom(lng.Element.Cache.asides[0]);
+                aside = lng.dom(asides[0]);
             }
         }
-        else if (asides_length > 1) {
-            aside = lng.Element.Cache.asides.siblings(ELEMENT.ASIDE + aside_id);
+        else if (asides.length > 1) {
+            aside = asides.siblings(ELEMENT.ASIDE + aside_id);
         }
 
         return aside;
