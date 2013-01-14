@@ -8,12 +8,11 @@
  */
 
 Lungo.Element.Cache = {
-    sections: null,
+    // sections: null,
     section: null,
 
     article: null,
 
-    asides: null,
     aside: null,
 
     navigation: null

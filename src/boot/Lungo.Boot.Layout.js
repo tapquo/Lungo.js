@@ -21,7 +21,6 @@ Lungo.Boot.Layout = (function(lng, undefined) {
      *
      */
     var init = function() {
-        lng.Element.Cache.asides = lng.dom(ELEMENT.ASIDE);
         lng.Fallback.fixPositionInAndroid();
 
         _initFirstSection();
