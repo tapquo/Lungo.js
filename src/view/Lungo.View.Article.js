@@ -47,18 +47,8 @@ Lungo.View.Article = (function(lng, undefined) {
     };
 
     var switchReferenceItems = function(article_id, section) {
-        article_id = article_id.replace('#', '');
-
-        var links = section.find(SELECTORS.REFERENCE_LINK);
-
-        for (var i = 0, len = links.length; i < len; i++) {
-            var link = lng.dom(links[i]);
-            if (link.data(ATTRIBUTE.ARTICLE) === article_id) {
-                link.show();
-            } else {
-                link.hide();
-            }
-        }
+        var reference = "[data-article=" + article_id.replace('#', '') + "]";
+        section.find(SELECTORS.REFERENCE_LINK).hide().siblings(reference).show();
     };
 
     return {

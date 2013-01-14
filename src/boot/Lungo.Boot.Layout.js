@@ -33,6 +33,8 @@ Lungo.Boot.Layout = (function(lng, undefined) {
         lng.Element.Cache.section = section;
         lng.Element.Cache.article = section.children(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
 
+        lng.View.Article.switchReferenceItems(lng.Element.Cache.article.attr("id"), section);
+
         var section_id = '#' + section.attr(ATTRIBUTE.ID);
         lng.Router.History.add(section_id);
     };
@@ -51,7 +53,6 @@ Lungo.Boot.Layout = (function(lng, undefined) {
             element.append(ELEMENT.LIST);
         }
     };
-
 
     var _scrollFix = function(element) {
         element[0].addEventListener('touchstart', function(event) {
