@@ -61,7 +61,6 @@ Lungo.Router = (function(lng, undefined) {
         article_id = lng.Core.parseUrl(article_id);
 
         var current =  lng.Element.Cache.article;
-
         if (_notCurrentTarget(article_id, current)) {
             section(section_id);
             var target = lng.Element.Cache.section.find(ELEMENT.ARTICLE + article_id);
@@ -117,6 +116,7 @@ Lungo.Router = (function(lng, undefined) {
         _assignTransition(target, target.data('transition-origin'));
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Cache.section = target;
+        lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
 
         _sectionTriggers(current, target);
     };
