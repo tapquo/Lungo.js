@@ -1,9 +1,5 @@
 var App = (function(lng, undefined) {
 
-    eventConsole = function(event) {
-        $$('#touchevents-console').html($$(event.target).data('event'));
-    };
-
     triggerCapture = function(event) {
         event.stopPropagation();
         lng.Notification.success("Event: " + event.type, "Layout events manager", "info", 2);
@@ -23,7 +19,6 @@ var App = (function(lng, undefined) {
     };
 
     return {
-        eventConsole: eventConsole,
         triggerCapture: triggerCapture,
         environment: environment
     };
