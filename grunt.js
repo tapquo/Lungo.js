@@ -24,12 +24,12 @@ module.exports = function(grunt) {
 
         javascripts: ['src/**/*.js'],
         stylesheets: [
-            'src/**/Lungo.base.styl',
-            'src/**/Lungo.layout.styl',
-            'src/**/Lungo.layout.*.styl',
-            'src/**/Lungo.widgets.styl',
-            'src/**/Lungo.widgets.*.styl'],
-        icons: ['src/**/Lungo.icon**.styl'],
+            'src/**/lungo.base.styl',
+            'src/**/lungo.layout.styl',
+            'src/**/lungo.layout.*.styl',
+            'src/**/lungo.widgets.styl',
+            'src/**/lungo.widgets.*.styl'],
+        icons: ['src/**/lungo.icon**.styl'],
         themes: ['src/**/theme**.styl']
     },
 
