@@ -41,6 +41,7 @@ Lungo.Element.Pull = function(element_selector, config_data) {
     var _moveElementTo = function(posY, animate) {
         var newPos = posY > MAX_HEIGHT ? MAX_HEIGHT : posY;
         if(animate) ELEMENT.addClass('pull');
+
         ELEMENT.style('-webkit-transform', 'translate(0, ' + (newPos) + 'px)');
         if(animate) {
             setTimeout(function() {
