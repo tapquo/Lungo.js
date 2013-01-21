@@ -14,6 +14,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
     var SELECTORS = {
+        HREF_ASIDE: 'header a[href][data-router=aside]',
         HREF_TARGET: 'a[href][data-router]',
         HREF_TARGET_FROM_ASIDE: 'aside a[href][data-router]',
         INPUT_CHECKBOX: 'input[type=range].checkbox'
@@ -26,6 +27,9 @@ Lungo.Boot.Events = (function(lng, undefined) {
      *
      */
     var init = function() {
+        lng.dom(SELECTORS.HREF_ASIDE).each(function() {
+            lng.View.Aside.suscribeEvents(this);
+        });
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         // lng.dom(SELECTORS.INPUT_CHECKBOX).tap(_changeCheckboxValue);
