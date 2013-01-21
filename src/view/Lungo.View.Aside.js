@@ -12,7 +12,6 @@ Lungo.View.Aside = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
-    var MIN_XDIFF = parseInt(document.body.getBoundingClientRect().width / 3, 10);
 
     /**
      * Toggle an aside element
@@ -76,36 +75,38 @@ Lungo.View.Aside = (function(lng, undefined) {
         }
     };
 
-    var suscribeEvents = function(href) {
+    var suscribeEvents = function(hrefs) {
+        var MIN_XDIFF = parseInt(document.body.getBoundingClientRect().width / 3, 10);
+        hrefs.each(function() {
+            var STARTED = false;
+            var a = lng.dom(this);
+            var section = a.closest("section");
+            var aside = lng.dom(a.attr("href"));
 
-        var STARTED = false;
-        var a = lng.dom(href);
-        var section = a.closest("section");
-        var aside = lng.dom(a.attr("href"));
-
-        section.swiping(function(gesture) {
-            if(!section.hasClass("aside")) {
-                var xdiff =  gesture.currentTouch.x - gesture.iniTouch.x;
-                var ydiff =  Math.abs(gesture.currentTouch.y - gesture.iniTouch.y);
-                STARTED = STARTED ? true : xdiff > 3*ydiff && xdiff < 50;
-                if(STARTED) {
-                    xdiff = xdiff > 256 ? 256 : xdiff < 0 ? 0 : xdiff;
-                    aside.addClass(CLASS.SHOW);
-                    section.vendor('transform', 'translateX(' + xdiff + 'px)');
-                    section.vendor('transition-duration', '0s');
-                } else {
-                    section.attr('style', '');
+            section.swiping(function(gesture) {
+                if(!section.hasClass("aside")) {
+                    var xdiff =  gesture.currentTouch.x - gesture.iniTouch.x;
+                    var ydiff =  Math.abs(gesture.currentTouch.y - gesture.iniTouch.y);
+                    STARTED = STARTED ? true : xdiff > 3*ydiff && xdiff < 50;
+                    if(STARTED) {
+                        xdiff = xdiff > 256 ? 256 : xdiff < 0 ? 0 : xdiff;
+                        aside.addClass(CLASS.SHOW);
+                        section.vendor('transform', 'translateX(' + xdiff + 'px)');
+                        section.vendor('transition-duration', '0s');
+                    } else {
+                        section.attr('style', '');
+                    }
                 }
-            }
-        });
+            });
 
-        section.swipe(function(gesture) {
-            var diff = gesture.currentTouch.x - gesture.iniTouch.x;
-            var ydiff =  Math.abs(gesture.currentTouch.y - gesture.iniTouch.y);
-            section.attr('style', '');
-            if(diff > MIN_XDIFF && STARTED) show(aside);
-            else hide(aside);
-            STARTED = false;
+            section.swipe(function(gesture) {
+                var diff = gesture.currentTouch.x - gesture.iniTouch.x;
+                var ydiff =  Math.abs(gesture.currentTouch.y - gesture.iniTouch.y);
+                section.attr('style', '');
+                if(diff > MIN_XDIFF && STARTED) show(aside);
+                else hide(aside);
+                STARTED = false;
+            });
         });
     };
 
