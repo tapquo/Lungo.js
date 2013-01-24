@@ -522,9 +522,6 @@ form input[type=range],
   -webkit-box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
   -moz-box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
   box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
-  -webkit-border-radius: 1px;
-  -moz-border-radius: 1px;
-  border-radius: 1px;
 }
 form input[type=range]:not(.checkbox),
 .form input[type=range]:not(.checkbox) {
@@ -541,21 +538,20 @@ form input[type=range].checkbox,
 }
 form input[type=range].checkbox.active,
 .form input[type=range].checkbox.active {
+  color: #fff;
   background-color: #03b1ff;
 }
 form input[type=range]::-webkit-slider-thumb,
 .form input[type=range]::-webkit-slider-thumb {
-  -webkit-border-radius: FORM-border-radius;
-  -moz-border-radius: FORM-border-radius;
-  border-radius: FORM-border-radius;
-  background: #eee;
-  -webkit-box-shadow: inset 0 0 1px #bbb;
-  -moz-box-shadow: inset 0 0 1px #bbb;
-  box-shadow: inset 0 0 1px #bbb;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #e7eae2;
+  border: solid 1px #d0d4c6;
 }
 form input[type=range]::-webkit-slider-thumb::after,
 .form input[type=range]::-webkit-slider-thumb::after {
-  background: #fff;
+  background: #d0d4c6;
 }
 form .progress .bar,
 .form .progress .bar {
