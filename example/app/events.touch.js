@@ -5,10 +5,10 @@
     "pinch", "pinchIn", "pinchOut",
     "drag", "dragLeft", "dragRight", "dragUp", "dragDown"].forEach(function(type) {
     $$("section#touchevents #gestures").on(type, function(event) {
-        $$(this).siblings('#console').append(' | ' + type);
+        $$(this).siblings('.console.output').append(' | ' + type);
     });
 });
 
 $$("[data-action=clean_console]").tap(function(event) {
-    $$('#console').html("");
+    $$('.console.output').html("");
 });
