@@ -70,7 +70,46 @@
             </nav>
         </header>
 
-        <article id="main-article" class="active list indented scroll">
+         <article id="form-extras" class="active scroll">
+        <form>
+            <fieldset data-icon="search">
+                <input type="search" placeholder="Search..."/>
+            </fieldset>
+        </form>
+        <form  class="margined">
+            <div class="six columns">
+                <label>Address</label>
+                <input type="text" placeholder="placeholder"/>
+            </div>
+            <div class="three columns right">
+                <label>Pin Code</label>
+                <input type="password" value="value" disabled/>
+            </div>
+
+            <label>Select your skill</label>
+            <label class="select">
+                <select class="custom">
+                    <option value="1">HTML5 Jedi</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </label>
+
+            <label>Progress</label>
+            <div id="progress-normal" data-progress="25%"></div>
+
+            <label>Range</label>
+            <input type="range" placeholder="type your name" />
+
+            <label>Checkbox</label>
+            <br/>
+            <input type="range" min="0" max="1" class="checkbox active" value="1">
+
+            <a href="#form-normal" data-router="article" class="button anchor accept" data-label="Return to normal Elements"></a>
+        </form>
+    </article>
+
+        <article id="main-article" class="activse list indented scroll">
             <ul>
                 <li class="dark">
                     <strong>

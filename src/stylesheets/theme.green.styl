@@ -285,7 +285,6 @@ form, .form
 
   & input[type=range]
     box-shadow  FORM_shadow_form
-    border-radius FORM_radius
 
     &:not(.checkbox)
       background-color: #ddd
@@ -293,18 +292,19 @@ form, .form
         background-color: THEME_light
 
     &.checkbox
-      background-color: #aaaaaa
+      background-color: #aaa
       color: rgba(255,255,255,0.6)
       &.active
+        color: #fff
         background-color: THEME_light
 
     &::-webkit-slider-thumb
-      border-radius: FORM-border-radius
+      border-radius: 2px
       background: #eee
-      box-shadow(inset 0 0 1px #bbb)
-
+      background-color: lighten(FORM_border_color, 50%)
+      border: solid 1px FORM_border_color
     &::-webkit-slider-thumb::after
-      background: #fff
+      background: FORM_border_color
 
   & .progress
     & .bar

@@ -24,7 +24,7 @@ form, .form
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
     display: block
     width: 100%
-    padding: 6px
+    padding: 0px 6px
     height: FORM_INPUT_HEIGHT
     transition all 0.15s linear
     font-family: inherit
@@ -90,41 +90,44 @@ form, .form
         top: -1px
 
     &.checkbox
-      width: 70px
+      width: 64px
       height: FORM_INPUT_HEIGHT
       line-height: FORM_INPUT_HEIGHT
-      padding: 1px 2px
-      font-family:'lungojsicon'
+      padding: 0px 1px
+      border-radius 2px
 
       &:after
-        top: -(FORM_INPUT_HEIGHT - 1)
+        top: -(FORM_INPUT_HEIGHT - 2)
         position: relative
-        content: "\0055"
+        content: "OFF"
         float: right
         padding: 0 8px
+        font-weight: 700
+        font-size: 12px
+        line-height: (FORM_INPUT_HEIGHT - 2)
 
       &.active:after
         float: left
-        content: "\0051"
+        content: "ON"
 
     &::-webkit-slider-thumb
-        -webkit-appearance: none
-        width: FORM_INPUT_HEIGHT
+        position: relative
+        width: 24px
         height: 24px
-        position:relative
-        margin:2px 2px 2px 2px
-        border: none
+        margin: 2px
+        -webkit-appearance: none
 
     &::-webkit-slider-thumb::after
-      width:12px
-      height:12px
-      display:block
+      SIZE = 6px
+      width: SIZE
+      height: SIZE
+      display: block
       content: ""
       position: relative
-      border-radius: 8px
+      border-radius (SIZE / 2)
       z-index: 9
-      top: 6px
-      left: 9px
+      top: 8.5px
+      left: 8.5px
 
   & .progress
     width: 100%

@@ -29,7 +29,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
     var init = function() {
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
-        // lng.dom(SELECTORS.INPUT_CHECKBOX).tap(_changeCheckboxValue);
+        lng.dom(SELECTORS.INPUT_CHECKBOX).tap(_changeCheckboxValue);
         lng.View.Aside.suscribeEvents(lng.dom(SELECTORS.HREF_ASIDE));
     };
 
