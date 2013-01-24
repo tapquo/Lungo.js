@@ -6,11 +6,10 @@
  *
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 /* -------------------------- THEME -------------------------- */
 body {
   background-color: #222;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 13px;
   line-height: 1.3em;
@@ -24,7 +23,7 @@ a.theme {
 .theme:active,
 li.theme:active,
 a.theme:active {
-  background-color: #0093d5;
+  background-color: #bfbfbf;
 }
 [data-control="pull"] {
   color: #666;
@@ -34,10 +33,10 @@ a.theme:active {
 }
 /* -------------------------- LAYOUT COLORS -------------------------- */
 section > header {
-  background-color: #0093d5;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
+  background-color: #bfbfbf;
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #c9c9c9, inset 0 -1px 0 #a2a2a2;
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #c9c9c9, inset 0 -1px 0 #a2a2a2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #c9c9c9, inset 0 -1px 0 #a2a2a2;
   color: #fff;
 }
 section > footer,
@@ -53,7 +52,7 @@ section > [data-control="pull"] {
 }
 section > article.splash,
 section > [data-control="pull"].splash {
-  background: #0093d5;
+  background: #bfbfbf;
   color: #fff;
 }
 section.aside {
@@ -84,22 +83,22 @@ section > header > nav a {
   color: #fff;
 }
 section > header > nav.box:not(.right) a {
-  -webkit-box-shadow: 1px 0 0 #03b1ff, inset -1px 0 0 #007db5;
-  -moz-box-shadow: 1px 0 0 #03b1ff, inset -1px 0 0 #007db5;
-  box-shadow: 1px 0 0 #03b1ff, inset -1px 0 0 #007db5;
+  -webkit-box-shadow: 1px 0 0 #c9c9c9, inset -1px 0 0 #a2a2a2;
+  -moz-box-shadow: 1px 0 0 #c9c9c9, inset -1px 0 0 #a2a2a2;
+  box-shadow: 1px 0 0 #c9c9c9, inset -1px 0 0 #a2a2a2;
 }
 section > header > nav.box.right a {
-  -webkit-box-shadow: -1px 0 0 #03b1ff, inset 1px 0 0 #007db5;
-  -moz-box-shadow: -1px 0 0 #03b1ff, inset 1px 0 0 #007db5;
-  box-shadow: -1px 0 0 #03b1ff, inset 1px 0 0 #007db5;
+  -webkit-box-shadow: -1px 0 0 #c9c9c9, inset 1px 0 0 #a2a2a2;
+  -moz-box-shadow: -1px 0 0 #c9c9c9, inset 1px 0 0 #a2a2a2;
+  box-shadow: -1px 0 0 #c9c9c9, inset 1px 0 0 #a2a2a2;
 }
 section > header > nav.box a:active {
-  background: #007db5;
+  background: #a2a2a2;
 }
 section > nav.groupbar > a.active {
-  -webkit-box-shadow: inset 0 -3px 0 #0093d5;
-  -moz-box-shadow: inset 0 -3px 0 #0093d5;
-  box-shadow: inset 0 -3px 0 #0093d5;
+  -webkit-box-shadow: inset 0 -3px 0 #bfbfbf;
+  -moz-box-shadow: inset 0 -3px 0 #bfbfbf;
+  box-shadow: inset 0 -3px 0 #bfbfbf;
 }
 section > footer > nav > a,
 nav.groupbar > a {
@@ -117,9 +116,9 @@ section > footer > nav > a {
 section > footer > nav > a.active {
   color: #fff;
   background-color: #1d1d1d;
-  -webkit-box-shadow: inset 0 3px 0 #0093d5;
-  -moz-box-shadow: inset 0 3px 0 #0093d5;
-  box-shadow: inset 0 3px 0 #0093d5;
+  -webkit-box-shadow: inset 0 3px 0 #bfbfbf;
+  -moz-box-shadow: inset 0 3px 0 #bfbfbf;
+  box-shadow: inset 0 3px 0 #bfbfbf;
 }
 aside nav a.active .icon {
   color: #fff;
@@ -180,7 +179,7 @@ section .list li.theme,
 section .list li a.theme,
 section .list li.active,
 section .list li a.active {
-  background: #03b1ff;
+  background: #c9c9c9;
 }
 section .list li.light,
 section .list li a.light {
@@ -234,7 +233,7 @@ aside .list li:not(:last-child) {
   border-bottom: solid 1px #141414;
 }
 aside .list li.active {
-  background: #0093d5;
+  background: #bfbfbf;
   border-color: transparent;
 }
 aside .list li.active strong,
@@ -258,7 +257,7 @@ aside .list li .icon {
   font-weight: 700 !important;
 }
 .tag.count {
-  background-color: #0093d5;
+  background-color: #bfbfbf;
 }
 .tag header .count {
   background-color: THEME-dark !important;
@@ -288,7 +287,7 @@ footer .tag {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
-  color: #007db5 !important;
+  color: #a2a2a2 !important;
   -webkit-border-radius: 0px !important;
   -moz-border-radius: 0px !important;
   border-radius: 0px !important;
@@ -336,7 +335,7 @@ button[disabled] {
 button,
 .button,
 .tag {
-  background-color: #007db5;
+  background-color: #a2a2a2;
 }
 button.secondary,
 .button.secondary,
@@ -479,7 +478,7 @@ form select:focus,
 form textarea:focus,
 .form textarea:focus {
   background: #fafafa;
-  border-color: #0093d5;
+  border-color: #bfbfbf;
   color: rgba(0,0,0,0.75);
 }
 form input[type="text"][disabled],
@@ -532,7 +531,7 @@ form input[type=range]:not(.checkbox),
 }
 form input[type=range]:not(.checkbox):active,
 .form input[type=range]:not(.checkbox):active {
-  background-color: #03b1ff;
+  background-color: #c9c9c9;
 }
 form input[type=range].checkbox,
 .form input[type=range].checkbox {
@@ -541,7 +540,7 @@ form input[type=range].checkbox,
 }
 form input[type=range].checkbox.active,
 .form input[type=range].checkbox.active {
-  background-color: #03b1ff;
+  background-color: #c9c9c9;
 }
 form input[type=range]::-webkit-slider-thumb,
 .form input[type=range]::-webkit-slider-thumb {
@@ -563,5 +562,5 @@ form .progress .bar,
 }
 form .progress .bar .value,
 .form .progress .bar .value {
-  background-color: #03b1ff;
+  background-color: #c9c9c9;
 }
