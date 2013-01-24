@@ -1,4 +1,4 @@
-# LungoJS
+# Lungo
 ### A framework for developers who want to design, build and share cross device apps.
 
 ## Lungo Framework uses actual & future features of advanced Web Development.
@@ -21,14 +21,14 @@ Is known that create apps for each platform is expensive, this situation is incr
 The idea of Lungo arose earlier this year, the author [Javi Jiménez Villar](http://twitter.com/soyjavi) saw hot existing Mobile Frameworks at that time were not powerful and not using the features of HTML5. If you want to know more about the project you have some interesting links:
 
 - Visit Lungo [Site](http://lungo.tapquo.com/)
-- [Documentation](http://lungo.tapquo.com/docs/designers)
-- [API](http://lungo.tapquo.com/docs/developers)
+- How to [Prototype](http://lungo.tapquo.com/docs/designers)
+- [JavaScript API](http://lungo.tapquo.com/docs/developers)
 
 ## Credits
 Created by [Javier Jiménez](http://twitter.com/soyjavi).
 Maintained by [Javier Jiménez](http://twitter.com/soyjavi) & [Guillermo Pascual](http://twitter.com/pasku1).
 
-Copyright (c) 2011-2012 by Tapquo Inc.
+Copyright (c) 2011-2013 by Tapquo Inc.
 
 ## Licensing Options
 Lungo is licensed under free commercial and open source licenses for
