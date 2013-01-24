@@ -76,7 +76,7 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: ['<config:resources.javascripts>', '<config:resources.stylesheets>'],
+      files: ['<config:resources.javascripts>', '<config:resources.stylesheets>', '<config:resources.themes>'],
       tasks: 'concat min stylus copy'
     }
   });
