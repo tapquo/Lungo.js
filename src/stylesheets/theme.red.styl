@@ -175,7 +175,7 @@ nav
 
 
 /* -------------------------- TAG -------------------------- */
-.tag
+.tag:not(.icon)
   color: #fff
   border-radius 2px
   font-weight: 700 !important
@@ -228,7 +228,7 @@ a.button, button
   &[disabled]
     background-color: black
 
-button, .button, .tag
+button, .button, .tag:not(.icon)
   &
     background-color: THEME_dark
   &.secondary
