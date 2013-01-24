@@ -25,7 +25,7 @@ section[data-transition="cover"].show,section[data-transition="cover"].hide{-web
 section[data-transition="fade"]{opacity:0;}
 section[data-transition="fade"]:first-child,section[data-transition="fade"].show{opacity:1}
 section[data-transition="fade"]:hide{opacity:0}
-header,footer{position:absolute;left:0;width:100%;display:block;z-index:2}
+header,footer{position:absolute;left:0;width:100%;display:block;z-index:1}
 header{top:0;height:44px;line-height:44px;}
 header .title{margin-left:4px;float:left;z-index:-1;font-size:1.44em;}
 header .title img{height:24px}
@@ -100,7 +100,7 @@ aside.small nav a:first-child{margin-top:8px}
 .list .right .icon,.list small .icon{height:13px !important;width:13px !important;margin-right:1px !important;font-size:1.2em !important;line-height:1.1em}
 .list.indented li{margin-bottom:10px}
 
-nav.groupbar,footer nav{display:-webkit-box;display:-moz-box;display:box;-webkit-box-pack:justify;-moz-box-pack:justify;box-pack:justify;}
+nav.groupbar,footer nav{display:-webkit-box;display:-moz-box;display:box;-webkit-box-pack:justify;-moz-box-pack:justify;box-pack:justify;width:100%;}
 nav.groupbar > a,footer nav > a{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1}
 header nav a{padding:0 11px !important;z-index:1000;float:left}
 header nav a.button{margin:6px 2px 0 2px;font-size:.9em;line-height:30px;}
@@ -114,7 +114,7 @@ header nav abbr{font-size:.9em;font-weight:700}
 header nav .icon ~ abbr{margin-left:4px;float:right}
 header nav .loading{margin-top:.5em;font-size:1.6em;}
 header nav .loading + .icon{display:none}
-nav.groupbar{position:absolute;top:44px;height:30px;width:100%;z-index:2;line-height:30px;}
+nav.groupbar{position:relative;top:44px;height:30px;width:100%;z-index:2;line-height:30px;}
 nav.groupbar > a{padding:0;margin:0;height:30px !important;display:block;text-align:center;}
 nav.groupbar > a .icon{font-size:1em;margin-right:2px}
 nav.groupbar > a .tag{position:relative;top:-1px;left:2px}
