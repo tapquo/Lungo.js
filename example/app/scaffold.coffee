@@ -46,7 +46,7 @@ section_main =
         nav:
             position: "left"
             items: [
-                href:"back", icon:"home", label:"return"
+                href:"Back", icon:"home", label:"return"
             ]
 
     footer:
