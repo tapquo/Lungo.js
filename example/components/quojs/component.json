@@ -1,0 +1,12 @@
+{
+  "name": "QuoJS",
+  "description": "Micro #JavaScript Library for Mobile Devices",
+  "version": "2.3.0",
+  "homepage": "http://quojs.tapquo.com",
+  "author": {
+    "name": "Tapquo S.L.",
+    "site": "http://tapquo.com"},
+  "main": ["quo.js"],
+  "keywords": [ "mobile" ],
+  "license": [{"type": "MIT"}]
+}
