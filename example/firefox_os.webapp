@@ -3,7 +3,7 @@
   "description": "Lungo SDK Kitchen-Sink",
   "launch_path": "/index.html",
   "icons": {
-    "128": "http://lungo.tapquo.com/resources/icon-114.png"
+    "128": "http://cdn.tapquo.com/lungo/icon-114.png"
   },
   "developer": {
     "name": "Tapquo",
