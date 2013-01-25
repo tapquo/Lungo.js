@@ -28,8 +28,8 @@ section[data-transition="fade"]:hide{opacity:0}
 header,footer{position:absolute;left:0;width:100%;display:block;z-index:1}
 header{top:0;height:44px;line-height:44px;}
 header .title{margin-left:4px;float:left;z-index:-1;font-size:1.44em;}
-header .title img{height:24px}
 header .title.centered{position:absolute;left:32px;right:32px;text-align:center;display:inline-block}
+header img.title{height:26px;margin:9px auto}
 footer{bottom:0;height:44px}
 
 article{position:absolute;top:0;bottom:0;width:inherit;height:auto;visibility:hidden;display:none;z-index:0;}
@@ -103,12 +103,12 @@ aside.small nav a:first-child{margin-top:8px}
 nav.groupbar,footer nav{display:-webkit-box;display:-moz-box;display:box;-webkit-box-pack:justify;-moz-box-pack:justify;box-pack:justify;width:100%;}
 nav.groupbar > a,footer nav > a{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1}
 header nav a{padding:0 11px !important;z-index:1000;float:left}
-header nav a.button{margin:6px 2px 0 2px;font-size:.9em;line-height:30px;}
-header nav a.button > .icon{font-size:1.3em;height:18px;display:inline-block}
+header nav .button,header nav button{margin:6px 2px 0 2px;line-height:31px !important;}
+header nav .button > .icon,header nav button > .icon{font-size:1.5em;position:relative;top:3px;height:20px;width:20px;line-height:20px;display:inline-block}
 header nav.right a.button:last-child{margin-right:6px}
 header nav:not(.right) a.button:first-child{margin-left:6px}
 header nav a:not(.button){height:44px;}
-header nav a:not(.button) > .icon{font-size:1.7em}
+header nav a:not(.button) > .icon{font-size:1.8em}
 header nav .tag{position:relative;top:-12px;left:-12px;margin-right:-20px}
 header nav abbr{font-size:.9em;font-weight:700}
 header nav .icon ~ abbr{margin-left:4px;float:right}
@@ -141,7 +141,7 @@ footer nav.with-labels abbr{display:block !important;margin-top:-8px;z-index:1;f
 .framed{border:2px solid #fff}
 .round{-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}
 .block{display:block}
-.tag{display:inline-block;padding:0 3px;font-size:11px;line-height:1.3em;text-align:center}
+.tag{display:inline-block;padding:0 3px;font-size:11px !important;line-height:1.25em;height:1.35em;text-align:center}
 .margin.bottom{margin-bottom:5px}
 [data-control=carousel]{overflow:hidden;list-style:none;margin:0}
 .text.thin{font-weight:300}
@@ -169,7 +169,7 @@ footer nav.with-labels abbr{display:block !important;margin-top:-8px;z-index:1;f
 
 form label,.form label{font-size:1.1em}
 form input,.form input,form textarea,.form textarea,form select,.form select,form .progress,.form .progress{margin-bottom:8px;font-size:1.2em}
-form input[type="text"],.form input[type="text"],form input[type="password"],.form input[type="password"],form input[type="date"],.form input[type="date"],form input[type="datetime"],.form input[type="datetime"],form input[type="email"],.form input[type="email"],form input[type="number"],.form input[type="number"],form input[type="search"],.form input[type="search"],form input[type="tel"],.form input[type="tel"],form input[type="time"],.form input[type="time"],form input[type="url"],.form input[type="url"],form select,.form select,form textarea,.form textarea{display:block;width:100%;padding:6px;height:30px;-webkit-transition:all .15s linear;-moz-transition:all .15s linear;transition:all .15s linear;font-family:inherit;-webkit-appearance:none;-webkit-user-select:text;-webkit-font-smoothing:antialiased;}
+form input[type="text"],.form input[type="text"],form input[type="password"],.form input[type="password"],form input[type="date"],.form input[type="date"],form input[type="datetime"],.form input[type="datetime"],form input[type="email"],.form input[type="email"],form input[type="number"],.form input[type="number"],form input[type="search"],.form input[type="search"],form input[type="tel"],.form input[type="tel"],form input[type="time"],.form input[type="time"],form input[type="url"],.form input[type="url"],form select,.form select,form textarea,.form textarea{display:block;width:100%;padding:0 6px;height:30px;-webkit-transition:all .15s linear;-moz-transition:all .15s linear;transition:all .15s linear;font-family:inherit;-webkit-appearance:none;-webkit-user-select:text;-webkit-font-smoothing:antialiased;}
 form input[type="text"]:focus,.form input[type="text"]:focus,form input[type="password"]:focus,.form input[type="password"]:focus,form input[type="date"]:focus,.form input[type="date"]:focus,form input[type="datetime"]:focus,.form input[type="datetime"]:focus,form input[type="email"]:focus,.form input[type="email"]:focus,form input[type="number"]:focus,.form input[type="number"]:focus,form input[type="search"]:focus,.form input[type="search"]:focus,form input[type="tel"]:focus,.form input[type="tel"]:focus,form input[type="time"]:focus,.form input[type="time"]:focus,form input[type="url"]:focus,.form input[type="url"]:focus,form select:focus,.form select:focus,form textarea:focus,.form textarea:focus{outline:none !important}
 form textarea,.form textarea{min-height:64px}
 form fieldset,.form fieldset{padding:8px 8px 0 8px;}
@@ -183,11 +183,11 @@ form .select:after,.form .select:after{position:absolute;top:0;right:0;height:30
 form input[type=range],.form input[type=range]{-webkit-appearance:none;outline:none;}
 form input[type=range]:not(.checkbox),.form input[type=range]:not(.checkbox){height:15px;width:100%;padding:0;margin-top:2px;border:0;}
 form input[type=range]:not(.checkbox)::-webkit-slider-thumb,.form input[type=range]:not(.checkbox)::-webkit-slider-thumb{top:-1px}
-form input[type=range].checkbox,.form input[type=range].checkbox{width:70px;height:30px;line-height:30px;padding:1px 2px;font-family:'lungojsicon';}
-form input[type=range].checkbox:after,.form input[type=range].checkbox:after{top:-29px;position:relative;content:"\0055";float:right;padding:0 8px}
-form input[type=range].checkbox.active:after,.form input[type=range].checkbox.active:after{float:left;content:"\0051"}
-form input[type=range]::-webkit-slider-thumb,.form input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:24px;position:relative;margin:2px 2px 2px 2px;border:none}
-form input[type=range]::-webkit-slider-thumb::after,.form input[type=range]::-webkit-slider-thumb::after{width:12px;height:12px;display:block;content:"";position:relative;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;z-index:9;top:6px;left:9px}
+form input[type=range].checkbox,.form input[type=range].checkbox{width:64px;height:30px;line-height:30px;padding:0 1px;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
+form input[type=range].checkbox:after,.form input[type=range].checkbox:after{top:-28px;position:relative;content:"OFF";float:right;padding:0 8px;font-weight:700;font-size:12px;line-height:28px}
+form input[type=range].checkbox.active:after,.form input[type=range].checkbox.active:after{float:left;content:"ON"}
+form input[type=range]::-webkit-slider-thumb,.form input[type=range]::-webkit-slider-thumb{position:relative;width:24px;height:24px;margin:2px;-webkit-appearance:none}
+form input[type=range]::-webkit-slider-thumb::after,.form input[type=range]::-webkit-slider-thumb::after{width:6px;height:6px;display:block;content:"";position:relative;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;z-index:9;top:8.5px;left:8.5px}
 form .progress,.form .progress{width:100%;}
 form .progress .bar,.form .progress .bar{height:15px;line-height:15px;display:block;}
 form .progress .bar .value,.form .progress .bar .value{display:block;height:inherit;width:0%;-webkit-transition:width 350ms easeOutSine;-moz-transition:width 350ms easeOutSine;transition:width 350ms easeOutSine}
@@ -303,8 +303,8 @@ section.show > [data-control="pull"].rotate > .icon{-webkit-transform:rotate(180
 section.show > [data-control="pull"].refresh > .icon{display:none}
 section.show > [data-control="pull"].refresh > .loading{display:inline-block}
 
-.splash{text-align:center;font-size:1.2em;}
-.splash > form{margin:28px}
+.splash{text-align:center;}
+.splash > form{margin:24px 32px}
 .splash img{max-width:206px;margin:20% auto 0%}
 .splash h1{margin-top:20%;font-size:2.2em;font-weight:bold}
 .splash .button{margin-top:10px}
