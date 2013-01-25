@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>KitchenSink - Lungo 2.0</title>
+    <title>Lungo 2.1 - SDK</title>
     <meta name="description" content="">
     <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
     <meta name="HandheldFriendly" content="True">
@@ -13,34 +13,34 @@
     <meta http-equiv="cleartype" content="on">
 
     <!-- iPhone -->
-    <link href="http://lungo.tapquo.com/resources/icon-57.png" sizes="57x57" rel="apple-touch-icon">
-    <link href="http://lungo.tapquo.com/resources/startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px)
+    <link href="http://cdn.tapquo.com/lungo/icon-57.png" sizes="57x57" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px)
              and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
 
     <!-- iPhone (Retina) -->
-    <link href="http://lungo.tapquo.com/resources/icon-114.png" sizes="114x114" rel="apple-touch-icon">
-    <link href="http://lungo.tapquo.com/resources/startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px)
+    <link href="http://cdn.tapquo.com/lungo/icon-114.png" sizes="114x114" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px)
              and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
     <!-- iPhone 5 -->
-    <link href="http://lungo.tapquo.com/resources/startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px)
+    <link href="http://cdn.tapquo.com/lungo/startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px)
              and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
     <!-- iPad -->
-    <link href="http://lungo.tapquo.com/resources/icon-72.png" sizes="72x72" rel="apple-touch-icon">
-    <link href="http://lungo.tapquo.com/resources/startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px)
+    <link href="http://cdn.tapquo.com/lungo/icon-72.png" sizes="72x72" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px)
              and (orientation: portrait)
              and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-    <link href="http://lungo.tapquo.com/resources/startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px)
+    <link href="http://cdn.tapquo.com/lungo/startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px)
              and (orientation: landscape)
              and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
 
     <!-- iPad (Retina) -->
-    <link href="http://lungo.tapquo.com/resources/icon-144.png" sizes="144x144" rel="apple-touch-icon">
-    <link href="http://lungo.tapquo.com/resources/startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px)
+    <link href="http://cdn.tapquo.com/lungo/icon-144.png" sizes="144x144" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px)
              and (orientation: portrait)
              and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-    <link href="http://lungo.tapquo.com/resources/startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px)
+    <link href="http://cdn.tapquo.com/lungo/startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px)
              and (orientation: landscape)
              and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
@@ -57,16 +57,15 @@
 </head>
 
 <body class="app">
-    <section id="main" data-transition="slide">
+    <section id="main" data-transition="">
         <header>
-            <nav class="left box">
+            <nav class="left">
                 <a href="#features" data-router="aside" data-icon="menu"></a>
             </nav>
-            <div class="left">
-                <div class="centered title">Lungo Framework</div>
-            </div>
-            <nav class="right box">
-                <a href="#" data-icon="share"></a>
+            <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
+            <nav class="right">
+                <a href="#" data-action="twitter" class="button theme" data-icon="brand twitter"></a>
+                <!-- <a href="#" class="button theme" data-icon="share" data-label="Share"></a> -->
             </nav>
         </header>
 
@@ -82,10 +81,6 @@
                     Lungo Framework supports open web standards, such as HTML5, CSS3 and JavaScript. It brings consistent browser environment across mobiles, tvs and desktop devices.
                 </li>
                 <li class="feature">
-                    <strong>Open Source Project</strong>
-                    Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
-                </li>
-                <li class="feature">
                     <strong>Powerfull JavaScript API</strong>
                     Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
                 </li>
@@ -93,7 +88,10 @@
                     <strong>Multi-Device full support</strong>
                     Is known that create apps for each platform is expensive, this situation is increased by the arrival of tablets and SmartTVs. Lungo will suit all of them creating a unique and amazing UX.
                 </li>
-
+                <li class="feature">
+                    <strong>Open Source Project</strong>
+                    Each new line of code in Lungo is welcome, we hope that Developers and restless minds help us to improve day by day this humble project.
+                </li>
                 <li>
                     <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Flungo.tapquo.com%2F&text=@lungojs a framework for developers who want to design, build and share cross device apps" data-icon="brand twitter" target="_blank" class="button anchor theme" data-label="Tweet me"></a>
                 </li>

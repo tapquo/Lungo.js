@@ -82,17 +82,17 @@ aside > header {
 section > header > nav a {
   color: #fff;
 }
-section > header > nav.box:not(.right) a {
+section > header > nav:not(.right) a {
   -webkit-box-shadow: 1px 0 0 #c9c9c9, inset -1px 0 0 #a2a2a2;
   -moz-box-shadow: 1px 0 0 #c9c9c9, inset -1px 0 0 #a2a2a2;
   box-shadow: 1px 0 0 #c9c9c9, inset -1px 0 0 #a2a2a2;
 }
-section > header > nav.box.right a {
+section > header > nav.right a {
   -webkit-box-shadow: -1px 0 0 #c9c9c9, inset 1px 0 0 #a2a2a2;
   -moz-box-shadow: -1px 0 0 #c9c9c9, inset 1px 0 0 #a2a2a2;
   box-shadow: -1px 0 0 #c9c9c9, inset 1px 0 0 #a2a2a2;
 }
-section > header > nav.box a:active {
+section > header > nav a:active {
   background: #a2a2a2;
 }
 section > nav.groupbar > a.active {
@@ -126,17 +126,17 @@ aside nav a.active .icon {
 aside nav a:not(.active) .icon {
   color: #888;
 }
-aside nav.box:not(.right) a {
+aside nav:not(.right) a {
   -webkit-box-shadow: 1px 0 0 #222, inset -1px 0 0 #141414;
   -moz-box-shadow: 1px 0 0 #222, inset -1px 0 0 #141414;
   box-shadow: 1px 0 0 #222, inset -1px 0 0 #141414;
 }
-aside nav.box.right a {
+aside nav.right a {
   -webkit-box-shadow: -1px 0 0 #222, inset 1px 0 0 #141414;
   -moz-box-shadow: -1px 0 0 #222, inset 1px 0 0 #141414;
   box-shadow: -1px 0 0 #222, inset 1px 0 0 #141414;
 }
-aside nav.box a:active {
+aside nav a:active {
   background: #141414;
 }
 /* -------------------------- LISTS -------------------------- */

@@ -39,6 +39,9 @@ section > header {
   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
   box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
   color: #fff;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
 }
 section > footer,
 section nav.groupbar {
@@ -53,7 +56,7 @@ section > [data-control="pull"] {
 }
 section > article.splash,
 section > [data-control="pull"].splash {
-  background: #0093d5;
+  background: #222;
   color: #fff;
 }
 section.aside {
@@ -80,21 +83,14 @@ aside > header {
   box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #222, inset 0 -1px 0 #141414;
 }
 /* -------------------------- NAVIGATION -------------------------- */
-section > header > nav a {
-  color: #fff;
+section > header > nav a:not(.button) {
+  color: #00608a;
+  -webkit-text-shadow: 0 1px 0 #20baff;
+  -moz-text-shadow: 0 1px 0 #20baff;
+  text-shadow: 0 1px 0 #20baff;
 }
-section > header > nav.box:not(.right) a {
-  -webkit-box-shadow: 1px 0 0 #03b1ff, inset -1px 0 0 #007db5;
-  -moz-box-shadow: 1px 0 0 #03b1ff, inset -1px 0 0 #007db5;
-  box-shadow: 1px 0 0 #03b1ff, inset -1px 0 0 #007db5;
-}
-section > header > nav.box.right a {
-  -webkit-box-shadow: -1px 0 0 #03b1ff, inset 1px 0 0 #007db5;
-  -moz-box-shadow: -1px 0 0 #03b1ff, inset 1px 0 0 #007db5;
-  box-shadow: -1px 0 0 #03b1ff, inset 1px 0 0 #007db5;
-}
-section > header > nav.box a:active {
-  background: #007db5;
+section > header > nav a:not(.button):active {
+  color: #004a6b;
 }
 section > nav.groupbar > a.active {
   -webkit-box-shadow: inset 0 -3px 0 #0093d5;
@@ -121,24 +117,11 @@ section > footer > nav > a.active {
   -moz-box-shadow: inset 0 3px 0 #0093d5;
   box-shadow: inset 0 3px 0 #0093d5;
 }
-aside nav a.active .icon {
-  color: #fff;
+aside nav a {
+  color: #4e4e4e;
 }
-aside nav a:not(.active) .icon {
-  color: #888;
-}
-aside nav.box:not(.right) a {
-  -webkit-box-shadow: 1px 0 0 #222, inset -1px 0 0 #141414;
-  -moz-box-shadow: 1px 0 0 #222, inset -1px 0 0 #141414;
-  box-shadow: 1px 0 0 #222, inset -1px 0 0 #141414;
-}
-aside nav.box.right a {
-  -webkit-box-shadow: -1px 0 0 #222, inset 1px 0 0 #141414;
-  -moz-box-shadow: -1px 0 0 #222, inset 1px 0 0 #141414;
-  box-shadow: -1px 0 0 #222, inset 1px 0 0 #141414;
-}
-aside nav.box a:active {
-  background: #141414;
+aside nav a:active {
+  color: #919191;
 }
 /* -------------------------- LISTS -------------------------- */
 section .list li {
@@ -304,8 +287,22 @@ footer .tag:not(.icon) {
   color: #fff;
 }
 /* -------------------------- BUTTONS -------------------------- */
-a.button,
-button {
+header .button,
+header button {
+  background-color: #007db5;
+  -webkit-box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
+  -moz-box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
+  box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+header .button:active,
+header button:active {
+  background-color: #005880;
+}
+article .button,
+article button {
   -webkit-border-radius: FORM-border-radius;
   -moz-border-radius: FORM-border-radius;
   border-radius: FORM-border-radius;
@@ -318,39 +315,39 @@ button {
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   border: solid 1px rgba(0,0,0,0.1);
 }
-a.button:active,
-button:active {
+article .button:active,
+article button:active {
   -webkit-box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
   -moz-box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
   box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
   border-color: none;
 }
-a.button.secondary,
-button.secondary {
+article .button.secondary,
+article button.secondary {
   color: #666 !important;
 }
-a.button[disabled],
-button[disabled] {
+article .button[disabled],
+article button[disabled] {
   background-color: #000;
 }
-button,
-.button,
-.tag:not(.icon) {
+article button,
+article .button,
+article .tag:not(.icon) {
   background-color: #007db5;
 }
-button.secondary,
-.button.secondary,
-.tag:not(.icon).secondary {
+article button.secondary,
+article .button.secondary,
+article .tag:not(.icon).secondary {
   background-color: #bfbfbf;
 }
-button.accept,
-.button.accept,
-.tag:not(.icon).accept {
+article button.accept,
+article .button.accept,
+article .tag:not(.icon).accept {
   background-color: #3fb58e;
 }
-button.cancel,
-.button.cancel,
-.tag:not(.icon).cancel {
+article button.cancel,
+article .button.cancel,
+article .tag:not(.icon).cancel {
   background-color: #ee6557;
 }
 /* -------------------------- BUTTONS -------------------------- */
