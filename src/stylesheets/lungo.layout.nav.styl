@@ -24,14 +24,18 @@ nav
       z-index: 1000
       float: left
 
-    & a.button
+    & .button, button
       margin: 6px 2px 0 2px
-      font-size: FONT_SIZE_SMALL
-      line-height: 30px
+      line-height: 31px !important
       & > .icon
-        font-size: 1.3em
-        height: 18px
+        font-size: 1.5em
+        position: relative
+        top: 3px
+        height: SIZE = 20px
+        width: SIZE
+        line-height: SIZE
         display: inline-block
+
 
     &.right a.button:last-child
       margin-right: 6px
@@ -41,7 +45,7 @@ nav
     & a:not(.button)
       height: HEADER_FOOTER_HEIGHT
       & > .icon
-        font-size: 1.7em
+        font-size: 1.8em
 
     & .tag
       position: relative

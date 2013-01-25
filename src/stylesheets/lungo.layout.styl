@@ -88,15 +88,17 @@ header
     z-index: -1
     font-size: (FONT_SIZE_BIG * 1.2)
 
-    & img
-      height: 24px
-
     &.centered
       position: absolute
       left: 32px
       right: 32px
       text-align: center
       display: inline-block
+
+  & img.title
+    PAD = 18px
+    height: (HEADER_FOOTER_HEIGHT - PAD)
+    margin: (PAD / 2) auto
 
 
 footer
