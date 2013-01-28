@@ -103,9 +103,20 @@ Lungo.Router = (function(lng, undefined) {
      */
     var back = function() {
         var current = lng.Element.Cache.section;
+
+        if (lng.Element.Cache.aside) {
+            lng.View.Aside.hide();
+            setTimeout(function() {
+                _back(current);
+            }, lng.Constants.TRANSITION.DURATION);
+        } else {
+            _back(current);
+        }
+    };
+
+    var _back = function(current) {
         current.removeClass(CLASS.SHOW).addClass(CLASS.HIDING);
 
-        // #TODO: Refactor
         setTimeout(function() {
             current.removeClass(CLASS.HIDING);
         }, lng.Constants.TRANSITION.DURATION);
