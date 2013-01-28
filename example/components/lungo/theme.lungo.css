@@ -33,6 +33,9 @@ a.theme:active {
   text-shadow: 0 1px 0 #fff;
 }
 /* -------------------------- LAYOUT COLORS -------------------------- */
+section {
+  background-color: #222;
+}
 section > header {
   background-color: #0093d5;
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
@@ -216,13 +219,17 @@ aside .list li:not(:first-child) {
 aside .list li:not(:last-child) {
   border-bottom: solid 1px #141414;
 }
-aside .list li.active {
+aside .list li.active,
+aside .list li:active {
   background: #0093d5;
   border-color: transparent;
 }
 aside .list li.active strong,
+aside .list li:active strong,
 aside .list li.active small,
-aside .list li.active .icon {
+aside .list li:active small,
+aside .list li.active .icon,
+aside .list li:active .icon {
   color: #fff;
 }
 aside .list li strong {
