@@ -59,7 +59,7 @@ Lungo.View.Aside = (function(lng, undefined) {
      * @method hide
      */
     var hide = function(target) {
-        var aside = lng.Element.Cache.aside || target;
+        var aside = target || lng.Element.Cache.aside;
         if (aside) {
             lng.Element.Cache.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
 
