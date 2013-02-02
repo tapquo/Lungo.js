@@ -1,8 +1,8 @@
 vendor(prop, args)
   -webkit-{prop} args
   -moz-{prop} args
-  // -ms-{prop} args
-  // -o-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
   {prop} args
 
 border-radius()
@@ -20,21 +20,63 @@ background-image()
 backface-visibility()
   vendor('backface-visibility', arguments)
 
-
 /* ====================== FLEXBOX ====================== */
 display-box()
   display -webkit-box
   display -moz-box
+  display -ms-box
+  display -o-box
   display box
 
 box-pack()
   vendor('box-pack', arguments)
+
+box-align()
+  vendor('box-align', arguments)
 
 box-flex()
   vendor('box-flex', arguments)
 
 box-orient()
   vendor('box-orient', arguments)
+
+box-direction()
+  vendor('box-direction', arguments)
+
+ordinal-group()
+  vendor('box-ordinal-group', arguments)
+
+box-lines()
+  vendor('box-lines', arguments)
+
+/* ====================== BOXFLEX ====================== */
+display-flex()
+  display -webkit-flex
+  display -moz-flex
+  display -ms-flex
+  display -o-flex
+  display flex
+
+flex-flow()
+  vendor('flex-flow', arguments)
+
+justify-content()
+  vendor('justify-content', arguments)
+
+align-content()
+  vendor('align-content', arguments)
+
+align-items()
+  vendor('align-items', arguments)
+
+order()
+  vendor('order', arguments)
+
+flex()
+  vendor('flex', arguments)
+
+align-self()
+  vendor('align-self', arguments)
 
 /* ====================== TRANSITIONS ====================== */
 transition()
