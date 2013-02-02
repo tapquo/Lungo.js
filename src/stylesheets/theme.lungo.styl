@@ -7,7 +7,8 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-@import "import/vendor.styl"
+// @import url("https://raw.github.com/soyjavi/CSSmethods/master/stylus/vendor.styl")
+@import "vendor.styl"
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
 
 WHITE = white
@@ -52,7 +53,6 @@ body
     color: #666
     text-shadow: 0 1px 0 white
 
-
 /* -------------------------- LAYOUT COLORS -------------------------- */
 section
   background-color: DARK
@@ -60,7 +60,7 @@ section
     background-color: THEME
     box-shadow 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 THEME_light, inset 0 -1px 0 THEME_dark
     color: #fff
-    border-radius: 4px 4px 0 0
+    border-radius 4px 4px 0 0
 
   & > footer, & nav.groupbar
     background-color: DARK
