@@ -29,19 +29,11 @@ aside
   visibility: hidden
   z-index: -1
 
-  transition-property( opacity, z-index, transform )
-  transition-duration( TRANSITION_TIME )
-  transition-timing-function( DEFAULT_TRANSITION )
-  backface-visibility( hidden )
 
   &.show
     z-index: 0
     visibility: visible
 
-  &:not(.right)
-    transform translateX(-(ASIDE_WIDTH))
-    &.show
-      transform translateX(0px)
   &.right
     right: 0px
 

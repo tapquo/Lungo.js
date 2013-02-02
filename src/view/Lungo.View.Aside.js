@@ -68,8 +68,11 @@ Lungo.View.Aside = (function(lng, undefined) {
                 lng.Element.Cache.section.removeClass(aside_stylesheet);
             }
 
-            lng.Element.Cache.aside = null;
-            aside.removeClass(CLASS.SHOW);
+            setTimeout(function() {
+                lng.Element.Cache.aside = null;
+                aside.removeClass(CLASS.SHOW);
+            }, lng.Constants.TRANSITION.DURATION);
+
         }
     };
 
