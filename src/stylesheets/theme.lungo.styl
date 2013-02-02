@@ -11,10 +11,10 @@
 @import "vendor.styl"
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
 
-WHITE = white
 
 /* -------------------------- THEME -------------------------- */
 CONTENT         = #f4f5f5
+COLOR           = #333
 COLOR_secondary = #BFBFBF
 COLOR_cancel    = #EE6557
 COLOR_accept    = #3FB58E
@@ -23,35 +23,30 @@ DARK_light      = lighten(DARK, 25%)
 DARK_dark       = darken(DARK, 15%)
 DARK_darkest    = darken(DARK, 30%)
 FORM_radius     = 1px
-LIST_color      = #333
-LIST_color_2nd  = lighten(LIST_color, 35%)
-LIST_border     = lighten(LIST_color, 90%)
+LIST_color_2nd  = lighten(COLOR, 35%)
+LIST_border     = lighten(COLOR, 90%)
 NAV_LINK        = #888
-NAV_LINK_ACTIVE = WHITE
+NAV_LINK_ACTIVE = #FFF
 THEME           = #0093D5
 THEME_light     = lighten(THEME, 15%)
 THEME_dark      = darken(THEME, 15%)
-//?
-COLOR = #484a49
 
 
+/* -------------------------- DEFAULTS -------------------------- */
 body
   background-color: DARK
+  color: COLOR
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   font-weight: 400
   font-size: 13px
   line-height: 1.3em
   letter-spacing: -0.05em
 
-.theme
-  &, li&, a&
+  & .theme
     background-color: THEME-light
     &:active
       background-color: THEME
 
-[data-control="pull"]
-    color: #666
-    text-shadow: 0 1px 0 white
 
 /* -------------------------- LAYOUT COLORS -------------------------- */
 section
@@ -109,25 +104,10 @@ nav
       background-color: DARK_dark
       box-shadow inset 0 3px 0 THEME
 
-  aside &
-    & a
-      color: lighten(DARK, 20%)
-      &:active
-        color: lighten(DARK, 50%)
-
-      // &.active .icon
-      //   color: white
-      // &:not(.active) .icon
-      //   color: NAV_LINK
-      //   color: red
-    // &.box
-    //   &:not(.right) a
-    //     box-shadow 1px 0 0 DARK, inset -1px 0 0 DARKEST
-    //   &.right a
-    //     box-shadow -1px 0 0 DARK, inset 1px 0 0 DARKEST
-    //   & a:active
-    //     background: DARKEST
-
+  aside & a
+    color: lighten(DARK, 20%)
+    &:active
+      color: lighten(DARK, 50%)
 
 /* -------------------------- LISTS -------------------------- */
 .list
@@ -168,8 +148,11 @@ nav
       border-top: solid 1px  DARK
     &:not(:last-child)
       border-bottom: solid 1px DARKEST
-    &.active, &:active
+    &:active
+      background: DARK_darkest
+    &.active
       background: THEME
+    &.active, &:active
       border-color: transparent
       & strong, & small, & .icon
         color: #fff
@@ -190,6 +173,11 @@ nav
     background-color: THEME-dark !important
   footer &
     box-shadow inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5)
+
+
+[data-control="pull"]
+    text-shadow: 0 1px 0 #fff
+
 
 /* -------------------------- NOTIFICATION -------------------------- */
 .notification
@@ -216,6 +204,7 @@ nav
       &.success
         background: darken(COLOR_accept, 25%)
         color: #fff
+
 
 /* -------------------------- BUTTONS -------------------------- */
 header
@@ -253,10 +242,7 @@ article
       background-color: COLOR_cancel
 
 
-
-
 /* -------------------------- BUTTONS -------------------------- */
-
 FORM_shadow_form =  'inset 0 1px 2px rgba(0,0,0,0.1)'
 FORM_shadow_form_active =  'inset 0 1px 1px rgba(0,0,0,0.1), 3px 0 #f0eeef, 0 3px #f0eeef, -3px 0 #f0eeef, 0 -3px #f0eeef'
 FORM_border_color = #D0D4C6
