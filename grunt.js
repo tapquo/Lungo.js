@@ -63,15 +63,11 @@ module.exports = function(grunt) {
     },
 
     copy: {
-    example: {
+      example: {
         files: { 'example/components/lungo/': ['packages/lungo/*'] }
       },
       target: {
         files: { 'packages/lungo.theme/': ['<config:resources.themes>'] }
-      },
-
-      imports: {
-        files: { 'packages/lungo.theme/import/': ['src/**/vendor.styl'] }
       }
     },
 
