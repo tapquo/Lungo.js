@@ -102,7 +102,7 @@ aside.small nav a:first-child{margin-top:8px}
 .list .right .icon,.list small .icon{height:13px !important;width:13px !important;margin-right:1px !important;font-size:1.2em !important;line-height:1.1em}
 .list.indented li{margin-bottom:10px}
 
-nav.groupbar,footer nav{display:-webkit-box;display:-moz-box;display:box;-webkit-box-pack:justify;-moz-box-pack:justify;box-pack:justify;width:100%;}
+nav.groupbar,footer nav{display:-webkit-box;display:-moz-box;display:-ms-box;display:-o-box;display:box;-webkit-box-pack:justify;-moz-box-pack:justify;box-pack:justify;width:100%;}
 nav.groupbar > a,footer nav > a{-webkit-box-flex:1;-moz-box-flex:1;box-flex:1}
 header nav a{padding:0 11px !important;z-index:1000;float:left}
 header nav .button,header nav button{margin:6px 2px 0 2px;line-height:31px !important;}
