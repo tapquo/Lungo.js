@@ -17,7 +17,8 @@ Lungo.Boot.Events = (function(lng, undefined) {
         HREF_ASIDE: 'header a[href][data-router=aside]',
         HREF_TARGET: 'a[href][data-router]',
         HREF_TARGET_FROM_ASIDE: 'aside a[href][data-router]',
-        INPUT_CHECKBOX: 'input[type=range].checkbox'
+        INPUT_CHECKBOX: 'input[type=range].checkbox',
+        HREF_TARGET_FROM_MENU: "[data-control=menu] a[href]"
     };
 
     /**
@@ -30,6 +31,8 @@ Lungo.Boot.Events = (function(lng, undefined) {
         lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
         lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
         lng.dom(SELECTORS.INPUT_CHECKBOX).tap(_changeCheckboxValue);
+        lng.dom(SELECTORS.HREF_TARGET_FROM_MENU).tap(_closeMenu);
+
         lng.View.Aside.suscribeEvents(lng.dom(SELECTORS.HREF_ASIDE));
     };
 
@@ -56,11 +59,19 @@ Lungo.Boot.Events = (function(lng, undefined) {
         el.toggleClass("active").attr('value', current_value);
     };
 
+    var _closeMenu = function(event) {
+        event.preventDefault();
+        var el = lng.dom(this);
+        var parent = el.parent('[data-control=menu]').removeClass(CLASS.SHOW);
+        lng.dom("[data-router=menu] > .icon").attr("class", "icon " + el.data("icon"));
+    };
+
     var _selectTarget = function(link) {
         var target_type = link.data(ATTRIBUTE.ROUTER);
+        var target_id = link.attr(ATTRIBUTE.HREF);
+
         switch(target_type) {
             case ELEMENT.SECTION:
-                var target_id = link.attr(ATTRIBUTE.HREF);
                 _goSection(target_id);
                 break;
 
@@ -70,6 +81,10 @@ Lungo.Boot.Events = (function(lng, undefined) {
 
             case ELEMENT.ASIDE:
                 _goAside(link);
+                break;
+
+            case ELEMENT.MENU:
+                _goMenu(target_id);
                 break;
         }
     };
@@ -107,6 +122,10 @@ Lungo.Boot.Events = (function(lng, undefined) {
         var aside_id = element.attr(ATTRIBUTE.HREF);
 
         lng.Router.aside(section_id, aside_id);
+    };
+
+    var _goMenu = function(id) {
+        lng.dom("[data-control=menu]" + id).toggleClass(CLASS.SHOW);
     };
 
     return {
