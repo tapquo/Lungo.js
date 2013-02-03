@@ -5,6 +5,13 @@ vendor(prop, args)
   // -o-{prop} args
   {prop} args
 
+vendorValue(prop, args)
+  {prop} -webkit- + args
+  {prop} -moz- + args
+  // {prop} -ms- + args
+  // {prop} -o- + args
+  {prop} args
+
 border-radius()
   vendor('border-radius', arguments)
 
@@ -14,19 +21,12 @@ box-shadow()
 text-shadow()
   vendor('text-shadow', arguments)
 
-background-image()
-  vendor('background-image', arguments)
-
 backface-visibility()
   vendor('backface-visibility', arguments)
 
 /* ====================== FLEXBOX ====================== */
 display-box()
-  display -webkit-box
-  display -moz-box
-  display -ms-box
-  display -o-box
-  display box
+  vendorValue('display', box)
 
 box-pack()
   vendor('box-pack', arguments)
@@ -51,11 +51,7 @@ box-lines()
 
 /* ====================== BOXFLEX ====================== */
 display-flex()
-  display -webkit-flex
-  display -moz-flex
-  display -ms-flex
-  display -o-flex
-  display flex
+  vendorValue('display', flex)
 
 flex-flow()
   vendor('flex-flow', arguments)
@@ -99,3 +95,8 @@ transform()
 
 transform-origin()
   vendor('transform-origin', arguments)
+
+
+/* ====================== ANIMATIONS ====================== */
+animation()
+  vendor('animation', arguments)
