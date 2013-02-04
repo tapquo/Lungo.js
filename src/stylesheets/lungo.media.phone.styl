@@ -2,6 +2,13 @@
 
 /* ==== Any phone ==== */
 @media only screen and (max-width: 767px)
+  body
+    &[data-position="absolute"] > section
+      position: absolute
+
+    &[data-position="fixed"] > section
+      position: fixed
+
   aside
     position: absolute
 
@@ -11,7 +18,6 @@
         transform translateX(ASIDE_WIDTH)
       &.small
         transform translateX(ASIDE_WIDTH_SMALL)
-
       &.right
         transform translateX(-(ASIDE_WIDTH))
         &.small
