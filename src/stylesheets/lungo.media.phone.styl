@@ -1,0 +1,20 @@
+@import "constants.styl"
+
+/* ==== Any phone ==== */
+@media only screen and (max-width: 767px)
+  aside
+    position: absolute
+
+  section
+    &.aside
+      &:not(.small)
+        transform translateX(ASIDE_WIDTH)
+      &.small
+        transform translateX(ASIDE_WIDTH_SMALL)
+
+      &.right
+        transform translateX(-(ASIDE_WIDTH))
+        &.small
+          transform translateX(-(ASIDE_WIDTH_SMALL))
+
+

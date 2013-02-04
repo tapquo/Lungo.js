@@ -1,0 +1,45 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "constants.styl"
+
+section
+  /* Transition: POP */
+  &[data-transition="pop"]
+    opacity: 0
+    transform( scale(1.15) )
+    &.show
+      transform( scale(1) )
+      opacity: 1
+    &.hide
+      transform( scale(0.9) )
+      opacity: 0
+
+  /* Transition: SLIDE */
+  &[data-transition="slide"]
+    transform( translateX(100%) )
+    visibility: visible !important
+    &.show
+      transform( translateX(0%) )
+    &.hide
+      transform( translateX(-100%) )
+
+  /* Transition: COVER */
+  &[data-transition="cover"]
+    transform( translateY(110%) )
+    &.show, &.hide
+      transform( translateY(0%) )
+
+  /* Transition: FADE */
+  &[data-transition="fade"]
+    opacity: 0
+    &:first-child, &.show
+      opacity: 1
+    &:hide
+      opacity: 0
