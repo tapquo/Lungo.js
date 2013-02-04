@@ -9,97 +9,42 @@
 
 @import "constants.styl"
 
-body
-  &[data-position="absolute"] > section
-    position: absolute
+body, html
+  height: 100%
+  width: 100%
+  margin: 0
+  padding: 0
+  overflow: hidden
 
-  &[data-position="fixed"] > section
-    position: fixed
+body
+  // &[data-position="absolute"] > section
+  //   position: absolute
+
+  // &[data-position="fixed"] > section
+  //   position: fixed
 
   & [data-transition]
-    display: block !important
+    // display: block !important
+    display-box()
     transition-property( opacity, z-index, transform )
     transition-duration( TRANSITION_TIME )
     transition-timing-function( DEFAULT_TRANSITION )
     backface-visibility( hidden )
 
+  & > aside, > section
+    display-box()
+    box-orient(vertical)
+    height: inherit
+    & header, footer
+      box-flex(0)
+      z-index: 3
+    & article
+      box-flex(1)
+      z-index: 0
+
 section
-  top:  0
-  left:  0
-  width: 100%
-  height: 100%
-  z-index: 1
-  display: none
-  &.show
-    z-index: 2
-    display: block
+  z-index: 2
+  &:not(.show)
+    z-index: 1
+    display: none
 
-  /* Transition: POP */
-  &[data-transition="pop"]
-    opacity: 0
-    transform( scale(1.15) )
-    &.show
-      transform( scale(1) )
-      opacity: 1
-    &.hide
-      transform( scale(0.9) )
-      opacity: 0
-
-  /* Transition: SLIDE */
-  &[data-transition="slide"]
-    transform( translateX(100%) )
-    visibility: visible !important
-    &.show
-      transform( translateX(0%) )
-    &.hide
-      transform( translateX(-100%) )
-
-  /* Transition: COVER */
-  &[data-transition="cover"]
-    transform( translateY(110%) )
-    &.show, &.hide
-      transform( translateY(0%) )
-
-  /* Transition: FADE */
-  &[data-transition="fade"]
-    opacity: 0
-    &:first-child, &.show
-      opacity: 1
-    &:hide
-      opacity: 0
-
-
-header, footer
-  position: absolute
-  left: 0
-  width: 100%
-  display: block
-  z-index: 3
-
-header
-  top: 0
-  height: HEADER_FOOTER_HEIGHT
-  line-height: HEADER_FOOTER_HEIGHT
-
-  & .title
-    margin-left: 4px
-    float: left
-    z-index: -1
-    font-size: (FONT_SIZE_BIG * 1.2)
-
-    &.centered
-      position: absolute
-      left: 32px
-      right: 32px
-      text-align: center
-      display: inline-block
-
-  & img.title
-    PAD = 18px
-    height: (HEADER_FOOTER_HEIGHT - PAD)
-    margin: (PAD / 2) auto
-
-
-footer
-  bottom: 0
-  height: HEADER_FOOTER_HEIGHT

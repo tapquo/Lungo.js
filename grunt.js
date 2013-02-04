@@ -28,7 +28,8 @@ module.exports = function(grunt) {
             'src/**/lungo.layout.styl',
             'src/**/lungo.layout.*.styl',
             'src/**/lungo.widgets.styl',
-            'src/**/lungo.widgets.*.styl'],
+            'src/**/lungo.widgets.*.styl',
+            'src/**/lungo.media.*.styl'],
         icons: ['src/**/lungo.icon**.styl'],
         themes: ['src/**/theme**.styl']
     },

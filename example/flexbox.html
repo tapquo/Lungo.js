@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lungo 2.1 - SDK</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo/lungo.css">
+    <link rel="stylesheet" href="components/lungo/lungo.icon.css">
+    <link rel="stylesheet" href="components/lungo/lungo.icon.brand.css">
+    <link rel="stylesheet" href="components/lungo/lungo.css">
+
+    <link rel="stylesheet" href="components/lungo/theme.lungo.css" id="theme-stylesheet">
+
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="stylesheets/app.css">
+</head>
+
+<body class="app">
+    <aside id="features" class="left">
+        <header data-title="Features">
+            <nav class="right">
+                <a href="#" class="buttons" data-icon="settings"></a>
+            </nav>
+        </header>
+
+        <article class="list scroll active">
+            <ul>
+                <!-- Basic Layout -->
+                <li class="active">
+                    <a href="#layout-art1" data-router="article" data-title="Profile" class="active">
+                        <strong>Profile</strong></a>
+                </li>
+                <li>
+                    <a href="#layout-art2" data-router="article" data-title="Inbox">
+                        <div class="tag right">19</div>
+                        <strong>Inbox</strong></a>
+                </li>
+                <li>
+                    <a href="#layout-art3" data-router="article" data-title="Map"><strong>Map</strong></a>
+                </li>
+                <li>
+                    <a href="#layout-art4" data-router="article" data-title="Settings"><strong>Settings</strong></a>
+                </li>
+
+            </ul>
+        </article>
+
+        <footer>ASIDE/FOOTER</footer>
+    </aside>
+
+    <section id="main" data-transition="">
+        <header>
+            <nav class="left">
+                <a href="#features" data-router="aside" data-icon="menu"></a>
+            </nav>
+            <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
+            <nav class="right">
+                <a href="#second" data-router="section" class="button theme" data-icon="brand twitter"></a>
+            </nav>
+        </header>
+
+        <nav class="groupbar">
+            <a href="#layout-art1" data-router="article" data-label="Profile" class="active"></a>
+            <a href="#layout-art2" data-router="article" data-label="Inbox" data-count="19"></a>
+            <a href="#layout-art3" data-router="article" data-label="Map"></a>
+            <a href="#layout-art4" data-router="article" data-label="Settings"></a>
+        </nav>
+
+        <article id="layout-art1" class="active"></article>
+        <article id="layout-art2"></article>
+        <article id="layout-art3"></article>
+        <article id="layout-art4"></article>
+
+        <footer>
+            <nav>
+                <a href="#layout-art1" data-router="article" data-icon="home" class="active"></a>
+                <a href="#layout-art2" data-router="article" data-icon="inbox" data-count="19"></a>
+                <a href="#layout-art3" data-router="article" data-icon="compass"></a>
+                <a href="#layout-art4" data-router="article" data-icon="settings"></a>
+            </nav>
+        </footer>
+
+    </section>
+
+    <section id='second' data-transition="slide">
+        <header data-title='second' data-back="home"></header>
+        <footer class=''>
+            <nav class=''></nav>
+        </footer>
+
+        <article id='a' class='active'></article>
+    </section>
+
+    <!-- Lungo dependencies -->
+    <script src="components/quojs/quo.js"></script>
+    <script src="components/lungo/lungo.js"></script>
+
+    <!-- LungoJS - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 'Flexbox',
+            version: '2.2'
+        });
+    </script>
+</body>
+</html>

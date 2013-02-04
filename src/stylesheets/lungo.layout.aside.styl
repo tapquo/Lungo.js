@@ -9,42 +9,18 @@
 
 @import "constants.styl"
 
-section.aside
-  &:not(.small)
-    transform translateX(ASIDE_WIDTH)
-  &.small
-    transform translateX(ASIDE_WIDTH_SMALL)
 
-  &.right
-    transform translateX(-(ASIDE_WIDTH))
-    &.small
-      transform translateX(-(ASIDE_WIDTH_SMALL))
 
 aside
-  position: absolute
-  top: 0
-  bottom: 0
-  height: inherit
   width: ASIDE_WIDTH
   visibility: hidden
   z-index: -1
-
-
   &.show
     z-index: 0
     visibility: visible
 
   &.right
     right: 0px
-
-  & header, footer
-    position: relative
-    left: none
-    height: HEADER_FOOTER_HEIGHT
-
-  & footer
-    position: absolute
-    bottom: 0
 
   &.small
     width: ASIDE_WIDTH_SMALL
