@@ -9,6 +9,8 @@
 
 @import "constants.styl"
 
+HEADER_GROUPBAR_HEIGHT = 32px
+
 nav
   &.groupbar, footer &
     display-box()
@@ -42,7 +44,7 @@ nav
       margin-left: 6px
 
     & a:not(.button)
-      height: HEADER_FOOTER_HEIGHT
+      height: HEADER_HEIGHT
       & > .icon
         font-size: 1.8em
 
@@ -69,7 +71,7 @@ nav
 
   &.groupbar
     // position: relative
-    // top: HEADER_FOOTER_HEIGHT
+    // top: HEADER_HEIGHT
     height: HEADER_GROUPBAR_HEIGHT
     width: 100%
     z-index: 2
@@ -96,11 +98,11 @@ nav
       text-align: center
       display: block
       padding: 0
-      height:  HEADER_FOOTER_HEIGHT
+      height:  HEADER_HEIGHT
 
     & .icon
       font-size: 2.0em !important
-      line-height: HEADER_FOOTER_HEIGHT
+      line-height: HEADER_HEIGHT
       width: 32px
       display: inline-block
 
@@ -142,7 +144,7 @@ nav
   &[data-control=menu]
     position: absolute
     left: 0px
-    top: HEADER_FOOTER_HEIGHT
+    top: HEADER_HEIGHT
     visibility: hidden
     z-index: 2
     width: inherit
