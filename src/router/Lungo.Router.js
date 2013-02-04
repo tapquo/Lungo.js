@@ -15,6 +15,8 @@ Lungo.Router = (function(lng, undefined) {
     var ERROR = lng.Constants.ERROR;
     var TRIGGER = lng.Constants.TRIGGER;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var DEVICE = lng.Constants.DEVICE;
+
     var HASHTAG_CHARACTER = '#';
 
     /**
@@ -29,20 +31,25 @@ Lungo.Router = (function(lng, undefined) {
         var current =  lng.Element.Cache.section;
 
         if (_notCurrentTarget(section_id, current)) {
-            var target = current.siblings(ELEMENT.SECTION + section_id);
+            var query = ELEMENT.SECTION + section_id;
+            var target = (current) ? current.siblings(query) : lng.dom(query);
 
             if (target.length > 0) {
-                target_transition = target.data('transition');
-                if (target_transition) {
-                    _assignTransitionOrigin(current);
-                    _assignTransition(current, target_transition);
+                if (current) {
+                    _defineTransition(target, current);
+                    current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                 }
-
-                current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                 target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+
+
+                _asideAttached(target);
+
+
                 lng.Element.Cache.section = target;
                 lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.ACTIVE);
 
+
+                console.error(lng.Element.Cache.aside);
                 lng.Router.History.add(section_id);
                 _sectionTriggers(current, target);
             }
@@ -125,6 +132,7 @@ Lungo.Router = (function(lng, undefined) {
         target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
 
         _assignTransition(target, target.data('transition-origin'));
+        _asideAttached(target);
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Cache.section = target;
         lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
@@ -133,7 +141,7 @@ Lungo.Router = (function(lng, undefined) {
     };
 
     var _notCurrentTarget = function(target, element) {
-        return (target !== HASHTAG_CHARACTER + element.attr('id')) ? true : false;
+        return (!element || target !== HASHTAG_CHARACTER + element.attr('id')) ? true : false;
     };
 
     var _sectionId = function(element) {
@@ -141,8 +149,16 @@ Lungo.Router = (function(lng, undefined) {
     };
 
     var _sectionTriggers = function(current, target) {
-        current.trigger(TRIGGER.UNLOAD);
+        if (current) current.trigger(TRIGGER.UNLOAD);
         target.trigger(TRIGGER.LOAD);
+    };
+
+    var _defineTransition = function(target, current) {
+        target_transition = target.data('transition');
+        if (target_transition) {
+            _assignTransitionOrigin(current);
+            _assignTransition(current, target_transition);
+        }
     };
 
     var _assignTransition = function(section, transitionName) {
@@ -151,6 +167,13 @@ Lungo.Router = (function(lng, undefined) {
 
     var _assignTransitionOrigin = function(section) {
         section.data('transition-origin', section.data('transition'));
+    };
+
+    var _asideAttached = function(target) {
+        if (lng.Element.Cache.aside) lng.Element.Cache.aside.removeClass(CLASS.SHOW);
+        if (target.data("aside") && lng.DEVICE != DEVICE.phone) {
+            lng.View.Aside.show(target.data("aside"));
+        }
     };
 
     return {

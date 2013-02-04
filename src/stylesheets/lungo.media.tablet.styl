@@ -10,16 +10,10 @@
     box-orient(horizontal)
     overflow: hidden
 
-  aside
-    z-index: 0
-    visibility: visible
-    position: relative
-    & > article
-      visibility: visible !important
-      display: block !important
-      z-index: 1
-
   section
     box-flex(1)
     &:not(.show)
       display: none !important
+
+  [data-router=aside]
+    display: none !important
