@@ -14,8 +14,8 @@
 /* ============================= HEADER/FOOTER ============================= */
 /* ========================================================================= */
 header, footer
-  height: HEADER_FOOTER_HEIGHT
-  line-height: HEADER_FOOTER_HEIGHT
+  height: HEADER_HEIGHT
+  line-height: HEADER_HEIGHT
 
   // display-box()
   // box-pack(justify)
@@ -42,7 +42,7 @@ header, footer
 
   & img.title
     PAD = 18px
-    height: (HEADER_FOOTER_HEIGHT - PAD)
+    height: (HEADER_HEIGHT - PAD)
     margin: (PAD / 2) auto
 
 
@@ -61,16 +61,3 @@ article
     &.pull
       transition-property(transform)
       transition-duration(TRANSITION_TIME)
-
-header
-  &:not(.extended) ~ article
-    top: HEADER_FOOTER_HEIGHT
-  &.extended ~ article
-    top: ARTICLE_WITH_HEADER_EXTENDED
-
-footer ~ article
-  bottom: HEADER_FOOTER_HEIGHT
-
-@media handheld, only screen and (min-width: 768px)
-  article.aside
-    transform(translate3d(0px, 0, 0))
