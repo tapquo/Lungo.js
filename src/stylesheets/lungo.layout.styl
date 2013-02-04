@@ -23,28 +23,20 @@ body
   // &[data-position="fixed"] > section
   //   position: fixed
 
-  & [data-transition]
-    // display: block !important
-    display-box()
-    transition-property( opacity, z-index, transform )
-    transition-duration( TRANSITION_TIME )
-    transition-timing-function( DEFAULT_TRANSITION )
-    backface-visibility( hidden )
 
-  & > aside, > section
-    display-box()
-    box-orient(vertical)
-    height: inherit
-    & header, footer
-      box-flex(0)
-      z-index: 3
-    & article
-      box-flex(1)
-      z-index: 0
+aside, section
+  display-box()
+  box-orient(vertical)
+  height: inherit
+  & > header, > footer
+    box-flex(0)
+    z-index: 3
+  & > article
+    box-flex(1)
+    z-index: 0
 
 section
   z-index: 2
   &:not(.show)
     z-index: 1
     display: none
-

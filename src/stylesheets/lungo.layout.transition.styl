@@ -10,6 +10,14 @@
 @import "constants.styl"
 
 section
+  &[data-transition]
+    // display: block !important
+    display-box()
+    transition-property( opacity, z-index, transform )
+    transition-duration( TRANSITION_TIME )
+    transition-timing-function( DEFAULT_TRANSITION )
+    backface-visibility( hidden )
+
   /* Transition: POP */
   &[data-transition="pop"]
     opacity: 0
@@ -23,12 +31,12 @@ section
 
   /* Transition: SLIDE */
   &[data-transition="slide"]
-    transform( translateX(100%) )
+    transform translateX(100%)
     visibility: visible !important
     &.show
-      transform( translateX(0%) )
+      transform translateX(0%)
     &.hide
-      transform( translateX(-100%) )
+      transform translateX(-100%)
 
   /* Transition: COVER */
   &[data-transition="cover"]
