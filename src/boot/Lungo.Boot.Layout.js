@@ -21,6 +21,7 @@ Lungo.Boot.Layout = (function(lng, undefined) {
      *
      */
     var init = function() {
+        lng.Fallback.detectDevice();
         lng.Fallback.fixPositionInAndroid();
 
         _initFirstSection();
