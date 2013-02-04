@@ -4,3 +4,6 @@
 [submodule "packages/lungo"]
 	path = packages/lungo
 	url = https://github.com/TapQuo/package-lungo
+[submodule "example/components/quojs"]
+	path = example/components/quojs
+	url = https://github.com/soyjavi/package-quojs
