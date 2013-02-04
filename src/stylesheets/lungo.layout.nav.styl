@@ -134,3 +134,41 @@ nav
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+
+
+  /* ========================================================================= */
+  /* ================================= MENU ================================== */
+  /* ========================================================================= */
+  &[data-control=menu]
+    position: absolute
+    left: 0px
+    top: HEADER_FOOTER_HEIGHT
+    visibility: hidden
+    z-index: 2
+    width: inherit
+    font-size: FONT_SIZE_BIG
+    text-align: center
+
+    transform translateY(-120%)
+    transition-property transform
+    transition-duration TRANSITION_TIME
+    transition-timing-function DEFAULT_TRANSITION
+    backface-visibility hidden
+
+    &.show
+      visibility: visible
+      transform translateY(0%)
+
+    & > a
+      display: block
+      position: relative
+      padding: 14px 10px
+      text-shadow 0 1px 0 #111
+
+      &:active
+        border-color: transparent
+
+      & > .icon
+        position: absolute
+        left: 0.5em
+        font-size: 1.5em
