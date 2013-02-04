@@ -7,3 +7,6 @@
 [submodule "example/components/quojs"]
 	path = example/components/quojs
 	url = https://github.com/soyjavi/package-quojs
+[submodule "src/stylesheets/CSSmethods"]
+	path = src/stylesheets/CSSmethods
+	url = https://github.com/soyjavi/CSSmethods
