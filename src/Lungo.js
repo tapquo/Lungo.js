@@ -1,6 +1,7 @@
 var Lungo = Lungo || {};
 
 Lungo.VERSION = '2.0';
+Lungo.DEVICE = null;
 
 Lungo.Element || (Lungo.Element = {});
 Lungo.Data || (Lungo.Data = {});

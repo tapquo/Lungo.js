@@ -9,15 +9,13 @@
 
 @import "constants.styl"
 
-
-
 aside
   width: ASIDE_WIDTH
-  visibility: hidden
+  display: none
   z-index: -1
   &.show
     z-index: 0
-    visibility: visible
+    display-box()
 
   &.right
     right: 0px

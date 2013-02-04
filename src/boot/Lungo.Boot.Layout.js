@@ -30,14 +30,8 @@ Lungo.Boot.Layout = (function(lng, undefined) {
     };
 
     var _initFirstSection = function() {
-        var section = lng.dom(ELEMENT.SECTION).first().addClass(CLASS.SHOW);
-        lng.Element.Cache.section = section;
-        lng.Element.Cache.article = section.children(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
-
-        lng.View.Article.switchReferenceItems(lng.Element.Cache.article.attr("id"), section);
-
-        var section_id = '#' + section.attr(ATTRIBUTE.ID);
-        lng.Router.History.add(section_id);
+        var section = lng.dom(ELEMENT.SECTION).first();
+        if (section) lng.Router.section(section.attr("id"));
     };
 
     var _initElement = function(selector, callback) {

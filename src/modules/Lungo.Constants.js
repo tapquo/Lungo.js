@@ -69,6 +69,12 @@ Lungo.Constants = {
         SELECTOR: '{{value}}'
     },
 
+    DEVICE: {
+        phone: 'phone',
+        tablet: 'tablet',
+        tv: 'tv'
+    },
+
     ERROR: {
         DATABASE: 'ERROR: Connecting to Data.Sql.',
         DATABASE_TRANSACTION: 'ERROR: Data.Sql >> ',

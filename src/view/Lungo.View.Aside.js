@@ -12,6 +12,7 @@ Lungo.View.Aside = (function(lng, undefined) {
     var ELEMENT = lng.Constants.ELEMENT;
     var CLASS = lng.Constants.CLASS;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
+    var DEVICE = lng.Constants.DEVICE;
 
     /**
      * Toggle an aside element
@@ -44,10 +45,12 @@ Lungo.View.Aside = (function(lng, undefined) {
         if (lng.Core.toType(aside) == 'string') aside = _findAside(lng.Core.parseUrl(aside));
         if (aside) {
             lng.Element.Cache.aside = aside;
-            var aside_stylesheet = _asideStylesheet(aside);
 
             aside.addClass(CLASS.SHOW);
-            lng.Element.Cache.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
+            if (lng.DEVICE == DEVICE.phone) {
+                var aside_stylesheet = _asideStylesheet(aside);
+                lng.Element.Cache.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
+            }
         }
 
         aside = null;
@@ -59,20 +62,23 @@ Lungo.View.Aside = (function(lng, undefined) {
      * @method hide
      */
     var hide = function(target) {
-        var aside = target || lng.Element.Cache.aside;
-        if (aside) {
-            lng.Element.Cache.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
+        if (lng.DEVICE == DEVICE.phone) {
 
-            var aside_stylesheet = _asideStylesheet(aside);
-            if (aside_stylesheet) {
-                lng.Element.Cache.section.removeClass(aside_stylesheet);
+            var aside = target || lng.Element.Cache.aside;
+            if (aside) {
+                lng.Element.Cache.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
+
+                var aside_stylesheet = _asideStylesheet(aside);
+                if (aside_stylesheet) {
+                    lng.Element.Cache.section.removeClass(aside_stylesheet);
+                }
+
+                setTimeout(function() {
+                    lng.Element.Cache.aside = null;
+                    aside.removeClass(CLASS.SHOW);
+                }, lng.Constants.TRANSITION.DURATION);
+
             }
-
-            setTimeout(function() {
-                lng.Element.Cache.aside = null;
-                aside.removeClass(CLASS.SHOW);
-            }, lng.Constants.TRANSITION.DURATION);
-
         }
     };
 

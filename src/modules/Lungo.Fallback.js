@@ -16,7 +16,8 @@ Lungo.Fallback = (function(lng, undefined) {
 
     var detectDevice = function() {
         env = lng.Core.environment();
-        _data("device", env.screen.width < 768 ? "phone": "tablet");
+        lng.DEVICE = env.screen.width < 768 ? "phone": "tablet";
+        _data("device", lng.DEVICE);
     };
 
     var _data = function(key, value) {
