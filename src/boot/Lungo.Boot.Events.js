@@ -86,7 +86,7 @@ Lungo.Boot.Events = (function(lng, undefined) {
                 break;
 
             case ELEMENT.ASIDE:
-                _goAside(link);
+                lng.View.Aside.toggle();
                 break;
 
             case ELEMENT.MENU:
@@ -109,13 +109,6 @@ Lungo.Boot.Events = (function(lng, undefined) {
         var article_id =  element.attr(ATTRIBUTE.HREF);
 
         lng.Router.article(section_id, article_id, element);
-    };
-
-    var _goAside = function(element) {
-        var section_id = lng.Router.History.current();
-        var aside_id = element.attr(ATTRIBUTE.HREF);
-
-        lng.Router.aside(section_id, aside_id);
     };
 
     var _goMenu = function(id) {

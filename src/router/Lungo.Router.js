@@ -38,18 +38,10 @@ Lungo.Router = (function(lng, undefined) {
                     _defineTransition(target, current);
                     current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                 }
-                target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
 
-
-                _attachAside(target);
-
-
-                lng.Element.Cache.section = target;
-                lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.ACTIVE);
-
+                _toggleSection(current, target);
 
                 lng.Router.History.add(section_id);
-                _sectionTriggers(current, target);
             }
         }
     };
@@ -89,19 +81,6 @@ Lungo.Router = (function(lng, undefined) {
     };
 
     /**
-     * Displays the <aside> in a particular <section>.
-     *
-     * @method aside
-     *
-     * @param {string} <section> Id
-     * @param {string} <aside> Id
-     */
-    var aside = function(section_id, aside_id) {
-        aside_id = lng.Core.parseUrl(aside_id);
-        lng.View.Aside.toggle(aside_id);
-    };
-
-    /**
      * Return to previous section.
      *
      * @method back
@@ -130,11 +109,15 @@ Lungo.Router = (function(lng, undefined) {
         target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
 
         _assignTransition(target, target.data('transition-origin'));
-        _attachAside(target);
+
+        _toggleSection(current, target);
+    };
+
+    var _toggleSection = function(current, target) {
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Cache.section = target;
         lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
-
+        lng.Element.Cache.aside = lng.View.Aside.active(target);
         _sectionTriggers(current, target);
     };
 
@@ -167,17 +150,9 @@ Lungo.Router = (function(lng, undefined) {
         section.data('transition-origin', section.data('transition'));
     };
 
-    var _attachAside = function(target) {
-        if (lng.Element.Cache.aside) lng.Element.Cache.aside.removeClass(CLASS.SHOW);
-        if (target.data("aside") && lng.DEVICE != DEVICE.PHONE) {
-            lng.View.Aside.show(target.data("aside"));
-        }
-    };
-
     return {
         section: section,
         article: article,
-        aside: aside,
         back: back
     };
 
