@@ -12,6 +12,7 @@ Lungo.init = function(config) {
         Lungo.Resource.load(config.resources);
     }
 
+    Lungo.Boot.Device.init();
     Lungo.Boot.Events.init();
     Lungo.Boot.Data.init();
     Lungo.Boot.Layout.init();
