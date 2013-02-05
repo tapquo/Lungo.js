@@ -15,6 +15,33 @@ Lungo.View.Aside = (function(lng, undefined) {
     var DEVICE = lng.Constants.DEVICE;
     var QUERY = lng.Constants.QUERY;
 
+    /**
+     * Active aside for a determinate section
+     *
+     * @method active
+     *
+     * @param  {object} Section element
+     */
+
+    var active = function(section) {
+        var aside_id = section.data('aside');
+        var current_aside = lng.Element.Cache.aside;
+
+        // Deactive
+        if ((current_aside && aside_id != current_aside.attr('id')) || aside_id === undefined) {
+            current_aside.removeClass(CLASS.ACTIVE).removeClass(CLASS.SHOW);
+            lng.Element.Cache.aside = undefined;
+        }
+
+        // Active
+        if (aside_id) {
+            lng.Element.Cache.aside = lng.dom(ELEMENT.ASIDE + '#' + aside_id);
+            lng.Element.Cache.aside.addClass(CLASS.ACTIVE);
+            if (lng.DEVICE != DEVICE.PHONE) lng.View.Aside.show(aside_id);
+        }
+
+        return lng.Element.Cache.aside;
+    };
 
     /**
      * Toggle an aside element
@@ -23,39 +50,32 @@ Lungo.View.Aside = (function(lng, undefined) {
      *
      * @param  {string} Aside id
      */
-    var toggle = function(aside_id) {
-        aside = _findAside(aside_id);
-        if (aside) {
-            var is_visible = aside.hasClass(CLASS.SHOW);
+    var toggle = function() {
+        console.error(lng.Element.Cache.aside);
+        if (lng.Element.Cache.aside) {
+            var is_visible = lng.Element.Cache.aside.hasClass(CLASS.SHOW);
             if (is_visible) {
                 lng.View.Aside.hide();
             } else {
-                lng.View.Aside.show(aside);
+                lng.View.Aside.show();
             }
         }
-        aside = null;
     };
 
     /**
      * Display an aside element with a particular <section>
      *
      * @method show
-     *
-     * @param  {string} Aside id
      */
     var show = function(aside) {
-        if (lng.Core.toType(aside) == 'string') aside = _findAside(lng.Core.parseUrl(aside));
-        if (aside) {
-            lng.Element.Cache.aside = aside;
+        if (lng.Element.Cache.aside) {
+            lng.Element.Cache.aside.addClass(CLASS.SHOW);
 
-            aside.addClass(CLASS.SHOW);
             if (lng.DEVICE == DEVICE.PHONE) {
-                var aside_stylesheet = _asideStylesheet(aside);
+                var aside_stylesheet = _asideStylesheet();
                 lng.Element.Cache.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
             }
         }
-
-        aside = null;
     };
 
     /**
@@ -63,23 +83,18 @@ Lungo.View.Aside = (function(lng, undefined) {
      *
      * @method hide
      */
-    var hide = function(target) {
-        if (lng.DEVICE == DEVICE.PHONE) {
-
-            var aside = target || lng.Element.Cache.aside;
-            if (aside) {
-                lng.Element.Cache.section.removeClass(CLASS.ASIDE).removeClass(CLASS.RIGHT).removeClass(CLASS.SMALL);
-
-                var aside_stylesheet = _asideStylesheet(aside);
-                if (aside_stylesheet) {
-                    lng.Element.Cache.section.removeClass(aside_stylesheet);
-                }
+    var hide = function() {
+        if (lng.Element.Cache.aside) {
+            if (lng.DEVICE == DEVICE.PHONE) {
+                var aside_stylesheet = _asideStylesheet();
+                lng.Element.Cache.section.removeClass(CLASS.ASIDE);
 
                 setTimeout(function() {
-                    lng.Element.Cache.aside = null;
-                    aside.removeClass(CLASS.SHOW);
+                    lng.Element.Cache.aside.removeClass(CLASS.SHOW);
                 }, lng.Constants.TRANSITION.DURATION);
 
+            } else {
+                // lng.Element.Cache.aside.removeClass(CLASS.SHOW);
             }
         }
     };
@@ -95,9 +110,9 @@ Lungo.View.Aside = (function(lng, undefined) {
 
         lng.dom(QUERY.HREF_ASIDE).each(function() {
             var STARTED = false;
-            var a = lng.dom(this);
-            var section = a.closest("section");
-            var aside = lng.dom(a.attr("href"));
+            var el = lng.dom(this);
+            var section = el.closest("section");
+            var aside = lng.dom("aside#" + el.data("aside"));
 
             section.swiping(function(gesture) {
                 if(!section.hasClass("aside")) {
@@ -126,25 +141,8 @@ Lungo.View.Aside = (function(lng, undefined) {
         });
     };
 
-    var _findAside = function(aside_id) {
-        var aside = null;
-        var asides = lng.dom(ELEMENT.ASIDE);
-
-        if (asides.length == 1) {
-            var current_id = '#' + asides[0].id ;
-            if (current_id == aside_id) {
-                aside = lng.dom(asides[0]);
-            }
-        }
-        else if (asides.length > 1) {
-            aside = asides.siblings(ELEMENT.ASIDE + aside_id);
-        }
-
-        return aside;
-    };
-
-    var _asideStylesheet = function(aside) {
-        var aside_stylesheet = aside.attr(ATTRIBUTE.CLASS);
+    var _asideStylesheet = function() {
+        var aside_stylesheet = lng.Element.Cache.aside.attr(ATTRIBUTE.CLASS);
         var classes = '';
 
         //@todo: Refactor
@@ -157,6 +155,7 @@ Lungo.View.Aside = (function(lng, undefined) {
     };
 
     return {
+        active: active,
         toggle: toggle,
         show: show,
         hide: hide,
