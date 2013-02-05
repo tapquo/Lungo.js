@@ -13,12 +13,10 @@ Lungo.Boot.Events = (function(lng, undefined) {
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var CLASS = lng.Constants.CLASS;
     var ELEMENT = lng.Constants.ELEMENT;
+    var QUERY = lng.Constants.QUERY;
+
     var SELECTORS = {
-        HREF_ASIDE: 'header a[href][data-router=aside]',
-        HREF_TARGET: 'a[href][data-router]',
-        HREF_TARGET_FROM_ASIDE: 'aside a[href][data-router]',
-        INPUT_CHECKBOX: 'input[type=range].checkbox',
-        HREF_TARGET_FROM_MENU: "[data-control=menu] a[href]"
+        INPUT_CHECKBOX: 'input[type=range].checkbox'
     };
 
     /**
@@ -28,12 +26,9 @@ Lungo.Boot.Events = (function(lng, undefined) {
      *
      */
     var init = function() {
-        lng.dom(SELECTORS.HREF_TARGET_FROM_ASIDE).tap(_hideAsideIfNecesary);
-        lng.dom(SELECTORS.HREF_TARGET).tap(_loadTarget);
-        lng.dom(SELECTORS.INPUT_CHECKBOX).tap(_changeCheckboxValue);
-        lng.dom(SELECTORS.HREF_TARGET_FROM_MENU).tap(_closeMenu);
-
-        lng.View.Aside.suscribeEvents(lng.dom(SELECTORS.HREF_ASIDE));
+        lng.dom(QUERY.HREF_ROUTER).tap(_loadTarget);
+        lng.dom(QUERY.MENU_HREF).tap(_closeMenu);
+        lng.dom(QUERY.INPUT_CHECKBOX).tap(_changeCheckboxValue);
     };
 
     var _loadTarget = function(event) {
@@ -45,11 +40,6 @@ Lungo.Boot.Events = (function(lng, undefined) {
         } else {
             _selectTarget(link);
         }
-    };
-
-    var _hideAsideIfNecesary = function(event) {
-        event.preventDefault();
-        lng.View.Aside.hide();
     };
 
     var _changeCheckboxValue = function(event)  {
@@ -66,7 +56,23 @@ Lungo.Boot.Events = (function(lng, undefined) {
         lng.dom("[data-router=menu] > .icon").attr("class", "icon " + el.data("icon"));
     };
 
+    var _loadAsyncTarget = function(link) {
+        lng.Notification.show();
+        lng.Resource.load(link.data("async"));
+        link[0].removeAttribute("data-async");
+        lng.Boot.Data.init( link.attr(ATTRIBUTE.HREF) );
+
+        setTimeout(function() {
+            _selectTarget(link);
+            lng.Notification.hide();
+        }, lng.Constants.TRANSITION.DURATION * 2);
+    };
+
     var _selectTarget = function(link) {
+        if (link.closest(ELEMENT.ASIDE).length > 0) {
+            lng.View.Aside.hide();
+        }
+
         var target_type = link.data(ATTRIBUTE.ROUTER);
         var target_id = link.attr(ATTRIBUTE.HREF);
 
@@ -87,18 +93,6 @@ Lungo.Boot.Events = (function(lng, undefined) {
                 _goMenu(target_id);
                 break;
         }
-    };
-
-    var _loadAsyncTarget = function(link) {
-        lng.Notification.show();
-        lng.Resource.load(link.data("async"));
-        link[0].removeAttribute("data-async");
-        lng.Boot.Data.init( link.attr(ATTRIBUTE.HREF) );
-
-        setTimeout(function() {
-            _selectTarget(link);
-            lng.Notification.hide();
-        }, lng.Constants.TRANSITION.DURATION * 2);
     };
 
     var _goSection = function(id) {

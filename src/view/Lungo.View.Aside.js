@@ -89,9 +89,10 @@ Lungo.View.Aside = (function(lng, undefined) {
      *
      * @method suscribeEvents
      */
-    var suscribeEvents = function() {
-
+    var draggable = function() {
         var MIN_XDIFF = parseInt(document.body.getBoundingClientRect().width / 3, 10);
+        MIN_XDIFF = 128;
+
         lng.dom(QUERY.HREF_ASIDE).each(function() {
             var STARTED = false;
             var a = lng.dom(this);
@@ -156,10 +157,10 @@ Lungo.View.Aside = (function(lng, undefined) {
     };
 
     return {
-        suscribeEvents: suscribeEvents,
         toggle: toggle,
         show: show,
-        hide: hide
+        hide: hide,
+        draggable: draggable
     };
 
 })(Lungo);

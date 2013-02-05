@@ -23,7 +23,10 @@ Lungo.Constants = {
     QUERY: {
         LIST_IN_ELEMENT: 'article.list, aside.list',
         ELEMENT_SCROLLABLE: 'aside.scroll, article.scroll',
-        HREF_ASIDE: 'header a[href][data-router=aside]'
+        HREF_ASIDE: 'header a[href][data-router=aside]',
+        HREF_ROUTER: 'a[href][data-router]',
+        MENU_HREF: '[data-control=menu] a[href]',
+        INPUT_CHECKBOX: 'input[type=range].checkbox'
     },
 
     CLASS: {

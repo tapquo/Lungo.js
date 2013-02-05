@@ -16,7 +16,6 @@ Lungo.Router = (function(lng, undefined) {
     var TRIGGER = lng.Constants.TRIGGER;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var DEVICE = lng.Constants.DEVICE;
-
     var HASHTAG_CHARACTER = '#';
 
     /**
@@ -42,14 +41,13 @@ Lungo.Router = (function(lng, undefined) {
                 target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
 
 
-                _asideAttached(target);
+                _attachAside(target);
 
 
                 lng.Element.Cache.section = target;
                 lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + '.' + CLASS.ACTIVE);
 
 
-                console.error(lng.Element.Cache.aside);
                 lng.Router.History.add(section_id);
                 _sectionTriggers(current, target);
             }
@@ -132,7 +130,7 @@ Lungo.Router = (function(lng, undefined) {
         target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
 
         _assignTransition(target, target.data('transition-origin'));
-        _asideAttached(target);
+        _attachAside(target);
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
         lng.Element.Cache.section = target;
         lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
@@ -169,7 +167,7 @@ Lungo.Router = (function(lng, undefined) {
         section.data('transition-origin', section.data('transition'));
     };
 
-    var _asideAttached = function(target) {
+    var _attachAside = function(target) {
         if (lng.Element.Cache.aside) lng.Element.Cache.aside.removeClass(CLASS.SHOW);
         if (target.data("aside") && lng.DEVICE != DEVICE.PHONE) {
             lng.View.Aside.show(target.data("aside"));
