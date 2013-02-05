@@ -22,6 +22,10 @@ Lungo.Boot.Device = (function(lng, undefined) {
         lng.DEVICE = env.screen.width < 768 ? DEVICE.PHONE: DEVICE.TABLET;
 
         lng.dom(document.body).data("data", lng.DEVICE);
+
+        if (lng.DEVICE === lng.Constants.DEVICE.PHONE) {
+            lng.View.Aside.draggable();
+        }
     };
 
     return {
