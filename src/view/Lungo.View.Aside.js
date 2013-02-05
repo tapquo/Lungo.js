@@ -13,6 +13,8 @@ Lungo.View.Aside = (function(lng, undefined) {
     var CLASS = lng.Constants.CLASS;
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var DEVICE = lng.Constants.DEVICE;
+    var QUERY = lng.Constants.QUERY;
+
 
     /**
      * Toggle an aside element
@@ -47,7 +49,7 @@ Lungo.View.Aside = (function(lng, undefined) {
             lng.Element.Cache.aside = aside;
 
             aside.addClass(CLASS.SHOW);
-            if (lng.DEVICE == DEVICE.phone) {
+            if (lng.DEVICE == DEVICE.PHONE) {
                 var aside_stylesheet = _asideStylesheet(aside);
                 lng.Element.Cache.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
             }
@@ -62,7 +64,7 @@ Lungo.View.Aside = (function(lng, undefined) {
      * @method hide
      */
     var hide = function(target) {
-        if (lng.DEVICE == DEVICE.phone) {
+        if (lng.DEVICE == DEVICE.PHONE) {
 
             var aside = target || lng.Element.Cache.aside;
             if (aside) {
@@ -82,9 +84,15 @@ Lungo.View.Aside = (function(lng, undefined) {
         }
     };
 
-    var suscribeEvents = function(hrefs) {
+    /**
+     * @todo
+     *
+     * @method suscribeEvents
+     */
+    var suscribeEvents = function() {
+
         var MIN_XDIFF = parseInt(document.body.getBoundingClientRect().width / 3, 10);
-        hrefs.each(function() {
+        lng.dom(QUERY.HREF_ASIDE).each(function() {
             var STARTED = false;
             var a = lng.dom(this);
             var section = a.closest("section");

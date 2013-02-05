@@ -22,7 +22,8 @@ Lungo.Constants = {
 
     QUERY: {
         LIST_IN_ELEMENT: 'article.list, aside.list',
-        ELEMENT_SCROLLABLE: 'aside.scroll, article.scroll'
+        ELEMENT_SCROLLABLE: 'aside.scroll, article.scroll',
+        HREF_ASIDE: 'header a[href][data-router=aside]'
     },
 
     CLASS: {
@@ -70,9 +71,9 @@ Lungo.Constants = {
     },
 
     DEVICE: {
-        phone: 'phone',
-        tablet: 'tablet',
-        tv: 'tv'
+        PHONE: 'phone',
+        TABLET: 'tablet',
+        TV: 'tv'
     },
 
     ERROR: {

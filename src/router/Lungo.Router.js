@@ -171,7 +171,7 @@ Lungo.Router = (function(lng, undefined) {
 
     var _asideAttached = function(target) {
         if (lng.Element.Cache.aside) lng.Element.Cache.aside.removeClass(CLASS.SHOW);
-        if (target.data("aside") && lng.DEVICE != DEVICE.phone) {
+        if (target.data("aside") && lng.DEVICE != DEVICE.PHONE) {
             lng.View.Aside.show(target.data("aside"));
         }
     };
