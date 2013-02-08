@@ -88,7 +88,7 @@ Lungo.Router = (function(lng, undefined) {
     var back = function() {
         var current = lng.Element.Cache.section;
 
-        if (lng.Element.Cache.aside) {
+        if (lng.DEVICE == DEVICE.PHONE && lng.Element.Cache.aside && lng.Element.Cache.aside.hasClass(CLASS.SHOW)) {
             lng.View.Aside.hide();
             setTimeout(function() {
                 _back(current);

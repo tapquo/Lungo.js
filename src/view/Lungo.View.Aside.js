@@ -51,7 +51,6 @@ Lungo.View.Aside = (function(lng, undefined) {
      * @param  {string} Aside id
      */
     var toggle = function() {
-        console.error(lng.Element.Cache.aside);
         if (lng.Element.Cache.aside) {
             var is_visible = lng.Element.Cache.aside.hasClass(CLASS.SHOW);
             if (is_visible) {
