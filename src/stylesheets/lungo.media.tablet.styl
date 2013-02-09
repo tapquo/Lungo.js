@@ -6,16 +6,58 @@
 
   body
     display-box()
-    box-pack(justify)
     box-orient(horizontal)
     overflow: hidden
 
+  aside
+    width 15%
+    // transform translateX(-100%)
+    // transition-property transform
+    // transition-duration TRANSITION_TIME
+    // &.show
+    //   transition-delay TRANSITION_TIME
+    //   transform translateX(0%)
+
+
   section
     ordinal-group(2)
-    box-flex(1)
-    &:not(.show)
-      display: none !important
 
+    display: none
+    transform translateX(100%)
+
+    &.show
+      display-box()
+      -webkit-animation: showing TRANSITION_TIME TRANSITION_TIME
+      -webkit-animation-fill-mode: forwards
+
+    &.hide
+      -webkit-animation: hiding TRANSITION_TIME
+
+
+    &:not([data-child])
+      box-flex (1)
+
+    &[data-child]
+      width: 25%
+      margin-right: 0.5%
 
   [data-router=aside]
     display: none !important
+
+
+
+@-webkit-keyframes showing
+  0%
+    opacity: 0
+    transform translateX(100%)
+  100%
+    opacity: 1
+    transform translateX(0%)
+
+@-webkit-keyframes hiding
+  0%
+    opacity: 1
+    transform translateX(0%)
+  100%
+    opacity: 0
+    transform translateX(100%)

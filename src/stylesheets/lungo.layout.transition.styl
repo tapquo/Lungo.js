@@ -12,7 +12,7 @@
 section
   &[data-transition]
     // display: block !important
-    display-box()
+    // display-box()
     transition-property( opacity, z-index, transform )
     transition-duration( TRANSITION_TIME )
     transition-timing-function( DEFAULT_TRANSITION )
@@ -30,13 +30,13 @@ section
       opacity: 0
 
   /* Transition: SLIDE */
-  &[data-transition="slide"]
-    transform translateX(100%)
-    visibility: visible !important
-    &.show
-      transform translateX(0%)
-    &.hide
-      transform translateX(-100%)
+  // &[data-transition="slide"]
+  //   transform translateX(100%)
+  //   visibility: visible
+  //   &.show
+  //     transform translateX(0%)
+  //   &.hide
+  //     transform translateX(-100%)
 
   /* Transition: COVER */
   &[data-transition="cover"]

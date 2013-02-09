@@ -91,9 +91,6 @@ Lungo.View.Aside = (function(lng, undefined) {
                 setTimeout(function() {
                     lng.Element.Cache.aside.removeClass(CLASS.SHOW);
                 }, lng.Constants.TRANSITION.DURATION);
-
-            } else {
-                // lng.Element.Cache.aside.removeClass(CLASS.SHOW);
             }
         }
     };
