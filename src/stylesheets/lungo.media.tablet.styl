@@ -1,5 +1,7 @@
 @import "constants.styl"
 
+
+// TRANSITION_TIME = 1s
 /* ==== Tablet ==== */
 // @media only screen and (min-width: 768px) and (max-width: 1280px)
 @media only screen and (min-width: 768px)
@@ -11,25 +13,24 @@
 
   aside
     width 15%
-    // transform translateX(-100%)
-    // transition-property transform
-    // transition-duration TRANSITION_TIME
-    // &.show
-    //   transition-delay TRANSITION_TIME
-    //   transform translateX(0%)
+    transform translateX(-100%)
 
+    transition-property transform
+    transition-duration TRANSITION_TIME
+    &.show
+      transform translateX(0%)
 
   section
     ordinal-group(2)
 
     display: none
+    opacity: 0
     transform translateX(100%)
+    -webkit-animation: showing TRANSITION_TIME TRANSITION_TIME
+    -webkit-animation-fill-mode: forwards
 
     &.show
       display-box()
-      -webkit-animation: showing TRANSITION_TIME TRANSITION_TIME
-      -webkit-animation-fill-mode: forwards
-
     &.hide
       -webkit-animation: hiding TRANSITION_TIME
 
@@ -43,6 +44,18 @@
 
   [data-router=aside]
     display: none !important
+
+
+
+  // &[data-transition]
+  //     display-box()
+  //     transition-propert transform, opacity
+  //     transition-duration( TRANSITION_TIME )
+  //     transition-timing-function( DEFAULT_TRANSITION )
+  //     backface-visibility( hidden )
+
+
+
 
 
 

@@ -37,20 +37,23 @@ Lungo.Router = (function(lng, undefined) {
                 // @todo: Analize Router
 
                 if (lng.DEVICE == DEVICE.PHONE) {
-                    if (current) {
+                    if (current ) {
                         _defineTransition(target, current);
                         current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                     }
                     _showPhoneSection(target);
 
                 } else {
-                    if (current) {
+
+                    if (current && !current.data('child')) {
                         current.addClass(CLASS.HIDE);
 
                         setTimeout(function() {
                             current.removeClass(CLASS.SHOW);
                         }, lng.Constants.TRANSITION.DURATION);
                     }
+
+
 
                     setTimeout(function() {
                         target.addClass(CLASS.SHOW);
