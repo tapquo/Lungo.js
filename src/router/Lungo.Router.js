@@ -34,12 +34,30 @@ Lungo.Router = (function(lng, undefined) {
             var target = (current) ? current.siblings(query) : lng.dom(query);
 
             if (target.length > 0) {
-                if (current) {
-                    _defineTransition(target, current);
-                    current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+                // @todo: Analize Router
+
+                if (lng.DEVICE == DEVICE.PHONE) {
+                    if (current) {
+                        _defineTransition(target, current);
+                        current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
+                    }
+                    _showPhoneSection(target);
+
+                } else {
+                    if (current) {
+                        current.addClass(CLASS.HIDE);
+
+                        setTimeout(function() {
+                            current.removeClass(CLASS.SHOW);
+                        }, lng.Constants.TRANSITION.DURATION);
+                    }
+
+                    setTimeout(function() {
+                        target.addClass(CLASS.SHOW);
+                    }, lng.Constants.TRANSITION.DURATION);
                 }
 
-                _toggleSection(current, target);
+                _cacheView(current, target);
 
                 lng.Router.History.add(section_id);
             }
@@ -110,11 +128,29 @@ Lungo.Router = (function(lng, undefined) {
 
         _assignTransition(target, target.data('transition-origin'));
 
-        _toggleSection(current, target);
+        _showPhoneSection(target);
+        _cacheView(current, target);
     };
 
-    var _toggleSection = function(current, target) {
+    var _showPhoneSection = function(target) {
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
+    };
+
+    var _showTabletSection = function(current, target) {
+        if (current) {
+            current.addClass(CLASS.HIDE);
+
+            setTimeout(function() {
+                current.removeClass(CLASS.SHOW);
+            }, lng.Constants.TRANSITION.DURATION);
+        }
+
+        setTimeout(function() {
+            target.addClass(CLASS.SHOW);
+        }, lng.Constants.TRANSITION.DURATION + 50);
+    };
+
+    var _cacheView = function(current, target) {
         lng.Element.Cache.section = target;
         lng.Element.Cache.article = target.find(ELEMENT.ARTICLE + "." + CLASS.ACTIVE);
         lng.Element.Cache.aside = lng.View.Aside.active(target);
