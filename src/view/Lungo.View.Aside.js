@@ -14,6 +14,7 @@ Lungo.View.Aside = (function(lng, undefined) {
     var ATTRIBUTE = lng.Constants.ATTRIBUTE;
     var DEVICE = lng.Constants.DEVICE;
     var QUERY = lng.Constants.QUERY;
+    var TRANSITION = lng.Constants.TRANSITION.DURATION;
 
     /**
      * Active aside for a determinate section
@@ -29,7 +30,7 @@ Lungo.View.Aside = (function(lng, undefined) {
 
         // Deactive
         if ((current_aside && aside_id != current_aside.attr('id')) || aside_id === undefined) {
-            current_aside.removeClass(CLASS.ACTIVE).removeClass(CLASS.SHOW);
+            current_aside.removeClass(CLASS.SHOW).removeClass(CLASS.ACTIVE);
             lng.Element.Cache.aside = undefined;
         }
 
@@ -68,9 +69,13 @@ Lungo.View.Aside = (function(lng, undefined) {
      */
     var show = function(aside) {
         if (lng.Element.Cache.aside) {
-            lng.Element.Cache.aside.addClass(CLASS.SHOW);
+            setTimeout(function() {
+                lng.Element.Cache.aside.addClass(CLASS.SHOW);
+            }, TRANSITION);
 
             if (lng.DEVICE == DEVICE.PHONE) {
+                lng.Element.Cache.aside.addClass(CLASS.SHOW);
+
                 var aside_stylesheet = _asideStylesheet();
                 lng.Element.Cache.section.addClass(aside_stylesheet).addClass(CLASS.ASIDE);
             }
@@ -90,7 +95,7 @@ Lungo.View.Aside = (function(lng, undefined) {
 
                 setTimeout(function() {
                     lng.Element.Cache.aside.removeClass(CLASS.SHOW);
-                }, lng.Constants.TRANSITION.DURATION);
+                }, TRANSITION);
             }
         }
     };
