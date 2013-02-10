@@ -7,31 +7,22 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 /* @import url("https://raw.github.com/soyjavi/CSSmethods/master/stylus/vendor.styl") */
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
 /* -------------------------- THEME -------------------------- */
+/* -------------------------- DEFAULTS -------------------------- */
 body {
-  background-color: #222;
+  background-color: #000;
+  color: #333;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 13px;
   line-height: 1.3em;
   letter-spacing: -0.05em;
 }
-.theme,
-li.theme,
-a.theme {
+body .theme {
   background-color: THEME-light;
 }
-.theme:active,
-li.theme:active,
-a.theme:active {
+body .theme:active {
   background-color: #0093d5;
-}
-[data-control="pull"] {
-  color: #666;
-  -webkit-text-shadow: 0 1px 0 #fff;
-  -moz-text-shadow: 0 1px 0 #fff;
-  text-shadow: 0 1px 0 #fff;
 }
 /* -------------------------- LAYOUT COLORS -------------------------- */
 section {
@@ -39,12 +30,16 @@ section {
 }
 section > header {
   background-color: #0093d5;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
+  -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
+  -moz-box-shadow: 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
+  -ms-box-shadow: 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
+  -o-box-shadow: 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 #03b1ff, inset 0 -1px 0 #007db5;
   color: #fff;
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
 }
 section > footer,
@@ -52,6 +47,8 @@ section nav.groupbar {
   background-color: #222;
   -webkit-box-shadow: inset 0 3px 0 #1d1d1d;
   -moz-box-shadow: inset 0 3px 0 #1d1d1d;
+  -ms-box-shadow: inset 0 3px 0 #1d1d1d;
+  -o-box-shadow: inset 0 3px 0 #1d1d1d;
   box-shadow: inset 0 3px 0 #1d1d1d;
 }
 section > article,
@@ -66,11 +63,15 @@ section > [data-control="pull"].splash {
 section.aside {
   -webkit-box-shadow: -1px 0 2px rgba(0,0,0,0.2);
   -moz-box-shadow: -1px 0 2px rgba(0,0,0,0.2);
+  -ms-box-shadow: -1px 0 2px rgba(0,0,0,0.2);
+  -o-box-shadow: -1px 0 2px rgba(0,0,0,0.2);
   box-shadow: -1px 0 2px rgba(0,0,0,0.2);
 }
 section.aside.right {
   -webkit-box-shadow: 1px 0 2px rgba(0,0,0,0.2);
   -moz-box-shadow: 1px 0 2px rgba(0,0,0,0.2);
+  -ms-box-shadow: 1px 0 2px rgba(0,0,0,0.2);
+  -o-box-shadow: 1px 0 2px rgba(0,0,0,0.2);
   box-shadow: 1px 0 2px rgba(0,0,0,0.2);
 }
 aside {
@@ -84,6 +85,8 @@ aside > footer {
 aside > header {
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #222, inset 0 -1px 0 #141414;
   -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #222, inset 0 -1px 0 #141414;
+  -ms-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #222, inset 0 -1px 0 #141414;
+  -o-box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #222, inset 0 -1px 0 #141414;
   box-shadow: 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 #222, inset 0 -1px 0 #141414;
 }
 /* -------------------------- NAVIGATION -------------------------- */
@@ -91,6 +94,8 @@ section > header > nav a:not(.button) {
   color: #00608a;
   -webkit-text-shadow: 0 1px 0 #20baff;
   -moz-text-shadow: 0 1px 0 #20baff;
+  -ms-text-shadow: 0 1px 0 #20baff;
+  -o-text-shadow: 0 1px 0 #20baff;
   text-shadow: 0 1px 0 #20baff;
 }
 section > header > nav a:not(.button):active {
@@ -99,6 +104,8 @@ section > header > nav a:not(.button):active {
 section > nav.groupbar > a.active {
   -webkit-box-shadow: inset 0 -3px 0 #0093d5;
   -moz-box-shadow: inset 0 -3px 0 #0093d5;
+  -ms-box-shadow: inset 0 -3px 0 #0093d5;
+  -o-box-shadow: inset 0 -3px 0 #0093d5;
   box-shadow: inset 0 -3px 0 #0093d5;
 }
 section > footer > nav > a,
@@ -112,6 +119,8 @@ nav.groupbar > a.active {
 section > footer > nav > a {
   -webkit-box-shadow: 1px 0 0 #1d1d1d;
   -moz-box-shadow: 1px 0 0 #1d1d1d;
+  -ms-box-shadow: 1px 0 0 #1d1d1d;
+  -o-box-shadow: 1px 0 0 #1d1d1d;
   box-shadow: 1px 0 0 #1d1d1d;
 }
 section > footer > nav > a.active {
@@ -119,6 +128,8 @@ section > footer > nav > a.active {
   background-color: #1d1d1d;
   -webkit-box-shadow: inset 0 3px 0 #0093d5;
   -moz-box-shadow: inset 0 3px 0 #0093d5;
+  -ms-box-shadow: inset 0 3px 0 #0093d5;
+  -o-box-shadow: inset 0 3px 0 #0093d5;
   box-shadow: inset 0 3px 0 #0093d5;
 }
 aside nav a {
@@ -126,6 +137,32 @@ aside nav a {
 }
 aside nav a:active {
   color: #919191;
+}
+nav[data-control=menu] {
+  background: #222;
+  -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  -ms-box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  -o-box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+}
+nav[data-control=menu] > a {
+  color: #fff;
+  -webkit-text-shadow: 0 1px 0 #111;
+  -moz-text-shadow: 0 1px 0 #111;
+  -ms-text-shadow: 0 1px 0 #111;
+  -o-text-shadow: 0 1px 0 #111;
+  text-shadow: 0 1px 0 #111;
+  font-weight: 700;
+  border-bottom: 1px solid #141414;
+  border-top: 1px solid #2d2d2d;
+}
+nav[data-control=menu] > a:active {
+  background: #111;
+  border-color: transparent;
+}
+nav[data-control=menu] > a > .icon {
+  color: #595959;
 }
 /* -------------------------- LISTS -------------------------- */
 section .list li {
@@ -137,21 +174,27 @@ section .list li:not(.anchor) {
 section .list li.secondary {
   -webkit-box-shadow: inset 4px 0px 0px #bfbfbf;
   -moz-box-shadow: inset 4px 0px 0px #bfbfbf;
+  -ms-box-shadow: inset 4px 0px 0px #bfbfbf;
+  -o-box-shadow: inset 4px 0px 0px #bfbfbf;
   box-shadow: inset 4px 0px 0px #bfbfbf;
 }
 section .list li.accept {
   -webkit-box-shadow: inset 4px 0px 0px #3fb58e;
   -moz-box-shadow: inset 4px 0px 0px #3fb58e;
+  -ms-box-shadow: inset 4px 0px 0px #3fb58e;
+  -o-box-shadow: inset 4px 0px 0px #3fb58e;
   box-shadow: inset 4px 0px 0px #3fb58e;
 }
 section .list li.cancel {
   -webkit-box-shadow: inset 4px 0px 0px #ee6557;
   -moz-box-shadow: inset 4px 0px 0px #ee6557;
+  -ms-box-shadow: inset 4px 0px 0px #ee6557;
+  -o-box-shadow: inset 4px 0px 0px #ee6557;
   box-shadow: inset 4px 0px 0px #ee6557;
 }
 section .list li,
 section .list li a {
-  color: #333;
+  color: LIST_color;
 }
 section .list li.anchor,
 section .list li a.anchor {
@@ -220,9 +263,14 @@ aside .list li:not(:first-child) {
 aside .list li:not(:last-child) {
   border-bottom: solid 1px #141414;
 }
+aside .list li:active {
+  background: #181818;
+}
+aside .list li.active {
+  background: #0093d5;
+}
 aside .list li.active,
 aside .list li:active {
-  background: #0093d5;
   border-color: transparent;
 }
 aside .list li.active strong,
@@ -245,6 +293,8 @@ aside .list li .icon {
   color: #fff;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   font-weight: 700 !important;
 }
@@ -257,7 +307,16 @@ aside .list li .icon {
 footer .tag:not(.icon) {
   -webkit-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
   -moz-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
+  -ms-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
+  -o-box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
   box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5);
+}
+[data-control="pull"] {
+  -webkit-text-shadow: 0 1px 0 #fff;
+  -moz-text-shadow: 0 1px 0 #fff;
+  -ms-text-shadow: 0 1px 0 #fff;
+  -o-text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 #fff;
 }
 /* -------------------------- NOTIFICATION -------------------------- */
 .notification {
@@ -271,6 +330,8 @@ footer .tag:not(.icon) {
   color: #222;
   -webkit-box-shadow: 0 0 8px #000;
   -moz-box-shadow: 0 0 8px #000;
+  -ms-box-shadow: 0 0 8px #000;
+  -o-box-shadow: 0 0 8px #000;
   box-shadow: 0 0 8px #000;
 }
 .notification .window:not(.growl) button,
@@ -278,10 +339,14 @@ footer .tag:not(.icon) {
   background: #fff !important;
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
+  -ms-box-shadow: none !important;
+  -o-box-shadow: none !important;
   box-shadow: none !important;
   color: #007db5 !important;
   -webkit-border-radius: 0px !important;
   -moz-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
   border-radius: 0px !important;
   border: none !important;
   margin-bottom: 1px;
@@ -300,9 +365,13 @@ header button {
   background-color: #007db5;
   -webkit-box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
   -moz-box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
+  -ms-box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
+  -o-box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
   box-shadow: 0 1px 0 #03b1ff, inset 0 1px 0 #00608a;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   border-radius: 4px;
 }
 header .button:active,
@@ -313,13 +382,19 @@ article .button,
 article button {
   -webkit-border-radius: FORM-border-radius;
   -moz-border-radius: FORM-border-radius;
+  -ms-border-radius: FORM-border-radius;
+  -o-border-radius: FORM-border-radius;
   border-radius: FORM-border-radius;
   color: #fff;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  -o-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
   border: solid 1px rgba(0,0,0,0.1);
 }
@@ -327,6 +402,8 @@ article .button:active,
 article button:active {
   -webkit-box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
   -moz-box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
+  -ms-box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
+  -o-box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
   box-shadow: inset 0 0 128px rgba(0,0,0,0.25);
   border-color: none;
 }
@@ -358,7 +435,7 @@ article .button.cancel,
 article .tag:not(.icon).cancel {
   background-color: #ee6557;
 }
-/* -------------------------- BUTTONS -------------------------- */
+/* -------------------------- FORMS -------------------------- */
 form label,
 .form label {
   color: #aaa;
@@ -402,9 +479,13 @@ form textarea,
   border: 1px solid #ddd;
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -ms-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -o-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
   border-radius: 0px;
 }
 form input[type="text"].error,
@@ -526,6 +607,8 @@ form input[type=range],
 .form input[type=range] {
   -webkit-box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
   -moz-box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
+  -ms-box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
+  -o-box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
   box-shadow: 'inset 0 1px 2px rgba(0,0,0,0.1)';
 }
 form input[type=range]:not(.checkbox),
@@ -550,6 +633,8 @@ form input[type=range]::-webkit-slider-thumb,
 .form input[type=range]::-webkit-slider-thumb {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   background-color: #e7eae2;
   border: solid 1px #d0d4c6;
