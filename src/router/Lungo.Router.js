@@ -34,30 +34,15 @@ Lungo.Router = (function(lng, undefined) {
             var target = (current) ? current.siblings(query) : lng.dom(query);
 
             if (target.length > 0) {
-                // @todo: Analize Router
-
                 if (lng.DEVICE == DEVICE.PHONE) {
-                    if (current ) {
+                    if (current) {
                         _defineTransition(target, current);
                         current.removeClass(CLASS.SHOW).addClass(CLASS.HIDE);
                     }
                     _showPhoneSection(target);
 
                 } else {
-
-                    if (current && !current.data('child')) {
-                        current.addClass(CLASS.HIDE);
-
-                        setTimeout(function() {
-                            current.removeClass(CLASS.SHOW);
-                        }, lng.Constants.TRANSITION.DURATION);
-                    }
-
-
-
-                    setTimeout(function() {
-                        target.addClass(CLASS.SHOW);
-                    }, lng.Constants.TRANSITION.DURATION);
+                    _showTabletSection(current, target);
                 }
 
                 _cacheView(current, target);
@@ -65,6 +50,36 @@ Lungo.Router = (function(lng, undefined) {
                 lng.Router.History.add(section_id);
             }
         }
+    };
+
+
+    /**
+     * Return to previous section.
+     *
+     * @method back
+     */
+    var back = function() {
+        if (lng.DEVICE == DEVICE.PHONE && lng.Element.Cache.aside && lng.Element.Cache.aside.hasClass(CLASS.SHOW)) {
+            lng.View.Aside.hide();
+        }
+        lng.Router.History.removeLast();
+
+        var current = lng.Element.Cache.section;
+        var target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
+
+        if (lng.DEVICE == DEVICE.PHONE) {
+            current.removeClass(CLASS.SHOW);
+
+            setTimeout(function() {
+                current.removeClass(CLASS.HIDING);
+            }, lng.Constants.TRANSITION.DURATION);
+
+            _assignTransition(target, target.data('transition-origin'));
+            _showPhoneSection(target);
+        } else {
+            _showTabletSection(current, target);
+        }
+        _cacheView(current, target);
     };
 
     /**
@@ -101,56 +116,22 @@ Lungo.Router = (function(lng, undefined) {
         }
     };
 
-    /**
-     * Return to previous section.
-     *
-     * @method back
-     */
-    var back = function() {
-        var current = lng.Element.Cache.section;
-
-        if (lng.DEVICE == DEVICE.PHONE && lng.Element.Cache.aside && lng.Element.Cache.aside.hasClass(CLASS.SHOW)) {
-            lng.View.Aside.hide();
-            setTimeout(function() {
-                _back(current);
-            }, lng.Constants.TRANSITION.DURATION);
-        } else {
-            _back(current);
-        }
-    };
-
-    var _back = function(current) {
-        current.removeClass(CLASS.SHOW).addClass(CLASS.HIDING);
-
-        setTimeout(function() {
-            current.removeClass(CLASS.HIDING);
-        }, lng.Constants.TRANSITION.DURATION);
-
-        lng.Router.History.removeLast();
-        target = current.siblings(ELEMENT.SECTION + lng.Router.History.current());
-
-        _assignTransition(target, target.data('transition-origin'));
-
-        _showPhoneSection(target);
-        _cacheView(current, target);
-    };
 
     var _showPhoneSection = function(target) {
         target.removeClass(CLASS.HIDE).addClass(CLASS.SHOW);
     };
 
     var _showTabletSection = function(current, target) {
-        if (current) {
+        if (current && !current.data('child')) {
             current.addClass(CLASS.HIDE);
-
             setTimeout(function() {
-                current.removeClass(CLASS.SHOW);
+                current.removeClass(CLASS.SHOW).removeClass(CLASS.HIDE);
             }, lng.Constants.TRANSITION.DURATION);
         }
 
         setTimeout(function() {
             target.addClass(CLASS.SHOW);
-        }, lng.Constants.TRANSITION.DURATION + 50);
+        }, lng.Constants.TRANSITION.DURATION );
     };
 
     var _cacheView = function(current, target) {
