@@ -13,16 +13,15 @@ module.exports = function(grunt) {
     },
 
     resources: {
-        core: ['src/Lungo.js'],
+        coffeescripts: ['src/**/*.coffee'],
+        core: ['build/src/Lungo.js'],
         modules: [
-          'src/modules/*.js',
-          'src/boot/*.js',
-          'src/data/*.js',
-          'src/element/*.js',
-          'src/router/Lungo.Router.js', 'src/router/Lungo.Router.History.js',
-          'src/view/*.js'],
-
-        javascripts: ['src/**/*.js'],
+          'build/src/modules/*.js',
+          'build/src/boot/*.js',
+          'build/src/data/*.js',
+          'build/src/element/*.js',
+          'build/src/router/Lungo.Router.js', 'build/src/router/Lungo.Router.History.js',
+          'build/src/view/*.js'],
         stylesheets: [
             'src/**/lungo.base.styl',
             'src/**/lungo.layout.styl',
@@ -34,18 +33,14 @@ module.exports = function(grunt) {
         themes: ['src/**/theme**.styl']
     },
 
-    stylus: {
-      stylesheets: {
-        options: { compress: true, paths: ['src/stylesheets/import'] },
-        files: { 'packages/<%=meta.file%>/<%=meta.file%>.css': '<config:resources.stylesheets>' }
-      },
-      icons: {
-        options: { compress: true },
-        files: { 'packages/lungo/**.css': '<config:resources.icons>' }
-      },
-      flatten: {
-        options: { flatten: true },
-        files: { 'packages/lungo/**.css': '<config:resources.themes>' }
+    coffee: {
+      lungo: {
+        src: ['<config:resources.coffeescripts>'],
+        dest: 'build',
+        options: {
+            bare: true,
+            preserve_dirs: true
+        }
       }
     },
 
@@ -63,6 +58,21 @@ module.exports = function(grunt) {
       }
     },
 
+    stylus: {
+      stylesheets: {
+        options: { compress: true, paths: ['src/stylesheets/import'] },
+        files: { 'packages/<%=meta.file%>/<%=meta.file%>.css': '<config:resources.stylesheets>' }
+      },
+      icons: {
+        options: { compress: true },
+        files: { 'packages/lungo/**.css': '<config:resources.icons>' }
+      },
+      flatten: {
+        options: { flatten: true },
+        files: { 'packages/lungo/**.css': '<config:resources.themes>' }
+      }
+    },
+
     copy: {
       example: {
         files: { 'example/components/lungo/': ['packages/lungo/*'] }
@@ -73,15 +83,16 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: ['<config:resources.javascripts>', '<config:resources.stylesheets>', '<config:resources.themes>'],
-      tasks: 'concat min stylus copy'
+      files: ['<config:resources.coffeescripts>', '<config:resources.stylesheets>', '<config:resources.themes>'],
+      tasks: 'coffee concat min stylus copy'
     }
   });
 
+  grunt.loadNpmTasks('grunt-coffee');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
-  grunt.registerTask('default', 'concat min stylus copy');
+  grunt.registerTask('default', 'coffee concat min stylus copy');
 
 };
