@@ -26,10 +26,11 @@
     display: none
     opacity: 0
     transform translateX(100%)
-    -webkit-animation: showing TRANSITION_TIME TRANSITION_TIME
-    -webkit-animation-fill-mode: forwards
+
 
     &.show
+      -webkit-animation: showing TRANSITION_TIME TRANSITION_TIME
+      -webkit-animation-fill-mode: forwards
       display-box()
     &.hide
       -webkit-animation: hiding TRANSITION_TIME
