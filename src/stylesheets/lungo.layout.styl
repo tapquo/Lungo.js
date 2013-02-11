@@ -28,8 +28,100 @@ aside, section
     box-flex(1)
     z-index: 0
 
+
+/* ========================================================================= */
+/* ================================ SECTION ================================ */
+/* ========================================================================= */
 section
   z-index: 2
   width: inherit
   &:not(.show)
     z-index: 1
+
+
+/* ========================================================================= */
+/* ================================= ASIDE ================================= */
+/* ========================================================================= */
+aside
+  min-width: ASIDE_WIDTH
+  display: none
+  z-index: -1
+
+  &.active
+    display-box()
+  &.show
+    z-index: 0
+  &.right
+    right: 0px
+
+  // &.small
+  //   width: ASIDE_WIDTH_SMALL
+  //   & nav
+  //     width: ASIDE_WIDTH_SMALL
+  //     text-align: center
+  //     & a
+  //       display: block
+  //       padding: 0px
+  //       width: ASIDE_WIDTH_SMALL
+  //       height: ASIDE_WIDTH_SMALL
+  //       & .icon
+  //         position: absolute
+  //         width: inherit
+  //         font-size: ASIDE_SMALL_ICON
+  //         line-height: (ASIDE_WIDTH_SMALL - 8)
+
+  //       & .tag
+  //         position: relative
+  //         top: -(ASIDE_WIDTH_SMALL)
+  //         right: -(ASIDE_WIDTH_SMALL / 3.4)
+
+  //       &:first-child
+  //         margin-top: 8px
+
+/* ========================================================================= */
+/* ============================= HEADER/FOOTER ============================= */
+/* ========================================================================= */
+header, footer
+  height: HEADER_HEIGHT
+  line-height: HEADER_HEIGHT
+
+  & > nav
+    box-flex(0)
+
+  & > .title
+    margin: 0 4px
+    float: left
+    z-index: -1
+    font-size: (FONT_SIZE_BIG * 1.2)
+    z-index: 0
+    box-flex(1)
+
+    &.centered
+      position: absolute
+      left: 32px
+      right: 32px
+      text-align: center
+      display: inline-block
+
+  & > img.title
+    PAD = 18px
+    height: (HEADER_HEIGHT - PAD)
+    margin: (PAD / 2) auto
+
+
+/* ========================================================================= */
+/* ================================ ARTICLE ================================ */
+/* ========================================================================= */
+article
+  visibility: hidden
+  display: none
+
+  .show > &.active, .hide > &.active, .hiding > &.active
+    visibility: visible
+    display: block
+    z-index: 1
+
+    &.pull
+      transition-property transform
+      transition-duration TRANSITION_TIME
+
