@@ -23,13 +23,12 @@
         &.small
           transform translateX(-(ASIDE_WIDTH_SMALL))
 
-
     &[data-transition]
       display-box()
-      transition-property( opacity, z-index, transform )
-      transition-duration( TRANSITION_TIME )
-      transition-timing-function( DEFAULT_TRANSITION )
-      backface-visibility( hidden )
+      transition-property opacity, z-index, transform
+      transition-duration TRANSITION_TIME
+      transition-timing-function DEFAULT_TRANSITION
+      backface-visibility hidden
 
     /* Transition: POP */
     &[data-transition="pop"]
