@@ -20,8 +20,7 @@ module.exports = function(grunt) {
           'build/src/boot/*.js',
           'build/src/data/*.js',
           'build/src/element/*.js',
-          'build/src/router/Lungo.Router.js', 'build/src/router/Lungo.Router.History.js',
-          'build/src/view/*.js'],
+          'build/src/router/Lungo.Router.js', 'build/src/router/Lungo.Router.*.js'],
         stylesheets: [
             'src/**/lungo.base.styl',
             'src/**/lungo.layout.styl',

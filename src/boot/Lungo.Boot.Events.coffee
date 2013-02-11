@@ -56,7 +56,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     ), lng.Constants.TRANSITION.DURATION * 2
 
   _selectTarget = (link) ->
-    lng.View.Aside.hide()  if link.closest(ELEMENT.ASIDE).length > 0
+    lng.Aside.hide()  if link.closest(ELEMENT.ASIDE).length > 0
     target_type = link.data(ATTRIBUTE.ROUTER)
     target_id = link.attr(ATTRIBUTE.HREF)
     switch target_type
@@ -65,7 +65,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
       when ELEMENT.ARTICLE
         _goArticle link
       when ELEMENT.ASIDE
-        lng.View.Aside.toggle()
+        lng.Aside.toggle()
       when ELEMENT.MENU
         _goMenu target_id
 
