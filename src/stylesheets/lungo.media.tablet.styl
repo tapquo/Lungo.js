@@ -21,48 +21,28 @@
       transform translateX(0%)
 
   section
-    ordinal-group(2)
-
     display: none
     opacity: 0
+    ordinal-group(2)
     transform translateX(100%)
-
-
     &.show
-      -webkit-animation: showing TRANSITION_TIME TRANSITION_TIME
-      -webkit-animation-fill-mode: forwards
+      animation showing TRANSITION_TIME
+      animation-fill-mode forwards
       display-box()
     &.hide
-      -webkit-animation: hiding TRANSITION_TIME
+      animation hiding TRANSITION_TIME
 
-
-    &:not([data-child])
+    &:not([data-children])
       box-flex (1)
 
-    &[data-child]
+    &[data-children]
       width: 25%
-      margin-right: 0.5%
 
-  [data-router=aside]
-    display: none !important
-
-
-
-  // &[data-transition]
-  //     display-box()
-  //     transition-propert transform, opacity
-  //     transition-duration( TRANSITION_TIME )
-  //     transition-timing-function( DEFAULT_TRANSITION )
-  //     backface-visibility( hidden )
-
-
-
-
-
+    & [data-router=aside]
+      display: none !important
 
 @-webkit-keyframes showing
   0%
-    opacity: 0
     transform translateX(100%)
   100%
     opacity: 1
