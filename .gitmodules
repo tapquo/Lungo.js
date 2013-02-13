@@ -10,3 +10,18 @@
 [submodule "src/stylesheets/CSSmethods"]
 	path = src/stylesheets/CSSmethods
 	url = https://github.com/soyjavi/CSSmethods
+[submodule "packages/lungo.thirdparties"]
+	path = packages/lungo.thirdparties
+	url = https://github.com/TapQuo/lungo.thirdparties.git
+[submodule "packages/lungo.gmap"]
+	path = packages/lungo.gmap
+	url = https://github.com/TapQuo/lungo.gmap.git
+[submodule "packages/lungo.qr"]
+	path = packages/lungo.qr
+	url = https://github.com/TapQuo/lungo.qr.git
+[submodule "packages/lungo.language"]
+	path = packages/lungo.language
+	url = https://github.com/TapQuo/lungo.language.git
+[submodule "packages/lungo.mock"]
+	path = packages/lungo.mock
+	url = https://github.com/TapQuo/lungo.mock.git
