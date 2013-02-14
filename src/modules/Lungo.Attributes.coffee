@@ -54,4 +54,4 @@ Lungo.Attributes =
 
   back:
     selector: "header"
-    html: "<nav class=\"left\"><a href=\"#back\" data-router=\"section\" class=\"left\"><span class=\"icon {{value}}\"></span></a></nav>"
+    html: "<nav class=\"left\"><a href=\"#\" data-view-section=\"back\"><span class=\"icon {{value}}\"></span></a></nav>"

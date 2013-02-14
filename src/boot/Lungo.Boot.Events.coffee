@@ -9,6 +9,7 @@ Initialize the automatic DOM UI events
 ###
 
 Lungo.Boot.Events = do(lng = Lungo) ->
+  C = lng.Constants
   ATTRIBUTE = lng.Constants.ATTRIBUTE
   CLASS = lng.Constants.CLASS
   ELEMENT = lng.Constants.ELEMENT
@@ -21,23 +22,48 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   @method init
   ###
   init = ->
-    lng.dom(QUERY.HREF_ROUTER).tap _loadTarget
+    lng.dom(C.QUERY.SECTION_ROUTER).tap _onSection
+    lng.dom(C.QUERY.ARTICLE_ROUTER).tap _onArticle
+    lng.dom(C.QUERY.ASIDE_ROUTER).tap _onAside
+    lng.dom(C.QUERY.MENU_ROUTER).tap _onMenu
+
+
     lng.dom(QUERY.MENU_HREF).tap _closeMenu
     lng.dom(QUERY.INPUT_CHECKBOX).tap _changeCheckboxValue
 
-  _loadTarget = (event) ->
+  _onSection = (event) ->
     event.preventDefault()
-    link = lng.dom(this)
-    if link.data("async")
-      _loadAsyncTarget link
+    el = lng.dom @
+    if el.data "async"
+      _onAsyncSection el.data("async"), el.data("view-section")
     else
-      _selectTarget link
+      section_id = el.data "view-section"
+      if section_id isnt "back" then lng.Router.section(section_id) else lng.Router.back()
 
-  _changeCheckboxValue = (event) ->
+  _onAsyncSection = (url, section_id) ->
+    lng.Notification.show()
+    lng.Resource.load url
+    lng.Boot.Data.init "##{section_id}"
+    link.removeAttribute("data-async") for link in lng.dom "[data-async='#{url}']"
+    setTimeout (->
+      lng.Router.section section_id
+      do lng.Notification.hide
+    ), lng.Constants.TRANSITION.DURATION * 2
+
+  _onArticle = (event) ->
     event.preventDefault()
-    el = lng.dom(this)
-    current_value = (if el.val() > 0 then 0 else 1)
-    el.toggleClass("active").attr "value", current_value
+    el = lng.dom @
+    lng.Router.article lng.Router.History.current(), el.data("view-article"), el
+    lng.Aside.hide()
+
+  _onAside = (event) ->
+    event.preventDefault()
+    lng.Aside.toggle()
+
+  _onMenu = (event) ->
+    event.preventDefault()
+    menu_id = lng.dom(@).data("view-menu")
+    lng.dom("[data-control=menu]##{menu_id}").toggleClass CLASS.SHOW
 
   _closeMenu = (event) ->
     event.preventDefault()
@@ -45,43 +71,10 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     parent = el.parent("[data-control=menu]").removeClass(CLASS.SHOW)
     lng.dom("[data-router=menu] > .icon").attr "class", "icon " + el.data("icon")
 
-  _loadAsyncTarget = (link) ->
-    lng.Notification.show()
-    lng.Resource.load link.data("async")
-    link[0].removeAttribute "data-async"
-    lng.Boot.Data.init link.attr(ATTRIBUTE.HREF)
-    setTimeout (->
-      _selectTarget link
-      lng.Notification.hide()
-    ), lng.Constants.TRANSITION.DURATION * 2
-
-  _selectTarget = (link) ->
-    lng.Aside.hide()  if link.closest(ELEMENT.ASIDE).length > 0
-    target_type = link.data(ATTRIBUTE.ROUTER)
-    target_id = link.attr(ATTRIBUTE.HREF)
-    switch target_type
-      when ELEMENT.SECTION
-        _goSection target_id
-      when ELEMENT.ARTICLE
-        _goArticle link
-      when ELEMENT.ASIDE
-        lng.Aside.toggle()
-      when ELEMENT.MENU
-        _goMenu target_id
-
-  _goSection = (id) ->
-    id = lng.Core.parseUrl(id)
-    if id is "#back"
-      lng.Router.back()
-    else
-      lng.Router.section id
-
-  _goArticle = (element) ->
-    section_id = lng.Router.History.current()
-    article_id = element.attr(ATTRIBUTE.HREF)
-    lng.Router.article section_id, article_id, element
-
-  _goMenu = (id) ->
-    lng.dom("[data-control=menu]" + id).toggleClass CLASS.SHOW
+  _changeCheckboxValue = (event) ->
+    event.preventDefault()
+    el = lng.dom(this)
+    current_value = (if el.val() > 0 then 0 else 1)
+    el.toggleClass("active").attr "value", current_value
 
   init: init
