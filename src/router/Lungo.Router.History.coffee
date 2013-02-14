@@ -8,7 +8,7 @@ Stores the displayed <sections> as a historical.
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
 ###
 
-Lungo.Router.History = do ->
+Lungo.Router.History = do (lng = Lungo) ->
   _history = []
 
   ###
@@ -16,23 +16,36 @@ Lungo.Router.History = do ->
   @method add
   @param  {string} Id of the section
   ###
-  add = (section_id) -> _history.push section_id  if section_id isnt current()
-
+  add = (section_id) ->
+    _history.push section_id if section_id isnt current()
 
   ###
   Returns the current browsing history section id.
   @method current
   @return {string} Current section id
   ###
-  current = -> _history[_history.length - 1]
+  current = ->
+    _history[_history.length - 1]
 
 
   ###
   Removes the current item browsing history.
   @method removeLast
   ###
-  removeLast = -> _history.length -= 1
+  removeLast = ->
+    _history.length -= 1
+
+  ###
+  @todo
+  ###
+  url = ->
+    _url = ""
+    _url += "#{section}/" for section in _history
+    _url += lng.Element.Cache.article.attr "id"
+    setTimeout (-> window.location.hash = _url), 0
+
 
   add: add
   current: current
   removeLast: removeLast
+  url: url
