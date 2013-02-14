@@ -61,10 +61,9 @@ Lungo.Aside = do(lng = Lungo) ->
   @method hide
   ###
   hide = ->
-    if lng.Element.Cache.aside?
-      if lng.DEVICE is C.DEVICE.PHONE
-        lng.Element.Cache.section.removeClass C.CLASS.ASIDE
-        setTimeout (-> lng.Element.Cache.aside.removeClass C.CLASS.SHOW), C.TRANSITION.DURATION
+    if lng.Element.Cache.aside? and lng.DEVICE is C.DEVICE.PHONE
+      lng.Element.Cache.section.removeClass C.CLASS.ASIDE
+      setTimeout (-> lng.Element.Cache.aside.removeClass C.CLASS.SHOW), C.TRANSITION.DURATION
 
   ###
   @todo
