@@ -14,7 +14,12 @@ Lungo.Section = do(lng = Lungo) ->
     if lng.DEVICE is C.DEVICE.PHONE then _phone target else _tablet current, target
 
     lng.Element.Cache.section = target
-    lng.Element.Cache.article = target.find "#{C.ELEMENT.ARTICLE}.#{C.CLASS.ACTIVE}"
+
+    active_article = target.find "#{C.ELEMENT.ARTICLE}.#{C.CLASS.ACTIVE}"
+    if active_article.length is 0
+      active_article = target.find(C.ELEMENT.ARTICLE).first().addClass(C.CLASS.ACTIVE)
+
+    lng.Element.Cache.article = active_article
     lng.Element.Cache.aside = lng.Aside.active target
 
     current.trigger C.TRIGGER.UNLOAD if current

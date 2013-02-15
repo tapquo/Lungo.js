@@ -33,7 +33,7 @@ Lungo.Boot.Layout = do(lng = Lungo) ->
     article_id = history[history.length - 1]
     if history.length > 2
       history.length -= 2
-      lng.Router.History.add section for section in history
+      lng.Router.step section for section in history
     lng.Router.section section_id
     lng.Router.article section_id, article_id
 
