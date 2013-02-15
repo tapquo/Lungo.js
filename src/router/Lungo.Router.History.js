@@ -42,7 +42,7 @@ Lungo.Router.History = (function(undefined) {
       * @method removeLast
       */
      var removeLast = function() {
-         _history.length -= 1;
+          _history.pop();
      };
 
     return {
