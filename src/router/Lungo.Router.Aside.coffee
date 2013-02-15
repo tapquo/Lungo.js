@@ -20,7 +20,7 @@ Lungo.Aside = do(lng = Lungo) ->
     current_aside = lng.Element.Cache.aside
 
     # Deactive
-    if (current_aside and aside_id isnt current_aside.attr("id")) or aside_id is null
+    if current_aside and aside_id isnt current_aside?.attr(C.ATTRIBUTE.ID)
       current_aside.removeClass(C.CLASS.SHOW).removeClass C.CLASS.ACTIVE
       lng.Element.Cache.aside = null
 
