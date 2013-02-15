@@ -11,6 +11,7 @@ Lungo.Boot.Layout = do(lng = Lungo) ->
   C       = lng.Constants
   HASHTAG = "#"
 
+
   ###
   Initializes all <section> & <article> of the project
   @method init
@@ -22,6 +23,10 @@ Lungo.Boot.Layout = do(lng = Lungo) ->
     _initElement C.QUERY.LIST_IN_ELEMENT, _createListElement
     _initElement C.QUERY.ELEMENT_SCROLLABLE, _scrollFix
 
+
+  ###
+  Private methods
+  ###
   _initSectionbyUrl = ->
     history = window.location.hash.replace(HASHTAG, "").split("/")
     section_id = history[history.length - 2]
@@ -34,7 +39,7 @@ Lungo.Boot.Layout = do(lng = Lungo) ->
 
   _initSection = ->
     section = lng.dom(C.ELEMENT.SECTION).first()
-    lng.Router.section section.attr(C.ATTR.ID)  if section
+    lng.Router.section section.attr(C.ATTRIBUTE.ID) if section
 
   _initElement = (selector, callback) ->
     found_elements = lng.dom(selector)
