@@ -53,7 +53,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   _onArticle = (event) ->
     event.preventDefault()
     el = lng.dom @
-    lng.Router.article lng.Router.History.current(), el.data("view-article"), el
+    lng.Router.article lng.Router.history(), el.data("view-article"), el
     lng.Aside.hide()
 
   _onAside = (event) ->

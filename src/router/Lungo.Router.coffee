@@ -9,8 +9,9 @@ Handles the <sections> and <articles> to show
 ###
 
 Lungo.Router = do(lng = Lungo) ->
-  C       = lng.Constants
-  HASHTAG = "#"
+  C        = lng.Constants
+  HASHTAG  = "#"
+  _history = []
 
 
   ###
@@ -19,19 +20,19 @@ Lungo.Router = do(lng = Lungo) ->
   @param    {string} Id of the <section>
   ###
   section = (section_id) ->
-    section_id = lng.Core.parseUrl(section_id)
     current = lng.Element.Cache.section
-    if _notCurrentTarget(section_id, current)
-      query = C.ELEMENT.SECTION + section_id
+    if _notCurrentTarget(current, section_id)
+      query = C.ELEMENT.SECTION + HASHTAG + section_id
       target = if current then current.siblings(query) else lng.dom(query)
       if target.length > 0
-        if lng.DEVICE is C.DEVICE.PHONE
-          if current?
-            lng.Section.defineTransition target, current
-            current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE)
+        if lng.DEVICE is C.DEVICE.PHONE and current?
+          lng.Section.defineTransition target, current
+          current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE)
 
         lng.Section.show current, target
-        lng.Router.History.add section_id
+        lng.Router.step section_id
+        do _url
+        do _updateNavigationElements
 
 
   ###
@@ -41,19 +42,14 @@ Lungo.Router = do(lng = Lungo) ->
   @param    {string} <article> Id
   ###
   article = (section_id, article_id, element) ->
-    article_id = lng.Core.parseUrl(article_id)
     current = lng.Element.Cache.article
-    if _notCurrentTarget(article_id, current)
-      section section_id
-      target = lng.Element.Cache.section.find(C.ELEMENT.ARTICLE + article_id)
+    if _notCurrentTarget(current, article_id)
+      lng.Router.section section_id
+      target = lng.Element.Cache.section.find "##{article_id}"
       if target.length > 0
-        current = lng.Element.Cache.section.children(C.ELEMENT.ARTICLE)  if _sectionId(current) isnt _sectionId(target)
         current.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
-        target.addClass(C.CLASS.ACTIVE).trigger C.TRIGGER.LOAD
-        lng.Element.Cache.article = target
-        lng.Article.switchNavItems article_id
-        lng.Article.switchReferenceItems article_id, lng.Element.Cache.section
-        lng.Article.title element.data(C.ATTRIBUTE.TITLE)  if element
+        lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
+        do _url
 
 
   ###
@@ -61,29 +57,60 @@ Lungo.Router = do(lng = Lungo) ->
   @method   back
   ###
   back = ->
-    lng.Router.History.removeLast()
-
+    _removeLast()
     current = lng.Element.Cache.section
-    target = current.siblings(C.ELEMENT.SECTION + lng.Router.History.current())
+    query = C.ELEMENT.SECTION + HASHTAG + history()
+    target = current.siblings(query)
     if lng.DEVICE is C.DEVICE.PHONE
       lng.Aside.hide() if lng.Element.Cache.aside and lng.Element.Cache.aside.hasClass(C.CLASS.SHOW)
-
       lng.Section.assignTransition target, target.data C.TRANSITION.ORIGIN
       current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDING)
       setTimeout (-> current.removeClass(C.CLASS.HIDING)), C.TRANSITION.DURATION
 
     lng.Section.show current, target
+    do _url
+    do _updateNavigationElements
+
+
+  ###
+  Create a new element to the browsing history based on the current section id.
+  @method step
+  @param  {string} Id of the section
+  ###
+  step = (section_id) -> _history.push section_id if section_id isnt history()
+
+  ###
+  Returns the current browsing history section id.
+  @method history
+  @return {string} Current section id
+  ###
+  history = -> _history[_history.length - 1]
 
 
   ###
   Private methods
   ###
-  _notCurrentTarget = (target, element) ->
-    (if (not element or target isnt HASHTAG + element.attr(C.ATTRIBUTE.ID)) then true else false)
+  _notCurrentTarget = (current, id) -> current?.attr(C.ATTRIBUTE.ID) isnt id
 
-  _sectionId = (element) ->
-    element.parent(C.ELEMENT.SECTION).attr C.ATTRIBUTE.ID
+  _url = ->
+    _hashed_url = ""
+    _hashed_url += "#{section}/" for section in _history
+    _hashed_url += lng.Element.Cache.article.attr "id"
+    setTimeout (-> window.location.hash = _hashed_url), 0
+    do _updateNavigationElements
+
+  _updateNavigationElements = (element) ->
+    article_id = lng.Element.Cache.article.attr C.ATTRIBUTE.ID
+    lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE).siblings("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
+    lng.dom(C.QUERY.REFERENCE_LINK).hide().siblings("[data-article=#{article_id}]").show()
+    # if element?.data(C.ATTRIBUTE.TITLE)
+    #   lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
+
+  _removeLast = -> _history.length -= 1
+
 
   section: section
   article: article
   back: back
+  history: history
+  step: step
