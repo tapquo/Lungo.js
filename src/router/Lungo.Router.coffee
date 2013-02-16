@@ -49,6 +49,10 @@ Lungo.Router = do(lng = Lungo) ->
       if target.length > 0
         current.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
         lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
+
+        if element.data(C.ATTRIBUTE.TITLE)?
+          lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
+
         do _url
 
 
@@ -102,9 +106,8 @@ Lungo.Router = do(lng = Lungo) ->
   _updateNavigationElements = (element) ->
     article_id = lng.Element.Cache.article.attr C.ATTRIBUTE.ID
     lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE).siblings("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
-    lng.dom(C.QUERY.REFERENCE_LINK).hide().siblings("[data-article=#{article_id}]").show()
-    # if element?.data(C.ATTRIBUTE.TITLE)
-    #   lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
+    lng.dom(C.QUERY.ARTICLE_REFERENCE).hide()
+    lng.dom("[data-article=#{article_id}]").style("display", "-webkit-box")
 
   _removeLast = -> _history.length -= 1
 

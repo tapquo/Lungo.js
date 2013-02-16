@@ -30,7 +30,7 @@ Lungo.Constants =
     MENU_HREF           : "[data-control=menu] a[href]"
     INPUT_CHECKBOX      : "input[type=range].checkbox"
     NAVIGATION_ITEM     : "a[href][data-router=\"article\"]"
-    REFERENCE_LINK      : " a[href][data-article]"
+    ARTICLE_REFERENCE   : "[data-article]"
     TITLE               : "header .title, footer .title"
     ACTIVE_LIST_ITEM    : "li a.active, li.active"
 

@@ -47,7 +47,7 @@ Lungo.Aside = do(lng = Lungo) ->
   Display an aside element with a particular <section>
   @method show
   ###
-  show = (aside) ->
+  show = ->
     if lng.Element.Cache.aside?
       setTimeout (-> lng.Element.Cache.aside.addClass C.CLASS.SHOW), C.TRANSITION.DURATION
       if lng.DEVICE is C.DEVICE.PHONE

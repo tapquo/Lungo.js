@@ -52,9 +52,11 @@
 
     /* Transition: COVER */
     &[data-transition="cover"]
-      transform( translateY(110%) )
+      transform translateY(110%)
       &.show, &.hide
-        transform( translateY(0%) )
+        transform translateY(0%)
+      &.hide
+        display: block
 
     /* Transition: FADE */
     &[data-transition="fade"]
@@ -63,3 +65,4 @@
         opacity: 1
       &:hide
         opacity: 0
+
