@@ -38,9 +38,9 @@ nav
         display: inline-block
 
 
-    &.right a.button:last-child
+    &.right a.button, .right button
       margin-right: 6px
-    &:not(.right) a.button:first-child
+    &:not(.right) a.button, :not(.right) button
       margin-left: 6px
 
     & a:not(.button)
@@ -70,8 +70,6 @@ nav
 
 
   &.groupbar
-    // position: relative
-    // top: HEADER_HEIGHT
     height: HEADER_GROUPBAR_HEIGHT
     width: 100%
     z-index: 2
