@@ -16,10 +16,14 @@ Lungo.Boot.Layout = do(lng = Lungo) ->
   Initializes all <section> & <article> of the project
   @method init
   ###
-  init = ->
+  init = (config) ->
     lng.Fallback.fixPositionInAndroid()
 
-    if window.location.hash?.length >= 2 then _initSectionbyUrl() else _initSection()
+    if config?.history? and config.history is true and window.location.hash?.length >= 2
+      do _initSectionbyUrl
+    else
+      do _initSection
+
     _initElement C.QUERY.LIST_IN_ELEMENT, _createListElement
     _initElement C.QUERY.ELEMENT_SCROLLABLE, _scrollFix
 
