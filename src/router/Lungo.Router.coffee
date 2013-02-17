@@ -72,6 +72,7 @@ Lungo.Router = do(lng = Lungo) ->
       setTimeout (-> current.removeClass(C.CLASS.HIDING)), C.TRANSITION.DURATION
 
     lng.Section.show current, target
+    lng.Aside.show()
     do _url
     do _updateNavigationElements
 
