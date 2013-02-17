@@ -8,7 +8,7 @@ Wrapper for using LocalStorage & SessionStorage (HTML5 Feature)
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
 ###
 
-Lungo.Data.Storage = (lng = Lungo) ->
+Lungo.Data.Storage = do (lng = Lungo) ->
   STORAGE =
     PERSISTENT: "localStorage"
     SESSION: "sessionStorage"
@@ -21,8 +21,7 @@ Lungo.Data.Storage = (lng = Lungo) ->
   @param {object} Value
   @return {string} If no value assigned returns the value of established key
   ###
-  persistent = (key, value) ->
-    _handler STORAGE.PERSISTENT, key, value
+  persistent = (key, value) -> _handler STORAGE.PERSISTENT, key, value
 
 
   ###
@@ -32,8 +31,7 @@ Lungo.Data.Storage = (lng = Lungo) ->
   @param {object} Value
   @return {string} If no value assigned returns the value of established key
   ###
-  session = (key, value) ->
-    _handler STORAGE.SESSION, key, value
+  session = (key, value) -> _handler STORAGE.SESSION, key, value
 
 
   _handler = (storage, key, value) ->
