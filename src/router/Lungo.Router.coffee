@@ -49,10 +49,8 @@ Lungo.Router = do(lng = Lungo) ->
       if target.length > 0
         current.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
         lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
-
         if element.data(C.ATTRIBUTE.TITLE)?
           lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
-
         do _url
 
 
@@ -66,13 +64,13 @@ Lungo.Router = do(lng = Lungo) ->
     query = C.ELEMENT.SECTION + HASHTAG + history()
     target = current.siblings(query)
     if lng.DEVICE is C.DEVICE.PHONE
-      lng.Aside.hide() if lng.Element.Cache.aside and lng.Element.Cache.aside.hasClass(C.CLASS.SHOW)
+      lng.Aside.hide()
       lng.Section.assignTransition target, target.data C.TRANSITION.ORIGIN
       current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDING)
       setTimeout (-> current.removeClass(C.CLASS.HIDING)), C.TRANSITION.DURATION
+      if target.hasClass("aside") then lng.Aside.toggle()
 
     lng.Section.show current, target
-    lng.Aside.show()
     do _url
     do _updateNavigationElements
 
