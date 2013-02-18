@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Lungo 2.1 - SDK</title>
+    <title>Lungo Flexbox - SDK</title>
     <meta name="description" content="">
     <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
     <meta name="HandheldFriendly" content="True">
@@ -30,10 +30,17 @@
             <nav>
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
             </nav>
+            <!--
             <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
+            -->
+            <div class="title centered">laskdkals</div>
+            <!-- <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered"> -->
+
             <nav class="right">
                 <a href="#" data-article="folks" data-label="folks"></a>
-                <a href="#" data-article="products" data-label="products"></a>
+                <a href="#" data-icon="user" class="button"></a>
+                <a href="#" data-view-article="products" data-label="Products" data-count="5"></a>
+
             </nav>
         </header>
 
@@ -253,7 +260,7 @@
         Lungo.init({
             name: 'Flexbox',
             version: '2.2',
-            history: true
+            history: false
             //,
             // resources: ['app/sections/list.html']
         });
