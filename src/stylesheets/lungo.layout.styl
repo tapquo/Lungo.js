@@ -33,10 +33,10 @@ aside, section
 /* ================================ SECTION ================================ */
 /* ========================================================================= */
 section
-  z-index: 2
+  z-index: 3
   width: inherit
   &:not(.show)
-    z-index: 1
+    z-index: 2
 
 
 /* ========================================================================= */
@@ -50,33 +50,9 @@ aside
   &.active
     display-box()
   &.show
-    z-index: 0
+    z-index: 1
   &.right
     right: 0px
-
-  // &.small
-  //   width: ASIDE_WIDTH_SMALL
-  //   & nav
-  //     width: ASIDE_WIDTH_SMALL
-  //     text-align: center
-  //     & a
-  //       display: block
-  //       padding: 0px
-  //       width: ASIDE_WIDTH_SMALL
-  //       height: ASIDE_WIDTH_SMALL
-  //       & .icon
-  //         position: absolute
-  //         width: inherit
-  //         font-size: ASIDE_SMALL_ICON
-  //         line-height: (ASIDE_WIDTH_SMALL - 8)
-
-  //       & .tag
-  //         position: relative
-  //         top: -(ASIDE_WIDTH_SMALL)
-  //         right: -(ASIDE_WIDTH_SMALL / 3.4)
-
-  //       &:first-child
-  //         margin-top: 8px
 
 /* ========================================================================= */
 /* ============================= HEADER/FOOTER ============================= */
