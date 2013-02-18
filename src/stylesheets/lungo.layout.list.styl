@@ -10,9 +10,11 @@
 @import "constants.styl"
 
 .list
+  PAD = 14px
+  PAD_H = (PAD / 1.25)
   & li
     list-style-type: none
-    padding: 14px 10px
+    padding: PAD 0 (PAD - 1) 0
     position: relative
 
     &, & a, & small, & .right
@@ -20,38 +22,48 @@
 
     &.arrow::after
       position: absolute
-      right: 8px
-      top: 40%
+      right: PAD
+      top: 45%
       width: 6px
       height: 6px
       content: ''
-      border-right: 3px solid #D0D0D8
-      border-top: 3px solid #D0D0D8
+      border-right: 3px solid
+      border-top: 3px solid
       transform( rotate(45deg) )
 
     & a
       display: block
+      text-decoration: none
 
-    & > .icon, > img
+    & img, .icon
       float: left
-      width: 32px
-      height: 32px
-      margin-right: 8px
-      font-size: 2.6em
       line-height: 1.0em
       text-align: center
-
+    &:not(.thumb)
+      & img, & .icon
+        margin-left: PAD_H
+        width: S = 34px
+        height: S
+        font-size: 2.6em
     &.thumb
       & img, & .icon
-        margin: -15px 10px -15px -10px
-        height: 63px !important
-        width:63px !important
+        margin-top: -(PAD)
+        height: S = 61px
+        width: S
         font-size: 3.6em
+        line-height: 1.3em
 
     &.anchor
-      padding: 2px 10px
+      padding: (PAD_H / 2) PAD_H
+      line-height: 1.0em
       & .tag
         display: none
+
+    & strong, small
+      padding-left: PAD_H
+
+    & .right
+      margin-right: PAD_H
 
     & strong
       position: relative
