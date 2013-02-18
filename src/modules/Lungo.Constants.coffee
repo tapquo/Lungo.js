@@ -50,7 +50,7 @@ Lungo.Constants =
     UNLOAD              : "unload"
 
   TRANSITION:
-    DURATION            : 350
+    DURATION            : 400
     ORIGIN              : "transition-origin"
     ATTR                : "transition"
 
