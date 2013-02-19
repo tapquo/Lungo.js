@@ -53,8 +53,24 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   _onArticle = (event) ->
     event.preventDefault()
     el = lng.dom @
-    lng.Router.article lng.Router.history(), el.data("view-article"), el
-    lng.Aside.hide()
+    if el.data "async"
+      _onAsyncArticle el.data("async"), el.data("view-article")
+    else
+      lng.Router.article lng.Router.history(), el.data("view-article"), el
+      lng.Aside.hide()
+
+  _onAsyncArticle = (url, article_id) ->
+    lng.Notification.show()
+
+    section_id = lng.Element.Cache.section.attr(C.ATTRIBUTE.ID)
+    lng.Resource.load url, C.ELEMENT.SECTION + "#" + section_id
+    lng.Boot.Data.init "##{article_id}"
+    link.removeAttribute("data-async") for link in lng.dom "[data-async='#{url}']"
+    setTimeout (->
+      lng.Router.article section_id, article_id
+      lng.Aside.hide()
+      do lng.Notification.hide
+    ), lng.Constants.TRANSITION.DURATION * 2
 
   _onAside = (event) ->
     event.preventDefault()
