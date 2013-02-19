@@ -76,6 +76,7 @@
       white-space: nowrap
       text-overflow: ellipsis
       & + .right
+        margin-left: 0px
         margin-top: -12px
 
     & small, &.anchor, & .right:not(.tag)
@@ -84,12 +85,13 @@
   & .loading .right
     font-size: 1.0em
 
-  & .right .icon, & small .icon
-    height: 13px !important
-    width: 13px !important
-    margin-right: 1px !important
-    font-size: 1.2em !important
-    line-height: 1.1em
+  & .right, small
+    & .icon
+      height: 13px !important
+      width: 13px !important
+      margin-right: 1px !important
+      font-size: 1.2em !important
+      line-height: 1.1em
 
   &.indented li
     margin-bottom: 10px
