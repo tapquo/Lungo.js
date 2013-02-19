@@ -27,50 +27,51 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(C.QUERY.ASIDE_ROUTER).tap _onAside
     lng.dom(C.QUERY.MENU_ROUTER).tap _onMenu
 
-
     lng.dom(QUERY.MENU_HREF).tap _closeMenu
     lng.dom(QUERY.INPUT_CHECKBOX).tap _changeCheckboxValue
+
 
   _onSection = (event) ->
     event.preventDefault()
     el = lng.dom @
     if el.data "async"
-      _onAsyncSection el.data("async"), el.data("view-section")
+      _onAsyncResource el, C.ELEMENT.SECTION
     else
       section_id = el.data "view-section"
       if section_id isnt "back" then lng.Router.section(section_id) else lng.Router.back()
 
-  _onAsyncSection = (url, section_id) ->
-    lng.Notification.show()
-    lng.Resource.load url
-    lng.Boot.Data.init "##{section_id}"
-    link.removeAttribute("data-async") for link in lng.dom "[data-async='#{url}']"
-    setTimeout (->
-      lng.Router.section section_id
-      do lng.Notification.hide
-    ), lng.Constants.TRANSITION.DURATION * 2
 
   _onArticle = (event) ->
     event.preventDefault()
     el = lng.dom @
     if el.data "async"
-      _onAsyncArticle el.data("async"), el.data("view-article")
+      _onAsyncResource el, C.ELEMENT.ARTICLE
     else
       lng.Router.article lng.Router.history(), el.data("view-article"), el
       lng.Aside.hide()
 
-  _onAsyncArticle = (url, article_id) ->
-    lng.Notification.show()
+  _onAsyncResource = (el, type) ->
+    url = el.data "async"
+    id = el.data "view-#{type}"
 
-    section_id = lng.Element.Cache.section.attr(C.ATTRIBUTE.ID)
-    lng.Resource.load url, C.ELEMENT.SECTION + "#" + section_id
-    lng.Boot.Data.init "##{article_id}"
+    lng.Notification.show()
+    if type is C.ELEMENT.ARTICLE
+      section_id = lng.Element.Cache.section.attr(C.ATTRIBUTE.ID)
+      lng.Resource.load url, C.ELEMENT.SECTION + "#" + section_id
+    else
+      lng.Resource.load url
+
+    lng.Boot.Data.init "##{id}"
     link.removeAttribute("data-async") for link in lng.dom "[data-async='#{url}']"
     setTimeout (->
-      lng.Router.article section_id, article_id
-      lng.Aside.hide()
+      if type is C.ELEMENT.ARTICLE
+        lng.Router.article section_id, id
+        lng.Aside.hide()
+      else
+        lng.Router.section id
       do lng.Notification.hide
     ), lng.Constants.TRANSITION.DURATION * 2
+
 
   _onAside = (event) ->
     event.preventDefault()
