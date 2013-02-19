@@ -17,7 +17,7 @@ Lungo.Resource = do(lng = Lungo, $$ = Quo) ->
 
   @method start
   ###
-  load = (resource) ->
+  load = (resource, container) ->
     if lng.Core.toType(resource) is "array"
       i = 0
       len = resource.length
@@ -26,15 +26,15 @@ Lungo.Resource = do(lng = Lungo, $$ = Quo) ->
         _load resource[i]
         i++
     else
-      _load resource
+      _load resource, container
 
 
   ###
+  @todo
   ###
-  _load = (resource) ->
+  _load = (resource, container) ->
     try
-      response = _loadSyncResource(resource)
-      _pushResourceInBody response
+      _pushResourceInBody _loadSyncResource(resource), container
     catch error
       lng.Core.log 3, error.message
 
@@ -46,8 +46,9 @@ Lungo.Resource = do(lng = Lungo, $$ = Quo) ->
       error: ->
         console.error ERROR.LOADING_RESOURCE + url
 
-
-  _pushResourceInBody = (section) ->
-    lng.dom(ELEMENT.BODY).append section  if lng.Core.toType(section) is "string"
+  _pushResourceInBody = (markup, container) ->
+    if lng.Core.toType(markup) is "string"
+      container = (if container then container else ELEMENT.BODY)
+      lng.dom(container).append markup
 
   load: load

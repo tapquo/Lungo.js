@@ -49,7 +49,7 @@ Lungo.Router = do(lng = Lungo) ->
       if target.length > 0
         current.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
         lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
-        if element.data(C.ATTRIBUTE.TITLE)?
+        if element?.data(C.ATTRIBUTE.TITLE)?
           lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
         do _url
 
