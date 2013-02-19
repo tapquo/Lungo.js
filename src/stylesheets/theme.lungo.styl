@@ -23,6 +23,7 @@ DARK_light      = lighten(DARK, 25%)
 DARK_dark       = darken(DARK, 15%)
 DARK_darkest    = darken(DARK, 30%)
 FORM_radius     = 1px
+LIST_color      = lighten(COLOR, 5%)
 LIST_color_2nd  = lighten(COLOR, 35%)
 LIST_border     = lighten(COLOR, 90%)
 NAV_LINK        = #888
@@ -141,7 +142,7 @@ nav
     &.arrow::after
       border-color: COLOR_secondary
 
-    &, & a
+    &, a
       color: LIST_color
       &.anchor
         background: DARK
@@ -153,8 +154,10 @@ nav
         background:  LIST_border
         color: LIST_color_2nd
       &.dark, &.selectable:active, &.theme, &.anchor
-        &, small, & .right:not(.tag)
+        &, small, & .right:not(.tag), strong, .arrow::after
           color: #fff
+        &.arrow::after
+          border-color: #fff
       & small, & .right:not(.tag)
         color: LIST_color_2nd
 
