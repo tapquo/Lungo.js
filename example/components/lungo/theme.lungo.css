@@ -192,9 +192,12 @@ section .list li.cancel {
   -o-box-shadow: inset 4px 0px 0px #ee6557;
   box-shadow: inset 4px 0px 0px #ee6557;
 }
+section .list li.arrow::after {
+  border-color: #bfbfbf;
+}
 section .list li,
 section .list li a {
-  color: LIST_color;
+  color: #3d3d3d;
 }
 section .list li.anchor,
 section .list li a.anchor {
@@ -240,8 +243,34 @@ section .list li a.selectable:active .right:not(.tag),
 section .list li.theme .right:not(.tag),
 section .list li a.theme .right:not(.tag),
 section .list li.anchor .right:not(.tag),
-section .list li a.anchor .right:not(.tag) {
+section .list li a.anchor .right:not(.tag),
+section .list li.dark strong,
+section .list li a.dark strong,
+section .list li.selectable:active strong,
+section .list li a.selectable:active strong,
+section .list li.theme strong,
+section .list li a.theme strong,
+section .list li.anchor strong,
+section .list li a.anchor strong,
+section .list li.dark .arrow::after,
+section .list li a.dark .arrow::after,
+section .list li.selectable:active .arrow::after,
+section .list li a.selectable:active .arrow::after,
+section .list li.theme .arrow::after,
+section .list li a.theme .arrow::after,
+section .list li.anchor .arrow::after,
+section .list li a.anchor .arrow::after {
   color: #fff;
+}
+section .list li.dark.arrow::after,
+section .list li a.dark.arrow::after,
+section .list li.selectable:active.arrow::after,
+section .list li a.selectable:active.arrow::after,
+section .list li.theme.arrow::after,
+section .list li a.theme.arrow::after,
+section .list li.anchor.arrow::after,
+section .list li a.anchor.arrow::after {
+  border-color: #fff;
 }
 section .list li small,
 section .list li a small,
@@ -321,6 +350,7 @@ footer .tag:not(.icon) {
 /* -------------------------- NOTIFICATION -------------------------- */
 .notification {
   color: #fff;
+  background-color: rgba(0,0,0,0.75);
 }
 .notification .window.growl {
   background: rgba(0,0,0,0.8);

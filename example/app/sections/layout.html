@@ -1,18 +1,15 @@
 <section id="layout" data-transition="slide">
-    <header data-title="Layout" class="extended">
-        <nav>
-            <a href="#back" data-router="section" data-icon="home"></a>
-        </nav>
+    <header data-title="Layout" class="extended" data-back="home">
         <nav class="right">
-            <a href="#splash" data-router="section" data-async="app/sections/splash.html" data-icon="lock" class="button"></a>
+            <a href="#" data-view-section="splash" data-async="app/sections/splash.html" data-icon="lock" class="button"></a>
         </nav>
     </header>
 
     <nav class="groupbar">
-        <a href="#layout-art1" data-router="article" data-label="Profile" class="active"></a>
-        <a href="#layout-art2" data-router="article" data-label="Inbox" data-count="19"></a>
-        <a href="#layout-art3" data-router="article" data-label="Map"></a>
-        <a href="#layout-art4" data-router="article" data-label="Settings"></a>
+        <a href="#" data-view-article="layout-art1" data-label="Profile" class="active"></a>
+        <a href="#" data-view-article="layout-art2" data-label="Inbox" data-count="19"></a>
+        <a href="#" data-view-article="layout-art3" data-label="Map"></a>
+        <a href="#" data-view-article="layout-art4" data-label="Settings"></a>
     </nav>
 
     <article id="layout-art1" class="active"></article>
@@ -22,10 +19,10 @@
 
     <footer>
         <nav>
-            <a href="#layout-art1" data-router="article" data-icon="home" class="active"></a>
-            <a href="#layout-art2" data-router="article" data-icon="inbox" data-count="80"></a>
-            <a href="#layout-art3" data-router="article" data-icon="compass"></a>
-            <a href="#layout-art4" data-router="article" data-icon="settings"></a>
+            <a href="#" data-view-article="layout-art1" data-icon="home" class="active"></a>
+            <a href="#" data-view-article="layout-art2" data-icon="inbox" data-count="80"></a>
+            <a href="#" data-view-article="layout-art3" data-icon="compass"></a>
+            <a href="#" data-view-article="layout-art4" data-icon="settings"></a>
         </nav>
     </footer>
 </section>
