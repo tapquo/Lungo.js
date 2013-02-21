@@ -1,30 +1,33 @@
-[submodule "packages/lungo.theme"]
-	path = packages/lungo.theme
-	url = https://github.com/TapQuo/package-lungo.theme
 [submodule "packages/lungo"]
-	path = packages/lungo
-	url = https://github.com/TapQuo/package-lungo
-[submodule "example/components/quojs"]
-	path = example/components/quojs
-	url = https://github.com/soyjavi/package-quojs
+    path = packages/lungo
+    url = https://github.com/TapQuo/package-lungo
+[submodule "packages/lungo.theme"]
+    path = packages/lungo.theme
+    url = https://github.com/TapQuo/package-lungo.theme
 [submodule "src/stylesheets/CSSmethods"]
-	path = src/stylesheets/CSSmethods
-	url = https://github.com/soyjavi/CSSmethods
+    path = src/stylesheets/CSSmethods
+    url = https://github.com/soyjavi/CSSmethods
+[submodule "example/components/quojs"]
+    path = example/components/quojs
+    url = https://github.com/soyjavi/package-quojs
 [submodule "packages/lungo.thirdparties"]
-	path = packages/lungo.thirdparties
-	url = https://github.com/TapQuo/lungo.thirdparties.git
+    path = packages/lungo.thirdparties
+    url = https://github.com/TapQuo/lungo.thirdparties.git
 [submodule "packages/lungo.gmap"]
-	path = packages/lungo.gmap
-	url = https://github.com/TapQuo/lungo.gmap.git
+    path = packages/lungo.gmap
+    url = https://github.com/TapQuo/lungo.gmap.git
 [submodule "packages/lungo.qr"]
-	path = packages/lungo.qr
-	url = https://github.com/TapQuo/lungo.qr.git
+    path = packages/lungo.qr
+    url = https://github.com/TapQuo/lungo.qr.git
 [submodule "packages/lungo.language"]
-	path = packages/lungo.language
-	url = https://github.com/TapQuo/lungo.language.git
+    path = packages/lungo.language
+    url = https://github.com/TapQuo/lungo.language.git
 [submodule "packages/lungo.mock"]
-	path = packages/lungo.mock
-	url = https://github.com/TapQuo/lungo.mock.git
+    path = packages/lungo.mock
+    url = https://github.com/TapQuo/lungo.mock.git
 [submodule "packages/lungo.terminal"]
-	path = packages/lungo.terminal
-	url = https://github.com/TapQuo/lungo.terminal.git
+    path = packages/lungo.terminal
+    url = https://github.com/TapQuo/lungo.terminal.git
+[submodule "example/components/lungo.brownie"]
+	path = example/components/lungo.brownie
+	url = https://github.com/soyjavi/lungo.brownie.git
