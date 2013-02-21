@@ -22,8 +22,8 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   @method init
   ###
   init = ->
-    lng.dom(C.QUERY.SECTION_ROUTER).touch _onSection
-    lng.dom(C.QUERY.ARTICLE_ROUTER).touch _onArticle
+    lng.dom(C.QUERY.SECTION_ROUTER_TOUCH).touch _onSection
+    lng.dom(C.QUERY.ARTICLE_ROUTER_TOUCH).touch _onArticle
     lng.dom(C.QUERY.SECTION_ROUTER_TAP).tap _onSection
     lng.dom(C.QUERY.ARTICLE_ROUTER_TAP).tap _onArticle
     lng.dom(C.QUERY.ASIDE_ROUTER).touch _onAside
