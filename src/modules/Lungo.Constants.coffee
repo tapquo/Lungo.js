@@ -19,10 +19,13 @@ Lungo.Constants =
     LI                  : "li"
 
   QUERY:
-    ARTICLE_ROUTER      : "[data-view-article]"
-    SECTION_ROUTER      : "[data-view-section]"
+    ARTICLE_ROUTER      : "header [data-view-article], footer [data-view-article]"
+    SECTION_ROUTER      : "header [data-view-section], footer [data-view-section]"
+    ARTICLE_ROUTER_TAP  : "article [data-view-article]"
+    SECTION_ROUTER_TAP  : "article [data-view-section]"
     ASIDE_ROUTER        : "[data-view-aside]"
     MENU_ROUTER         : "[data-view-menu]"
+
     LIST_IN_ELEMENT     : "article.list"
     ELEMENT_SCROLLABLE  : "article.scroll"
     HREF_ASIDE          : "section[data-aside]"
