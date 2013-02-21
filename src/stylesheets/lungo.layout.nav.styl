@@ -12,22 +12,18 @@
 HEADER_GROUPBAR_HEIGHT = 32px
 
 nav
-  &.groupbar, footer &
-    display-box()
-    box-pack(justify)
-    width: 100%
-    & > a
-      box-flex(1)
-      text-decoration: none
 
+  /* ========================================================================= */
+  /* ================================= HEADER ================================ */
+  /* ========================================================================= */
   header &
-    & a
+    & a, button
       padding: 0px 11px !important
       float: left
 
     & .button, button
-      margin: 6px 2px 0 2px
-      line-height: 31px !important
+      margin: 6px 0 0 0
+      line-height: 32px
       & > .icon
         font-size: 1.5em
         position: relative
@@ -37,10 +33,9 @@ nav
         line-height: SIZE
         display: inline-block
 
-
-    &.right a.button, .right button
+    &.right .button, button
       margin-right: 6px
-    &:not(.right) a.button, :not(.right) button
+    &:not(.right) .button, button
       margin-left: 6px
 
     & a:not(.button)
@@ -57,10 +52,11 @@ nav
     & abbr
       font-size: FONT_SIZE_SMALL
       font-weight: 700
+      display: block
 
     & .icon ~ abbr
       margin-left: 4px
-      float: right
+      // float: right
 
     & .loading
       margin-top: .5em
@@ -69,6 +65,19 @@ nav
         display: none
 
 
+
+  &.groupbar, footer &
+    display-box()
+    box-pack(justify)
+    width: 100%
+    & > a
+      box-flex(1)
+      text-decoration: none
+
+
+  /* ========================================================================= */
+  /* =============================== GROUPBAR ================================ */
+  /* ========================================================================= */
   &.groupbar
     height: HEADER_GROUPBAR_HEIGHT
     width: 100%
@@ -91,6 +100,9 @@ nav
           left: 2px
 
 
+  /* ========================================================================= */
+  /* ================================ FOOTER ================================= */
+  /* ========================================================================= */
   footer &
     & a
       text-align: center
