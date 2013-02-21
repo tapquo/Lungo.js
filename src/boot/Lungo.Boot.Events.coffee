@@ -22,13 +22,14 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   @method init
   ###
   init = ->
-    lng.dom(C.QUERY.SECTION_ROUTER).tap _onSection
-    lng.dom(C.QUERY.ARTICLE_ROUTER).tap _onArticle
-    lng.dom(C.QUERY.ASIDE_ROUTER).tap _onAside
-    lng.dom(C.QUERY.MENU_ROUTER).tap _onMenu
-
-    lng.dom(QUERY.MENU_HREF).tap _closeMenu
-    lng.dom(QUERY.INPUT_CHECKBOX).tap _changeCheckboxValue
+    lng.dom(C.QUERY.SECTION_ROUTER).touch _onSection
+    lng.dom(C.QUERY.ARTICLE_ROUTER).touch _onArticle
+    lng.dom(C.QUERY.SECTION_ROUTER_TAP).tap _onSection
+    lng.dom(C.QUERY.ARTICLE_ROUTER_TAP).tap _onArticle
+    lng.dom(C.QUERY.ASIDE_ROUTER).touch _onAside
+    lng.dom(C.QUERY.MENU_ROUTER).touch _onMenu
+    lng.dom(QUERY.MENU_HREF).touch _closeMenu
+    lng.dom(QUERY.INPUT_CHECKBOX).touch _changeCheckboxValue
 
 
   _onSection = (event) ->
