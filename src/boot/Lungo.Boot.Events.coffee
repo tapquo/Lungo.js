@@ -86,8 +86,8 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   _closeMenu = (event) ->
     event.preventDefault()
     el = lng.dom(this)
-    parent = el.parent("[data-control=menu]").removeClass(CLASS.SHOW)
-    lng.dom("[data-router=menu] > .icon").attr "class", "icon " + el.data("icon")
+    parent = el.parent("[data-control=menu]").removeClass(CLASS.SHOW).attr C.ATTRIBUTE.ID
+    lng.dom("[data-view-menu=#{parent}] > .icon").attr "class", "icon " + el.data("icon")
 
   _changeCheckboxValue = (event) ->
     event.preventDefault()

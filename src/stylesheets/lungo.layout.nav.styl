@@ -56,7 +56,6 @@ nav
 
     & .icon ~ abbr
       margin-left: 4px
-      // float: right
 
     & .loading
       margin-top: .5em
@@ -64,9 +63,7 @@ nav
       & + .icon
         display: none
 
-
-
-  &.groupbar, footer &
+  &[data-control=groupbar], footer &
     display-box()
     box-pack(justify)
     width: 100%
@@ -78,7 +75,7 @@ nav
   /* ========================================================================= */
   /* =============================== GROUPBAR ================================ */
   /* ========================================================================= */
-  &.groupbar
+  &[data-control=groupbar]
     height: HEADER_GROUPBAR_HEIGHT
     width: 100%
     z-index: 2
@@ -99,6 +96,50 @@ nav
           top: -1px
           left: 2px
 
+
+  /* ========================================================================= */
+  /* ================================= MENU ================================== */
+  /* ========================================================================= */
+  &[data-control=menu]
+    position: absolute
+    left: 0px
+    top: HEADER_HEIGHT
+    visibility: hidden
+    z-index: 2
+    width: inherit
+    text-align: center
+
+    transform translateY(-120%)
+    transition-property transform
+    transition-duration TRANSITION_TIME
+    transition-timing-function DEFAULT_TRANSITION
+    backface-visibility hidden
+
+    &.show
+      visibility: visible
+      transform translateY(0%)
+
+    &.icons
+      font-size: FONT_SIZE_TINY
+      & > a
+        width: 25%
+        float: left
+        padding: 10px 0
+        & > .icon
+          font-size: S = 32px
+          line-height: S
+          display: block
+
+    &:not(.icons)
+      font-size: FONT_SIZE_BIG
+      & > a
+        display: block
+        position: relative
+        padding: LIST_PADDING LIST_PADDING_HORIZONTAL (LIST_PADDING - 1) LIST_PADDING_HORIZONTAL
+        & > .icon
+          position: absolute
+          left: 0.5em
+          font-size: 1.5em
 
   /* ========================================================================= */
   /* ================================ FOOTER ================================= */
@@ -146,41 +187,3 @@ nav
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
-
-
-  /* ========================================================================= */
-  /* ================================= MENU ================================== */
-  /* ========================================================================= */
-  &[data-control=menu]
-    position: absolute
-    left: 0px
-    top: HEADER_HEIGHT
-    visibility: hidden
-    z-index: 2
-    width: inherit
-    font-size: FONT_SIZE_BIG
-    text-align: center
-
-    transform translateY(-120%)
-    transition-property transform
-    transition-duration TRANSITION_TIME
-    transition-timing-function DEFAULT_TRANSITION
-    backface-visibility hidden
-
-    &.show
-      visibility: visible
-      transform translateY(0%)
-
-    & > a
-      display: block
-      position: relative
-      padding: 14px 10px
-      text-shadow 0 1px 0 #111
-
-      &:active
-        border-color: transparent
-
-      & > .icon
-        position: absolute
-        left: 0.5em
-        font-size: 1.5em

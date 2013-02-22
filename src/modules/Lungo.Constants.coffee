@@ -21,8 +21,8 @@ Lungo.Constants =
   QUERY:
     ARTICLE_ROUTER      : "[data-view-article]"
     SECTION_ROUTER      : "[data-view-section]"
-    ARTICLE_ROUTER_TOUCH: "header [data-view-article], footer [data-view-article], .groupbar [data-view-article]"
-    SECTION_ROUTER_TOUCH: "header [data-view-section], footer [data-view-section], .groupbar [data-view-section]"
+    ARTICLE_ROUTER_TOUCH: "header [data-view-article], footer [data-view-article], nav[data-control] [data-view-article]"
+    SECTION_ROUTER_TOUCH: "header [data-view-section], footer [data-view-section], nav[data-control] [data-view-section]"
     ARTICLE_ROUTER_TAP  : "article [data-view-article]"
     SECTION_ROUTER_TAP  : "article [data-view-section]"
     ASIDE_ROUTER        : "[data-view-aside]"
