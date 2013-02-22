@@ -102,11 +102,11 @@ Lungo.Router = do(lng = Lungo) ->
     setTimeout (-> window.location.hash = _hashed_url), 0
     do _updateNavigationElements
 
-  _updateNavigationElements = (element) ->
+  _updateNavigationElements = ->
     article_id = lng.Element.Cache.article.attr C.ATTRIBUTE.ID
-    lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE).siblings("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
-    lng.dom(C.QUERY.ARTICLE_REFERENCE).hide()
-    lng.dom("[data-article=#{article_id}]").style("display", "-webkit-box")
+
+    lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE).filter("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
+    lng.dom(C.QUERY.ARTICLE_REFERENCE).hide().filter("[data-article=#{article_id}]").style("display", "-webkit-box")
 
   _removeLast = -> _history.length -= 1
 
