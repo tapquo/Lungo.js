@@ -10,19 +10,19 @@
 @import "constants.styl"
 
 .list
-  PAD = 14px
-  PAD_H = (PAD / 1.25)
+
   & li
     list-style-type: none
-    padding: PAD 0 (PAD - 1) 0
+    padding: LIST_PADDING LIST_PADDING_HORIZONTAL (LIST_PADDING - 1) LIST_PADDING_HORIZONTAL
     position: relative
+
 
     &, & a, & small, & .right
       font-weight: 300
 
     &.arrow::after
       position: absolute
-      right: PAD
+      right: LIST_PADDING
       top: 45%
       width: 6px
       height: 6px
@@ -39,31 +39,28 @@
       float: left
       line-height: 1.0em
       text-align: center
+      margin-right: LIST_PADDING_HORIZONTAL
+
     &:not(.thumb)
       & img, & .icon
-        margin-left: PAD_H
         width: S = 34px
         height: S
         font-size: 2.6em
     &.thumb
       & img, & .icon
-        margin-top: -(PAD)
-        height: S = 61px
+        margin-top: -(LIST_PADDING)
+        margin-left: -(LIST_PADDING_HORIZONTAL)
+
+        height: S = 60px
         width: S
         font-size: 3.6em
         line-height: 1.3em
 
     &.anchor
-      padding: (PAD_H / 2) PAD_H
+      padding: (LIST_PADDING_HORIZONTAL / 2) LIST_PADDING_HORIZONTAL
       line-height: 1.0em
       & .tag
         display: none
-
-    & strong, small, .text
-      padding-left: PAD_H
-
-    & .right
-      margin-right: PAD_H
 
     & strong
       position: relative

@@ -25,32 +25,36 @@
 </head>
 
 <body class="app">
+
     <section id="main" data-transition="" data-aside="features" data-children="folk ">
         <header>
             <nav class="left">
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
+
+                <a href="#" data-view-menu="options" data-icon="users"></a>
+
                 <a href="#" data-icon="user" class="button" data-article="products" data-label="Folks" data-view-article="folks"></a>
                 <a href="#" class="button" data-article="products" data-label="Folks" data-view-article="folks"></a>
                 <a href="#" data-icon="user" class="button" data-article="products" data-view-article="folks"></a>
-
-
             </nav>
 
-            <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
-
-            <!-- <div class="title centered">laskdkals</div> -->
             <!-- <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered"> -->
+            <div class="title centered">Folks</div>
 
             <nav class="right">
                 <button data-icon="user" class="button" data-article="folks" data-label="Products" data-view-article="products" data-async="app/articles/products.html"></button>
-                <!--
-                <button data-icon="user"></button>
-                <a href="#" data-view-article="products" data-label="Products" data-count="5"></a>
-                    -->
             </nav>
         </header>
 
-        <nav class="groupbar" data-article="folks">
+        <nav id="options" data-control="menu" class="iconss ">
+            <a href="#" data-view-article="folks" data-icon="users" data-title="Folks">Folks</a>
+            <a href="#" data-view-article="products" data-icon="eye" data-title="Explore">Explore</a>
+            <a href="#" data-view-article="article" data-icon="chat">Activity</a>
+            <a href="#" data-view-article="article" data-icon="user">Profile</a>
+            <a href="#" data-view-section="folk" data-icon="user">Folk</a>
+        </nav>
+
+        <nav data-control="groupbar" data-article="folks">
             <a href="#" data-view-article="folks" data-label="Folks" data-count="11"></a>
             <a href="#" data-view-article="products" data-async="app/articles/products.html" data-label="Products" data-count="5"></a>
         </nav>
@@ -271,6 +275,30 @@
             //,
             // resources: ['app/sections/list.html']
         });
+
+        // Lungo.Notification.show("hola", "user");
+
+        // Lungo.Notification.show();
+
+        // Lungo.Notification.success('Title', 'Description', 'message', 2);
+
+        // Lungo.Notification.confirm({
+        //     icon: 'user',
+        //     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+        //     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo amet nulla dolorum hic eum debitis dolorem expedita? Commodi molestiae tempora totam explicabo sed deserunt cum iusto eos perspiciatis ea in.',
+        //     accept: {
+        //         icon: 'checkmark',
+        //         label: 'Accept',
+        //         callback: function(){ alert("Yes!"); }
+        //     },
+        //     cancel: {
+        //         icon: 'close',
+        //         label: 'Cancel',
+        //         callback: function(){ alert("No!"); }
+        //     }
+        // });
+
+
     </script>
 </body>
 </html>
