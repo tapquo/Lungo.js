@@ -45,21 +45,22 @@
              and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="components/lungo/lungo.css">
-    <link rel="stylesheet" href="components/lungo/lungo.icon.css">
-    <link rel="stylesheet" href="components/lungo/lungo.icon.brand.css">
-    <link rel="stylesheet" href="components/lungo/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.icon.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.icon.brand.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
 
-    <link rel="stylesheet" href="components/lungo/theme.lungo.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="components/lungo.brownie/theme.lungo.css" id="theme-stylesheet">
 
     <!-- App Stylesheet -->
     <link rel="stylesheet" href="stylesheets/app.css">
 </head>
 
 <body class="app">
+
     <section id="main" data-transition="" data-aside="features">
         <header>
-            <nav class="left">
+            <nav>
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
             </nav>
             <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
@@ -96,47 +97,20 @@
                 </li>
             </ul>
         </article>
-
-        <article id="environment" class="list">
-            <ul>
-                <li id="os" class="dark" data-icon="mobile">
-                    <strong>Desktop</strong>
-                    <small>unknown</small>
-                </li>
-                <li id="resolution" data-icon="picture">
-                    <strong>0p x 0p</strong>
-                    <small>Screen Resolution</small>
-                </li>
-                <li id="navigator" data-icon="brand html5">
-                    <strong>webkit</strong>
-                    <small>Mobile: </small>
-                </li>
-            </ul>
-        </article>
     </section>
 
     <!-- Lungo dependencies -->
     <script src="components/quojs/quo.js"></script>
-    <script src="components/lungo/lungo.js"></script>
+    <script src="components/lungo.brownie/lungo.js"></script>
 
     <!-- LungoJS - Sandbox App -->
     <script>
         Lungo.init({
             name: 'Kitchen Sink',
-            version: '2.1',
-            resources: ['app/sections/pull.html',
-                        'app/sections/notification.html',
-                        'app/sections/carousel.html',
-                        'app/sections/touchevents.html',
-                        'app/asides/features.html']
+            version: '2.1.0222',
+            resources: ['app/asides/features.html']
         });
     </script>
     <script src="app/app.js"></script>
-    <script src="app/events.notification.js"></script>
-    <script src="app/events.touch.js"></script>
-    <script src="app/events.pull.js"></script>
-    <script src="app/events.carousel.js"></script>
-    <script src="app/events.trigger.js"></script>
-    <script src="app/events.themeroller.js"></script>
 </body>
 </html>

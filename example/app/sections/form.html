@@ -1,10 +1,7 @@
 <section id="form" data-transition="slide">
-    <header data-title="Form Elements">
-        <nav>
-            <a href="#back" data-router="section" data-icon="home"></a>
-        </nav>
+    <header data-title="Form Elements" data-back="home">
         <nav class="right">
-            <a href="#form-extras" data-router="article" class="button" data-label="Extras"></a>
+            <button data-view-article="form-extras" data-label="Extras" data-article="form-normal"></button>
         </nav>
     </header>
 
@@ -69,7 +66,7 @@
             <br/>
             <input type="range" min="0" max="1" class="checkbox active" value="1">
 
-            <a href="#form-normal" data-router="article" class="button anchor accept" data-label="Return to normal Elements"></a>
+            <button data-view-article="form-normal" class="anchor accept" data-label="Return to normal Elements"></button>
         </form>
     </article>
 </section>
