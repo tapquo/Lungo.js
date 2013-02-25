@@ -23,6 +23,13 @@
   -webkit-overflow-scrolling: touch
   -webkit-box-flex: 1
 
+  // & > *
+  //   background: -webkit-linear-gradient(white 30%, hsla(0,0%,100%,0)), -webkit-linear-gradient(hsla(0,0%,100%,0), white 70%) bottom, -webkit-radial-gradient(50% 0, rgba(0,0,0,.2), transparent 70%), -webkit-radial-gradient(50% 100%, rgba(0,0,0,.2), transparent 70%) bottom;
+  //   background-repeat: no-repeat;
+  //   background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+  //   background-attachment: local, local, scroll, scroll;
+
+
   &.horizontal
     overflow-x: scroll
     overflow-y: hidden
@@ -39,8 +46,10 @@
 
 .hidden
   display: none
+
 .indented > *
-  margin: 10px
+  padding: 10px
+
 .margined
   margin: 3%
 
@@ -74,7 +83,23 @@ size = 5px
     margin-bottom: size
 
 
-/* ================================  CAROUSEL  ================================ */
+/* ================================  .layout  ================================ */
+.layout
+  display-box()
+  height:  inherit !important
+  &:not(.horizontal)
+    box-orient(vertical)
+  &:.horizontal
+    box-orient(horizontal)
+  & > *
+    box-flex(1)
+  & > [data-layout='secondary']
+    box-flex(2)
+  & > [data-layout='primary']
+    box-flex(3)
+
+
+/* ================================  MENU  ================================ */
 [data-view-menu]
   &:after
     content: "▼"
