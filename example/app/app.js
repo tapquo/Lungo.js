@@ -149,8 +149,8 @@ Lungo.Events.init({
 });
 
 Lungo.ready(function() {
-    Lungo.Aside.show();
-    // App.environment();
+
+    // Lungo.Aside.show();
     // Lungo.Router.section("notification");
 
     // Lungo.Notification.show();
