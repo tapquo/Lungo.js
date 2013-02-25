@@ -243,6 +243,7 @@ nav
 /* -------------------------- BUTTONS -------------------------- */
 header
   & .button, button
+    color: #fff
     background-color: THEME_dark
     box-shadow 0 1px 0 lighten(THEME, 15%), inset 0 1px 0 darken(THEME, 35%)
     border-radius 4px
@@ -252,7 +253,7 @@ header
 article
   & .button, button
     border-radius(FORM-border-radius)
-    color: white
+    color: #fff
     border-radius 2px
     box-shadow inset 0 1px 0 rgba(255,255,255,0.2)
     border: solid 1px rgba(0,0,0,0.1)
@@ -264,6 +265,9 @@ article
       color: #666 !important
     &[disabled]
       background-color: black
+    & .icon
+      opacity: 0.65
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.25)
 
   & button, .button, .tag:not(.icon)
     &

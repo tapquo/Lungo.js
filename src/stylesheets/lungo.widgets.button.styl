@@ -9,46 +9,63 @@
 
 @import "constants.styl"
 
-
 .button, button
   display: inline-block
-  padding: 10px 16px
   border: none
   cursor: pointer
-
-  color: #fff !important
   font-family: inherit
-  font-size: 1.05em
-  font-weight: 600
+  font-size: 1.15em
   text-align: center
   text-decoration: none
   outline: none
 
-  &:disabled, &.disabled
-    background: rgba(255,255,255,0.2)
-    color: #999 !important
+  article &
+    height: H = 40px
+    line-height: (H - 2)
+    padding: 0 14px
 
-  & .icon
-    font-size: FONT_SIZE_BIG
+    &, abbr
+      font-weight: 700
+    & .icon + abbr
+      margin-left: 6px
 
-  &.anchor
-    display: block
-    // width: inherit
-    width: 100%
-    position: relative
-    & .icon
-      position: absolute
-      left: 8px
+    &:disabled, &.disabled
+      background: rgba(255,255,255,0.2)
+      color: #999 !important
 
-  &.large
-    height: h = 52px
-    padding: 0 24px
-    font-size: 1.4em
-    line-height: h
+    &:not(.anchor) .icon
+      line-height: (H / 2)
 
-  &.small
-    height: h = 30px
-    padding: 0 8px
-    font-size: FONT_SIZE_SMALL
-    line-height: (h - 2)
 
+    &.anchor
+      display: block
+      // width: inherit
+      width: 100%
+      position: relative
+      & .icon
+        position: absolute
+        left: 14px
+
+    &.large
+      height: H = 52px
+      padding: 0 20px
+      font-size: 1.4em
+      line-height: (H - 2)
+      & .icon + abbr
+        margin-left: 10px
+
+    &.small
+      height: H = 30px
+      padding: 0 10px
+      font-size: FONT_SIZE_SMALL
+      line-height: (H - 2)
+      & .icon + abbr
+        margin-left: 4px
+
+    &.tiny
+      height: H = 22px
+      padding: 0 6px
+      font-size: FONT_SIZE_TINY
+      line-height: (H - 2)
+      & .icon + abbr
+        margin-left: 2px
