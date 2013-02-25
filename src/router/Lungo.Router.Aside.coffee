@@ -52,8 +52,7 @@ Lungo.Aside = do(lng = Lungo) ->
       setTimeout (-> lng.Element.Cache.aside.addClass C.CLASS.SHOW), C.TRANSITION.DURATION
       if lng.DEVICE is C.DEVICE.PHONE
         lng.Element.Cache.aside.addClass C.CLASS.SHOW
-        aside_stylesheet = _asideStylesheet()
-        lng.Element.Cache.section.addClass(aside_stylesheet).addClass C.CLASS.ASIDE
+        lng.Element.Cache.section.addClass(_asideStylesheet()).addClass(C.CLASS.ASIDE)
 
 
   ###
@@ -62,7 +61,7 @@ Lungo.Aside = do(lng = Lungo) ->
   ###
   hide = ->
     if lng.Element.Cache.aside? and lng.DEVICE is C.DEVICE.PHONE
-      lng.Element.Cache.section.removeClass C.CLASS.ASIDE
+      lng.Element.Cache.section.removeClass(C.CLASS.ASIDE)
       setTimeout (-> lng.Element.Cache.aside.removeClass C.CLASS.SHOW), C.TRANSITION.DURATION
 
   ###
@@ -105,14 +104,7 @@ Lungo.Aside = do(lng = Lungo) ->
   Private methods
   ###
   _asideStylesheet = ->
-    aside_stylesheet = lng.Element.Cache.aside.attr(C.ATTRIBUTE.CLASS)
-    stylesheet = ""
-
-    #@todo: Refactor
-    if aside_stylesheet
-      stylesheet += (if (aside_stylesheet.indexOf(C.CLASS.RIGHT) > -1) then C.CLASS.RIGHT + " " else "")
-      stylesheet += (if (aside_stylesheet.indexOf(C.CLASS.SMALL) > -1) then C.CLASS.SMALL + " " else "")
-    stylesheet
+    if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else "  "
 
   active: active
   toggle: toggle
