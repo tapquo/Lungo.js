@@ -21,6 +21,8 @@ Lungo.Section = do(lng = Lungo) ->
 
     lng.Element.Cache.article = active_article
     lng.Element.Cache.aside = lng.Aside.active target
+    if target.hasClass "aside" then lng.Aside.show()
+
 
     current.trigger C.TRIGGER.UNLOAD if current
     target.trigger C.TRIGGER.LOAD

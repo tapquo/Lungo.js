@@ -29,7 +29,7 @@ aside, section
   & > article
     box-flex(1)
     ordinal-group(2)
-    z-index: 0
+    z-index: -1
   & > footer
     ordinal-group(3)
 
@@ -37,11 +37,10 @@ aside, section
 /* ================================ SECTION ================================ */
 /* ========================================================================= */
 section
-  z-index: 3
+  z-index: 2
   width: inherit
   &:not(.show)
-    z-index: 2
-
+    z-index: 1
 
 /* ========================================================================= */
 /* ================================= ASIDE ================================= */
@@ -50,11 +49,11 @@ aside
   min-width: ASIDE_WIDTH
   display: none
   z-index: -1
-
   &.active
     display-box()
   &.show
-    z-index: 2
+    z-index: 0
+    display-box()
   &.right
     right: 0px
 
