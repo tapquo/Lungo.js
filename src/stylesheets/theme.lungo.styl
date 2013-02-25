@@ -257,14 +257,17 @@ article
     border-radius 2px
     box-shadow inset 0 1px 0 rgba(255,255,255,0.2)
     border: solid 1px rgba(0,0,0,0.1)
-
     &:active
       box-shadow inset 0 0 128px rgba(0,0,0,0.25)
       border-color: none
     &.secondary
       color: #666 !important
-    &[disabled]
-      background-color: black
+    &[disabled], :disabled, &.disabled
+      background: rgba(255,255,255,0.2)
+      color: #999 !important
+      box-shadow: none !important
+    &, abbr
+      font-weight: 700
     & .icon
       opacity: 0.65
       text-shadow: 0 -1px 0 rgba(0,0,0,0.25)
