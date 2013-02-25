@@ -58,14 +58,14 @@
 
 <body class="app">
 
-    <section id="main" data-transition="" data-aside="features">
+    <section id="main" data-transition="" data-aside="features" class="drag">
         <header>
             <nav>
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
             </nav>
             <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered">
             <nav class="right">
-                <a href="#" data-action="twitter" class="button theme" data-icon="brand twitter"></a>
+                <a href="#" data-action="twitter" class="button" data-icon="brand twitter" data-article="main-article"></a>
             </nav>
         </header>
 
@@ -119,7 +119,9 @@
         Lungo.init({
             name: 'Kitchen Sink',
             version: '2.1.0222',
-            resources: ['app/asides/features.html']
+            resources: [
+                'app/asides/features.html',
+                'app/asides/right.html']
         });
     </script>
     <script src="app/app.js"></script>

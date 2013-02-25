@@ -13,15 +13,13 @@
     position: absolute
 
   section
-    &.aside
-      &:not(.small)
+    &.show.aside
+      &:not(.right)
         transform translateX(ASIDE_WIDTH)
-      &.small
-        transform translateX(ASIDE_WIDTH_SMALL)
       &.right
         transform translateX(-(ASIDE_WIDTH))
-        &.small
-          transform translateX(-(ASIDE_WIDTH_SMALL))
+    &.show.hide
+      z-index: -1
 
     &[data-transition]
       display-box()

@@ -30,7 +30,7 @@ Lungo.Constants =
 
     LIST_IN_ELEMENT     : "article.list"
     ELEMENT_SCROLLABLE  : "article.scroll"
-    HREF_ASIDE          : "section[data-aside]"
+    HREF_ASIDE          : "section[data-aside].drag"
     HREF_ROUTER         : "a[href][data-router]"
     MENU_HREF           : "[data-control=menu] a[href]"
     INPUT_CHECKBOX      : "input[type=range].checkbox"
