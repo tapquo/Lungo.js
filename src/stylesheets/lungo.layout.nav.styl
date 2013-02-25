@@ -17,28 +17,17 @@ nav
   /* ================================= HEADER ================================ */
   /* ========================================================================= */
   header &
-    & a, button
-      padding: 0px 11px !important
-      float: left
-
     & .button, button
-      margin: 6px 0 0 0
-      line-height: 32px
-      & > .icon
-        font-size: 1.5em
-        position: relative
-        top: 3px
-        height: SIZE = 20px
-        width: SIZE
-        line-height: SIZE
-        display: inline-block
-
-    &.right .button, button
-      margin-right: 6px
-    &:not(.right) .button, button
-      margin-left: 6px
+      margin-top: 6px
+      float: left
+    &.right .button, &.right button
+      margin-right: 5px
+    &:not(.right) .button, &:not(.right) button
+      margin-left: 5px
 
     & a:not(.button)
+      padding: 0px 11px !important
+      float: left
       height: HEADER_HEIGHT
       & > .icon
         font-size: 1.8em
