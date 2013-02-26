@@ -1,50 +1,140 @@
 <section id="form" data-transition="slide">
-    <header data-title="Form Elements" data-back="home">
-        <nav class="right">
-            <button data-view-article="form-extras" data-label="Extras" data-article="form-normal"></button>
-        </nav>
-    </header>
+    <header data-title="Form Elements" data-back="home"></header>
 
-    <article id="form-normal" class="active">
+    <nav data-control="groupbar">
+        <a href="#" data-view-article="form-normal" data-label="Profile" class="active"></a>
+        <a href="#" data-view-article="form-indented" data-label="Inbox"></a>
+        <a href="#" data-view-article="form-special" data-label="Map"></a>
+    </nav>
+
+    <article id="form-normal" class="scroll">
         <div class="form">
-            <fieldset data-icon="plus">
-                <label>To:</label>
-                <input type="text" />
-            </fieldset>
+            <!-- LABEL + INPUT -->
             <fieldset>
-                <label>Cc/Cco:</label>
-                <input type="text" />
-            </fieldset>
-            <fieldset data-icon="pencil">
-                <label>Subject:</label>
-                <input type="text" />
-            </fieldset>
-            <fieldset>
-                <label>Summary:</label>
-                <br/>
-                <input type="text" />
-            </fieldset>
-            <fieldset>
-                <textarea></textarea>
+                <label>label</label>
+                <input type="text" placeholder="value">
+
+                <label>label</label>
+                <input type="text" placeholder="value on right" class="text align_right error">
+
+                <label class="absolute">label</label>
+                <input type="text" placeholder="value on center" class="large text align_center">
+
+                <label>label</label>
+                <label class="select ">
+                    <select class="custom">
+                        <option value="1">HTML5 Jedi</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </label>
+
+                <label>label</label>
+                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
             </fieldset>
 
+            <!-- INPUT -->
+            <fieldset>
+                <input type="text" id="description" class="text align_center" placeholder="value"/>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Write something..."></textarea>
+            </fieldset>
+            <fieldset>
+                <label class="select">
+                    <select class="custom">
+                        <option value="1">HTML5 Jedi</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
+            </fieldset>
+
+            <fieldset data-icon="plus">
+                <label>label</label>
+                <input type="text" value="value" />
+            </fieldset>
         </div>
     </article>
 
-    <article id="form-extras" class=" scroll">
-        <form>
+    <article id="form-indented" class="indented scroll">
+        <div class="form">
+            <!-- LABEL + INPUT -->
+            <label>label +  input</label>
+            <fieldset>
+                <label>label</label>
+                <input type="text" placeholder="value">
+
+                <label>label</label>
+                <input type="text" placeholder="value on right" class="text align_right error">
+
+                <label class="absolute">label</label>
+                <input type="text" placeholder="value on center" class="large text align_center">
+
+                <label>label</label>
+                <label class="select ">
+                    <select class="custom">
+                        <option value="1">HTML5 Jedi</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </label>
+
+                <label>label</label>
+                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
+            </fieldset>
+
+            <!-- INPUT -->
+            <label>input</label>
+            <fieldset>
+                <input type="text" id="description" class="text align_center" placeholder="value"/>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Write something..."></textarea>
+            </fieldset>
+            <fieldset>
+                <label class="select">
+                    <select class="custom">
+                        <option value="1">HTML5 Jedi</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
+            </fieldset>
+
+
+            <label>label + input +  icon</label>
+            <fieldset data-icon="plus">
+                <label>label</label>
+                <input type="text" value="value" />
+            </fieldset>
+        </div>
+    </article>
+
+    <article id="form-special" class="indented scroll">
+        <div class="form" >
+            <label>Specials</label>
             <fieldset data-icon="search">
                 <input type="search" placeholder="Search..."/>
             </fieldset>
-        </form>
-        <form  class="margined">
-            <div class="six columns">
-                <label>Address</label>
-                <input type="text" placeholder="placeholder"/>
-            </div>
-            <div class="three columns right">
-                <label>Pin Code</label>
-                <input type="password" value="value" disabled/>
+
+            <div class="layout horizontal">
+                <div>
+                    <label>Address</label>
+                    <input type="text" placeholder="placeholder"/>
+                </div>
+                <div>
+                    <label>Pin Code</label>
+                    <input type="password" value="value" disabled/>
+                </div>
             </div>
 
             <label>Select your skill</label>
@@ -66,7 +156,7 @@
             <br/>
             <input type="range" min="0" max="1" class="checkbox active" value="1">
 
-            <button data-view-article="form-normal" class="anchor accept" data-label="Return to normal Elements"></button>
-        </form>
+            <button class="anchor accept" data-label="Return to normal Elements"></button>
+        </div>
     </article>
 </section>

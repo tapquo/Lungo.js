@@ -46,27 +46,28 @@
 
 .hidden
   display: none
+.block
+  display: block
 
 .indented > *
-  padding: 10px
+  padding: INDENT
 
-.margined
-  margin: 3%
-
+/*
 .wrapper
   padding: 8px 8px
 
 .icon.small
   font-size: 1.3em
 
+
 .framed
   border: 2px solid #fff
 
 .round
   border-radius( 4px )
+*/
 
-.block
-  display: block
+
 
 /* ================================  TAG  ================================ */
 .tag
@@ -83,7 +84,7 @@ size = 5px
     margin-bottom: size
 
 
-/* ================================  .layout  ================================ */
+/* ================================  .LAYOUT  ================================ */
 .layout
   display-box()
   height:  inherit !important
@@ -115,37 +116,3 @@ size = 5px
   margin: 0
   // article
   //   display: block !important
-
-/* ================================  TEXT  ================================ */
-.text
-  &.thin
-    font-weight: 300
-  &.normal
-    font-weight: 400
-  &.bold
-    font-weight: 600
-  &.extra-bold
-    font-weight: 700
-  &.italic
-    font-style: italic
-  &.underline
-    text-decoration: underline
-  &.line-through
-    text-decoration: line-through
-  &.align_left
-    text-align: left
-  &.align_right
-    text-align: right
-  &.align_center
-    text-align: center
-  &.align_justify
-    text-align: justify
-
-  &.tiny
-    font-size: 0.8em
-  &.small
-    font-size: FONT_SIZE_SMALL
-  &.big
-    font-size: FONT_SIZE_BIG
-  &.opacity
-    opacity: 0.5

@@ -9,27 +9,31 @@
 
 @import "constants.styl"
 
-FORM_INPUT_HEIGHT = 30px
-PROGRESS_HEIGHT = 15px
-
 form, .form
-  & label
-    font-size: 1.1em
 
-  & input, textarea, select, .progress
+  & label:not(.select)
+    display: inline-block
+    line-height: FORM_HEIGHT
+    text-indent: 8px
+
+  & input, textarea, select, .progress, label.select
     margin-bottom: 8px
     font-size: FONT_SIZE_BIG
+    &.large
+      font-size: (FONT_SIZE_BIG * 1.2)
 
-  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     display: block
     width: 100%
     padding: 0px 6px
-    height: FORM_INPUT_HEIGHT
+    height: FORM_HEIGHT
     transition all 0.15s linear
     font-family: inherit
     -webkit-appearance: none
     -webkit-user-select: text
     -webkit-font-smoothing: antialiased
+    border: none
+    border-radius 0px
     &:focus
       outline: none !important
 
@@ -38,72 +42,84 @@ form, .form
 
   & fieldset
     padding: 8px 8px 0 8px
-    & label
-      display: inline-block
+
+    & label:not(.select)
       float: left
       width: 20%
-      line-height: FORM_INPUT_HEIGHT
-    & label + input
+      text-indent: 0px
+      &.absolute
+        position: absolute
+
+    & label:not(.absolute) + input, label:not(.absolute) + label.select
       width: 80% !important
+
     & .icon
       position: absolute
       font-size: FONT_SIZE_BIG
-      line-height: FORM_INPUT_HEIGHT
-      right: 8px
+      line-height: FORM_HEIGHT
+      right: INDENT
     & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea
       box-shadow none
       border: none
-      padding: 0
+      padding: 0px
       &, &:focus
         background: none
+
+  .indented & fieldset
+    & label:not(.select)
+      width: 25% !important
+    & label:not(.absolute) + input, label:not(.absolute) + label.select
+      width: 75% !important
+    & .icon
+      right: (INDENT * 2)
 
   & label.select
     position: relative
     display: inline-block
-    width: 100%
     font-size: inherit
     line-height: inherit
+    padding-left: 0px
 
   & .select:after
     position: absolute
     top: 0
     right: 0
-    height: FORM_INPUT_HEIGHT
-    width: FORM_INPUT_HEIGHT
+    height: FORM_HEIGHT
+    width: FORM_HEIGHT
+    font-size: FONT_SIZE_BIG
     content: "▼"
     pointer-events: none
     text-align: center
-    line-height: 32px
+    line-height: FORM_HEIGHT
 
   & input[type=range]
     -webkit-appearance: none
     outline: none
 
     &:not(.checkbox)
-      height: PROGRESS_HEIGHT
+      height: FORM_PROGRESS_HEIGHT
       width: 100%
       padding: 0px
-      margin-top: 2px
       border: 0
       &::-webkit-slider-thumb
         top: -1px
 
     &.checkbox
       width: 64px
-      height: FORM_INPUT_HEIGHT
-      line-height: FORM_INPUT_HEIGHT
+      height: FORM_HEIGHT
+      line-height: FORM_HEIGHT
       padding: 0px 1px
       border-radius 2px
 
       &:after
-        top: -(FORM_INPUT_HEIGHT - 2)
+        top: -(FORM_HEIGHT - 2)
         position: relative
         content: "OFF"
         float: right
         padding: 0 8px
         font-weight: 700
         font-size: 12px
-        line-height: (FORM_INPUT_HEIGHT - 2)
+        line-height: (FORM_HEIGHT - 2)
 
       &.active:after
         float: left
@@ -131,8 +147,8 @@ form, .form
   & .progress
     width: 100%
     & .bar
-      height: PROGRESS_HEIGHT
-      line-height: PROGRESS_HEIGHT
+      height: FORM_PROGRESS_HEIGHT
+      line-height: FORM_PROGRESS_HEIGHT
       display: block
       & .value
         display: block
