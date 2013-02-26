@@ -282,9 +282,7 @@ article
 
 
 /* -------------------------- FORMS -------------------------- */
-FORM_shadow_form =  'inset 0 1px 2px rgba(0,0,0,0.1)'
-FORM_shadow_form_active =  'inset 0 1px 1px rgba(0,0,0,0.1), 3px 0 #f0eeef, 0 3px #f0eeef, -3px 0 #f0eeef, 0 -3px #f0eeef'
-FORM_border_color = #D0D4C6
+FORM_border_color = #e5e5e5
 
 form, .form
   & label
@@ -300,31 +298,26 @@ form, .form
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
     background-color: white
     color: rgba(0, 0, 0, 0.75)
-    border: 1px solid #ddd
-    box-shadow inset 0 1px 2px rgba(0, 0, 0, 0.1)
-    border-radius (0px)
     &.error, &:required
-      border-color: color_alert
-      color: color_alert
-      background-color: rgba(198, 15, 19, 0.1)
-    &:focus
-      background: #FAFAFA;
-      border-color: THEME;
+      color: COLOR_cancel
+      background-color: lighten(COLOR_cancel, 75%)
+      font-weight: 700
+    &:focus, &:active, &:hover
+      background: lighten(THEME, 95%)
       color: rgba(0, 0, 0, 0.75)
     &[disabled]
-        background: #eee
-        border-color: #aaa
-        color: #999
+      background: darken(FORM_border_color, 10%)
+      color: #999
+    &.large
+      font-weight: 700
+
 
   & .select:after
-    background: FORM_border_color
-    color: white
-    border-top-right-radius: FORM_radius
-    border-bottom-right-radius: FORM_radius
+    background: darken(FORM_border_color, 10%)
+    color: #fff
 
   & input[type=range]
-    box-shadow  FORM_shadow_form
-
+    border-radius: 0px
     &:not(.checkbox)
       background-color: #ddd
       &:active
