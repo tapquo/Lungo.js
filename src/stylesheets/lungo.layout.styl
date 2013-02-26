@@ -16,91 +16,87 @@ body, html
   padding: 0
   overflow: hidden
 
-aside, section
-  display-box()
-  box-orient(vertical)
-  height: inherit
-  & > header, > footer
-    box-flex(0)
-    z-index: 3
-    position: relative
-  & > header
-    ordinal-group(1)
-  & > article
-    box-flex(1)
-    ordinal-group(2)
-    z-index: -1
-  & > footer
-    ordinal-group(3)
-
-/* ========================================================================= */
-/* ================================ SECTION ================================ */
-/* ========================================================================= */
-section
-  z-index: 2
-  width: inherit
-  &:not(.show)
-    z-index: 1
-
-/* ========================================================================= */
-/* ================================= ASIDE ================================= */
-/* ========================================================================= */
-aside
-  min-width: ASIDE_WIDTH
-  display: none
-  z-index: -1
-  &.active
+body
+  /* ========================================================================= */
+  /* ============================= ASIDE/SECTION ============================= */
+  /* ========================================================================= */
+  & > aside, & > section
     display-box()
-  &.show
-    z-index: 0
-    display-box()
-  &.right
-    right: 0px
-
-/* ========================================================================= */
-/* ============================= HEADER/FOOTER ============================= */
-/* ========================================================================= */
-header, footer
-  height: HEADER_HEIGHT
-  line-height: HEADER_HEIGHT
-
-  & > nav
-    box-flex(0)
-
-  & > .title
-    z-index: -1
-    margin: 0 4px
-    float: left
-    font-size: (FONT_SIZE_BIG * 1.2)
-    box-flex(1)
-
-    &.centered
-      position: absolute
-      left: 32px
-      right: 32px
-      text-align: center
-      display: inline-block
-
-  & > img.title
-    PAD = 18px
-    height: (HEADER_HEIGHT - PAD)
-    margin: (PAD / 2) auto
-
-
-/* ========================================================================= */
-/* ================================ ARTICLE ================================ */
-/* ========================================================================= */
-article
-  visibility: hidden
-  display: none
-
-  .show > &.active, .hide > &.active, .hiding > &.active
-    visibility: visible
-    display: block
-    z-index: 1
+    box-orient(vertical)
     height: inherit
+    & > header, > footer
+      box-flex(0)
+      z-index: 3
+      position: relative
+    & > header
+      ordinal-group(1)
+    & > article
+      box-flex(1)
+      ordinal-group(2)
+      z-index: -1
+    & > footer
+      ordinal-group(3)
 
-    &.pull
-      transition-property transform
-      transition-duration TRANSITION_TIME
+    /* ============================= HEADER/FOOTER ============================= */
+    & > header, > footer
+      height: HEADER_HEIGHT
+      line-height: HEADER_HEIGHT
 
+      & > nav
+        box-flex(0)
+
+      & > .title
+        z-index: -1
+        margin: 0 4px
+        float: left
+        font-size: (FONT_SIZE_BIG * 1.2)
+        box-flex(1)
+
+        &.centered
+          position: absolute
+          left: 32px
+          right: 32px
+          text-align: center
+          display: inline-block
+
+      & > img.title
+        PAD = 18px
+        height: (HEADER_HEIGHT - PAD)
+        margin: (PAD / 2) auto
+
+    /* ================================ ARTICLE ================================ */
+    & > article
+      visibility: hidden
+      display: none
+    &.show > article.active, &.hide > article.active, &.hiding > article.active
+      visibility: visible
+      display: block
+      z-index: 1
+      height: inherit
+      &.pull
+        transition-property transform
+        transition-duration TRANSITION_TIME
+
+  /* ========================================================================= */
+  /* ================================ SECTION ================================ */
+  /* ========================================================================= */
+  & > section
+    z-index: 2
+    width: inherit
+    &:not(.show)
+      z-index: 1
+
+  /* ========================================================================= */
+  /* ================================= ASIDE ================================= */
+  /* ========================================================================= */
+  & > aside
+    min-width: ASIDE_WIDTH
+    display: none
+    z-index: -1
+    &.active
+      display-box()
+    &.show
+      z-index: 0
+      display-box()
+    &.right
+      right: 0px

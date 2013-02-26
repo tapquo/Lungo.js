@@ -5,41 +5,40 @@
 /* ==== Tablet ==== */
 // @media only screen and (min-width: 768px) and (max-width: 1280px)
 @media only screen and (min-width: 768px)
-
   body
     display-box()
     box-orient(horizontal)
     overflow: hidden
 
-  aside
-    width 15%
-    transform translateX(-100%)
+    & > aside
+      width 15%
+      transform translateX(-100%)
 
-    transition-property transform
-    transition-duration TRANSITION_TIME
-    &.show
-      transform translateX(0%)
+      transition-property transform
+      transition-duration TRANSITION_TIME
+      &.show
+        transform translateX(0%)
 
-  section
-    display: none
-    opacity: 0
-    ordinal-group(2)
-    transform translateX(100%)
-    &.show
-      animation showing TRANSITION_TIME
-      animation-fill-mode forwards
-      display-box()
-    &.hide
-      animation hiding TRANSITION_TIME
+    & > section
+      display: none
+      opacity: 0
+      ordinal-group(2)
+      transform translateX(100%)
+      &.show
+        animation showing TRANSITION_TIME
+        animation-fill-mode forwards
+        display-box()
+      &.hide
+        animation hiding TRANSITION_TIME
 
-    &:not([data-children])
-      box-flex (1)
+      &:not([data-children])
+        box-flex (1)
 
-    &[data-children]
-      width: 25%
+      &[data-children]
+        width: 25%
 
-    & [data-view-aside]
-      display: none !important
+      & [data-view-aside]
+        display: none !important
 
 @-webkit-keyframes showing
   0%
