@@ -63,7 +63,7 @@ Lungo.Boot.Layout = do(lng = Lungo) ->
     element[0].addEventListener "touchstart", ((event) ->
       scrollTop = @scrollTop
       @scrollTop = 1  if scrollTop <= 1
-      @scrollTop = @scrollHeight - @offsetHeight - 1  if scrollTop + @offsetHeight >= @scrollHeight
+      @scrollTop = @scrollHeight - @offsetHeight - 1 if scrollTop + @offsetHeight >= @scrollHeight
     ), false
 
   init: init
