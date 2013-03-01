@@ -17,6 +17,12 @@ body, html
   overflow: hidden
 
 body
+  &[data-position="absolute"] > section
+    position: absolute
+
+  &[data-position="fixed"] > section
+    position: fixed
+
   /* ========================================================================= */
   /* ============================= ASIDE/SECTION ============================= */
   /* ========================================================================= */
