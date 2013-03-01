@@ -1,14 +1,14 @@
 ###
 Temporary cache system
 
-@namespace Lungo.Data
+@namespace Lungo
 @class Cache
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
 ###
 
-Lungo.Data.Cache = do(lng = Lungo) ->
+Lungo.Cache = do(lng = Lungo) ->
   _cache = {}
 
   ###
