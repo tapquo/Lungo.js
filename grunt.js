@@ -83,26 +83,23 @@ module.exports = function(grunt) {
       },
       icons: {
         options: { compress: true },
-        files: { '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/**.css': '<config:resources.icons>' }
+        files: { '<%=meta.endpoint%>/<%=meta.file%>.icon/**.css': '<config:resources.icons>' }
       },
-      flatten: {
+      themes: {
         options: { flatten: true },
         files: { '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/**.css': '<config:resources.themes>' }
       }
     },
 
     copy: {
-      example: {
-        files: { 'example/components/<%=meta.file%>/': ['<%=meta.endpoint%>/<%=meta.file%>/*'] }
-      },
-      target: {
+      theme: {
         files: { '<%=meta.endpoint%>/<%=meta.file%>.theme/': ['<config:resources.themes>'] }
       }
     },
 
     watch: {
       files: ['<config:resources.coffeescripts>', '<config:resources.stylesheets>', '<config:resources.themes>'],
-      tasks: 'coffee concat min stylus'
+      tasks: 'coffee concat min stylus:stylesheets stylus:themes'
     }
   });
 
