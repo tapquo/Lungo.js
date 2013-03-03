@@ -31,3 +31,6 @@
 [submodule "example/components/lungo.brownie"]
 	path = example/components/lungo.brownie
 	url = https://github.com/soyjavi/lungo.brownie.git
+[submodule "packages/lungo.icon"]
+	path = packages/lungo.icon
+	url = https://github.com/TapQuo/lungo.icon.git
