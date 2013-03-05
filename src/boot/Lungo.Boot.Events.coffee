@@ -64,14 +64,12 @@ Lungo.Boot.Events = do(lng = Lungo) ->
 
     lng.Boot.Data.init "##{id}"
     link.removeAttribute("data-async") for link in lng.dom "[data-async='#{url}']"
-    setTimeout (->
-      if type is C.ELEMENT.ARTICLE
-        lng.Router.article section_id, id
-        lng.Aside.hide()
-      else
-        lng.Router.section id
-      do lng.Notification.hide
-    ), lng.Constants.TRANSITION.DURATION * 2
+    if type is C.ELEMENT.ARTICLE
+      lng.Router.article section_id, id
+      lng.Aside.hide()
+    else
+      lng.Router.section id
+    do lng.Notification.hide
 
 
   _onAside = (event) ->
