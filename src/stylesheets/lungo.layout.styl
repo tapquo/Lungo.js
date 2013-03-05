@@ -17,12 +17,6 @@ body, html
   overflow: hidden
 
 body
-  &[data-position="absolute"] > section
-    position: absolute
-
-  &[data-position="fixed"] > section
-    position: fixed
-
   /* ========================================================================= */
   /* ============================= ASIDE/SECTION ============================= */
   /* ========================================================================= */
@@ -55,7 +49,7 @@ body
         z-index: -1
         margin: 0 4px
         float: left
-        font-size: (FONT_SIZE_BIG * 1.2)
+        font-size: FONT_SIZE_LARGE
         box-flex(1)
 
         &.centered

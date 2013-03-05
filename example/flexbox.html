@@ -26,7 +26,7 @@
 
 <body class="app">
 
-    <section id="main" data-transition="" data-aside="features" data-children="folk ">
+    <section id="main" data-transition="slide" data-aside="features" data-children="folk ">
         <header>
             <nav class="left">
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
@@ -59,7 +59,7 @@
             <a href="#" data-view-article="products" data-async="app/articles/products.html" data-label="Products" data-count="5"></a>
         </nav>
 
-        <article id="folks" class="list scroll indente-d">
+        <article id="folks" class="active list scroll indente-d">
             <ul>
                 <li class="thumb selectable arrow" data-view-section="folk" data-image="http://cdn.tapquo.com/photos/javi.jpg">
                     <a href="#" >
@@ -110,6 +110,10 @@
             </ul>
         </article>
 
+        <article id="sub">
+            sub
+        </article>
+
         <!--
         <article id="products" class="list scroll">
             <ul>
@@ -137,12 +141,16 @@
 
         <footer>
             <nav>
-                <a href="#" data-view-article="folks" data-icon="users" data-count="11"></a>
-                <a href="#" data-view-article="products" data-icon="mobile" data-count="5"></a>
+                <a href="#" data-view-article="folks" data-icon="desktop" data-count="11"></a>
+                <a href="#" data-view-article="products" data-icon="tablet" data-count="5"></a>
             </nav>
         </footer>
     </section>
 
+    <section id="test">
+        <header data-title="Test" data-back="home"></header>
+        <article></article>
+    </section>
 
     <section id='folk' data-transition="slide" data-aside="features" data-children="x">
         <header data-title='Javi Jimenez'>
@@ -225,7 +233,7 @@
         <article class="list scroll active">
             <ul>
                 <!-- Basic Layout -->
-                <li data-view-article="folks" data-title="Profile" data-icon="users">
+                <li data-view-article="folks" data-title="Profile" data-icon="user">
                     <a href="#">
                         <div class="tag right">11</div>
                         <strong>Folks</strong>
@@ -238,8 +246,11 @@
                     <strong>Products</strong>
                     <small>Fueled by coffee</small>
                 </li>
+                <li data-view-section="test" data-icon="desktop">
+                    <strong>Section TEST</strong>
+                </li>
 
-                <li data-view-section="folk" data-view-article="f1" data-icon="mobile">
+                <li data-view-section="folk" data-view-article="f1" data-icon="desktop">
                     <div class="tag right">5</div>
                     <strong>Folk F1</strong>
                     <small>Fueled by coffee</small>
@@ -271,11 +282,14 @@
         Lungo.init({
             name: 'Flexbox',
             version: '2.2',
-            history: true
+            history: false
             //,
             // resources: ['app/sections/list.html']
         });
 
+        Lungo.ready(function() {
+            // Lungo.Router.article("main", "sub");
+        });
         // Lungo.Notification.show("hola", "user");
 
         // Lungo.Notification.show();

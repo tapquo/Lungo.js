@@ -177,6 +177,6 @@ Lungo.ready(function() {
     //     }
     // });
     // Lungo.Notification.html("<h1 class='title'>Title</h1><article>aslkdkals</article><a href='#' class='button large anchor' >Seleccionar</a>", "Cancelar");
-    Lungo.Notification.push("Lorem ipsum dolor sit amet", "home");
+    // Lungo.Notification.push("Lorem ipsum dolor sit amet", "home");
 
 });
