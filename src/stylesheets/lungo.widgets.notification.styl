@@ -21,15 +21,18 @@ WINDOW_WIDTH = 280px
   z-index: 1980
   display: none
 
+  &.push
+    height: (HEADER_HEIGHT / 1.75)
+
   & .window
     position: relative
     opacity: 0
     transition (all TRANSITION_TIME)
     text-align: center
-
     &.show
       opacity: 1
       transition-delay(TRANSITION_TIME)
+
     & strong, small
       display: block
 
@@ -37,48 +40,73 @@ WINDOW_WIDTH = 280px
       left: 50%
       top: 50%
       width: LOADING
+      height: LOADING
       margin: -(LOADING / 2) auto auto -(LOADING / 2)
-      padding: 24px 8px
+      padding: 0 8px
       transform(scale(0.2))
       &.show
         transform(scale(1.0))
       & > .icon
-        font-size: 3.6em
-        line-height: 1.0em
+        font-size: 4em
+        line-height: LOADING
         & ~ strong
-          margin-bottom: -12px
-      & small
-        display: none
+          position: relative
+          top: -(LOADING / 4.5)
+          height: 18px
+          overflow: hidden
+      & > .loading
+        top: 26px
+        display: block
+
 
     &:not(.growl)
-      width: WINDOW_WIDTH
       left: 0
       top: 0
-      margin: (HEADER_HEIGHT / 2) auto 0
 
-      transform(translateY(100%))
+      &:not(.push)
+        width: WINDOW_WIDTH
+        margin: (HEADER_HEIGHT / 2) auto 0
+        transform(translateY(100%))
+      &.push
+        transform(translateY(-100%))
+        text-align: left
+        height: H = (HEADER_HEIGHT / 1.75)
+        line-height: H
+        padding: 0 8px
+        & .icon
+          font-size: FONT_SIZE_LARGE
+          float: left
+          display: inline
+          margin-right: 6px
+
+
       &.show
         transform(translateY(0%))
 
-      &:not(.html)
-        padding-top: 24px
+      &.success, &.error, &.confirm
+        padding-top: 16px
         & > .icon
-          font-size: 4.0em
+          font-size: 5em
           line-height: 1.0em
         & > strong
           font-size: FONT_SIZE_BIG
+          padding-top: 4px
+        & small
+          padding-top: 8px
+          padding-bottom: 16px
         & > strong, & small
-          padding: 0 16px 16px 16px
+          padding-left: 16px
+          padding-right: 16px
 
       &.html
-        & .close
-          position: absolute
-          top: -14px
-          right: -14px
+        & .title
+          height: HEADER_HEIGHT
+          line-height: HEADER_HEIGHT
+          font-size: FONT_SIZE_LARGE
 
-          font-size: 14px
-          line-height: 24px
-          font-weight: normal
-          width: 24px
-          height: 24px
-          border-radius: 14px
+      & button, & .button
+        display: block
+        margin-bottom: 1px
+        height: 48px
+        line-height: 48px
+        border: none
