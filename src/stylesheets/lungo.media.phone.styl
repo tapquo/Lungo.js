@@ -3,11 +3,19 @@
 /* ==== Any phone ==== */
 @media only screen and (max-width: 767px)
   body
+    &[data-position="absolute"] > section
+      position: absolute
+    &[data-position="fixed"] > section
+      position: fixed
 
     & > aside
       position: absolute
 
     & > section
+      display: none
+      &:not([data-transition]).show
+        display: block
+
       &.show.aside
         &:not(.right)
           transform translateX(ASIDE_WIDTH)
@@ -15,6 +23,7 @@
           transform translateX(-(ASIDE_WIDTH))
       &.show.hide
         z-index: -1
+
 
       &[data-transition]
         display-box()

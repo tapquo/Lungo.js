@@ -14,12 +14,12 @@
   border: none
   cursor: pointer
   font-family: inherit
-  font-size: FONT_SIZE_BIG
   text-align: center
   text-decoration: none
   outline: none
 
   header &
+    font-size: 1.0em
     height: H = 32px
     line-height: H
     padding: 0 8px
@@ -27,18 +27,18 @@
       font-size: 1.3em
     & .icon + abbr
       position: relative
-      top: -3px
+      top: -2px
       left: 1px
       display: inline
 
   article &
+    font-size: FONT_SIZE_BIG
     height: H = 40px
     line-height: (H - 2)
     padding: 0 14px
 
     & .icon + abbr
       margin-left: 6px
-
     &:not(.anchor) .icon
       line-height: (H / 2)
 
