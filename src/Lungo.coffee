@@ -1,6 +1,6 @@
 Lungo = Lungo or {}
 
-Lungo.VERSION = "2.2"
+Lungo.VERSION = "2.1.0305"
 
 Lungo.DEVICE = null
 Lungo.Element or (Lungo.Element = {})

@@ -21,7 +21,7 @@ Lungo.Notification = do(lng = Lungo) ->
     MODAL: ".notification .window"
     MODAL_HREF: ".notification .window a"
     WINDOW_CLOSABLE: ".notification [data-action=close], .notification > .error, .notification > .success"
-    CONFIRM_BUTTONS: ".notification .confirm a.button"
+    CONFIRM_BUTTONS: ".notification .confirm a.button, .notification .push"
 
   STYLE =
     MODAL: "modal"
@@ -35,9 +35,9 @@ Lungo.Notification = do(lng = Lungo) ->
 
   ###
   ###
-  show = (title, icon, seconds, callback) ->
+  show = (icon, title, seconds, callback) ->
     markup = undefined
-    if title isnt undefined
+    if icon?
       markup = _markup(title, null, icon)
     else
       data_loading = lng.Attributes.loading.html
@@ -79,16 +79,17 @@ Lungo.Notification = do(lng = Lungo) ->
 
   ###
   ###
-  _notify = (title, description, icon, stylesheet, seconds, callback) ->
-    _show _markup(title, description, icon), stylesheet
-    _hide seconds, callback  if seconds
-
-
-  ###
-  ###
   html = (markup, button) ->
     markup += (if (button) then "<a href=\"#\" class=\"button large anchor\" data-action=\"close\">" + button + "</a>" else "")
     _show markup, "html"
+
+
+  ###
+  ###
+  push = (title, icon) ->
+    markup = _markup(title, null, icon)
+    _show markup, "push", false
+    _hide seconds = 5
 
   _init = ->
     lng.dom(SELECTOR.BODY).append MARKUP_NOTIFICATION
@@ -96,8 +97,10 @@ Lungo.Notification = do(lng = Lungo) ->
     _window = _el.children(".window")
     _subscribeEvents()
 
-  _show = (html, stylesheet) ->
-    _el.show()
+  _show = (html, stylesheet, block = true) ->
+    _el.removeClass("push").show().remove
+    unless block then _el.addClass("push")
+
     _window.removeClass STYLE.SHOW
     _window.removeClass("error").removeClass("success").removeClass("html").removeClass "growl"
     _window.addClass stylesheet
@@ -111,13 +114,17 @@ Lungo.Notification = do(lng = Lungo) ->
       miliseconds = seconds * 1000
       setTimeout (->
         hide()
-
         # if (callback) callback.apply(callback);
         setTimeout callback, ANIMATION_MILISECONDS  if callback
       ), miliseconds
 
+  _notify = (title, description, icon, stylesheet, seconds, callback) ->
+    _show _markup(title, description, icon), stylesheet
+    _hide seconds, callback  if seconds
+
   _markup = (title, description, icon) ->
     description = (if not description then "&nbsp;" else description)
+    title = (if not title then "&nbsp;" else title)
     "<span class=\"icon " + icon + "\"></span><strong class=\"text bold\">" + title + "</strong><small>" + description + "</small>"
 
   _button_markup = (options, callback) ->
@@ -126,8 +133,9 @@ Lungo.Notification = do(lng = Lungo) ->
   _subscribeEvents = ->
     lng.dom(SELECTOR.CONFIRM_BUTTONS).tap (event) ->
       button = lng.dom(this)
-      callback = _options[button.data("callback")].callback
-      callback.call callback  if callback
+      if _options[button.data("callback")]?
+        callback = _options[button.data("callback")].callback
+        callback.call callback if callback
       hide()
 
     lng.dom(SELECTOR.WINDOW_CLOSABLE).tap hide
@@ -139,3 +147,4 @@ Lungo.Notification = do(lng = Lungo) ->
   success: success
   confirm: confirm
   html: html
+  push: push

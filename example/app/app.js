@@ -97,7 +97,7 @@ Lungo.Events.init({
 
 
     'tap article#notification a[data-action=normal]': function() {
-        Lungo.Notification.show('Title', 'message', 2);
+        Lungo.Notification.show('user', 'Title', 2);
     },
 
     'tap article#notification a[data-action=loading]': function() {
@@ -106,11 +106,11 @@ Lungo.Events.init({
     },
 
     'tap article#notification a[data-action=success]': function() {
-        Lungo.Notification.success('Title', 'Description', 'message', 2);
+        Lungo.Notification.success('Title', 'Description', 'ok', 2);
     },
 
     'tap article#notification a[data-action=error]': function() {
-        Lungo.Notification.error('Title', 'Description', 'message', 2);
+        Lungo.Notification.error('Title', 'Description', 'remove', 2);
     },
 
     'tap article#notification a[data-action=confirm]': function() {
@@ -132,13 +132,13 @@ Lungo.Events.init({
     },
 
     'tap article#notification a[data-action=html]': function() {
-        Lungo.Notification.html('<h1>Hello World</h1>', true);
+        Lungo.Notification.html('<h1>Hello World</h1>', "Close");
     },
 
     'tap article#notification a[data-action=chaining]': function() {
-        Lungo.Notification.show('Title', 'message', 2, function() {
-            Lungo.Notification.error('Title 2', 'Description 2', 'message',  2, function() {
-                Lungo.Notification.show('Title 3', 'Description 3', 'message', false, 2, function() {
+        Lungo.Notification.show('user', 'title', 2, function() {
+            Lungo.Notification.error('Title 2', 'Description 2', 'remove',  2, function() {
+                Lungo.Notification.show('home', 'title 2', false, 2, function() {
                     Lungo.Notification.html('<h1>Hello World</h1>', true);
                     // Lungo.Notification.hide();
                 });
@@ -154,9 +154,13 @@ Lungo.ready(function() {
     // Lungo.Router.section("notification");
 
     // Lungo.Notification.show();
+    // Lungo.Notification.show("home", "Please wait...");
+    // Lungo.Notification.show("magic");
+
     // Lungo.Notification.show("Please wait", "user", 2, function(){ alert(1); });
-    // Lungo.Notification.error('Lorem ipsum dolor sit amet, consectetur adipisicing.', "tap to continue", 'cancel');
-    // Lungo.Notification.success('Lorem ipsum dolor sit amet, consectetur adipisicing.', "tap to continue", 'cancel', 2, function(){alert(1)});
+
+    // Lungo.Notification.error('Lorem ipsum dolor sit amet', "    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis veritatis similique sed qui doloribus inventore doloremque temporibus ab totam...", 'remove');
+    // Lungo.Notification.success('Lorem ipsum dolor sit amet', "    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis veritatis similique sed qui doloribus inventore doloremque temporibus ab totam...", 'ok');
     // Lungo.Notification.confirm({
     //     icon: 'user',
     //     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
@@ -172,5 +176,7 @@ Lungo.ready(function() {
     //         callback: function(){ alert("No!"); }
     //     }
     // });
+    // Lungo.Notification.html("<h1 class='title'>Title</h1><article>aslkdkals</article><a href='#' class='button large anchor' >Seleccionar</a>", "Cancelar");
+    Lungo.Notification.push("Lorem ipsum dolor sit amet", "home");
 
 });

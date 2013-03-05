@@ -17,7 +17,7 @@ CONTENT         = #f4f5f5
 COLOR           = #333
 COLOR_secondary = #BFBFBF
 COLOR_cancel    = #EE6557
-COLOR_accept    = #3FB58E
+COLOR_accept    = #52bb93
 DARK            = #222
 DARK_light      = lighten(DARK, 25%)
 DARK_dark       = darken(DARK, 15%)
@@ -216,28 +216,34 @@ nav
 /* -------------------------- NOTIFICATION -------------------------- */
 .notification
   color: #fff
-  background-color: rgba(0,0,0,0.75)
+  &:not(.push)
+    background-color: rgba(0,0,0,0.6)
   & .window
     &.growl
-      background: rgba(0,0,0,0.8)
+      background: rgba(0,0,0,0.75)
     &:not(.growl)
+      box-shadow(0 0 8px #444)
+      & button, .button
+        background: #fff
+        color: THEME_dark
+    &.confirm, &.html
       background: #e6e6e6
       color: #222
-      box-shadow(0 0 8px #000)
-      & button, .button
-        background: #fff !important
-        box-shadow: none !important
-        color: THEME_dark !important
-        border-radius 0px !important
-        border: none !important
-        margin-bottom: 1px
-      &.error
-        background: darken(COLOR_cancel, 25%)
+    &.error
+      background: COLOR_cancel
+    &.success
+      background: COLOR_accept
+    &.error, &.success
+      color: #fff
+      & small
+        opacity: 0.75
+        font-weight: 100
+    &.html
+      & .title
+        background: THEME
         color: #fff
-      &.success
-        background: darken(COLOR_accept, 25%)
-        color: #fff
-
+    &.push
+      background: rgba(0,0,0,0.65)
 /* -------------------------- BUTTONS -------------------------- */
 header
   & .button, button
