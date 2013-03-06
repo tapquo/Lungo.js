@@ -42,12 +42,11 @@ Lungo.Router = do(lng = Lungo) ->
   @param    {string} <article> Id
   ###
   article = (section_id, article_id, element) ->
-    current = lng.Element.Cache.article
-    if _notCurrentTarget(current, article_id)
+    if _notCurrentTarget(lng.Element.Cache.article, article_id)
       lng.Router.section section_id
       target = lng.Element.Cache.section.find "##{article_id}"
       if target.length > 0
-        current.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
+        lng.Element.Cache.article.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
         lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
         if element?.data(C.ATTRIBUTE.TITLE)?
           lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
