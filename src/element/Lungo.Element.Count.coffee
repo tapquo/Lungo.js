@@ -13,8 +13,9 @@ Set a counter to the element
 
 Lungo.Element.count = (selector, count) ->
   element = Lungo.dom(selector)
-  element.children(".tag.count").remove()
-  if element and count
-    binding = Lungo.Constants.BINDING.SELECTOR
-    html = Lungo.Attributes.count.html.replace(binding, count)
-    element.append html
+  if element
+    element.children(".tag.count").remove()
+    if count
+      binding = Lungo.Constants.BINDING.SELECTOR
+      html = Lungo.Attributes.count.html.replace(binding, count)
+      element.append html
