@@ -18,7 +18,7 @@
                 <input type="text" placeholder="value on right" class="text align_right error">
 
                 <label class="absolute">label</label>
-                <input type="text" placeholder="value on center" class="large text align_center">
+                <input type="text" placeholder="value on center" class="large text  bold align_center">
 
                 <label>label</label>
                 <label class="select ">
@@ -65,7 +65,7 @@
         <div class="form">
             <!-- LABEL + INPUT -->
             <label>label +  input</label>
-            <fieldset>
+            <fieldset class="radius shadow">
                 <label>label</label>
                 <input type="text" placeholder="value">
 
@@ -85,12 +85,12 @@
                 </label>
 
                 <label>label</label>
-                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
+                <input type="date" class="align_right" placeholder="Select date" value="10/04/1980"/>
             </fieldset>
 
             <!-- INPUT -->
             <label>input</label>
-            <fieldset>
+            <fieldset class="radius-top">
                 <input type="text" id="description" class="text align_center" placeholder="value"/>
             </fieldset>
             <fieldset>
@@ -106,7 +106,7 @@
                 </label>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="radius-bottom shadow">
                 <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
             </fieldset>
 
@@ -127,11 +127,11 @@
             </fieldset>
 
             <div class="layout horizontal">
-                <div>
+                <div data-layout="third">
                     <label>Address</label>
                     <input type="text" placeholder="placeholder"/>
                 </div>
-                <div>
+                <div data-layout="primary">
                     <label>Pin Code</label>
                     <input type="password" value="value" disabled/>
                 </div>
