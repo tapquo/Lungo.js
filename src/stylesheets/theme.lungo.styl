@@ -13,7 +13,7 @@
 
 
 /* -------------------------- THEME -------------------------- */
-CONTENT         = #f4f5f5
+CONTENT         = #f5f5f5
 COLOR           = #333
 COLOR_secondary = #BFBFBF
 COLOR_cancel    = #EE6557
@@ -32,7 +32,7 @@ THEME_light     = lighten(THEME, 15%)
 THEME_dark      = darken(THEME, 15%)
 
 FORM_color      = #e5e5e5
-BORDER_radius   = 2px
+BORDER_radius   = 1px
 /* -------------------------- DEFAULTS -------------------------- */
 body
   background-color: #000
@@ -300,24 +300,33 @@ form, .form
 
   & fieldset
     background: #fff
-    border-bottom: solid 1px #eee
+    border-bottom: 1px solid CONTENT
     & .icon
       color: #ccc
+    &.radius-top
+      border-radius 4px 4px 0 0
+    &.radius-bottom
+      border-radius 0 0 4px 4px
+    &.radius
+      border-radius 4px
+    &.shadow
+      border-bottom: 1px solid rgba(0,0,0,0.1)
 
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
     background-color: white
     color: rgba(0, 0, 0, 0.75)
+    border-radius BORDER_radius
+
     &.error, &:required
-      color: COLOR_cancel
-      background-color: lighten(COLOR_cancel, 75%)
-      font-weight: 700
+      color: COLOR_cancel !important
+      background-color: lighten(COLOR_cancel, 90%)
+      border: solid BORDER_radius COLOR_cancel
+
     &:focus, &:active, &:hover
       color: THEME_dark
     &[disabled]
-      background: darken(FORM_color, 10%)
+      background: FORM_color
       color: #999
-    &.large
-      font-weight: 700
 
   & .select:after
     background: darken(FORM_color, 10%)
@@ -339,10 +348,10 @@ form, .form
 
     &::-webkit-slider-thumb
       border-radius BORDER_radius
-      background-color: lighten(FORM_color, 50%)
-      border: solid 1px FORM_color
+      background-color: C = darken(FORM_color, 10%)
+      border: solid 1px C
     &::-webkit-slider-thumb::after
-      background: FORM_color
+      background: #fff
 
   & .progress .bar
     background-color: #ddd
