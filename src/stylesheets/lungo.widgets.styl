@@ -74,14 +74,27 @@ size = 5px
   height:  inherit !important
   &:not(.horizontal)
     box-orient(vertical)
-  &:.horizontal
+    & > [data-layout=middle]
+      height: 50%
+    & > [data-layout=third]
+      height: 33%
+    & > [data-layout=quarter]
+      height: 25%
+
+  &.horizontal
     box-orient(horizontal)
-  & > *
-    box-flex(1)
-  & > [data-layout='secondary']
+    & > [data-layout=middle]
+      width: 50%
+    & > [data-layout=third]
+      width: 33%
+    & > [data-layout=quarter]
+      width: 25%
+
+  & > [data-layout=secondary]
     box-flex(2)
-  & > [data-layout='primary']
+  & > [data-layout=primary]
     box-flex(3)
+
 
 
 /* ================================  MENU  ================================ */
