@@ -9,10 +9,30 @@
 
 @import "constants.styl"
 
-[data-article].hide
+
+/* ================================  CLASSES  ================================ */
+.hidden
   display: none
+.block
+  display: block
+.inline
+  display: inline
+.inline-block
+  display: inline-block
+
+.indented > *
+  padding: INDENT
+.margined > *
+  margin: INDENT
+
+:not(.icon)
+  &.left
+    float: left
+  &.right
+    float: right
 
 
+/* ================================  SCROLL  ================================ */
 .overthrow-enabled .overthrow
   overflow: auto
   -webkit-overflow-scrolling: touch
@@ -38,29 +58,52 @@
   & > *
     -webkit-transform: translate3d(0, 0, 0)
 
-:not(.icon)
-  &.left
-    float: left
-  &.right
-    float: right
 
-.hidden
-  display: none
-.block
-  display: block
 
-.indented > *
-  padding: INDENT
+/* ================================  TEXT  ================================ */
+.text
+  &.thin
+    font-weight: 300
+  &.normal
+    font-weight: 400
+  &.bold
+    font-weight: 600
+  &.extra-bold
+    font-weight: 700
+  &.italic
+    font-style: italic
+  &.underline
+    text-decoration: underline
+  &.line-through
+    text-decoration: line-through
+  &.align_left
+    text-align: left
+  &.align_right
+    text-align: right
+  &.align_center
+    text-align: center
+  &.align_justify
+    text-align: justify
+  &.tiny
+    font-size: 0.8em
+  &.small
+    font-size: FONT_SIZE_SMALL
+  &.big
+    font-size: FONT_SIZE_BIG
+  &.opacity
+    opacity: 0.5
 
 
 /* ================================  TAG  ================================ */
 .tag
   display: inline-block
-  padding: 0 3px
+  padding: 0px 3px
   font-size: FONT_SIZE_TINY
-  line-height: 1.25em
-  height: 1.35em
+  line-height: (FONT_SIZE_LARGE / 1.1)
+  height: FONT_SIZE_LARGE
   text-align: center
+  min-width: 16px
+  z-index: 1
 
 size = 5px
 .margin
@@ -91,12 +134,11 @@ size = 5px
       width: 25%
 
   & > *
-    box-flex(0)
-  & > [data-layout=secondary]
     box-flex(1)
-  & > [data-layout=primary]
+  & > [data-layout=secondary]
     box-flex(2)
-
+  & > [data-layout=primary]
+    box-flex(3)
 
 
 /* ================================  MENU  ================================ */
@@ -108,10 +150,29 @@ size = 5px
     left: 1px
     font-size: FONT_SIZE_TINY
 
+
 /* ================================  CAROUSEL  ================================ */
 [data-control=carousel]
   overflow: hidden
   list-style: none
   margin: 0
-  // article
-  //   display: block !important
+
+
+/* ================================  SPLASH  ================================ */
+body > section > article.splash
+  text-align: center
+  padding: (INDENT * 2)
+  & .logo
+    height: 20%
+    margin: 20% 0 10% 0
+    font-size: 2.2em
+  & .button
+    margin-top: INDENT
+    margin-bottom: INDENT
+  & .copyright
+    position: absolute
+    width: 100%
+    bottom: 8px
+    left: 0px
+    font-size: FONT_SIZE_TINY
+    padding: 0px

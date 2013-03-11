@@ -9,7 +9,7 @@
 
 /* @import url("https://raw.github.com/soyjavi/CSSmethods/master/stylus/vendor.styl") */
 @import "CSSmethods/vendor.styl"
-// @import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
 
 
 /* -------------------------- THEME -------------------------- */
@@ -32,7 +32,7 @@ THEME_light     = lighten(THEME, 15%)
 THEME_dark      = darken(THEME, 15%)
 
 FORM_color      = #e5e5e5
-BORDER_radius   = 1px
+BORDER_radius   = 2px
 /* -------------------------- DEFAULTS -------------------------- */
 body
   background-color: #000
@@ -196,6 +196,10 @@ nav
       color: #666
 
 
+/* -------------------------- PULL -------------------------- */
+[data-control="pull"]
+    text-shadow: 0 1px 0 #fff
+
 /* -------------------------- TAG -------------------------- */
 .tag:not(.icon)
   color: #fff
@@ -207,11 +211,6 @@ nav
     background-color: THEME-dark !important
   footer &
     box-shadow inset 0 1px 1px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.5)
-
-
-[data-control="pull"]
-    text-shadow: 0 1px 0 #fff
-
 
 /* -------------------------- NOTIFICATION -------------------------- */
 .notification
@@ -244,6 +243,7 @@ nav
         color: #fff
     &.push
       background: rgba(0,0,0,0.65)
+
 /* -------------------------- BUTTONS -------------------------- */
 header
   & .button, button
@@ -285,14 +285,7 @@ article
     &.cancel
       background-color: COLOR_cancel
 
-
 /* -------------------------- FORMS -------------------------- */
-.splash fieldset
-  &:first-child
-    border-radius BORDER_radius BORDER_radius 0px 0px
-  &:last-child
-    border-radius 0px 0px BORDER_radius BORDER_radius
-
 form, .form
   & label
     color: #aaa
@@ -304,11 +297,11 @@ form, .form
     & .icon
       color: #ccc
     &.radius-top
-      border-radius 4px 4px 0 0
+      border-radius (BORDER_radius * 2) (BORDER_radius * 2) 0 0
     &.radius-bottom
-      border-radius 0 0 4px 4px
+      border-radius 0 0 (BORDER_radius * 2) (BORDER_radius * 2)
     &.radius
-      border-radius 4px
+      border-radius (BORDER_radius * 2)
     &.shadow
       border-bottom: 1px solid rgba(0,0,0,0.1)
 
