@@ -2,14 +2,15 @@
     <article class="active splash">
         <img src="http://cdn.tapquo.com/lungo/logo.png" class="logo"/>
         <div class="form">
-            <fieldset>
-                <input type="text" class="large" placeholder="Your username" id="txt-signup-name" value="">
+            <fieldset class="radius-top" data-icon="user">
+                <input type="text" placeholder="Your username" id="txt-signup-name" value="">
             </fieldset>
-            <fieldset>
-                <input type="password" class="large" placeholder="Your password" id="txt-signup-password" value="">
+            <fieldset class="radius-bottom shadow" data-icon="lock">
+                <input type="password" placeholder="Your password" id="txt-signup-password" value="">
             </fieldset>
-            <a href="#" class="button large anchor" data-icon="lock" data-icon="user" data-label="Login"></a>
-            <a href="#" data-view-section="back" class="button large secondary anchor" data-icon="home" data-label="Return to kitchensink"></a>
+            <br/>
+            <button class="anchor" data-icon="lock" data-icon="user" data-label="Login"></button>
+            <button data-view-section="back" class="secondary anchor" data-icon="home" data-label="Return to kitchensink"></button>
         </div>
         <span class="copyright text thin">Copyright (C) 2011-2013 - <span class="text bold">Tapquo S.L.</span></span>
     </article>
