@@ -41,14 +41,14 @@ module.exports = function(grunt) {
           'build/src/boot/*.js',
           'build/src/element/*.js'],
         stylesheets: [
-            'src/**/lungo.base.styl',
-            'src/**/lungo.layout.styl',
-            'src/**/lungo.layout.*.styl',
-            'src/**/lungo.widgets.styl',
-            'src/**/lungo.widgets.*.styl',
-            'src/**/lungo.media.*.styl'],
-        icons: ['src/**/lungo.icon**.styl'],
-        themes: ['src/**/theme**.styl']
+            'src/stylesheets/lungo.base.styl',
+            'src/stylesheets/lungo.layout.styl',
+            'src/stylesheets/lungo.layout.*.styl',
+            'src/stylesheets/lungo.widget.styl',
+            'src/stylesheets/lungo.widget.*.styl',
+            'src/stylesheets/lungo.media.*.styl'],
+        theme: ['src/stylesheets/theme/*.styl'],
+        icons: ['src/stylesheets/lungo.icon**.styl']
     },
 
     coffee: {
@@ -78,28 +78,28 @@ module.exports = function(grunt) {
 
     stylus: {
       stylesheets: {
-        options: { compress: true, paths: ['src/stylesheets/import'] },
+        options: { compress: true },
         files: { '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<config:resources.stylesheets>' }
       },
       icons: {
-        options: { compress: true },
+        options: { compress: false },
         files: { '<%=meta.endpoint%>/<%=meta.file%>.icon/**.css': '<config:resources.icons>' }
       },
-      themes: {
-        options: { flatten: true },
-        files: { '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/**.css': '<config:resources.themes>' }
+      theme: {
+        options: { compress: true, flatten: true },
+        files: { '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<config:resources.theme>' }
       }
     },
 
     copy: {
       theme: {
-        files: { '<%=meta.endpoint%>/<%=meta.file%>.theme/': ['<config:resources.themes>'] }
+        files: { '<%=meta.endpoint%>/<%=meta.file%>.theme/': ['<config:resources.theme>'] }
       }
     },
 
     watch: {
       files: ['<config:resources.coffeescripts>', '<config:resources.stylesheets>', '<config:resources.themes>'],
-      tasks: 'coffee concat min stylus:stylesheets stylus:themes'
+      tasks: 'coffee concat min stylus:stylesheets stylus:theme'
     }
   });
 

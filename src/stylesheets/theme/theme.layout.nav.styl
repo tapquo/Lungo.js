@@ -1,0 +1,64 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "__init.styl"
+
+nav
+  section > header > &
+    & a:not(.button)
+      color: darken(THEME, 35%)
+      text-shadow 0 1px 0 lighten(THEME, 25%)
+      &:active
+        color: darken(THEME, 50%)
+
+  section > &[data-control=groupbar] > a.active
+    box-shadow inset 0 -3px 0 THEME
+
+  section > footer > & > a, &[data-control=groupbar] > a
+    color: NAV_LINK
+    &.active
+      color: NAV_LINK_ACTIVE
+
+  section > footer > & > a
+    box-shadow 1px 0 0 DARK_dark
+    &.active
+      color:  NAV_LINK_ACTIVE
+      background-color: DARK_dark
+      box-shadow inset 0 3px 0 THEME
+
+  aside & a
+    color: lighten(DARK, 20%)
+    &:active
+      color: lighten(DARK, 50%)
+
+  &[data-control=menu]
+    COLOR = DARK
+    background: COLOR
+    box-shadow 0 2px 0 rgba(0,0,0,0.15)
+    &.icons
+      background: rgba(0,0,0,0.8)
+      & > a
+        color: lighten(COLOR, 35%)
+        &:active > .icon
+          text-shadow: 0 0 32px #fff
+        & > .icon
+          color: #fff
+    &:not(.icons)
+      & > a
+        color: #fff
+        text-shadow 0 1px 0 #111
+        border-bottom: 1px solid darken(COLOR, 40%)
+        border-top: 1px solid lighten(COLOR, 5%)
+        &:active
+          background: #111
+          border-color: transparent
+        & > .icon
+          color: lighten(COLOR, 25%)
+    & > a
+      font-weight: 700
