@@ -33,7 +33,7 @@ Lungo.Constants =
     HREF_ASIDE          : "section[data-aside].drag"
     HREF_ROUTER         : "a[href][data-router]"
     MENU_HREF           : "[data-control=menu] a[href]"
-    INPUT_CHECKBOX      : "input[type=range].checkbox"
+    CONTROL_CHECKBOX    : "[data-control-checkbox]"
     NAVIGATION_ITEM     : "a[href][data-router=\"article\"]"
     ARTICLE_REFERENCE   : "[data-article]"
     TITLE               : "header .title, footer .title"
