@@ -1,0 +1,66 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "__init.styl"
+
+.list
+  section & li
+    background: #fff
+    &:not(.anchor)
+      border-bottom: inset 1px LIST_border
+    &.secondary
+      box-shadow: inset 4px 0px 0px COLOR_secondary
+    &.accept
+      box-shadow: inset 4px 0px 0px COLOR_success
+    &.cancel
+      box-shadow: inset 4px 0px 0px COLOR_cancel
+    &.arrow::after
+      border-color: COLOR_secondary
+
+    &, a
+      color: LIST_color
+      &.anchor
+        background: DARK
+      &.dark
+        background: DARK_light
+      &.selectable:active, &.theme, &.active
+        background: THEME_light
+      &.light
+        background:  LIST_border
+        color: LIST_color_2nd
+      &.dark, &.selectable:active, &.theme, &.anchor
+        &, small, & .right:not(.tag), strong, .arrow::after
+          color: #fff
+        &.arrow::after
+          border-color: #fff
+      & small, & .right:not(.tag)
+        color: LIST_color_2nd
+
+  &:not(.indented) li
+    &.dark, &.theme, &.light
+      border-bottom-color: rgba(0,0,0,0.1)
+
+  aside & li
+    background: none
+    &:not(:first-child)
+      border-top: solid 1px  DARK
+    &:not(:last-child)
+      border-bottom: solid 1px DARKEST
+    &:active
+      background: DARK_darkest
+    &.active
+      background: THEME
+    &.active, &:active
+      border-color: transparent
+      & strong, & small, & .icon
+        color: #fff
+    & strong
+      color: #999
+    & small, .icon
+      color: #666

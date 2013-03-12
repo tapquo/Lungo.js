@@ -1,0 +1,43 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+@import "__init.styl"
+
+
+/* -------------------------- NOTIFICATION -------------------------- */
+.notification
+  color: #fff
+  &:not(.push)
+    background-color: rgba(0,0,0,0.6)
+  & .window
+    &.growl
+      background: rgba(0,0,0,0.75)
+    &:not(.growl)
+      box-shadow(0 0 8px #444)
+      & button, .button
+        background: #fff
+        color: THEME_dark
+    &.confirm, &.html
+      background: #e6e6e6
+      color: #222
+    &.error
+      background: COLOR_cancel
+    &.success
+      background: COLOR_success
+    &.error, &.success
+      color: #fff
+      & small
+        opacity: 0.75
+        font-weight: 100
+    &.html
+      & .title
+        background: THEME
+        color: #fff
+    &.push
+      background: rgba(0,0,0,0.65)
