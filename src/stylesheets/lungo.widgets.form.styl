@@ -16,7 +16,7 @@ form, .form
     line-height: FORM_HEIGHT
     text-indent: 8px
 
-  & input, textarea, select, .progress, label.select
+  & input:not([type="checkbox"]), textarea, select, .progress, label.select
     margin-bottom: 8px
     font-size: FONT_SIZE_BIG
     &.large
@@ -33,12 +33,13 @@ form, .form
     -webkit-user-select: text
     -webkit-font-smoothing: antialiased
     border: none
-    border-radius 0px
     &:focus
       outline: none !important
+    &.border
+      height: (FORM_HEIGHT * 1.3)
 
   & textarea
-    min-height: 64px
+    min-height: (FORM_HEIGHT * 2)
 
   & fieldset
     padding: 8px 8px 0 8px
@@ -70,8 +71,6 @@ form, .form
       width: 25% !important
     & label:not(.absolute) + input, label:not(.absolute) + label.select
       width: 75% !important
-    & .icon
-      right: (INDENT * 2)
 
   & label.select
     position: relative
@@ -96,60 +95,25 @@ form, .form
     -webkit-appearance: none
     outline: none
 
-    &:not(.checkbox)
-      height: FORM_PROGRESS_HEIGHT
-      width: 100%
-      padding: 0px
-      border: 0
-      &::-webkit-slider-thumb
-        top: -1px
-
-    &.checkbox
-      width: 64px
-      height: FORM_HEIGHT
-      line-height: FORM_HEIGHT
-      padding: 0px 1px
-      border-radius 2px
-
-      &:after
-        top: -(FORM_HEIGHT - 2)
-        position: relative
-        content: "OFF"
-        float: right
-        padding: 0 8px
-        font-weight: 700
-        font-size: 12px
-        line-height: (FORM_HEIGHT - 2)
-
-      &.active:after
-        float: left
-        content: "ON"
+    height: FORM_PROGRESS_HEIGHT
+    width: 100%
+    padding: 0px
+    border: none
 
     &::-webkit-slider-thumb
-        position: relative
-        width: 24px
-        height: 24px
-        margin: 2px
-        -webkit-appearance: none
-
-    &::-webkit-slider-thumb::after
-      SIZE = 6px
-      width: SIZE
-      height: SIZE
-      display: block
-      content: ""
       position: relative
-      border-radius (SIZE / 2)
-      z-index: 9
-      top: 8.5px
-      left: 8.5px
-
-  & .progress
+      width: SIZE = (FORM_PROGRESS_HEIGHT * 2)
+      height: SIZE
+      -webkit-appearance: none
+      border: none
+  /* -------------------------- PROGRESS -------------------------- */
+  & [data-progress]
     width: 100%
     & .bar
       height: FORM_PROGRESS_HEIGHT
       line-height: FORM_PROGRESS_HEIGHT
       display: block
+
       & .value
         display: block
         height: inherit
@@ -160,3 +124,49 @@ form, .form
   .custom-select
     select
       padding-right:30px
+
+
+/* -------------------------- CHECKBOX -------------------------- */
+[data-control-checkbox]
+  HEIGHT = (FORM_HEIGHT * 1.1)
+  width: 76px
+  height: HEIGHT
+  margin: 20px auto
+  position: relative
+  line-height: HEIGHT !important
+  &, & label
+    transition all 200ms ease
+
+  input[type=checkbox]
+    visibility: hidden
+
+  &:after, &:before
+    z-index: 0
+    position: absolute
+  &:before
+    content: "ON"
+    left: (HEIGHT / 2.2)
+    opacity: 0
+  &:after
+    content: "OFF"
+    right: (HEIGHT / 2.2)
+  &.checked
+    &:before
+      opacity: 1
+      z-index: 1
+    &:after
+      opacity: 0
+      z-index: 0
+
+  & label
+    display: block
+    height: S = (HEIGHT - 6)
+    width: S
+    cursor: pointer
+    position: absolute
+    top: 3px
+    left: 3px
+    z-index: 1
+
+  & input[type=checkbox]:checked + label
+    left: 46px

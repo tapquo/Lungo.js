@@ -14,7 +14,6 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   CLASS = lng.Constants.CLASS
   ELEMENT = lng.Constants.ELEMENT
   QUERY = lng.Constants.QUERY
-  SELECTORS = INPUT_CHECKBOX: "input[type=range].checkbox"
 
   ###
   Initializes the automatic subscription events by markup of the project.
@@ -29,8 +28,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(C.QUERY.ASIDE_ROUTER).touch _onAside
     lng.dom(C.QUERY.MENU_ROUTER).touch _onMenu
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
-    lng.dom(QUERY.INPUT_CHECKBOX).touch _changeCheckboxValue
-
+    lng.dom(QUERY.CONTROL_CHECKBOX).on "change", _changeCheckboxValue
 
   _onSection = (event) ->
     event.preventDefault()
@@ -40,7 +38,6 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     else
       section_id = el.data "view-section"
       if section_id isnt "back" then lng.Router.section(section_id) else lng.Router.back()
-
 
   _onArticle = (event) ->
     event.preventDefault()
@@ -90,7 +87,10 @@ Lungo.Boot.Events = do(lng = Lungo) ->
   _changeCheckboxValue = (event) ->
     event.preventDefault()
     el = lng.dom(this)
-    current_value = (if el.val() > 0 then 0 else 1)
-    el.toggleClass("active").attr "value", current_value
+    input = el.find "input"
+    checked = input[0].checked
+    input.val checked.toString()
+    el.removeClass "checked"
+    if checked  then el.addClass "checked"
 
   init: init
