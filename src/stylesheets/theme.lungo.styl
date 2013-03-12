@@ -7,32 +7,8 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-/* @import url("https://raw.github.com/soyjavi/CSSmethods/master/stylus/vendor.styl") */
-@import "CSSmethods/vendor.styl"
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
+@import "theme.lungo.colour.styl"
 
-
-/* -------------------------- THEME -------------------------- */
-CONTENT         = #f5f5f5
-COLOR           = #333
-COLOR_secondary = #BFBFBF
-COLOR_cancel    = #EE6557
-COLOR_accept    = #52bb93
-DARK            = #222
-DARK_light      = lighten(DARK, 25%)
-DARK_dark       = darken(DARK, 15%)
-DARK_darkest    = darken(DARK, 30%)
-LIST_color      = lighten(COLOR, 5%)
-LIST_color_2nd  = lighten(COLOR, 35%)
-LIST_border     = lighten(COLOR, 90%)
-NAV_LINK        = #888
-NAV_LINK_ACTIVE = #FFF
-THEME           = #0093D5
-THEME_light     = lighten(THEME, 15%)
-THEME_dark      = darken(THEME, 15%)
-
-FORM_color      = #e5e5e5
-BORDER_radius   = 2px
 /* -------------------------- DEFAULTS -------------------------- */
 body
   background-color: #000
@@ -55,7 +31,7 @@ body > section
     background-color: THEME
     box-shadow 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 THEME_light, inset 0 -1px 0 THEME_dark
     color: #fff
-    border-radius (BORDER_radius * 2) (BORDER_radius * 2) 0 0
+    border-radius (BORDER_radius * 2.5) (BORDER_radius * 2.5) 0 0
 
   & > footer, & nav[data-control=groupbar]
     background-color: DARK
@@ -137,7 +113,6 @@ nav
 
 
 
-
 /* -------------------------- LISTS -------------------------- */
 .list
   section & li
@@ -147,7 +122,7 @@ nav
     &.secondary
       box-shadow: inset 4px 0px 0px COLOR_secondary
     &.accept
-      box-shadow: inset 4px 0px 0px COLOR_accept
+      box-shadow: inset 4px 0px 0px COLOR_success
     &.cancel
       box-shadow: inset 4px 0px 0px COLOR_cancel
     &.arrow::after
@@ -231,7 +206,7 @@ nav
     &.error
       background: COLOR_cancel
     &.success
-      background: COLOR_accept
+      background: COLOR_success
     &.error, &.success
       color: #fff
       & small
@@ -257,20 +232,14 @@ header
 article
   & .button, button
     color: #fff !important
-    border-radius BORDER_radius
-    box-shadow inset 0 1px 0 rgba(255,255,255,0.2)
-    border: solid 1px rgba(0,0,0,0.1)
+    border-radius (BORDER_radius * 2)
+    box-shadow inset 0 1px 0 rgba(255,255,255,0.25), 0 1px 1px rgba(0,0,0,0.15)
+    // border: solid 1px rgba(0,0,0,0.1)
     &:active
       box-shadow inset 0 0 128px rgba(0,0,0,0.25)
       border-color: none
-    &.secondary
-      color: #666 !important
-    &[disabled], :disabled, &.disabled
-      background: rgba(255,255,255,0.2)
-      color: #999 !important
-      box-shadow: none !important
     &, abbr
-      font-weight: 700
+      font-weight: 400
     & .icon
       opacity: 0.65
       text-shadow: 0 -1px 0 rgba(0,0,0,0.25)
@@ -281,9 +250,13 @@ article
     &.secondary
       background-color: COLOR_secondary
     &.accept
-      background-color: COLOR_accept
+      background-color: COLOR_success
     &.cancel
       background-color: COLOR_cancel
+    &[disabled], :disabled, &.disabled
+      background: FORM_color
+      color: #999 !important
+      box-shadow: none !important
 
 /* -------------------------- FORMS -------------------------- */
 form, .form
@@ -305,48 +278,89 @@ form, .form
     &.shadow
       border-bottom: 1px solid rgba(0,0,0,0.1)
 
-  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
     background-color: white
     color: rgba(0, 0, 0, 0.75)
-    border-radius BORDER_radius
-
+    &.border
+      border: FORM_border solid FORM_color
+      border-radius: FORM_border_radius
     &.error, &:required
       color: COLOR_cancel !important
-      background-color: lighten(COLOR_cancel, 90%)
-      border: solid BORDER_radius COLOR_cancel
-
+      border-color: COLOR_cancel !important
+    &.success
+      color: COLOR_success !important
+      border-color: COLOR_success !important
     &:focus, &:active, &:hover
       color: THEME_dark
+      border-color: THEME
+      &:after
+        background-color: THEME
     &[disabled]
       background: FORM_color
-      color: #999
+      border-color: FORM_color
+      color: darken(FORM_color, 25%)
 
   & .select:after
-    background: darken(FORM_color, 10%)
+    background: FORM_color
     color: #fff
 
   & input[type=range]
-    border-radius 0px
-    &:not(.checkbox)
-      background-color: #ddd
-      &:active
-        background-color: THEME_light
-
-    &.checkbox
-      background-color: #aaa
-      color: rgba(255,255,255,0.6)
-      &.active
-        color: #fff
-        background-color: THEME_light
-
+    background-color: FORM_color
+    color: darken(FORM_color, 25%)
+    border-radius: (FORM_border_radius * 4)
+    &:active
+      background-color: THEME_light !important
+      color: #fff
+      &::-webkit-slider-thumb
+        background-color: darken(THEME, 25%) !important
     &::-webkit-slider-thumb
-      border-radius BORDER_radius
-      background-color: C = darken(FORM_color, 10%)
-      border: solid 1px C
-    &::-webkit-slider-thumb::after
-      background: #fff
+      border-radius (FORM_border_radius * 4)
+      background-color: darken(FORM_color, 25%)
 
-  & .progress .bar
+  & [data-progress]
     background-color: #ddd
     & .value
       background-color: THEME_light
+    &, & .value
+      border-radius (FORM_border_radius * 3)
+
+  & [data-control-checkbox]
+    background: FORM_color
+    color: darken(FORM_color, 25%)
+    font-weight: 700
+    border-radius: (FORM_border_radius * 4)
+    box-shadow: inset 0px 1px 2px rgba(0,0,0,0.25), 0px 1px 0px rgba(255,255,255,0.25)
+
+    & label
+      border-radius: (FORM_border_radius * 4)
+      background: darken(FORM_color, 25%)
+
+    &.checked
+      background-color: THEME_light
+      color: #fff !important
+      & label
+        background-color: darken(THEME, 25%)
+
+    // Expand
+    &.twitter
+      font-family:'lungojsicon'
+      font-size: 1.3em
+      line-height: 1.4em
+      &:before
+        content: "\f099"
+      &:after
+        content: "\f099"
+        text-shadow: 0 1px 0 #fff
+    &.ok
+      font-family:'lungojsicon'
+      font-size: 1.3em
+      line-height: 1.4em
+      &.checked
+        background-color: COLOR_success
+        & label
+          background-color: darken(COLOR_success, 25%)
+      &:before
+        content: "\f00c"
+      &:after
+        content: "\f00d"
+
