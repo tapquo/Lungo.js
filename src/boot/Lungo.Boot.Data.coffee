@@ -32,9 +32,7 @@ Lungo.Boot.Data = do(lng = Lungo) ->
       el = lng.dom(children)
       _bindDataAttribute el, el.data(key), attribute.html
 
-
   _bindDataAttribute = (element, value, html) ->
-    html_binded = html.replace(BINDING.START + BINDING.KEY + BINDING.END, value)
-    element.prepend html_binded
+    element.prepend html.replace(/\{\{value\}\}/g, value)
 
   init: init
