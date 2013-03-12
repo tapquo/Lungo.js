@@ -36,7 +36,7 @@ form, .form
     &:focus
       outline: none !important
     &.border
-      height: (FORM_HEIGHT * 1.3)
+      height: FORM_border_height
 
   & textarea
     min-height: (FORM_HEIGHT * 2)
@@ -79,17 +79,26 @@ form, .form
     line-height: inherit
     padding-left: 0px
 
-  & .select:after
-    position: absolute
-    top: 0
-    right: 0
-    height: FORM_HEIGHT
-    width: FORM_HEIGHT
-    font-size: FONT_SIZE_BIG
-    content: "▼"
-    pointer-events: none
-    text-align: center
-    line-height: FORM_HEIGHT
+    &.border
+      H = FORM_border_height - (FORM_border * 2)
+      & > select
+        height: H
+      &:after
+        height: H
+        width: H
+        line-height: H
+
+    &:after
+      position: absolute
+      top: 0
+      right: 0
+      height: FORM_HEIGHT
+      width: FORM_HEIGHT
+      font-size: FONT_SIZE_BIG
+      content: "▼"
+      pointer-events: none
+      text-align: center
+      line-height: FORM_HEIGHT
 
   & input[type=range]
     -webkit-appearance: none
