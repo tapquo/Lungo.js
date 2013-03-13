@@ -16,7 +16,7 @@ form, .form
     line-height: FORM_HEIGHT
     text-indent: 8px
 
-  & input:not([type="checkbox"]), textarea, select, .progress, label.select
+  & input:not([type="checkbox"]), textarea, select, .progress, label.select, [data-control-progress], [data-control-checkbox]
     margin-bottom: 8px
     font-size: FONT_SIZE_BIG
     &.large
@@ -32,7 +32,7 @@ form, .form
     -webkit-appearance: none
     -webkit-user-select: text
     -webkit-font-smoothing: antialiased
-    border: none
+    border: 0px
     &:focus
       outline: none !important
     &.border
@@ -44,14 +44,16 @@ form, .form
   & fieldset
     padding: 8px 8px 0 8px
     position: relative
-    & label:not(.select)
+    & > label:not(.select)
       float: left
       width: 20%
-      text-indent: 0px
       &.absolute
         position: absolute
+      &.anchor
+        width: auto
+        overflow: hidden
 
-    & label:not(.absolute) + input, label:not(.absolute) + label.select
+    & > label:not(.absolute) + input, & > label:not(.absolute) + label.select
       width: 80% !important
 
     & .icon
@@ -67,9 +69,9 @@ form, .form
         background: none
 
   .indented & fieldset
-    & label:not(.select)
+    & > label:not(.select):not(.anchor)
       width: 25% !important
-    & label:not(.absolute) + input, label:not(.absolute) + label.select
+    & > label:not(.absolute) + input, & > label:not(.absolute) + label.select
       width: 75% !important
 
   & label.select
@@ -100,6 +102,7 @@ form, .form
       text-align: center
       line-height: FORM_HEIGHT
 
+  /* -------------------------- RANGE -------------------------- */
   & input[type=range]
     -webkit-appearance: none
     outline: none
@@ -129,53 +132,48 @@ form, .form
         width: 0%
         transition(width TRANSITION_TIME DEFAULT_TRANSITION)
 
-@media screen and (-webkit-min-device-pixel-ratio:0)
-  .custom-select
-    select
-      padding-right:30px
 
+  /* -------------------------- CHECKBOX -------------------------- */
+  & [data-control-checkbox]
+    HEIGHT = FORM_HEIGHT
+    width: 76px
+    height: HEIGHT
+    position: relative
+    line-height: HEIGHT !important
+    font-size: FONT_size_normal
+    &, & label
+      transition all 200ms ease
 
-/* -------------------------- CHECKBOX -------------------------- */
-[data-control-checkbox]
-  HEIGHT = (FORM_HEIGHT * 1.1)
-  width: 76px
-  height: HEIGHT
-  margin: 20px auto
-  position: relative
-  line-height: HEIGHT !important
-  &, & label
-    transition all 200ms ease
+    input[type=checkbox]
+      visibility: hidden
 
-  input[type=checkbox]
-    visibility: hidden
-
-  &:after, &:before
-    z-index: 0
-    position: absolute
-  &:before
-    content: "ON"
-    left: (HEIGHT / 2.2)
-    opacity: 0
-  &:after
-    content: "OFF"
-    right: (HEIGHT / 2.2)
-  &.checked
-    &:before
-      opacity: 1
-      z-index: 1
-    &:after
-      opacity: 0
+    &:after, &:before
       z-index: 0
+      position: absolute
+    &:before
+      content: "ON"
+      left: (HEIGHT / 2.2)
+      opacity: 0
+    &:after
+      content: "OFF"
+      right: (HEIGHT / 2.2)
+    &.checked
+      &:before
+        opacity: 1
+        z-index: 1
+      &:after
+        opacity: 0
+        z-index: 0
 
-  & label
-    display: block
-    height: S = (HEIGHT - 6)
-    width: S
-    cursor: pointer
-    position: absolute
-    top: 3px
-    left: 3px
-    z-index: 1
+    & label
+      display: block
+      height: S = (HEIGHT - 6)
+      width: S
+      cursor: pointer
+      position: absolute
+      top: 3px
+      left: 3px
+      z-index: 1
 
-  & input[type=checkbox]:checked + label
-    left: 46px
+    & input[type=checkbox]:checked + label
+      left: 49px
