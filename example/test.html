@@ -23,7 +23,13 @@
 <body class="app">
 
 <section id="form" data-transition="slide">
-    <header data-title="Form Elements" data-back="home"></header>
+    <header data-title="Form Elements" data-back="home">
+
+        <nav class="right">
+            <button data-label="test"></button>
+            <button data-icon="edit"></button>
+        </nav>
+    </header>
 
     <nav data-control="groupbar">
         <a href="#" data-view-article="form-normal" data-label="Normal" class="active"></a>
@@ -57,6 +63,8 @@
                 <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
             </fieldset>
 
+
+            </fieldset>
             <!-- INPUT -->
             <fieldset>
                 <input type="text" id="description" class="text align_center" placeholder="value"/>
@@ -77,6 +85,11 @@
             <fieldset>
                 <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
             </fieldset>
+
+            <fieldset>
+                <label class="anchor">label Lorem ipsum dolor sit amet</label>
+                 <div data-control-checkbox="check" class="inline right"></div>
+             </fieldset>
 
             <fieldset data-icon="plus">
                 <label>label</label>
@@ -129,6 +142,13 @@
                     </select>
                 </label>
             </fieldset>
+
+
+            <fieldset>
+                <label class="anchor">label Lorem ipsum dolor sit amet</label>
+                <div data-control-checkbox="check_indent" class="inline right"></div>
+             </fieldset>
+
 
             <fieldset class="radius-bottom shadow">
                 <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
@@ -197,11 +217,11 @@
             </div>
             <br/>
 
-            <button class="anchor margin-bottom" data-label="Return to normal Elements"></button>
-            <button class="anchor accept margin-bottom" data-label="Return to normal Elements"></button>
-            <button class="anchor cancel margin-bottom" data-label="Return to normal Elements"></button>
-            <button class="anchor secondary margin-bottom" data-label="Return to normal Elements"></button>
-            <button class="anchor disabled" data-label="Return to normal Elements"></button>
+            <button class="anchor margin-bottom" data-label="Normal"></button>
+            <button class="anchor accept margin-bottom" data-icon="ok" data-label="Accept"></button>
+            <button class="anchor cancel margin-bottom" data-icon="remove" data-label="Cancel"></button>
+            <button class="anchor secondary margin-bottom" data-icon="plus" data-label="Secondary"></button>
+            <button class="anchor disabled" data-label="Disabled"></button>
         </div>
     </article>
 </section>

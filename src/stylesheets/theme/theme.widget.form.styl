@@ -50,10 +50,17 @@ form, .form
       border-color: FORM_color
       color: darken(FORM_color, 25%)
 
+  /* -------------------------- SELECT -------------------------- */
+  & fieldset .select
+    & > select
+      background-color: lighten(FORM_color, 75%) !important
+
   & .select:after
     background: FORM_color
     color: #fff
+    border-radius: (FORM_border_radius / 2)
 
+  /* -------------------------- RANGE -------------------------- */
   & input[type=range]
     background-color: FORM_color
     color: darken(FORM_color, 25%)
@@ -67,6 +74,7 @@ form, .form
       border-radius (FORM_border_radius * 4)
       background-color: darken(FORM_color, 25%)
 
+  /* -------------------------- PROGRESS -------------------------- */
   & [data-progress]
     background-color: #ddd
     & .value
@@ -74,17 +82,16 @@ form, .form
     &, & .value
       border-radius (FORM_border_radius * 3)
 
+  /* -------------------------- CHECKBOX -------------------------- */
   & [data-control-checkbox]
     background: FORM_color
     color: darken(FORM_color, 25%)
     font-weight: 700
     border-radius: (FORM_border_radius * 4)
-    box-shadow: inset 0px 1px 2px rgba(0,0,0,0.25), 0px 1px 0px rgba(255,255,255,0.25)
-
+    // box-shadow: inset 0px 1px 2px rgba(0,0,0,0.25), 0px 1px 0px rgba(255,255,255,0.25)
     & label
       border-radius: (FORM_border_radius * 4)
       background: darken(FORM_color, 25%)
-
     &.checked
       background-color: THEME_light
       color: #fff !important
