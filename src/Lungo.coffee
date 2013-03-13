@@ -1,7 +1,15 @@
-Lungo = Lungo or {}
+###
+Lungo - HTML5 Cross-Device Framework
+http://lungo.tapquo.com
+Copyright (c) 2011-2013 Tapquo S.L. - Licensed GPLv3, Commercial
 
-Lungo.VERSION = "2.1.0305"
+@namespace  Lungo
+@author     Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+###
 
+window.Lungo = Lungo = {}
+
+Lungo.VERSION = "2.1.0313"
 Lungo.DEVICE = null
 Lungo.Element or (Lungo.Element = {})
 Lungo.Data or (Lungo.Data = {})
