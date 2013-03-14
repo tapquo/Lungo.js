@@ -90,10 +90,10 @@
 
         <article id="main-article" class="list indented scroll">
             <ul>
-                <li class="dark">
+                <li class="secondary">
                     <strong>
-                    A framework for developers who want to design, build and share cross device apps.
-                </strong>
+                        A framework for developers who want to design, build and share cross device apps.
+                    </strong>
                 </li>
                 <li class="feature">
                     <strong>HTML5 Optimized Apps</strong>
@@ -120,7 +120,7 @@
 
     <!-- Lungo dependencies -->
     <script src="components/quojs/quo.js"></script>
-    <script src="components/lungo.brownie/lungo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
     <!-- LungoJS - Sandbox App -->
     <script>
         Lungo.init({
@@ -128,7 +128,8 @@
             version: '2.1.0222',
             resources: [
                 'app/asides/features.html',
-                'app/asides/right.html']
+                'app/asides/right.html',
+                'app/sections/form.html']
         });
     </script>
     <script src="app/app.js"></script>
