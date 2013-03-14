@@ -21,33 +21,37 @@ WINDOW_WIDTH = 280px
   z-index: 1980
   display: none
 
+  &.show
+    display-box()
+    box-align(center)
+    box-pack(center)
+
   &.push
     height: (HEADER_HEIGHT / 1.75)
 
   & .window
     position: relative
     opacity: 0
-    transition (all TRANSITION_TIME)
     text-align: center
+    transition-property opacity, margin-top
+    transition-duration TRANSITION_TIME
+    transition-timing-function DEFAULT_TRANSITION
+    backface-visibility hidden
     &.show
       opacity: 1
-      transition-delay(TRANSITION_TIME)
+      margin-top: 0% !important
 
-    & strong, small
-      display: block
+    &:not(.push)
+      margin-top: 100%
 
     &.growl
-      left: 50%
-      top: 50%
       width: LOADING
       height: LOADING
-      margin: -(LOADING / 2) auto auto -(LOADING / 2)
       padding: 0 8px
-      transform(scale(0.2))
+      margin-top: 100%
       &.show
-        transform(scale(1.0))
       & > .icon
-        font-size: 4em
+        font-size: 52px
         line-height: LOADING
         & ~ strong
           position: relative
@@ -58,55 +62,47 @@ WINDOW_WIDTH = 280px
         top: 26px
         display: block
 
+    &.success, &.error, &.confirm, &.html
+      padding-top: 16px
+      width: WINDOW_WIDTH
+      & > .icon
+        font-size: 5em
+        line-height: 1.0em
+      & > strong
+        font-size: FONT_SIZE_BIG
+        padding-top: 4px
+      & small
+        padding-top: 8px
+        padding-bottom: 16px
+      & > strong, & small
+        padding-left: 16px
+        padding-right: 16px
 
-    &:not(.growl)
-      left: 0
-      top: 0
+    &.html .title
+      height: HEADER_HEIGHT
+      line-height: HEADER_HEIGHT
+      font-size: FONT_SIZE_LARGE
 
-      &:not(.push)
-        width: WINDOW_WIDTH
-        margin: (HEADER_HEIGHT / 2) auto 0
-        transform(translateY(100%))
-      &.push
-        transform(translateY(-100%))
-        text-align: left
-        height: H = (HEADER_HEIGHT / 1.75)
-        line-height: H
-        padding: 0 8px
-        & .icon
-          font-size: FONT_SIZE_LARGE
-          float: left
-          display: inline
-          margin-right: 6px
+    &.push
+      position: absolute
+      text-align: left
+      height: H = (HEADER_HEIGHT / 1.75)
+      line-height: H
+      padding: 0 8px
+      width: 100%
+      margin-top: -(H)
+      & .icon
+        font-size: FONT_SIZE_LARGE
+        float: left
+        display: inline
+        margin-right: 6px
 
-
-      &.show
-        transform(translateY(0%))
-
-      &.success, &.error, &.confirm
-        padding-top: 16px
-        & > .icon
-          font-size: 5em
-          line-height: 1.0em
-        & > strong
-          font-size: FONT_SIZE_BIG
-          padding-top: 4px
-        & small
-          padding-top: 8px
-          padding-bottom: 16px
-        & > strong, & small
-          padding-left: 16px
-          padding-right: 16px
-
-      &.html
-        & .title
-          height: HEADER_HEIGHT
-          line-height: HEADER_HEIGHT
-          font-size: FONT_SIZE_LARGE
-
-      & button, & .button
-        display: block
-        margin-bottom: 1px
-        height: 48px
-        line-height: 48px
-        border: none
+    & button, & .button
+      display: block
+      margin-bottom: 1px
+      height: 48px
+      line-height: 48px
+      border: none
+      font-size: FONT_SIZE_LARGE
+    & strong, small
+      display: block
