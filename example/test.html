@@ -22,9 +22,9 @@
 
 <body class="app">
 
+
 <section id="form" data-transition="slide">
     <header data-title="Form Elements" data-back="home">
-
         <nav class="right">
             <button data-label="test"></button>
             <button data-icon="edit"></button>
@@ -473,7 +473,7 @@
 
     <!-- Lungo dependencies -->
     <script src="components/quojs/quo.js"></script>
-    <script src="components/lungo.brownie/lungo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
 
     <!-- LungoJS - Sandbox App -->
     <script>
@@ -488,12 +488,29 @@
         Lungo.ready(function() {
             // Lungo.Router.article("main", "sub");
             Lungo.Element.count("section#main nav #products", 5);
+
+                // Lungo.Notification.success('Title', 'Description', 'ok', 10000);
+
+            // Lungo.Notification.push("Connection stablished.", "ok");
+
+
+            // setTimeout(function() {
+            //     Lungo.Notification.show();
+            // }, 2000);
+            // setTimeout(function() {
+            //     Lungo.Notification.error('Title', 'Description', 'ok', 10000);
+            // }, 4000);
+
+
+            // Lungo.Article.clean("form-normal", "edit", "Form empty", "Please check if you have an internet connection.", "Ok, I'll check tomorrow")
+            // Lungo.Article.clean("form-normal")
         });
+
+
         // Lungo.Notification.show("hola", "user");
 
         // Lungo.Notification.show();
 
-        // Lungo.Notification.success('Title', 'Description', 'message', 2);
 
         // Lungo.Notification.confirm({
         //     icon: 'user',

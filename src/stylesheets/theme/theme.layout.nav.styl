@@ -12,10 +12,10 @@
 nav
   section > header > &
     & a:not(.button)
-      color: darken(THEME, 35%)
-      text-shadow 0 1px 0 lighten(THEME, 25%)
+      color: darken(COLOR_theme, 35%)
+      text-shadow 0 1px 0 lighten(COLOR_theme, 25%)
       &:active
-        color: darken(THEME, 50%)
+        color: darken(COLOR_theme, 50%)
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
@@ -24,21 +24,21 @@ nav
 
   section > &[data-control=groupbar] > a.active
     transition box-shadow TRANSITION_time TRANSITION_easing
-    box-shadow inset 0 -4px 0 THEME
+    box-shadow inset 0 -4px 0 COLOR_theme
 
   section > footer > & > a
-    box-shadow inset 0 1px 0 #000, inset 0 2px 0 lighten(DARK, 20%)
+    box-shadow inset 0 1px 0 #000, inset 0 2px 0 lighten(COLOR_contrast, 20%)
     &.active
       box-shadow inset 0 0 16px #000
-      background-color: DARK_dark
+      background-color: COLOR_contrast_dark
 
   aside & a
-    color: lighten(DARK, 20%)
+    color: lighten(COLOR_contrast, 20%)
     &:active
-      color: lighten(DARK, 50%)
+      color: lighten(COLOR_contrast, 50%)
 
   &[data-control=menu]
-    COLOR = DARK
+    COLOR = COLOR_contrast
     background: COLOR
     box-shadow 0 2px 0 rgba(0,0,0,0.15)
     &.icons
