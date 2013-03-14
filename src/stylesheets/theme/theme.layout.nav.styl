@@ -30,7 +30,7 @@ nav
     box-shadow inset 0 1px 0 #000, inset 0 2px 0 lighten(COLOR_contrast, 20%)
     &.active
       box-shadow inset 0 0 16px #000
-      background-color: COLOR_contrast_dark
+      background-color: darken(COLOR_contrast, 10%)
 
   aside & a
     color: lighten(COLOR_contrast, 20%)
@@ -38,13 +38,12 @@ nav
       color: lighten(COLOR_contrast, 50%)
 
   &[data-control=menu]
-    COLOR = COLOR_contrast
-    background: COLOR
+    background: COLOR_contrast
     box-shadow 0 2px 0 rgba(0,0,0,0.15)
     &.icons
       background: rgba(0,0,0,0.8)
       & > a
-        color: lighten(COLOR, 35%)
+        color: lighten(COLOR_contrast, 35%)
         &:active > .icon
           text-shadow: 0 0 32px #fff
         & > .icon
@@ -52,13 +51,13 @@ nav
     &:not(.icons)
       & > a
         color: #fff
-        text-shadow 0 1px 0 #111
-        border-bottom: 1px solid darken(COLOR, 40%)
-        border-top: 1px solid lighten(COLOR, 5%)
+        // text-shadow 0 1px 0 #111
+        border-bottom: 1px solid darken(COLOR_contrast, 20%)
+        border-top: 1px solid lighten(COLOR_contrast, 5%)
         &:active
-          background: #111
+          background: darken(COLOR_contrast, 15%)
           border-color: transparent
         & > .icon
-          color: lighten(COLOR, 25%)
+          color: lighten(COLOR_contrast, 25%)
     & > a
-      font-weight: 700
+      font-weight: 600
