@@ -13,7 +13,7 @@ Lungo.Attributes =
     html: "<span class=\"tag theme count\">{{value}}</span>"
 
   pull:
-    selector: "section"
+    selector: "*"
     html: """
       <div class=\"{{value}}\" data-control=\"pull\" data-icon=\"down\" data-loading=\"black\">
         <strong>title</strong>

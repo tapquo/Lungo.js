@@ -234,11 +234,10 @@
                 <a href="#" data-icon="user" class="button" data-article="products" data-view-article="folks"></a>
             </nav>
 
-            <!-- <img src="http://cdn.tapquo.com/lungo/logo.png" class="title centered"> -->
             <div class="title centered">Folks</div>
 
             <nav class="right">
-                <button data-icon="user" class="button" data-article="folks" data-label="Products" data-view-article="products" data-async="app/articles/products.html"></button>
+                <button data-icon="user" class="button" data-article="folks" data-label="Products" data-view-article="products" data-async="static/articles/products.html"></button>
             </nav>
         </header>
 
@@ -252,7 +251,7 @@
 
         <nav data-control="groupbar" data-article="folks">
             <a href="#" data-view-article="folks" data-label="Folks" data-count="11"></a>
-            <a href="#" data-view-article="products" data-async="app/articles/products.html" data-label="Products" id="products"></a>
+            <a href="#" data-view-article="products" data-async="static/articles/products.html" data-label="Products" id="products"></a>
         </nav>
 
         <article id="folks" class="active list scroll indente-d">
@@ -319,7 +318,7 @@
                         <small>Micro Mobile JavaScript Library</small>
                     </a>
                 </li>
-                <li data-image="http://cdn.tapquo.com/lungo/icon-144.png" data-view-section="list"  data-async="app/sections/list.html">
+                <li data-image="http://cdn.tapquo.com/lungo/icon-144.png" data-view-section="list"  data-async="static/sections/list.html">
                     <strong>TukTuk</strong>
                     <small>Lorem ipsum dolor sit amet</small>
                 </li>
@@ -437,7 +436,7 @@
                     </a>
                 </li>
 
-                <li data-view-article="products" data-title="Third Parties" data-async="app/articles/products.html">
+                <li data-view-article="products" data-title="Third Parties" data-async="static/articles/products.html">
                     <div class="tag right">5</div>
                     <strong>Products</strong>
                     <small>Fueled by coffee</small>
@@ -480,7 +479,7 @@
             version: '2.2',
             history: false
             //,
-            // resources: ['app/sections/list.html']
+            // resources: ['static/sections/list.html']
         });
 
         Lungo.ready(function() {
