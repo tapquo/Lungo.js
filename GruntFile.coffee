@@ -34,6 +34,7 @@ module.exports = (grunt) ->
         'src/modules/Lungo.Router.coffee',
         'src/modules/Lungo.Aside.coffee',
         'src/modules/Lungo.Section.coffee',
+        'src/modules/Lungo.Article.coffee',
         'src/boot/*.coffee',
         'src/element/*.coffee']
       javascripts: [
@@ -80,7 +81,9 @@ module.exports = (grunt) ->
 
     watch:
       files: ['<%= resources.core %>', '<%= resources.modules %>', '<%= resources.stylesheets %>', '<%= resources.theme %>']
-      tasks: ["coffee", "uglify", "stylus:stylesheets", "stylus:theme"]
+      # tasks: ["coffee", "uglify", "stylus:stylesheets", "stylus:theme"]
+      tasks: ["coffee", "uglify"]
+      # tasks: ["stylus:stylesheets", "stylus:theme"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-uglify"

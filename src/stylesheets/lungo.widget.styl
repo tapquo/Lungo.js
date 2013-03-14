@@ -68,7 +68,6 @@
     -webkit-transform: translate3d(0, 0, 0)
 
 
-
 /* ================================  TEXT  ================================ */
 .text
   &.thin
@@ -159,6 +158,7 @@ size = 5px
     left: 1px
     font-size: FONT_SIZE_TINY
 
+
 /* ================================  CAROUSEL  ================================ */
 [data-control=carousel]
   overflow: hidden
@@ -183,3 +183,23 @@ body > section > article.splash
     left: 0px
     font-size: FONT_SIZE_TINY
     padding: 0px
+
+/* ================================  MESSAGE  ================================ */
+body > section > article > .empty
+  text-align: center
+  width: 256px
+  display: block
+  margin: 0 auto
+  padding-top: 15%
+  & > *
+    display: block
+    margin-bottom: 3%
+  & > .icon
+    font-size: S = 120px
+    line-height: S
+  & > strong
+    font-weight: 700
+    font-size: FONT_SIZE_LARGE
+  & > small
+    font-weight: 600
+    margin-bottom: 5%
