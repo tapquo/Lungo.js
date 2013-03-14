@@ -49,9 +49,9 @@ Lungo.Notification = do(lng = Lungo) ->
   ###
   ###
   hide = ->
-    _window.removeClass "show"
+    _window.removeClass("show")
     setTimeout (->
-      _el.style("display", "none").removeClass("html").removeClass("confirm").removeClass("notify").removeClass "growl"
+      _el.removeClass("show").removeClass("html").removeClass("confirm").removeClass("notify").removeClass "growl"
     ), ANIMATION_MILISECONDS - 50
 
 
@@ -87,9 +87,8 @@ Lungo.Notification = do(lng = Lungo) ->
   ###
   ###
   push = (title, icon) ->
-    markup = _markup(title, null, icon)
-    _show markup, "push", false
-    _hide seconds = 5
+    _show _markup(title, null, icon), "push", false
+    # _hide seconds = 5
 
   _init = ->
     lng.dom(SELECTOR.BODY).append MARKUP_NOTIFICATION
@@ -98,29 +97,32 @@ Lungo.Notification = do(lng = Lungo) ->
     _subscribeEvents()
 
   _show = (html, stylesheet, block = true) ->
-    _el.removeClass("push").show().remove
-    unless block then _el.addClass("push")
+    console.error "show", _window.hasClass("show")
+    if block then _el.removeClass "push" else _el.addClass "push"
 
-    _window.removeClass STYLE.SHOW
-    _window.removeClass("error").removeClass("success").removeClass("html").removeClass "growl"
-    _window.addClass stylesheet
-    _window.html html
+    unless _window.hasClass("show")
+      _el.addClass("show")
+    else
+      _window.removeClass STYLE.SHOW
+
+    _window[0].addEventListener 'webkitTransitionEnd', (event) ->
+      console.error event
+
     setTimeout (->
-      _window.addClass STYLE.SHOW
-    ), DELAY_TIME
+      _window.html html
+      _window.attr "class", "window #{stylesheet} show"
+    ), 400
 
   _hide = (seconds, callback) ->
-    if seconds isnt undefined and seconds isnt 0
-      miliseconds = seconds * 1000
-      setTimeout (->
-        hide()
-        # if (callback) callback.apply(callback);
-        setTimeout callback, ANIMATION_MILISECONDS  if callback
-      ), miliseconds
+    if seconds? and seconds > 0
+      setTimeout (=>
+        do hide
+        if callback then callback.call @
+      ), seconds * 1000
 
   _notify = (title, description, icon, stylesheet, seconds, callback) ->
     _show _markup(title, description, icon), stylesheet
-    _hide seconds, callback  if seconds
+    _hide seconds, callback if seconds
 
   _markup = (title, description, icon) ->
     description = (if not description then "&nbsp;" else description)
