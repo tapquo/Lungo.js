@@ -11,18 +11,17 @@
 
 body > section
   background-color: COLOR_contrast
+  &, & a
+    color: COLOR
   & > header
     C = COLOR_theme
     background-color: COLOR_theme
     box-shadow 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 lighten(C, 20%), inset 0 -1px 0 darken(C, 20%)
     color: #fff
     border-radius (BORDER_radius * 2.5) (BORDER_radius * 2.5) 0 0
-    & > .title
-      font-weight: 700
 
   & > footer, & nav[data-control=groupbar]
     background-color: COLOR_contrast
-    // box-shadow inset 0 3px 0 COLOR_contrast_dark
   & > article, & > [data-control="pull"]
     background-color: BACKGROUND
     &.splash
@@ -33,12 +32,14 @@ body > section
     &.right
       box-shadow 1px 0 2px rgba(0,0,0,0.2)
 
-COLOR_contrastEST = darken(COLOR_contrast_darkest, 15%)
 body > aside
-  background-color: COLOR_contrast_dark
+  background-color: COLOR_contrast
   color: #fff
+  C = darken(COLOR_contrast, 20%)
   & > header, > footer
-    background-color: COLOR_contrast_darkest
+    background-color: C
   & > header
-    box-shadow 0 1px 3px rgba(0,0,0,0.25), inset 0 1px 0 COLOR_contrast, inset 0 -1px 0 COLOR_contrastEST
+    box-shadow 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 lighten(C, 10%), inset 0 -1px 0 darken(C, 20%)
 
+body > * > header > .title
+  font-weight: 700

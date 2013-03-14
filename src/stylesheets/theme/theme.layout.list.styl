@@ -8,7 +8,6 @@
  */
 
 @import "__init.styl"
-
 .list
   section & li
     background: #fff
@@ -24,23 +23,20 @@
       border-color: COLOR_secondary
 
     &, a
-      color: LIST_color
-      &.anchor
+      &.contrast
         background: COLOR_contrast
-      &.dark
-        background: COLOR_contrast_light
       &.selectable:active, &.theme, &.active
-        background: LIST_active
+        background: lighten(COLOR_theme, 15%)
       &.light
-        background:  LIST_border
-        color: LIST_color_2nd
-      &.dark, &.selectable:active, &.theme, &.anchor
+        background: LIST_border
+        color: lighten(COLOR, 20%)
+      &.contrast, &.selectable:active, &.theme
         &, small, & .right:not(.tag), strong, .arrow::after
           color: #fff
         &.arrow::after
           border-color: #fff
       & small, & .right:not(.tag)
-        color: LIST_color_2nd
+        color: lighten(COLOR, 20%)
 
   &:not(.indented) li
     &.dark, &.theme, &.light
@@ -49,11 +45,11 @@
   aside & li
     background: none
     &:not(:first-child)
-      border-top: solid 1px  COLOR_contrast
+      border-top: solid 1px  lighten(COLOR_contrast, 5%)
     &:not(:last-child)
-      border-bottom: solid 1px COLOR_contrastEST
+      border-bottom: solid 1px darken(COLOR_contrast, 20%)
     &:active
-      background: COLOR_contrast_darkest
+      background: darken(COLOR_contrast, 5%)
     &.active
       background: COLOR_theme
     &.active, &:active
@@ -61,6 +57,6 @@
       & strong, & small, & .icon
         color: #fff
     & strong
-      color: #999
+      color: lighten(COLOR_contrast, 75%)
     & small, .icon
-      color: #666
+      color: lighten(COLOR_contrast, 40%)
