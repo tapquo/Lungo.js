@@ -58,6 +58,11 @@ module.exports = (grunt) ->
           'build/<%= meta.file %>.core.js': ['<%= resources.core %>']
           'build/<%= meta.file %>.modules.js': ['<%= resources.modules %>']
 
+    concat:
+      dist:
+        src: ['<%= resources.javascripts %>'],
+        dest:  '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js'
+
     uglify:
       options:
         compress: false
@@ -81,11 +86,11 @@ module.exports = (grunt) ->
 
     watch:
       files: ['<%= resources.core %>', '<%= resources.modules %>', '<%= resources.stylesheets %>', '<%= resources.theme %>']
-      # tasks: ["coffee", "uglify", "stylus:stylesheets", "stylus:theme"]
-      tasks: ["coffee", "uglify"]
-      # tasks: ["stylus:stylesheets", "stylus:theme"]
+      # tasks: ["coffee", "concat", "stylus:stylesheets", "stylus:theme"]
+      tasks: ["stylus:stylesheets", "stylus:theme"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
+  grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-stylus"
   grunt.loadNpmTasks "grunt-contrib-copy"
