@@ -26,11 +26,11 @@
     &, a
       color: LIST_color
       &.anchor
-        background: DARK
+        background: COLOR_contrast
       &.dark
-        background: DARK_light
+        background: COLOR_contrast_light
       &.selectable:active, &.theme, &.active
-        background: THEME_light
+        background: LIST_active
       &.light
         background:  LIST_border
         color: LIST_color_2nd
@@ -49,13 +49,13 @@
   aside & li
     background: none
     &:not(:first-child)
-      border-top: solid 1px  DARK
+      border-top: solid 1px  COLOR_contrast
     &:not(:last-child)
-      border-bottom: solid 1px DARKEST
+      border-bottom: solid 1px COLOR_contrastEST
     &:active
-      background: DARK_darkest
+      background: COLOR_contrast_darkest
     &.active
-      background: THEME
+      background: COLOR_theme
     &.active, &:active
       border-color: transparent
       & strong, & small, & .icon

@@ -16,13 +16,14 @@
   &:not(.push)
     background-color: rgba(0,0,0,0.6)
   & .window
+    border-radius FORM_border_radius
     &.growl
       background: rgba(0,0,0,0.75)
     &:not(.growl)
       box-shadow(0 0 8px #444)
       & button, .button
         background: #fff
-        color: THEME_dark
+        color: COLOR_theme
     &.confirm, &.html
       background: #e6e6e6
       color: #222
@@ -37,7 +38,7 @@
         font-weight: 100
     &.html
       & .title
-        background: THEME
+        background: COLOR_theme
         color: #fff
     &.push
       background: rgba(0,0,0,0.65)

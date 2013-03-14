@@ -16,7 +16,7 @@ form, .form
 
   & fieldset
     background: #fff
-    border-bottom: 1px solid CONTENT
+    border-bottom: 1px solid BACKGROUND
     & .icon
       color: #ccc
     &.radius-top
@@ -41,24 +41,21 @@ form, .form
       color: COLOR_success !important
       border-color: COLOR_success !important
     &:focus, &:active, &:hover
-      color: THEME_dark
-      border-color: THEME
-      &:after
-        background-color: THEME
+      color: COLOR_theme
+      border-color: COLOR_theme
     &[disabled]
       background: FORM_color
       border-color: FORM_color
       color: darken(FORM_color, 25%)
 
-  /* -------------------------- SELECT -------------------------- */
-  & fieldset .select
-    & > select
-      background-color: lighten(FORM_color, 75%) !important
 
-  & .select:after
-    background: FORM_color
-    color: #fff
-    border-radius: (FORM_border_radius / 2)
+  /* -------------------------- SELECT -------------------------- */
+  & select, label.select
+    &:after
+      color: FORM_color
+    &:focus, &:active, &:hover
+      &:after
+        color: COLOR_theme
 
   /* -------------------------- RANGE -------------------------- */
   & input[type=range]
@@ -66,10 +63,10 @@ form, .form
     color: darken(FORM_color, 25%)
     border-radius: (FORM_border_radius * 4)
     &:active
-      background-color: THEME_light !important
+      background-color: COLOR_theme !important
       color: #fff
       &::-webkit-slider-thumb
-        background-color: darken(THEME, 25%) !important
+        background-color: darken(COLOR_theme, 25%) !important
     &::-webkit-slider-thumb
       border-radius (FORM_border_radius * 4)
       background-color: darken(FORM_color, 25%)
@@ -78,7 +75,7 @@ form, .form
   & [data-progress]
     background-color: #ddd
     & .value
-      background-color: THEME_light
+      background-color: COLOR_theme
     &, & .value
       border-radius (FORM_border_radius * 3)
 
@@ -93,10 +90,10 @@ form, .form
       border-radius: (FORM_border_radius * 4)
       background: darken(FORM_color, 25%)
     &.checked
-      background-color: THEME_light
+      background-color: COLOR_theme
       color: #fff !important
       & label
-        background-color: darken(THEME, 25%)
+        background-color: darken(COLOR_theme, 25%)
 
     // Expand
     &.twitter

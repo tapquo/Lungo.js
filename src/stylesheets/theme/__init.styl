@@ -1,25 +1,31 @@
 @import "../CSSmethods/vendor.styl"
 
 /* -------------------------- COLOUR -------------------------- */
-CONTENT         = #f5f5f5
+BACKGROUND      = #f5f5f5
 COLOR           = #333
-COLOR_secondary = #95a5a6
-COLOR_cancel    = #e74c3c
+// COLOR           = #34495e
+COLOR_theme     = #0093D5
 COLOR_success   = #2ecc71
+COLOR_cancel    = #e74c3c
+COLOR_secondary = #95a5a6
 
-THEME           = #0093D5
-THEME_light     = lighten(THEME, 15%)
-THEME_dark      = darken(THEME, 15%)
+COLOR_contrast            = #222
+
+
+/* -------------------------- VARIATIONS -------------------------- */
 
 /* ------------------------- COLOUR ------------------------- */
-DARK            = #222
-DARK_light      = lighten(DARK, 25%)
-DARK_dark       = darken(DARK, 15%)
-DARK_darkest    = darken(DARK, 30%)
+COLOR_contrast_light      = lighten(COLOR_contrast, 25%)
+COLOR_contrast_dark       = darken(COLOR_contrast, 15%)
+COLOR_contrast_darkest    = darken(COLOR_contrast, 30%)
+
 LIST_color      = lighten(COLOR, 5%)
 LIST_color_2nd  = lighten(COLOR, 35%)
 LIST_border     = lighten(COLOR, 90%)
-NAV_LINK        = lighten(DARK, 25%)
+
+LIST_active     = lighten(COLOR_theme, 15%)
+
+NAV_LINK        = lighten(COLOR_contrast, 25%)
 NAV_LINK_ACTIVE = #FFF
 
 /* ------------------------- TRANSITION ------------------------- */
@@ -30,5 +36,6 @@ TRANSITION_easing      = ease
 BORDER_radius   = 2px
 /* -------------------------- FORM -------------------------- */
 FORM_color         = darken(#e5e5e5, 5%)
+// FORM_color         = #34495e
 FORM_border        = 2px
 FORM_border_radius = (BORDER_radius * FORM_border)
