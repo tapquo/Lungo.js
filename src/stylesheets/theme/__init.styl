@@ -1,23 +1,22 @@
 @import "../CSSmethods/vendor.styl"
-
 /* -------------------------- COLOUR -------------------------- */
-COLOR           = #292929
-COLOR_theme     = #0093D5
-COLOR_success   = #2ecc71
-COLOR_cancel    = #e74c3c
-COLOR_secondary = #95a5a6
-COLOR_contrast  = COLOR
-BACKGROUND      = lighten(COLOR, 95%)
+THEME               = #3498db
+COLOR               = #292929 /* #2C3E50 */
+DANGER              = #e74c3c
+SUCCESS             = #2ecc71
+WARNING             = #edba22
+DISABLED            = #acb8b9
+BACKGROUND          = lighten(COLOR, 95%)
 /* -------------------------- VARIATIONS -------------------------- */
-LIST_border     = lighten(COLOR, 90%)
-NAV_LINK        = lighten(COLOR_contrast, 25%)
-NAV_LINK_ACTIVE = #FFF
+LIST_border         = lighten(COLOR, 90%)
+NAV_LINK            = lighten(COLOR, 25%)
+NAV_LINK_ACTIVE     = #FFF
 /* ------------------------- TRANSITION ------------------------- */
-TRANSITION_time        = 400ms
-TRANSITION_easing      = ease
+TRANSITION_time     = 400ms
+TRANSITION_easing   = ease
 /* ------------------------- RADIUS ------------------------- */
-BORDER_radius   = 2px
+BORDER_radius       = 2px
 /* -------------------------- FORM -------------------------- */
-FORM_color         = darken(#e5e5e5, 5%)
-FORM_border        = 2px
-FORM_border_radius = (BORDER_radius * FORM_border)
+FORM_color          = darken(#e5e5e5, 5%)
+FORM_border         = 2px
+FORM_border_radius  = (BORDER_radius * FORM_border)

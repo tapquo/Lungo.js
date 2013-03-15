@@ -12,10 +12,10 @@
 nav
   section > header > &
     & a:not(.button)
-      color: darken(COLOR_theme, 35%)
-      text-shadow 0 1px 0 lighten(COLOR_theme, 25%)
+      color: darken(THEME, 35%)
+      text-shadow 0 1px 0 lighten(THEME, 25%)
       &:active
-        color: darken(COLOR_theme, 50%)
+        color: darken(THEME, 50%)
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
@@ -24,26 +24,26 @@ nav
 
   section > &[data-control=groupbar] > a.active
     transition box-shadow TRANSITION_time TRANSITION_easing
-    box-shadow inset 0 -4px 0 COLOR_theme
+    box-shadow inset 0 -4px 0 THEME
 
   section > footer > & > a
-    box-shadow inset 0 1px 0 #000, inset 0 2px 0 lighten(COLOR_contrast, 20%)
+    box-shadow inset 0 1px 0 #000, inset 0 2px 0 lighten(COLOR, 20%)
     &.active
-      box-shadow inset 0 0 16px #000
-      background-color: darken(COLOR_contrast, 10%)
+      box-shadow inset 0 0 16px darken(COLOR, 75%)
+      background-color: darken(COLOR, 10%)
 
   aside & a
-    color: lighten(COLOR_contrast, 20%)
+    color: lighten(COLOR, 20%)
     &:active
-      color: lighten(COLOR_contrast, 50%)
+      color: lighten(COLOR, 50%)
 
   &[data-control=menu]
-    background: COLOR_contrast
+    background: COLOR
     box-shadow 0 2px 0 rgba(0,0,0,0.15)
     &.icons
       background: rgba(0,0,0,0.8)
       & > a
-        color: lighten(COLOR_contrast, 35%)
+        color: lighten(COLOR, 35%)
         &:active > .icon
           text-shadow: 0 0 32px #fff
         & > .icon
@@ -52,12 +52,12 @@ nav
       & > a
         color: #fff
         // text-shadow 0 1px 0 #111
-        border-bottom: 1px solid darken(COLOR_contrast, 20%)
-        border-top: 1px solid lighten(COLOR_contrast, 5%)
+        border-bottom: 1px solid darken(COLOR, 20%)
+        border-top: 1px solid lighten(COLOR, 5%)
         &:active
-          background: darken(COLOR_contrast, 15%)
+          background: darken(COLOR, 15%)
           border-color: transparent
         & > .icon
-          color: lighten(COLOR_contrast, 25%)
+          color: lighten(COLOR, 25%)
     & > a
       font-weight: 600

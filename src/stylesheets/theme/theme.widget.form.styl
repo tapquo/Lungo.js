@@ -35,14 +35,14 @@ form, .form
       border: FORM_border solid FORM_color
       border-radius: FORM_border_radius
     &.error, &:required
-      color: COLOR_cancel !important
-      border-color: COLOR_cancel !important
+      color: DANGER !important
+      border-color: DANGER !important
     &.success
-      color: COLOR_success !important
-      border-color: COLOR_success !important
+      color: SUCCESS !important
+      border-color: SUCCESS !important
     &:focus, &:active, &:hover
-      color: COLOR_theme
-      border-color: COLOR_theme
+      color: THEME
+      border-color: THEME
     &[disabled]
       background: FORM_color
       border-color: FORM_color
@@ -55,7 +55,7 @@ form, .form
       color: FORM_color
     &:focus, &:active, &:hover
       &:after
-        color: COLOR_theme
+        color: THEME
 
   /* -------------------------- RANGE -------------------------- */
   & input[type=range]
@@ -63,10 +63,10 @@ form, .form
     color: darken(FORM_color, 25%)
     border-radius: (FORM_border_radius * 4)
     &:active
-      background-color: COLOR_theme !important
+      background-color: THEME !important
       color: #fff
       &::-webkit-slider-thumb
-        background-color: darken(COLOR_theme, 25%) !important
+        background-color: darken(THEME, 25%) !important
     &::-webkit-slider-thumb
       border-radius (FORM_border_radius * 4)
       background-color: darken(FORM_color, 25%)
@@ -75,7 +75,7 @@ form, .form
   & [data-progress]
     background-color: #ddd
     & .value
-      background-color: COLOR_theme
+      background-color: THEME
     &, & .value
       border-radius (FORM_border_radius * 3)
 
@@ -90,30 +90,35 @@ form, .form
       border-radius: (FORM_border_radius * 4)
       background: darken(FORM_color, 25%)
     &.checked
-      background-color: COLOR_theme
+      background-color: THEME
       color: #fff !important
       & label
-        background-color: darken(COLOR_theme, 25%)
+        background-color: darken(THEME, 25%)
+
+    &.accept
+      &.checked
+        background-color: SUCCESS
+        & label
+          background-color: darken(SUCCESS, 25%)
+    &.cancel
+      &.checked
+        background-color: DANGER
+        & label
+          background-color: darken(DANGER, 25%)
 
     // Expand
-    &.twitter
+    &.icon
       font-family:'lungojsicon'
       font-size: 1.3em
       line-height: 1.4em
-      &:before
-        content: "\f099"
-      &:after
-        content: "\f099"
-        text-shadow: 0 1px 0 #fff
-    &.ok
-      font-family:'lungojsicon'
-      font-size: 1.3em
-      line-height: 1.4em
-      &.checked
-        background-color: COLOR_success
-        & label
-          background-color: darken(COLOR_success, 25%)
-      &:before
-        content: "\f00c"
-      &:after
-        content: "\f00d"
+
+      &.twitter
+        &:before
+          content: "\f099"
+        &:after
+          content: "\f099"
+      &.ok
+        &:before
+          content: "\f00c"
+        &:after
+          content: "\f00d"

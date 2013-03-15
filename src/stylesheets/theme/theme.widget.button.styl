@@ -14,10 +14,10 @@
 header
   & .button, button
     color: #fff
-    background-color: darken(COLOR_theme, 15%)
-    box-shadow 0 1px 0 lighten(COLOR_theme, 15%), inset 0 1px 0 darken(COLOR_theme, 35%)
+    background-color: darken(THEME, 15%)
+    box-shadow 0 1px 0 lighten(THEME, 15%), inset 0 1px 0 darken(THEME, 35%)
     &:active
-      background-color: darken(COLOR_theme, 40%)
+      background-color: darken(THEME, 40%)
 
 article
   & .button, button
@@ -36,13 +36,15 @@ article
 
   & button, .button, .tag:not(.icon)
     &
-      background-color: darken(COLOR_theme, 15%)
-    &.secondary
-      background-color: COLOR_secondary
+      background-color: darken(THEME, 15%)
+    &.color
+      background-color: lighten(COLOR, 10%)
     &.accept
-      background-color: COLOR_success
+      background-color: SUCCESS
     &.cancel
-      background-color: COLOR_cancel
+      background-color: DANGER
+    &.warning
+      background-color: WARNING
     &[disabled], :disabled, &.disabled
       background: FORM_color
       color: #999 !important
