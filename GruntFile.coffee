@@ -4,6 +4,7 @@ module.exports = (grunt) ->
 
     meta:
       file: 'lungo'
+      packages: "packages",
       # BETA
       endpoint: "example/components",
       version: ".brownie",
@@ -66,7 +67,6 @@ module.exports = (grunt) ->
     uglify:
       options:
         compress: false
-        # beautify: true
         banner: '<%= meta.banner %>'
       endpoint:
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.js': '<%=resources.javascripts %>'
@@ -75,19 +75,18 @@ module.exports = (grunt) ->
       stylesheets:
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<%=resources.stylesheets%>'
       theme:
+        options: compress: true
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=resources.theme%>'
       icons:
-        options: compress: false
-        files: '<%=meta.endpoint%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=resources.icons%>'
+        files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=resources.icons%>'
 
     copy:
       theme:
-        expand: true, flatten: true, src: '<%=resources.theme%>', dest: '<%=meta.endpoint%>/<%=meta.file%>.theme/'
+        expand: true, flatten: true, src: '<%=resources.theme%>', dest: '<%=meta.packages%>/<%=meta.file%>.theme/'
 
     watch:
       files: ['<%= resources.core %>', '<%= resources.modules %>', '<%= resources.stylesheets %>', '<%= resources.theme %>']
       tasks: ["coffee", "concat", "stylus:stylesheets", "stylus:theme"]
-      # tasks: [ "stylus:theme"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-concat"
@@ -96,4 +95,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-contrib-watch"
 
-  grunt.registerTask "default", ["coffee", "uglify", "stylus", "copy"]
+  grunt.registerTask "default", ["coffee", "concat", "uglify", "stylus", "copy"]
