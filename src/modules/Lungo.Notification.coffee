@@ -105,9 +105,6 @@ Lungo.Notification = do(lng = Lungo) ->
     else
       _window.removeClass STYLE.SHOW
 
-    _window[0].addEventListener 'webkitTransitionEnd', (event) ->
-      console.error event
-
     setTimeout (->
       _window.html html
       _window.attr "class", "window #{stylesheet} show"
