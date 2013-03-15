@@ -97,7 +97,6 @@ Lungo.Notification = do(lng = Lungo) ->
     _subscribeEvents()
 
   _show = (html, stylesheet, block = true) ->
-    console.error "show", _window.hasClass("show")
     if block then _el.removeClass "push" else _el.addClass "push"
 
     unless _window.hasClass("show")
