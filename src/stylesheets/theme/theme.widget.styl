@@ -9,9 +9,6 @@
 
 @import "__init.styl"
 
-[data-control="pull"]
-    text-shadow: 0 1px 0 #fff
-
 /* =================================  TAG  ================================= */
 .tag:not(.icon)
   color: #fff
@@ -32,3 +29,14 @@ body > section > article > .empty
     color: darken(BACKGROUND, 20%)
   & > strong
     color: darken(BACKGROUND, 40%)
+
+/* =================================  PULL  =============================== */
+body > section > [data-control="pull"]
+  background-color: darken(BACKGROUND, 15%)
+  color: darken(BACKGROUND, 50%)
+  text-shadow: 0 1px 1px BACKGROUND
+  & > strong
+    font-weight: 700
+  &.rotate
+    color: darken(BACKGROUND, 75%)
+

@@ -11,7 +11,7 @@ Creates a instance of Pull & Refresh Element
 
 
 Lungo.Element.Pull = (element_selector, config_data) ->
-  REFRESHING_HEIGHT = 60
+  REFRESHING_HEIGHT = 68
   MAX_HEIGHT = 80
   ANIMATION_TIME = 300
   CURRENT_DISTANCE = 0
@@ -36,7 +36,7 @@ Lungo.Element.Pull = (element_selector, config_data) ->
 
   _moveElementTo = (posY, animate) ->
     newPos = (if posY > MAX_HEIGHT then MAX_HEIGHT else posY)
-    ELEMENT.addClass "pull"  if animate
+    ELEMENT.addClass "pull" if animate
     ELEMENT.style "-webkit-transform", "translate(0, " + (newPos) + "px)"
     if animate
       setTimeout (->
