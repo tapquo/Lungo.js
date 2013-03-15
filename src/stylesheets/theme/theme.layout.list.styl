@@ -13,20 +13,22 @@
     background: #fff
     &:not(.anchor)
       border-bottom: inset 1px LIST_border
-    &.secondary
-      box-shadow: inset 4px 0px 0px COLOR_secondary
+    &.color
+      box-shadow: inset 4px 0px 0px COLOR
     &.accept
-      box-shadow: inset 4px 0px 0px COLOR_success
+      box-shadow: inset 4px 0px 0px SUCCESS
     &.cancel
-      box-shadow: inset 4px 0px 0px COLOR_cancel
+      box-shadow: inset 4px 0px 0px DANGER
+    &.warning
+      box-shadow: inset 4px 0px 0px WARNING
     &.arrow::after
-      border-color: COLOR_secondary
+      border-color: lighten(COLOR, 75%)
 
     &, a
       &.contrast
-        background: COLOR_contrast
+        background: COLOR
       &.selectable:active, &.theme, &.active
-        background: lighten(COLOR_theme, 15%)
+        background: lighten(THEME, 15%)
       &.light
         background: LIST_border
         color: lighten(COLOR, 20%)
@@ -45,18 +47,18 @@
   aside & li
     background: none
     &:not(:first-child)
-      border-top: solid 1px  lighten(COLOR_contrast, 5%)
+      border-top: solid 1px  lighten(COLOR, 5%)
     &:not(:last-child)
-      border-bottom: solid 1px darken(COLOR_contrast, 20%)
+      border-bottom: solid 1px darken(COLOR, 20%)
     &:active
-      background: darken(COLOR_contrast, 5%)
+      background: darken(COLOR, 5%)
     &.active
-      background: COLOR_theme
+      background: THEME
     &.active, &:active
       border-color: transparent
       & strong, & small, & .icon
         color: #fff
     & strong
-      color: lighten(COLOR_contrast, 75%)
+      color: lighten(COLOR, 75%)
     & small, .icon
-      color: lighten(COLOR_contrast, 40%)
+      color: lighten(COLOR, 40%)

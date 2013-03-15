@@ -21,208 +21,7 @@
 <body class="app">
 
 
-<section id="form" data-transition="slide">
-    <header data-title="Form Elements" data-back="home">
-        <nav class="right">
-            <button data-label="test"></button>
-            <button data-icon="edit"></button>
-        </nav>
-    </header>
 
-    <nav data-control="groupbar">
-        <a href="#" data-view-article="form-normal" data-label="Normal" class="active"></a>
-        <a href="#" data-view-article="form-indented" data-label="Indented"></a>
-        <a href="#" data-view-article="form-special" data-label="Specials"></a>
-    </nav>
-
-    <article id="form-normal" class="scroll">
-        <div class="form">
-            <!-- LABEL + INPUT -->
-            <fieldset>
-                <label>label</label>
-                <input type="text" placeholder="value">
-
-                <label>label</label>
-                <input type="text" placeholder="value on right" class="text align_right error">
-
-                <label class="absolute">label</label>
-                <input type="text" placeholder="value on center" class="large text  bold align_center">
-
-                <label>label</label>
-                <label class="select ">
-                    <select class="custom">
-                        <option value="1">HTML5 Jedi</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </label>
-
-                <label>label</label>
-                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
-            </fieldset>
-
-
-            </fieldset>
-            <!-- INPUT -->
-            <fieldset>
-                <input type="text" id="description" class="text align_center" placeholder="value"/>
-            </fieldset>
-            <fieldset>
-                <textarea placeholder="Write something..."></textarea>
-            </fieldset>
-            <fieldset>
-                <label class="select">
-                    <select class="custom">
-                        <option value="1">HTML5 Jedi</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
-            </fieldset>
-
-            <fieldset>
-                <label class="anchor">label Lorem ipsum dolor sit amet</label>
-                 <div data-control-checkbox="check" class="inline right"></div>
-             </fieldset>
-
-            <fieldset data-icon="plus">
-                <label>label</label>
-                <input type="text" value="value" />
-            </fieldset>
-        </div>
-    </article>
-
-    <article id="form-indented" class="indented scroll">
-        <div class="form">
-            <!-- LABEL + INPUT -->
-            <label>label +  input</label>
-            <fieldset class="radius shadow">
-                <label>label</label>
-                <input type="text" placeholder="value">
-
-                <label>label</label>
-                <input type="text" placeholder="value on right" class="text align_right error">
-
-                <label class="absolute">label</label>
-                <input type="text" placeholder="value on center" class="large text align_center">
-
-                <label>label</label>
-                <label class="select ">
-                    <select class="custom">
-                        <option value="1">HTML5 Jedi</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </label>
-
-                <label>label</label>
-                <input type="date" class="align_right" placeholder="Select date" value="10/04/1980"/>
-            </fieldset>
-
-            <!-- INPUT -->
-            <label>input</label>
-            <fieldset class="radius-top">
-                <input type="text" id="description" class="text align_center" placeholder="value"/>
-            </fieldset>
-            <fieldset>
-                <textarea placeholder="Write something..."></textarea>
-            </fieldset>
-            <fieldset>
-                <label class="select">
-                    <select class="custom">
-                        <option value="1">HTML5 Jedi</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </label>
-            </fieldset>
-
-
-            <fieldset>
-                <label class="anchor">label Lorem ipsum dolor sit amet</label>
-                <div data-control-checkbox="check_indent" class="inline right"></div>
-             </fieldset>
-
-
-            <fieldset class="radius-bottom shadow">
-                <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
-            </fieldset>
-
-
-            <label>label + input +  icon</label>
-            <fieldset data-icon="plus">
-                <label>label</label>
-                <input type="text" value="value" />
-            </fieldset>
-        </div>
-    </article>
-
-    <article id="form-special" class=" indented scroll">
-        <div class="form" >
-            <label>Specials</label>
-            <fieldset data-icon="search">
-                <input type="search" placeholder="Search..."/>
-            </fieldset>
-
-
-            <label>Address</label>
-            <input type="text" placeholder="placeholder" class="border" />
-            <input type="text" placeholder="placeholder" class="border error" value="error" />
-            <input type="text" placeholder="placeholder" class="border success" value="success" />
-
-            <div class="layout horizontal">
-                <div data-layout="third">
-                    <label>Address</label>
-                    <input type="text" placeholder="placeholder" class="border" />
-                </div>
-                <div data-layout="primary">
-                    <label>Pin Code</label>
-                    <input type="password" value="value" class="border" disabled/>
-                </div>
-            </div>
-
-            <label>Select your skill</label>
-            <label class="select border">
-                <select>
-                    <option value="1">HTML5 Jedi</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </label>
-
-            <label>Progress</label>
-            <div id="progress-normal" data-progress="25%"></div>
-
-            <label>Range</label>
-            <input type="range" placeholder="type your name" min="0" max="8" />
-
-
-            <label>Checkbox</label>
-            <div class="layout horizontal">
-                <div>
-                    <div data-control-checkbox="normal"></div>
-                </div>
-                <div>
-                    <div data-control-checkbox="twit-example" class="twitter"></div>
-                </div>
-                <div>
-                    <div data-control-checkbox="ok-example" class="ok"></div>
-                </div>
-            </div>
-            <br/>
-
-            <button class="anchor margin-bottom" data-label="Normal"></button>
-            <button class="anchor accept margin-bottom" data-icon="ok" data-label="Accept"></button>
-            <button class="anchor cancel margin-bottom" data-icon="remove" data-label="Cancel"></button>
-            <button class="anchor secondary margin-bottom" data-icon="plus" data-label="Secondary"></button>
-            <button class="anchor disabled" data-label="Disabled"></button>
-        </div>
-    </article>
-</section>
 
     <section id="main" data-transition="slide" data-aside="features" data-children="folk">
         <header>
@@ -483,6 +282,18 @@
         });
 
         Lungo.ready(function() {
+
+            pull = new Lungo.Element.Pull('section#pull article', {
+                onPull: "Pull down to refresh",
+                onRelease: "Release to get new data",
+                onRefresh: "Refreshing...",
+                callback: function() {
+                    setTimeout(function(){
+                        pull.hide();
+                    }, 1000)
+                }
+            });
+
             // Lungo.Router.article("main", "sub");
             Lungo.Element.count("section#main nav #products", 5);
 
