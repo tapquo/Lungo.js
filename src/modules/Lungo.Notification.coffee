@@ -79,16 +79,17 @@ Lungo.Notification = do(lng = Lungo) ->
 
   ###
   ###
-  html = (markup, button) ->
-    markup += (if (button) then "<a href=\"#\" class=\"button large anchor\" data-action=\"close\">" + button + "</a>" else "")
-    _show markup, "html"
-
+  html = (markup, button, style, seconds) ->
+    if button
+      markup += "<a href=\"#\" class=\"button large anchor\" data-action=\"close\">" + button + "</a>"
+    _show markup, "html #{style}"
+    _hide seconds
 
   ###
   ###
   push = (title, icon) ->
     _show _markup(title, null, icon), "push", false
-    # _hide seconds = 5
+    _hide seconds = 5
 
   _init = ->
     lng.dom(SELECTOR.BODY).append MARKUP_NOTIFICATION
