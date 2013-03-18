@@ -33,23 +33,23 @@ WINDOW_WIDTH = 280px
     position: relative
     opacity: 0
     text-align: center
-    transition-property opacity, margin-top
     transition-duration TRANSITION_TIME
     transition-timing-function DEFAULT_TRANSITION
     backface-visibility hidden
+
     &.show
       opacity: 1
-      margin-top: 0% !important
 
     &:not(.push)
+      transition-property opacity, margin-top
       margin-top: 100%
+      &.show
+        margin-top: 0%
 
     &.growl
       width: LOADING
       height: LOADING
       padding: 0 8px
-      margin-top: 100%
-      &.show
       & > .icon
         font-size: 52px
         line-height: LOADING
@@ -63,8 +63,11 @@ WINDOW_WIDTH = 280px
         display: block
 
     &.success, &.error, &.confirm, &.html
-      padding-top: 16px
       width: WINDOW_WIDTH
+      margin-top: 100%
+
+    &.success, &.error, &.confirm
+      padding-top: 16px
       & > .icon
         font-size: 5em
         line-height: 1.0em
@@ -90,7 +93,10 @@ WINDOW_WIDTH = 280px
       line-height: H
       padding: 0 8px
       width: 100%
-      margin-top: -(H)
+      transition-property opacity, top
+      top: -(H)
+      &.show
+        top: 0px
       & .icon
         font-size: FONT_SIZE_LARGE
         float: left

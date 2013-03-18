@@ -19,6 +19,9 @@
     border-radius FORM_border_radius
     &.growl
       background: rgba(0,0,0,0.75)
+      & strong
+        opacity: 0.75
+        font-weight: 400
     &:not(.growl)
       box-shadow(0 0 8px #444)
       & button, .button
@@ -40,5 +43,9 @@
       & .title
         background: THEME
         color: #fff
+        border-radius FORM_border_radius FORM_border_radius 0px 0px
     &.push
       background: rgba(0,0,0,0.65)
+    & button, & .button
+      &:last-child
+        border-radius 0px 0px FORM_border_radius FORM_border_radius
