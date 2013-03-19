@@ -11,6 +11,7 @@ window.Lungo = Lungo = {}
 
 Lungo.VERSION = "2.1.0313"
 Lungo.DEVICE = null
+Lungo.Config or (Lungo.Config = {})
 Lungo.Element or (Lungo.Element = {})
 Lungo.Data or (Lungo.Data = {})
 Lungo.Sugar or (Lungo.Sugar = {})
