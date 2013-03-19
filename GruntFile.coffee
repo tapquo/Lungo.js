@@ -85,8 +85,12 @@ module.exports = (grunt) ->
         expand: true, flatten: true, src: '<%=resources.theme%>', dest: '<%=meta.packages%>/<%=meta.file%>.theme/'
 
     watch:
-      files: ['<%= resources.core %>', '<%= resources.modules %>', '<%= resources.stylesheets %>', '<%= resources.theme %>']
-      tasks: ["coffee", "concat", "stylus:stylesheets", "stylus:theme"]
+      coffee:
+        files: ['<%= resources.core %>', '<%= resources.modules %>']
+        tasks: ["coffee", "concat"]
+      stylus:
+        files: ['<%= resources.stylesheets %>', '<%= resources.theme %>']
+        tasks: ["stylus:stylesheets", "stylus:theme"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-concat"
