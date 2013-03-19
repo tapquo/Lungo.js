@@ -105,3 +105,19 @@ body
       display-box()
     &.right
       right: 0px
+
+  /* ========================================================================= */
+  /* =============================== EXCLUDE OS ============================== */
+  /* ========================================================================= */
+  &[data-os=ios]
+    & [data-os=android], [data-os=blackerry], [data-os=firefoxos]
+      display: none
+  &[data-os=android]
+    & [data-os=ios], [data-os=blackerry], [data-os=firefoxos]
+      display: none
+  &[data-os=blackberry]
+    & [data-os=android], [data-os=ios], [data-os=firefoxos]
+      display: none
+  &[data-os=firefoxos]
+    & [data-os=android], [data-os=ios], [data-os=blackberry]
+      display: none

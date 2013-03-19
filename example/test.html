@@ -18,11 +18,7 @@
     <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
 </head>
 
-<body class="app">
-
-
-
-
+<body>
     <section id="main" data-transition="slide" data-aside="features" data-children="folk">
         <header>
             <nav class="left">
@@ -48,7 +44,7 @@
             <a href="#" data-view-section="folk" data-icon="thumbs-up">Folk</a>
         </nav>
 
-        <nav data-control="groupbar" data-article="folks">
+        <nav data-control="groupbar" data-os="android" data-article="folks">
             <a href="#" data-view-article="folks" data-label="Folks" data-count="11"></a>
             <a href="#" data-view-article="products" data-async="static/articles/products.html" data-label="Products" id="products"></a>
         </nav>
@@ -104,36 +100,7 @@
             </ul>
         </article>
 
-        <article id="sub">
-            sub
-        </article>
-
-        <!--
-        <article id="products" class="list scroll">
-            <ul>
-                <li class="selectable" data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-                    <a href="#" data-view-section="quojs">
-                        <strong>QuoJS</strong>
-                        <small>Micro Mobile JavaScript Library</small>
-                    </a>
-                </li>
-                <li data-image="http://cdn.tapquo.com/lungo/icon-144.png" data-view-section="list"  data-async="static/sections/list.html">
-                    <strong>TukTuk</strong>
-                    <small>Lorem ipsum dolor sit amet</small>
-                </li>
-                <li data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-                    <strong>Monocle</strong>
-                    <small>Lorem ipsum dolor sit amet</small>
-                </li>
-                <li data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-                    <strong>LungoJS</strong>
-                    <small>Lorem ipsum dolor sit amet</small>
-                </li>
-            </ul>
-        </article>
-        -->
-
-        <footer>
+        <footer data-os="ios">
             <nav>
                 <a href="#" data-view-article="folks" data-icon="desktop" data-count="11"></a>
                 <a href="#" data-view-article="products" data-icon="tablet" data-count="5"></a>
@@ -141,7 +108,7 @@
         </footer>
     </section>
 
-    <section id="test">
+    <section id="test" data-transition="slide">
         <header data-title="Test" data-back="home"></header>
         <article></article>
     </section>
@@ -152,59 +119,14 @@
                 <a href="#" data-view-section="back" data-label="Back" class="button"></a>
             </nav>
         </header>
-
         <article id='f1' class='active list scroll'>
             <ul>
                 <li>
                     <strong>lorem</strong>
                 </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
-                <li>
-                    <strong>lorem</strong>
-                </li>
             </ul>
-
         </article>
     </section>
-
 
     <section id='quojs' data-transition="slide" data-aside="features2">
         <header data-title='QuoJS'>
@@ -215,15 +137,12 @@
         <article id='q1' class='active'></article>
     </section>
 
-
-
     <aside id="features" >
         <header data-title="Features">
             <nav class="right">
                 <a href="#" class="buttons" data-icon="settings"></a>
             </nav>
         </header>
-
         <article class="list scroll active">
             <ul>
                 <!-- Basic Layout -->
@@ -277,12 +196,9 @@
             name: 'Flexbox',
             version: '2.2',
             history: false
-            //,
-            // resources: ['static/sections/list.html']
         });
 
         Lungo.ready(function() {
-
             pull = new Lungo.Element.Pull('section#pull article', {
                 onPull: "Pull down to refresh",
                 onRelease: "Release to get new data",
@@ -293,49 +209,7 @@
                     }, 1000)
                 }
             });
-
-            // Lungo.Router.article("main", "sub");
-            Lungo.Element.count("section#main nav #products", 5);
-
-                // Lungo.Notification.success('Title', 'Description', 'ok', 10000);
-
-            // Lungo.Notification.push("Connection stablished.", "ok");
-
-
-            // setTimeout(function() {
-            //     Lungo.Notification.show();
-            // }, 2000);
-            // setTimeout(function() {
-            //     Lungo.Notification.error('Title', 'Description', 'ok', 10000);
-            // }, 4000);
-
-
-            // Lungo.Article.clean("form-normal", "edit", "Form empty", "Please check if you have an internet connection.", "Ok, I'll check tomorrow")
-            // Lungo.Article.clean("form-normal")
         });
-
-
-        // Lungo.Notification.show("hola", "user");
-
-        // Lungo.Notification.show();
-
-
-        // Lungo.Notification.confirm({
-        //     icon: 'user',
-        //     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
-        //     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo amet nulla dolorum hic eum debitis dolorem expedita? Commodi molestiae tempora totam explicabo sed deserunt cum iusto eos perspiciatis ea in.',
-        //     accept: {
-        //         icon: 'checkmark',
-        //         label: 'Accept',
-        //         callback: function(){ alert("Yes!"); }
-        //     },
-        //     cancel: {
-        //         icon: 'close',
-        //         label: 'Cancel',
-        //         callback: function(){ alert("No!"); }
-        //     }
-        // });
-
 
     </script>
 </body>
