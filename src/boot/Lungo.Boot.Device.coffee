@@ -20,8 +20,8 @@ Lungo.Boot.Device = do(lng = Lungo) ->
 
     body = lng.dom document.body
     body.data "device", lng.DEVICE
-    if env.os then body.data "os", env.os.name
 
+    if env.os then body.data "os", env.os.name.toLowerCase()
     lng.Aside.draggable() if lng.DEVICE is lng.Constants.DEVICE.PHONE
 
   init: init
