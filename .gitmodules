@@ -34,3 +34,6 @@
 [submodule "packages/lungo.icon"]
 	path = packages/lungo.icon
 	url = https://github.com/TapQuo/lungo.icon.git
+[submodule "packages/lungo.calendar"]
+    path = packages/lungo.calendar
+    url = https://github.com/TapQuo/lungo.calendar.git
