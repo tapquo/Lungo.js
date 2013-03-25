@@ -5,6 +5,7 @@ module.exports = (grunt) ->
     meta:
       file: 'lungo'
       packages: "packages",
+      plugins: "src/plugins",
       # BETA
       endpoint: "example/components",
       version: ".brownie",
@@ -49,15 +50,14 @@ module.exports = (grunt) ->
       icons: [
         'src/stylesheets/lungo.icon**.styl']
 
-      calendar_coffee: [
-        'packages/lungo.calendar/**.coffee']
-      calendar_styl: [
-        'packages/lungo.calendar/**.styl']
+      calendar:
+        coffee: 'src/plugins/calendar/**.coffee'
+        stylus: 'src/plugins/calendar/**.styl'
 
 
     coffee:
       core: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js': '<%= source.coffee %>'
-      calendar: files: 'packages/lungo.calendar/package/lungo.calendar.js': '<%= source.calendar_coffee %>'
+      calendar: files: 'packages/lungo.calendar/lungo.calendar.js': '<%= source.calendar.coffee %>'
 
     uglify:
       options: compress: false, banner: "<%= meta.banner %>"
@@ -69,7 +69,7 @@ module.exports = (grunt) ->
       icons:
         options: compress: false
         files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
-      calendar: files: 'packages/lungo.calendar/package/lungo.calendar.css': '<%=source.calendar_styl%>'
+      calendar: files: 'packages/lungo.calendar/lungo.calendar.css': '<%=source.calendar.stylus%>'
 
     copy:
       theme:
@@ -82,8 +82,8 @@ module.exports = (grunt) ->
       stylus:
         files: ['<%= source.stylus %>', '<%= source.theme %>']
         tasks: ["stylus:core", "stylus:theme"]
-      pkgs:
-        files: ['<%= source.calendar_coffee %>','<%= source.calendar_styl %>']
+      calendar:
+        files: ['<%= source.calendar.coffee %>','<%= source.calendar.stylus %>']
         tasks: ["coffee:calendar", "stylus:calendar"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
@@ -94,4 +94,3 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-watch"
 
   grunt.registerTask "default", ["coffee", "uglify", "stylus", "copy"]
-  # grunt.registerTask "default", ["coffee:calendar", "stylus:calendar"]
