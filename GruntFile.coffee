@@ -37,8 +37,6 @@ module.exports = (grunt) ->
         'src/modules/Lungo.Article.coffee',
         'src/boot/*.coffee',
         'src/element/*.coffee']
-      javascripts: [
-        'build/*.js']
       stylus: [
         'src/stylesheets/lungo.base.styl',
         'src/stylesheets/lungo.layout.styl',
@@ -48,25 +46,30 @@ module.exports = (grunt) ->
         'src/stylesheets/lungo.media.*.styl']
       theme: [
         'src/stylesheets/theme/*.styl']
-
       icons: [
         'src/stylesheets/lungo.icon**.styl']
 
+      calendar_coffee: [
+        'packages/lungo.calendar/**.coffee']
+      calendar_styl: [
+        'packages/lungo.calendar/**.styl']
+
+
     coffee:
       core: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js': '<%= source.coffee %>'
+      calendar: files: 'packages/lungo.calendar/package/lungo.calendar.js': '<%= source.calendar_coffee %>'
 
     uglify:
       options: compress: false, banner: "<%= meta.banner %>"
       engine: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.js': '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js'
 
     stylus:
-      core:
-        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<%=source.stylus%>'
-      theme:
-        options: compress: true
-        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=source.theme%>'
+      core: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<%=source.stylus%>'
+      theme: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=source.theme%>'
       icons:
+        options: compress: false
         files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
+      calendar: files: 'packages/lungo.calendar/package/lungo.calendar.css': '<%=source.calendar_styl%>'
 
     copy:
       theme:
@@ -79,6 +82,9 @@ module.exports = (grunt) ->
       stylus:
         files: ['<%= source.stylus %>', '<%= source.theme %>']
         tasks: ["stylus:core", "stylus:theme"]
+      pkgs:
+        files: ['<%= source.calendar_coffee %>','<%= source.calendar_styl %>']
+        tasks: ["coffee:calendar", "stylus:calendar"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-concat"
@@ -88,3 +94,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-watch"
 
   grunt.registerTask "default", ["coffee", "uglify", "stylus", "copy"]
+  # grunt.registerTask "default", ["coffee:calendar", "stylus:calendar"]
