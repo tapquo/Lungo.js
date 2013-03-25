@@ -9,7 +9,7 @@ Copyright (c) 2011-2013 Tapquo S.L. - Licensed GPLv3, Commercial
 
 window.Lungo = Lungo = {}
 
-Lungo.VERSION = "2.1.0313"
+Lungo.VERSION = "2.1.0325"
 Lungo.DEVICE = null
 Lungo.Config or (Lungo.Config = {})
 Lungo.Element or (Lungo.Element = {})
