@@ -16,7 +16,8 @@
   &:not(.push)
     background-color: rgba(0,0,0,0.6)
   & .window
-    border-radius FORM_border_radius
+    &:not(.push)
+      border-radius FORM_border_radius
     &.growl
       background: rgba(0,0,0,0.75)
       & strong
@@ -45,7 +46,8 @@
         color: #fff
         border-radius FORM_border_radius FORM_border_radius 0px 0px
     &.push
-      background: rgba(0,0,0,0.65)
+      background: rgba(0,0,0,0.75)
+
     & button, & .button
       &:last-child
         border-radius 0px 0px FORM_border_radius FORM_border_radius

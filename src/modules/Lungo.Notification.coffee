@@ -87,9 +87,9 @@ Lungo.Notification = do(lng = Lungo) ->
 
   ###
   ###
-  push = (title, icon) ->
-    _show _markup(title, null, icon), "push", false
-    _hide seconds = 5
+  push = (title, icon, style) ->
+    _show _markup(title, null, icon), "push #{style}", false
+    _hide 5
 
   _init = ->
     lng.dom(SELECTOR.BODY).append MARKUP_NOTIFICATION
@@ -113,7 +113,10 @@ Lungo.Notification = do(lng = Lungo) ->
   _hide = (seconds, callback) ->
     if seconds? and seconds > 0
       setTimeout (=>
-        if callback then callback.call undefined, callback
+        if callback
+          callback.call undefined, callback
+        else
+          do hide
       ), seconds * 1000
 
   _notify = (title, description, icon, stylesheet, seconds, callback) ->
