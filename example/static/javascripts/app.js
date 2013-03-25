@@ -136,11 +136,10 @@ Lungo.Events.init({
     },
 
     'tap article#notification a[data-action=chaining]': function() {
-        Lungo.Notification.show('user', 'title', 2, function() {
+        Lungo.Notification.show('user', 'user', 2, function() {
             Lungo.Notification.error('Title 2', 'Description 2', 'remove',  2, function() {
-                Lungo.Notification.show('home', 'title 2', false, 2, function() {
-                    Lungo.Notification.html('<h1>Hello World</h1>', true);
-                    // Lungo.Notification.hide();
+                Lungo.Notification.show('cog', 'cog', 2, function() {
+                    Lungo.Notification.html('<h1>Hello World</h1>', "Close");
                 });
             });
         });

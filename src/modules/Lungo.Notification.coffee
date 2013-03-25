@@ -12,9 +12,10 @@ Lungo.Notification = do(lng = Lungo) ->
   _el = null
   _window = null
   DELAY_TIME = 1
-  ANIMATION_MILISECONDS = 200
   ATTRIBUTE = lng.Constants.ATTRIBUTE
   BINDING = lng.Constants.BINDING
+  TRANSITION = lng.Constants.TRANSITION
+
   SELECTOR =
     BODY: "body"
     NOTIFICATION: ".notification"
@@ -30,7 +31,6 @@ Lungo.Notification = do(lng = Lungo) ->
     WORKING: "working"
     INPUT: "input"
 
-  CALLBACK_HIDE = "Lungo.Notification.hide()"
   MARKUP_NOTIFICATION = "<div class=\"notification\"><div class=\"window\"></div></div>"
 
   ###
@@ -52,7 +52,7 @@ Lungo.Notification = do(lng = Lungo) ->
     _window.removeClass("show")
     setTimeout (->
       _el.removeClass("show").removeClass("html").removeClass("confirm").removeClass("notify").removeClass "growl"
-    ), ANIMATION_MILISECONDS - 50
+    ), (TRANSITION.DURATION / 2)
 
 
   ###
@@ -108,18 +108,17 @@ Lungo.Notification = do(lng = Lungo) ->
     setTimeout (->
       _window.html html
       _window.attr "class", "window #{stylesheet} show"
-    ), 400
+    ), (TRANSITION.DURATION / 2)
 
   _hide = (seconds, callback) ->
     if seconds? and seconds > 0
       setTimeout (=>
-        do hide
-        if callback then callback.call @
+        if callback then callback.call undefined, callback
       ), seconds * 1000
 
   _notify = (title, description, icon, stylesheet, seconds, callback) ->
     _show _markup(title, description, icon), stylesheet
-    _hide seconds, callback if seconds
+    _hide seconds, callback
 
   _markup = (title, description, icon) ->
     description = (if not description then "&nbsp;" else description)
