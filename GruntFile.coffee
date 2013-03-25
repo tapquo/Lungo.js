@@ -16,10 +16,9 @@ module.exports = (grunt) ->
               '   Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>' +
               ' - Licensed <%= _.pluck(pkg.license, "type").join(", ") %> */\n'
 
-
-    resources:
-      core: ['src/Lungo.coffee']
-      modules: [
+    source:
+      coffee: [
+        'src/Lungo.coffee',
         'src/modules/Lungo.Attributes.coffee',
         'src/modules/Lungo.Cache.coffee',
         'src/modules/Lungo.Constants.coffee',
@@ -40,7 +39,7 @@ module.exports = (grunt) ->
         'src/element/*.coffee']
       javascripts: [
         'build/*.js']
-      stylesheets: [
+      stylus: [
         'src/stylesheets/lungo.base.styl',
         'src/stylesheets/lungo.layout.styl',
         'src/stylesheets/lungo.layout.*.styl',
@@ -54,43 +53,32 @@ module.exports = (grunt) ->
         'src/stylesheets/lungo.icon**.styl']
 
     coffee:
-      compile:
-        files:
-          'build/<%= meta.file %>.core.js': ['<%= resources.core %>']
-          'build/<%= meta.file %>.modules.js': ['<%= resources.modules %>']
-
-    concat:
-      dist:
-        src: ['<%= resources.javascripts %>'],
-        dest:  '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js'
+      core: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js': '<%= source.coffee %>'
 
     uglify:
-      options:
-        compress: false
-        banner: '<%= meta.banner %>'
-      endpoint:
-        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.js': '<%=resources.javascripts %>'
+      options: compress: false, banner: "<%= meta.banner %>"
+      engine: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.js': '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js'
 
     stylus:
-      stylesheets:
-        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<%=resources.stylesheets%>'
+      core:
+        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<%=source.stylus%>'
       theme:
         options: compress: true
-        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=resources.theme%>'
+        files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=source.theme%>'
       icons:
-        files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=resources.icons%>'
+        files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
 
     copy:
       theme:
-        expand: true, flatten: true, src: '<%=resources.theme%>', dest: '<%=meta.packages%>/<%=meta.file%>.theme/'
+        expand: true, flatten: true, src: '<%=source.theme%>', dest: '<%=meta.packages%>/<%=meta.file%>.theme/'
 
     watch:
       coffee:
-        files: ['<%= resources.core %>', '<%= resources.modules %>']
-        tasks: ["coffee", "concat"]
+        files: ['<%= source.coffee %>']
+        tasks: ["coffee:core"]
       stylus:
-        files: ['<%= resources.stylesheets %>', '<%= resources.theme %>']
-        tasks: ["stylus:stylesheets", "stylus:theme"]
+        files: ['<%= source.stylus %>', '<%= source.theme %>']
+        tasks: ["stylus:core", "stylus:theme"]
 
   grunt.loadNpmTasks "grunt-contrib-coffee"
   grunt.loadNpmTasks "grunt-contrib-concat"
@@ -99,4 +87,4 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-contrib-watch"
 
-  grunt.registerTask "default", ["coffee", "concat", "uglify", "stylus", "copy"]
+  grunt.registerTask "default", ["coffee", "uglify", "stylus", "copy"]
