@@ -34,6 +34,10 @@ Lungo.Element.Carousel = (element, callback) ->
     else
       _slide 0, _instance.speed
 
+  goto = (index, delay) ->
+    if (index > 0) and (index < _instance.slides_length)
+      _slide index, _instance.speed
+
   position = ->
     _instance.index
 
@@ -108,8 +112,9 @@ Lungo.Element.Carousel = (element, callback) ->
 
   _setup()
   _handleGestures()
-
+  
   prev: prev
   next: next
+  goto: goto
   position: position
   refresh: refresh
