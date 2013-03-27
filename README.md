@@ -27,7 +27,7 @@ The idea of Lungo arose earlier this year, the author [Javi Jiménez Villar](htt
 - [Community](https://groups.google.com/forum/#!forum/lungojs)
 
 ### Licensing Options
-Lungo is licensed under GPLv3 licensed and a [Commercial License](https://github.com/tapquo/Lungo.js/LICENSE.md) for OEM uses. See LICENSE.md for more information.
+Lungo is licensed under GPLv3 licensed and a [Commercial License](https://github.com/TapQuo/Lungo.js/blob/master/LICENSE.md) for OEM uses. See LICENSE.md for more information.
 
 ### Credits
 Created by [@soyjavi](http://twitter.com/soyjavi) (Javi Jimenez). Copyright (c) 2011-2013 by Tapquo Inc.
