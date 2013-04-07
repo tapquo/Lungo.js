@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <section id="main" data-transition="slide" data-aside="features" data-children="folk">
+    <section id="main" data-transition="slide" data-aside="features" data-children="folk" data-pull="arrow-down">
         <header>
             <nav class="left">
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
@@ -199,7 +199,7 @@
         });
 
         Lungo.ready(function() {
-            pull = new Lungo.Element.Pull('section#pull article', {
+            pull = new Lungo.Element.Pull('section#main article', {
                 onPull: "Pull down to refresh",
                 onRelease: "Release to get new data",
                 onRefresh: "Refreshing...",

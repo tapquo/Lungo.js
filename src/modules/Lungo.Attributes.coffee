@@ -15,8 +15,8 @@ Lungo.Attributes =
   pull:
     selector: "*"
     html: """
-      <div class=\"{{value}}\" data-control=\"pull\" data-icon=\"down\" data-loading=\"black\">
-        <strong>title</strong>
+      <div data-control=\"pull\" data-icon=\"{{value}}\" data-loading>
+        <strong></strong>
       </div>"""
 
   progress:
