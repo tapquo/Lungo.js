@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <section id="main" data-transition="slide" data-aside="features" data-children="folk" data-pull="arrow-down">
+    <section id="main" data-transition="slide" data-aside="features" data-children="folk">
         <header>
             <nav class="left">
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
@@ -57,7 +57,7 @@
                         <small>Founder & CTO</small>
                     </a>
                 </li>
-                <li class="thumb" data-image="http://cdn.tapquo.com/photos/ina.jpg">
+                <li class="thumb" data-view-section="folk2" data-image="http://cdn.tapquo.com/photos/ina.jpg">
                     <strong>Ignacio Olalde</strong>
                     <small>... consectetur adipisicing elit.</small>
                 </li>
@@ -114,6 +114,21 @@
     </section>
 
     <section id='folk' data-transition="slide" data-aside="features" data-children="x">
+        <header data-title='Javi Jimenez'>
+            <nav>
+                <a href="#" data-view-section="back" data-label="Back" class="button"></a>
+            </nav>
+        </header>
+        <article id='f1' class='active list scroll'>
+            <ul>
+                <li>
+                    <strong>lorem</strong>
+                </li>
+            </ul>
+        </article>
+    </section>
+
+    <section id='folk2' data-transition="cover" data-aside="features" data-children="x">
         <header data-title='Javi Jimenez'>
             <nav>
                 <a href="#" data-view-section="back" data-label="Back" class="button"></a>
@@ -199,16 +214,16 @@
         });
 
         Lungo.ready(function() {
-            pull = new Lungo.Element.Pull('section#main article', {
-                onPull: "Pull down to refresh",
-                onRelease: "Release to get new data",
-                onRefresh: "Refreshing...",
-                callback: function() {
-                    setTimeout(function(){
-                        pull.hide();
-                    }, 1000)
-                }
-            });
+            // pull = new Lungo.Element.Pull('section#main article', {
+            //     onPull: "Pull down to refresh",
+            //     onRelease: "Release to get new data",
+            //     onRefresh: "Refreshing...",
+            //     callback: function() {
+            //         setTimeout(function(){
+            //             pull.hide();
+            //         }, 1000)
+            //     }
+            // });
         });
 
     </script>
