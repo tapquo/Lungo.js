@@ -10,6 +10,9 @@
 
     & > aside
       position: absolute
+      display: none !important
+      &.show
+        display: block !important
 
     & > section
       display: none
@@ -24,46 +27,43 @@
       &.show.hide
         z-index: -1
 
-
       &[data-transition]
         display-box()
-        transition-property opacity, z-index, transform
+        transition-property opacity, z-index, transform,        scale, opacity
         transition-duration TRANSITION_TIME
         transition-timing-function DEFAULT_TRANSITION
         backface-visibility hidden
 
-      /* Transition: POP */
-      &[data-transition="pop"]
-        opacity: 0
-        transform( scale(1.15) )
-        &.show
-          transform( scale(1) )
-          opacity: 1
-        &.hide
-          transform( scale(0.9) )
-          opacity: 0
-
       /* Transition: SLIDE */
       &[data-transition="slide"]
         visibility: visible
-
-        &:first-child
+        &.show, &:first-child
           transform translateX(0%)
         &:not(first-child)
           transform translateX(100%)
-
-        &.show
-          transform translateX(0%)
         &.hide
-          transform translateX(-100%)
+          transform scale(0.9)
+          opacity: 0.75
 
       /* Transition: COVER */
       &[data-transition="cover"]
-        transform translateY(110%)
+        transform translateY(100%)
         &.show, &.hide
           transform translateY(0%)
         &.hide
-          display: block
+          transform scale(0.9)
+          opacity: 0.75
+
+      /* Transition: POP */
+      &[data-transition="pop"]
+        opacity: 0
+        transform scale(1.15)
+        &.show
+          transform scale(1)
+          opacity: 1
+        &.hide
+          transform scale(0.9)
+          opacity: 0
 
       /* Transition: FADE */
       &[data-transition="fade"]
