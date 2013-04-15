@@ -49,6 +49,7 @@ Lungo.Constants =
     LEFT                : "left"
     HORIZONTAL          : "horizontal"
     SMALL               : "small"
+    LAST                : "last"
 
   TRIGGER:
     LOAD                : "load"

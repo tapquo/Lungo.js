@@ -26,30 +26,12 @@ Lungo.Router = do(lng = Lungo) ->
       target = if current then current.siblings(query) else lng.dom(query)
       if target.length > 0
         if lng.DEVICE is C.DEVICE.PHONE and current?
+          current.siblings("#{C.ELEMENT.SECTION}.#{C.CLASS.LAST}").removeClass C.CLASS.LAST
           lng.Section.defineTransition target, current
-          current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE)
+          current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE).addClass(C.CLASS.LAST)
 
         lng.Section.show current, target
         lng.Router.step section_id
-        do _url if Lungo.Config.history
-        do _updateNavigationElements
-
-
-  ###
-  Displays the <article> in a particular <section>.
-  @method   article
-  @param    {string} <section> Id
-  @param    {string} <article> Id
-  ###
-  article = (section_id, article_id, element) ->
-    if _notCurrentTarget(lng.Element.Cache.article, article_id)
-      lng.Router.section section_id
-      target = lng.Element.Cache.section.find "##{article_id}"
-      if target.length > 0
-        lng.Element.Cache.article.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
-        lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
-        if element?.data(C.ATTRIBUTE.TITLE)?
-          lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
         do _url if Lungo.Config.history
         do _updateNavigationElements
 
@@ -67,12 +49,34 @@ Lungo.Router = do(lng = Lungo) ->
       lng.Aside.hide()
       lng.Section.assignTransition target, target.data C.TRANSITION.ORIGIN
       current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDING)
-      setTimeout (-> current.removeClass(C.CLASS.HIDING)), C.TRANSITION.DURATION
+      setTimeout (->
+        current.removeClass(C.CLASS.HIDING)
+      ), C.TRANSITION.DURATION
       if target.hasClass("aside") then lng.Aside.toggle()
 
     lng.Section.show current, target
     do _url if Lungo.Config.history?
     do _updateNavigationElements
+
+
+  ###
+  Displays the <article> in a particular <section>.
+  @method   article
+  @param    {string} <section> Id
+  @param    {string} <article> Id
+  ###
+  article = (section_id, article_id, element) ->
+    if _notCurrentTarget(lng.Element.Cache.article, article_id)
+      lng.Router.section section_id
+      target = lng.Element.Cache.section.find "##{article_id}"
+      if target.length > 0
+        lng.Element.Cache.article.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
+        lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
+
+        if element?.data(C.ATTRIBUTE.TITLE)?
+          lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
+        do _url if Lungo.Config.history
+        do _updateNavigationElements
 
 
   ###
@@ -112,8 +116,8 @@ Lungo.Router = do(lng = Lungo) ->
   _removeLast = -> _history.length -= 1
 
 
-  section: section
-  article: article
-  back: back
-  history: history
-  step: step
+  section : section
+  back    : back
+  article : article
+  history : history
+  step    : step
