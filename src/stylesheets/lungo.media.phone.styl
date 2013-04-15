@@ -37,13 +37,20 @@
       /* Transition: SLIDE */
       &[data-transition="slide"]
         visibility: visible
+        z-index: 2
         &.show, &:first-child
           transform translateX(0%)
+          z-index: 1
         &:not(first-child)
           transform translateX(100%)
         &.hide
           transform scale(0.9)
-          opacity: 0.75
+          z-index: 0
+          &:not(.last)
+            opacity: 0
+            transition none !important
+          &.last
+            opacity: 0.5 !important
 
       /* Transition: COVER */
       &[data-transition="cover"]
@@ -52,7 +59,12 @@
           transform translateY(0%)
         &.hide
           transform scale(0.9)
-          opacity: 0.75
+          z-index: -1
+          &:not(.last)
+            opacity: 0
+            visibility: hidden
+          &.last
+            opacity: 0.2
 
       /* Transition: POP */
       &[data-transition="pop"]

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lungo Flexbox - SDK</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css">
+    <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+</head>
+
+<body>
+    <aside id="a">
+        <header data-title="aside"></header>
+        <article></article>
+    </aside>
+
+    <section id="zero" data-transition="slide" data-children="one" data-aside="a">
+        <header data-title="Zero">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="a"></button>
+            </nav>
+            <nav class="right">
+                <button data-icon="arrow-right" data-view-section="two"></button>
+            </nav>
+        </header>
+        <article id="zero-1"></article>
+    </section>
+
+    <section id="one" data-transition="slide" data-children="two" data-aside="a">
+        <header data-title="One">
+            <nav class="right">
+                <button data-icon="arrow-right" data-view-section="two"></button>
+            </nav>
+        </header>
+        <article id="one-1"></article>
+    </section>
+
+    <section id="two" data-transition="slide" data-children="three">
+        <header data-back="home" data-title="Two">
+            <nav class="right">
+                <button data-icon="arrow-right" data-view-section="three"></button>
+            </nav>
+        </header>
+        <article id="two-1"></article>
+    </section>
+
+    <section id="three" data-transition="slide" data-children="four">
+        <header data-back="home" data-title="Three">
+            <nav class="right">
+                <button data-icon="arrow-down" data-view-section="four"></button>
+            </nav>
+        </header>
+        <article id="three-1"></article>
+    </section>
+
+    <section id="four" data-transition="cover">
+        <header data-back="home" data-title="Four"></header>
+        <article id="four-1"></article>
+    </section>
+
+    <!-- Lungo dependencies -->
+    <script src="components/quojs/quo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
+    <!-- LungoJS - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 'Flexbox',
+            version: '2.2',
+            history: false
+        });
+    </script>
+</body>
+</html>
