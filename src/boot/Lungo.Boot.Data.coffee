@@ -31,6 +31,7 @@ Lungo.Boot.Data = do(lng = Lungo) ->
     element.find(selector).each (index, children) ->
       el = lng.dom(children)
       _bindDataAttribute el, el.data(key), attribute.html
+    _bindDataAttribute(element, element.data(key), attribute.html) if element.data(key)?
 
   _bindDataAttribute = (element, value, html) ->
     element.prepend html.replace(/\{\{value\}\}/g, value)
