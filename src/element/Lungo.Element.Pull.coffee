@@ -26,10 +26,12 @@ Lungo.Element.Pull = (element_selector, config_data) ->
     callback: undefined
 
   CONFIG = Lungo.Core.mix(CONFIG_BASE, config_data)
+
   hide = ->
     _moveElementTo 0, true
     setTimeout (->
       REFRESHING = false
+      CONTAINER.attr "class", ""
       document.removeEventListener "touchmove", _blockGestures, false
     ), ANIMATION_TIME
     CURRENT_DISTANCE = 0
