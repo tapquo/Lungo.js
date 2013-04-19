@@ -166,7 +166,10 @@ size = 5px
   margin: 0
 
 /* ==================================  PULL  ================================== */
-body > section.show > [data-control="pull"]
+section.hide > [data-control="pull"]
+  display: none
+
+section.show > [data-control="pull"]
   position: absolute
   z-index: -1
   top: HEADER_HEIGHT
@@ -205,6 +208,7 @@ body > section.show > [data-control="pull"]
       display: none
     & > .loading
       display: inline-block
+
 
 
 /* ================================  SPLASH  ================================ */
