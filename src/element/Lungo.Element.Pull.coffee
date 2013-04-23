@@ -96,6 +96,7 @@ Lungo.Element.Pull = (element_selector, config_data) ->
         INI_Y = (if $$.isMobile() then event.touches[0].pageY else event.pageY)
     ).bind("touchmove", (event) ->
       if not REFRESHING and STARTED
+        do event.preventDefault
         current_y = (if $$.isMobile() then event.touches[0].pageY else event.pageY)
         CURRENT_DISTANCE = current_y - INI_Y
         if CURRENT_DISTANCE >= 0
