@@ -87,8 +87,13 @@ Lungo.Element.Pull = (element_selector, config_data) ->
     else
       hide()
 
+  _bindPreventDefault = (event) ->    ELEMENT[0].addEventListener "touchmove", _prevent
+  _unbindPreventDefault = (event) ->  ELEMENT[0].removeEventListener "touchmove", _prevent
+  _prevent = (event) -> do event.preventDefault
+
   (->
     STARTED = false
+    BINDED_TO_PREVENT = false
     INI_Y = {}
     ELEMENT.bind("touchstart", (event) ->
       if ELEMENT[0].scrollTop <= 1
@@ -96,13 +101,16 @@ Lungo.Element.Pull = (element_selector, config_data) ->
         INI_Y = (if $$.isMobile() then event.touches[0].pageY else event.pageY)
     ).bind("touchmove", (event) ->
       if not REFRESHING and STARTED
-        do event.preventDefault
         current_y = (if $$.isMobile() then event.touches[0].pageY else event.pageY)
         CURRENT_DISTANCE = current_y - INI_Y
         if CURRENT_DISTANCE >= 0
           ELEMENT.style "overflow-y", "hidden"
+          _bindPreventDefault(event) unless BINDED_TO_PREVENT
+          BINDED_TO_PREVENT = true
           _handlePulling()
     ).bind "touchend", ->
+      _unbindPreventDefault(event) if BINDED_TO_PREVENT
+      BINDED_TO_PREVENT = false
       if STARTED
         ELEMENT.style "overflow-y", "scroll"
         _handlePullEnd()
