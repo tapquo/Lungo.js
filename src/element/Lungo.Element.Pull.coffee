@@ -32,13 +32,13 @@ Lungo.Element.Pull = (element_selector, config_data) ->
     setTimeout (->
       REFRESHING = false
       CONTAINER.attr "class", ""
-      document.removeEventListener "touchmove", _blockGestures, false
+      ELEMENT[0].removeEventListener "touchmove", _blockGestures, true
     ), ANIMATION_TIME
     CURRENT_DISTANCE = 0
 
   _moveElementTo = (posY, animate) ->
     newPos = (if posY > MAX_HEIGHT then MAX_HEIGHT else posY)
-    ELEMENT.addClass "pull" if animate
+    if animate then ELEMENT.addClass "pull" else ELEMENT.removeClass "pull"
     ELEMENT.style "-webkit-transform", "translate(0, " + (newPos) + "px)"
     if animate
       setTimeout (->
@@ -47,7 +47,7 @@ Lungo.Element.Pull = (element_selector, config_data) ->
 
   _refreshStart = (event) ->
     REFRESHING = true
-    document.addEventListener "touchmove", _blockGestures, false
+    ELEMENT[0].addEventListener "touchmove", _blockGestures, true
     _setContainerTitle CONFIG.onRefresh
     _setContainerLoading true
     _moveElementTo REFRESHING_HEIGHT, true
@@ -57,19 +57,12 @@ Lungo.Element.Pull = (element_selector, config_data) ->
     CONTAINER.find("strong").html title
 
   _setContainerLoading = (op) ->
-    if op
-      CONTAINER.addClass "refresh"
-    else
-      CONTAINER.removeClass "refresh"
+    if op then CONTAINER.addClass "refresh" else CONTAINER.removeClass "refresh"
 
   _setContainerOnPulling = (op) ->
-    if op
-      CONTAINER.addClass "rotate"
-    else
-      CONTAINER.removeClass "rotate"
+    if op then CONTAINER.addClass "rotate" else CONTAINER.removeClass "rotate"
 
-  _blockGestures = (touchEvent) ->
-    touchEvent.preventDefault()
+  _blockGestures = (touchEvent) -> touchEvent.preventDefault()
 
   _handlePulling = (event) ->
     _moveElementTo CURRENT_DISTANCE, false
@@ -82,40 +75,32 @@ Lungo.Element.Pull = (element_selector, config_data) ->
       _setContainerOnPulling false
 
   _handlePullEnd = (event) ->
-    if CURRENT_DISTANCE > REFRESHING_HEIGHT
-      _refreshStart()
-    else
-      hide()
+    if CURRENT_DISTANCE > REFRESHING_HEIGHT then do _refreshStart else do hide
+    @
 
-  _bindPreventDefault = (event) ->    ELEMENT[0].addEventListener "touchmove", _prevent
-  _unbindPreventDefault = (event) ->  ELEMENT[0].removeEventListener "touchmove", _prevent
-  _prevent = (event) -> do event.preventDefault
+  _getTouchY = (event) ->
+    if $$.isMobile() then event.touches[0].pageY else event.pageY
 
   (->
     STARTED = false
-    BINDED_TO_PREVENT = false
-    INI_Y = {}
+    INI_Y = 0
     ELEMENT.bind("touchstart", (event) ->
       if ELEMENT[0].scrollTop <= 1
         STARTED = true
-        INI_Y = (if $$.isMobile() then event.touches[0].pageY else event.pageY)
+        INI_Y = _getTouchY event
+      true
     ).bind("touchmove", (event) ->
       if not REFRESHING and STARTED
-        current_y = (if $$.isMobile() then event.touches[0].pageY else event.pageY)
+        current_y = _getTouchY event
         CURRENT_DISTANCE = current_y - INI_Y
         if CURRENT_DISTANCE >= 0
-          ELEMENT.style "overflow-y", "hidden"
-          _bindPreventDefault(event) unless BINDED_TO_PREVENT
-          BINDED_TO_PREVENT = true
-          _handlePulling()
+          _handlePulling event
+          do event.preventDefault
+      true
     ).bind "touchend", ->
-      _unbindPreventDefault(event) if BINDED_TO_PREVENT
-      BINDED_TO_PREVENT = false
-      if STARTED
-        ELEMENT.style "overflow-y", "scroll"
-        _handlePullEnd()
-      INI_TOUCH = {}
+      if STARTED then _handlePullEnd()
       STARTED = false
+      true
 
   )()
 
