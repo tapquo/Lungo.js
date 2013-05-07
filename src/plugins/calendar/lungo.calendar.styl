@@ -1,12 +1,28 @@
+
+@import "../../stylesheets/__init.styl"
+
 [data-control=calendar]
+  transition-property margin-top
+  transition-duration TRANSITION_TIME
+  transition-timing-function DEFAULT_TRANSITION
   position: absolute
-  top: 128px
-  left: 20px
-  z-index: 5 !important
-  width: 280px
   display: block
-  font-size: 17px
-  margin: 0 auto
+  margin-top: -350px
+  left: 20px
+  z-index: 1999 !important
+  width: 280px
+  font-size: 15px
+
+  &.show
+    margin-top: 50px
+
+  & span[data-action]
+    display: inline-block
+    width: 20px
+
+  & strong
+    display: inline-block
+    width: 80px
 
   & table
     background: #fff
@@ -28,9 +44,9 @@
       font-weight: 600
       position: relative
       border: solid 1px #eee
-      &:hover
-        background: green
-        border: 0px
+      // &:hover
+      //   background: green
+      //   border: 0px
       &.today
         background: blue
         color: #fff !important
@@ -47,6 +63,7 @@
         color: red
       &.disabled
         color: #ddd
+
   & .layout
     line-height: 40px
     background: #000

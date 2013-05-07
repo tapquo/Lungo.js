@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Brownie calendar</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- iPhone -->
+    <link href="http://cdn.tapquo.com/lungo/icon-57.png" sizes="57x57" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px)
+             and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+    <!-- iPhone (Retina) -->
+    <link href="http://cdn.tapquo.com/lungo/icon-114.png" sizes="114x114" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px)
+             and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+    <!-- iPhone 5 -->
+    <link href="http://cdn.tapquo.com/lungo/startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px)
+             and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+    <!-- iPad -->
+    <link href="http://cdn.tapquo.com/lungo/icon-72.png" sizes="72x72" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px)
+             and (orientation: portrait)
+             and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px)
+             and (orientation: landscape)
+             and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+    <!-- iPad (Retina) -->
+    <link href="http://cdn.tapquo.com/lungo/icon-144.png" sizes="144x144" rel="apple-touch-icon">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px)
+             and (orientation: portrait)
+             and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+    <link href="http://cdn.tapquo.com/lungo/startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px)
+             and (orientation: landscape)
+             and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+    <!-- App Stylesheet -->
+    <link rel="stylesheet" href="static/stylesheets/app.css">
+    <link rel="stylesheet" href="../packages/lungo.calendar/lungo.calendar.css" />
+</head>
+
+<body>
+
+    <section id="main" data-transition="" data-aside="features" class="drag">
+        <header>
+            <img src="static/images/logo.png" class="title centered">
+        </header>
+        <article id="main-article" class="list indented scroll">
+
+
+            <button class="small">show!</button>
+            <br />
+            <br />
+
+            <input data-type="calendar" value="" />
+            <input data-type="calendar" value="2000-02-20" />
+            <input data-type="calendar" value="2200-12-31" />
+            <input data-type="calendar" value="2150-12-31" />
+            <input data-type="calendar" value="2140-12-31" />
+            <input data-type="calendar" value="2130-12-31" />
+            <input data-type="calendar" value="2120-12-31" />
+            <input data-type="calendar" value="2110-12-31" />
+
+            <input data-type="calendar" value="" />
+            <input data-type="calendar" value="2000-02-20" />
+            <input data-type="calendar" value="2200-12-31" />
+            <input data-type="calendar" value="2150-12-31" />
+            <input data-type="calendar" value="2140-12-31" />
+            <input data-type="calendar" value="2130-12-31" />
+            <input data-type="calendar" value="2120-12-31" />
+            <input data-type="calendar" value="2110-12-31" />
+
+            <input data-type="calendar" value="" />
+            <input data-type="calendar" value="2000-02-20" />
+            <input data-type="calendar" value="2200-12-31" />
+            <input data-type="calendar" value="2150-12-31" />
+            <input data-type="calendar" value="2140-12-31" />
+            <input data-type="calendar" value="2130-12-31" />
+            <input data-type="calendar" value="2120-12-31" />
+            <input data-type="calendar" value="2110-12-31" />
+
+
+
+        </article>
+    </section>
+
+    <script src="components/quojs/quo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
+    <script src="../packages/lungo.calendar/lungo.calendar.js"></script>
+    <script>
+        Lungo.init({
+            name: "Calendar test",
+            version: "1.0",
+            history: false
+        });
+
+        $$(function() {
+            $$("button").bind("tap", function() {
+                Lungo.Sugar.Calendar.show("2012-01-01", function(date) {
+                    alert(date);
+                    // Lungo.Sugar.Calendar.hide();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
