@@ -13,7 +13,7 @@ LOADING = 104px
 WINDOW_WIDTH = 280px
 
 .notification
-  position: absolute
+  position: relative
   top: 0
   left: 0
   width: 100%
@@ -34,7 +34,6 @@ WINDOW_WIDTH = 280px
     opacity: 0
     text-align: center
     transition-duration (TRANSITION_TIME / 2)
-    // transition-duration TRANSITION_TIME
     transition-timing-function DEFAULT_TRANSITION
     backface-visibility hidden
 
@@ -48,20 +47,30 @@ WINDOW_WIDTH = 280px
         margin-top: 0%
 
     &.growl
-      width: LOADING
-      height: LOADING
-      padding: 0 8px
+      & > *
+        position: absolute
+      &, & > *:not(.loading)
+        width: LOADING
+        text-align: center
+      &, & > .icon
+        height: LOADING !important
+
       & > .icon
+        left: 0px
+        top: 0px
         font-size: 52px
         line-height: LOADING
-        & ~ strong
-          position: relative
-          top: -(LOADING / 4.5)
-          height: 18px
-          overflow: hidden
+      & > strong
+        height: 18px
+        top: (LOADING - 20px)
+        padding: 0 0.5em
+        overflow: hidden
+
+      & > small
+        display: none
+
       & > .loading
-        top: 26px
-        display: block
+        top: 28px
 
     &.success, &.error, &.confirm, &.html
       width: WINDOW_WIDTH

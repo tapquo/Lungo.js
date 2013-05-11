@@ -41,7 +41,7 @@ Lungo.Notification = do(lng = Lungo) ->
       markup = _markup(title, null, icon)
     else
       data_loading = lng.Attributes.loading.html
-      markup = data_loading.replace(BINDING.START + BINDING.KEY + BINDING.END, "icon white")
+      markup = data_loading.replace(BINDING.START + BINDING.KEY + BINDING.END, "white")
     _show markup, "growl"
     _hide seconds, callback
 
