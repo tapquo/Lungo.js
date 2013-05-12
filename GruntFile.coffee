@@ -65,10 +65,10 @@ module.exports = (grunt) ->
 
     stylus:
       core:
-        options: compress: false, import: [ '__init']
+        options: compress: true, import: [ '__init']
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.css': '<%=source.stylus%>'
       theme:
-        options: compress: false, banner: "<%= meta.banner %>"
+        options: compress: false
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=source.theme%>'
       icons:
         files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
