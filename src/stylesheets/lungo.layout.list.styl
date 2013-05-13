@@ -38,10 +38,15 @@
       margin-right: LIST_PADDING_HORIZONTAL
 
     &:not(.thumb)
-      & img, & .icon
+      section & img, section & .icon
         width: S = 34px
         height: S
         font-size: 2.6em
+      aside & img, aside & .icon
+        width: S = 18px
+        height: S
+        font-size: 1.3em
+
     &.thumb
       & img, & .icon
         margin-top: -(LIST_PADDING)
@@ -87,3 +92,6 @@
 
   &.indented li:not(:last-child)
     margin-bottom: 10px
+
+
+

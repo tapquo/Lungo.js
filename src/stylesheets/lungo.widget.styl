@@ -37,7 +37,6 @@
   &.right
     float: right
 
-
 /* ================================  SCROLL  ================================ */
 .overthrow-enabled .overthrow
   overflow: auto
@@ -67,14 +66,6 @@
 
 /* ================================  TEXT  ================================ */
 .text
-  &.thin
-    font-weight: 300
-  &.normal
-    font-weight: 400
-  &.bold
-    font-weight: 600
-  &.extra-bold
-    font-weight: 700
   &.italic
     font-style: italic
   &.underline
@@ -101,19 +92,16 @@
 
 /* ================================  TAG  ================================ */
 .tag
-  display: inline-block
-  padding: 0px 3px
+  padding: 0 0.5em
   font-size: FONT_SIZE_TINY
-  line-height: (FONT_SIZE_LARGE / 1.1)
-  height: FONT_SIZE_LARGE
+  line-height: inherit
   text-align: center
-  min-width: 16px
   z-index: 1
 
-size = 5px
-.margin
-  &.bottom
-    margin-bottom: size
+// size = 5px
+// .margin
+//   &.bottom
+//     margin-bottom: size
 
 
 /* ================================  .LAYOUT  ================================ */

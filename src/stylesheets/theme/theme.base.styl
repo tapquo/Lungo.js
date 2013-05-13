@@ -7,7 +7,7 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700")
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,400,700")
 
 body
   background-color: #000
@@ -17,6 +17,14 @@ body
   font-size: 13px
   line-height: 1.3em
   letter-spacing: -0.05em
+
+  & .text
+    &.thin
+      font-weight: 300
+    &.normal
+      font-weight: 400
+    &.bold
+      font-weight: 700
 
   & .theme
     background-color: THEME-light
