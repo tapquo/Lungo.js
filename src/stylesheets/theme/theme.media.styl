@@ -1,0 +1,16 @@
+@import "__init.styl"
+
+
+/* ==== Any tablet ==== */
+@media only screen and (min-width: 768px)
+  body
+    & > section[data-children]
+      margin-right: 0.5em
+
+
+/* ==== Any phone ==== */
+@media only screen and (max-width: 767px)
+  body
+    & > section
+      & > header
+        border-radius (BORDER_radius * 2.5) (BORDER_radius * 2.5) 0 0
