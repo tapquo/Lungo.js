@@ -21,7 +21,11 @@ Lungo.Aside = do(lng = Lungo) ->
 
     # Deactive
     if current_aside and aside_id isnt current_aside?.attr(C.ATTRIBUTE.ID)
-      current_aside.removeClass(C.CLASS.SHOW).removeClass C.CLASS.ACTIVE
+      if lng.DEVICE is C.DEVICE.PHONE
+        current_aside.removeClass(C.CLASS.SHOW).removeClass C.CLASS.ACTIVE
+      else
+        current_aside.addClass(C.CLASS.HIDE)
+        setTimeout (-> current_aside.removeClass(C.CLASS.SHOW).removeClass(C.CLASS.ACTIVE).removeClass(C.CLASS.HIDE)), C.TRANSITION.DURATION
       lng.Element.Cache.aside = null
 
     # Active

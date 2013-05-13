@@ -9,8 +9,15 @@
       transform translateX(-100%)
       transition-property transform
       transition-duration TRANSITION_TIME
+      margin-right: -(ASIDE_WIDTH)
       &.show
         transform translateX(0%)
+        margin-right: 0
+        transition-delay (TRANSITION_TIME / 2)
+      &.hide
+        transform translateX(-100%)
+        margin-right: -(ASIDE_WIDTH)
+        transition-delay 0 !important
 
     & > section
       display: none
@@ -25,7 +32,7 @@
         animation hiding TRANSITION_TIME
 
       &:not([data-children])
-        box-flex (1)
+        box-flex(1)
 
       &[data-children]
         width: 320px
