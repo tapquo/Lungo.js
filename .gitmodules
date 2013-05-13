@@ -34,3 +34,6 @@
 [submodule "packages/lungo.icon"]
     path = packages/lungo.icon
     url = https://github.com/TapQuo/lungo.icon.git
+[submodule "lungo.firefoxos"]
+	path = packages/lungo.firefoxos
+	url = https://github.com/TapQuo/lungo.firefoxos.git
