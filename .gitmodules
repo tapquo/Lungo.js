@@ -29,11 +29,14 @@
     path = packages/lungo.terminal
     url = https://github.com/TapQuo/lungo.terminal.git
 [submodule "example/components/lungo.brownie"]
-	path = example/components/lungo.brownie
-	url = https://github.com/soyjavi/lungo.brownie.git
+    path = example/components/lungo.brownie
+    url = https://github.com/soyjavi/lungo.brownie.git
 [submodule "packages/lungo.icon"]
-	path = packages/lungo.icon
-	url = https://github.com/TapQuo/lungo.icon.git
+    path = packages/lungo.icon
+    url = https://github.com/TapQuo/lungo.icon.git
 [submodule "packages/lungo.calendar"]
-	path = packages/lungo.calendar
-	url = https://github.com/TapQuo/lungo.calendar.git
+    path = packages/lungo.calendar
+    url = https://github.com/TapQuo/lungo.calendar.git
+[submodule "packages/lungo.firefoxos"]
+    path = packages/lungo.firefoxos
+    url = https://github.com/TapQuo/lungo.firefoxos.git
