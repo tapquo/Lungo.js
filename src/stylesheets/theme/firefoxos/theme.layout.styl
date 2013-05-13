@@ -1,0 +1,45 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+body > section
+  background-color: COLOR
+  &, & a
+    color: COLOR
+  & > header
+    C = THEME
+    background-color: THEME
+    box-shadow 0 2px 0px rgba(0,0,0,0.1), inset 0 1px 1px lighten(C, 25%), inset 0 -1px 0 darken(C, 20%)
+    color: #fff
+
+  & > footer, & nav[data-control=groupbar]
+    background-color: COLOR
+  & > article, & > [data-control="pull"]
+    background-color: BACKGROUND
+    &.splash
+      background: THEME
+      color: #fff
+  &.aside
+    box-shadow -1px 0 2px rgba(0,0,0,0.2)
+    &.right
+      box-shadow 1px 0 2px rgba(0,0,0,0.2)
+
+  &[data-pull] > article.active
+    box-shadow: 0 -1px 0 rgba(0,0,0,0.05)
+
+body > aside
+  background-color: COLOR
+  color: #fff
+  C = darken(COLOR, 20%)
+  & > header, > footer
+    background-color: C
+  & > header
+    box-shadow 0 2px 0 rgba(0,0,0,0.15), inset 0 1px 0 lighten(C, 10%), inset 0 -1px 0 darken(C, 20%)
+
+body > * > header > .title
+  font-weight: 700

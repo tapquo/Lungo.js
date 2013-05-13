@@ -1,0 +1,122 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+form, .form
+  & label
+    color: #aaa
+    font-weight: 300
+
+  & fieldset
+    background: #fff
+    border-bottom: 1px solid BACKGROUND
+    & .icon
+      color: #ccc
+    &.radius-top
+      border-radius (BORDER_radius * 2) (BORDER_radius * 2) 0 0
+    &.radius-bottom
+      border-radius 0 0 (BORDER_radius * 2) (BORDER_radius * 2)
+    &.radius
+      border-radius (BORDER_radius * 2)
+    &.shadow
+      border-bottom: 1px solid rgba(0,0,0,0.1)
+
+  & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
+    background-color: white
+    color: rgba(0, 0, 0, 0.75)
+    &.border
+      border: FORM_border solid FORM_color
+      border-radius: FORM_border_radius
+    &.error, &:required
+      color: DANGER !important
+      border-color: DANGER !important
+    &.success
+      color: SUCCESS !important
+      border-color: SUCCESS !important
+    &:focus, &:active, &:hover
+      color: THEME
+      border-color: THEME
+    &[disabled]
+      background: FORM_color
+      border-color: FORM_color
+      color: darken(FORM_color, 25%)
+
+
+  /* -------------------------- SELECT -------------------------- */
+  & select, label.select
+    &:after
+      color: FORM_color
+    &:focus, &:active, &:hover
+      &:after
+        color: THEME
+
+  /* -------------------------- RANGE -------------------------- */
+  & input[type=range]
+    background-color: FORM_color
+    color: darken(FORM_color, 25%)
+    border-radius: (FORM_border_radius * 4)
+    &:active
+      background-color: THEME !important
+      color: #fff
+      &::-webkit-slider-thumb
+        background-color: darken(THEME, 25%) !important
+    &::-webkit-slider-thumb
+      border-radius (FORM_border_radius * 4)
+      background-color: darken(FORM_color, 25%)
+
+  /* -------------------------- PROGRESS -------------------------- */
+  & [data-progress]
+    background-color: #ddd
+    & .value
+      background-color: THEME
+    &, & .value
+      border-radius (FORM_border_radius * 3)
+
+  /* -------------------------- CHECKBOX -------------------------- */
+  & [data-control-checkbox]
+    background: FORM_color
+    color: darken(FORM_color, 25%)
+    font-weight: 700
+    border-radius: FORM_border_radius
+    // box-shadow: inset 0px 1px 2px rgba(0,0,0,0.25), 0px 1px 0px rgba(255,255,255,0.25)
+    & label
+      border-radius: FORM_border_radius
+      background: darken(FORM_color, 25%)
+    &.checked
+      background-color: THEME
+      color: #fff !important
+      & label
+        background-color: darken(THEME, 25%)
+
+    &.accept
+      &.checked
+        background-color: SUCCESS
+        & label
+          background-color: darken(SUCCESS, 25%)
+    &.cancel
+      &.checked
+        background-color: DANGER
+        & label
+          background-color: darken(DANGER, 25%)
+
+    // Expand
+    &.icon
+      font-family:'lungojsicon'
+      font-size: 1.3em
+      line-height: 1.4em
+
+      &.twitter
+        &:before
+          content: "\f099"
+        &:after
+          content: "\f099"
+      &.ok
+        &:before
+          content: "\f00c"
+        &:after
+          content: "\f00d"

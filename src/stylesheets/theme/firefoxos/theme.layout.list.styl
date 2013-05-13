@@ -1,0 +1,63 @@
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Theme
+ * @class Layout
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
+
+.list
+  section & li
+    background: #fff
+    &:not(.anchor)
+      border-bottom: inset 1px LIST_border
+    &.color
+      box-shadow: inset 4px 0px 0px COLOR
+    &.accept
+      box-shadow: inset 4px 0px 0px SUCCESS
+    &.cancel
+      box-shadow: inset 4px 0px 0px DANGER
+    &.warning
+      box-shadow: inset 4px 0px 0px WARNING
+    &.arrow::after
+      border-color: lighten(COLOR, 75%)
+
+    &, a
+      &.contrast
+        background: COLOR
+      &.selectable:active, &.theme, &.active
+        background: lighten(THEME, 15%)
+      &.light
+        background: LIST_border
+        color: lighten(COLOR, 20%)
+      &.contrast, &.selectable:active, &.theme
+        &, small, & .right:not(.tag), strong, .arrow::after
+          color: #fff
+        &.arrow::after
+          border-color: #fff
+      & small, & .right:not(.tag)
+        color: lighten(COLOR, 20%)
+
+  &:not(.indented) li
+    &.dark, &.theme, &.light
+      border-bottom-color: rgba(0,0,0,0.1)
+
+  aside & li
+    background: none
+    &:not(:first-child)
+      border-top: solid 1px  lighten(COLOR, 5%)
+    &:not(:last-child)
+      border-bottom: solid 1px darken(COLOR, 20%)
+    &:active
+      background: darken(COLOR, 5%)
+    &.active
+      background: THEME
+    &.active, &:active
+      border-color: transparent
+      & strong, & small, & .icon
+        color: #fff
+    & strong
+      color: lighten(COLOR, 75%)
+    & small, .icon
+      color: lighten(COLOR, 40%)
