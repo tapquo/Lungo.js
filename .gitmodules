@@ -35,8 +35,8 @@
     path = packages/lungo.icon
     url = https://github.com/tapquo/lungo.icon.git
 [submodule "lungo.firefoxos"]
-	path = packages/lungo.firefoxos
-	url = https://github.com/tapquo/lungo.firefoxos.git
+    path = packages/lungo.firefoxos
+    url = https://github.com/tapquo/lungo.firefoxos.git
 [submodule "packages/lungo.calendar"]
-	path = packages/lungo.calendar
-	url = https://github.com/tapquo/lungo.firefoxos.git
+    path = packages/lungo.calendar
+    url = https://github.com/tapquo/lungo.calendar.git
