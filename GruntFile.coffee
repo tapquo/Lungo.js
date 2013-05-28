@@ -44,7 +44,9 @@ module.exports = (grunt) ->
         'src/stylesheets/lungo.layout.*.styl',
         'src/stylesheets/lungo.widget.styl',
         'src/stylesheets/lungo.widget.*.styl',
-        'src/stylesheets/lungo.media.*.styl']
+        'src/stylesheets/lungo.media.*.styl',
+        'src/stylesheets/lungo.animation.styl',
+        'src/stylesheets/lungo.animation.*.styl']
       theme: [
         'src/stylesheets/theme/theme.*.styl']
       theme_firefoxos: [

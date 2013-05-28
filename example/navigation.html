@@ -19,6 +19,8 @@
 </head>
 
 <body>
+
+    <!--
     <aside id="a">
         <header data-title="aside a"></header>
         <article></article>
@@ -28,12 +30,14 @@
         <header data-title="aside b"></header>
         <article></article>
     </aside>
+    -->
 
-    <section id="zero" data-transition data-children="one" data-aside="a">
+    <!-- <section id="zero" data-transition="slide" data-children="one" data-aside="a"> -->
+    <section id="zero" data-transition="slide" data-children="one">
         <header data-title="Zero">
-            <nav class="left">
+            <!-- <nav class="left">
                 <button data-icon="list" data-view-aside="a"></button>
-            </nav>
+            </nav> -->
             <nav class="right">
                 <button data-icon="arrow-right" data-view-section="one"></button>
             </nav>
@@ -41,18 +45,18 @@
         <article id="zero-1"></article>
     </section>
 
-    <section id="one" data-transition="slide" data-children="two" data-aside="b">
+    <!-- <section id="one" data-transition="slide" data-children="two" data-aside="b"> -->
+    <section id="one" data-transition="slide" data-children="two">
         <header data-title="One" data-back="home">
-            <nav class="left">
+            <!-- <nav class="left">
                 <button data-icon="list" data-view-aside="b"></button>
-            </nav>
+            </nav> -->
             <nav class="right">
                 <button data-icon="arrow-right" data-view-section="two"></button>
             </nav>
         </header>
         <article id="one-1"></article>
     </section>
-
     <section id="two" data-transition="slide" data-children="three">
         <header data-back="home" data-title="Two">
             <nav class="right">
@@ -71,11 +75,12 @@
         <article id="three-1"></article>
     </section>
 
+<!--
     <section id="four" data-transition="cover">
         <header data-back="home" data-title="Four"></header>
         <article id="four-1"></article>
     </section>
-
+ -->
     <!-- Lungo dependencies -->
     <script src="components/quojs/quo.js"></script>
     <script src="components/lungo.brownie/lungo.debug.js"></script>

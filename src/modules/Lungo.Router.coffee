@@ -9,9 +9,11 @@ Handles the <sections> and <articles> to show
 ###
 
 Lungo.Router = do(lng = Lungo) ->
-  C        = lng.Constants
-  HASHTAG  = "#"
-  _history = []
+
+  C                   = lng.Constants
+  HASHTAG             = "#"
+  ANIMATIONEND_EVENTS = ["animationend", "webkitAnimationEnd", "oanimationend", "MSAnimationEnd"]
+  _history            = []
 
 
   ###
@@ -20,18 +22,24 @@ Lungo.Router = do(lng = Lungo) ->
   @param    {string} Id of the <section>
   ###
   section = (section_id) ->
+    console.error "router section #{section_id}"
     current = lng.Element.Cache.section
     if _notCurrentTarget(current, section_id)
       query = C.ELEMENT.SECTION + HASHTAG + section_id
       target = if current then current.siblings(query) else lng.dom(query)
       if target.length > 0
         if lng.DEVICE is C.DEVICE.PHONE and current?
-          current.siblings("#{C.ELEMENT.SECTION}.#{C.CLASS.LAST}").removeClass C.CLASS.LAST
-          lng.Section.defineTransition target, current
-          current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE).addClass(C.CLASS.LAST)
+
+          console.error current, target
+          current.addClass "moveToBack"
+          target.addClass "moveFromRight"
+          do _bindEnd
+          # current.siblings("#{C.ELEMENT.SECTION}.#{C.CLASS.LAST}").removeClass C.CLASS.LAST
+          # lng.Section.defineTransition target, current
+          # current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE).addClass(C.CLASS.LAST)
 
         lng.Section.show current, target
-        lng.Router.step section_id
+        # lng.Router.step section_id
         do _url unless Lungo.Config.history is false
         do _updateNavigationElements
 
@@ -114,6 +122,16 @@ Lungo.Router = do(lng = Lungo) ->
     nav.filter("[data-article*='#{article_id}']").removeClass C.CLASS.HIDE
 
   _removeLast = -> _history.length -= 1
+
+  _bindEnd = ->
+    document.addEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS
+
+  _unbindEnd = ->
+    document.removeEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS
+
+  _transitionEnd = ->
+    console.error 'Transition END!'
+    do _unbindEnd
 
 
   section : section
