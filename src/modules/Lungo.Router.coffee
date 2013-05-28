@@ -55,7 +55,7 @@ Lungo.Router = do(lng = Lungo) ->
       if target.hasClass("aside") then lng.Aside.toggle()
 
     lng.Section.show current, target
-    do _url if Lungo.Config.history?
+    do _url if Lungo.Config.history
     do _updateNavigationElements
 
 
