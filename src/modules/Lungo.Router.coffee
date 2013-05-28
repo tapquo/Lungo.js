@@ -32,7 +32,7 @@ Lungo.Router = do(lng = Lungo) ->
 
         lng.Section.show current, target
         lng.Router.step section_id
-        do _url if Lungo.Config.history
+        do _url unless Lungo.Config.history is false
         do _updateNavigationElements
 
 
@@ -55,7 +55,7 @@ Lungo.Router = do(lng = Lungo) ->
       if target.hasClass("aside") then lng.Aside.toggle()
 
     lng.Section.show current, target
-    do _url if Lungo.Config.history
+    do _url unless Lungo.Config.history is false
     do _updateNavigationElements
 
 
@@ -75,7 +75,7 @@ Lungo.Router = do(lng = Lungo) ->
 
         if element?.data(C.ATTRIBUTE.TITLE)?
           lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
-        do _url if Lungo.Config.history
+        do _url unless Lungo.Config.history is false
         do _updateNavigationElements
 
 
