@@ -1,0 +1,36 @@
+@import "__init.styl"
+
+TRANSLATE_Y = -18%
+TRANSLATE_Z = -150px
+ROTATE_X    = 20deg
+
+.coverIn
+  vendor(animation, coverIn TRANSITION_TIME ease both)
+.coverOut
+  vendor(animation, coverOut TRANSITION_TIME ease both)
+.coverInBack
+  vendor(animation, coverInBack TRANSITION_TIME ease both)
+.coverOutBack
+  vendor(animation, coverOutBack TRANSITION_TIME ease both)
+
+
+@keyframes coverIn
+  from {
+    transform: translateY(100%);
+  }
+
+@keyframes coverOut
+  to {
+    transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y)
+  }
+
+@keyframes coverInBack
+  from {
+    transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y)
+  }
+
+@keyframes coverOutBack
+  to {
+    transform: translateY(100%)
+  }
+

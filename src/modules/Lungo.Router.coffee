@@ -8,13 +8,15 @@ Handles the <sections> and <articles> to show
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
 ###
 
-Lungo.Router = do(lng = Lungo) ->
+Lungo.Router = do (lng = Lungo) ->
 
   C                   = lng.Constants
   HASHTAG             = "#"
   ANIMATIONEND_EVENTS = ["animationend", "webkitAnimationEnd", "oanimationend", "MSAnimationEnd"]
   _history            = []
-
+  _outPage            = undefined
+  _inPage             = undefined
+  _animating          = false
 
   ###
   Navigate to a <section>.
@@ -22,24 +24,20 @@ Lungo.Router = do(lng = Lungo) ->
   @param    {string} Id of the <section>
   ###
   section = (section_id) ->
-    console.error "router section #{section_id}"
-    current = lng.Element.Cache.section
-    if _notCurrentTarget(current, section_id)
+    _outPage = lng.Element.Cache.section
+    if _notCurrentTarget(_outPage, section_id)
       query = C.ELEMENT.SECTION + HASHTAG + section_id
-      target = if current then current.siblings(query) else lng.dom(query)
-      if target.length > 0
-        if lng.DEVICE is C.DEVICE.PHONE and current?
+      _inPage = if _outPage then _outPage.siblings(query) else lng.dom(query)
+      if _inPage.length > 0
+        if lng.DEVICE is C.DEVICE.PHONE and _outPage?
+          outClass = _inPage.data(C.ATTRIBUTE.TRANSITION) + "Out"
+          inClass = _inPage.data(C.ATTRIBUTE.TRANSITION) + "In"
+          _outPage.addClass(outClass).addClass("show")
+          _inPage.addClass(inClass).addClass("show")
+          do _bindAnimationEnd
 
-          console.error current, target
-          current.addClass "moveToBack"
-          target.addClass "moveFromRight"
-          do _bindEnd
-          # current.siblings("#{C.ELEMENT.SECTION}.#{C.CLASS.LAST}").removeClass C.CLASS.LAST
-          # lng.Section.defineTransition target, current
-          # current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE).addClass(C.CLASS.LAST)
-
-        lng.Section.show current, target
-        # lng.Router.step section_id
+        lng.Section.show _outPage, _inPage
+        lng.Router.step section_id
         do _url unless Lungo.Config.history is false
         do _updateNavigationElements
 
@@ -49,20 +47,20 @@ Lungo.Router = do(lng = Lungo) ->
   @method   back
   ###
   back = ->
-    _removeLast()
-    current = lng.Element.Cache.section
+    do _removeLast
+    _outPage = lng.Element.Cache.section
     query = C.ELEMENT.SECTION + HASHTAG + history()
-    target = current.siblings(query)
+    _inPage = _outPage.siblings(query)
     if lng.DEVICE is C.DEVICE.PHONE
-      lng.Aside.hide()
-      lng.Section.assignTransition target, target.data C.TRANSITION.ORIGIN
-      current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDING)
-      setTimeout (->
-        current.removeClass(C.CLASS.HIDING)
-      ), C.TRANSITION.DURATION
-      if target.hasClass("aside") then lng.Aside.toggle()
+      do lng.Aside.hide
+      outClass = _outPage.data(C.ATTRIBUTE.TRANSITION) + "OutBack"
+      inClass = _outPage.data(C.ATTRIBUTE.TRANSITION) + "InBack"
+      _outPage.addClass(outClass).addClass("show")
+      _inPage.addClass(inClass).addClass("show")
+      do _bindAnimationEnd
+      if _inPage.hasClass("aside") then lng.Aside.toggle()
 
-    lng.Section.show current, target
+    lng.Section.show _outPage, _inPage
     do _url unless Lungo.Config.history is false
     do _updateNavigationElements
 
@@ -123,15 +121,20 @@ Lungo.Router = do(lng = Lungo) ->
 
   _removeLast = -> _history.length -= 1
 
-  _bindEnd = ->
+  _bindAnimationEnd = ->
     document.addEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS
+    _animating = true
 
-  _unbindEnd = ->
+  _unbindAnimationEnd = ->
     document.removeEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS
 
   _transitionEnd = ->
-    console.error 'Transition END!'
-    do _unbindEnd
+    _outPage.attr "class", ""
+    _inPage.attr "class", "show"
+    _outPage = undefined
+    _inPage = undefined
+    do _unbindAnimationEnd
+    _animating = false
 
 
   section : section

@@ -1,60 +1,23 @@
-TIME = 0.4s
-
-.moveToLeft
-  vendor(animation, moveToLeft TIME ease both)
-.moveFromLeft
-  vendor(animation, moveFromLeft TIME ease both)
-.moveToRight
-  vendor(animation, moveToRight TIME ease both)
-.moveFromRight
-  vendor(animation, moveFromRight TIME ease both)
-.moveToBack
-  vendor(animation, moveToBack TIME ease both)
-
-@-webkit-keyframes moveToLeft
-  100% { -webkit-transform: translateX(-100%); }
-@-moz-keyframes moveToLeft
-  100% { -moz-transform: translateX(-100%); }
-@keyframes moveToLeft
-  100% { transform: translateX(-100%); }
-
-@-webkit-keyframes moveFromLeft
-  0% { -webkit-transform: translateX(-100%); }
-@-moz-keyframes moveFromLeft
-  0% { -moz-transform: translateX(-100%); }
-@keyframes moveFromLeft
-  0% { transform: translateX(-100%); }
-
-@-webkit-keyframes moveToRight
-  100% { -webkit-transform: translateX(100%); }
-@-moz-keyframes moveToRight
-  100% { -moz-transform: translateX(100%); }
-@keyframes moveToRight
-  100% { transform: translateX(100%); }
-
-@-webkit-keyframes moveFromRight
-  0%   { -webkit-transform: translateX(100%); }
-@-moz-keyframes moveFromRight
-  0%   { -moz-transform: translateX(100%); }
-@keyframes moveFromRight
-  0%   { transform: translateX(100%); }
+@import "__init.styl"
 
 
+.slideIn
+  vendor(animation, slideIn TRANSITION_TIME ease both)
+.slideOut
+  vendor(animation, backOut TRANSITION_TIME ease both)
+.slideInBack
+  vendor(animation, backIn TRANSITION_TIME ease both)
+.slideOutBack
+  vendor(animation, slideOutBack TRANSITION_TIME ease both)
 
-@-webkit-keyframes moveToBack
-  100% {
-    -webkit-transform: rotateX(20deg) translateZ(-100px);
-    transform-origin: 100% 50%;
-    opacity: .3;
+
+@keyframes slideIn
+  from {
+    transform: translateX(100%)
   }
-@-moz-keyframes moveToLeft
-  100% {
-    -moz-transform: rotateX(20deg) translateZ(-100px);
-    opacity: .3;
-  }
-@keyframes moveToLeft
-  100% {
-    transform: rotateX(20deg) translateZ(-100px);
-    opacity: .3;
+
+@keyframes slideOutBack
+  to {
+    transform: translateX(100%)
   }
 

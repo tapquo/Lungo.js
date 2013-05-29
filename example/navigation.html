@@ -20,42 +20,28 @@
 
 <body>
 
-    <!--
-    <aside id="a">
-        <header data-title="aside a"></header>
-        <article></article>
-    </aside>
-
-    <aside id="b">
-        <header data-title="aside b"></header>
-        <article></article>
-    </aside>
-    -->
-
-    <!-- <section id="zero" data-transition="slide" data-children="one" data-aside="a"> -->
     <section id="zero" data-transition="slide" data-children="one">
         <header data-title="Zero">
-            <!-- <nav class="left">
-                <button data-icon="list" data-view-aside="a"></button>
-            </nav> -->
             <nav class="right">
                 <button data-icon="arrow-right" data-view-section="one"></button>
             </nav>
         </header>
-        <article id="zero-1"></article>
+        <article id="zero-1" class="indented scroll">
+            <p>START</p>
+            <p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>END</p>
+        </article>
     </section>
 
-    <!-- <section id="one" data-transition="slide" data-children="two" data-aside="b"> -->
     <section id="one" data-transition="slide" data-children="two">
         <header data-title="One" data-back="home">
-            <!-- <nav class="left">
-                <button data-icon="list" data-view-aside="b"></button>
-            </nav> -->
             <nav class="right">
                 <button data-icon="arrow-right" data-view-section="two"></button>
             </nav>
         </header>
-        <article id="one-1"></article>
+        <article id="one-1">
+            <p>START</p>
+            <p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>END</p>
+        </article>
     </section>
     <section id="two" data-transition="slide" data-children="three">
         <header data-back="home" data-title="Two">
@@ -63,7 +49,34 @@
                 <button data-icon="arrow-right" data-view-section="three"></button>
             </nav>
         </header>
-        <article id="two-1"></article>
+        <article id="two-1" class="list scroll">
+            <ul>
+                <li>START</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>Lista</li>
+                <li>END</li>
+            </ul>
+        </article>
     </section>
 
     <section id="three" data-transition="slide" data-children="four">
@@ -72,15 +85,14 @@
                 <button data-icon="arrow-down" data-view-section="four"></button>
             </nav>
         </header>
-        <article id="three-1"></article>
+        <article id="three-1">Naena</article>
     </section>
 
-<!--
     <section id="four" data-transition="cover">
         <header data-back="home" data-title="Four"></header>
-        <article id="four-1"></article>
+        <article id="four-1">La cuarta</article>
     </section>
- -->
+
     <!-- Lungo dependencies -->
     <script src="components/quojs/quo.js"></script>
     <script src="components/lungo.brownie/lungo.debug.js"></script>
