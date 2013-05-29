@@ -18,12 +18,14 @@ Lungo.Router = do (lng = Lungo) ->
   _inPage             = undefined
   _animating          = false
 
+
   ###
   Navigate to a <section>.
   @method   section
   @param    {string} Id of the <section>
   ###
   section = (section_id) ->
+    if _animating then return
     _outPage = lng.Element.Cache.section
     if _notCurrentTarget(_outPage, section_id)
       query = C.ELEMENT.SECTION + HASHTAG + section_id
@@ -47,6 +49,7 @@ Lungo.Router = do (lng = Lungo) ->
   @method   back
   ###
   back = ->
+    if _animating then return
     do _removeLast
     _outPage = lng.Element.Cache.section
     query = C.ELEMENT.SECTION + HASHTAG + history()
@@ -122,8 +125,8 @@ Lungo.Router = do (lng = Lungo) ->
   _removeLast = -> _history.length -= 1
 
   _bindAnimationEnd = ->
-    document.addEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS
     _animating = true
+    document.addEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS
 
   _unbindAnimationEnd = ->
     document.removeEventListener(ev, _transitionEnd) for ev in ANIMATIONEND_EVENTS

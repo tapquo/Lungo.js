@@ -1,0 +1,31 @@
+@import "__init.styl"
+
+.fadeIn
+  vendor(animation, fadeIn TRANSITION_TIME ease both)
+.fadeOut
+  vendor(animation, fadeOut TRANSITION_TIME ease both)
+.fadeInBack
+  vendor(animation, fadeInBack TRANSITION_TIME ease both)
+.fadeOutBack
+  vendor(animation, fadeOutBack TRANSITION_TIME ease both)
+
+
+@keyframes fadeIn
+  from {
+    opacity: 0
+  }
+
+@keyframes fadeOut
+  to {
+    opacity: 1
+  }
+
+@keyframes fadeInBack
+  from {
+    opacity: 0
+  }
+
+@keyframes fadeOutBack
+  to {
+    opacity: 0
+  }
