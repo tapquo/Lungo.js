@@ -29,6 +29,8 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(C.QUERY.MENU_ROUTER).touch _onMenu
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
     lng.dom(QUERY.CONTROL_CHECKBOX).on "change", _changeCheckboxValue
+    lng.dom(QUERY.SECTION_TRANSITION).on "webkitAnimationEnd", _sectionAnimationEnd
+    lng.dom(QUERY.SECTION_TRANSITION).on "animationend", _sectionAnimationEnd
 
   _onSection = (event) ->
     event.preventDefault()
@@ -92,5 +94,12 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     input.val checked.toString()
     el.removeClass "checked"
     if checked  then el.addClass "checked"
+
+  _sectionAnimationEnd = (event) ->
+    section = lng.dom(event.target)
+    section.removeClass(section.data(ATTRIBUTE.ANIMATION))
+    section.removeClass("show") unless section.data(ATTRIBUTE.STATE) is "active"
+    section.removeAttr "data-#{ATTRIBUTE.STATE}"
+    section.removeAttr "data-#{ATTRIBUTE.ANIMATION}"
 
   init: init

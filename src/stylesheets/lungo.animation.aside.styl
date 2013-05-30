@@ -1,0 +1,22 @@
+@import "__init.styl"
+
+LEFT = 250px
+
+.sectionAsideOpening
+  vendor(animation-name, sectionAsideOpening)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+
+.sectionAsideClosing
+  vendor(animation-name, sectionAsideClosing)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+
+.sectionAsideOpen
+  left: LEFT
+
+@keyframes sectionAsideOpening
+  to  { left: LEFT }
+
+@keyframes sectionAsideClosing
+  from { left: LEFT }

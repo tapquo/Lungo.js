@@ -1,23 +1,40 @@
 @import "__init.styl"
 
+SCALE = .8
 
 .slideIn
-  vendor(animation, slideIn TRANSITION_TIME ease both)
+  vendor(animation-name, slideIn)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: 3
 .slideOut
-  vendor(animation, backOut TRANSITION_TIME ease both)
+  vendor(animation-name, backOut)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: -1
 .slideInBack
-  vendor(animation, backIn TRANSITION_TIME ease both)
+  vendor(animation-name, backIn)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: -1
 .slideOutBack
-  vendor(animation, slideOutBack TRANSITION_TIME ease both)
-
+  vendor(animation-name, slideOutBack)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: 3
 
 @keyframes slideIn
-  from {
-    transform: translateX(100%)
-  }
+  from { transform: translateX(100%) }
+  to   { transform: translateX(0) }
 
 @keyframes slideOutBack
-  to {
-    transform: translateX(100%)
-  }
+  from { transform: translateX(0) }
+  to   { transform: translateX(100%) }
 
+@keyframes backIn
+  from { transform: scale(SCALE) }
+  to   { transform: scale(1) }
+
+@keyframes backOut
+  from { transform: scale(1) }
+  to   { transform: scale(SCALE) }

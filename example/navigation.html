@@ -16,66 +16,79 @@
     <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
     <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css">
     <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+
 </head>
 
 <body>
 
-    <section id="zero" data-transition="slide" data-children="one">
+    <aside id="a">
+        <header data-title="aside a"></header>
+        <article class="list scroll active">
+            <ul>
+                <li>aaaa</li><li>bbbb</li><li>cccc</li>
+                <li>dddd</li><li>eeee</li><li>ffff</li>
+                <li>dddd</li><li>eeee</li><li>ffff</li>
+                <li>dddd</li><li>eeee</li><li>ffff</li>
+                <li>dddd</li><li>eeee</li><li>ffff</li>
+                <li>dddd</li><li>eeee</li><li>ffff</li>
+                <li>dddd</li><li>eeee</li><li>ffff</li>
+            </ul>
+        </article>
+    </aside>
+
+    <aside id="b">
+        <header data-title="aside b"></header>
+        <article></article>
+    </aside>
+
+    <section id="zero" data-transition="slide" data-children="one" data-aside="a">
         <header data-title="Zero">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="a"></button>
+            </nav>
             <nav class="right">
                 <button data-icon="arrow-right" data-view-section="one"></button>
             </nav>
         </header>
-        <article id="zero-1" class="indented scroll">
-            <p>START</p>
-            <p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero zero</p><p>END</p>
+        <article id="zero-1" style="background: red">
         </article>
     </section>
 
     <section id="one" data-transition="slide" data-children="two">
         <header data-title="One" data-back="home">
             <nav class="right">
-                <button data-icon="arrow-right" data-view-section="two"></button>
+                <button data-icon="arrow-right" data-view-section="two">
+
+                </button>
             </nav>
         </header>
-        <article id="one-1">
-            <p>START</p>
-            <p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>one one one one one one one one one one one one one one one one</p><p>END</p>
+        <article id="one-1" class="list scroll" style="background: green">
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
         </article>
     </section>
-    <section id="two" data-transition="fade" data-children="three">
+    <section id="two" data-transition="slide" data-children="three">
         <header data-back="home" data-title="Two">
             <nav class="right">
                 <button data-icon="arrow-right" data-view-section="three"></button>
             </nav>
         </header>
-        <article id="two-1" class="list scroll">
-            <ul>
-                <li>Fade</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>Lista</li>
-                <li>END</li>
-            </ul>
+        <article id="two-1" style="background: blue">
+            aaaa
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
+            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
         </article>
     </section>
 
@@ -85,12 +98,32 @@
                 <button data-icon="arrow-down" data-view-section="four"></button>
             </nav>
         </header>
-        <article id="three-1">Naena</article>
+        <article id="three-1" style="background: brown">
+        </article>
     </section>
 
-    <section id="four" data-transition="cover">
-        <header data-back="home" data-title="Four"></header>
-        <article id="four-1">La cuarta</article>
+    <section id="four" data-transition="slide">
+        <header data-back="home" data-title="Four">
+            <nav class="right">
+                <button data-icon="arrow-down" data-view-section="five"></button>
+            </nav>
+        </header>
+        <article id="four-1" style="background: purple">
+        </article>
+    </section>
+
+    <section id="five" data-transition="slide">
+        <header data-back="home" data-title="Five">
+            <nav class="right">
+                <button data-icon="arrow-down" data-view-section="six"></button>
+            </nav>
+        </header>
+        <article id="five-1" style="background: pink"></article>
+    </section>
+
+    <section id="six" data-transition="slide">
+        <header data-back="home" data-title="Six"></header>
+        <article id="six-1" style="background: green"></article>
     </section>
 
     <!-- Lungo dependencies -->
@@ -104,8 +137,6 @@
             history: false
         });
 
-        // Lungo.Notification.show("user", "Hello world! yeah");
-        // Lungo.Notification.show()
     </script>
 </body>
 </html>

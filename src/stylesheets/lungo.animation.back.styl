@@ -1,24 +1,27 @@
 @import "__init.styl"
 
-OPACITY     = 0.3
 TRANSLATE_Z = -300px
 ROTATE_X    = 20deg
 ORIGIN      = 100% 50%
 
 .backIn
-  vendor(animation, backIn TRANSITION_TIME ease both)
+  vendor(animation-name, backIn)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
 .backOut
-  vendor(animation, backOut TRANSITION_TIME ease both)
-
+  vendor(animation-name, backOut)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: -1
 
 @keyframes backIn
   from {
-    transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z)
-    transform-origin: ORIGIN
+    transform: translateZ(TRANSLATE_Z)
+    // transform-origin: ORIGIN
   }
 
 @keyframes backOut
   to {
-    transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z)
-    transform-origin: ORIGIN
+    transform: translateZ(TRANSLATE_Z)
+    // transform-origin: ORIGIN
   }

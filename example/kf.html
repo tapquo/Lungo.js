@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lungo Flexbox - SDK</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <style>
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            /*-webkit-transform: translateX(100px);*/
+        }
+
+        body {
+            -webkit-perspective: 800px;
+            -webkit-transform-style: preserve-3d;
+        }
+
+        .moveme {
+            -webkit-animation-name: kf;
+            -webkit-animation-duration: 5s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count:1 ;
+        }
+
+        @-webkit-keyframes kf {
+            from {
+                -webkit-transform: translateX(100px) rotateX(100deg);
+            }
+            to {
+                -webkit-transform: translateX(0px) rotateX(0deg);
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="el" ></div>
+
+    <script>
+        var el = document.getElementById("el");
+        el.className = "moveme";
+        var animEvents = ["animationend", "webkitAnimationEnd", "oanimationend", "MSAnimationEnd"];
+        document.addEventListener(animEvents[1], function() {
+            alert("End!");
+        });
+    </script>
+</body>
+</html>

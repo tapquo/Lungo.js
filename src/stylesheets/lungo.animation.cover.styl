@@ -5,32 +5,33 @@ TRANSLATE_Z = -150px
 ROTATE_X    = 20deg
 
 .coverIn
-  vendor(animation, coverIn TRANSITION_TIME ease both)
+  vendor(animation-name, coverIn)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
 .coverOut
-  vendor(animation, coverOut TRANSITION_TIME ease both)
+  vendor(animation-name, coverOut)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: -1
 .coverInBack
-  vendor(animation, coverInBack TRANSITION_TIME ease both)
+  vendor(animation-name, coverInBack)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
+  z-index: -1
 .coverOutBack
-  vendor(animation, coverOutBack TRANSITION_TIME ease both)
-
+  vendor(animation-name, coverOutBack)
+  vendor(animation-duration, TRANSITION_TIME)
+  vendor(animation-timing-function, DEFAULT_TRANSITION)
 
 @keyframes coverIn
-  from {
-    transform: translateY(100%);
-  }
+  from { transform: translateY(110%) }
 
 @keyframes coverOut
-  to {
-    transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y)
-  }
+  to { transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y) }
 
 @keyframes coverInBack
-  from {
-    transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y)
-  }
+  from { transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y) }
 
 @keyframes coverOutBack
-  to {
-    transform: translateY(100%)
-  }
+  to { transform: translateY(110%) }
 
