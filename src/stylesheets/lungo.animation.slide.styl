@@ -2,39 +2,37 @@
 
 SCALE = .8
 
-.slideIn
-  vendor(animation-name, slideIn)
-  vendor(animation-duration, TRANSITION_TIME)
-  vendor(animation-timing-function, DEFAULT_TRANSITION)
-  z-index: 3
-.slideOut
-  vendor(animation-name, backOut)
-  vendor(animation-duration, TRANSITION_TIME)
-  vendor(animation-timing-function, DEFAULT_TRANSITION)
-  z-index: -1
-.slideInBack
-  vendor(animation-name, backIn)
-  vendor(animation-duration, TRANSITION_TIME)
-  vendor(animation-timing-function, DEFAULT_TRANSITION)
-  z-index: -1
-.slideOutBack
-  vendor(animation-name, slideOutBack)
-  vendor(animation-duration, TRANSITION_TIME)
-  vendor(animation-timing-function, DEFAULT_TRANSITION)
-  z-index: 3
+[data-transition="slide"]
+  &[data-direction="in"]
+    vendor(animation-name, slideIn)
+  &[data-direction="out"]
+    vendor(animation-name, slideOut)
+  &[data-direction="back-in"]
+    vendor(animation-name, slideBackIn)
+  &[data-direction="back-out"]
+    vendor(animation-name, slideBackOut)
 
 @keyframes slideIn
   from { transform: translateX(100%) }
   to   { transform: translateX(0) }
 
-@keyframes slideOutBack
+@keyframes slideOut
+  from { transform: scale(1) }
+  to   { transform: scale(SCALE) }
+
+@keyframes slideBackOut
   from { transform: translateX(0) }
   to   { transform: translateX(100%) }
 
-@keyframes backIn
+@keyframes slideBackIn
   from { transform: scale(SCALE) }
   to   { transform: scale(1) }
 
-@keyframes backOut
-  from { transform: scale(1) }
-  to   { transform: scale(SCALE) }
+
+// @keyframes slideOut
+//   from { transform: scale(1) }
+//   to   { transform: translateZ(-200px) rotateX(20deg); opacity: 0.1 }
+
+// @keyframes slideBackIn
+//   from { transform: translateZ(-200px) rotateX(20deg); opacity: 0.1 }
+//   to   { transform: scale(1) }

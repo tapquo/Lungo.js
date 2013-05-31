@@ -20,110 +20,71 @@
 </head>
 
 <body>
-
-    <aside id="a">
-        <header data-title="aside a"></header>
-        <article class="list scroll active">
-            <ul>
-                <li>aaaa</li><li>bbbb</li><li>cccc</li>
-                <li>dddd</li><li>eeee</li><li>ffff</li>
-                <li>dddd</li><li>eeee</li><li>ffff</li>
-                <li>dddd</li><li>eeee</li><li>ffff</li>
-                <li>dddd</li><li>eeee</li><li>ffff</li>
-                <li>dddd</li><li>eeee</li><li>ffff</li>
-                <li>dddd</li><li>eeee</li><li>ffff</li>
-            </ul>
+    <aside id="a1">
+        <header data-title="a1"></header>
+        <article id="a1a1">
+            <h1>a1.a1</h1>
+        </article>
+        <article id="a1a2">
+            <h1>S1.A2</h1>
         </article>
     </aside>
 
-    <aside id="b">
-        <header data-title="aside b"></header>
-        <article></article>
+    <aside id="a2">
+        <header data-title="a2"></header>
+        <article id="a2a1">
+            <h1>a2.a1</h1>
+        </article>
     </aside>
 
-    <section id="zero" data-transition="slide" data-children="one" data-aside="a">
-        <header data-title="Zero">
+    <section id="s1" data-t-ransition="slide" data-children="one" data-aside="a1">
+        <header data-title="s1">
             <nav class="left">
-                <button data-icon="list" data-view-aside="a"></button>
+                <button data-icon="list" data-view-aside="a1"></button>
             </nav>
             <nav class="right">
-                <button data-icon="arrow-right" data-view-section="one"></button>
+                <button data-article="s1a1" data-view-article="s1a2" data-label="s1a2"></button>
+                <button data-article="s1a2" data-view-article="s1a1" data-label="s1a1"></button>
+                <button data-icon="arrow-right" data-view-section="s2"></button>
             </nav>
         </header>
-        <article id="zero-1" style="background: red">
-        </article>
+        <article id="s1a1"><h1>S1.A1</h1></article>
+        <article id="s1a2"><h1>S1.A2</h1></article>
+        <footer>
+            <nav>
+                <a href="#" data-view-article="s1a2" data-icon="user" class="active"></a>
+                <a href="#" data-view-article="s1a1" data-icon="group"></a>
+            </nav>
+        </footer>
     </section>
 
-    <section id="one" data-transition="slide" data-children="two">
-        <header data-title="One" data-back="home">
+    <section id="s2" data-transition="slide" data-children="one" data-aside="a1">
+        <header data-title="s2" data-back="home">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="a1"></button>
+            </nav>
             <nav class="right">
-                <button data-icon="arrow-right" data-view-section="two">
-
-                </button>
+                <button data-article="s2a1" data-view-article="s2a2" data-label="s2a2"></button>
+                <button data-article="s2a2" data-view-article="s2a1" data-label="s2a1"></button>
+                <button data-icon="arrow-right" data-view-section="s3"></button>
             </nav>
         </header>
-        <article id="one-1" class="list scroll" style="background: green">
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas oUASY Iasi SUPi S oas </h1>
-        </article>
+        <article id="s2a1"><h1>s2.A1</h1></article>
+        <article id="s2a2"><h1>s2.A2</h1></article>
     </section>
-    <section id="two" data-transition="slide" data-children="three">
-        <header data-back="home" data-title="Two">
+
+    <section id="s3" data-t-ransition="slide" data-children="one" data-aside="a2">
+        <header data-title="s3" data-back="home">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="a2"></button>
+            </nav>
             <nav class="right">
-                <button data-icon="arrow-right" data-view-section="three"></button>
+                <button data-article="s3a1" data-view-article="s3a2" data-label="s3a2"></button>
+                <button data-article="s3a2" data-view-article="s3a1" data-label="s3a1"></button>
             </nav>
         </header>
-        <article id="two-1" style="background: blue">
-            aaaa
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-            <h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1><h1>oUASY Iasi SUPi S oas </h1>
-        </article>
-    </section>
-
-    <section id="three" data-transition="slide" data-children="four">
-        <header data-back="home" data-title="Three">
-            <nav class="right">
-                <button data-icon="arrow-down" data-view-section="four"></button>
-            </nav>
-        </header>
-        <article id="three-1" style="background: brown">
-        </article>
-    </section>
-
-    <section id="four" data-transition="slide">
-        <header data-back="home" data-title="Four">
-            <nav class="right">
-                <button data-icon="arrow-down" data-view-section="five"></button>
-            </nav>
-        </header>
-        <article id="four-1" style="background: purple">
-        </article>
-    </section>
-
-    <section id="five" data-transition="slide">
-        <header data-back="home" data-title="Five">
-            <nav class="right">
-                <button data-icon="arrow-down" data-view-section="six"></button>
-            </nav>
-        </header>
-        <article id="five-1" style="background: pink"></article>
-    </section>
-
-    <section id="six" data-transition="slide">
-        <header data-back="home" data-title="Six"></header>
-        <article id="six-1" style="background: green"></article>
+        <article id="s3a1"><h1>s3.A1</h1></article>
+        <article id="s3a2"><h1>s3.A2</h1></article>
     </section>
 
     <!-- Lungo dependencies -->

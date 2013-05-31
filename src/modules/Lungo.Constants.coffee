@@ -56,6 +56,10 @@ Lungo.Constants =
     LOAD                 : "load"
     UNLOAD               : "unload"
 
+  EVENT:
+    TRANSITION_END       : ["webkitAnimationEnd", "animationend"]
+    CHANGE               : "change"
+
   TRANSITION:
     DURATION             : 400
     ORIGIN               : "transition-origin"
@@ -78,7 +82,7 @@ Lungo.Constants =
     CHILDREN             : "children"
     TRANSITION           : "transition"
     STATE                : "state"
-    ANIMATION            : "animation"
+    DIRECTION            : "direction"
 
   BINDING:
     START                : "{{"

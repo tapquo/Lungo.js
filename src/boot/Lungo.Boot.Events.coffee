@@ -6,6 +6,7 @@ Initialize the automatic DOM UI events
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
+@author Ignacio Olalde <ina@tapquo.com> || @piniphone
 ###
 
 Lungo.Boot.Events = do(lng = Lungo) ->
@@ -28,9 +29,9 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(C.QUERY.ASIDE_ROUTER).touch _onAside
     lng.dom(C.QUERY.MENU_ROUTER).touch _onMenu
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
-    lng.dom(QUERY.CONTROL_CHECKBOX).on "change", _changeCheckboxValue
-    lng.dom(QUERY.SECTION_TRANSITION).on "webkitAnimationEnd", _sectionAnimationEnd
-    lng.dom(QUERY.SECTION_TRANSITION).on "animationend", _sectionAnimationEnd
+    lng.dom(QUERY.CONTROL_CHECKBOX).on C.EVENT.CHANGE, _changeCheckboxValue
+    for transition in C.EVENT.TRANSITION_END
+      lng.dom(QUERY.SECTION_TRANSITION).on transition, _onAnimationEnd
 
   _onSection = (event) ->
     event.preventDefault()
@@ -87,6 +88,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom("[data-view-menu=#{parent}] > .icon").attr "class", "icon " + el.data("icon")
 
   _changeCheckboxValue = (event) ->
+    #@TODO >> Refactor names
     event.preventDefault()
     el = lng.dom(this)
     input = el.find "input"
@@ -95,11 +97,12 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     el.removeClass "checked"
     if checked  then el.addClass "checked"
 
-  _sectionAnimationEnd = (event) ->
+  _onAnimationEnd = (event) ->
     section = lng.dom(event.target)
-    section.removeClass(section.data(ATTRIBUTE.ANIMATION))
-    section.removeClass("show") unless section.data(ATTRIBUTE.STATE) is "active"
-    section.removeAttr "data-#{ATTRIBUTE.STATE}"
-    section.removeAttr "data-#{ATTRIBUTE.ANIMATION}"
+    direction = section.data(ATTRIBUTE.DIRECTION)
+    section.removeClass C.CLASS.SHOW if direction is "out" or direction is "back-out"
+    section.removeAttr "data-#{ATTRIBUTE.DIRECTION}"
+
+    # Activar/Desactivar los controles de la seccion activa: ASIDE
 
   init: init
