@@ -21,9 +21,9 @@ Here you have the minimum structure of your Lungo application's body. It must co
 
 Now you can learn how to prototype a Lungo App without any line of JavaScript:
 
-* [Getting started](http://)
-* [Elements](http://)
-* [Navigation](http://)
+* [Getting started](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/get_started.md)
+* [Elements](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/elements.md)
+* [Navigation](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/navigation.md)
 * [Forms](http://)
 	* [No-Native](http://)
 	* [Buttons](http://)
