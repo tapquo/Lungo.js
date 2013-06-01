@@ -10,45 +10,42 @@
 HEADER_GROUPBAR_HEIGHT = 32px
 
 nav
-
   /* ========================================================================= */
   /* ================================= HEADER ================================ */
   /* ========================================================================= */
   header &
     & .button, button
-      margin-top: 6px
+      margin-top: 0.45em
       float: left
-    &.right .button, &.right button
-      margin-right: 5px
-    &:not(.right) .button, &:not(.right) button
-      margin-left: 5px
+    &.on-right .button, &.on-right button
+      margin-right: 0.4em
+    &:not(.on-right) .button, &:not(.on-right) button
+      margin-left: 0.4em
 
     & a:not(.button)
-      padding: 0px 11px !important
+      padding: 0 0.75em !important
       float: left
       height: HEADER_HEIGHT
       & > .icon
-        font-size: 1.8em
+        font-size: 1.7em
 
-    & .tag
-      position: relative
-      top:  -12px
-      left: -12px
-      margin-right: -20px
+    // @TODO
+    // & .tag
+    //   position: relative
+    //   top:  -12px
+    //   left: -12px
+    //   margin-right: -20px
 
-    & abbr
-      font-size: FONT_SIZE_SMALL
-      font-weight: 700
-      display: block
+    // & abbr
+    //   font-size: FONT_SIZE_SMALL
+    //   font-weight: 700
+    //   display: block
 
-    & .icon ~ abbr
-      margin-left: 4px
-
-    & .loading
-      margin-top: .5em
-      font-size: 1.6em
-      & + .icon
-        display: none
+    // & .loading
+    //   margin-top: .5em
+    //   font-size: 1.6em
+    //   & + .icon
+    //     display: none
 
   &[data-control=groupbar], footer &
     display-box()
@@ -63,9 +60,10 @@ nav
   /* =============================== GROUPBAR ================================ */
   /* ========================================================================= */
   &[data-control=groupbar]
+    z-index: 2
     height: HEADER_GROUPBAR_HEIGHT
     width: 100%
-    z-index: 2
+    font-size: FONT_SIZE_SMALL
     line-height: HEADER_GROUPBAR_HEIGHT
     & > a
       padding: 0px
@@ -73,15 +71,14 @@ nav
       height: HEADER_GROUPBAR_HEIGHT !important
       display: block
       text-align: center
-
       & .icon
-          font-size: 1.0em
-          margin-right: 2px
+        font-size: 1.0em
+        margin-right: 2px
 
       & .tag
-          position: relative
-          top: -1px
-          left: 2px
+        position: relative
+        top: -1px
+        left: 2px
 
 
   /* ========================================================================= */
@@ -122,7 +119,7 @@ nav
       & > a
         display: block
         position: relative
-        padding: LIST_PADDING LIST_PADDING_HORIZONTAL (LIST_PADDING - 1) LIST_PADDING_HORIZONTAL
+        padding: INDENT
         & > .icon
           position: absolute
           left: 0.5em

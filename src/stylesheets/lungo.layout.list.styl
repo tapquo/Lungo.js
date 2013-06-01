@@ -10,88 +10,94 @@
 .list
   & li
     list-style-type: none
-    padding: LIST_PADDING LIST_PADDING_HORIZONTAL (LIST_PADDING - 1) LIST_PADDING_HORIZONTAL
     position: relative
+    text-align: -webkit-match-parent
 
-    &, & a, & small, & .right
-      font-weight: 300
+    &:not(.big)
+      padding: INDENT
+
+    &.thumb
+      display-box()
+      box-orient(horizontal)
+      & > div
+        box-flex(1)
+
+      &.big
+        & > img
+          width: LIST_BIG_IMAGE
+          height: LIST_BIG_IMAGE
+        & > div
+          padding: 0.5em INDENT
+
+      &:not(.big)
+        & > img
+          width: LIST_IMAGE
+          height: LIST_IMAGE
+        & > div
+          padding-left: INDENT
 
     &.arrow::after
+      SIZE = 0.5em
       position: absolute
-      right: LIST_PADDING
+      right: SIZE
       top: 45%
-      width: 6px
-      height: 6px
+      width: SIZE
+      height: SIZE
       content: ''
-      border-right: 3px solid
-      border-top: 3px solid
-      transform( rotate(45deg) )
+      border-right: (SIZE / 2) solid
+      border-top: (SIZE / 2) solid
+      transform rotate(45deg)
 
     & a
       display: block
       text-decoration: none
 
-    & img, .icon
+    & .icon
+      display: inline-block
       float: left
-      line-height: 1.0em
+      margin-right: (INDENT / 2)
+      width: S = LIST_IMAGE
+      height: S
       text-align: center
-      margin-right: LIST_PADDING_HORIZONTAL
+      font-size: 2.6em
+      line-height: 1.0em
 
-    &:not(.thumb)
-      section & img, section & .icon
-        width: S = 34px
-        height: S
-        font-size: 2.6em
-      aside & img, aside & .icon
-        width: S = 18px
-        height: S
-        font-size: 1.3em
-
-    &.thumb
-      & img, & .icon
-        margin-top: -(LIST_PADDING)
-        margin-left: -(LIST_PADDING_HORIZONTAL)
-
-        height: S = 61px
-        width: S
-        font-size: 3.6em
-        line-height: 1.3em
+    aside & .icon
+      width: S = LIST_SMALL_IMAGE
+      height: S
+      font-size: FONT_SIZE_LARGE
 
     &.anchor
-      padding: (LIST_PADDING_HORIZONTAL / 2) LIST_PADDING_HORIZONTAL
+      padding: 0.5em
       line-height: 1.0em
       & .tag
         display: none
 
-    & strong
-      position: relative
-      font-size: FONT_SIZE_BIG
-
-    & small
-      display: block
+    & h1, h2, h3, h4, h5, h6, strong, small
       overflow: hidden
       white-space: nowrap
       text-overflow: ellipsis
-      & + .right
-        margin-left: 0px
-        margin-top: -12px
+      display: block
 
-    & small, &.anchor, & .right:not(.tag)
+    & small
+      & + .on-right
+        margin-left: 0
+        margin-top: -1.4em
+
+    & small, &.anchor
       font-size: FONT_SIZE_SMALL
 
-  & .loading .right
-    font-size: 1.0em
+    & .on-right:not(.tag)
+      font-size: FONT_SIZE_TINY
 
-  & .right, small
+  & .loading .on-right
+    font-size: FONT_SIZE_NORMAL
+
+  & .on-right, small
     & .icon
-      height: 13px !important
-      width: 13px !important
-      margin-right: 1px !important
-      font-size: 1.2em !important
-      line-height: 1.1em
+      font-size: inherit !important
+      width: auto !important
+      height: auto !important
 
   &.indented li:not(:last-child)
-    margin-bottom: 10px
-
-
-
+    margin-bottom: INDENT

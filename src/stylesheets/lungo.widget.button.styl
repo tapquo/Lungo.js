@@ -12,64 +12,47 @@
   border: none
   cursor: pointer
   font-family: inherit
+  font-weight: inherit
   text-align: center
   text-decoration: none
   outline: none
   background: none
 
   header &
+    padding: 0 0.5em
+    height: HEIGHT = 34px
+    min-width: HEIGHT
     font-size: 1.0em
-    height: H = 32px
-    line-height: H
-    padding: 0 8px
+    line-height: HEIGHT
     & > .icon
-      font-size: 1.3em
+      font-size: 1.4em
     & .icon + abbr
       position: relative
-      top: -2px
-      left: 1px
+      left: 0.2em
       display: inline
+      float: right
 
   article &
-    font-size: FONT_SIZE_BIG
-    height: H = 40px
-    line-height: (H - 2)
-    padding: 0 14px
+    font-size: 1.1em
+    line-height: 2.5em
 
-    & .icon + abbr
-      margin-left: 6px
-    &:not(.anchor) .icon
-      line-height: (H / 2)
-
-    &.anchor
-      display: block
-      // width: inherit
-      width: 100%
-      position: relative
-      & .icon
-        position: absolute
-        left: 14px
+    &.icon
+      padding: 0 0.65em
+    &:not(.icon)
+      padding: 0 1em
+      & .icon + abbr
+        margin-left: 0.5em
 
     &.large
-      height: H = 52px
-      padding: 0 20px
       font-size: FONT_SIZE_LARGE
-      line-height: (H - 2)
-      & .icon + abbr
-        margin-left: 10px
-
     &.small
-      height: H = 30px
-      padding: 0 10px
       font-size: FONT_SIZE_SMALL
-      line-height: (H - 2)
-      & .icon + abbr
-        margin-left: 4px
-
     &.tiny
-      height: H = 22px
-      padding: 0 6px
       font-size: FONT_SIZE_TINY
-      line-height: (H - 2)
-      & .icon + abbr
-        margin-left: 2px
+
+    &.anchor
+      width: 100%
+      position: relative
+      &:not(.icon) .icon
+        position: absolute
+        left: 1.0em

@@ -1,0 +1,43 @@
+section.hide > [data-control="pull"]
+  display: none
+
+section.show > [data-control="pull"]
+  position: absolute
+  z-index: -1
+  top: HEADER_HEIGHT
+  width: 100%
+  height: 80px
+  padding: 10px 0
+  text-align: center
+
+  & > .icon
+    display: inline-block
+    width: S = 52px
+    height: S
+    font-size: S
+    line-height: S
+    transition-property rotate, color
+    transition-duration TRANSITION_TIME
+    transition-timing-function DEFAULT_TRANSITION
+    backface-visibility hidden
+
+  & > .loading
+    display: none
+    left: 0%
+
+  & > strong
+    position: relative
+    top: -16px
+    margin-left: 4px
+    font-size: FONT_SIZE_NORMAL
+
+  &.rotate
+    & > .icon
+      transform( rotate(180deg) )
+
+  &.refresh
+    & > .icon
+      display: none
+    & > .loading
+      display: inline-block
+

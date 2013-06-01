@@ -3,10 +3,6 @@
 
 <article id="list" class="active list scroll">
     <ul>
-        <li>
-            <strong>&lt;li&gt; + &lt;strong&gt; </strong>
-        </li>
-
         <li class="selectable">
             <strong>&lt;li .selectable&gt; + &lt;strong&gt; </strong>
         </li>
@@ -56,7 +52,7 @@
 
         <li>
             <a href="#">
-                <div class="right">.right</div>
+                <div class="on-right">.right</div>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
@@ -66,13 +62,13 @@
             <a href="#">
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
-                <div class="right">.right</div>
+                <div class="on-right">.right</div>
             </a>
         </li>
 
         <li>
             <a href="#">
-                <div class="right tag blue">.right.tag</div>
+                <div class="on-right tag blue">.right.tag</div>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
@@ -80,7 +76,7 @@
 
         <li>
             <a href="#">
-                <div class="right tag blue" data-icon="clock">.right data-icon</div>
+                <div class="on-right" data-icon="globe">.right data-icon</div>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
@@ -88,27 +84,38 @@
 
         <li>
             <a href="#">
-                <a href="#" class="button small red right" data-label="button"></a>
+                <a href="#" class="button small red on-right" data-label="button"></a>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
         </li>
 
         <li class="anchor contrast">With data-icon or data-image attribute</li>
-        <li data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-            <strong>&lt;li data-image&gt; + &lt;strong&gt; </strong>
-            <small>&lt;small&gt;</small>
+        <li class="thumb">
+            <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+            <div>
+                <div class="on-right text tiny">lorem ipsum</div>
+                <strong>&lt;strong&gt;</strong>
+                <span class="text small">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+                </span>
+            </div>
         </li>
-        <li class=" thumb" data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-            <strong>&lt;li .thumb data-image&gt; + &lt;strong&gt; </strong>
-            <small>&lt;small&gt;</small>
+
+        <li class="thumb big">
+            <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+            <div>
+                <div class="on-right text tiny">lorem ipsum</div>
+                <strong>&lt;strong&gt;</strong>
+                <span class="text tiny opacity">lorem ipsum</span>
+                <small>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+                </small>
+            </div>
         </li>
+
         <li data-icon="user">
             <strong>&lt;li data-icon&gt; + &lt;strong&gt; </strong>
-            <small>&lt;small&gt;</small>
-        </li>
-        <li class="thumb" data-icon="user">
-            <strong>&lt;li .thumb data-icon&gt; + &lt;strong&gt; </strong>
             <small>&lt;small&gt;</small>
         </li>
 
@@ -134,9 +141,7 @@
 
 <article id="list-indented" class="list scroll indented">
     <ul>
-        <li>
-            <strong>&lt;li&gt; + &lt;strong&gt; </strong>
-        </li>
+
 
         <li class="selectable">
             <strong>&lt;li .selectable&gt; + &lt;strong&gt; </strong>
@@ -187,7 +192,7 @@
 
         <li>
             <a href="#">
-                <div class="right">.right</div>
+                <div class="on-right">.right</div>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
@@ -197,13 +202,13 @@
             <a href="#">
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
-                <div class="right">.right</div>
+                <div class="on-right">.right</div>
             </a>
         </li>
 
         <li>
             <a href="#">
-                <div class="right tag blue">.right.tag</div>
+                <div class="on-right tag blue">.right.tag</div>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
@@ -211,7 +216,7 @@
 
         <li>
             <a href="#">
-                <div class="right tag blue" data-icon="clock">.right data-icon</div>
+                <div class="on-right" data-icon="globe">.right data-icon</div>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
@@ -219,27 +224,38 @@
 
         <li>
             <a href="#">
-                <a href="#" class="button small red right" data-label="button"></a>
+                <a href="#" class="button small red on-right" data-label="button"></a>
                 <strong>&lt;strong&gt; element</strong>
                 <small>with &lt;small&gt; element</small>
             </a>
         </li>
 
         <li class="anchor contrast">With data-icon or data-image attribute</li>
-        <li data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-            <strong>&lt;li data-image&gt; + &lt;strong&gt; </strong>
-            <small>&lt;small&gt;</small>
+        <li class="thumb">
+            <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+            <div>
+                <div class="on-right text tiny">lorem ipsum</div>
+                <strong>&lt;strong&gt;</strong>
+                <span class="text small">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+                </span>
+            </div>
         </li>
-        <li class=" thumb" data-image="http://cdn.tapquo.com/lungo/icon-144.png">
-            <strong>&lt;li .thumb data-image&gt; + &lt;strong&gt; </strong>
-            <small>&lt;small&gt;</small>
+
+        <li class="thumb big">
+            <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+            <div>
+                <div class="on-right text tiny">lorem ipsum</div>
+                <strong>&lt;strong&gt;</strong>
+                <span class="text tiny opacity">lorem ipsum</span>
+                <small>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+                </small>
+            </div>
         </li>
+
         <li data-icon="user">
             <strong>&lt;li data-icon&gt; + &lt;strong&gt; </strong>
-            <small>&lt;small&gt;</small>
-        </li>
-        <li class="thumb" data-icon="user">
-            <strong>&lt;li .thumb data-icon&gt; + &lt;strong&gt; </strong>
             <small>&lt;small&gt;</small>
         </li>
 
@@ -265,26 +281,41 @@
 
 <article id="list-examples" class="list scroll">
     <ul>
+        <li>
+            <h1>text example</h1>
+            <h2>text example</h2>
+            <h3>text example</h3>
+            <h4>text example</h4>
+            <strong>text example</strong>
+            <small>text example</small>
+            <span class="block text big">text example</span>
+            <span class="block text bold">text example</span>
+            <span class="block text normal">text example</span>
+            <span class="block text thin">text example</span>
+            <span class="block text small">text example</span>
+            <span class="block text tiny">text example</span>
+        </li>
+
         <li class="feature">
-            <div class="right  ">15:49</div>
+            <div class="on-right  ">15:49</div>
             <strong class="text bold">Javi Jimenez Villar</strong>
             <div class="text small">[JavaScript] [JOB] FrontEnd Developer</div>
             <small>
-                <div class="right tag ">theme</div>
+                <div class="on-right tag ">theme</div>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam delectus unde.
             </small>
         </li>
         <li class="feature">
-            <div class="right ">15:49</div>
+            <div class="on-right ">15:49</div>
             <strong class="text normal">Ignacio Olalde</strong>
             <small class="text small">[Python] [JOB] BackEnd Developer</small>
             <small>
-                <div class="right tag cancel">important</div>
+                <div class="on-right tag cancel">important</div>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam delectus unde.
             </small>
         </li>
         <li class="feature">
-            <div class="right tag accept">sended</div>
+            <div class="on-right tag accept">sended</div>
             <strong class="text bold">Open Source Project</strong>
             <p class="text thin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos officia dolore in perferendis eum ducimus molestias...</p>
         </li>

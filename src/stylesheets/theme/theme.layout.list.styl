@@ -32,12 +32,15 @@
         background: LIST_border
         color: lighten(COLOR, 20%)
       &.contrast, &.selectable:active, &.theme
-        &, small, & .right:not(.tag), strong, .arrow::after
+        &, small, & .on-right:not(.tag), strong, .arrow::after
           color: #fff
         &.arrow::after
           border-color: #fff
-      & small, & .right:not(.tag)
+      & small, & .on-right:not(.tag)
         color: lighten(COLOR, 20%)
+
+    &:not(.big) img
+      border-radius 4px
 
   &:not(.indented) li
     &.dark, &.theme, &.light

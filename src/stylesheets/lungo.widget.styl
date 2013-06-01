@@ -31,11 +31,11 @@
 .margin-left
   margin-left: INDENT
 
-:not(.icon)
-  &.left
-    float: left
-  &.right
-    float: right
+
+.on-left
+  float: left
+.on-right
+  float: right
 
 /* ================================  SCROLL  ================================ */
 .overthrow-enabled .overthrow
@@ -64,44 +64,14 @@
     -webkit-transform: translate3d(0, 0, 0)
 
 
-/* ================================  TEXT  ================================ */
-.text
-  &.italic
-    font-style: italic
-  &.underline
-    text-decoration: underline
-  &.line-through
-    text-decoration: line-through
-  &.align_left
-    text-align: left
-  &.align_right
-    text-align: right
-  &.align_center
-    text-align: center
-  &.align_justify
-    text-align: justify
-  &.tiny
-    font-size: 0.8em
-  &.small
-    font-size: FONT_SIZE_SMALL
-  &.big
-    font-size: FONT_SIZE_BIG
-  &.opacity
-    opacity: 0.5
-
 
 /* ================================  TAG  ================================ */
 .tag
-  padding: 0 0.5em
+  padding: 0 0.33em
   font-size: FONT_SIZE_TINY
   line-height: inherit
   text-align: center
   z-index: 1
-
-// size = 5px
-// .margin
-//   &.bottom
-//     margin-bottom: size
 
 
 /* ================================  .LAYOUT  ================================ */
@@ -150,51 +120,6 @@
   list-style: none
   margin: 0
 
-/* ==================================  PULL  ================================== */
-section.hide > [data-control="pull"]
-  display: none
-
-section.show > [data-control="pull"]
-  position: absolute
-  z-index: -1
-  top: HEADER_HEIGHT
-  width: 100%
-  height: 80px
-  padding: 10px 0
-  text-align: center
-
-  & > .icon
-    display: inline-block
-    width: S = 52px
-    height: S
-    font-size: S
-    line-height: S
-    transition-property rotate, color
-    transition-duration TRANSITION_TIME
-    transition-timing-function DEFAULT_TRANSITION
-    backface-visibility hidden
-
-  & > .loading
-    display: none
-    left: 0%
-
-  & > strong
-    position: relative
-    top: -16px
-    margin-left: 4px
-    font-size: FONT_SIZE_NORMAL
-
-  &.rotate
-    & > .icon
-      transform( rotate(180deg) )
-
-  &.refresh
-    & > .icon
-      display: none
-    & > .loading
-      display: inline-block
-
-
 
 /* ================================  SPLASH  ================================ */
 body > section > article.splash
@@ -213,23 +138,3 @@ body > section > article.splash
     left: 0px
     font-size: FONT_SIZE_TINY
     padding: 0px
-
-/* ================================  MESSAGE  ================================ */
-body > section > article > .empty
-  text-align: center
-  width: 256px
-  display: block
-  margin: 0 auto
-  padding-top: 15%
-  & > *
-    display: block
-    margin-bottom: 3%
-  & > .icon
-    font-size: S = 120px
-    line-height: S
-  & > strong
-    font-weight: 700
-    font-size: FONT_SIZE_LARGE
-  & > small
-    font-weight: 600
-    margin-bottom: 5%
