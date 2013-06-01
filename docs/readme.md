@@ -1,0 +1,59 @@
+Lungo - *Cross-Device Framework*
+================================
+
+
+## 1. Introduction
+A framework for developers who want to design, build and share cross device applications. Lungo Framework supports open web standards, such as HTML5, CSS3 and JavaScript. It brings consistent browser environment across mobiles, tvs and desktop devices. There are many ways to develop apps, and not always is optimized. Lungo offers you a robust API so you can have complete control of everything that happens in your App. Is known that create apps for each platform is hard, this situation is increased by the arrival of new devices. Lungo will suit all of them creating a unique and amazing UX.
+
+## 2. How to prototype without JavaScript
+The main premise is to create a semantic structure in the whole project, starting from the markup language HTML, through a well organized CSS and ending with the JavaScript API. Lungo offers a great facility when prototyping applications, and will not be needed to enter any lines of code (JavaScript) to visualize how our application will behave. In this doc we will learn which are Lungo semantic elements as relate to each and how you can create applications with HTML only. It's really exciting! let's begin.
+
+Here you have the minimum structure of your Lungo application's body. It must contain at least: 
+
+```	
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css" id="theme-stylesheet">
+
+	<script src="components/quojs/quo.js"></script>
+	<script src="components/lungo/lungo.js"></script>
+```
+
+Now you can learn how to prototype a Lungo App without any line of JavaScript:
+
+* [Getting started](http://)
+* [Elements](http://)
+* [Navigation](http://)
+* [Forms](http://)
+	* [No-Native](http://)
+	* [Buttons](http://)
+* [Lists](http://)
+* [Data-Attributes](http://)
+
+
+## 3. JavaScript API
+
+* [Core](http://)
+* [Data](http://)
+	* [Cache](http://) 	
+	* [Storage](http://) 	
+	* [SQL](http://) 
+* [DOM](http://)
+* [Element](http://)
+	* [Count](http://) 	
+	* [Progress](http://) 	
+	* [Loading](http://) 
+	* [Pull & Refresh](http://) 	
+	* [Carousel](http://) 	
+	* [Menu](http://) 
+* [Notification](http://)
+* [Router](http://)
+* [Service](http://)
+* [View](http://)
+	* [Article](http://) 	
+	* [Aside](http://) 	
+	
+## 4. Help us on being better
+Please, don't have any doubt in contacting us if you think you can do a better API. If you think that we have to support a new functionalit or if you have found a bug, use GitHub issues. Make a fork of this documentation and send us your *pulls* with the improvements.
+
+To talk with us or with other developers about the API, suscribe to our [**mailing list**](https://groups.google.com/forum/#!forum/lungojs).
