@@ -24,19 +24,19 @@ Now you can learn how to prototype a Lungo App without any line of JavaScript:
 * [Getting started](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/get_started.md)
 * [Elements](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/elements.md)
 * [Navigation](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/navigation.md)
-* Forms
-	* No-Native
-	* Buttons
-* Lists
-* Data-Attributes
+* **Forms** (pending)
+	* **No-Native** (pending)
+	* **Buttons** (pending)
+* **Lists** (pending)
+* **Data-Attributes** (pending)
 
 
 ## 3. JavaScript API
 
 * [Core](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/core.md)
-* Data
+* **Data** (pending)
 	* [Cache](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/data/cache.md)
-	* Storage	
+	* **Storage** (pending)	
 	* [SQL](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/data/cache.md) 
 * [DOM](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/dom.md)
 * Element
@@ -45,13 +45,13 @@ Now you can learn how to prototype a Lungo App without any line of JavaScript:
 	* [Loading](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/loading.md) 
 	* [Pull & Refresh](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/pull_and_refresh.md)
 	* [Carousel](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/count.md)
-	* Menu
-* [Notification](http://)
-* [Router](http://)
-* [Service](http://)
-* [View](http://)
-	* [Article](http://) 	
-	* [Aside](http://) 	
+	* **Menu** (pending)
+* [Notification](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/notification.md)
+* [Router](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/router.md)
+* [Service](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/service.md)
+* View
+	* **Article** (pending)
+	* **Aside** (pending)
 	
 ## 4. Help us on being better
 Please, don't have any doubt in contacting us if you think you can do a better API. If you think that we have to support a new functionalit or if you have found a bug, use GitHub issues. Make a fork of this documentation and send us your *pulls* with the improvements.
