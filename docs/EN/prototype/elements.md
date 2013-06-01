@@ -2,7 +2,7 @@ Lungo - *Cross-Device Framework*
 ================================
 
 ## 2.2 Elements
-In the ["Getting started" chapter](http://) we have talked about the basic structure of the application. To do that we used sections and articles. But Lungo uses the semantic language markup introduced with HTML5, so you can add this elements using the new semantic tags.
+In the ["Getting started" chapter](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/get_started.md) we have talked about the basic structure of the application. To do that we used sections and articles. But Lungo uses the semantic language markup introduced with HTML5, so you can add this elements using the new semantic tags.
 
 ### 2.2.1 Section & Article
 A `<section>` is a view of our application where content will be displayed and where there may be subelements as `<header>`, `<footer>` and `<article>`.
