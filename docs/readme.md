@@ -24,28 +24,28 @@ Now you can learn how to prototype a Lungo App without any line of JavaScript:
 * [Getting started](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/get_started.md)
 * [Elements](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/elements.md)
 * [Navigation](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/navigation.md)
-* [Forms](http://)
-	* [No-Native](http://)
-	* [Buttons](http://)
-* [Lists](http://)
-* [Data-Attributes](http://)
+* Forms
+	* No-Native
+	* Buttons
+* Lists
+* Data-Attributes
 
 
 ## 3. JavaScript API
 
-* [Core](http://)
-* [Data](http://)
-	* [Cache](http://) 	
-	* [Storage](http://) 	
-	* [SQL](http://) 
-* [DOM](http://)
-* [Element](http://)
-	* [Count](http://) 	
-	* [Progress](http://) 	
-	* [Loading](http://) 
-	* [Pull & Refresh](http://) 	
-	* [Carousel](http://) 	
-	* [Menu](http://) 
+* [Core](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/core.md)
+* Data
+	* [Cache](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/data/cache.md)
+	* Storage	
+	* [SQL](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/data/cache.md) 
+* [DOM](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/dom.md)
+* Element
+	* [Count](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/count.md)
+	* [Progress](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/progress.md) 
+	* [Loading](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/loading.md) 
+	* [Pull & Refresh](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/pull_and_refresh.md)
+	* [Carousel](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/element/count.md)
+	* Menu
 * [Notification](http://)
 * [Router](http://)
 * [Service](http://)
