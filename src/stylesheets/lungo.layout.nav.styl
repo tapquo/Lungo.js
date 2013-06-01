@@ -7,8 +7,6 @@
  * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
  */
 
-HEADER_GROUPBAR_HEIGHT = 32px
-
 nav
   /* ========================================================================= */
   /* ================================= HEADER ================================ */
@@ -66,27 +64,21 @@ nav
     font-size: FONT_SIZE_SMALL
     line-height: HEADER_GROUPBAR_HEIGHT
     & > a
-      padding: 0px
-      margin: 0px
+      padding:0
+      margin:0
       height: HEADER_GROUPBAR_HEIGHT !important
       display: block
       text-align: center
-      & .icon
-        font-size: 1.0em
-        margin-right: 2px
-
-      & .tag
-        position: relative
-        top: -1px
-        left: 2px
-
+      & .icon, .tag
+        margin: 0 0.25em
+        line-height: inherit
 
   /* ========================================================================= */
   /* ================================= MENU ================================== */
   /* ========================================================================= */
   &[data-control=menu]
     position: absolute
-    left: 0px
+    left:0
     top: HEADER_HEIGHT
     visibility: hidden
     z-index: 2
@@ -136,14 +128,16 @@ nav
       height:  HEADER_HEIGHT
 
     & .icon
-      font-size: 2.0em !important
-      line-height: HEADER_HEIGHT
-      width: 32px
+      font-size: 2.0em
+      line-height: inherit
+      width: HEADER_HEIGHT
       display: inline-block
 
     & .tag
-      top:  -42px
-      left: 4px
+      position: relative
+      top:  SIZE = -12px
+      left: SIZE
+      margin-right: -24px
       & .loading
         top: 0
         font-size: 1.4em
@@ -151,22 +145,17 @@ nav
     abbr
       display: none
 
-    & .tag
-      position: relative
-      top:  -12px
-      left: -12px
-      margin-right: -20px
-
     &.with-labels
       & .icon
-        line-height: 36px
+        font-size: 1.8em
+        line-height: 1.0em
       & abbr
-        display: block !important
-        margin-top: -8px
         z-index: 1
+        display: block !important
+        margin-top: -1.3em
 
-        font-size: 11px
-        line-height: 14px
+        font-size: FONT_SIZE_TINY
+        line-height: FONT_SIZE_TINY
 
         overflow: hidden
         white-space: nowrap
