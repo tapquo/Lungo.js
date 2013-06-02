@@ -11,9 +11,10 @@ nav
   section > header > &
     & a:not(.button)
       color: darken(THEME, 35%)
-      text-shadow 0 1px 0 lighten(THEME, 25%)
       &:active
         color: darken(THEME, 50%)
+      & > .icon
+        text-shadow 0 1px 0 lighten(THEME, 25%)
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK

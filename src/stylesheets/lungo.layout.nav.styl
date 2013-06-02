@@ -27,23 +27,18 @@ nav
       & > .icon
         font-size: 1.7em
 
+    & .tag
+      position: relative
+      top:  -1em
+      left: -1em
+      margin-right: -20px
+
     // @TODO
-    // & .tag
-    //   position: relative
-    //   top:  -12px
-    //   left: -12px
-    //   margin-right: -20px
-
-    // & abbr
-    //   font-size: FONT_SIZE_SMALL
-    //   font-weight: 700
-    //   display: block
-
-    // & .loading
-    //   margin-top: .5em
-    //   font-size: 1.6em
-    //   & + .icon
-    //     display: none
+    & .loading
+      margin-top: .5em
+      font-size: 1.6em
+      & + .icon
+        display: none
 
   &[data-control=groupbar], footer &
     display-box()
