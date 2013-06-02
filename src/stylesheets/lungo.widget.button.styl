@@ -17,27 +17,20 @@
   text-decoration: none
   outline: none
   background: none
+  font-size: inherit
 
   header &
-    padding: 0 0.5em
-    height: BUTTON_HEIGHT
-    min-width: BUTTON_HEIGHT
-    font-size: 1.0em
-    line-height: BUTTON_HEIGHT
-    & > .icon
-      font-size: 1.4em
     & > abbr
       font-size: FONT_SIZE_SMALL
     & .icon + abbr
       position: relative
-      left: 0.2em
-      display: inline
+      left: 0.3em
+      top: 0.7em
       float: right
 
   article &
     font-size: 1.1em
     line-height: 2.5em
-
     &.icon
       padding: 0 0.65em
     &:not(.icon)
@@ -51,7 +44,6 @@
       font-size: FONT_SIZE_SMALL
     &.tiny
       font-size: FONT_SIZE_TINY
-
     &.anchor
       width: 100%
       position: relative

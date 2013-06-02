@@ -12,28 +12,22 @@ nav
   /* ================================= HEADER ================================ */
   /* ========================================================================= */
   header &
-    & .button, button
-      margin-top: 0.45em
-      float: left
-    &.on-right .button, &.on-right button
-      margin-right: 0.4em
-    &:not(.on-right) .button, &:not(.on-right) button
-      margin-left: 0.4em
-
-    & a:not(.button)
+    & a, button /*:not(.button)*/
+      position: relative
       padding: 0 0.75em !important
       float: left
       height: HEADER_HEIGHT
+      min-width: HEADER_HEIGHT
       & > .icon
         font-size: 1.7em
 
     & .tag
-      position: relative
-      top:  -1em
-      left: -1em
-      margin-right: -20px
+      position: absolute
+      top: 0.5em
+      right: 0.25em
+      height: FONT_SIZE_LARGE
+      line-height: FONT_SIZE_LARGE
 
-    // @TODO
     & .loading
       margin-top: .5em
       font-size: 1.6em
@@ -74,6 +68,7 @@ nav
   &[data-control=menu]
     position: absolute
     left: 0
+    top: 0
     top: HEADER_HEIGHT
     visibility: hidden
     z-index: 2
@@ -119,10 +114,10 @@ nav
   /* ========================================================================= */
   footer &
     & a
-      text-align: center
       display: block
       padding: 0
       height:  HEADER_HEIGHT
+      text-align: center
 
     & .icon
       font-size: 2.0em

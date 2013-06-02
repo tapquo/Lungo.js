@@ -12,12 +12,10 @@
   color: #fff
   border-radius BORDER_radius
   font-weight: 700
+  box-shadow inset 0 0.1em rgba(255,255,255,0.2), 0 0.1em rgba(0,0,0,0.25)
   &.count
     background-color: DANGER
-    box-shadow inset 0 0.1em 0.1em rgba(255,255,255,0.3), 0 0.1em 0.2em rgba(0,0,0,0.5)
-    footer a.active &, [data-control="groupbar"] a.active &
-      background-color: DANGER
-    footer a:not(.active) &, [data-control="groupbar"] a:not(.active) &
+    aside a:not(.active) &,  footer a:not(.active) &, [data-control="groupbar"] a:not(.active) &
       background-color: lighten(COLOR, 20%)
 
 

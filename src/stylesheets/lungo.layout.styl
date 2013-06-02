@@ -47,15 +47,13 @@ body
 
       & > .title
         z-index: -1
-        margin: 0 0.25em
         float: left
         font-size: FONT_SIZE_BIG
         box-flex(1)
-
         &.centered
           position: absolute
-          left: 2em
-          right: 2em
+          left: (INDENT * 2)
+          right: (INDENT * 2)
           text-align: center
           display: inline-block
 
@@ -100,6 +98,10 @@ body
     width: ASIDE_WIDTH
     display: none
     z-index: -1
+    & > header
+      & .title
+        margin: 0 INDENT
+
     &.active, &.show
       display-box()
     &.show
