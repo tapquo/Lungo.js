@@ -8,43 +8,47 @@
  */
 
 form, .form
-
   & label:not(.select)
     display: inline-block
-    line-height: FORM_HEIGHT
-    text-indent: 8px
+    font-size: FONT_SIZE_SMALL
+    line-height: inherit
+    margin: 0.15em 0
 
-  & input:not([type="checkbox"]), textarea, select, .progress, label.select, [data-control-progress], [data-control-checkbox]
-    margin-bottom: 8px
+  & input:not([type="checkbox"]), textarea, select, .progress, label.select, [data-control-progress]
     font-size: FONT_SIZE_BIG
     &.large
       font-size: FONT_SIZE_LARGE
 
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
-    display: block
+    display: inline-block
     width: 100%
-    padding:0 6px
-    height: FORM_HEIGHT
-    transition all 0.15s linear
+    margin: 0.5em 0
+    padding: 0 0.4em
+    transition all 100ms linear
     font-family: inherit
     -webkit-appearance: none
     -webkit-user-select: text
     -webkit-font-smoothing: antialiased
-    border:0
+    border: 0
     &:focus
       outline: none !important
     &.border
-      height: FORM_border_height
+      &, & > select
+        padding: 0.3em 0.4em
 
   & textarea
-    min-height: (FORM_HEIGHT * 2)
+    min-height: 2.5em
+    line-height: FONT_SIZE_BIG
 
   & fieldset
-    padding: 8px 8px 0 8px
     position: relative
+    padding: 0 0.5em
+
     & > label:not(.select)
       float: left
       width: 20%
+      margin: 0.3em 0
+      line-height: 2.5em
       &.absolute
         position: absolute
       &.anchor
@@ -57,12 +61,14 @@ form, .form
     & .icon
       position: absolute
       font-size: FONT_SIZE_BIG
-      line-height: FORM_HEIGHT
-      right: INDENT
+      top: 0.5em
+      right: 0.6em
+
     & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea
       box-shadow none
       border: none
-      padding:0
+      border-radius: 0
+      padding: 0 0.3em
       &, &:focus
         background: none
 
@@ -77,28 +83,18 @@ form, .form
     display: inline-block
     font-size: inherit
     line-height: inherit
-    padding-left:0
-
-    &.border
-      H = FORM_border_height - (FORM_border * 2)
-      & > select
-        height: H
-      &:after
-        height: H
-        width: H
-        line-height: H
-
+    padding: 0 !important
+    & > select
+      border-radius: 0 !important
+      margin: 0
+      padding: 0 0.4em
     &:after
       position: absolute
-      top: 0
-      right: 0
-      height: FORM_HEIGHT
-      width: FORM_HEIGHT
-      font-size: FONT_SIZE_BIG
+      top: 0.15em
+      right: 0.3em
       content: "▼"
       pointer-events: none
       text-align: center
-      line-height: FORM_HEIGHT
 
   /* -------------------------- RANGE -------------------------- */
   & input[type=range]
@@ -116,6 +112,7 @@ form, .form
       height: SIZE
       -webkit-appearance: none
       border: none
+
   /* -------------------------- PROGRESS -------------------------- */
   & [data-progress]
     width: 100%
@@ -130,17 +127,16 @@ form, .form
         width: 0%
         transition(width TRANSITION_TIME DEFAULT_TRANSITION)
 
-
   /* -------------------------- CHECKBOX -------------------------- */
   & [data-control-checkbox]
-    HEIGHT = FORM_HEIGHT
+    display: inline-block
     width: 76px
-    height: HEIGHT
+    height: FORM_HEIGHT !important
     position: relative
-    line-height: HEIGHT !important
-    font-size: FONT_size_normal
+    line-height: FORM_HEIGHT !important
+    font-size: inherit
     &, & label
-      transition all 200ms ease
+      transition all 100ms ease
 
     input[type=checkbox]
       visibility: hidden
@@ -150,11 +146,11 @@ form, .form
       position: absolute
     &:before
       content: "ON"
-      left: (HEIGHT / 2.2)
+      left: (FORM_HEIGHT / 2.2)
       opacity: 0
     &:after
       content: "OFF"
-      right: (HEIGHT / 2.2)
+      right: (FORM_HEIGHT / 2.2)
     &.checked
       &:before
         opacity: 1
@@ -165,12 +161,13 @@ form, .form
 
     & label
       display: block
-      height: S = (HEIGHT - 6)
+      height: S = (FORM_HEIGHT - 6)
       width: S
       cursor: pointer
       position: absolute
       top: 3px
       left: 3px
+      margin: 0px !important
       z-index: 1
 
     & input[type=checkbox]:checked + label
