@@ -40,7 +40,7 @@ Lungo.Attributes =
 
   title:
     selector: "header"
-    html: "<span class=\"title centered\">{{value}}</span>"
+    html: "<h1 class=\"title centered\">{{value}}</h1>"
 
   "control-checkbox":
     selector: "*"
