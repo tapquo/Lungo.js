@@ -31,7 +31,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
     lng.dom(QUERY.CONTROL_CHECKBOX).on C.EVENT.CHANGE, _changeCheckboxValue
     for transition in C.EVENT.TRANSITION_END
-      lng.dom(QUERY.SECTION_TRANSITION).on transition, _onAnimationEnd
+      lng.dom(C.ELEMENT.SECTION).on transition, _transitionEnd
 
   _onSection = (event) ->
     event.preventDefault()
@@ -73,8 +73,9 @@ Lungo.Boot.Events = do(lng = Lungo) ->
 
 
   _onAside = (event) ->
-    event.preventDefault()
-    lng.Aside.toggle()
+    do event.preventDefault
+    aside_id = lng.dom(event.target).closest(C.QUERY.ASIDE_ROUTER).data "view-aside"
+    lng.Aside.toggle aside_id
 
   _onMenu = (event) ->
     event.preventDefault()
@@ -97,12 +98,10 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     el.removeClass "checked"
     if checked  then el.addClass "checked"
 
-  _onAnimationEnd = (event) ->
+  _transitionEnd = (event) ->
     section = lng.dom(event.target)
-    direction = section.data(ATTRIBUTE.DIRECTION)
-    section.removeClass C.CLASS.SHOW if direction is "out" or direction is "back-out"
-    section.removeAttr "data-#{ATTRIBUTE.DIRECTION}"
+    if section.data("direction") then lng.Router.animationEnd event
+    else lng.Aside.animationEnd event
 
-    # Activar/Desactivar los controles de la seccion activa: ASIDE
 
   init: init

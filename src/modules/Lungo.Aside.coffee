@@ -7,66 +7,55 @@ Initialize the <articles> layout of a certain <section>
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 ###
 
-Lungo.Aside = do(lng = Lungo) ->
+Lungo.Aside = do (lng = Lungo) ->
+
   C = lng.Constants
-
-  ###
-  Active aside for a determinate section
-  @method active
-  @param  {object} Section element
-  ###
-  active = (section) ->
-    aside_id = section.data("aside")
-    current_aside = lng.Element.Cache.aside
-
-    # Deactive
-    if current_aside and aside_id isnt current_aside?.attr(C.ATTRIBUTE.ID)
-      if lng.DEVICE is C.DEVICE.PHONE
-        current_aside.removeClass(C.CLASS.SHOW).removeClass C.CLASS.ACTIVE
-      else
-        current_aside.addClass(C.CLASS.HIDE)
-        setTimeout (-> current_aside.removeClass(C.CLASS.SHOW).removeClass(C.CLASS.ACTIVE).removeClass(C.CLASS.HIDE)), C.TRANSITION.DURATION
-      lng.Element.Cache.aside = null
-
-    # Active
-    if aside_id
-      lng.Element.Cache.aside = lng.dom(C.ELEMENT.ASIDE + "#" + aside_id)
-      lng.Element.Cache.aside.addClass C.CLASS.ACTIVE
-      lng.Aside.show aside_id  unless lng.DEVICE is C.DEVICE.PHONE
-    lng.Element.Cache.aside
-
-
-  ###
-  Toggle an aside element
-  @method toggle
-  @param  {string} Aside id
-  ###
-  toggle = ->
-    if lng.Element.Cache.aside
-      is_visible = lng.Element.Cache.aside.hasClass(C.CLASS.SHOW)
-      if is_visible then lng.Aside.hide() else lng.Aside.show()
-
 
   ###
   Display an aside element with a particular <section>
   @method show
   ###
-  show = ->
-    if lng.Element.Cache.aside?
-      setTimeout (-> lng.Element.Cache.aside.addClass C.CLASS.SHOW), C.TRANSITION.DURATION
-      if lng.DEVICE is C.DEVICE.PHONE
-        lng.Element.Cache.aside.addClass C.CLASS.SHOW
-        lng.Element.Cache.section.addClass(_asideStylesheet()).addClass(C.CLASS.ASIDE)
-
+  show = (aside_id) ->
+    aside = lng.dom("##{aside_id}")
+    if aside.length
+      lng.Element.Cache.aside = aside
+      aside.addClass(C.CLASS.SHOW)
+      lng.Element.Cache.section.data("aside-#{aside.data(C.TRANSITION.ATTR)}", "show")
 
   ###
   Hide an aside element with a particular section
   @method hide
   ###
   hide = ->
-    if lng.Element.Cache.aside? and lng.DEVICE is C.DEVICE.PHONE
-      lng.Element.Cache.section.removeClass(C.CLASS.ASIDE)
-      setTimeout (-> lng.Element.Cache.aside.removeClass C.CLASS.SHOW), C.TRANSITION.DURATION
+    aside = lng.Element.Cache.aside
+    if aside
+      aside_transition = aside.data(C.TRANSITION.ATTR)
+      section = lng.Element.Cache.section
+      section.data("aside-#{aside_transition}", "hide")
+
+  ###
+  Toggle an aside element
+  @method toggle
+  @param  {string} Aside id
+  ###
+  toggle = (aside) ->
+    if lng.Element.Cache.aside then do lng.Aside.hide
+    else lng.Aside.show aside
+
+
+  ###
+  Triggered when <aside> animation ends.
+  @method   animationEnd
+  @param    {object} event
+  ###
+  animationEnd = (event) ->
+    section = lng.dom(event.target)
+    aside_transition = lng.Element.Cache.aside.data C.TRANSITION.ATTR
+    if section.data("aside-#{aside_transition}") is "hide"
+      lng.Element.Cache.aside.removeClass(C.CLASS.SHOW)
+      lng.Element.Cache.aside = null
+      section.removeAttr("data-aside-#{aside_transition}")
+
 
   ###
   @todo
@@ -110,8 +99,8 @@ Lungo.Aside = do(lng = Lungo) ->
   _asideStylesheet = ->
     if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else "  "
 
-  active: active
   toggle: toggle
   show: show
   hide: hide
   draggable: draggable
+  animationEnd: animationEnd

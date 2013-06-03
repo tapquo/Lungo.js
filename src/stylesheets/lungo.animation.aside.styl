@@ -1,22 +1,37 @@
 @import "__init.styl"
 
-LEFT = 250px
 
-.sectionAsideOpening
-  vendor(animation-name, sectionAsideOpening)
-  vendor(animation-duration, TRANSITION_TIME)
-  vendor(animation-timing-function, DEFAULT_TRANSITION)
+section
+  &[data-aside-left="show"]
+    vendor(animation-name, sectionAsideLeftShow)
+  &[data-aside-left="hide"]
+    vendor(animation-name, sectionAsideLeftHide)
+  &[data-aside-right="show"]
+    vendor(animation-name, sectionAsideRightShow)
+  &[data-aside-right="hide"]
+    vendor(animation-name, sectionAsideRightHide)
 
-.sectionAsideClosing
-  vendor(animation-name, sectionAsideClosing)
-  vendor(animation-duration, TRANSITION_TIME)
-  vendor(animation-timing-function, DEFAULT_TRANSITION)
+aside
+  &[data-transition=right]
+    right: 0px
 
-.sectionAsideOpen
-  left: LEFT
 
-@keyframes sectionAsideOpening
-  to  { left: LEFT }
+@keyframes sectionAsideLeftShow
+  from { transform translateX(0) }
+  60%  { transform translateX(ASIDE_WIDTH + 8) }
+  to   { transform translateX(ASIDE_WIDTH) }
 
-@keyframes sectionAsideClosing
-  from { left: LEFT }
+@keyframes sectionAsideLeftHide
+  from { transform translateX(ASIDE_WIDTH) }
+  25%  { transform translateX(ASIDE_WIDTH + 8) }
+  to   { transform translateX(0) }
+
+@keyframes sectionAsideRightShow
+  from { transform translateX(0) }
+  60%  { transform translateX(-(ASIDE_WIDTH) - 8) }
+  to   { transform translateX(-(ASIDE_WIDTH)) }
+
+@keyframes sectionAsideRightHide
+  from { transform translateX(-(ASIDE_WIDTH)) }
+  25%  { transform translateX(-(ASIDE_WIDTH) - 8) }
+  to   { transform translateX(0) }

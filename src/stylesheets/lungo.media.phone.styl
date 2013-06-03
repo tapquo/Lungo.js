@@ -19,22 +19,20 @@
       &:not([data-transition]).show
         display: block
 
-      &.show.aside
-        &:not(.right)
-          transform translateX(ASIDE_WIDTH)
-        &.right
-          transform translateX(-(ASIDE_WIDTH))
-      &.show.hide
-        z-index: -1
+      // &.show.aside
+      //   &:not(.right)
+      //     transform translateX(ASIDE_WIDTH)
+      //   &.right
+      //     transform translateX(-(ASIDE_WIDTH))
+      // &.show.hide
+      //   z-index: -1
 
-      &[data-transition]
-        display-box()
-        // transition-property opacity, z-index, transform, scale, opacity
-        // transition-duration TRANSITION_TIME
-        // transition-timing-function DEFAULT_TRANSITION
-        backface-visibility hidden
-        vendor(animation-duration, TRANSITION_TIME)
-        vendor(animation-timing-function, DEFAULT_TRANSITION)
-        visibility: hidden
-        &.show
-          visibility: visible
+    & [data-transition], & [data-aside-transition]
+      display-box()
+      backface-visibility hidden
+      vendor(animation-duration, TRANSITION_TIME)
+      vendor(animation-timing-function, DEFAULT_TRANSITION)
+      vendor(animation-fill-mode, forwards)
+      visibility: hidden
+      &.show
+        visibility: visible

@@ -27,7 +27,6 @@ Lungo.Constants =
     SECTION_ROUTER_TAP   : "article [data-view-section]"
     ASIDE_ROUTER         : "[data-view-aside]"
     MENU_ROUTER          : "[data-view-menu]"
-    SECTION_TRANSITION   : "section[data-transition]"
 
     LIST_IN_ELEMENT      : "article.list"
     ELEMENT_SCROLLABLE   : "article.scroll"

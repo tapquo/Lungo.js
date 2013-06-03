@@ -20,24 +20,41 @@
 </head>
 
 <body>
-    <aside id="a1">
-        <header data-title="a1"></header>
-        <article id="a1a1">
-            <h1>a1.a1</h1>
-        </article>
-        <article id="a1a2">
-            <h1>S1.A2</h1>
+    <aside id="a1" data-transition="left">
+        <header data-title="Aside a1"></header>
+        <article id="a1a1" class="active list scroll">
+            <ul>
+                <li data-view-article="s1a1">show ARTICLE s1a1</li>
+                <li data-view-article="s1a2">show ARTICLE s1a2</li>
+                <li data-view-article="s1a1">show ARTICLE s1a1</li>
+                <li data-view-article="s1a2">show ARTICLE s1a2</li>
+                <li data-view-section="s2">show SECTION s2</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+            </ul>
         </article>
     </aside>
 
-    <aside id="a2">
+    <aside id="a2" data-transition="right">
         <header data-title="a2"></header>
-        <article id="a2a1">
-            <h1>a2.a1</h1>
+        <article id="a2a1" class="active list scroll">
+            <ul>
+                <li data-view-article="s1a1">show ARTICLE s1a1</li>
+                <li data-view-article="s1a2">show ARTICLE s1a2</li>
+                <li data-view-article="s1a1">show ARTICLE s1a1</li>
+                <li data-view-article="s1a2">show ARTICLE s1a2</li>
+                <li data-view-section="s2">show SECTION s2</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+            </ul>
         </article>
     </aside>
 
-    <section id="s1" data-t-ransition="slide" data-children="one" data-aside="a1">
+    <section id="s1" data-transition="slide" data-children="one" data-aside="a1">
         <header data-title="s1">
             <nav class="left">
                 <button data-icon="list" data-view-aside="a1"></button>
@@ -46,14 +63,15 @@
                 <button data-article="s1a1" data-view-article="s1a2" data-label="s1a2"></button>
                 <button data-article="s1a2" data-view-article="s1a1" data-label="s1a1"></button>
                 <button data-icon="arrow-right" data-view-section="s2"></button>
+                <button data-icon="list" data-view-aside="a2"></button>
             </nav>
         </header>
         <article id="s1a1"><h1>S1.A1</h1></article>
         <article id="s1a2"><h1>S1.A2</h1></article>
         <footer>
             <nav>
-                <a href="#" data-view-article="s1a2" data-icon="user" class="active"></a>
-                <a href="#" data-view-article="s1a1" data-icon="group"></a>
+                <a href="#" data-view-article="s1a1" data-icon="user" class="active"></a>
+                <a href="#" data-view-article="s1a2" data-icon="group"></a>
             </nav>
         </footer>
     </section>
@@ -73,7 +91,7 @@
         <article id="s2a2"><h1>s2.A2</h1></article>
     </section>
 
-    <section id="s3" data-t-ransition="slide" data-children="one" data-aside="a2">
+    <section id="s3" data-transition="slide" data-children="one" data-aside="a2">
         <header data-title="s3" data-back="home">
             <nav class="left">
                 <button data-icon="list" data-view-aside="a2"></button>

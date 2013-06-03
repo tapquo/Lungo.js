@@ -13,6 +13,7 @@ Lungo.Router = do (lng = Lungo) ->
   C                   = lng.Constants
   HASHTAG             = "#"
   _history            = []
+  _animating          = false
 
 
   ###
@@ -21,8 +22,9 @@ Lungo.Router = do (lng = Lungo) ->
   @param    {string} Id of the <section>
   ###
   section = (section_id) ->
+    return false if _animating
     current = lng.Element.Cache.section
-    if _notCurrentTarget(current, section_id)
+    if _notCurrentTarget current, section_id
       query = C.ELEMENT.SECTION + HASHTAG + section_id
       future = if current then current.siblings(query) else lng.dom(query)
       if future.length
@@ -40,14 +42,15 @@ Lungo.Router = do (lng = Lungo) ->
   @method   back
   ###
   back = ->
+    return false if _animating
     do _removeLast
     current = lng.Element.Cache.section
     query = C.ELEMENT.SECTION + HASHTAG + history()
     future = current.siblings(query)
     if lng.DEVICE is C.DEVICE.PHONE
-      do lng.Aside.hide
+      # do lng.Aside.hide
       _setSectionDirections future, current, true
-      if future.hasClass("aside") then lng.Aside.toggle()
+      # if future.hasClass("aside") then lng.Aside.toggle()
 
     lng.Section.show current, future
     do _url unless Lungo.Config.history is false
@@ -75,6 +78,19 @@ Lungo.Router = do (lng = Lungo) ->
 
 
   ###
+  Triggered when <section> animation ends. Reset animation classes of section and aside
+  @method   animationEnd
+  @param    {eventObject}
+  ###
+  animationEnd = (event) ->
+    section = lng.dom(event.target)
+    direction = section.data(C.ATTRIBUTE.DIRECTION)
+    section.removeClass C.CLASS.SHOW if direction is "out" or direction is "back-out"
+    section.removeAttr "data-#{C.ATTRIBUTE.DIRECTION}"
+    _animating = false
+
+
+  ###
   Create a new element to the browsing history based on the current section id.
   @method step
   @param  {string} Id of the section
@@ -88,13 +104,13 @@ Lungo.Router = do (lng = Lungo) ->
   ###
   history = -> _history[_history.length - 1]
 
-
   ###
   Private methods
   ###
   _notCurrentTarget = (current, id) -> current?.attr(C.ATTRIBUTE.ID) isnt id
 
   _setSectionDirections = (future, current, isBack=false) ->
+    _animating = true
     dirPrefix = if isBack then "back-" else ""
     future.addClass(C.CLASS.SHOW)
     future.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}in") if future.data(C.TRANSITION.ATTR)
@@ -123,3 +139,4 @@ Lungo.Router = do (lng = Lungo) ->
   article : article
   history : history
   step    : step
+  animationEnd : animationEnd
