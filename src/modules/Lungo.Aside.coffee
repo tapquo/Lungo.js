@@ -10,6 +10,7 @@ Initialize the <articles> layout of a certain <section>
 Lungo.Aside = do (lng = Lungo) ->
 
   C = lng.Constants
+  _callback = undefined
 
   ###
   Display an aside element with a particular <section>
@@ -26,9 +27,10 @@ Lungo.Aside = do (lng = Lungo) ->
   Hide an aside element with a particular section
   @method hide
   ###
-  hide = ->
+  hide = (callback) ->
     aside = lng.Element.Cache.aside
     if aside
+      _callback = callback
       aside_transition = aside.data(C.TRANSITION.ATTR)
       section = lng.Element.Cache.section
       section.data("aside-#{aside_transition}", "hide")
@@ -55,6 +57,8 @@ Lungo.Aside = do (lng = Lungo) ->
       lng.Element.Cache.aside.removeClass(C.CLASS.SHOW)
       lng.Element.Cache.aside = null
       section.removeAttr("data-aside-#{aside_transition}")
+      if _callback then _callback.call(@)
+      _callback = undefined
 
 
   ###

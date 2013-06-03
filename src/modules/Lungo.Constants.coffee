@@ -99,3 +99,4 @@ Lungo.Constants =
     DATABASE_TRANSACTION : "ERROR: Data.Sql >> "
     ROUTER               : "ERROR: The target does not exists >>"
     LOADING_RESOURCE     : "ERROR: Loading resource: "
+

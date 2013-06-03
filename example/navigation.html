@@ -40,17 +40,10 @@
     <aside id="a2" data-transition="right">
         <header data-title="a2"></header>
         <article id="a2a1" class="active list scroll">
-            <ul>
-                <li data-view-article="s1a1">show ARTICLE s1a1</li>
-                <li data-view-article="s1a2">show ARTICLE s1a2</li>
-                <li data-view-article="s1a1">show ARTICLE s1a1</li>
-                <li data-view-article="s1a2">show ARTICLE s1a2</li>
-                <li data-view-section="s2">show SECTION s2</li>
-                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
-                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
-                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
-                <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
-            </ul>
+            <button data-router="back" class="tiny">back</button>
+            <button data-view-section="s1" class="tiny">s1</button>
+            <button data-view-section="s2" class="tiny">s2</button>
+            <button data-view-section="s3" class="tiny">s3</button>
         </article>
     </aside>
 
@@ -115,6 +108,11 @@
             version: '2.2',
             history: false
         });
+
+        $$("[data-router=back]").tap(function(event) {
+            Lungo.Router.back();
+        });
+
 
     </script>
 </body>
