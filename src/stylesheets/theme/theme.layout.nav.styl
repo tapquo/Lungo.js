@@ -8,35 +8,7 @@
  */
 
 nav
-  section > header > &
-    & a:not(.button)
-      color: darken(THEME, 35%)
-      &:active
-        color: darken(THEME, 50%)
-      & > .icon
-        text-shadow 0 1px 0 lighten(THEME, 25%)
-
-  section > footer > & > a, &[data-control=groupbar] > a
-    color: NAV_LINK
-
-    & .icon, abbr
-      text-shadow: 0 1px darken(COLOR, 25%)
-    & abbr
-      font-weight: 600
-    &.active
-      color: NAV_LINK_ACTIVE
-
-  section > &[data-control=groupbar] > a.active
-    transition box-shadow TRANSITION_time TRANSITION_easing
-    box-shadow inset 0 -3px 0 THEME
-
-  section > footer > & > a
-    box-shadow inset 0 1px 0 darken(COLOR, 50%), inset 0 2px 0 lighten(COLOR, 15%)
-    &.active
-      box-shadow inset 0 0 16px darken(COLOR, 75%)
-      background-color: darken(COLOR, 10%)
-
-  aside &
+  header > &
     & a:not(.button)
       color: THEME
     & .button, button
@@ -46,9 +18,26 @@ nav
         color: WHITE
         text-shadow: 0 0 1em WHITE
 
+  section > footer > & > a, &[data-control=groupbar] > a
+    color: NAV_LINK
+    & .icon
+      text-shadow: 0 1px darken(COLOR, 25%)
+    & abbr
+      font-weight: 600
+    &.active
+      transition box-shadow TRANSITION_time TRANSITION_easing
+      color: NAV_LINK_ACTIVE
+      background-color: lighten(COLOR, 5%)
+
+  section > &[data-control=groupbar] > a.active
+      box-shadow inset 0 -2px 0 THEME
+
+  section > footer > & > a.active
+      box-shadow inset 0 2px THEME
+
   &[data-control=menu]
     background: COLOR
-    box-shadow 0 2px 0 rgba(0,0,0,0.15)
+    box-shadow 0 2px 0 SHADOW
     &.icons
       background: rgba(0,0,0,0.8)
       & > a

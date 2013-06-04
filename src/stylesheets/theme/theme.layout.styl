@@ -13,21 +13,28 @@ body > section
     color: COLOR
   & > header
     C = THEME
-    background-color: THEME
-    box-shadow 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 1px lighten(C, 25%), inset 0 -1px 0 darken(C, 20%)
+    background-color: darken(COLOR, 50%)
+    box-shadow 0 2px 0 SHADOW
     color: #fff
 
-  & > footer, & nav[data-control=groupbar]
+  & nav[data-control=groupbar], & > footer
     background-color: COLOR
+    box-shadow inset 0 -2px SHADOW
+
+  & > footer
+    box-shadow 0 -2px SHADOW, inset 0 2px SHADOW
+
   & > article, & > [data-control="pull"]
     background-color: BACKGROUND
+    box-shadow: 0 1px 0 red
     &.splash
       background: THEME
       color: #fff
+
   &.aside
-    box-shadow -1px 0 2px rgba(0,0,0,0.2)
+    box-shadow -2px SHADOW
     &.right
-      box-shadow 1px 0 2px rgba(0,0,0,0.2)
+      box-shadow 2px SHADOW
 
   &[data-pull] > article.active
     box-shadow: 0 -1px 0 rgba(0,0,0,0.05)
@@ -36,9 +43,12 @@ body > aside
   background-color: COLOR
   color: WHITE
   & > header, & > footer
-    background-color: darken(COLOR, 15%)
+    background-color: darken(COLOR, 25%)
   & > header
-    box-shadow: inset 0 1px COLOR, inset 0 1px darken(COLOR, 25%)
+    box-shadow 0 2px 0 SHADOW
 
 body > * > header > .title
-  font-weight: 600
+  color: lighten(COLOR, 85%)
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: -0.05em
