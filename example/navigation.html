@@ -34,7 +34,7 @@
             <nav class="left">
                 <button data-icon="list" data-view-aside="a"></button>
             </nav>
-            <nav class="right">
+            <nav class="on-right">
                 <button data-icon="arrow-right" data-view-section="one"></button>
             </nav>
         </header>
@@ -42,11 +42,11 @@
     </section>
 
     <section id="one" data-transition="slide" data-children="two" data-aside="b">
-        <header data-title="One" data-back="home">
+        <header data-title="One" data-back="chevron-left">
             <nav class="left">
                 <button data-icon="list" data-view-aside="b"></button>
             </nav>
-            <nav class="right">
+            <nav class="on-right">
                 <button data-icon="arrow-right" data-view-section="two"></button>
             </nav>
         </header>
@@ -54,8 +54,8 @@
     </section>
 
     <section id="two" data-transition="slide" data-children="three">
-        <header data-back="home" data-title="Two">
-            <nav class="right">
+        <header data-back="chevron-left" data-title="Two">
+            <nav class="on-right">
                 <button data-icon="arrow-right" data-view-section="three"></button>
             </nav>
         </header>
@@ -63,8 +63,8 @@
     </section>
 
     <section id="three" data-transition="slide" data-children="four">
-        <header data-back="home" data-title="Three">
-            <nav class="right">
+        <header data-back="chevron-left" data-title="Three">
+            <nav class="on-right">
                 <button data-icon="arrow-down" data-view-section="four"></button>
             </nav>
         </header>
@@ -72,7 +72,7 @@
     </section>
 
     <section id="four" data-transition="cover">
-        <header data-back="home" data-title="Four"></header>
+        <header data-back="chevron-left" data-title="Four"></header>
         <article id="four-1"></article>
     </section>
 

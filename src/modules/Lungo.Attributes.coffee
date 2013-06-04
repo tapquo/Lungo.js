@@ -10,7 +10,7 @@ Object with data-attributes (HTML5) with a special <markup>
 Lungo.Attributes =
   count:
     selector: "*"
-    html: "<span class=\"tag theme count\">{{value}}</span>"
+    html: "<span class=\"tag count\">{{value}}</span>"
 
   pull:
     selector: "*"
