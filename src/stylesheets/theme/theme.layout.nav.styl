@@ -36,26 +36,19 @@ nav
       box-shadow inset 0 2px THEME
 
   &[data-control=menu]
-    background: COLOR
+    background-color: rgba(0,0,0,0.8)
     box-shadow 0 2px 0 SHADOW
     &.icons
-      background: rgba(0,0,0,0.8)
       & > a
-        color: lighten(COLOR, 35%)
+        color: lighten(COLOR, 40%)
         &:active > .icon
-          text-shadow: 0 0 32px #fff
+          text-shadow: 0 0 2em #fff
         & > .icon
           color: #fff
     &:not(.icons)
       & > a
         color: #fff
-        // text-shadow 0 1px 0 #111
-        border-bottom: 1px solid darken(COLOR, 20%)
-        border-top: 1px solid lighten(COLOR, 5%)
-        &:active
-          background: darken(COLOR, 15%)
-          border-color: transparent
         & > .icon
-          color: lighten(COLOR, 25%)
-    & > a
-      font-weight: 600
+          color: lighten(COLOR, 40%)
+        &:active, &:hover
+          background-color: rgba(255,255,255,0.2)
