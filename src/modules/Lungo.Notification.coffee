@@ -73,13 +73,13 @@ Lungo.Notification = do(lng = Lungo) ->
 
   ###
   ###
-  success = (title, description, icon, seconds, callback) ->
+  success = (title, description, icon = "ok", seconds, callback) ->
     _notify title, description, icon, "success", seconds, callback
 
 
   ###
   ###
-  error = (title, description, icon, seconds, callback) ->
+  error = (title, description, icon = "remove-sign", seconds, callback) ->
     _notify title, description, icon, "error", seconds, callback
 
 

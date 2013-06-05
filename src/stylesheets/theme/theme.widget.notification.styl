@@ -17,7 +17,7 @@
       border-radius FORM_border_radius FORM_border_radius 0 0
     &.growl
       border-radius BORDER_radius
-      background-color: COLOR
+      background-color: rgba(0,0,0,0.8)
       & strong
         color: darken(#fff, 25%)
         font-weight: 700
@@ -29,6 +29,7 @@
       & button, .button
         background-color: #fff
         color: THEME
+
         font-weight: 400
     &.html
       background-color: lighten(COLOR, 95%)
@@ -41,15 +42,19 @@
 
     &.error, &.success
       background-color: COLOR
-      border-bottom solid 0.4em
+      border-bottom: solid 0.4em
       color: #fff
       & small
         color: darken(#fff, 25%)
 
     &.error
-      border-color: DANGER
+      border-bottom-color: DANGER
+      & > .icon
+        color: DANGER
     &.success
-      border-color: SUCCESS
+      border-bottom-color: SUCCESS
+      & > .icon
+        color: SUCCESS
 
     &.html
       & .title
