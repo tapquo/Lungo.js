@@ -11,8 +11,8 @@ Shows a customized notification.
 **PARAMETERS**
 
 ```
-string:		Notification's title.
 string:		The icon, null for no icon.
+string:		Notification's title.
 number:		The time to show the notification, 0 for unlimited.
 function:		A function to execute when hiding the notification.
 ```
@@ -26,8 +26,9 @@ var afterNotification = function(){
 };
 
 Lungo.Notification.show(
-    "Success",              //Title
     "check",                //Icon
+    "Success",              //Title
+    3,						//Seconds
     afterNotification       //Callback function
 );
 

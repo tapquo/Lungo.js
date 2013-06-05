@@ -13,37 +13,53 @@
   &:not(.push)
     background-color: rgba(0,0,0,0.6)
   & .window
-    &:not(.push)
-      border-radius FORM_border_radius
+    &:not(.push):not(.growl)
+      border-radius FORM_border_radius FORM_border_radius 0 0
     &.growl
-      background: rgba(0,0,0,0.75)
+      border-radius BORDER_radius
+      background-color: COLOR
       & strong
-        opacity: 0.75
-        font-weight: 400
+        color: darken(#fff, 25%)
+        font-weight: 700
+
     &:not(.growl)
-      box-shadow(0 0 8px #444)
-      & button, .button
-        background: #fff
-        color: THEME
+      box-shadow 0 0 1em lighten(COLOR, 10%)
+
     &.confirm, &.html
-      background: #e6e6e6
-      color: #222
-    &.error
-      background: DANGER
-    &.success
-      background: SUCCESS
+      & button, .button
+        background-color: #fff
+        color: THEME
+        font-weight: 400
+    &.html
+      background-color: lighten(COLOR, 95%)
+      color: lighten(COLOR, 25%)
+
+    &.confirm
+      background-color: THEME
+      & > small
+        color: lighten(THEME, 75%)
+
     &.error, &.success
+      background-color: COLOR
+      border-bottom solid 0.4em
       color: #fff
       & small
-        opacity: 0.75
-        font-weight: 100
+        color: darken(#fff, 25%)
+
+    &.error
+      border-color: DANGER
+    &.success
+      border-color: SUCCESS
+
     &.html
       & .title
-        background: THEME
+        background-color: THEME
         color: #fff
-        border-radius FORM_border_radius FORM_border_radius00
+        border-radius BORDER_radius BORDER_radius 0 0
+
     &.push
-      background: rgba(0,0,0,0.75)
+      background-color: COLOR
+      box-shadow: inset 0 -0.1em #000
 
     & button, & .button
       &:last-child

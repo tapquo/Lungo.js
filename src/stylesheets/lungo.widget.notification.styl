@@ -58,12 +58,13 @@ WINDOW_WIDTH = 280px
         top:0
         font-size: 52px
         line-height: LOADING
+
       & > strong
         height: 18px
         top: (LOADING - 20px)
         padding: 0 0.5em
         overflow: hidden
-
+        font-size: FONT_SIZE_TINY
       & > small
         display: none
 
@@ -75,19 +76,19 @@ WINDOW_WIDTH = 280px
       margin-top: 100%
 
     &.success, &.error, &.confirm
-      padding-top: 16px
+      padding-top: 1em
       & > .icon
         font-size: 5em
         line-height: 1.0em
       & > strong
-        font-size: FONT_SIZE_BIG
-        padding-top: 4px
-      & small
-        padding-top: 8px
-        padding-bottom: 16px
-      & > strong, & small
-        padding-left: 16px
-        padding-right: 16px
+        font-size: 1.1em
+      & > small
+        font-size: FONT_SIZE_SMALL
+        padding-top: 0.25em
+        padding-bottom: 1em
+      & > strong, > small
+        padding-left: 0.25em
+        padding-right: 0.25em
 
     &.html .title
       height: HEADER_HEIGHT
@@ -95,28 +96,31 @@ WINDOW_WIDTH = 280px
       font-size: FONT_SIZE_LARGE
 
     &.push
-      position: absolute
+      HEIGHT = (HEADER_HEIGHT / 1.5)
+      position: absolute !important
       text-align: left
-      height: H = (HEADER_HEIGHT / 1.75)
-      line-height: H
-      padding: 0 8px
+      height: HEIGHT
+      line-height: HEIGHT
+      padding: 0 1em
       width: 100%
       transition-property opacity, top
-      top: -(H)
+      top: -(HEIGHT) !important
+
       &.show
-        top:0
+        top: 0 !important
       & .icon
-        font-size: FONT_SIZE_LARGE
         float: left
         display: inline
-        margin-right: 6px
+        margin-right: 0.5em
+        font-size: FONT_SIZE_LARGE
 
     & button, & .button
       display: block
       margin-bottom: 1px
-      height: 48px
-      line-height: 48px
+      width: inherit
+      line-height: 3em
       border: none
-      font-size: FONT_SIZE_LARGE
+      font-size: FONT_SIZE_BIG
+
     & strong, small
       display: block

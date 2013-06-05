@@ -22,7 +22,7 @@ Lungo.Notification = do(lng = Lungo) ->
     MODAL: ".notification .window"
     MODAL_HREF: ".notification .window a"
     WINDOW_CLOSABLE: ".notification [data-action=close], .notification > .error, .notification > .success"
-    CONFIRM_BUTTONS: ".notification .confirm a.button, .notification .push"
+    CONFIRM_BUTTONS: ".notification .confirm button, .notification .push"
 
   STYLE =
     MODAL: "modal"
@@ -34,6 +34,12 @@ Lungo.Notification = do(lng = Lungo) ->
   MARKUP_NOTIFICATION = "<div class=\"notification\"><div class=\"window\"></div></div>"
 
   ###
+  Show a custom message, if no parameters shows a loading window.
+  @method   show
+  @param    {string} [OPTIONAL] Icon, null for no icon.
+  @param    {string} [OPTIONAL] Title
+  @param    {number} [OPTIONAL] Seconds to show the notification, 0 for unlimited.
+  @param    {function} [OPTIONAL] Callback when notification it's closed
   ###
   show = (icon, title, seconds, callback) ->
     markup = undefined
@@ -129,19 +135,21 @@ Lungo.Notification = do(lng = Lungo) ->
     "<span class=\"icon " + icon + "\"></span><strong class=\"text bold\">" + title + "</strong><small>" + description + "</small>"
 
   _button_markup = (options, callback) ->
-    "<a href=\"#\" data-callback=\"" + callback + "\" class=\"button anchor large text thin\">" + options.label + "</a>"
+    """<button data-callback="#{callback}" class="anchor">#{options.label}</a>"""
 
   _subscribeEvents = ->
-    lng.dom(SELECTOR.CONFIRM_BUTTONS).tap (event) ->
+    lng.dom(SELECTOR.CONFIRM_BUTTONS).touch (event) ->
       button = lng.dom(this)
       if _options[button.data("callback")]?
         callback = _options[button.data("callback")].callback
-        callback.call callback if callback
+        _options = null
+        callback?.call undefined, callback
       hide()
 
     lng.dom(SELECTOR.WINDOW_CLOSABLE).tap hide
 
   _init()
+
   show: show
   hide: hide
   error: error
