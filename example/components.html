@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lungo Brownie</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css">
+    <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+</head>
+
+<body>
+    <aside id="features" >
+        <header>
+            <h1 class="title text big">Features</h1>
+            <nav class="on-right">
+                <button data-icon="cog"></button>
+                <a href="#" data-icon="cog"></a>
+            </nav>
+        </header>
+
+        <article id="sss" class="list scroll active">
+            <ul>
+                <!-- Basic Layout -->
+                <li data-view-article="folks" data-title="Profile" data-icon="user">
+                    <a href="#">
+                        <div class="tag count on-right">11</div>
+                        <strong>Folks</strong>
+                    </a>
+                </li>
+
+                <li  class="active" data-view-article="products" data-title="Third Parties" data-async="static/articles/products.html" data-icon="twitter">
+                    <div class="tag count on-right">5</div>
+                    <strong class="text big">Products</strong>
+                    <small>Fueled by coffee</small>
+                </li>
+                <li data-view-section="test" data-icon="desktop">
+                    <strong class="text big">Section TEST</strong>
+                </li>
+
+                <li data-view-section="folk" data-view-article="f1" data-icon="desktop">
+                    <div class="tag count on-right">5</div>
+                    <strong>Folk F1</strong>
+                    <small>Fueled by coffee</small>
+                </li>
+            </ul>
+        </article>
+    </aside>
+
+    <section id="layout" data-transition="" data-aside="features">
+        <header data-tistle="Layout">
+            <nav class="on-left">
+                <a href="#" data-view-aside="features" data-icon="menu"></a>
+            </nav>
+            <h1 class="title">Brownie <span class="tag count">2.2</span></h1>
+
+            <nav class="on-right">
+                         <!--
+                <a href="#" class="button" data-icon="inbox" data-count="19"></a>
+                <button data-icon="share"></button>
+
+                <a href="#" data-icon="menu" data-loading="white"></a>
+                <button data-label="send" data-icon="envelope"></button>
+                <button data-label="send"></button>
+                -->
+                <a href="#" class="button" data-view-menu="options" data-icon="menu"></a>
+                <a href="#" class="button" data-view-menu="options-icons" data-icon="grid"></a>
+            </nav>
+        </header>
+
+        <nav data-control="groupbar">
+            <a href="#" data-view-article="layout-art1" data-icon="user" data-label="Profile" class="active"></a>
+            <a href="#" data-view-article="layout-art2" data-label="Inbox" data-count="19"></a>
+            <a href="#" data-view-article="layout-art3" data-label="Comments"></a>
+            <a href="#" data-view-article="layout-art4" data-label="Settings"></a>
+        </nav>
+
+
+        <nav id="options" data-control="menu">
+            <a href="#" data-view-article="layout-art1" data-icon="user" class="active" data-label="Profile"></a>
+            <a href="#" data-view-article="layout-art2" data-icon="inbox" data-label="Inbox" data-count="80"></a>
+            <a href="#" data-view-article="layout-art3" data-icon="comments" data-label="Comments" ></a>
+            <a href="#" data-view-article="layout-art4" data-icon="cog" data-label="Settings"></a>
+        </nav>
+
+        <nav id="options-icons" data-control="menu" class="icons">
+            <a href="#" data-view-article="layout-art1" data-icon="user" class="active" data-label="Profile"></a>
+            <a href="#" data-view-article="layout-art2" data-icon="inbox" data-label="Inbox" data-count="80"></a>
+            <a href="#" data-view-article="layout-art3" data-icon="comments" data-label="Comments" ></a>
+            <a href="#" data-view-article="layout-art4" data-icon="cog" data-label="Settings"></a>
+        </nav>
+
+        <article id="layout-art2" class="list scroll ">
+
+        </article>
+
+        <article id="layout-art1" class="indented scroll">
+            <div>
+                <h1>Sizes</h1>
+                <p class="margin bottom">
+                    <a href="#" class="button tiny">tiny</a>
+                    <a href="#" class="button small">small</a>
+                    <a href="#" class="button">default</a>
+                    <a href="#" class="button large">large</a>
+                </p>
+                <a href="#" class="button anchor margin bottom">anchor</a>
+                <h1>Icons</h1>
+                <p class="margin bottom">
+                    <a href="#" class="button tiny" data-icon="check" ></a>
+                    <a href="#" class="button small" data-icon="check" ></a>
+                    <a href="#" class="button"  data-icon="check" ></a>
+                    <a href="#" class="button large"  data-icon="check" ></a>
+                </p>
+                <h1>Text + Icons</h1>
+                <p class="margin bottom">
+                    <a href="#" class="button tiny" data-icon="check" data-label="tiny"></a>
+                    <a href="#" class="button small" data-icon="check" data-label="small"></a>
+                    <a href="#" class="button"  data-icon="check" data-label="default"></a>
+                    <a href="#" class="button large"  data-icon="check" data-label="large"></a>
+                </p>
+
+                <h1>Colors</h1>
+                <p>
+                    <a href="#" class="button anchor margin bottom">default</a>
+                    <a href="#" class="button anchor secondary margin bottom">secondary</a>
+                    <a href="#" class="button anchor accept margin bottom">accept</a>
+                    <a href="#" class="button anchor cancel margin bottom">cancel</a>
+                    <a href="#" class="button anchor margin bottom" disabled=true>disabled</a>
+                </p>
+            </div>
+        </article>
+
+        <article id="layout-art3">
+            <div class="empty">
+                <span class="icon user"></span>
+                <strong>Profile Empty</strong>
+                <small>When you back a project or follow a friend, their activity will show up here.</small>
+                <button class="anchor" data-label="Please update..."></button>
+            </div>
+        </article>
+        <article id="layout-art4">
+            <div class="empty">
+                <span class="icon cog"></span>
+                <strong>Settings Empty</strong>
+                <small>When you back a project or follow a friend, their activity will show up here.</small>
+            </div>
+        </article>
+
+        <footer>
+            <nav>
+                <a href="#" data-view-article="layout-art1" data-icon="user" class="active" data-label="Hello"></a>
+                <a href="#" data-view-article="layout-art2" data-icon="inbox" data-count="80"></a>
+                <a href="#" data-view-article="layout-art3" data-icon="comments"></a>
+                <a href="#" data-view-article="layout-art4" data-icon="cog"></a>
+            </nav>
+        </footer>
+    </section>
+
+
+    <!-- Lungo dependencies -->
+    <script src="components/quojs/quo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
+
+    <!-- LungoJS - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 'Flexbox',
+            version: '2.2',
+            history: false
+        });
+
+        Lungo.ready(function() {
+
+        });
+
+    </script>
+</body>
+</html>
