@@ -1,8 +1,6 @@
 @import "__init.styl"
 
 /* ==== Any phone ==== */
-
-
 @media only screen and (max-width: 767px)
   body
     vendor(perspective, 800px)
@@ -14,20 +12,15 @@
       position: fixed
 
     & > aside
+      z-index: 0
       position: absolute
 
     & > section
       display: none
       &:not([data-transition]).show
         display: block
-
-      // &.show.aside
-      //   &:not(.right)
-      //     transform translateX(ASIDE_WIDTH)
-      //   &.right
-      //     transform translateX(-(ASIDE_WIDTH))
-      // &.show.hide
-      //   z-index: -1
+      &.aside
+        transform translateX(ASIDE_WIDTH)
 
     & [data-transition], & [data-aside-transition]
       display-box()

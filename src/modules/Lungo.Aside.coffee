@@ -39,7 +39,7 @@ Lungo.Aside = do (lng = Lungo) ->
       _callback = callback
       aside_transition = lng.Element.Cache.aside.data(C.TRANSITION.ATTR) or "left"
       if lng.DEVICE is C.DEVICE.PHONE
-        lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
+        lng.Element.Cache.section.removeClass("aside").data("aside-#{aside_transition}", "hide")
       else
         lng.dom(".aside").removeClass("aside").addClass("asideHidding")
         lng.Element.Cache.aside = null
@@ -71,6 +71,8 @@ Lungo.Aside = do (lng = Lungo) ->
       section.removeAttr("data-aside-#{aside_transition}")
       if _callback then _callback.call _callback
       _callback = undefined
+    else
+      section.removeAttr("data-aside-#{aside_transition}").addClass "aside"
 
 
   ###
