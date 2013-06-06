@@ -1,55 +1,78 @@
+@import "__init.styl"
+
+
 /* ==== Tablet ==== */
 @media only screen and (min-width: 768px)
   body
     display-box()
     box-orient(horizontal)
     overflow: hidden
+    vendor(perspective, 800px)
+    vendor(transform-style, preserve-3d)
+
+    & > section, & > aside
+      backface-visibility hidden
+      vendor(animation-timing-function, DEFAULT_TRANSITION)
+      vendor(animation-duration, TRANSITION_TIME)
+      vendor(animation-fill-mode, forwards)
 
     & > aside
-      transform translateX(-100%)
-      transition-property transform
-      transition-duration TRANSITION_TIME
-      margin-right: -(ASIDE_WIDTH)
+      position: absolute
+      z-index: 0
+      left: 0
+      top: 0
+      visibility: hidden
       &.show
-        transform translateX(0px)
-        margin-right:0
-      &.hide
-        transform translateX(-100%)
-        margin-right: -(ASIDE_WIDTH) !important
+        visibility: visible
 
     & > section
+      z-index: 1
       display: none
-      opacity: 0
-      ordinal-group(2)
-      transform translateX(100%)
       &.show
-        animation showing TRANSITION_TIME
-        animation-fill-mode forwards
         display-box()
-      &.hide
-        animation hiding TRANSITION_TIME
+
+      &.asideShowing
+        z-index: 2
+        vendor(animation-name, withAside)
+      &.asideHidding
+        vendor(animation-name, withoutAside)
+      &.aside
+        z-index: 2
+        transform translateX(ASIDE_WIDTH)
+
+      &.shadowing
+        vendor(animation-name, withAsideOpacity)
+      &.unshadowing
+        vendor(animation-name, withoutAsideOpacity)
+      &.shadow
+        transform translateX(ASIDE_WIDTH)
+        opacity: .6
+
 
       &:not([data-children])
         box-flex(1)
+        &[data-aside]
+          width: 500px !important
+          color: red !important
 
       &[data-children]
         width: 320px
 
-      & [data-view-aside]
-        display: none !important
 
-@-webkit-keyframes showing
-  0%
-    opacity: 0
-    transform translateX(100%)
-  100%
-    opacity: 1
-    transform translateX(0%)
 
-@-webkit-keyframes hiding
-  0%
-    opacity: 1
-    transform translateX(0%)
-  100%
-    opacity: 0
-    transform translateX(100%)
+@keyframes withAside
+  0%   {transform translateX(0)}
+  100% {transform translateX(ASIDE_WIDTH)}
+
+@keyframes withoutAside
+  0%   {transform translateX(ASIDE_WIDTH)}
+  100% {transform translateX(0)}
+
+@keyframes withAsideOpacity
+  0%   {transform translateX(0)}
+  100% {transform translateX(ASIDE_WIDTH); opacity: .6;}
+
+@keyframes withoutAsideOpacity
+  0%   {transform translateX(ASIDE_WIDTH); opacity: .6;}
+  100% {transform translateX(0)}
+

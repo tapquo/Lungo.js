@@ -1,0 +1,33 @@
+@import "__init.styl"
+
+SCALE = .8
+
+[data-transition="slide"]
+  &[data-direction="in"]
+    z-index: 2
+    vendor(animation-name, slideIn)
+  &[data-direction="out"]
+    z-index: 1
+    vendor(animation-name, slideOut)
+  &[data-direction="back-in"]
+    z-index: 1
+    vendor(animation-name, slideBackIn)
+  &[data-direction="back-out"]
+    z-index: 2
+    vendor(animation-name, slideBackOut)
+
+@keyframes slideIn
+  from { transform: translateX(100%); opacity: 0 }
+  to   { transform: translateX(0); opacity: 1 }
+
+@keyframes slideOut
+  from { transform: scale(1); opacity: 1 }
+  to   { transform: scale(SCALE); opacity: 0 }
+
+@keyframes slideBackOut
+  from { transform: translateX(0); opacity: 1 }
+  to   { transform: translateX(100%); opacity: 0 }
+
+@keyframes slideBackIn
+  from { transform: scale(SCALE); opacity: 0 }
+  to   { transform: scale(1); opacity: 1 }

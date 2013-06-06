@@ -6,9 +6,11 @@ Initialize the automatic DOM UI events
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
+@author Ignacio Olalde <ina@tapquo.com> || @piniphone
 ###
 
-Lungo.Boot.Events = do(lng = Lungo) ->
+Lungo.Boot.Events = do (lng = Lungo) ->
+
   C = lng.Constants
   ATTRIBUTE = lng.Constants.ATTRIBUTE
   CLASS = lng.Constants.CLASS
@@ -28,7 +30,10 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(C.QUERY.ASIDE_ROUTER).touch _onAside
     lng.dom(C.QUERY.MENU_ROUTER).touch _onMenu
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
-    lng.dom(QUERY.CONTROL_CHECKBOX).on "change", _changeCheckboxValue
+    lng.dom(QUERY.CONTROL_CHECKBOX).on C.EVENT.CHANGE, _changeCheckboxValue
+    for transition in C.EVENT.TRANSITION_END
+      lng.dom(C.ELEMENT.SECTION).on transition, _transitionEnd
+      lng.dom(C.ELEMENT.ASIDE).on transition, _transitionEnd
 
   _onSection = (event) ->
     event.preventDefault()
@@ -46,7 +51,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
       _onAsyncResource el, C.ELEMENT.ARTICLE
     else
       lng.Router.article lng.Router.history(), el.data("view-article"), el
-      lng.Aside.hide()
+      # lng.Aside.hide()
 
   _onAsyncResource = (el, type) ->
     url = el.data "async"
@@ -70,8 +75,9 @@ Lungo.Boot.Events = do(lng = Lungo) ->
 
 
   _onAside = (event) ->
-    event.preventDefault()
-    lng.Aside.toggle()
+    do event.preventDefault
+    aside_id = lng.dom(event.target).closest(C.QUERY.ASIDE_ROUTER).data "view-aside"
+    lng.Aside.toggle aside_id
 
   _onMenu = (event) ->
     event.preventDefault()
@@ -85,6 +91,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom("[data-view-menu=#{parent}] > .icon").attr "class", "icon " + el.data("icon")
 
   _changeCheckboxValue = (event) ->
+    #@TODO >> Refactor names
     event.preventDefault()
     el = lng.dom(this)
     input = el.find "input"
@@ -92,5 +99,14 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     input.val checked.toString()
     el.removeClass "checked"
     if checked  then el.addClass "checked"
+
+  _transitionEnd = (event) ->
+    section = lng.dom(event.target)
+    asideRelated = section.hasClass("asideHidding") or section.hasClass("asideShowing")
+    shadowRelated = section.hasClass("shadowing") or section.hasClass("unshadowing")
+
+    if section.data("direction") or asideRelated or shadowRelated then lng.Router.animationEnd event
+    else lng.Aside.animationEnd event
+
 
   init: init

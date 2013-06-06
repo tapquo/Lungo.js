@@ -1,0 +1,29 @@
+@import "__init.styl"
+
+TRANSLATE_Y = -18%
+TRANSLATE_Z = -150px
+ROTATE_X    = 20deg
+
+[data-transition="cover"]
+  &[data-direction="in"]
+    vendor(animation-name, coverIn)
+  &[data-direction="out"]
+    vendor(animation-name, coverOut)
+  &[data-direction="back-in"]
+    vendor(animation-name, coverInBack)
+  &[data-direction="back-out"]
+    vendor(animation-name, coverOutBack)
+
+
+@keyframes coverIn
+  from { transform: translateY(110%) }
+
+@keyframes coverOut
+  to { transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y) }
+
+@keyframes coverInBack
+  from { transform: rotateX(ROTATE_X) translateZ(TRANSLATE_Z) translateY(TRANSLATE_Y) }
+
+@keyframes coverOutBack
+  to { transform: translateY(110%) }
+

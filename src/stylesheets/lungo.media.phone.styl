@@ -1,9 +1,13 @@
+@import "__init.styl"
 
 /* ==== Any phone ==== */
 
 
 @media only screen and (max-width: 767px)
   body
+    vendor(perspective, 800px)
+    vendor(transform-style, preserve-3d)
+
     &[data-position="absolute"] > section
       position: absolute
     &[data-position="fixed"] > section
@@ -17,68 +21,20 @@
       &:not([data-transition]).show
         display: block
 
-      &.show.aside
-        &:not(.right)
-          transform translateX(ASIDE_WIDTH)
-        &.right
-          transform translateX(-(ASIDE_WIDTH))
-      &.show.hide
-        z-index: -1
+      // &.show.aside
+      //   &:not(.right)
+      //     transform translateX(ASIDE_WIDTH)
+      //   &.right
+      //     transform translateX(-(ASIDE_WIDTH))
+      // &.show.hide
+      //   z-index: -1
 
-      &[data-transition]
-        display-box()
-        transition-property opacity, z-index, transform,        scale, opacity
-        transition-duration TRANSITION_TIME
-        transition-timing-function DEFAULT_TRANSITION
-        backface-visibility hidden
-
-      /* Transition: SLIDE */
-      &[data-transition="slide"]
+    & [data-transition], & [data-aside-transition]
+      display-box()
+      backface-visibility hidden
+      vendor(animation-duration, TRANSITION_TIME)
+      vendor(animation-timing-function, DEFAULT_TRANSITION)
+      vendor(animation-fill-mode, forwards)
+      visibility: hidden
+      &.show
         visibility: visible
-        z-index: 2
-        &.show, &:first-child
-          transform translateX(0%)
-          z-index: 1
-        &:not(first-child)
-          transform translateX(100%)
-        &.hide
-          transform scale(0.9)
-          z-index: -1
-          &:not(.last)
-            opacity: 0
-            transition none !important
-          &.last
-            opacity: 0.5 !important
-
-      /* Transition: COVER */
-      &[data-transition="cover"]
-        transform translateY(100%)
-        &.show, &.hide
-          transform translateY(0%)
-        &.hide
-          transform scale(0.9)
-          z-index: -1
-          &:not(.last)
-            opacity: 0
-            visibility: hidden
-          &.last
-            opacity: 0.2
-
-      /* Transition: POP */
-      &[data-transition="pop"]
-        opacity: 0
-        transform scale(1.15)
-        &.show
-          transform scale(1)
-          opacity: 1
-        &.hide
-          transform scale(0.9)
-          opacity: 0
-
-      /* Transition: FADE */
-      &[data-transition="fade"]
-        opacity: 0
-        &:first-child, &.show
-          opacity: 1
-        &:hide
-          opacity: 0

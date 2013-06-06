@@ -6,13 +6,16 @@ Handles the <sections> and <articles> to show
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
+@author Ignacio Olalde <ina@tapquo.com> || @piniphone
 ###
 
-Lungo.Router = do(lng = Lungo) ->
-  C        = lng.Constants
-  HASHTAG  = "#"
-  _history = []
 
+Lungo.RouterPhone = do (lng = Lungo) ->
+
+  C                   = lng.Constants
+  HASHTAG             = "#"
+  _history            = []
+  _animating          = false
 
   ###
   Navigate to a <section>.
@@ -20,44 +23,32 @@ Lungo.Router = do(lng = Lungo) ->
   @param    {string} Id of the <section>
   ###
   section = (section_id) ->
+    return false if _animating
     current = lng.Element.Cache.section
-    if _notCurrentTarget(current, section_id)
+    if _notCurrentTarget current, section_id
       query = C.ELEMENT.SECTION + HASHTAG + section_id
-      target = if current then current.siblings(query) else lng.dom(query)
-      if target.length > 0
-        if lng.DEVICE is C.DEVICE.PHONE and current?
-          current.siblings("#{C.ELEMENT.SECTION}.#{C.CLASS.LAST}").removeClass C.CLASS.LAST
-          lng.Section.defineTransition target, current
-          current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDE).addClass(C.CLASS.LAST)
-
-        lng.Section.show current, target
+      future = if current then current.siblings(query) else lng.dom(query)
+      if future.length
+        _section future, current
         lng.Router.step section_id
-        do _url if Lungo.Config.history
+        do _url unless Lungo.Config.history is false
         do _updateNavigationElements
-
+    else if lng.Element.Cache.aside then do lng.Aside.hide
 
   ###
   Return to previous section.
   @method   back
   ###
   back = ->
-    _removeLast()
+    return false if _animating
+    do _removeLast
     current = lng.Element.Cache.section
     query = C.ELEMENT.SECTION + HASHTAG + history()
-    target = current.siblings(query)
-    if lng.DEVICE is C.DEVICE.PHONE
-      lng.Aside.hide()
-      lng.Section.assignTransition target, target.data C.TRANSITION.ORIGIN
-      current.removeClass(C.CLASS.SHOW).addClass(C.CLASS.HIDING)
-      setTimeout (->
-        current.removeClass(C.CLASS.HIDING)
-      ), C.TRANSITION.DURATION
-      if target.hasClass("aside") then lng.Aside.toggle()
-
-    lng.Section.show current, target
-    do _url if Lungo.Config.history?
-    do _updateNavigationElements
-
+    future = current.siblings(query)
+    if future.length
+      _section future, current, true
+      do _url unless Lungo.Config.history is false
+      do _updateNavigationElements
 
   ###
   Displays the <article> in a particular <section>.
@@ -75,9 +66,20 @@ Lungo.Router = do(lng = Lungo) ->
 
         if element?.data(C.ATTRIBUTE.TITLE)?
           lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
-        do _url if Lungo.Config.history
+        do _url unless Lungo.Config.history is false
         do _updateNavigationElements
 
+  ###
+  Triggered when <section> animation ends. Reset animation classes of section and aside
+  @method   animationEnd
+  @param    {eventObject}
+  ###
+  animationEnd = (event) ->
+    section = lng.dom(event.target)
+    direction = section.data(C.ATTRIBUTE.DIRECTION)
+    section.removeClass C.CLASS.SHOW if direction is "out" or direction is "back-out"
+    section.removeAttr "data-#{C.ATTRIBUTE.DIRECTION}"
+    _animating = false
 
   ###
   Create a new element to the browsing history based on the current section id.
@@ -93,10 +95,27 @@ Lungo.Router = do(lng = Lungo) ->
   ###
   history = -> _history[_history.length - 1]
 
-
   ###
   Private methods
   ###
+  _section = (future, current, backward = false) ->
+    callback = -> _show future, current, backward
+    if lng.Element.Cache.aside then lng.Aside.hide callback
+    else do callback
+
+  _show = (future, current, backward) ->
+    if current? then _setSectionDirections future, current, backward
+    lng.Section.show current, future
+
+  _setSectionDirections = (future, current, backward=false) ->
+    if not current? or not future.length then return false
+    _animating = true
+    dirPrefix = if backward then "back-" else ""
+    future.addClass(C.CLASS.SHOW)
+    future.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}in") if future.data(C.TRANSITION.ATTR)
+    if current.data(C.TRANSITION.ATTR) then current.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}out")
+    else current.removeClass(C.CLASS.SHOW)
+
   _notCurrentTarget = (current, id) -> current?.attr(C.ATTRIBUTE.ID) isnt id
 
   _url = ->
@@ -107,17 +126,20 @@ Lungo.Router = do(lng = Lungo) ->
 
   _updateNavigationElements = ->
     article_id = lng.Element.Cache.article.attr C.ATTRIBUTE.ID
-
-    lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE).filter("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
-
+    # Active visual signal for elements
+    links = lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE)
+    links.filter("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
+    # Hide/Show elements in current article
     nav = lng.Element.Cache.section.find(C.QUERY.ARTICLE_REFERENCE).addClass C.CLASS.HIDE
     nav.filter("[data-article*='#{article_id}']").removeClass C.CLASS.HIDE
 
-  _removeLast = -> _history.length -= 1
-
+  _removeLast = ->
+    if _history.length > 1
+      _history.length -= 1
 
   section : section
   back    : back
   article : article
   history : history
   step    : step
+  animationEnd : animationEnd

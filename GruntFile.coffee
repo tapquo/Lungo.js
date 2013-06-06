@@ -32,7 +32,9 @@ module.exports = (grunt) ->
         'src/modules/Lungo.Resource.coffee',
         'src/modules/Lungo.Scroll.coffee',
         'src/modules/Lungo.Service.coffee',
-        'src/modules/Lungo.Router.coffee',
+        # 'src/modules/Lungo.Router.coffee',
+        'src/modules/Lungo.Router.Phone.coffee',
+        'src/modules/Lungo.Router.Tablet.coffee',
         'src/modules/Lungo.Aside.coffee',
         'src/modules/Lungo.Section.coffee',
         'src/modules/Lungo.Article.coffee',
@@ -44,7 +46,9 @@ module.exports = (grunt) ->
         'src/stylesheets/lungo.layout.*.styl',
         'src/stylesheets/lungo.widget.styl',
         'src/stylesheets/lungo.widget.*.styl',
-        'src/stylesheets/lungo.media.*.styl']
+        'src/stylesheets/lungo.media.*.styl',
+        'src/stylesheets/lungo.animation.styl',
+        'src/stylesheets/lungo.animation.*.styl']
       theme: [
         'src/stylesheets/theme/theme.*.styl']
       theme_firefoxos: [
