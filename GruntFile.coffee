@@ -51,8 +51,6 @@ module.exports = (grunt) ->
         'src/stylesheets/lungo.animation.*.styl']
       theme: [
         'src/stylesheets/theme/theme.*.styl']
-      theme_firefoxos: [
-        'src/stylesheets/theme/firefoxos/theme.*.styl']
       icons: [
         'src/stylesheets/lungo.icon**.styl']
       calendar:
@@ -75,9 +73,6 @@ module.exports = (grunt) ->
       theme:
         options: compress: false, import: [ '__init']
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=source.theme%>'
-      theme_firefoxos:
-        options: compress: true, import: [ '__init']
-        files: '<%=meta.packages%>/<%=meta.file%>.firefoxos/<%=meta.file%>.firefoxos.theme.css': '<%=source.theme_firefoxos%>'
       icons:
         files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
       calendar:
@@ -97,9 +92,6 @@ module.exports = (grunt) ->
       theme:
         files: ['<%= source.theme %>']
         tasks: ["stylus:theme"]
-      theme_firefoxos:
-        files: ['<%= source.theme_firefoxos %>']
-        tasks: ["stylus:theme_firefoxos"]
 
       calendar:
         files: ['<%= source.calendar.coffee %>','<%= source.calendar.stylus %>']
