@@ -1,39 +1,39 @@
 [submodule "packages/lungo"]
     path = packages/lungo
-    url = https://github.com/TapQuo/package-lungo
+    url = https://github.com/tapquo/package-lungo.git
 [submodule "packages/lungo.theme"]
     path = packages/lungo.theme
-    url = https://github.com/TapQuo/package-lungo.theme
+    url = https://github.com/tapquo/package-lungo.theme.git
 [submodule "src/stylesheets/CSSmethods"]
     path = src/stylesheets/CSSmethods
-    url = https://github.com/soyjavi/CSSmethods
+    url = https://github.com/soyjavi/CSSmethods.git
 [submodule "example/components/quojs"]
     path = example/components/quojs
-    url = https://github.com/soyjavi/package-quojs
+    url = https://github.com/soyjavi/package-quojs.git
 [submodule "packages/lungo.thirdparties"]
     path = packages/lungo.thirdparties
-    url = https://github.com/TapQuo/lungo.thirdparties.git
+    url = https://github.com/tapquo/lungo.thirdparties.git
 [submodule "packages/lungo.gmap"]
     path = packages/lungo.gmap
-    url = https://github.com/TapQuo/lungo.gmap.git
+    url = https://github.com/tapquo/lungo.gmap.git
 [submodule "packages/lungo.qr"]
     path = packages/lungo.qr
-    url = https://github.com/TapQuo/lungo.qr.git
+    url = https://github.com/tapquo/lungo.qr.git
 [submodule "packages/lungo.language"]
     path = packages/lungo.language
-    url = https://github.com/TapQuo/lungo.language.git
+    url = https://github.com/tapquo/lungo.language.git
 [submodule "packages/lungo.mock"]
     path = packages/lungo.mock
-    url = https://github.com/TapQuo/lungo.mock.git
+    url = https://github.com/tapquo/lungo.mock.git
 [submodule "packages/lungo.terminal"]
     path = packages/lungo.terminal
-    url = https://github.com/TapQuo/lungo.terminal.git
+    url = https://github.com/tapquo/lungo.terminal.git
 [submodule "example/components/lungo.brownie"]
-	path = example/components/lungo.brownie
-	url = https://github.com/soyjavi/lungo.brownie.git
+  path = example/components/lungo.brownie
+  url = https://github.com/soyjavi/lungo.brownie.git
 [submodule "packages/lungo.icon"]
-	path = packages/lungo.icon
-	url = https://github.com/TapQuo/lungo.icon.git
+  path = packages/lungo.icon
+  url = https://github.com/tapquo/lungo.icon.git
 [submodule "packages/lungo.calendar"]
-	path = packages/lungo.calendar
-	url = https://github.com/TapQuo/lungo.calendar.git
+  path = packages/lungo.calendar
+  url = https://github.com/tapquo/lungo.calendar.git

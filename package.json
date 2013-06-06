@@ -1,0 +1,19 @@
+{
+  "name": "Lungo.js",
+  "version": "2.1.0",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "matchdep": "~0.1.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-stylus": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}
