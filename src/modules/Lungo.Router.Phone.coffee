@@ -6,9 +6,11 @@ Handles the <sections> and <articles> to show
 
 @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
 @author Guillermo Pascual <pasku@tapquo.com> || @pasku1
+@author Ignacio Olalde <ina@tapquo.com> || @piniphone
 ###
 
-Lungo.Router = do (lng = Lungo) ->
+
+Lungo.RouterPhone = do (lng = Lungo) ->
 
   C                   = lng.Constants
   HASHTAG             = "#"
@@ -27,11 +29,11 @@ Lungo.Router = do (lng = Lungo) ->
       query = C.ELEMENT.SECTION + HASHTAG + section_id
       future = if current then current.siblings(query) else lng.dom(query)
       if future.length
-        if lng.DEVICE is C.DEVICE.PHONE then _sectionPhone future, current
-        else _show future, current
+        _section future, current
         lng.Router.step section_id
         do _url unless Lungo.Config.history is false
         do _updateNavigationElements
+    else if lng.Element.Cache.aside then do lng.Aside.hide
 
   ###
   Return to previous section.
@@ -44,8 +46,7 @@ Lungo.Router = do (lng = Lungo) ->
     query = C.ELEMENT.SECTION + HASHTAG + history()
     future = current.siblings(query)
     if future.length
-      if lng.DEVICE is C.DEVICE.PHONE then _sectionPhone future, current, true
-      else _show future, current, true
+      _section future, current, true
       do _url unless Lungo.Config.history is false
       do _updateNavigationElements
 
@@ -97,7 +98,7 @@ Lungo.Router = do (lng = Lungo) ->
   ###
   Private methods
   ###
-  _sectionPhone = (future, current, backward = false) ->
+  _section = (future, current, backward = false) ->
     callback = -> _show future, current, backward
     if lng.Element.Cache.aside then lng.Aside.hide callback
     else do callback
@@ -106,10 +107,10 @@ Lungo.Router = do (lng = Lungo) ->
     if current? then _setSectionDirections future, current, backward
     lng.Section.show current, future
 
-  _setSectionDirections = (future, current, isBack=false) ->
+  _setSectionDirections = (future, current, backward=false) ->
     if not current? or not future.length then return false
     _animating = true
-    dirPrefix = if isBack then "back-" else ""
+    dirPrefix = if backward then "back-" else ""
     future.addClass(C.CLASS.SHOW)
     future.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}in") if future.data(C.TRANSITION.ATTR)
     if current.data(C.TRANSITION.ATTR) then current.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}out")

@@ -1,5 +1,6 @@
 @import "__init.styl"
 
+BOUNCE_DIST = 8
 
 section
   &[data-aside-left="show"]
@@ -15,23 +16,34 @@ aside
   &[data-transition=right]
     right: 0px
 
+  &[data-aside-left="hide"]
+    vendor(animation-name, asideLeftHide)
+  &[data-aside-left="show"]
+    vendor(animation-name, asideLeftHide)
+
 
 @keyframes sectionAsideLeftShow
   from { transform translateX(0) }
-  60%  { transform translateX(ASIDE_WIDTH + 8) }
+  60%  { transform translateX(ASIDE_WIDTH + BOUNCE_DIST) }
   to   { transform translateX(ASIDE_WIDTH) }
 
 @keyframes sectionAsideLeftHide
   from { transform translateX(ASIDE_WIDTH) }
-  25%  { transform translateX(ASIDE_WIDTH + 8) }
+  25%  { transform translateX(ASIDE_WIDTH + BOUNCE_DIST) }
   to   { transform translateX(0) }
 
 @keyframes sectionAsideRightShow
   from { transform translateX(0) }
-  60%  { transform translateX(-(ASIDE_WIDTH) - 8) }
+  60%  { transform translateX(-(ASIDE_WIDTH) - BOUNCE_DIST) }
   to   { transform translateX(-(ASIDE_WIDTH)) }
 
 @keyframes sectionAsideRightHide
   from { transform translateX(-(ASIDE_WIDTH)) }
-  25%  { transform translateX(-(ASIDE_WIDTH) - 8) }
+  25%  { transform translateX(-(ASIDE_WIDTH) - BOUNCE_DIST) }
   to   { transform translateX(0) }
+
+// =============================================
+
+@keyframes asideLeftHide
+  from { transform translateX(0) }
+  to   { transform translateX(-(ASIDE_WIDTH)) }

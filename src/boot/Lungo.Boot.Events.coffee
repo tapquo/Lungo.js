@@ -9,7 +9,8 @@ Initialize the automatic DOM UI events
 @author Ignacio Olalde <ina@tapquo.com> || @piniphone
 ###
 
-Lungo.Boot.Events = do(lng = Lungo) ->
+Lungo.Boot.Events = do (lng = Lungo) ->
+
   C = lng.Constants
   ATTRIBUTE = lng.Constants.ATTRIBUTE
   CLASS = lng.Constants.CLASS
@@ -32,6 +33,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
     lng.dom(QUERY.CONTROL_CHECKBOX).on C.EVENT.CHANGE, _changeCheckboxValue
     for transition in C.EVENT.TRANSITION_END
       lng.dom(C.ELEMENT.SECTION).on transition, _transitionEnd
+      lng.dom(C.ELEMENT.ASIDE).on transition, _transitionEnd
 
   _onSection = (event) ->
     event.preventDefault()
@@ -49,7 +51,7 @@ Lungo.Boot.Events = do(lng = Lungo) ->
       _onAsyncResource el, C.ELEMENT.ARTICLE
     else
       lng.Router.article lng.Router.history(), el.data("view-article"), el
-      lng.Aside.hide()
+      # lng.Aside.hide()
 
   _onAsyncResource = (el, type) ->
     url = el.data "async"
@@ -100,7 +102,10 @@ Lungo.Boot.Events = do(lng = Lungo) ->
 
   _transitionEnd = (event) ->
     section = lng.dom(event.target)
-    if section.data("direction") then lng.Router.animationEnd event
+    asideRelated = section.hasClass("asideHidding") or section.hasClass("asideShowing")
+    shadowRelated = section.hasClass("shadowing") or section.hasClass("unshadowing")
+
+    if section.data("direction") or asideRelated or shadowRelated then lng.Router.animationEnd event
     else lng.Aside.animationEnd event
 
 

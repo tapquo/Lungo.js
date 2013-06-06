@@ -17,24 +17,17 @@ SCALE = .8
     vendor(animation-name, slideBackOut)
 
 @keyframes slideIn
-  from { transform: translateX(100%) }
-  to   { transform: translateX(0) }
+  from { transform: translateX(100%); opacity: 0 }
+  to   { transform: translateX(0); opacity: 1 }
 
-// @keyframes slideOut
-//   from { transform: scale(1) }
-//   to   { transform: scale(SCALE) }
 @keyframes slideOut
-  from { transform: translateZ(0) rotateX(0); opacity: 1 }
-  to   { transform: translateZ(-200px) rotateX(20deg); opacity: 0.1 }
+  from { transform: scale(1); opacity: 1 }
+  to   { transform: scale(SCALE); opacity: 0 }
 
 @keyframes slideBackOut
-  from { transform: translateX(0) }
-  to   { transform: translateX(100%) }
+  from { transform: translateX(0); opacity: 1 }
+  to   { transform: translateX(100%); opacity: 0 }
 
-// @keyframes slideBackIn
-//   from { transform: scale(SCALE) }
-//   to   { transform: scale(1) }
 @keyframes slideBackIn
-  from { transform: translateZ(-200px) rotateX(20deg); opacity: 0.1 }
-  to   { transform: translateZ(0) rotateX(0); opacity: 1 }
-
+  from { transform: scale(SCALE); opacity: 0 }
+  to   { transform: scale(1); opacity: 1 }

@@ -16,24 +16,36 @@ Lungo.Aside = do (lng = Lungo) ->
   Display an aside element with a particular <section>
   @method show
   ###
-  show = (aside_id) ->
+  show = (aside_id, animate_section = true) ->
     aside = lng.dom("##{aside_id}")
     if aside.length
       lng.Element.Cache.aside = aside
+      aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
       aside.addClass(C.CLASS.SHOW)
-      lng.Element.Cache.section.data("aside-#{aside.data(C.TRANSITION.ATTR)}", "show")
+      if lng.DEVICE is C.DEVICE.PHONE
+        lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
+      else
+        aside_section = lng.dom("[data-aside=#{aside_id}]")
+        if aside_section.attr("id") isnt lng.Element.Cache.section.attr("id")
+          lng.Element.Cache.section.addClass "shadowing"
+        aside_section.removeClass("aside").addClass "asideShowing"
 
   ###
   Hide an aside element with a particular section
   @method hide
   ###
   hide = (callback) ->
-    aside = lng.Element.Cache.aside
-    if aside
+    if lng.Element.Cache.aside
       _callback = callback
-      aside_transition = aside.data(C.TRANSITION.ATTR)
-      section = lng.Element.Cache.section
-      section.data("aside-#{aside_transition}", "hide")
+      aside_transition = lng.Element.Cache.aside.data(C.TRANSITION.ATTR) or "left"
+      if lng.DEVICE is C.DEVICE.PHONE
+        lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
+      else
+        lng.dom(".aside").removeClass("aside").addClass("asideHidding")
+        lng.Element.Cache.aside = null
+        if callback then callback.call callback
+        lng.dom(".shadow").removeClass("shadow").addClass("unshadowing")
+    else if callback then callback.call callback
 
   ###
   Toggle an aside element
@@ -52,12 +64,12 @@ Lungo.Aside = do (lng = Lungo) ->
   ###
   animationEnd = (event) ->
     section = lng.dom(event.target)
-    aside_transition = lng.Element.Cache.aside.data C.TRANSITION.ATTR
+    aside_transition = lng.Element.Cache.aside.data(C.TRANSITION.ATTR) or "left"
     if section.data("aside-#{aside_transition}") is "hide"
       lng.Element.Cache.aside.removeClass(C.CLASS.SHOW)
       lng.Element.Cache.aside = null
       section.removeAttr("data-aside-#{aside_transition}")
-      if _callback then _callback.call(@)
+      if _callback then _callback.call _callback
       _callback = undefined
 
 
