@@ -80,13 +80,26 @@
         </footer>
     </section>
 
-    <section id="mail">
-        mail 1
-    </section>
     <section id="mail2">
-        mail 2
+        <header data-title="First mail">
+            <nav class="left">
+                <button data-view-section="back">BaCk</button>
+            </nav>
+        </header>
+        <article id="art_2">
+            mail 1
+        </article>
     </section>
-
+    <section id="mail">
+        <header data-title="Second mail">
+            <nav class="left">
+                <button data-view-section="back">BaCk</button>
+            </nav>
+        </header>
+        <article id="art_1">
+            mail 2
+        </article>
+    </section>
 
     <script src="components/quojs/quo.js"></script>
     <script src="components/lungo.brownie/lungo.debug.js"></script>
@@ -94,7 +107,7 @@
         Lungo.init({
             name: 'Flexbox',
             version: '2.2',
-            history: true
+            history: false
         });
         $$("[data-router=back]").tap(function(event) { Lungo.Router.back(); });
     </script>

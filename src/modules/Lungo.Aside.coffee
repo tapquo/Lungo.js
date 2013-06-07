@@ -44,7 +44,6 @@ Lungo.Aside = do (lng = Lungo) ->
   @method hide
   ###
   hide = (callback, fromX) ->
-    console.error fromX
     if lng.Element.Cache.aside
       _callback = callback
       aside_transition = lng.Element.Cache.aside.data(C.TRANSITION.ATTR) or "left"
