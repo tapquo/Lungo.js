@@ -87,7 +87,7 @@ module.exports = (grunt) ->
         files: ['<%= source.coffee %>']
         tasks: ["coffee:core"]
       stylus:
-        files: ['<%= source.stylus %>']
+        files: ['<%= source.stylus %>', 'src/stylesheets/__init.styl',]
         tasks: ["stylus:core"]
       theme:
         files: ['<%= source.theme %>']
