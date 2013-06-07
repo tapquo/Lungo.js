@@ -11,36 +11,47 @@ Lungo.Aside = do (lng = Lungo) ->
 
   C = lng.Constants
   _callback = undefined
+  _customAsideAnimation = undefined
 
   ###
   Display an aside element with a particular <section>
   @method show
   ###
-  show = (aside_id, animate_section = true) ->
+  show = (aside_id, animate_section = true, fromX = 0) ->
     aside = lng.dom("##{aside_id}")
     if aside.length
       lng.Element.Cache.aside = aside
       aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
       aside.addClass(C.CLASS.SHOW)
       if lng.DEVICE is C.DEVICE.PHONE
-        lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
+        if fromX then _phoneCustomAnimation fromX, false
+        else lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
       else
         aside_section = lng.dom("[data-aside=#{aside_id}]")
-        if aside_section.attr("id") isnt lng.Element.Cache.section.attr("id")
-          lng.Element.Cache.section.addClass "shadowing"
-        aside_section.removeClass("aside").addClass "asideShowing"
+        if aside_section.data("children")
+          if aside_section.attr("id") isnt lng.Element.Cache.section.attr("id")
+            lng.Element.Cache.section.addClass "shadowing"
+          aside_section.removeClass("aside").addClass "asideShowing"
+
+  showFix = (aside_id) ->
+    aside = lng.dom("##{aside_id}")
+    if aside.length
+      lng.Element.Cache.aside = aside
+      aside.addClass(C.CLASS.SHOW).addClass("box")
 
   ###
   Hide an aside element with a particular section
   @method hide
   ###
-  hide = (callback) ->
+  hide = (callback, fromX) ->
+    console.error fromX
     if lng.Element.Cache.aside
       _callback = callback
       aside_transition = lng.Element.Cache.aside.data(C.TRANSITION.ATTR) or "left"
       if lng.DEVICE is C.DEVICE.PHONE
         lng.Element.Cache.section.removeClass("aside").removeClass("aside-right")
-        lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
+        if fromX then _phoneCustomAnimation fromX, true
+        else lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
       else
         lng.dom(".aside").removeClass("aside").addClass("asideHidding")
         lng.Element.Cache.aside = null
@@ -73,26 +84,26 @@ Lungo.Aside = do (lng = Lungo) ->
       if _callback then _callback.call _callback
       _callback = undefined
     else
-      unless aside_transition.indexOf("right") is -1
-        section.removeAttr("data-aside-#{aside_transition}").addClass "aside-right"
-      else
-        section.removeAttr("data-aside-#{aside_transition}").addClass "aside"
-
+      className = if aside_transition.indexOf("right") is -1 then "aside" else "aside-right"
+      section.removeAttr("style").removeAttr("data-aside-#{aside_transition}").addClass(className)
+    if _customAsideAnimation
+      _customAsideAnimation.remove()
+      _customAsideAnimation = undefined
 
   ###
   @todo
   @method draggable
   ###
   draggable = ->
-    MIN_XDIFF = parseInt(document.body.getBoundingClientRect().width / 3, 10)
-    MIN_XDIFF = 128
+    return false unless lng.DEVICE is C.DEVICE.PHONE
+    MIN_XDIFF = 96
     lng.dom(C.QUERY.HREF_ASIDE).each ->
       started = false
       el = lng.dom(this)
       section = el.closest("section")
       aside = lng.dom("aside#" + el.data("aside"))
       section.swiping (gesture) ->
-        unless section.hasClass("aside")
+        unless section.hasClass("aside") or section.hasClass("aside-right")
           xdiff = gesture.currentTouch.x - gesture.iniTouch.x
           ydiff = Math.abs(gesture.currentTouch.y - gesture.iniTouch.y)
           started = (if started then true else xdiff > 3 * ydiff and xdiff < 50)
@@ -109,9 +120,8 @@ Lungo.Aside = do (lng = Lungo) ->
         ydiff = Math.abs(gesture.currentTouch.y - gesture.iniTouch.y)
         section.attr "style", ""
         if diff > MIN_XDIFF and started
-          show aside
-        else
-          hide aside
+          show(aside.attr("id"), true, gesture.currentTouch.x)
+        else hide
         started = false
 
 
@@ -121,8 +131,30 @@ Lungo.Aside = do (lng = Lungo) ->
   _asideStylesheet = ->
     if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else "  "
 
+  _phoneCustomAnimation = (fromX, hide=false) ->
+    if hide then kfStyle = document.createTextNode("""
+        @-webkit-keyframes asideCustomKF {
+          0%   { -webkit-transform: translateX(#{fromX}px); }
+          40%  { -webkit-transform: translateX(#{fromX + 8}px); }
+          100% { -webkit-transform: translateX(0); }
+        }""")
+    else kfStyle = document.createTextNode("""
+        @-webkit-keyframes asideCustomKF {
+          0%   { -webkit-transform: translateX(#{fromX}px); }
+          60%  { -webkit-transform: translateX(#{C.ASIDE.NORMAL + 8}px); }
+          100% { -webkit-transform: translateX(#{C.ASIDE.NORMAL}px); }
+        }""")
+    _customAsideAnimation = document.createElement('style')
+    _customAsideAnimation.type = 'text/css'
+    _customAsideAnimation.appendChild(kfStyle)
+    document.getElementsByTagName("head")[0].appendChild(_customAsideAnimation)
+    lng.Element.Cache.section.style("-webkit-animation-name", "asideCustomKF")
+
+
+
   toggle: toggle
   show: show
+  showFix: showFix
   hide: hide
   draggable: draggable
   animationEnd: animationEnd

@@ -64,6 +64,10 @@ Lungo.Constants =
     ORIGIN               : "transition-origin"
     ATTR                 : "transition"
 
+  ASIDE:
+    NORMAL               : 264
+
+
   ATTRIBUTE:
     ID                   : "id"
     HREF                 : "href"

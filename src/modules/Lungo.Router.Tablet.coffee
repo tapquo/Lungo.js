@@ -123,13 +123,16 @@ Lungo.RouterTablet = do (lng = Lungo) ->
         future.data(C.ATTRIBUTE.DIRECTION, "in") if future.data(C.TRANSITION.ATTR)
 
     lng.Section.show current, future
-    do _checkSectionAside if animating
+    do _checkAside if animating
 
 
-  _checkSectionAside = (section) ->
+  _checkAside = ->
     aside_id = lng.Element.Cache.section?.data("aside")
-    is_other_aside = aside_id isnt lng.Element.Cache.aside?.attr("id")
-    lng.Aside.hide (-> lng.Aside.show aside_id)
+    if aside_id and not lng.Element.Cache.section.data("children")
+      lng.Aside.showFix aside_id
+    else
+      # is_other_aside = aside_id isnt lng.Element.Cache.aside?.attr("id")
+      lng.Aside.hide (-> lng.Aside.show aside_id)
 
 
   _sameSection = ->

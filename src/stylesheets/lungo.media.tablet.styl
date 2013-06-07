@@ -17,18 +17,27 @@
       vendor(animation-fill-mode, forwards)
 
     & > aside
-      position: absolute
-      z-index: 0
-      left: 0
-      top: 0
-      visibility: hidden
-      &.show
-        visibility: visible
+      &.box
+        z-index: 0
+        display: none
+        &.show
+          ordinal-group(1)
+          display-box()
+
+      &:not(.box)
+        position: absolute
+        z-index: 0
+        left: 0
+        top: 0
+        visibility: hidden
+        &.show
+          visibility: visible
 
     & > section
       z-index: 1
       display: none
       &.show
+        ordinal-group(2)
         display-box()
 
       &.asideShowing
@@ -48,13 +57,11 @@
         transform translateX(ASIDE_WIDTH)
         opacity: .6
 
-
       &:not([data-children])
         box-flex(1)
 
       &[data-children]
         width: 320px
-
 
 
 @keyframes withAside

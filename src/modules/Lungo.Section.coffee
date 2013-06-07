@@ -31,10 +31,6 @@ Lungo.Section = do (lng = Lungo) ->
 
   _tablet = (current, target, backward) ->
     target.addClass(C.CLASS.SHOW)
-    # if current and (not children or children.indexOf(target.attr(C.ATTRIBUTE.ID)) is -1)
-    #   current.addClass C.CLASS.HIDE
-    #   setTimeout (->current.removeClass(C.CLASS.SHOW).removeClass(C.CLASS.HIDE)), C.TRANSITION.DURATION
-    # setTimeout (-> target.addClass(C.CLASS.SHOW)), C.TRANSITION.DURATION
 
 
   show: show

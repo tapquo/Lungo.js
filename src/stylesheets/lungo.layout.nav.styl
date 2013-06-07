@@ -109,6 +109,8 @@ nav
           font-size: FONT_SIZE_LARGE
           line-height: 1.0em
 
+
+
   /* ========================================================================= */
   /* ================================ FOOTER ================================= */
   /* ========================================================================= */
@@ -152,3 +154,16 @@ nav
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+
+  /* ========================================================================= */
+  /* =========================== MENU KEYFRAMES ============================== */
+  /* ========================================================================= */
+
+@keyframes menuShow
+  0%   {transform translateY(-120%)}
+  75%  {transform translateY(8px)}
+  100% {transform translateY(0)}
+@keyframes menuHide
+  0%   {transform translateY(0)}
+  25%  {transform translateY(8px)}
+  100% {transform translateY(-120%)}
