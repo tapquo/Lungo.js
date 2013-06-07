@@ -32,8 +32,8 @@ Lungo.Boot.Events = do (lng = Lungo) ->
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
     lng.dom(QUERY.CONTROL_CHECKBOX).on C.EVENT.CHANGE, _changeCheckboxValue
     for transition in C.EVENT.TRANSITION_END
-      lng.dom(C.ELEMENT.SECTION).on transition, _transitionEnd
-      lng.dom(C.ELEMENT.ASIDE).on transition, _transitionEnd
+      lng.dom("body").delegate C.ELEMENT.SECTION, transition, _transitionEnd
+      lng.dom("body").delegate C.ELEMENT.ASIDE, transition, _transitionEnd
 
   _onSection = (event) ->
     event.preventDefault()
