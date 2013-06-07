@@ -14,6 +14,8 @@
     & > aside
       z-index: 0
       position: absolute
+      &:not(.show)
+        z-index: -1
 
     & > section
       display: none
@@ -21,6 +23,8 @@
         display: block
       &.aside
         transform translateX(ASIDE_WIDTH)
+      &.aside-right
+        transform translateX(-(ASIDE_WIDTH))
 
     & [data-transition], & [data-aside-transition]
       display-box()

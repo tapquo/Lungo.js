@@ -102,10 +102,11 @@ Lungo.Boot.Events = do (lng = Lungo) ->
 
   _transitionEnd = (event) ->
     section = lng.dom(event.target)
+    hasDirection = section.data("direction")
     asideRelated = section.hasClass("asideHidding") or section.hasClass("asideShowing")
     shadowRelated = section.hasClass("shadowing") or section.hasClass("unshadowing")
 
-    if section.data("direction") or asideRelated or shadowRelated then lng.Router.animationEnd event
+    if hasDirection or asideRelated or shadowRelated then lng.Router.animationEnd event
     else lng.Aside.animationEnd event
 
 
