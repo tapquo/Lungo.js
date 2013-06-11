@@ -8,47 +8,39 @@
  */
 
 body > section
-  background-color: COLOR
-  &, & a
-    color: COLOR
   & > header
-    C = THEME
-    background-color: darken(COLOR, 50%)
-    box-shadow 0 2px 0 SHADOW
-    color: #fff
+    background-color: THEME
+
+  & nav[data-control=groupbar], & > header
+    box-shadow inset 0 -1px SHADOW, 0 1px SHADOW
 
   & nav[data-control=groupbar], & > footer
-    background-color: COLOR
-    box-shadow inset 0 -2px SHADOW
+    background-color: ASIDE
 
   & > footer
-    box-shadow 0 -2px SHADOW, inset 0 2px SHADOW
+    box-shadow inset 0 1px SHADOW, 0 -1px SHADOW
 
   & > article, & > [data-control="pull"]
+    &, a
+      color: TEXT
     background-color: BACKGROUND
-    box-shadow: 0 1px 0 red
     &.splash
       background: THEME
       color: #fff
 
   &.aside
-    box-shadow -2px SHADOW
+    box-shadow -4px 0 2px SHADOW
     &.right
-      box-shadow 2px SHADOW
+      box-shadow 2px 0 SHADOW
 
   &[data-pull] > article.active
     box-shadow: 0 -1px 0 rgba(0,0,0,0.05)
 
 body > aside
-  background-color: COLOR
+  background-color: darken(ASIDE, 10%)
   color: WHITE
   & > header, & > footer
-    background-color: darken(COLOR, 25%)
-  & > header
-    box-shadow 0 2px 0 SHADOW
+    background-color: ASIDE
 
-body > * > header > .title
-  color: lighten(COLOR, 85%)
-  font-weight: 700
-  text-transform: uppercase
-  letter-spacing: -0.05em
+body header .title
+  font-weight: 400

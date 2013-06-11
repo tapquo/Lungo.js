@@ -13,31 +13,31 @@
     &:not(.anchor)
       border-bottom: inset 1px LIST_border
     &.color
-      box-shadow: inset 4px00 COLOR
+      box-shadow: inset 4px 0 COLOR
     &.accept
-      box-shadow: inset 4px00 SUCCESS
+      box-shadow: inset 4px 0 SUCCESS
     &.cancel
-      box-shadow: inset 4px00 DANGER
+      box-shadow: inset 4px 0 DANGER
     &.warning
-      box-shadow: inset 4px00 WARNING
+      box-shadow: inset 4px 0 WARNING
     &.arrow::after
       border-color: lighten(COLOR, 75%)
 
     &, a
       &.contrast
-        background: COLOR
+        background: LIST_border
       &.selectable:active, &.theme, &.active
         background: lighten(THEME, 15%)
       &.light
         background: LIST_border
-        color: lighten(COLOR, 20%)
+        color: lighten(TEXT, 50%)
       &.contrast, &.selectable:active, &.theme
         &, small, & .on-right:not(.tag), strong, .arrow::after
           color: #fff
         &.arrow::after
           border-color: #fff
       & small, & .on-right:not(.tag)
-        color: lighten(COLOR, 20%)
+        color: lighten(TEXT, 50%)
 
     &:not(.big) img
       border-radius 4px
@@ -49,13 +49,13 @@
   aside & li
     background: none
     &, & a
-      color: lighten(COLOR, 25%)
+      color: lighten(ASIDE, 50%)
+
     &.active, &:active
-      border-color: transparent
-      background-color: lighten(COLOR, 5%)
+      background-color: lighten(ASIDE, 5%)
       & :not(.icon)
         color: WHITE
       & .icon
         color: THEME
     & small, .icon
-      color: lighten(COLOR, 25%)
+      color: lighten(ASIDE, 20%)

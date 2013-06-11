@@ -8,32 +8,42 @@
  */
 
 nav
-  header > &
-    & a:not(.button)
-      color: THEME
-    & .button, button
-      color: lighten(COLOR, 20%)
-    & a, button
-      &:active
+  section header > &
+    &:not(.on-right)
+      & a, button
         color: WHITE
-        text-shadow: 0 0 1em WHITE
+    &.on-right
+      & a, button
+        color: lighten(THEME, 50%)
+    & a, button
+      text-shadow: 0 1px darken(THEME, 10%)
+
+  aside header > &
+    & a, button
+      color: lighten(ASIDE, 25%)
+      text-shadow: 0 1px darken(ASIDE, 10%)
+
+  header > &
+    & a, button
+      text-shadow: 0 1px darken(THEME, 10%)
+      transition text-shadow TRANSITION_time TRANSITION_easing
+      &:active, &.active
+        color: WHITE
+        text-shadow: 0 0 0.5em WHITE
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
+    transition box-shadow TRANSITION_time TRANSITION_easing
     & .icon
-      text-shadow: 0 1px darken(COLOR, 25%)
-    & abbr
-      font-weight: 600
+      transition color TRANSITION_time TRANSITION_easing
     &.active
-      transition box-shadow TRANSITION_time TRANSITION_easing
       color: NAV_LINK_ACTIVE
-      background-color: lighten(COLOR, 5%)
 
   section > &[data-control=groupbar] > a.active
-      box-shadow inset 0 -2px 0 THEME
+      box-shadow inset 0 -3px 0 THEME
 
   section > footer > & > a.active
-      box-shadow inset 0 2px THEME
+      box-shadow inset 0 3px THEME
 
   &[data-control=menu]
     background-color: rgba(0,0,0,0.8)

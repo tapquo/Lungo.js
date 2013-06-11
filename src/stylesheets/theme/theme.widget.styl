@@ -10,22 +10,16 @@
 /* =================================  TAG  ================================= */
 .tag:not(.icon)
   color: #fff
-  border-radius BORDER_radius
-  font-weight: 700
-  box-shadow inset 0 0.1em rgba(255,255,255,0.2), 0 0.1em rgba(0,0,0,0.25)
+  font-weight: 400
   &.count
-    background-color: THEME
-    aside a:not(.active) &,  footer a:not(.active) &, [data-control="groupbar"] a:not(.active) &
-      background-color: lighten(COLOR, 20%)
-
+    border-radius 1em
+    background-color: DANGER
 
 /* =================================  PULL  =============================== */
 body > section > [data-control="pull"]
   background-color: darken(BACKGROUND, 15%)
   color: darken(BACKGROUND, 50%)
   text-shadow: 0 0.1em 1em BACKGROUND
-  & > strong
-    font-weight: 700
   &.rotate
     color: darken(BACKGROUND, 75%)
 

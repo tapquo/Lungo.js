@@ -1,17 +1,19 @@
 @import "../CSSmethods/vendor.styl"
 
 /* -------------------------- COLOUR -------------------------- */
+TEXT                = #000
 THEME               = #3498db
-COLOR               = #292929 /* #2C3E50 */
+COLOR               = #F4F4F4
+ASIDE               = #2f2f2f
 DANGER              = #e74c3c
 SUCCESS             = #2ecc71
 WARNING             = #edba22
 DISABLED            = #acb8b9
-BACKGROUND          = lighten(COLOR, 95%)
+BACKGROUND          = #DFDFDF
 /* -------------------------- VARIATIONS -------------------------- */
-LIST_border         = lighten(COLOR, 90%)
-NAV_LINK            = lighten(COLOR, 25%)
-NAV_LINK_ACTIVE     = #FFF
+LIST_border         = darken(COLOR, 15%)
+NAV_LINK            = lighten(ASIDE, 25%)
+NAV_LINK_ACTIVE     = THEME
 /* ------------------------- TRANSITION ------------------------- */
 TRANSITION_time     = 400ms
 TRANSITION_easing   = ease

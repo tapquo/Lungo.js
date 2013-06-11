@@ -61,29 +61,33 @@
             <nav class="on-left">
                 <a href="#" data-view-aside="features" data-icon="menu"></a>
             </nav>
-            <h1 class="title">Brownie <span class="tag count">2.2</span></h1>
+            <h1 class="title centered">
+                Brownie
+                <!--<span class="tag count">2.2</span>-->
+            </h1>
 
             <nav class="on-right">
-                         <!--
                 <a href="#" class="button" data-icon="inbox" data-count="19"></a>
                 <button data-icon="share"></button>
+                         <!--
 
                 <a href="#" data-icon="menu" data-loading="white"></a>
                 <button data-label="send" data-icon="envelope"></button>
                 <button data-label="send"></button>
-                -->
+
                 <a href="#" class="button" data-view-menu="options" data-icon="menu"></a>
                 <a href="#" class="button" data-view-menu="options-icons" data-icon="grid"></a>
+                -->
+
             </nav>
         </header>
 
         <nav data-control="groupbar">
             <a href="#" data-view-article="layout-art1" data-icon="user" data-label="Profile" class="active"></a>
-            <a href="#" data-view-article="layout-art2" data-label="Inbox" data-count="19"></a>
+            <a href="#" data-view-article="layout-art2" data-label="Inbox" data-count="6"></a>
             <a href="#" data-view-article="layout-art3" data-label="Comments"></a>
             <a href="#" data-view-article="layout-art4" data-label="Settings"></a>
         </nav>
-
 
         <nav id="options" data-control="menu">
             <a href="#" data-view-article="layout-art1" data-icon="user" class="active" data-label="Profile"></a>
@@ -101,6 +105,141 @@
 
         <article id="layout-art2" class="list scroll ">
 
+            <ul>
+                <li class="selectable">
+                    <strong>&lt;li .selectable&gt; + &lt;strong&gt; </strong>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <strong>&lt;li&gt; + &lt;a&gt; + &lt;strong&gt; </strong>
+                    </a>
+                </li>
+
+                <li>
+                    <strong>&lt;li&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="anchor contrast">colors</li>
+
+                <li class="dark">
+                    <strong>&lt;li .dark&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="theme">
+                    <strong>&lt;li .theme&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="arrow light">
+                    <strong>&lt;li .arrow.light&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="anchor contrast">.arrow class</li>
+
+                <li class="arrow">
+                    <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
+                </li>
+
+                <li class="arrow">
+                    <strong>&lt;li .arrow&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+
+                <li class="anchor contrast">.right element</li>
+
+                <li>
+                    <a href="#">
+                        <div class="on-right">.right</div>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                        <div class="on-right">.right</div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="on-right tag blue">.right.tag</div>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <div class="on-right" data-icon="globe">.right data-icon</div>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <a href="#" class="button small red on-right" data-label="button"></a>
+                        <strong>&lt;strong&gt; element</strong>
+                        <small>with &lt;small&gt; element</small>
+                    </a>
+                </li>
+
+                <li class="anchor contrast">With data-icon or data-image attribute</li>
+                <li class="thumb">
+                    <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+                    <div>
+                        <div class="on-right text tiny">lorem ipsum</div>
+                        <strong>&lt;strong&gt;</strong>
+                        <span class="text small">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+                        </span>
+                    </div>
+                </li>
+
+                <li class="thumb big">
+                    <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+                    <div>
+                        <div class="on-right text tiny">lorem ipsum</div>
+                        <strong>&lt;strong&gt;</strong>
+                        <span class="text tiny opacity">lorem ipsum</span>
+                        <small>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+                        </small>
+                    </div>
+                </li>
+
+                <li data-icon="user">
+                    <strong>&lt;li data-icon&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+
+                <li class="anchor contrast">With colours</li>
+                <li class="accept">
+                    <strong>&lt;li .accept&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class="cancel">
+                    <strong>&lt;li .cancel&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class="warning">
+                    <strong>&lt;li .warning&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+                <li class="color">
+                    <strong>&lt;li .color&gt; + &lt;strong&gt; </strong>
+                    <small>&lt;small&gt;</small>
+                </li>
+            </ul>
         </article>
 
         <article id="layout-art1" class="indented scroll">
