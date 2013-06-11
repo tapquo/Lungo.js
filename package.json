@@ -1,0 +1,32 @@
+{
+  "name": "Lungo.js",
+  "version": "2.1.0511",
+  "description": "Lungo - HTML5 Cross-Device Framework",
+  "main": "GruntFile.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tapquo/Lungo.js.git"
+  },
+  "keywords": [
+    "Lungo.js",
+    "mobile"
+  ],
+  "author": "Javier Jimenez Villar <javi@tapquo.com>",
+  "license": "LUNGOJS License",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "grunt": "",
+    "grunt-contrib-coffee": "",
+    "grunt-contrib-stylus": "",
+    "grunt-contrib-concat": "",
+    "grunt-contrib-uglify": "",
+    "grunt-contrib-copy": "",
+    "grunt-contrib-watch": ""    
+  }
+}
