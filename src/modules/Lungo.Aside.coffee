@@ -19,19 +19,23 @@ Lungo.Aside = do (lng = Lungo) ->
   ###
   show = (aside_id, animate_section = true, fromX = 0) ->
     aside = lng.dom("##{aside_id}")
-    if aside.length
-      lng.Element.Cache.aside = aside
-      aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
-      aside.addClass(C.CLASS.SHOW)
-      if lng.DEVICE is C.DEVICE.PHONE
-        if fromX then _phoneCustomAnimation fromX, false
-        else lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
-      else
-        aside_section = lng.dom("[data-aside=#{aside_id}]")
-        if aside_section.data("children")
-          if aside_section.attr("id") isnt lng.Element.Cache.section.attr("id")
+    if aside.length and not _alreadyOpen(aside_id)
+        console.error 'Current aside --> ', aside
+        lng.Element.Cache.aside = aside
+        if lng.DEVICE is C.DEVICE.PHONE
+          aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
+          aside.addClass(C.CLASS.SHOW)
+          if fromX then _phoneCustomAnimation fromX, false
+          else lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
+        else
+          aside.addClass(C.CLASS.SHOW)
+          aside_section = lng.dom("[data-aside=#{aside_id}][data-children].#{C.CLASS.SHOW}")
+          if aside_section.attr("id") isnt lng.Element.Cache.section?.attr("id")
             lng.Element.Cache.section.addClass "shadowing"
           aside_section.removeClass("aside").addClass "asideShowing"
+
+  _alreadyOpen = (aside_id) ->
+    return lng.Element.Cache.aside?.attr("id") is aside_id
 
   showFix = (aside_id) ->
     aside = lng.dom("##{aside_id}")

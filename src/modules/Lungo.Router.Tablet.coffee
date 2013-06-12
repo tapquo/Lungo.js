@@ -1,11 +1,9 @@
 ###
-Handles the <sections> and <articles> to show
+Handles the <sections> and <articles> to show on a tablet device
 
 @namespace Lungo
 @class Router
 
-@author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
-@author Guillermo Pascual <pasku@tapquo.com> || @pasku1
 @author Ignacio Olalde <ina@tapquo.com> || @piniphone
 ###
 
@@ -16,6 +14,8 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   HASHTAG             = "#"
   _history            = []
   _animating          = false
+  _callbackSection    = undefined
+  _fromCallback       = false
 
   ###
   Navigate to a <section>.
@@ -34,6 +34,7 @@ Lungo.RouterTablet = do (lng = Lungo) ->
         do _url unless Lungo.Config.history is false
         do _updateNavigationElements
     # else do lng.Aside.hide
+    # console.error "Forward -->", _history
 
   ###
   Return to previous section.
@@ -49,6 +50,7 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       _show future, current, true, animating
       do _url unless Lungo.Config.history is false
       do _updateNavigationElements
+    # console.error "Backward -->", _history
 
   ###
   Displays the <article> in a particular <section>.
@@ -84,15 +86,15 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     if direction
       section.removeClass C.CLASS.SHOW if direction is "out" or direction is "back-out"
       section.removeAttr "data-#{C.ATTRIBUTE.DIRECTION}"
-    if section.hasClass("asideHidding")
-      section.removeClass("asideHidding").removeClass("aside")
-    if section.hasClass("asideShowing")
-      section.removeClass("asideShowing").addClass("aside")
-    if section.hasClass("shadowing")
-      section.removeClass("shadowing").addClass("shadow")
-    if section.hasClass("unshadowing")
-      section.removeClass("unshadowing").removeClass("shadow")
+      if _callbackSection?
+        _fromCallback = true
+        _show _callbackSection, undefined
+        _callbackSection = undefined
 
+    if section.hasClass("asideHidding") then section.removeClass("asideHidding").removeClass("aside")
+    if section.hasClass("asideShowing") then section.removeClass("asideShowing").addClass("aside")
+    if section.hasClass("shadowing")    then section.removeClass("shadowing").addClass("shadow")
+    if section.hasClass("unshadowing")  then section.removeClass("unshadowing").removeClass("shadow")
     _animating = false
 
   ###
@@ -112,28 +114,89 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   ###
   Private methods
   ###
-  _show = (future, current, backward, animating = true) ->
-    if not backward and not _sameSection() then back false
-    if current?
-      if backward
-        if animating then current.data(C.ATTRIBUTE.DIRECTION, "back-out")
-        else current.removeClass("show")
-      else
-        future.addClass(C.CLASS.SHOW)
-        future.data(C.ATTRIBUTE.DIRECTION, "in") if future.data(C.TRANSITION.ATTR)
-
-    lng.Section.show current, future
-    do _checkAside if animating
-
-
-  _checkAside = ->
-    aside_id = lng.Element.Cache.section?.data("aside")
-    if aside_id and not lng.Element.Cache.section.data("children")
-      lng.Aside.showFix aside_id
+  _show = (future, current, backward=false) ->
+    unless current? then _showFuture(future)
     else
-      # is_other_aside = aside_id isnt lng.Element.Cache.aside?.attr("id")
-      lng.Aside.hide (-> lng.Aside.show aside_id)
+      if backward then _showBackward(current, future)
+      else _showForward(current, future)
+      lng.Section.show(current, future)
+    _fromCallback = false
 
+  _showFuture = (future, animating=false) ->
+    current = undefined
+    lng.Section.show(current, future)
+    if not animating and not _fromCallback then future.addClass(C.CLASS.SHOW)
+    else _applyDirection(future, "in")
+    _checkAside(current, future)
+
+  _showForward = (current, future) ->
+    asideHandled = false
+    if _isChild(current, future) then _applyDirection(future, "in")
+    else
+      do _removeLast
+      parent_id = _parentId(future)
+      hideSelector = "section.#{C.CLASS.SHOW}"
+      if parent_id then hideSelector += ":not(##{parent_id})"
+      elements = lng.dom(hideSelector)
+      if lng.Element.Cache.aside
+        do lng.Aside.hide
+        elements.removeClass C.CLASS.SHOW
+        _showFuture future, true
+        asideHandled = true
+      else
+        _applyDirection(elements, "back-out")
+        _callbackSection = future
+
+    if not asideHandled and not _fromCallback
+      _checkAside(current, future)
+
+  _showBackward = (current, future) ->
+    _applyDirection(current, "back-out")
+    showSections = lng.dom("section.#{C.CLASS.SHOW}:not(##{current.attr('id')})")
+    if showSections.length is 1 and showSections.first().data("children")?
+      lng.Aside.hide (-> lng.Aside.show showSections.first().data("aside"))
+    _callbackSection = future
+
+  _visibleParent = (section) ->
+    return lng.dom("section[data-children~=#{section.attr('id')}].#{C.CLASS.SHOW}")
+
+  _checkAside = (current, target) ->
+    aside_id = target.data("aside")
+    unless aside_id then do lng.Aside.hide
+    else if current?
+      do lng.Aside.hide unless lng.Element.Cache.aside?.hasClass("box")
+    else if target.data("children") and lng.dom("section.#{C.CLASS.SHOW}").length is 1
+      lng.Aside.show(aside_id)
+    else if not target.data("children")
+      unless _parentId target
+        lng.Aside.showFix(aside_id)
+
+  _targetIsChildren = (current, target) ->
+    children = current?.data("children")
+    return false unless children
+    target_id = target.attr "id"
+    return children.indexOf(target_id) isnt -1
+
+  _parentId = (section) ->
+    parent = lng.dom("[data-children~=#{section.attr('id')}]")
+    if parent.length then return parent.attr("id")
+    return null
+
+  _isChild = (current, future) ->
+    children = current.data("children")
+    return false unless children
+    target_id = future.attr "id"
+    return children.indexOf(target_id) isnt -1
+
+  _applyDirection = (section, direction) ->
+    isForward = direction.indexOf("in") >= 0
+    apply = false
+    if isForward
+      unless section.hasClass(C.CLASS.SHOW) then apply = true
+    else apply = true
+    if apply
+      section.addClass(C.CLASS.SHOW)
+      section.data(C.ATTRIBUTE.DIRECTION, direction) if section.data(C.TRANSITION.ATTR)
 
   _sameSection = ->
     if not event or not lng.Element.Cache.section then return true

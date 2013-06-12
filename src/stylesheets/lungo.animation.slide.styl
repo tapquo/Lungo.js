@@ -1,9 +1,7 @@
 @import "__init.styl"
 
-SCALE = .8
-
-section
-  &[data-transition="slide"]
+body[data-device="phone"]
+  & > section[data-transition="slide"]
     &[data-direction="in"]
       z-index: 2
       vendor(animation-name, slideIn)
@@ -17,18 +15,36 @@ section
       z-index: 2
       vendor(animation-name, slideBackOut)
 
+SCALE = .8
 @keyframes slideIn
   from { transform: translateX(100%) }
   to   { transform: translateX(0) }
-
 @keyframes slideOut
   from { transform: scale(1) }
   to   { transform: scale(SCALE) }
-
 @keyframes slideBackOut
   from { transform: translateX(0) }
   to   { transform: translateX(100%) }
-
 @keyframes slideBackIn
   from { transform: scale(SCALE) }
   to   { transform: scale(1) }
+
+
+//============================================================
+// Tablet
+body[data-device="tablet"]
+  & > section[data-transition="slide"]
+    &[data-direction="in"]
+      z-index: 2
+      vendor(animation-name, slideInTablet)
+    &[data-direction="back-out"]
+      z-index: 2
+      vendor(animation-name, slideBackOutTablet)
+
+@keyframes slideInTablet
+  from { transform: translateX(100%); opacity: 0 }
+  to   { transform: translateX(0); opacity: 1 }
+@keyframes slideBackOutTablet
+  from { transform: translateX(0); opacity: 1 }
+  to   { transform: translateX(100%); opacity: 0 }
+
