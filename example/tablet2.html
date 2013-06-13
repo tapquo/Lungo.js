@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lungo Flexbox - SDK</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css">
+    <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+
+</head>
+
+<body>
+    <aside id="menu">
+        <header data-title="Formula1"></header>
+        <article class="active list scroll">
+            <ul>
+                <li data-view-section="ranking">Rankig</li>
+                <li data-view-section="events">Events</li>
+            </ul>
+        </article>
+    </aside>
+
+    <section id="ranking" data-transition="slide" data-aside="menu">
+        <header data-title="Ranking">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="menu"></button>
+            </nav>
+            <nav class="on-right"></nav>
+        </header>
+        <article id="byDriver" class="list scroll">
+            <ul>
+                <li><h1>Drivers</h1></li>
+                <li data-view-section="driver">Hamilton</li>
+                <li data-view-section="driver">Vettel</li>
+                <li data-view-section="driver">Webber</li>
+                <li data-view-section="driver">Alonso</li>
+            </ul>
+        </article>
+        <article id="byTeam" class="list scroll">
+            <ul>
+                <li><h1>Teams</h1></li>
+                <li data-view-section="driver">Ferrari</li>
+                <li data-view-section="driver">McLaren</li>
+                <li data-view-section="driver">RedBull</li>
+                <li data-view-section="driver">Renault</li>
+            </ul>
+        </article>
+        <footer>
+            <nav>
+                <a href="#" data-view-article="byDriver">drivers</a>
+                <a href="#" data-view-article="byTeam">teams</a>
+            </nav>
+        </footer>
+    </section>
+
+    <section id="events" data-transition="slide" data-aside="menu">
+        <header data-title="Events">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="menu"></button>
+            </nav>
+            <nav class="on-right"></nav>
+        </header>
+        <article id="events-f1" class="list scroll">
+            <ul>
+                <li data-view-section="eventInfo">Barcelona</li>
+                <li data-view-section="eventInfo">Laguna seca</li>
+                <li data-view-section="eventInfo">Spa-Francochamps</li>
+                <li data-view-section="eventInfo">Nordschleife</li>
+                <li data-view-section="eventInfo">Monaco</li>
+            </ul>
+        </article>
+    </section>
+
+
+    <!-- Lungo dependencies -->
+    <script src="components/quojs/quo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
+
+    <!-- LungoJS - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 'Tablet tests',
+            version: '2.2',
+            history: false
+        });
+    </script>
+</body>
+</html>

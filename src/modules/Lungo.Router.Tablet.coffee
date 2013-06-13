@@ -33,8 +33,6 @@ Lungo.RouterTablet = do (lng = Lungo) ->
         step section_id
         do _url unless Lungo.Config.history is false
         do _updateNavigationElements
-    # else do lng.Aside.hide
-    # console.error "Forward -->", _history
 
   ###
   Return to previous section.
@@ -42,15 +40,25 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   ###
   back = (animating = true) ->
     return false if _animating
+    if not _sameSection()
+      target = lng.dom(event.target).closest(C.ELEMENT.SECTION)
+      if target.length
+        i = 0
+        while history() isnt target.attr("id") and i++ < 10
+          _applyDirection(lng.dom(C.ELEMENT.SECTION + HASHTAG + history()), "back-out")
+          do _removeLast
+        lng.Element.Cache.section = target
+
     do _removeLast
     current = lng.Element.Cache.section
     query = C.ELEMENT.SECTION + HASHTAG + history()
     future = current.siblings(query)
+
     if future.length
       _show future, current, true, animating
       do _url unless Lungo.Config.history is false
       do _updateNavigationElements
-    # console.error "Backward -->", _history
+
 
   ###
   Displays the <article> in a particular <section>.
@@ -65,12 +73,10 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       section = target.closest C.ELEMENT.SECTION
       lng.Router.section(section.attr("id"))
       section.children("#{C.ELEMENT.ARTICLE}.#{C.CLASS.ACTIVE}").removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
-      target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
-      # lng.Element.Cache.article.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
-      # lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
+      lng.Element.Cache.article.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
+      lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
 
       if element?.data(C.ATTRIBUTE.TITLE)?
-        # lng.Element.Cache.section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
         section.find(C.QUERY.TITLE).text element.data(C.ATTRIBUTE.TITLE)
       do _url unless Lungo.Config.history is false
       _updateNavigationElements article_id
@@ -122,60 +128,52 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       lng.Section.show(current, future)
     _fromCallback = false
 
-  _showFuture = (future, animating=false) ->
+  _showFuture = (future) ->
     current = undefined
     lng.Section.show(current, future)
-    if not animating and not _fromCallback then future.addClass(C.CLASS.SHOW)
+    if not _fromCallback then future.addClass(C.CLASS.SHOW)
     else _applyDirection(future, "in")
     _checkAside(current, future)
 
   _showForward = (current, future) ->
-    asideHandled = false
     if _isChild(current, future) then _applyDirection(future, "in")
     else
       do _removeLast
-      parent_id = _parentId(future)
       hideSelector = "section.#{C.CLASS.SHOW}"
+      parent_id = _parentId(future)
       if parent_id then hideSelector += ":not(##{parent_id})"
       elements = lng.dom(hideSelector)
-      if lng.Element.Cache.aside
-        do lng.Aside.hide
-        elements.removeClass C.CLASS.SHOW
-        _showFuture future, true
-        asideHandled = true
-      else
-        _applyDirection(elements, "back-out")
-        _callbackSection = future
+      _applyDirection(elements, "back-out")
+      _callbackSection = future
 
-    if not asideHandled and not _fromCallback
-      _checkAside(current, future)
+    _checkAside(current, future)
 
   _showBackward = (current, future) ->
     _applyDirection(current, "back-out")
     showSections = lng.dom("section.#{C.CLASS.SHOW}:not(##{current.attr('id')})")
     if showSections.length is 1 and showSections.first().data("children")?
-      lng.Aside.hide (-> lng.Aside.show showSections.first().data("aside"))
+      console.error "Muestro por quiiiiiii"
+      lng.Aside.show showSections.first().data("aside")
     _callbackSection = future
 
-  _visibleParent = (section) ->
-    return lng.dom("section[data-children~=#{section.attr('id')}].#{C.CLASS.SHOW}")
+  # _visibleParent = (section) ->
+  #   return lng.dom("section[data-children~=#{section.attr('id')}].#{C.CLASS.SHOW}")
 
   _checkAside = (current, target) ->
     aside_id = target.data("aside")
-    unless aside_id then do lng.Aside.hide
-    else if current?
-      do lng.Aside.hide unless lng.Element.Cache.aside?.hasClass("box")
-    else if target.data("children") and lng.dom("section.#{C.CLASS.SHOW}").length is 1
-      lng.Aside.show(aside_id)
-    else if not target.data("children")
-      unless _parentId target
-        lng.Aside.showFix(aside_id)
+    current_aside = lng.Element.Cache.aside
+    if aside_id
+      unless current? and lng.Element.Cache.aside?
+        _showAside(aside_id, target)
+      else if not current_aside.hasClass("box")
+        do lng.Aside.hide
+    else
+      console.error 'no hay aside asociado'
+      do lng.Aside.hide
 
-  _targetIsChildren = (current, target) ->
-    children = current?.data("children")
-    return false unless children
-    target_id = target.attr "id"
-    return children.indexOf(target_id) isnt -1
+  _showAside = (aside_id, target) ->
+    if target.data("children") then lng.Aside.show aside_id
+    else lng.Aside.showFix aside_id
 
   _parentId = (section) ->
     parent = lng.dom("[data-children~=#{section.attr('id')}]")
@@ -221,6 +219,13 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     nav = lng.Element.Cache.section.find(C.QUERY.ARTICLE_REFERENCE).addClass C.CLASS.HIDE
     nav.filter("[data-article~='#{article_id}']").removeClass C.CLASS.HIDE
 
+    if lng.Element.Cache.aside
+      current_section_id = lng.Element.Cache.section.attr("id")
+      aside = lng.Element.Cache.aside
+      aside.find(C.QUERY.SECTION_ROUTER + "." + C.CLASS.ACTIVE).removeClass("active")
+      aside.find("[data-view-section=#{current_section_id}]").addClass(C.CLASS.ACTIVE)
+
+
   _removeLast = ->
     if _history.length > 1
       _history.length -= 1
@@ -232,5 +237,4 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   history : history
   step    : step
   animationEnd : animationEnd
-
-
+  historys : -> _history

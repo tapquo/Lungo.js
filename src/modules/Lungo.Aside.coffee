@@ -20,7 +20,6 @@ Lungo.Aside = do (lng = Lungo) ->
   show = (aside_id, animate_section = true, fromX = 0) ->
     aside = lng.dom("##{aside_id}")
     if aside.length and not _alreadyOpen(aside_id)
-        console.error 'Current aside --> ', aside
         lng.Element.Cache.aside = aside
         if lng.DEVICE is C.DEVICE.PHONE
           aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
@@ -32,11 +31,17 @@ Lungo.Aside = do (lng = Lungo) ->
           aside_section = lng.dom("[data-aside=#{aside_id}][data-children].#{C.CLASS.SHOW}")
           if aside_section.attr("id") isnt lng.Element.Cache.section?.attr("id")
             lng.Element.Cache.section.addClass "shadowing"
+            childs = aside_section.data("children").split(" ")
+            for child in childs
+              child = lng.dom(C.ELEMENT.SECTION + "#" + child)
+              if child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
+
           aside_section.removeClass("aside").addClass "asideShowing"
 
-  _alreadyOpen = (aside_id) ->
-    return lng.Element.Cache.aside?.attr("id") is aside_id
-
+  ###
+  Shows a fixed aside (not able to hide cause section have not children)
+  @method hide
+  ###
   showFix = (aside_id) ->
     aside = lng.dom("##{aside_id}")
     if aside.length
@@ -70,7 +75,6 @@ Lungo.Aside = do (lng = Lungo) ->
   toggle = (aside) ->
     if lng.Element.Cache.aside then do lng.Aside.hide
     else lng.Aside.show aside
-
 
   ###
   Triggered when <aside> animation ends.
@@ -131,6 +135,9 @@ Lungo.Aside = do (lng = Lungo) ->
   ###
   Private methods
   ###
+  _alreadyOpen = (aside_id) ->
+    return lng.Element.Cache.aside?.attr("id") is aside_id
+
   _asideStylesheet = ->
     if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else "  "
 

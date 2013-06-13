@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lungo Flexbox - SDK</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="components/lungo.brownie/lungo.theme.css">
+    <link rel="stylesheet" href="components/lungo.icon/lungo.icon.css">
+
+</head>
+
+<body>
+
+    <!-- aside -->
+    <aside id="menu">
+        <header data-title="Formula1"></header>
+        <article class="active list scroll">
+            <ul>
+                <li data-view-article="byDriver">By driver</li>
+                <li data-view-article="byTeam">By team</li>
+            </ul>
+        </article>
+    </aside>
+
+    <!-- main section with articles -->
+    <section id="ranking" data-transition="slide" data-children="driver team" data-aside="menu">
+        <header data-title="Ranking">
+            <nav class="left">
+                <button data-icon="list" data-view-aside="menu"></button>
+            </nav>
+            <nav class="on-right"></nav>
+        </header>
+        <article id="byDriver" class="list scroll">
+            <ul>
+                <li class="active"><h1>Drivers</h1></li>
+                <li data-view-section="driver">Hamilton</li><li data-view-section="driver">Hamilton</li>
+                <li data-view-section="driver">Vettel</li><li data-view-section="driver">Vettel</li>
+                <li data-view-section="driver">Webber</li><li data-view-section="driver">Webber</li>
+                <li data-view-section="driver">Alonso</li><li data-view-section="driver">Alonso</li>
+                <li data-view-section="driver">Hamilton</li><li data-view-section="driver">Hamilton</li>
+                <li data-view-section="driver">Vettel</li><li data-view-section="driver">Vettel</li>
+                <li data-view-section="driver">Webber</li><li data-view-section="driver">Webber</li>
+                <li data-view-section="driver">Alonso</li><li data-view-section="driver">Alonso</li>
+                <li data-view-section="driver">Hamilton</li><li data-view-section="driver">Hamilton</li>
+                <li data-view-section="driver">Vettel</li><li data-view-section="driver">Vettel</li>
+                <li data-view-section="driver">Webber</li><li data-view-section="driver">Webber</li>
+                <li data-view-section="driver">Alonso</li><li data-view-section="driver">Alonso</li>
+            </ul>
+        </article>
+        <article id="byTeam" class="list scroll">
+            <ul>
+                <li class="active"><h1>Teams</h1></li>
+                <li data-view-section="team">Ferrari</li><li data-view-section="team">Ferrari</li>
+                <li data-view-section="team">McLaren</li><li data-view-section="team">McLaren</li>
+                <li data-view-section="team">RedBull</li><li data-view-section="team">RedBull</li>
+                <li data-view-section="team">Renault</li><li data-view-section="team">Renault</li>
+                <li data-view-section="team">Ferrari</li><li data-view-section="team">Ferrari</li>
+                <li data-view-section="team">McLaren</li><li data-view-section="team">McLaren</li>
+                <li data-view-section="team">RedBull</li><li data-view-section="team">RedBull</li>
+                <li data-view-section="team">Renault</li><li data-view-section="team">Renault</li>
+                <li data-view-section="team">Ferrari</li><li data-view-section="team">Ferrari</li>
+                <li data-view-section="team">McLaren</li><li data-view-section="team">McLaren</li>
+                <li data-view-section="team">RedBull</li><li data-view-section="team">RedBull</li>
+                <li data-view-section="team">Renault</li><li data-view-section="team">Renault</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- driver section -->
+    <section id="driver" data-transition="slide">
+        <header data-title="Ranking dirvers">
+            <nav class="left">
+                <button data-view-section="back" data-icon="arrow-left"></button>
+            </nav>
+            <nav class="on-right"></nav>
+        </header>
+        <article id="ranking-drivers">Driver xxxx</article>
+        <article id="ranking-teams">Team yyyy</article>
+    </section>
+
+    <!-- team section -->
+    <section id="team" data-transition="slide" data-children="comments">
+        <header data-title="Ranking teams">
+            <nav class="left">
+                <button data-icon="arrow-left" data-view-section="back"></button>
+            </nav>
+            <nav class="on-right"></nav>
+        </header>
+        <article id="team-article">
+            <button class="anchor" data-view-section="comments">view comments</button>
+        </article>
+
+    </section>
+
+    <section id="comments" data-transition="slide">
+        <header data-title="Team comments">
+            <nav class="left">
+                <button data-icon="arrow-left" data-view-section="back"></button>
+            </nav>
+            <nav class="on-right"></nav>
+        </header>
+        <article id="comments-article">
+            comments
+        </article>
+    </section>
+
+
+
+    <!-- Lungo dependencies -->
+    <script src="components/quojs/quo.js"></script>
+    <script src="components/lungo.brownie/lungo.debug.js"></script>
+
+    <!-- LungoJS - Sandbox App -->
+    <script>
+        Lungo.init({
+            name: 'Tablet tests',
+            version: '2.2',
+            history: false
+        });
+    </script>
+</body>
+</html>
