@@ -1,0 +1,64 @@
+@import "__init.styl"
+
+body[data-device="phone"] > section
+  transform-origin: 50% 100%
+
+  &[data-transition="slide"]
+    &[data-direction="in"]
+      z-index: 2
+      vendor(animation-name, slideIn)
+    &[data-direction="out"]
+      z-index: 1
+      vendor(animation-name, slideOut)
+    &[data-direction="back-in"]
+      z-index: 1
+      vendor(animation-name, slideBackIn)
+    &[data-direction="back-out"]
+      z-index: 2
+      vendor(animation-name, slideBackOut)
+
+
+  &[data-transition="cover"]
+    &[data-direction="in"]
+      vendor(animation-name, coverIn)
+    &[data-direction="out"]
+      vendor(animation-name, slideOut)
+    &[data-direction="back-in"]
+      vendor(animation-name, slideBackIn)
+    &[data-direction="back-out"]
+      vendor(animation-name, coverOutBack)
+
+
+OPACITY   = 0.25
+DEGREES   = 30deg
+TRANSLATE = 110%
+
+@keyframes slideIn
+  0%    { transform: translateX(TRANSLATE) }
+  100%  { transform: translateX(0) }
+
+@keyframes slideOut
+  0%    { transform: translateZ(0) }
+  100%  {
+    transform: rotateX(DEGREES)
+    opacity: OPACITY
+  }
+
+@keyframes slideBackOut
+  0%    { transform: translateX(0) }
+  100%  { transform: translateX(TRANSLATE) }
+
+@keyframes slideBackIn
+  0%    {
+    transform: rotateX(DEGREES)
+    opacity: OPACITY
+  }
+  100%  { transform: translateZ(0) }
+
+@keyframes coverIn
+  0%    { transform: translateY(TRANSLATE) }
+  100%  { transform: translateY(0) }
+
+@keyframes coverOutBack
+  0%    { transform: translateY(0) }
+  100%  { transform: translateY(TRANSLATE) }
