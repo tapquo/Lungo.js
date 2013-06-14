@@ -34,10 +34,12 @@ nav
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
     transition box-shadow TRANSITION_time TRANSITION_easing
-    & .icon
-      transition color TRANSITION_time TRANSITION_easing
+    & > .icon
+      transition text-shadow TRANSITION_time TRANSITION_easing
     &.active
       color: NAV_LINK_ACTIVE
+      & > .icon
+        text-shadow: 0 0 2em NAV_LINK_ACTIVE
 
   section > &[data-control=groupbar] > a.active
       box-shadow inset 0 -3px 0 THEME
