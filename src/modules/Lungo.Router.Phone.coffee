@@ -77,6 +77,10 @@ Lungo.RouterPhone = do (lng = Lungo) ->
   animationEnd = (event) ->
     section = lng.dom(event.target)
     direction = section.data(C.ATTRIBUTE.DIRECTION)
+    if section.data("original-transition")
+      section.data(C.TRANSITION.ATTR, section.data("original-transition"))
+      section.removeAttr("data-original-transition")
+
     section.removeClass C.CLASS.SHOW if direction is "out" or direction is "back-out"
     section.removeAttr "data-#{C.ATTRIBUTE.DIRECTION}"
     _animating = false
@@ -111,6 +115,13 @@ Lungo.RouterPhone = do (lng = Lungo) ->
     if not current? or not future.length then return false
     _animating = true
     dirPrefix = if backward then "back-" else ""
+    if not backward
+      current.data("original-transition", current.data(C.TRANSITION.ATTR))
+      current.data(C.TRANSITION.ATTR, future.data(C.TRANSITION.ATTR))
+    else
+      future.data("original-transition", future.data(C.TRANSITION.ATTR))
+      future.data(C.TRANSITION.ATTR, current.data(C.TRANSITION.ATTR))
+
     future.addClass(C.CLASS.SHOW)
     future.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}in") if future.data(C.TRANSITION.ATTR)
     if current.data(C.TRANSITION.ATTR) then current.data(C.ATTRIBUTE.DIRECTION, "#{dirPrefix}out")
