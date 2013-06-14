@@ -41,13 +41,18 @@ body[data-device="tablet"]
       z-index: 2
       vendor(animation-name, slideBackOutTablet)
 
+// @keyframes slideInTablet
+//   from { transform: translateX(100%) rotateY(70deg) translateZ(-400px); opacity: 0 }
+//   to   { transform: translateX(0) rotateY(0) translateZ(0); opacity: 1 }
+// @keyframes slideBackOutTablet
+//   from { transform: translateX(0) rotateY(0) translateZ(0); opacity: 1 }
+//   to   { transform: translateX(100%) rotateY(70deg) translateZ(-400px); opacity: 0 }
+
 @keyframes slideInTablet
   from { transform: translateX(100%); opacity: 0 }
   to   { transform: translateX(0); opacity: 1 }
 @keyframes slideBackOutTablet
   from { transform: translateX(0); opacity: 1 }
   to   { transform: translateX(100%); opacity: 0 }
-// @keyframes slideBackOutTablet
-//   from { opacity: 1 }
-//   to   { opacity: 0 }
+
 
