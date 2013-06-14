@@ -28,7 +28,7 @@ Lungo.Aside = do (lng = Lungo) ->
           else lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
         else
           aside.addClass(C.CLASS.SHOW)
-          aside_section = lng.dom("[data-aside=#{aside_id}][data-children].#{C.CLASS.SHOW}")
+          aside_section = lng.dom("[data-aside=#{aside_id}][data-children]")
           if aside_section.attr("id") isnt lng.Element.Cache.section?.attr("id")
             lng.Element.Cache.section.addClass "shadowing"
             childs = aside_section.data("children").split(" ")

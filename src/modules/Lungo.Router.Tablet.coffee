@@ -67,7 +67,8 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   @param    {string} <article> Id
   ###
   article = (section_id, article_id, element) ->
-    if not _sameSection() then back false
+    if not _sameSection() and section_id isnt lng.Element.Cache.section.attr("id")
+      back false
     target = lng.dom "article##{article_id}"
     if target.length > 0
       section = target.closest C.ELEMENT.SECTION
@@ -129,11 +130,17 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     _fromCallback = false
 
   _showFuture = (future) ->
-    current = undefined
-    lng.Section.show(current, future)
-    if not _fromCallback then future.addClass(C.CLASS.SHOW)
+    console.error "Show future --> ", future.attr("id"), "curr->", lng.Element.Cache.section
+    lng.Element.Cache.dump()
+    current = lng.Element.Cache.section
+    lng.Section.show(undefined, future)
+    currentHasAside = lng.Element.Cache.section?.data("aside")?
+    console.error "has asside -->", currentHasAside
+    if not _fromCallback or not lng.Element.Cache.section?.data("aside")
+      console.error 'por aqui'
+      future.addClass(C.CLASS.SHOW)
     else _applyDirection(future, "in")
-    _checkAside(current, future)
+    _checkAside(undefined, future)
 
   _showForward = (current, future) ->
     if _isChild(current, future) then _applyDirection(future, "in")
@@ -152,7 +159,7 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     _applyDirection(current, "back-out")
     showSections = lng.dom("section.#{C.CLASS.SHOW}:not(##{current.attr('id')})")
     if showSections.length is 1 and showSections.first().data("children")?
-      console.error "Muestro por quiiiiiii"
+      console.error "Show aside -->", showSections.first().data("aside")
       lng.Aside.show showSections.first().data("aside")
     _callbackSection = future
 
@@ -168,7 +175,6 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       else if not current_aside.hasClass("box")
         do lng.Aside.hide
     else
-      console.error 'no hay aside asociado'
       do lng.Aside.hide
 
   _showAside = (aside_id, target) ->
@@ -211,7 +217,7 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     setTimeout (-> window.location.hash = _hashed_url), 0
 
   _updateNavigationElements = (article_id) ->
-    article_id = lng.Element.Cache.article.attr(C.ATTRIBUTE.ID) unless article_id
+    article_id = lng.Element.Cache.article?.attr(C.ATTRIBUTE.ID) unless article_id
     # Active visual signal for elements
     links = lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE)
     links.filter("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
