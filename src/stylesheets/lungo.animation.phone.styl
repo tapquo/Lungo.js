@@ -1,0 +1,104 @@
+body[data-device="phone"] > section
+
+  &[data-transition="slide"]
+    transform-origin: 100% 100%
+    &[data-direction="in"]
+      z-index: 2
+      vendor(animation-name, phoneSlideIn)
+    &[data-direction="out"]
+      z-index: 1
+      vendor(animation-name, phoneSlideOut)
+    &[data-direction="back-in"]
+      z-index: 1
+      vendor(animation-name, phoneSlideBackIn)
+    &[data-direction="back-out"]
+      z-index: 2
+      vendor(animation-name, phoneSlideBackOut)
+
+  &[data-transition="cover"]
+    transform-origin: 50% 100%
+    &[data-direction="in"]
+      z-index: 2
+      vendor(animation-name, phoneCoverIn)
+    &[data-direction="out"]
+      z-index: 1
+      vendor(animation-name, phoneCoverOut)
+    &[data-direction="back-in"]
+      z-index: 1
+      vendor(animation-name, phoneCoverBackIn)
+    &[data-direction="back-out"]
+      z-index: 2
+      vendor(animation-name, phoneCoverOutBack)
+
+  &[data-transition="fade"]
+    &[data-direction="in"]
+      vendor(animation-name, phoneFadeIn)
+    &[data-direction="out"]
+      vendor(animation-name, phoneFadeOut)
+    &[data-direction="back-in"]
+      vendor(animation-name, phoneFadeIn)
+    &[data-direction="back-out"]
+      vendor(animation-name, phoneFadeOut)
+
+OPACITY   = 0.25
+TRANSLATE = 110%
+
+/* ------ SLIDE ------ */
+DEGREES   = -45deg
+@keyframes phoneSlideOut
+  0%    { transform: translateZ(0) }
+  100%  {
+    transform: rotateY(DEGREES)
+    opacity: OPACITY
+  }
+
+@keyframes phoneSlideIn
+  0%    { transform: translateX(TRANSLATE) }
+  100%  { transform: translateX(0) }
+
+
+@keyframes phoneSlideBackOut
+  0%    { transform: translateX(0) }
+  100%  { transform: translateX(TRANSLATE) }
+
+@keyframes phoneSlideBackIn
+  0%    {
+    transform: rotateY(DEGREES)
+    opacity: OPACITY
+  }
+  100%  { transform: translateZ(0) }
+
+
+/* ------ COVER ------ */
+DEGREES   = 25deg
+@keyframes phoneCoverOut
+  0%    { transform: translateZ(0) }
+  100%  {
+    transform: rotateX(DEGREES)
+    opacity: OPACITY
+  }
+
+@keyframes phoneCoverIn
+  0%    { transform: translateY(TRANSLATE) }
+  100%  { transform: translateY(0) }
+
+@keyframes phoneCoverOutBack
+  0%    { transform: translateY(0) }
+  100%  { transform: translateY(TRANSLATE) }
+
+@keyframes phoneCoverBackIn
+  0%    {
+    transform: rotateX(DEGREES)
+    opacity: OPACITY
+  }
+  100%  { transform: translateZ(0) }
+
+
+/* ------ FADE ------ */
+@keyframes phoneFadeOut
+  0%    { opacity: 1 }
+  100%  { opacity: 0 }
+
+@keyframes phoneFadeIn
+  0%    { opacity: 0 }
+  100%  { opacity: 1 }

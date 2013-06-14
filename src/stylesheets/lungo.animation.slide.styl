@@ -1,34 +1,3 @@
-@import "__init.styl"
-
-body[data-device="phone"]
-  & > section[data-transition="slide"]
-    &[data-direction="in"]
-      z-index: 2
-      vendor(animation-name, slideIn)
-    &[data-direction="out"]
-      z-index: 1
-      vendor(animation-name, slideOut)
-    &[data-direction="back-in"]
-      z-index: 1
-      vendor(animation-name, slideBackIn)
-    &[data-direction="back-out"]
-      z-index: 2
-      vendor(animation-name, slideBackOut)
-
-SCALE = .8
-@keyframes slideIn
-  from { transform: translateX(100%) }
-  to   { transform: translateX(0) }
-@keyframes slideOut
-  from { transform: scale(1) }
-  to   { transform: scale(SCALE) }
-@keyframes slideBackOut
-  from { transform: translateX(0) }
-  to   { transform: translateX(100%) }
-@keyframes slideBackIn
-  from { transform: scale(SCALE) }
-  to   { transform: scale(1) }
-
 
 //============================================================
 // Tablet
