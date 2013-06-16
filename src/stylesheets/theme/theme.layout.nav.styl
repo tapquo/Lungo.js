@@ -11,7 +11,7 @@ nav
   section header > &
     &:not(.on-right)
       & a, button
-        color: WHITE
+        color: lighten(THEME, 90%)
     &.on-right
       & a, button
         color: lighten(THEME, 50%)
@@ -24,22 +24,16 @@ nav
       text-shadow: 0 1px darken(ASIDE, 10%)
 
   header > &
-    & a, button
-      text-shadow: 0 1px darken(THEME, 10%)
-      transition text-shadow TRANSITION_time TRANSITION_easing
+    a, button
       &:active, &.active
-        color: WHITE
-        text-shadow: 0 0 0.5em WHITE
+        color: WHITE !important
+        text-shadow: 0 0 1em WHITE
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
     transition box-shadow TRANSITION_time TRANSITION_easing
-    & > .icon
-      transition text-shadow TRANSITION_time TRANSITION_easing
     &.active
       color: NAV_LINK_ACTIVE
-      & > .icon
-        text-shadow: 0 0 2em NAV_LINK_ACTIVE
 
   section > &[data-control=groupbar] > a.active
       box-shadow inset 0 -3px 0 THEME
