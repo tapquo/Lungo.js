@@ -12,6 +12,7 @@
     list-style-type: none
     position: relative
     text-align: -webkit-match-parent
+    line-height: inherit
 
     &:not(.big)
       padding: INDENT
@@ -27,7 +28,7 @@
           width: LIST_BIG_IMAGE
           height: LIST_BIG_IMAGE
         & > div
-          padding: 0.5em INDENT
+          padding: 0.25em (INDENT / 2)
 
       &:not(.big)
         & > img
@@ -56,20 +57,14 @@
       display: inline-block
       float: left
       margin-right: (INDENT / 2)
-      width: S = LIST_IMAGE
-      height: S
       text-align: center
-      font-size: 2.6em
       line-height: 1.0em
-
-    aside & .icon
       width: S = LIST_SMALL_IMAGE
       height: S
       font-size: FONT_SIZE_LARGE
 
     &.anchor
-      padding: 0.5em
-      line-height: 1.0em
+      padding: 0.25em 0.5em
       & .tag
         display: none
 
@@ -89,9 +84,9 @@
 
     & .on-right:not(.tag)
       font-size: FONT_SIZE_TINY
-
-  & .loading .on-right
-    font-size: FONT_SIZE_NORMAL
+    & .on-right.tag
+      padding-left: SIZE = 0.4em
+      padding-right: SIZE
 
   & .on-right, small
     & .icon

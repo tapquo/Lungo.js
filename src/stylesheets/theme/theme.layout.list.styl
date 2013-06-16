@@ -21,7 +21,7 @@
     &.warning
       box-shadow: inset 4px 0 WARNING
     &.arrow::after
-      border-color: lighten(COLOR, 75%)
+      border-color: LIST_border
 
     &, a
       &.contrast
@@ -40,7 +40,7 @@
         color: lighten(TEXT, 50%)
 
     &:not(.big) img
-      border-radius 4px
+      border-radius BORDER_radius
 
   &:not(.indented) li
     &.dark, &.theme, &.light
