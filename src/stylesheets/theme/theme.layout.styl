@@ -29,9 +29,10 @@ body > section
       color: #fff
 
   &.aside
-    box-shadow -4px 0 2px SHADOW
+    &:not(.right)
+      box-shadow -1px 0 8px SHADOW
     &.right
-      box-shadow 2px 0 SHADOW
+      box-shadow 1px 0 8px SHADOW
 
   &[data-pull] > article.active
     box-shadow: 0 -1px 0 rgba(0,0,0,0.05)
@@ -39,6 +40,7 @@ body > section
 body > aside
   background-color: darken(ASIDE, 10%)
   color: WHITE
+  border-right-color: darken(ASIDE, 10%)
   & > header, & > footer
     background-color: ASIDE
 

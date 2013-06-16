@@ -1,6 +1,12 @@
-@import "__init.styl"
+/**
+ * Stylesheet
+ *
+ * @namespace Lungo.Animation
+ * @class Aside
 
-BOUNCE_DIST = 8
+ *
+ * @author Javier Jimenez Villar <javi@tapquo.com> || @soyjavi
+ */
 
 section
   &[data-aside-left="show"]
@@ -24,25 +30,23 @@ aside
 
 @keyframes sectionAsideLeftShow
   from { transform translateX(0) }
-  60%  { transform translateX(ASIDE_WIDTH + BOUNCE_DIST) }
+  60%  { transform translateX(ASIDE_WIDTH + ASIDE_PADDING) }
   to   { transform translateX(ASIDE_WIDTH) }
 
 @keyframes sectionAsideLeftHide
   from { transform translateX(ASIDE_WIDTH) }
-  25%  { transform translateX(ASIDE_WIDTH + BOUNCE_DIST) }
+  25%  { transform translateX(ASIDE_WIDTH + ASIDE_PADDING) }
   to   { transform translateX(0) }
 
 @keyframes sectionAsideRightShow
   from { transform translateX(0) }
-  60%  { transform translateX(-(ASIDE_WIDTH) - BOUNCE_DIST) }
+  60%  { transform translateX(-(ASIDE_WIDTH) - ASIDE_PADDING) }
   to   { transform translateX(-(ASIDE_WIDTH)) }
 
 @keyframes sectionAsideRightHide
   from { transform translateX(-(ASIDE_WIDTH)) }
-  25%  { transform translateX(-(ASIDE_WIDTH) - BOUNCE_DIST) }
+  25%  { transform translateX(-(ASIDE_WIDTH) - ASIDE_PADDING) }
   to   { transform translateX(0) }
-
-// =============================================
 
 @keyframes asideLeftHide
   from { transform translateX(0) }

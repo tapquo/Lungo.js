@@ -9,12 +9,14 @@
 
 article
   & .button, button
-    color: #fff !important
-    -webkit-font-smoothing: antialiased
     border-radius BORDER_radius
-
     box-shadow: inset 0 -1px rgba(0,0,0,0.1), 0 1px rgba(0,0,0,0.075)
-    text-shadow:  0 1px rgba(0,0,0,0.1)
+
+    &, & abbr
+      color: #fff
+      font-weight: 600
+      text-shadow:  0 1px rgba(0,0,0,0.1)
+      -webkit-font-smoothing: antialiased
 
     &:hover
       box-shadow: inset 0 0 5em rgba(0,0,0,0.1), inset 0 -1px rgba(0,0,0,0.15), 0 1px rgba(0,0,0,0.075)
