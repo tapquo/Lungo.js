@@ -1,16 +1,16 @@
 [submodule "src/stylesheets/CSSmethods"]
     path = src/stylesheets/CSSmethods
-    url = git://github.com/soyjavi/CSSmethods
+    url = git://github.com/soyjavi/CSSmethods.git
 [submodule "example/components/quojs"]
     path = example/components/quojs
     url = git://github.com/soyjavi/package-quojs.git
 
 [submodule "packages/lungo"]
     path = packages/lungo
-    url = https://github.com/tapquo/package-lungo
+    url = https://github.com/tapquo/package-lungo.git
 [submodule "packages/lungo.theme"]
     path = packages/lungo.theme
-    url = https://github.com/tapquo/package-lungo.theme
+    url = https://github.com/tapquo/package-lungo.theme.git
 [submodule "packages/lungo.icon"]
     path = packages/lungo.icon
     url = https://github.com/tapquo/lungo.icon.git
