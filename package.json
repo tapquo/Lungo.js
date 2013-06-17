@@ -1,0 +1,16 @@
+{
+  "name": "lungo",
+  "description": "HTML5 Cross-Device Framework.",
+  "homepage": "http://lungo.tapquo.com",
+  "author": {
+    "name": "Tapquo S.L.",
+    "site": "http://tapquo.com"},
+  "devDependencies": {
+    "grunt-contrib-coffee": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-watch": "*"
+  }
+}
