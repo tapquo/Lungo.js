@@ -1,16 +1,16 @@
 module.exports = (grunt) ->
   grunt.initConfig
-    pkg: grunt.file.readJSON "packages/lungo/component.json"
+    pkg: grunt.file.readJSON "package/lungo/component.json"
 
     meta:
       file: 'lungo'
-      packages: "packages",
+      package: "package",
       plugins: "src/plugins",
       # BETA
       endpoint: "example/components",
       version: ".brownie",
       # RELEASE
-      # endpoint: "packages",
+      # endpoint: "package",
       # version: "",
       banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy/m/d") %>\n' +
               '   <%= pkg.homepage %>\n' +
@@ -60,7 +60,7 @@ module.exports = (grunt) ->
 
     coffee:
       core: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js': '<%= source.coffee %>'
-      calendar: files: 'packages/lungo.calendar/lungo.calendar.js': '<%= source.calendar.coffee %>'
+      calendar: files: 'package/lungo.calendar/lungo.calendar.js': '<%= source.calendar.coffee %>'
 
     uglify:
       options: compress: false, banner: "<%= meta.banner %>"
@@ -74,13 +74,13 @@ module.exports = (grunt) ->
         options: compress: false, import: [ '__init']
         files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.theme.css': '<%=source.theme%>'
       icons:
-        files: '<%=meta.packages%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
+        files: '<%=meta.package%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css': '<%=source.icons%>'
       calendar:
-        files: 'packages/lungo.calendar/lungo.calendar.css': '<%=source.calendar.stylus%>'
+        files: 'package/lungo.calendar/lungo.calendar.css': '<%=source.calendar.stylus%>'
 
     copy:
       theme:
-        expand: true, flatten: true, src: '<%=source.theme%>', dest: '<%=meta.packages%>/<%=meta.file%>.theme/'
+        expand: true, flatten: true, src: '<%=source.theme%>', dest: '<%=meta.package%>/<%=meta.file%>.theme/'
 
     watch:
       coffee:

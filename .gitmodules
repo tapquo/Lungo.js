@@ -1,0 +1,36 @@
+[submodule "src/stylesheets/CSSmethods"]
+	path = src/stylesheets/CSSmethods
+	url = https://github.com/soyjavi/CSSmethods.git
+[submodule "example/components/quojs"]
+	path = example/components/quojs
+	url = https://github.com/soyjavi/package-quojs.git
+[submodule "package/lungo"]
+	path = package/lungo
+	url = https://github.com/tapquo/package-lungo.git
+[submodule "package/lungo.theme"]
+	path = package/lungo.theme
+	url = https://github.com/tapquo/package-lungo.theme.git
+[submodule "package/lungo.icon"]
+	path = package/lungo.icon
+	url = https://github.com/tapquo/lungo.icon.git
+[submodule "example/components/lungo.brownie"]
+	path = example/components/lungo.brownie
+	url = https://github.com/soyjavi/lungo.brownie.git
+[submodule "package/lungo.thirdparties"]
+	path = package/lungo.thirdparties
+	url = https://github.com/tapquo/lungo.thirdparties.git
+[submodule "package/lungo.gmap"]
+	path = package/lungo.gmap
+	url = https://github.com/tapquo/lungo.gmap.git
+[submodule "package/lungo.qr"]
+	path = package/lungo.qr
+	url = https://github.com/tapquo/lungo.qr.git
+[submodule "package/lungo.language"]
+	path = package/lungo.language
+	url = https://github.com/tapquo/lungo.language.git
+[submodule "package/lungo.calendar"]
+	path = package/lungo.calendar
+	url = https://github.com/tapquo/lungo.calendar.git
+[submodule "package/lungo.firefoxos"]
+	path = package/lungo.firefoxos
+	url = https://github.com/tapquo/lungo.firefoxos.git
