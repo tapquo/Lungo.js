@@ -1,10 +1,9 @@
 [submodule "src/stylesheets/CSSmethods"]
     path = src/stylesheets/CSSmethods
-    url = git://github.com/soyjavi/CSSmethods.git
+    url = https://github.com/soyjavi/CSSmethods.git
 [submodule "example/components/quojs"]
     path = example/components/quojs
-    url = git://github.com/soyjavi/package-quojs.git
-
+    url = https://github.com/soyjavi/package-quojs.git
 [submodule "packages/lungo"]
     path = packages/lungo
     url = https://github.com/tapquo/package-lungo.git
@@ -17,7 +16,6 @@
 [submodule "example/components/lungo.brownie"]
     path = example/components/lungo.brownie
     url = https://github.com/soyjavi/lungo.brownie.git
-
 [submodule "packages/lungo.thirdparties"]
     path = packages/lungo.thirdparties
     url = https://github.com/tapquo/lungo.thirdparties.git
@@ -36,4 +34,3 @@
 [submodule "lungo.firefoxos"]
     path = packages/lungo.firefoxos
     url = https://github.com/tapquo/lungo.firefoxos.git
-
