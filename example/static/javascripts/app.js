@@ -96,24 +96,24 @@ Lungo.Events.init({
     },
 
 
-    'tap article#notification a[data-action=normal]': function() {
+    'touch article#notification a[data-action=normal]': function() {
         Lungo.Notification.show('user', 'Title', 2);
     },
 
-    'tap article#notification a[data-action=loading]': function() {
+    'touch article#notification a[data-action=loading]': function() {
         Lungo.Notification.show();
         setTimeout(Lungo.Notification.hide, 3000);
     },
 
-    'tap article#notification a[data-action=success]': function() {
+    'touch article#notification a[data-action=success]': function() {
         Lungo.Notification.success('Title', 'Description', 'ok', 2);
     },
 
-    'tap article#notification a[data-action=error]': function() {
+    'touch article#notification a[data-action=error]': function() {
         Lungo.Notification.error('Title', 'Description', 'remove', 2);
     },
 
-    'tap article#notification a[data-action=confirm]': function() {
+    'touch article#notification a[data-action=confirm]': function() {
         Lungo.Notification.confirm({
             icon: 'user',
             title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
@@ -131,11 +131,11 @@ Lungo.Events.init({
         });
     },
 
-    'tap article#notification a[data-action=html]': function() {
+    'touch article#notification a[data-action=html]': function() {
         Lungo.Notification.html('<h1>Hello World</h1>', "Close");
     },
 
-    'tap article#notification a[data-action=chaining]': function() {
+    'touch article#notification a[data-action=chaining]': function() {
         Lungo.Notification.show('user', 'user', 2, function() {
             Lungo.Notification.error('Title 2', 'Description 2', 'remove',  2, function() {
                 Lungo.Notification.show('cog', 'cog', 2, function() {
