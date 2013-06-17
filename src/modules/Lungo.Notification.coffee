@@ -87,7 +87,7 @@ Lungo.Notification = do(lng = Lungo) ->
   ###
   html = (markup, button, style, seconds) ->
     if button
-      markup += "<a href=\"#\" class=\"button large anchor\" data-action=\"close\">" + button + "</a>"
+      markup += """<button class="anchor" data-action="close">#{button}</button>"""
     _show markup, "html #{style}"
     _hide seconds
 
