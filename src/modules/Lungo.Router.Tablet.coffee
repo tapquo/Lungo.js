@@ -69,10 +69,13 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   article = (section_id, article_id, element) ->
     if not _sameSection() and section_id isnt lng.Element.Cache.section.attr("id")
       back false
+
     target = lng.dom "article##{article_id}"
     if target.length > 0
       section = target.closest C.ELEMENT.SECTION
       lng.Router.section(section.attr("id"))
+      section = lng.Element.Cache.section
+
       section.children("#{C.ELEMENT.ARTICLE}.#{C.CLASS.ACTIVE}").removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
       lng.Element.Cache.article.removeClass(C.CLASS.ACTIVE).trigger C.TRIGGER.UNLOAD
       lng.Element.Cache.article = target.addClass(C.CLASS.ACTIVE).trigger(C.TRIGGER.LOAD)
@@ -130,14 +133,11 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     _fromCallback = false
 
   _showFuture = (future) ->
-    console.error "Show future --> ", future.attr("id"), "curr->", lng.Element.Cache.section
     lng.Element.Cache.dump()
     current = lng.Element.Cache.section
     lng.Section.show(undefined, future)
     currentHasAside = lng.Element.Cache.section?.data("aside")?
-    console.error "has asside -->", currentHasAside
     if not _fromCallback or not lng.Element.Cache.section?.data("aside")
-      console.error 'por aqui'
       future.addClass(C.CLASS.SHOW)
     else _applyDirection(future, "in")
     _checkAside(undefined, future)
@@ -159,7 +159,6 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     _applyDirection(current, "back-out")
     showSections = lng.dom("section.#{C.CLASS.SHOW}:not(##{current.attr('id')})")
     if showSections.length is 1 and showSections.first().data("children")?
-      console.error "Show aside -->", showSections.first().data("aside")
       lng.Aside.show showSections.first().data("aside")
     _callbackSection = future
 
