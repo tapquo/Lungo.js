@@ -80,20 +80,19 @@ WINDOW_WIDTH = 280px
       & > .icon
         font-size: 5em
         line-height: 1.0em
-      & > strong
-        font-size: 1.1em
       & > small
         font-size: FONT_SIZE_SMALL
-        padding-top: 0.25em
         padding-bottom: 1em
+      & > .icon, > strong
+        padding-bottom: 0.25em
       & > strong, > small
-        padding-left: 0.25em
-        padding-right: 0.25em
+        padding-left: 0.5em
+        padding-right: 0.5em
 
     &.html .title
       height: HEADER_HEIGHT
       line-height: HEADER_HEIGHT
-      font-size: FONT_SIZE_LARGE
+      font-size: FONT_SIZE_BIG
 
     &.push
       HEIGHT = (HEADER_HEIGHT / 1.5)
@@ -114,11 +113,11 @@ WINDOW_WIDTH = 280px
         margin-right: 0.5em
         font-size: FONT_SIZE_LARGE
 
-    & button, & .button
+    & button
       display: block
       margin-bottom: 1px
       width: inherit
-      line-height: 3em
+      line-height: 2.5em
       border: none
       font-size: FONT_SIZE_BIG
 
