@@ -198,13 +198,23 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       unless section.hasClass(C.CLASS.SHOW) then apply = true
     else apply = true
     if apply
-      section.addClass(C.CLASS.SHOW)
-      section.data(C.ATTRIBUTE.DIRECTION, direction) if section.data(C.TRANSITION.ATTR)
+      if isForward
+        section.addClass(C.CLASS.HIDE)
+        section.addClass(C.CLASS.SHOW)
+        setTimeout (->
+          section.data(C.ATTRIBUTE.DIRECTION, direction).removeClass(C.CLASS.HIDE)
+        ), 10
+      else
+        section.addClass(C.CLASS.SHOW)
+        section.data(C.ATTRIBUTE.DIRECTION, direction)
+
 
   _sameSection = ->
     if not event or not lng.Element.Cache.section then return true
     dispacher_section = lng.dom(event.target).closest("section,aside")
-    same = dispacher_section.attr("id") is lng.Element.Cache.section.attr("id")
+    if dispacher_section.length
+      same = dispacher_section.attr("id") is lng.Element.Cache.section.attr("id")
+    else same = true
     return same
 
   _notCurrentTarget = (current, id) -> current?.attr(C.ATTRIBUTE.ID) isnt id
