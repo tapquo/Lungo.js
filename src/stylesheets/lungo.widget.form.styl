@@ -100,22 +100,22 @@ form, .form
   & input[type=range]
     -webkit-appearance: none
     outline: none
-
     height: FORM_PROGRESS_HEIGHT
     width: 100%
-    padding:0
+    padding: 0
     border: none
-
+    margin-bottom: 0.5em
     &::-webkit-slider-thumb
       position: relative
-      width: SIZE = (FORM_PROGRESS_HEIGHT * 2)
-      height: SIZE
+      width: FORM_RADIO_BUTTON
+      height: FORM_RADIO_BUTTON
       -webkit-appearance: none
       border: none
 
   /* -------------------------- PROGRESS -------------------------- */
   & [data-progress]
     width: 100%
+    margin-bottom: 0.5em
     & .bar
       height: FORM_PROGRESS_HEIGHT
       line-height: FORM_PROGRESS_HEIGHT
@@ -128,66 +128,15 @@ form, .form
         transition(width TRANSITION_TIME DEFAULT_TRANSITION)
 
   /* -------------------------- CHECKBOX -------------------------- */
-  & [data-control-checkbox]
-    FORM_HEIGHT = 36px
-    display: inline-block
-    width: 76px
-    height: FORM_HEIGHT !important
-    position: relative
-    line-height: FORM_HEIGHT !important
-    font-size: inherit
-    &, & label
-      transition all 100ms ease
-
-    input[type=checkbox]
-      visibility: hidden
-
-    &:after, &:before
-      z-index: 0
-      position: absolute
-    &:before
-      left: (FORM_HEIGHT / 2.2)
-      opacity: 0
-    &:after
-      right: (FORM_HEIGHT / 2.2)
-    &.checked
-      &:before
-        opacity: 1
-        z-index: 1
-      &:after
-        opacity: 0
-        z-index: 0
-
-    & label
-      display: block
-      height: S = (FORM_HEIGHT - 6)
-      width: S
-      cursor: pointer
-      position: absolute
-      top: 3px
-      left: 3px
-      margin: 0px !important
-      z-index: 1
-
-    & input[type=checkbox]:checked + label
-      left: 49px
-
-
-  WHITE =  #fff
-  GREEN = #53d76a
-  GREY = #d3d3d3
   input[type="checkbox"]
     appearance: none
     -webkit-appearance: none
     -webkit-user-select: text
     -webkit-font-smoothing: antialiased
 
-    background-color: darken(WHITE, 2%)
-    border: 1px solid GREY
-    border-radius: 26px
-    box-shadow: inset 0 0 0 1px GREY
+    border-radius: FORM_RADIO_BUTTON
     cursor: pointer
-    height: 28px
+    height: (FORM_RADIO_BUTTON + 2)
     position: relative
     transition: border .25s .15s,
                 box-shadow .25s .3s,
@@ -196,15 +145,14 @@ form, .form
     vertical-align: top
 
     &:after
-      background-color: WHITE
-      border: 1px solid GREY
-      border-radius: 24px
+      BUTTON = (FORM_RADIO_BUTTON - 2)
+      border-radius: BUTTON
       box-shadow: inset 0 -3px 3px hsla(0,0%,0%,.025),
                   0 1px 4px hsla(0,0%,0%,.15),
                   0 4px 4px hsla(0,0%,0%,.1)
       content: ''
       display: block
-      height: 24px
+      height: BUTTON
       left: 0
       position: absolute
       right: 16px
@@ -214,15 +162,12 @@ form, .form
                   right .15s .175s
 
     &:checked
-      border-color: GREEN
-      box-shadow: inset 0 0 0 13px GREEN
       padding-left: 18px
       transition: border .25s,
                   box-shadow .25s,
                   padding .25s .15s
 
       &:after
-        border-color: GREEN
         left: 16px
         right: 0
         transition: border .25s,
