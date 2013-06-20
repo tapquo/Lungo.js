@@ -32,7 +32,6 @@ Lungo.RouterPhone = do (lng = Lungo) ->
         _section future, current
         lng.Router.step section_id
         do _url unless Lungo.Config.history is false
-        do _updateNavigationElements
     else if lng.Element.Cache.aside then do lng.Aside.hide
 
   ###
@@ -103,13 +102,15 @@ Lungo.RouterPhone = do (lng = Lungo) ->
   Private methods
   ###
   _section = (future, current, backward = false) ->
-    callback = -> _show future, current, backward
+    callback = ->
+      _show future, current, backward
+      do _updateNavigationElements
     if lng.Element.Cache.aside then lng.Aside.hide callback
     else do callback
 
   _show = (future, current, backward) ->
-    if current? then _setSectionDirections future, current, backward
     lng.Section.show current, future
+    if current? then _setSectionDirections future, current, backward
 
   _setSectionDirections = (future, current, backward=false) ->
     if not current? or not future.length then return false
