@@ -11,12 +11,12 @@ nav
   section header > &
     &:not(.on-right)
       & a, button
-        color: lighten(THEME, 90%)
+        color: darken(THEME, 55%)
     &.on-right
       & a, button
-        color: lighten(THEME, 50%)
-    & a, button
-      text-shadow: 0 1px darken(THEME, 10%)
+        color: lighten(THEME, 95%)
+    // & a, button
+    //   text-shadow: 0 1px darken(THEME, 10%)
 
   aside header > &
     & a, button
@@ -31,30 +31,32 @@ nav
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
-    transition box-shadow TRANSITION_time TRANSITION_easing
+    transition text-shadow TRANSITION_time TRANSITION_easing
     &.active
       color: NAV_LINK_ACTIVE
-
-  section > &[data-control=groupbar] > a.active
-      box-shadow inset 0 -3px 0 THEME
-
-  section > footer > & > a.active
-      box-shadow inset 0 3px THEME
+      text-shadow: 0 0 1em NAV_LINK
 
   &[data-control=menu]
     background-color: rgba(0,0,0,0.9)
     box-shadow 0 2px 0 SHADOW
     &.icons
       & > a
-        color: lighten(COLOR, 40%)
-        &:active > .icon
-          text-shadow: 0 0 2em #fff
         & > .icon
-          color: #fff
+          color: NAV_LINK_ACTIVE
+        & > abbr
+          color: NAV_LINK
+        &:active, &:hover
+          & > .icon
+            text-shadow: 0 0 2em NAV_LINK_ACTIVE
+
     &:not(.icons)
       & > a
-        color: #fff
         & > .icon
-          color: lighten(COLOR, 40%)
+          color: NAV_LINK
+        & > abbr
+          color: NAV_LINK_ACTIVE
         &:active, &:hover
           background-color: rgba(255,255,255,0.2)
+          & > .icon
+            color: THEME
+

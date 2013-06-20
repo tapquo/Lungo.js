@@ -27,7 +27,7 @@ form, .form
       border-bottom: 1px solid rgba(0,0,0,0.1)
 
   & input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], select, textarea, label.select
-    background-color: white
+    background-color: #fff
     color: rgba(0, 0, 0, 0.75)
     &.border
       border: FORM_border solid FORM_color
@@ -60,15 +60,15 @@ form, .form
   & input[type=range]
     background-color: FORM_color
     color: darken(FORM_color, 25%)
-    border-radius: (FORM_border_radius * 4)
+    border-radius: (FORM_border_radius / 2)
     &:active
       background-color: THEME !important
       color: #fff
-      &::-webkit-slider-thumb
-        background-color: darken(THEME, 25%) !important
     &::-webkit-slider-thumb
-      border-radius (FORM_border_radius * 4)
-      background-color: darken(FORM_color, 25%)
+      border-radius: 1em
+      background-color: darken(#fff, 2%)
+      border: 1px solid FORM_color
+      box-shadow: 0 1px 4px hsla(0, 0%,0%,.15)
 
   /* -------------------------- PROGRESS -------------------------- */
   & [data-progress]
@@ -76,48 +76,20 @@ form, .form
     & .value
       background-color: THEME
     &, & .value
-      border-radius (FORM_border_radius * 3)
+      border-radius: (FORM_border_radius / 2)
 
   /* -------------------------- CHECKBOX -------------------------- */
-  & [data-control-checkbox]
-    background: FORM_color
-    color: darken(FORM_color, 25%)
-    font-weight: 700
-    border-radius: (FORM_border_radius * 4)
-    // box-shadow: inset0 1px 2px rgba(0,0,0,0.25),0 1px0 rgba(255,255,255,0.25)
-    & label
-      border-radius: (FORM_border_radius * 4)
-      background: darken(FORM_color, 25%)
-    &.checked
-      background-color: THEME
-      color: #fff !important
-      & label
-        background-color: darken(THEME, 25%)
+  & input[type=checkbox]
+    background-color: darken(#fff, 2%)
+    border: 1px solid FORM_color
+    box-shadow: inset 0 0 0 1px FORM_color
+    &:after
+      background-color: #fff
+      border: 1px solid FORM_color
 
-    &.accept
-      &.checked
-        background-color: SUCCESS
-        & label
-          background-color: darken(SUCCESS, 25%)
-    &.cancel
-      &.checked
-        background-color: DANGER
-        & label
-          background-color: darken(DANGER, 25%)
+    &:checked
+      border-color: SUCCESS
+      box-shadow: inset 0 0 0 13px SUCCESS
 
-    // Expand
-    &.icon
-      font-family:'lungojsicon'
-      font-size: 1.3em
-      line-height: 1.4em
-
-      &.twitter
-        &:before
-          content: "\f099"
-        &:after
-          content: "\f099"
-      &.ok
-        &:before
-          content: "\f00c"
-        &:after
-          content: "\f00d"
+      &:after
+        border-color: SUCCESS

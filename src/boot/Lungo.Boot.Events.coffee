@@ -30,7 +30,6 @@ Lungo.Boot.Events = do (lng = Lungo) ->
     lng.dom(C.QUERY.ASIDE_ROUTER).touch _onAside
     lng.dom(C.QUERY.MENU_ROUTER).touch _onMenu
     lng.dom(QUERY.MENU_HREF).touch _closeMenu
-    lng.dom(QUERY.CONTROL_CHECKBOX).on C.EVENT.CHANGE, _changeCheckboxValue
     for transition in C.EVENT.TRANSITION_END
       lng.dom("body").delegate C.ELEMENT.SECTION, transition, _transitionEnd
       lng.dom("body").delegate C.ELEMENT.ASIDE, transition, _transitionEnd
@@ -51,7 +50,6 @@ Lungo.Boot.Events = do (lng = Lungo) ->
       _onAsyncResource el, C.ELEMENT.ARTICLE
     else
       lng.Router.article lng.Router.history(), el.data("view-article"), el
-      # lng.Aside.hide()
 
   _onAsyncResource = (el, type) ->
     url = el.data "async"
@@ -73,7 +71,6 @@ Lungo.Boot.Events = do (lng = Lungo) ->
       lng.Router.section id
     do lng.Notification.hide
 
-
   _onAside = (event) ->
     do event.preventDefault
     aside_id = lng.dom(event.target).closest(C.QUERY.ASIDE_ROUTER).data "view-aside"
@@ -90,16 +87,6 @@ Lungo.Boot.Events = do (lng = Lungo) ->
     parent = el.parent("[data-control=menu]").removeClass(CLASS.SHOW).attr C.ATTRIBUTE.ID
     lng.dom("[data-view-menu=#{parent}] > .icon").attr "class", "icon " + el.data("icon")
 
-  _changeCheckboxValue = (event) ->
-    #@TODO >> Refactor names
-    event.preventDefault()
-    el = lng.dom(this)
-    input = el.find "input"
-    checked = input[0].checked
-    input.val checked.toString()
-    el.removeClass "checked"
-    if checked  then el.addClass "checked"
-
   _transitionEnd = (event) ->
     section = lng.dom(event.target)
     hasDirection = section.data("direction")
@@ -108,6 +95,5 @@ Lungo.Boot.Events = do (lng = Lungo) ->
 
     if hasDirection or asideRelated or shadowRelated then lng.Router.animationEnd event
     else lng.Aside.animationEnd event
-
 
   init: init

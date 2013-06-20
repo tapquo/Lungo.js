@@ -42,13 +42,6 @@ Lungo.Attributes =
     selector: "header"
     html: "<h1 class=\"title centered\">{{value}}</h1>"
 
-  "control-checkbox":
-    selector: "*"
-    html: """
-      <input type="checkbox" value="None" id="{{value}}" />
-      <label for="{{value}}"></label>
-    """
-
   loading:
     selector: "*"
     html: """
