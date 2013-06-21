@@ -15,7 +15,7 @@ A HTML5 framework for developers who want to design, build and share cross devic
 
 
 
-Gettins Started
+Getting Started
 ---------------
 The idea of Lungo arose in year 2010 when the craftman Javi Jiménez Villar ([**soyjavi**](https://twitter.com/soyjavi)) saw that hot existing Mobile Frameworks at that time were not powerful and not using the features of HTML5.
 
