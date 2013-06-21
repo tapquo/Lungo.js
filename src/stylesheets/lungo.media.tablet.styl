@@ -10,6 +10,9 @@
     vendor(perspective, 800px)
     vendor(transform-style, preserve-3d)
 
+    & div.notification
+      position: absolute !important
+
     & > section, & > aside
       backface-visibility hidden
       vendor(animation-timing-function, DEFAULT_TRANSITION)
@@ -58,6 +61,9 @@
       &.shadow
         transform translateX(ASIDE_WIDTH)
         opacity: .6
+
+      &.hide, &.hide *
+        opacity: 0
 
       &:not([data-children])
         box-flex(1)

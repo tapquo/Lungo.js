@@ -34,7 +34,7 @@ Lungo.Aside = do (lng = Lungo) ->
             childs = aside_section.data("children").split(" ")
             for child in childs
               child = lng.dom(C.ELEMENT.SECTION + "#" + child)
-              if child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
+              if child.length and child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
 
           aside_section.removeClass("aside").addClass "asideShowing"
 
