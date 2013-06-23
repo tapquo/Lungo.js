@@ -21,7 +21,10 @@
 <body>
     <aside id="a">
         <header data-title="aside a"></header>
-        <article></article>
+        <article>
+
+
+        </article>
     </aside>
 
     <aside id="b">
@@ -35,10 +38,26 @@
                 <button data-icon="list" data-view-aside="a"></button>
             </nav>
             <nav class="on-right">
-                <button data-icon="arrow-right" data-view-section="one"></button>
+                <button data-icon="arrow-right" d-ata-view-section="one" data-action="toSectionOne"></button>
             </nav>
         </header>
-        <article id="zero-1"></article>
+        <article id="zero-1" class="scroll">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, numquam, ut unde quia ipsam dolor pariatur? Numquam, facere, necessitatibus soluta possimus quibusdam nihil labore autem repudiandae ducimus repellendus quidem expedita.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, numquam, ut unde quia ipsam dolor pariatur? Numquam, facere, necessitatibus soluta possimus quibusdam nihil labore autem repudiandae ducimus repellendus quidem expedita.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, numquam, ut unde quia ipsam dolor pariatur? Numquam, facere, necessitatibus soluta possimus quibusdam nihil labore autem repudiandae ducimus repellendus quidem expedita.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, numquam, ut unde quia ipsam dolor pariatur? Numquam, facere, necessitatibus soluta possimus quibusdam nihil labore autem repudiandae ducimus repellendus quidem expedita.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, numquam, ut unde quia ipsam dolor pariatur? Numquam, facere, necessitatibus soluta possimus quibusdam nihil labore autem repudiandae ducimus repellendus quidem expedita.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, numquam, ut unde quia ipsam dolor pariatur? Numquam, facere, necessitatibus soluta possimus quibusdam nihil labore autem repudiandae ducimus repellendus quidem expedita.
+        </article>
+
+         <footer>
+            <nav>
+                <a href="#" data-view-article="layout-art1" data-icon="user" class="active" data-label="Hello"></a>
+                <a href="#" data-view-article="layout-art2" data-icon="inbox" data-count="80"></a>
+                <a href="#" data-view-article="layout-art3" data-icon="comments"></a>
+                <a href="#" data-view-article="layout-art4" data-icon="cog"></a>
+            </nav>
+        </footer>
     </section>
 
     <section id="one" data-transition="slide" data-children="two" data-aside="b">
@@ -87,8 +106,38 @@
             history: false
         });
 
+        Lungo.ready(function() {
+            $$("[data-action=toSectionOne]").on("tap", function() {
+                Lungo.Notification.show("user", "Please wait", 1, function() {
+                    Lungo.Router.section("one");
+                    Lungo.Notification.hide();
+                });
+            });
+        });
+
         // Lungo.Notification.show("user", "Hello world! yeah");
+
+        // Lungo.Notification.error('Title', 'Description', 'ok', 2);
+
         // Lungo.Notification.show()
+
+        //  Lungo.Notification.confirm({
+        //     icon: 'user',
+        //     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+        //     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo amet nulla dolorum hic eum debitis dolorem expedita? Commodi molestiae tempora totam explicabo sed deserunt cum iusto eos perspiciatis ea in.',
+        //     accept: {
+        //         icon: 'checkmark',
+        //         label: 'Accept',
+        //         callback: function(){ alert("Yes!"); }
+        //     },
+        //     cancel: {
+        //         icon: 'close',
+        //         label: 'Cancel',
+        //         callback: function(){ alert("No!"); }
+        //     }
+        // });
+
+// Lungo.Notification.html('<div class="title">slaida</div><h1>Hello World</h1>', "Close");
     </script>
 </body>
 </html>
