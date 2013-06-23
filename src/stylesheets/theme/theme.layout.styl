@@ -10,15 +10,18 @@
 body > section
   & > header
     background-color: THEME
+    box-shadow inset 0 -1px darken(THEME, 10%), 0 1px SHADOW
+    & .title
+      text-shadow 0 0.1em darken(THEME, 10%)
 
-  & > nav[data-control=groupbar], & > header
-    box-shadow inset 0 -1px SHADOW, 0 1px SHADOW
+  & > nav[data-control=groupbar]
+    box-shadow 0 1px SHADOW
 
   & > nav[data-control=groupbar], & > footer
     background-color: ASIDE
 
   & > footer
-    box-shadow inset 0 1px SHADOW, 0 -1px SHADOW
+    box-shadow 0 -1px SHADOW
 
   & > article, & > [data-control="pull"]
     background-color: BACKGROUND
@@ -38,11 +41,7 @@ body > section
     box-shadow: 0 -1px 0 rgba(0,0,0,0.05)
 
 body > aside
-  background-color: darken(ASIDE, 10%)
+  COLOR = darken(ASIDE, 25%)
+  background-color: COLOR
   color: WHITE
-  box-shadow 0 0 0 6px darken(ASIDE, 10%)
-  & > header, & > footer
-    background-color: ASIDE
-
-body header .title
-  font-weight: 400
+  box-shadow 0 0 0 6px COLOR
