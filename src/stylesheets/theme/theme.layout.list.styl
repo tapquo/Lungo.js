@@ -55,11 +55,20 @@
     &, & a
       color: lighten(ASIDE, 50%)
 
+    & .icon
+      color: lighten(ASIDE, 70%)
+
+    & small
+      color: lighten(ASIDE, 25%)
+
     &.active, &:active
-      background-color: lighten(ASIDE, 5%)
-      & :not(.icon)
+      background-color: darken(ASIDE, 5%)
+    &:hover
+      background-color: darken(ASIDE, 10%)
+    &.active, &:active, &:hover
+      &, & a
         color: WHITE
       & .icon
         color: THEME
-    & small, .icon
-      color: lighten(ASIDE, 20%)
+      & small
+        color: lighten(ASIDE, 50%)
