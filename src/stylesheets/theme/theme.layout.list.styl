@@ -54,6 +54,10 @@
     background: none
     &, & a
       color: lighten(ASIDE, 50%)
+      &:not(.active) .tag:not(.icon)
+        background-color: ASIDE
+      &.active .tag:not(.icon)
+        background-color: darken(THEME, 15%)
 
     & .icon
       color: lighten(ASIDE, 70%)
