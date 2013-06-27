@@ -23,7 +23,7 @@ form, .form
     display: inline-block
     width: 100%
     margin: 0.5em 0
-    padding: 0 0.4em
+    padding: 0 0.5em
     transition all 100ms linear
     font-family: inherit
     -webkit-appearance: none
@@ -46,16 +46,19 @@ form, .form
     & > label:not(.select)
       float: left
       width: 20%
-      margin: 0.3em 0
-      line-height: 2.5em
+      margin: 0.5em 0
+      line-height: 1.75em
       &.absolute
         position: absolute
       &.anchor
         width: auto
         overflow: hidden
 
-    & > label:not(.absolute) + input, & > label:not(.absolute) + label.select
-      width: 80% !important
+    & > label:not(.absolute) + input:not([type="checkbox"]), & > label:not(.absolute) + label.select
+      width: 80%
+
+    & > label:not(.absolute) + input[type="checkbox"]
+      margin-top: 0.5em
 
     & .icon
       position: absolute
@@ -68,14 +71,23 @@ form, .form
       border: none
       border-radius: 0
       padding: 0 0.3em
+      line-height: 1.5em
       &, &:focus
         background: none
 
+
+    & input[type="checkbox"]
+      float: right
+
+    & label.select
+      line-height: 1.5em
+
+
   .indented & fieldset
     & > label:not(.select):not(.anchor)
-      width: 25% !important
-    & > label:not(.absolute) + input, & > label:not(.absolute) + label.select
-      width: 75% !important
+      width: 25%
+    & > label:not(.absolute) + input:not([type="checkbox"]), & > label:not(.absolute) + label.select
+      width: 75%
 
   & label.select
     position: relative
@@ -96,14 +108,15 @@ form, .form
       text-align: center
 
   /* -------------------------- RANGE -------------------------- */
-  & input[type=range]
+  & input[type="range"]
     -webkit-appearance: none
     outline: none
     height: FORM_PROGRESS_HEIGHT
     width: 100%
     padding: 0
     border: none
-    margin-bottom: 0.5em
+    margin: 1em 0
+    background: red
     &::-webkit-slider-thumb
       position: relative
       width: FORM_RADIO_BUTTON
