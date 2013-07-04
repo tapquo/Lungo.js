@@ -25,9 +25,6 @@
 [submodule "package/lungo.qr"]
 	path = package/lungo.qr
 	url = https://github.com/tapquo/lungo.qr.git
-[submodule "package/lungo.language"]
-	path = package/lungo.language
-	url = https://github.com/tapquo/lungo.language.git
 [submodule "package/lungo.calendar"]
 	path = package/lungo.calendar
 	url = https://github.com/tapquo/lungo.calendar.git
