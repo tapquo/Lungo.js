@@ -8,7 +8,7 @@ Set a progress to the element
 ###
 
 
-Lungo.Element.menu = do (lng = Lungo) ->
+Lungo.Element.Menu = do (lng = Lungo) ->
 
   C = lng.Constants
 
