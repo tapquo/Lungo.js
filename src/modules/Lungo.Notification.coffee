@@ -53,6 +53,8 @@ Lungo.Notification = do(lng = Lungo) ->
 
 
   ###
+  Hides the current notification.
+  @method   hide
   ###
   hide = ->
     _window.removeClass("show")
@@ -62,6 +64,8 @@ Lungo.Notification = do(lng = Lungo) ->
 
 
   ###
+  @method   confirm
+  @param    {object} the notification's config.
   ###
   confirm = (options) ->
     _options = options
@@ -72,18 +76,38 @@ Lungo.Notification = do(lng = Lungo) ->
 
 
   ###
+  Shows an success notification.
+  @method   show
+  @param    {string} Notification's title.
+  @param    {string} Notification's description.
+  @param    {string} The icon, null for no icon.
+  @param    {number} The time to show the notification, 0 for unlimited.
+  @param    {function} A function to execute when hiding the notification.
   ###
   success = (title, description, icon = "ok", seconds, callback) ->
     _notify title, description, icon, "success", seconds, callback
 
 
   ###
+  Shows an error notification.
+  @method   hide
+  @param    {string} Notification's title.
+  @param    {string} Notification's description.
+  @param    {string} The icon, null for no icon.
+  @param    {number} The time to show the notification, 0 for unlimited.
+  @param    {function} A function to execute when hiding the notification.
   ###
   error = (title, description, icon = "remove-sign", seconds, callback) ->
     _notify title, description, icon, "error", seconds, callback
 
 
   ###
+  Creates a notification using your own html code.
+  @method   html
+  @param    {string} The html code for the notification.
+  @param    {string} The closing button text.
+  @param    {string} Specific style for notification
+  @param    {number} The time to show the notification, 0 for unlimited.
   ###
   html = (markup, button, style, seconds) ->
     if button
@@ -92,6 +116,11 @@ Lungo.Notification = do(lng = Lungo) ->
     _hide seconds
 
   ###
+  Creates a non-obstructive notification
+  @method   hide
+  @param    {string} Notification's title.
+  @param    {string} The icon, null for no icon.
+  @param    {string} Specific style for notification
   ###
   push = (title, icon, style) ->
     _show _markup(title, null, icon), "push #{style}", false
