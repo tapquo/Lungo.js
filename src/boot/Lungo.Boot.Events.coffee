@@ -79,13 +79,13 @@ Lungo.Boot.Events = do (lng = Lungo) ->
   _onMenu = (event) ->
     event.preventDefault()
     id = lng.dom(@).data("view-menu")
-    lng.Element.menu.show id
+    lng.Element.Menu.show id
 
   _closeMenu = (event) ->
     event.preventDefault()
     el = lng.dom(@)
     id = el.parent(C.CONTROL.MENU).attr C.ATTRIBUTE.ID
-    lng.Element.menu.hide id
+    lng.Element.Menu.hide id
     lng.dom("[data-view-menu=#{id}] > .icon").attr "class", "icon " + el.data("icon")
 
   _transitionEnd = (event) ->

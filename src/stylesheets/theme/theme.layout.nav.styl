@@ -43,20 +43,20 @@ nav
     box-shadow 0 2px 0 SHADOW
     &.icons
       & > a
+        &, > abbr
+          color: NAV_LINK
         & > .icon
           color: NAV_LINK_ACTIVE
-        & > abbr
-          color: NAV_LINK
         &:active, &:hover
           & > .icon
             text-shadow: 0 0 2em NAV_LINK_ACTIVE
 
     &:not(.icons)
       & > a
+        &, > abbr
+          color: NAV_LINK_ACTIVE
         & > .icon
           color: NAV_LINK
-        & > abbr
-          color: NAV_LINK_ACTIVE
         &:active, &:hover
           background-color: rgba(255,255,255,0.2)
           & > .icon

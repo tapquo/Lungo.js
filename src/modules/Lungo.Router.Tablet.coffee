@@ -133,7 +133,6 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     _fromCallback = false
 
   _showFuture = (future) ->
-    lng.Element.Cache.dump()
     current = lng.Element.Cache.section
     lng.Section.show(undefined, future)
     currentHasAside = lng.Element.Cache.section?.data("aside")?

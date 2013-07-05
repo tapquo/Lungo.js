@@ -32,7 +32,6 @@ module.exports = (grunt) ->
         'src/modules/Lungo.Resource.coffee',
         'src/modules/Lungo.Scroll.coffee',
         'src/modules/Lungo.Service.coffee',
-        # 'src/modules/Lungo.Router.coffee',
         'src/modules/Lungo.Router.Phone.coffee',
         'src/modules/Lungo.Router.Tablet.coffee',
         'src/modules/Lungo.Aside.coffee',
