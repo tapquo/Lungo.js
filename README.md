@@ -14,7 +14,6 @@ A HTML5 framework for developers who want to design, build and share cross devic
 
 
 
-
 Getting Started
 ---------------
 The idea of Lungo arose in year 2010 when the craftman Javi Jiménez Villar ([**soyjavi**](https://twitter.com/soyjavi)) saw that hot existing Mobile Frameworks at that time were not powerful and not using the features of HTML5.
@@ -30,16 +29,15 @@ This is opensource, so feel free to fork this project to help us create a better
 ### Licensing
 Lungo is licensed under GPLv3 licensed and a Commercial License for OEM uses. See [LICENSE](https://github.com/tapquo/Lungo.js/blob/master/LICENSE.md) for more information.
 
-
 ### Help us on being better
 Please, don't have any doubt in contacting us if you think you can do a better API. If you think that we have to support a new feature or if you have found a bug, use [GitHub issues](https://github.com/tapquo/lungo.js/issues). Make a fork of this documentation and send us your *pull requests* with your improvements. 
 
 To talk with us or with other developers about the Lungo API, suscribe to our [**mailing list**](https://groups.google.com/forum/#!forum/lungojs).
 
 
+
 EASY PROTOTYPE
 ==============
-
 The main premise is to create a semantic structure in the whole project, starting from the markup language HTML, through a well organized CSS and ending with the JavaScript API. Lungo offers a great facility when prototyping applications, and will not be needed to enter any lines of code (JavaScript) to visualize how our application will behave. In this doc we will learn which are Lungo semantic elements as relate to each and how you can create applications with HTML only. It's really exciting! let's begin.
 
 
@@ -66,14 +64,11 @@ Here you have the dependencies of your Lungo application's body. It must contain
 
 The JavaScript function that initializes Lungo it's:
 ``` javascript
-Lungo.init({
-    name: 'example'
-});
+Lungo.init();
 ```
 
 #### Load Sync resources on init
 To make easier to create and modify your app you can create the sections in separate html files and load the synchonously, making your main file smaller and having your code organized better.
-
 ``` javascript
 //Load resource on app init
 Lungo.init({
@@ -84,7 +79,6 @@ Lungo.init({
 
 #### Load async resources by link
 There is other way to load resources asynchronously, just add to the `<a>` tag element the attribute data-async with the link to the section.
-
 ``` html
 <section id="loader" data-transition="">
     <article id="art1" class="active">
@@ -96,14 +90,12 @@ There is other way to load resources asynchronously, just add to the `<a>` tag e
 ```
 
 
-
 Basic Elements
 --------------
 Lungo uses the semantic language markup introduced with HTML5, so you can add this elements using the new semantic tags.
 
 ### Section & Article
 A `<section>` is a view of our application where content will be displayed and where there may be subelements as `<header>`, `<footer>` and `<article>`.
-
 ``` html
 <section id="main">
     <article id="main-article" class="active">
@@ -117,7 +109,6 @@ The content a particular `<section>` is structured by `<article>`. Within a sect
 ``` html
 <section id="main_section">
     <header data-title="example"></header>
-
     <article id="main-article" class="active">
         {{CONTENT}}
     </article>
@@ -127,11 +118,9 @@ The content a particular `<section>` is structured by `<article>`. Within a sect
 
 ### Header
 Each `<section>` can contain a `<header>` where the tittle of the section will be shown. Optionally you can add navigation buttons, to go to another section, go back to a previous one, go to another article or just open the aside menu.
-
 ``` html
 <section id="main_section">
     <header data-title="example"></header>
-
     <article id="main-article" class="active">
         {{CONTENT}}
     </article>
@@ -141,7 +130,6 @@ Each `<section>` can contain a `<header>` where the tittle of the section will b
 
 ### Footer
 Each `<section>` can contain a `<footer>`. There you can add buttons to navigate through articles, sections and even asides.
-
 ``` html
 <section id="main_section">
     <article id="main" class="active">
@@ -161,7 +149,6 @@ Each `<section>` can contain a `<footer>`. There you can add buttons to navigate
 
 ### Aside
 The `<aside>` element gives us a lateral area which will appear depending on the device (tablet) or hidden (mobile). Its structure is very similar to the section one's. We can create a link that references a `<aside>` with a particular id using the navigation system of Lungo. We will use the attribute data-router (which will be discussed in subsequent chapters). We can also define the positioning of it, using style classes. The default position is left.
-
 ``` html
 <aside id="features">
     <header data-title="Options"></header>
@@ -171,8 +158,7 @@ The `<aside>` element gives us a lateral area which will appear depending on the
 </aside>
 ```
 
-In your section you need link your aside (#features) with `data-aside` attribute, and you can display/hide with attribute `data-view-aside`:
-
+In your section if you want view aside automaticaly in Tablet-Apps you need link your aside with `data-aside` attribute, and you can display/hide with attribute `data-view-aside`:
 ``` html
 <section id="main_section" data-aside="features">
     <header data-title="Aside">
@@ -187,34 +173,29 @@ In your section you need link your aside (#features) with `data-aside` attribute
 ```
 
 Navigation
---------------
+----------
 The navigation in Lungo is entirely semantic, and you will use the element `<a>` or `<button>` and his data attribute "view-*" to tell the system which `<section>`, `<article>` or `<aside>` you want to go to.
 
-### Data-View-* attribute
+### Data-View attribute
 The `data-view-*` attribute is set in the `<a>` or `<button>` element to set the type of element we are going to navigate to (`<section>`, `<article>` or `<aside>`) and in the href attribute the hashbang plus the id of the element has to be set. For this purpopuse Lungo uses the bread crumbs.
-
 ``` html
 <section id="main">
     <article id="article_1" class="active">
         <button class="button" data-view-article="article_1" data-icon="forward">To article_2</button>
     </article>
-
     <article id="article_2">
         <button class="button" data-view-article="article_2" data-icon="home" data-label="To article_1"></button>
     </article>
 </section>
 ```
 
-
 ### Data-back attribute
 As it has been said before, Lungo's navigation is based on the bread crumbs pattern, so navigation backwards between sections is done using the data-back functionality. You can set a button in your header using the data-back attribute or use in `<a>` or `button` tags data-router="section" with href="#back"
-
 ``` html
 <section id="main">
-    <article id="main_1" class="active">{{CONTENT}}</article>
+	<article id="main_1" class="active">{{CONTENT}}</article>
     <article id="main_2">{{CONTENT}}</article>
 </section>
-
 <section id="second">
     <header data-back="home"></header>
     <article id="second_1" class="active">
@@ -223,7 +204,6 @@ As it has been said before, Lungo's navigation is based on the bread crumbs patt
     </article>
 </section>
 ```
-
 
 ### Nav
 To create simple structures of navigation buttons within a footer or header the nav element has to be used. In the header, the nav element's position will depend on the class applied to it. `left` to the left and `right` to the right.
@@ -257,7 +237,6 @@ To create simple structures of navigation buttons within a footer or header the 
 </section>
 ```
 
-
 ### Groupbar
 Lungo gives you the capability to have a special menu at the top of your UI. To do this you have to extend the header element using class="extended" and create inside of it a nav element with class="groupbar"
 
@@ -265,7 +244,7 @@ Lungo gives you the capability to have a special menu at the top of your UI. To 
 <section id="main">
     <header data-title="groupbar" class="extended"></header>
 
-    <nav class="groupbar">
+    <nav data-control="groupbar">
         <a href="#" data-view-article="article_1" class="active">Art-1</a>
         <a href="#" data-view-article="article_2">Art-2</a>
     </nav>
@@ -275,10 +254,38 @@ Lungo gives you the capability to have a special menu at the top of your UI. To 
 </section>
 ```
 
+### Menu
+Besides `<nav>` elements `and` *groupbar* there is another way to make the user select new view in your application. Since Brownie (v2.2) implements *menu* Control and it is called with the attribute `data-view-menu`:
+```html
+<section id="menu" data-transition="slide">
+    <header data-title="data-control=menu">
+        <nav>
+            <a href="#" data-view-menu="options" data-icon="menu"></a>
+        </nav>
+        <nav class="on-right">
+            <a href="#" data-view-menu="options-icons" data-icon="grid"></a>
+        </nav>
+    </header>  
+    <nav id="options" data-control="menu">
+	    <a href="#" data-view-article="home-menu" data-icon="menu">Home</a>
+	    <a href="#" data-view-article="explore-menu" data-icon="globe">Explore</a>
+	    <a href="#" data-view-article="activity-menu" data-icon="comments">Activity</a>
+	    <a href="#" data-view-article="profile-menu" data-icon="user">Profile</a>
+	</nav>
+</section>
+```
 
-### Title Bindings
+In case you want to give it a priority to icons only have to apply the `icons` class.
+```html
+<nav id="options-icons" data-control="menu" class="icons">
+    …
+</nav>
+```
+
+Bindings
+--------
+#### Title Binding
 To update the title of a section through the navigation, just use the attribute `data-title` in your navigation element.
-
 ``` html
 <section id="main">
     <header data-title="Default title"></header>
@@ -291,10 +298,8 @@ To update the title of a section through the navigation, just use the attribute 
 </section>
 ```
 
-
-### Visualization bindings
-You can show nav elements when a particular article is visible.
-
+#### Element binding
+You can show nav elements when a particular article is visible with data-article attribute.
 ``` html
 <section id="main">
     <header data-title="Title of section">
@@ -303,7 +308,6 @@ You can show nav elements when a particular article is visible.
             <button data-article="first" data-view-article="second" data-icon="right"></button>
         </nav>
     </header>
-
     <article id="first" class="active">{{CONTENT}}</article>
     <article id="second">{{OTHER_CONTENT}}</article>
 </section>
@@ -312,25 +316,65 @@ You can show nav elements when a particular article is visible.
 * [Elements](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/elements.md)
 * [Navigation](https://github.com/tapquo/Lungo.js/blob/master/docs/EN/prototype/navigation.md)
 
+
 Forms
 -----
-lorem
+We know that forms have always been somewhat tedious to handle in web projects, Lungo makes easy create a uniform base and unique experience among all browsers. All controls from the `input` (in any of its variants) to the `button` are perfectly adapted for use with touch devices. You only have to use the `form` or class `form`:
+``` html
+<div class="form">
+	<fieldset>
+	    <label>Input</label>
+	    <input type="text" placeholder="value">
+	    <label>Input styled</label>
+	    <input type="text" placeholder="value on right" class="text align_right error">
+	    <label>Select</label>
+	    <label class="select">
+	        <select>
+	            <option value="1">HTML5</option>
+	            <option value="2">CSS3</option>
+	            <option value="3">JavaScript</option>
+	        </select>
+	    </label>
+	    <label>Input date</label>
+	    <input type="date" class="align_right" placeholder="Select finish" value="10/04/1980"/>
+        <label class="anchor">Example of touch checkbox</label>
+        <input type="checkbox" class="inline right" />
+	</fieldset>
+</div>
+```
 
-#### Basics
-lorem
-
-#### Buttons
-lorem
-
-#### No-native
-lorem
 
 Lists
 -----
-lorem
+Can you imagine an App without lists? we can't conceive of such a thing, so in Lungo offers you an multiple components to make lists tailored to your needs. Always keeping in mind that everything starts with a `<ul>` and continous with a `<li>`:
+``` html
+<article id="example" class="list">
+   <ul>
+		<li>
+			<strong>Title</strong>
+			<small>Description</small>			
+		</li>
+		...
+   </ul>
+</article>
+```
 
-Data-Attributes
----------------
+Our `<li>` element can be filled by multiple ways and how complex it all you want, check out a list item much more complete:
+``` html
+<li class="thumb big">
+    <img src="http://cdn.tapquo.com/lungo/icon-144.png" />
+    <div>
+        <div class="on-right text tiny">lorem ipsum</div>
+        <strong>Title</strong>
+        <span class="text tiny opacity">lorem ipsum</span>
+        <small>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aliquam, nisi commodi blanditiis.
+        </small>
+    </div>
+</li>
+```
+
+If you want to know more about the possible styles of the lists have to study the examples in our wonderful *Kitchen-Sink*.
 
 
 
@@ -339,13 +383,10 @@ JavaScript API
 
 Core
 ----
-
 Lungo has several methods that are used inside its engine. Here you have them if you need to include some of their functionality in your application.
-
 
 #### log()
 Console system to display messages when you are in debug mode.
-
 **Parameters**
 ```
 number:     Severity based in (1)Log, (2)Warn, (>2)Error
@@ -362,9 +403,7 @@ Lungo.Core.log(3, "Error!!!!");
 
 #### execute()
 Executes callbacks based on the parameters received.
-
 **Parameters**
-
 ```
 function:   callback to execute
 ```
@@ -383,9 +422,7 @@ Lungo.Core.execute(myFunc, myFunc2);
 
 #### bind()
 Creates a new function that, when called, itself calls this function in the context of the provided this value, with a given sequence of arguments preceding any provided when the new function was called.
-
 **Parameters**
-
 ```
 object:     object that 'this' can refer in the new function.
 function:   A function object.
@@ -412,7 +449,6 @@ var finalText = Lungo.Core.bind(example, addText)(text);
 Copy from any number of objects and mix them all into a new object. The implementation is simple; just loop through arguments and copy every property of every object passed to the function.
 
 **Parameters**
-
 ```
 object:     arguments to mix them all into a new object.
 object:     arguments to mix them all into a new object.
@@ -446,7 +482,6 @@ Result:
 Every object descended from Object inherits the hasOwnProperty method. This method can be used to determine whether an object has the specified property as a direct property of that object.
 
 **Parameters**
-
 ```
 object:     object to test for a property's existence inside itself.
 string:     property the name of the property to test.
@@ -465,7 +500,6 @@ Lungo.Core.isOwnProperty(car,"wings");      //Result: false
 Determine the internal JavaScript [[Class]] of an object.
 
 **Parameters**
-
 ```
 object:     object to get the real type of itself.
 ```
@@ -482,7 +516,6 @@ Lungo.Core.toType(name);    //Result: "string"
 Convert an array-like object into a true JavaScript array.
 
 **Parameters**
-
 ```
 object:     Any object to turn into a native Array.
 ```
@@ -498,7 +531,6 @@ var execute = function() {
 
 #### isMobile()
 Determine if the current environment is a mobile environment. This method **return** An object with the mix done.
-
 *Example*
 ``` javascript
 Lungo.Core.isMobile();
@@ -507,7 +539,6 @@ Lungo.Core.isMobile();
 
 #### environment()
 **Returns** information of execute environment.
-
 *Example*
 ``` javascript
 Lungo.Core.environment();
@@ -518,7 +549,6 @@ Lungo.Core.environment();
 Copy from any number of objects and mix them all into a new object. The implementation is simple; just loop through arguments and copy every property of every object passed to the function.
 
 **Parameters**
-
 ```
 list:       List of objects.
 string:     Name of the property.
@@ -537,27 +567,10 @@ var ordered_list = lng.Core.orderByProperty(list, 'name', 'asc');
 ```
 
 
-#### parseUrl()
-
-**Parameters**
-
-```
-string:     Url string.
-```
-This method **return**  a correct URL using hashtag character.
-
-*Example*
-``` javascript
-var url = Lungo.Core.parseUrl("http://tapquo.com/#folks");
-//Result: "#folks"
-```
-
-
 #### findByProperty()
 Copy from any number of objects and mix them all into a new object. The implementation is simple; just loop through arguments and copy every property of every object passed to the function.
 
 **Parameters**
-
 ```
 list:       The list with objects.
 string:     Name of the property.
@@ -579,12 +592,10 @@ Cache
 -----
 Lungo implements its own cache type. This cache will store the value until the wepapp is closed
 
-
 #### set()
 Sets in the LungoJS cache system a new key/value pair.
 
 **Parameters**
-
 ```
 string:     Key for the new value.
 string:     [OPTIONAL] Subkey in LungoJS Cache System.
@@ -602,7 +613,6 @@ Lungo.Data.Cache.set("lungoFramework", framework);
 Returns the cached value of a given key.
 
 **Parameters**
-
 ```
 string:      Key in LungoJS Cache System.
 string:     [OPTIONAL] Subkey in LungoJS Cache System.
@@ -620,7 +630,6 @@ var cachedFramework = Lungo.Data.Cache.get("lungoFramework");
 Removes the instance of a given key in LungoJs Cache System.
 
 **Parameters**
-
 ```
 string:     Key in LungoJS Cache System.
 string:     [OPTIONAL] Subkey in LungoJS Cache System.
@@ -636,7 +645,6 @@ Lungo.Data.Cache.remove("lungoFramework");
 Checks if the given key is stored in the cache.
 
 **Parameters**
-
 ```
 string Key in LungoJS Cache System.
 ```
@@ -646,7 +654,6 @@ This method **return** a boolean value which is true if the key is found
 ``` javascript
 Lungo.Data.Cache.exists("lungoFramework");
 ```
-
 
 
 DOM
@@ -705,10 +712,10 @@ Lungo.dom('#section2').on('load', function(event){
 ```
 
 
-Elements
+.Element
 --------
 
-### Carousel
+### .Carousel
 Lungo has a carousel element where content can be published can be published and the user can navigate through it using the caroussel controls.
 
 **Parameters**
@@ -751,7 +758,6 @@ var example = Lungo.Element.Carousel(el);
 Lungo.dom('[data-direction=left]').tap(example.prev);
 ```
 
-
 #### Carousel.next()
 Show the next slide.
 *Example*
@@ -759,7 +765,6 @@ Show the next slide.
 var example = Lungo.Element.Carousel(el);
 Lungo.dom('[data-direction=left]').tap(example.next);
 ```
-
 
 #### Carousel.position()
 Returns the actual index.
@@ -771,10 +776,8 @@ alert(example.position());
 ```
 
 
-
-### Count
+### .count
 As it has been shown in the prototyping chapter, you can add a counter to elements using the data-count attribute. You can also add this counter using javascript.
-
 
 #### JavaScript method
 Set a counter to the element:
@@ -808,10 +811,8 @@ You can define via HTML a default value for a count element.
 ```
 
 
-
-
-### Loading
-As it has been shown in the prototyping chapter, you can create a loading animation using the data-loading attribute. You can also add this animation using javascript
+### .loading
+As it has been shown in the prototyping chapter, you can create a loading animation using the data-loading attribute. You can also add this animation using javascript:
 
 **Parameters**
 ```
@@ -827,15 +828,12 @@ This method **returns** an instance of the object founded.
     <article id="main-article"></article>
 </section>
 ```
-
-// JavaScript Code
 ``` javascript
 Lungo.Element.loading("#main-article", 1);
 ```
 
 
-
-### Progress
+### .progress
 As it has been shown in the prototyping chapter, you can create a progress bar using the data-progress attribute. You can also add this bar using javascript.
 
 **Parameters**
@@ -864,9 +862,7 @@ Lungo.Element.progress("#progress-normal", 65, true);
 ```
 
 
-
-
-### Pull&Refresh
+### .Pull
 As it has been shown in the prototyping chapter, you can create a pull and refresh element addind data-pull and some javascript code.
 
 **Parameters**
@@ -905,14 +901,53 @@ var pull_example = new Lungo.Element.Pull('#main-article', {
 ```
 
 
-### Menu (Pending)
+###.Menu
+Manages visual behavior `<data-control-menu>`
+
+#### Show
+Displays the <data-control-menu> with a determinate Id
+
+**Parameters**
+```
+string:     <data-control-menu> Id
+```
+
+*Example*
+``` javascript
+Lungo.Element.menu.show("options")
+```
 
 
+#### Hide
+Hides the <data-control-menu> with a determinate Id
 
-Notification
-------------
+**Parameters**
+```
+string:     <data-control-menu> Id
+```
+
+*Example*
+``` javascript
+Lungo.Element.menu.hide("options")
+```
+
+#### Toggle
+Toggles the <data-control-menu> with a determinate Id
+
+**Parameters**
+```
+string:     <data-control-menu> Id
+```
+
+*Example*
+``` javascript
+Lungo.Element.menu.toggle("options")
+```
+
+
+.Notification
+-------------
 To display notifications, many times people tend to use the javascript alert() function. The notification it shows looks different depending on the browser. Lungo has a notification system that shows pretty and responsive notifications styled in the same way in all the browsers, making your app look the same no matter the browser you use.
-
 
 #### show()
 Shows a customized notification.
@@ -921,7 +956,7 @@ Shows a customized notification.
 ```
 string:     The icon, null for no icon.
 string:     Notification's title.
-number:     The time to show the notification, 0 for unlimited.
+number:     Seconds to show the notification, 0 for unlimited.
 function:   A function to execute when hiding the notification.
 ```
 If you call to the show function without parameters it will show a loading screen
@@ -931,14 +966,12 @@ If you call to the show function without parameters it will show a loading scree
 var afterNotification = function(){
     //Do something
 };
-
 Lungo.Notification.show(
     "check",                //Icon
     "Success",              //Title
     3,                      //Seconds
     afterNotification       //Callback function
 );
-
 //Show loading screen
 Lungo.Notification.show();
 ```
@@ -946,7 +979,6 @@ Lungo.Notification.show();
 
 #### hide()
 Hides the current notification.
-
 *Example*
 ``` javascript
 Lungo.Notification.hide();
@@ -970,7 +1002,6 @@ function:   A function to execute when hiding the notification.
 var afterNotification = function(){
     //Do something
 };
-
 Lungo.Notification.success(
     "Success",                  //Title
     "Successful operation",     //Description
@@ -998,7 +1029,6 @@ function:   A function to execute when hiding the notification.
 var afterNotification = function(){
     //Do something
 };
-
 Lungo.Notification.error(
     "Error",                      //Title
     "Unsuccessful operation",     //Description
@@ -1043,7 +1073,25 @@ Creates a notification using your own html code.
 **Parameters**
 ```
 string:     The html code for the notification.
-boolean:    The closing button text.
+string:     The closing button text.
+string:     Specific style for notification
+number:     The time to show the notification, 0 for unlimited.
+```
+
+*Example*
+``` javascript
+Lungo.Notification.html('<h1>Hello World</h1>', "Close");
+```
+
+
+#### push()
+Creates a non-obstructive notification
+
+**Parameters**
+```
+string:		Notification's title.
+string:		The icon, null for no icon.
+string:		Specific style for notification
 ```
 
 *Example*
@@ -1053,8 +1101,8 @@ Lungo.Notification.html('<h1>Hello World</h1>', "Close");
 
 
 
-Router
-------
+.Router
+-------
 Lungo.Router provides the user with the neccesary functions to manage the navigation through javascript. The following functions allow developers to work with the navigation through sections, articles and also asides.
 
 
@@ -1071,35 +1119,19 @@ string:     The section's id.
 Lungo.Router.section("features");
 ```
 
-
-#### hide()
-This function allows the navigation from an article to another one.
+#### article()
+Displays the `<article>` in a particular `<section>`.
 
 **Parameters**
-```
+```json
+string:		The section id
 string:     The article's id.
 ```
 
 *Example*
-``` javascript
-Lungo.Router.article("list","list-indented");
+```javascript
+Lungo.Router.article("my-section", "my-article");
 ```
-
-
-#### aside()
-Toggles the aside in a particular section.
-
-**Parameters**
-```
-string:     The section's id.
-string:     The aside's id.
-```
-
-*Example*
-``` javascript
-Lungo.Router.aside('main', left_menu);
-```
-
 
 #### back()
 Lungo uses the bread crumb pattern, so to return to a previous section you have to use the Lungo.Router.back function.
@@ -1109,10 +1141,66 @@ Lungo uses the bread crumb pattern, so to return to a previous section you have 
 Lungo.Router.back();
 ```
 
-
-
-Service
+. aside 
 -------
+The `<aside>` element has a different behavior to article and section since its display is combined with them. For that reason Lungo offers specific methods:
+
+#### show()
+Display an aside element
+
+**Parameters**
+```
+string:		<aside> id
+```
+
+*Example*
+``` javascript
+Lungo.Aside.show("my-aside");
+```
+
+#### hide()
+Hide current aside element
+*Example*
+``` javascript
+Lungo.Aside.hide();
+```
+
+####  toggle()
+Toggle an aside element
+
+**Parameters**
+```
+string:		<aside> id
+```
+
+*Example*
+``` javascript
+Lungo.Aside.toggle("my-aside")
+```
+
+.Article
+--------
+Since version 2.2 (Brownie) Lungo has a new namespace to control `<article>` element.
+
+####  clean()
+Clean the content of a particular article with a specific markup
+
+**Parameters**
+```
+string:		<article> ID
+string:		Icon
+string:		Title
+string:		Description [OPTIONAL]
+string:		Button label [OPTIONAL]
+```
+
+*Example*
+``` javascript
+Lungo.Article.clean("my-article", "user", "Title", "Description", "Refresh")
+```
+
+.Service
+--------
 Lungo can also make ajax requests to web services.
 
 
@@ -1149,9 +1237,7 @@ var data = {id: 25, length: 50};
 var parseResponse = function(result){
     //Do something
 };
-
 Lungo.Service.get(url, data, parseResponse, "json");
-
 //Another example
 var result = Lungo.Service.get(url, "id=25&len=50", null, "json");
 ```
@@ -1175,9 +1261,7 @@ var data = {id: 25, length: 50};
 var parseResponse = function(result){
     //Do something
 };
-
 Lungo.Service.post(url, data, parseResponse, "json");
-
 //Another example
 var result = Lungo.Service.post(url, "id=25&len=50", null, "json");
 ```
@@ -1200,9 +1284,7 @@ var data = {id: 25, length: 50};
 var parseResponse = function(result){
     //Do something
 };
-
 Lungo.Service.json(url, data, parseResponse);
-
 //Another example
 var result = Lungo.Service.json(url, "id=25&len=50");
 ```
@@ -1239,16 +1321,3 @@ var result = Lungo.Service.cache(
     "json"
 );
 ```
-
-
-View
-----
-lorem
-
-### article
-lorem
-
-### aside
-lorem
-
-
