@@ -12,11 +12,13 @@ Lungo.Constants =
     SECTION              : "section"
     ARTICLE              : "article"
     ASIDE                : "aside"
-    MENU                 : "menu"
     BODY                 : "body"
     DIV                  : "div"
     LIST                 : "<ul></ul>"
     LI                   : "li"
+
+  CONTROL:
+    MENU                 : "[data-control=menu]"
 
   QUERY:
     ARTICLE_ROUTER       : "[data-view-article]"

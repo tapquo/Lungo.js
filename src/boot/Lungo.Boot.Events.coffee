@@ -78,14 +78,15 @@ Lungo.Boot.Events = do (lng = Lungo) ->
 
   _onMenu = (event) ->
     event.preventDefault()
-    menu_id = lng.dom(@).data("view-menu")
-    lng.dom("[data-control=menu]##{menu_id}").toggleClass CLASS.SHOW
+    id = lng.dom(@).data("view-menu")
+    lng.Element.menu.show id
 
   _closeMenu = (event) ->
     event.preventDefault()
-    el = lng.dom(this)
-    parent = el.parent("[data-control=menu]").removeClass(CLASS.SHOW).attr C.ATTRIBUTE.ID
-    lng.dom("[data-view-menu=#{parent}] > .icon").attr "class", "icon " + el.data("icon")
+    el = lng.dom(@)
+    id = el.parent(C.CONTROL.MENU).attr C.ATTRIBUTE.ID
+    lng.Element.menu.hide id
+    lng.dom("[data-view-menu=#{id}] > .icon").attr "class", "icon " + el.data("icon")
 
   _transitionEnd = (event) ->
     section = lng.dom(event.target)
