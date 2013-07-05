@@ -162,9 +162,6 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       lng.Aside.show showSections.first().data("aside")
     _callbackSection = future
 
-  # _visibleParent = (section) ->
-  #   return lng.dom("section[data-children~=#{section.attr('id')}].#{C.CLASS.SHOW}")
-
   _checkAside = (current, target) ->
     aside_id = target.data("aside")
     current_aside = lng.Element.Cache.aside
@@ -177,8 +174,8 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       do lng.Aside.hide
 
   _showAside = (aside_id, target) ->
-    if target.data("children") then lng.Aside.show aside_id
-    else lng.Aside.showFix aside_id
+    fixed = if target.data("children") then false else true
+    lng.Aside.show aside_id, fixed
 
   _parentId = (section) ->
     parent = lng.dom("[data-children~=#{section.attr('id')}]")
