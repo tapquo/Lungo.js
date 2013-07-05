@@ -14,52 +14,49 @@ Lungo.Aside = do (lng = Lungo) ->
   _customAsideAnimation = undefined
 
   ###
-  Display an aside element with a particular <section>
+  Display an aside element
   @method show
+
+  @param    {string} <aside> Id
   ###
-  show = (aside_id, animate_section = true, fromX = 0) ->
+  show = (aside_id, fixed = false) ->
     aside = lng.dom("##{aside_id}")
-    if aside.length and not _alreadyOpen(aside_id)
+    if aside.length
+      if not fixed and not _alreadyOpen(aside_id)
+        fromX = 0
         lng.Element.Cache.aside = aside
         if lng.DEVICE is C.DEVICE.PHONE
-          aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
           aside.addClass(C.CLASS.SHOW)
-          if fromX then _phoneCustomAnimation fromX, false
-          else lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
+
+          aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
+          lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
         else
           aside.addClass(C.CLASS.SHOW)
           aside_section = lng.dom("[data-aside=#{aside_id}][data-children]")
           if aside_section.attr("id") isnt lng.Element.Cache.section?.attr("id")
             lng.Element.Cache.section.addClass "shadowing"
             childs = aside_section.data("children").split(" ")
-            for child in childs
+            for childsild in childs
               child = lng.dom(C.ELEMENT.SECTION + "#" + child)
               if child.length and child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
 
           aside_section.removeClass("aside").addClass "asideShowing"
+      else
+        lng.Element.Cache.aside = aside
+        aside.addClass(C.CLASS.SHOW).addClass("box")
 
   ###
-  Shows a fixed aside (not able to hide cause section have not children)
+  Hide current aside element
   @method hide
+  @param    {function} Callback
   ###
-  showFix = (aside_id) ->
-    aside = lng.dom("##{aside_id}")
-    if aside.length
-      lng.Element.Cache.aside = aside
-      aside.addClass(C.CLASS.SHOW).addClass("box")
-
-  ###
-  Hide an aside element with a particular section
-  @method hide
-  ###
-  hide = (callback, fromX) ->
+  hide = (callback) ->
     if lng.Element.Cache.aside
       _callback = callback
       aside_transition = lng.Element.Cache.aside.data(C.TRANSITION.ATTR) or "left"
       if lng.DEVICE is C.DEVICE.PHONE
         lng.Element.Cache.section.removeClass("aside").removeClass("aside-right")
-        if fromX then _phoneCustomAnimation fromX, true
-        else lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
+        lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
       else
         lng.dom(".aside").removeClass("aside").addClass("asideHidding")
         lng.Element.Cache.aside = null
@@ -72,9 +69,7 @@ Lungo.Aside = do (lng = Lungo) ->
   @method toggle
   @param  {string} Aside id
   ###
-  toggle = (aside) ->
-    if lng.Element.Cache.aside then do lng.Aside.hide
-    else lng.Aside.show aside
+  toggle = (aside) -> if lng.Element.Cache.aside then @hide() else @show aside
 
   ###
   Triggered when <aside> animation ends.
@@ -141,30 +136,9 @@ Lungo.Aside = do (lng = Lungo) ->
   _asideStylesheet = ->
     if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else "  "
 
-  _phoneCustomAnimation = (fromX, hide=false) ->
-    if hide then kfStyle = document.createTextNode("""
-        @-webkit-keyframes asideCustomKF {
-          0%   { -webkit-transform: translateX(#{fromX}px); }
-          40%  { -webkit-transform: translateX(#{fromX + 8}px); }
-          100% { -webkit-transform: translateX(0); }
-        }""")
-    else kfStyle = document.createTextNode("""
-        @-webkit-keyframes asideCustomKF {
-          0%   { -webkit-transform: translateX(#{fromX}px); }
-          60%  { -webkit-transform: translateX(#{C.ASIDE.NORMAL + 8}px); }
-          100% { -webkit-transform: translateX(#{C.ASIDE.NORMAL}px); }
-        }""")
-    _customAsideAnimation = document.createElement('style')
-    _customAsideAnimation.type = 'text/css'
-    _customAsideAnimation.appendChild(kfStyle)
-    document.getElementsByTagName("head")[0].appendChild(_customAsideAnimation)
-    lng.Element.Cache.section.style("-webkit-animation-name", "asideCustomKF")
 
-
-
-  toggle: toggle
-  show: show
-  showFix: showFix
-  hide: hide
-  draggable: draggable
+  show        : show
+  hide        : hide
+  toggle      : toggle
+  draggable   : draggable
   animationEnd: animationEnd
