@@ -22,28 +22,31 @@ Lungo.Aside = do (lng = Lungo) ->
   show = (aside_id, fixed = false) ->
     aside = lng.dom("##{aside_id}")
     if aside.length
-      if not fixed and not _alreadyOpen(aside_id)
-        fromX = 0
-        lng.Element.Cache.aside = aside
-        if lng.DEVICE is C.DEVICE.PHONE
-          aside.addClass(C.CLASS.SHOW)
+      unless _alreadyOpen(aside_id)
+        unless fixed
+          # not fixed
+          fromX = 0
+          lng.Element.Cache.aside = aside
+          if lng.DEVICE is C.DEVICE.PHONE
+            aside.addClass(C.CLASS.SHOW)
+            aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
+            lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
+          else
+            aside.addClass(C.CLASS.SHOW)
+            aside_section = lng.dom("[data-aside=#{aside_id}][data-children]")
+            if aside_section.attr("id") isnt lng.Element.Cache.section?.attr("id")
+              lng.Element.Cache.section.addClass "shadowing"
+              childs = aside_section.data("children")
+              childs = childs.split(" ")
+              for childid in childs
+                child = lng.dom(C.ELEMENT.SECTION + "#" + childid)
+                if child.length and child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
 
-          aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
-          lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
+            aside_section.removeClass("aside").addClass "asideShowing"
         else
-          aside.addClass(C.CLASS.SHOW)
-          aside_section = lng.dom("[data-aside=#{aside_id}][data-children]")
-          if aside_section.attr("id") isnt lng.Element.Cache.section?.attr("id")
-            lng.Element.Cache.section.addClass "shadowing"
-            childs = aside_section.data("children").split(" ")
-            for childsild in childs
-              child = lng.dom(C.ELEMENT.SECTION + "#" + child)
-              if child.length and child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
-
-          aside_section.removeClass("aside").addClass "asideShowing"
-      else
-        lng.Element.Cache.aside = aside
-        aside.addClass(C.CLASS.SHOW).addClass("box")
+          # fixed
+          lng.Element.Cache.aside = aside
+          aside.addClass(C.CLASS.SHOW).addClass("box")
 
   ###
   Hide current aside element
