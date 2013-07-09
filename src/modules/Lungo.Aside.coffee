@@ -13,7 +13,12 @@ Lungo.Aside = do (lng = Lungo) ->
   _callback = undefined
   CUSTOM_KF_SHOW = "__customKFShow__"
   CUSTOM_KF_HIDE = "__customKFHide__"
+  ANIMATION_DURATION = "300ms"
   _customAsideAnimation = undefined
+  _kfPrefix = ''
+  lng.ready ->
+    isMoz = lng.Core.environment().browser.match(/mozilla|firefox/gi)?.length > 0
+    _kfPrefix = if isMoz then '' else '-webkit-'
 
   ###
   Display an aside element
@@ -30,9 +35,9 @@ Lungo.Aside = do (lng = Lungo) ->
           lng.Element.Cache.aside = aside
           if lng.DEVICE is C.DEVICE.PHONE
             aside.addClass(C.CLASS.SHOW)
-            unless fromX is null
-              customAnimation = _createCustomAnimation(fromX)
-              lng.Element.Cache.section.style "-webkit-animation-name", customAnimation
+            unless fromX is -1
+              animationValue = _createCustomAnimation(fromX) + " " + ANIMATION_DURATION
+              lng.Element.Cache.section.style "#{_kfPrefix}animation", animationValue
             else
               aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
               lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
@@ -43,8 +48,8 @@ Lungo.Aside = do (lng = Lungo) ->
               lng.Element.Cache.section.addClass "shadowing"
               childs = aside_section.data("children")
               childs = childs.split(" ")
-              for childid in childs
-                child = lng.dom(C.ELEMENT.SECTION + "#" + childid)
+              for child in childs
+                child = lng.dom(C.ELEMENT.SECTION + "#" + child)
                 if child.length and child.hasClass(C.CLASS.SHOW) then child.addClass "shadowing"
 
             aside_section.removeClass("aside").addClass "asideShowing"
@@ -64,9 +69,9 @@ Lungo.Aside = do (lng = Lungo) ->
       aside_transition = lng.Element.Cache.aside?.data(C.TRANSITION.ATTR) or "left"
       if lng.DEVICE is C.DEVICE.PHONE
         if fromX > 0
-          customAnimation = _createCustomAnimation(fromX, true)
           lng.Element.Cache.section.removeClass("aside").removeClass("aside-right")
-          lng.Element.Cache.section.style "-webkit-animation-name", customAnimation
+          animationValue = _createCustomAnimation(fromX, true) + " " + ANIMATION_DURATION
+          lng.Element.Cache.section.style "#{_kfPrefix}animation", animationValue
         else
           lng.Element.Cache.section.removeClass("aside").removeClass("aside-right")
           lng.Element.Cache.section.data("aside-#{aside_transition}", "hide")
@@ -99,13 +104,14 @@ Lungo.Aside = do (lng = Lungo) ->
       if _callback then _callback.call _callback
       _callback = undefined
     else
-      if section.vendor("animation")[0] isnt CUSTOM_KF_HIDE
+      if section.style("#{_kfPrefix}animation").indexOf(CUSTOM_KF_HIDE) is -1
         className = if aside_transition.indexOf("right") is -1 then "aside" else "aside-right"
-      section.removeAttr("style").removeAttr("data-aside-#{aside_transition}").addClass(className)
+        section.addClass(className)
+      section.removeAttr("style").removeAttr("data-aside-#{aside_transition}")
 
     if _customAsideAnimation
       section.removeAttr("style")
-      _customAsideAnimation.remove()
+      _customAsideAnimation.parentNode.removeChild(_customAsideAnimation)
       _customAsideAnimation = undefined
 
   ###
@@ -154,36 +160,30 @@ Lungo.Aside = do (lng = Lungo) ->
     return lng.Element.Cache.aside?.attr("id") is aside_id
 
   _asideStylesheet = ->
-    if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else "  "
+    if lng.Element.Cache.aside?.hasClass(C.CLASS.RIGHT) then "#{C.CLASS.RIGHT}" else " "
 
   _createCustomAnimation = (x, forClose=false) ->
     animationName = if forClose then CUSTOM_KF_HIDE else CUSTOM_KF_SHOW
     _customAsideAnimation = document.createElement('style')
     _customAsideAnimation.type = 'text/css'
     unless forClose
-      rule = _vendorKF """
-        @-webkit-keyframes #{animationName} {
-          0%   { -webkit-transform: translateX(#{x}px); }
-          60%  { -webkit-transform: translateX(262px);  }
-          100% { -webkit-transform: translateX(256px);  }
+      rule = """
+        @#{_kfPrefix}keyframes #{animationName} {
+          0%   { #{_kfPrefix}transform: translateX(#{x}px); }
+          60%  { #{_kfPrefix}transform: translateX(262px);  }
+          100% { #{_kfPrefix}transform: translateX(256px);  }
         }
       """
     else
-      rule = _vendorKF """
-        @-webkit-keyframes #{animationName} {
-          0%   { -webkit-transform: translateX(#{x}px); }
-          100% { -webkit-transform: translateX(0);      }
+      rule = """
+        @#{_kfPrefix}keyframes #{animationName} {
+          0%   { #{_kfPrefix}transform: translateX(#{x}px); }
+          100% { #{_kfPrefix}transform: translateX(0);      }
         }
       """
     _customAsideAnimation.appendChild(document.createTextNode(rule))
     document.getElementsByTagName("head")[0].appendChild(_customAsideAnimation)
     return animationName
-
-  _vendorKF = (kf) ->
-    prefixes = ["-webkit-", "-moz-", ""]
-    kfs = []
-    kfs.push(kf.replace(/-webkit-/g, prefix)) for prefix in prefixes
-    kfs.join("\n")
 
 
   show        : show
