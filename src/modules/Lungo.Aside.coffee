@@ -36,8 +36,6 @@ Lungo.Aside = do (lng = Lungo) ->
             else
               aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
               lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
-            # aside_transition = aside.data(C.TRANSITION.ATTR) or "left"
-            # lng.Element.Cache.section.data("aside-#{aside_transition}", "show")
           else
             aside.addClass(C.CLASS.SHOW)
             aside_section = lng.dom("[data-aside=#{aside_id}][data-children]")
@@ -163,7 +161,7 @@ Lungo.Aside = do (lng = Lungo) ->
     _customAsideAnimation = document.createElement('style')
     _customAsideAnimation.type = 'text/css'
     unless forClose
-      rule = """
+      rule = _vendorKF """
         @-webkit-keyframes #{animationName} {
           0%   { -webkit-transform: translateX(#{x}px); }
           60%  { -webkit-transform: translateX(262px);  }
@@ -171,7 +169,7 @@ Lungo.Aside = do (lng = Lungo) ->
         }
       """
     else
-      rule = """
+      rule = _vendorKF """
         @-webkit-keyframes #{animationName} {
           0%   { -webkit-transform: translateX(#{x}px); }
           100% { -webkit-transform: translateX(0);      }
@@ -180,6 +178,12 @@ Lungo.Aside = do (lng = Lungo) ->
     _customAsideAnimation.appendChild(document.createTextNode(rule))
     document.getElementsByTagName("head")[0].appendChild(_customAsideAnimation)
     return animationName
+
+  _vendorKF = (kf) ->
+    prefixes = ["-webkit-", "-moz-", ""]
+    kfs = []
+    kfs.push(kf.replace(/-webkit-/g, prefix)) for prefix in prefixes
+    kfs.join("\n")
 
 
   show        : show
