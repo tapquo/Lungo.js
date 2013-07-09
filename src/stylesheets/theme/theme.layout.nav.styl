@@ -31,12 +31,21 @@ nav
 
   section > footer > & > a, &[data-control=groupbar] > a
     color: NAV_LINK
-    transition text-shadow TRANSITION_time TRANSITION_easing
+    transition-property color, box-shadow
+    transition-duration TRANSITION_time
+    transition-timing-function TRANSITION_easing
     & abbr
       font-weight: 400
     &.active, &:active
       color: NAV_LINK_ACTIVE
-      text-shadow: 0 0 1em NAV_LINK
+
+  &[data-control=groupbar] > a
+    &.active, &:active
+      box-shadow: inset 0 -0.3em THEME
+
+  section > footer > & > a
+    &.active, &:active
+      box-shadow: inset 0 0.3em THEME
 
   &[data-control=menu]
     background-color: rgba(0,0,0,0.9)
