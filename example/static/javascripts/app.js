@@ -75,14 +75,6 @@ Lungo.Events.init({
 
     'tap section#carousel > header [data-direction=right]': App.carousel.next,
 
-    'tap #themeroller li': function(event) {
-        var link = $$("#theme-stylesheet");
-        var url = link.attr("href");
-        var new_url = url.split("/").slice(0, -1);
-        new_url.push($$(this).attr("data-theme"));
-        link.attr('href', new_url.join("/"));
-    },
-
     'load section#pull': function(event) {
         App.pull = new Lungo.Element.Pull('section#pull article', {
             onPull: "Pull down to refresh",
