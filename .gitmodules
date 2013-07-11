@@ -13,9 +13,6 @@
 [submodule "package/lungo.icon"]
 	path = package/lungo.icon
 	url = https://github.com/tapquo/lungo.icon.git
-[submodule "example/components/lungo.brownie"]
-	path = example/components/lungo.brownie
-	url = https://github.com/soyjavi/lungo.brownie.git
 [submodule "package/lungo.thirdparties"]
 	path = package/lungo.thirdparties
 	url = https://github.com/tapquo/lungo.thirdparties.git
