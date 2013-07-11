@@ -4,14 +4,15 @@ module.exports = (grunt) ->
 
     meta:
       file: 'lungo'
+      temp: "build",
       package: "package",
       plugins: "src/plugins",
       # BETA
-      endpoint: "example/components",
-      version: ".brownie",
+      # endpoint: "example/components",
+      # version: ".brownie",
       # RELEASE
-      # endpoint: "package",
-      # version: "",
+      endpoint: "package",
+      version: "",
       banner: '/* <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today("yyyy/m/d") %>\n' +
               '   <%= pkg.homepage %>\n' +
               '   Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>' +
@@ -56,14 +57,13 @@ module.exports = (grunt) ->
         coffee: 'src/plugins/calendar/**.coffee'
         stylus: 'src/plugins/calendar/**.styl'
 
-
     coffee:
-      core: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js': '<%= source.coffee %>'
+      core: files: '<%=meta.temp%>/<%=meta.file%>.debug.js': '<%= source.coffee %>'
       calendar: files: 'package/lungo.calendar/lungo.calendar.js': '<%= source.calendar.coffee %>'
 
     uglify:
       options: compress: false, banner: "<%= meta.banner %>"
-      engine: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.js': '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.debug.js'
+      engine: files: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.js': '<%=meta.temp%>/<%=meta.file%>.debug.js'
 
     stylus:
       core:
@@ -80,6 +80,8 @@ module.exports = (grunt) ->
     copy:
       theme:
         expand: true, flatten: true, src: '<%=source.theme%>', dest: '<%=meta.package%>/<%=meta.file%>.theme/'
+      icon:
+        expand: false, flatten: true, src: '<%=meta.package%>/<%=meta.file%>.icon/<%=meta.file%>.icon.css', dest: '<%=meta.endpoint%>/<%=meta.file%><%=meta.version%>/<%=meta.file%>.icon.css'
 
     watch:
       coffee:
