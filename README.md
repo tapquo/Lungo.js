@@ -605,7 +605,7 @@ object:     Value asigned to the key.
 *Example*
 ``` javascript
 var framework = {name: "Lungo", twitter: "lungojs"};
-Lungo.Data.Cache.set("lungoFramework", framework);
+Lungo.Cache.set("lungoFramework", framework);
 ```
 
 
@@ -621,7 +621,7 @@ This method **return** an object containing the value.
 
 *Example*
 ``` javascript
-var cachedFramework = Lungo.Data.Cache.get("lungoFramework");
+var cachedFramework = Lungo.Cache.get("lungoFramework");
 //Result: {name: "Lungo", twitter: "lungojs"}
 ```
 
@@ -637,7 +637,7 @@ string:     [OPTIONAL] Subkey in LungoJS Cache System.
 
 *Example*
 ``` javascript
-Lungo.Data.Cache.remove("lungoFramework");
+Lungo.Cache.remove("lungoFramework");
 ```
 
 
@@ -652,7 +652,7 @@ This method **return** a boolean value which is true if the key is found
 
 *Example*
 ``` javascript
-Lungo.Data.Cache.exists("lungoFramework");
+Lungo.Cache.exists("lungoFramework");
 ```
 
 
