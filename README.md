@@ -848,7 +848,7 @@ boolean:    Boolean to show the percentage label.
 <section id="main" data-transition="">
     <article id="main-article" class="active list indented scroll">
         <form>
-            <div class="progress">
+            <div id="prg-example" class="progress">
                 <span class="bar">
                     <span class="value"></span>
                 </span>
@@ -858,7 +858,7 @@ boolean:    Boolean to show the percentage label.
 </section>
 ```
 ``` javascript
-Lungo.Element.progress("#progress-normal", 65, true);
+Lungo.Element.progress("#prg-example", 65, true);
 ```
 
 
