@@ -181,10 +181,10 @@ The `data-view-*` attribute is set in the `<a>` or `<button>` element to set the
 ``` html
 <section id="main">
     <article id="article_1" class="active">
-        <button class="button" data-view-article="article_1" data-icon="forward">To article_2</button>
+        <button class="button" data-view-article="article_2" data-icon="forward">To article_2</button>
     </article>
     <article id="article_2">
-        <button class="button" data-view-article="article_2" data-icon="home" data-label="To article_1"></button>
+        <button class="button" data-view-article="article_1" data-icon="home" data-label="To article_1"></button>
     </article>
 </section>
 ```
