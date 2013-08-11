@@ -64,7 +64,7 @@ Here you have the dependencies of your Lungo application's body. It must contain
 
 The JavaScript function that initializes Lungo it's:
 ``` javascript
-Lungo.init();
+Lungo.init({});
 ```
 
 #### Load Sync resources on init
