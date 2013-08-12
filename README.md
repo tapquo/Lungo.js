@@ -181,10 +181,10 @@ The `data-view-*` attribute is set in the `<a>` or `<button>` element to set the
 ``` html
 <section id="main">
     <article id="article_1" class="active">
-        <button class="button" data-view-article="article_1" data-icon="forward">To article_2</button>
+        <button class="button" data-view-article="article_2" data-icon="forward">To article_2</button>
     </article>
     <article id="article_2">
-        <button class="button" data-view-article="article_2" data-icon="home" data-label="To article_1"></button>
+        <button class="button" data-view-article="article_1" data-icon="home" data-label="To article_1"></button>
     </article>
 </section>
 ```
@@ -605,7 +605,7 @@ object:     Value asigned to the key.
 *Example*
 ``` javascript
 var framework = {name: "Lungo", twitter: "lungojs"};
-Lungo.Data.Cache.set("lungoFramework", framework);
+Lungo.Cache.set("lungoFramework", framework);
 ```
 
 
@@ -621,7 +621,7 @@ This method **return** an object containing the value.
 
 *Example*
 ``` javascript
-var cachedFramework = Lungo.Data.Cache.get("lungoFramework");
+var cachedFramework = Lungo.Cache.get("lungoFramework");
 //Result: {name: "Lungo", twitter: "lungojs"}
 ```
 
@@ -637,7 +637,7 @@ string:     [OPTIONAL] Subkey in LungoJS Cache System.
 
 *Example*
 ``` javascript
-Lungo.Data.Cache.remove("lungoFramework");
+Lungo.Cache.remove("lungoFramework");
 ```
 
 
@@ -652,7 +652,7 @@ This method **return** a boolean value which is true if the key is found
 
 *Example*
 ``` javascript
-Lungo.Data.Cache.exists("lungoFramework");
+Lungo.Cache.exists("lungoFramework");
 ```
 
 
@@ -848,7 +848,7 @@ boolean:    Boolean to show the percentage label.
 <section id="main" data-transition="">
     <article id="main-article" class="active list indented scroll">
         <form>
-            <div class="progress">
+            <div id="prg-example" class="progress">
                 <span class="bar">
                     <span class="value"></span>
                 </span>
@@ -858,7 +858,7 @@ boolean:    Boolean to show the percentage label.
 </section>
 ```
 ``` javascript
-Lungo.Element.progress("#progress-normal", 65, true);
+Lungo.Element.progress("#prg-example", 65, true);
 ```
 
 
