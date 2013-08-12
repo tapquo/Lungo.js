@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tablet4</title>
+    <meta name="description" content="">
+    <meta name="author" content="Javier Jiménez Villar (@soyjavi)">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../components/lungo.brownie/lungo.css">
+    <link rel="stylesheet" href="../components/lungo.brownie/lungo.theme.css">
+    <link rel="stylesheet" href="../components/lungo.icon/lungo.icon.css">
+</head>
+
+<body>
+
+    <section id="security" data-transition="slide">
+        <article>
+            security
+            <button data-view-section="main">Go main!</button>
+        </article>
+    </section>
+
+    <section id="main" data-transition="slide" data-children="other">
+        <article>
+            main
+            <button data-view-section="back">Go back!</button>
+            <button data-view-section="other">Go other!</button>
+        </article>
+    </section>
+
+    <section id="other" data-transition="slide">
+        <article>
+            other
+            <button data-view-section="back">Go back!</button>
+        </article>
+    </section>
+
+    <!-- Lungo dependencies -->
+    <script src="../components/quojs/quo.js"></script>
+    <script src="../components/lungo.brownie/lungo.debug.js"></script>
+    <script>
+        Lungo.init({
+            name: 'test',
+            history: false
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

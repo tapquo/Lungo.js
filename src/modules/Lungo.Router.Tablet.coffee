@@ -112,7 +112,9 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   @method step
   @param  {string} Id of the section
   ###
-  step = (section_id) -> _history.push section_id if section_id isnt history()
+  step = (section_id) ->
+    if section_id isnt history()
+      _history.push section_id
 
   ###
   Returns the current browsing history section id.
@@ -144,7 +146,6 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   _showForward = (current, future) ->
     if _isChild(current, future) then _applyDirection(future, "in")
     else
-      do _removeLast
       hideSelector = "section.#{C.CLASS.SHOW}"
       parent_id = _parentId(future)
       if parent_id then hideSelector += ":not(##{parent_id})"
