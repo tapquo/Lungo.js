@@ -29,10 +29,13 @@ Lungo.RouterTablet = do (lng = Lungo) ->
       query = C.ELEMENT.SECTION + HASHTAG + section_id
       future = if current then current.siblings(query) else lng.dom(query)
       if future.length
-        _show future, current
+        if current and _isSimpleSection(current) and _isSimpleSection(future)
+          _simpleRoutering current, future
+        else _show future, current
         step section_id
         do _url unless Lungo.Config.history is false
         do _updateNavigationElements
+
 
   ###
   Return to previous section.
@@ -55,7 +58,9 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     future = current.siblings(query)
 
     if future.length
-      _show future, current, true, animating
+      if current and _isSimpleSection(current) and _isSimpleSection(future)
+        _simpleRoutering current, future
+      else _show future, current, true, animating
       do _url unless Lungo.Config.history is false
       do _updateNavigationElements
 
@@ -127,22 +132,33 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   Private methods
   ###
   _show = (future, current, backward=false) ->
-    unless current? then _showFuture(future)
+    unless current?
+      lng.Section.show(undefined, future)
+      _showFuture(future)
     else
       if backward then _showBackward(current, future)
       else _showForward(current, future)
       lng.Section.show(current, future)
     _fromCallback = false
 
+  ### returns true with a section without data-aside and data-childrens ###
+  _isSimpleSection = (section) ->
+    not section.data("children")? and not section.data("aside")?
+
+  ### show/hide simple sections ###
+  _simpleRoutering = (current, future) ->
+    lng.Section.show current, future
+    current.removeClass "show"
+    future.addClass "show"
+
+  ### Shows a section when there is no current section ###
   _showFuture = (future) ->
-    current = lng.Element.Cache.section
-    lng.Section.show(undefined, future)
-    currentHasAside = lng.Element.Cache.section?.data("aside")?
     if not _fromCallback or not lng.Element.Cache.section?.data("aside")
       future.addClass(C.CLASS.SHOW)
     else _applyDirection(future, "in")
     _checkAside(undefined, future)
 
+  ### Shows a section when there is current section ###
   _showForward = (current, future) ->
     if _isChild(current, future) then _applyDirection(future, "in")
     else
@@ -222,11 +238,17 @@ Lungo.RouterTablet = do (lng = Lungo) ->
     _hashed_url += lng.Element.Cache.article.attr "id"
     setTimeout (-> window.location.hash = _hashed_url), 0
 
+
   _updateNavigationElements = (article_id) ->
     article_id = lng.Element.Cache.article?.attr(C.ATTRIBUTE.ID) unless article_id
     # Active visual signal for elements
-    links = lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE)
-    links.filter("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
+    # links = lng.dom(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE)
+    lng.Element.Cache.section.find(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE)
+    if lng.Element.Cache.section.data("aside")?
+      related_aside = lng.dom("aside##{lng.Element.Cache.section.data("aside")}")
+      related_aside.find(C.QUERY.ARTICLE_ROUTER).removeClass(C.CLASS.ACTIVE)
+
+    lng.dom("[data-view-article=#{article_id}]").addClass(C.CLASS.ACTIVE)
     # Hide/Show elements in current article
     nav = lng.Element.Cache.section.find(C.QUERY.ARTICLE_REFERENCE).addClass C.CLASS.HIDE
     nav.filter("[data-article~='#{article_id}']").removeClass C.CLASS.HIDE
