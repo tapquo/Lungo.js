@@ -79,7 +79,7 @@ Lungo.Boot.Events = do (lng = Lungo) ->
   _onMenu = (event) ->
     event.preventDefault()
     id = lng.dom(@).data("view-menu")
-    lng.Element.Menu.show id
+    lng.Element.Menu.toggle id
 
   _closeMenu = (event) ->
     event.preventDefault()
