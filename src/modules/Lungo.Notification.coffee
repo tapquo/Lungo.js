@@ -57,10 +57,15 @@ Lungo.Notification = do(lng = Lungo) ->
   @method   hide
   ###
   hide = ->
-    _window.removeClass("show")
+    wait = 0
+    unless _window.hasClass("show")
+      wait = (TRANSITION.DURATION / 2)
     setTimeout (->
-      _el.removeClass("show").removeClass("html").removeClass("confirm").removeClass("notify").removeClass "growl"
-    ), (TRANSITION.DURATION / 2)
+      _window.removeClass("show")
+      setTimeout (->
+        _el.removeClass("show").removeClass("html").removeClass("confirm").removeClass("notify").removeClass "growl"
+      ), (TRANSITION.DURATION / 2)
+    ),  wait
 
 
   ###
