@@ -177,7 +177,7 @@ Navigation
 The navigation in Lungo is entirely semantic, and you will use the element `<a>` or `<button>` and his data attribute "view-*" to tell the system which `<section>`, `<article>` or `<aside>` you want to go to.
 
 ### Data-View attribute
-The `data-view-*` attribute is set in the `<a>` or `<button>` element to set the type of element we are going to navigate to (`<section>`, `<article>` or `<aside>`) and in the href attribute the hashbang plus the id of the element has to be set. For this purpopuse Lungo uses the bread crumbs.
+The `data-view-*` attribute is set in the `<a>` or `<button>` element to set the type of element we are going to navigate to (`<section>`, `<article>` or `<aside>`) and in the href attribute the hashbang plus the id of the element has to be set. Lungo uses this `href` to generate the bread crumbs.
 ``` html
 <section id="main">
     <article id="article_1" class="active">
