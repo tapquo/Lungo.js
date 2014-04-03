@@ -546,7 +546,7 @@ Lungo.Core.environment();
 
 
 #### orderByProperty()
-Copy from any number of objects and mix them all into a new object. The implementation is simple; just loop through arguments and copy every property of every object passed to the function.
+Orders a number of objects by a given parameter.
 
 **Parameters**
 ```
@@ -568,7 +568,7 @@ var ordered_list = lng.Core.orderByProperty(list, 'name', 'asc');
 
 
 #### findByProperty()
-Copy from any number of objects and mix them all into a new object. The implementation is simple; just loop through arguments and copy every property of every object passed to the function.
+Finds a object with an specific property if exists in a list of Objects.
 
 **Parameters**
 ```
@@ -590,7 +590,7 @@ var user = lng.Core.findByProperty(list, 'name', 'Lungo');
 
 Cache
 -----
-Lungo implements its own cache type. This cache will store the value until the wepapp is closed
+Lungo implements its own cache type. This cache will store the value until the webapp is closed
 
 #### set()
 Sets in the LungoJS cache system a new key/value pair.
@@ -716,7 +716,7 @@ Lungo.dom('#section2').on('load', function(event){
 --------
 
 ### .Carousel
-Lungo has a carousel element where content can be published can be published and the user can navigate through it using the caroussel controls.
+Lungo has a carousel element where content can be published and the user can navigate through it using the caroussel controls.
 
 **Parameters**
 ```
