@@ -1,6 +1,6 @@
-[submodule "src/stylesheets/CSSmethods"]
-	path = src/stylesheets/CSSmethods
-	url = https://github.com/soyjavi/CSSmethods.git
+[submodule "src/stylesheets/STYLmethods"]
+	path = src/stylesheets/STYLmethods
+	url = https://github.com/soyjavi/STYLmethods.git
 [submodule "example/components/quojs"]
 	path = example/components/quojs
 	url = https://github.com/soyjavi/package-quojs.git
@@ -25,6 +25,3 @@
 [submodule "package/lungo.calendar"]
 	path = package/lungo.calendar
 	url = https://github.com/tapquo/lungo.calendar.git
-[submodule "package/lungo.firefoxos"]
-	path = package/lungo.firefoxos
-	url = https://github.com/tapquo/lungo.firefoxos.git
