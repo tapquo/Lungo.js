@@ -16,12 +16,3 @@
 [submodule "package/lungo.thirdparties"]
 	path = package/lungo.thirdparties
 	url = https://github.com/tapquo/lungo.thirdparties.git
-[submodule "package/lungo.gmap"]
-	path = package/lungo.gmap
-	url = https://github.com/tapquo/lungo.gmap.git
-[submodule "package/lungo.qr"]
-	path = package/lungo.qr
-	url = https://github.com/tapquo/lungo.qr.git
-[submodule "package/lungo.calendar"]
-	path = package/lungo.calendar
-	url = https://github.com/tapquo/lungo.calendar.git
