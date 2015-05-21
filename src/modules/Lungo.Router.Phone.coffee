@@ -18,6 +18,15 @@ Lungo.RouterPhone = do (lng = Lungo) ->
   _animating          = false
 
   ###
+  Clear history.
+  @method   clearHis
+  ###
+  clearHis = ->
+    return false if _animating
+    _history = []
+    return true
+
+  ###
   Navigate to a <section>.
   @method   section
   @param    {string} Id of the <section>
@@ -149,6 +158,7 @@ Lungo.RouterPhone = do (lng = Lungo) ->
     if _history.length > 1
       _history.length -= 1
 
+  clearHis : clearHis
   section : section
   back    : back
   article : article
