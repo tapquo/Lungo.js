@@ -18,6 +18,15 @@ Lungo.RouterTablet = do (lng = Lungo) ->
   _fromCallback       = false
 
   ###
+  Clear history.
+  @method   clearHis
+  ###
+  section = ->
+    return false if _animating
+    _history = []
+    return true
+
+  ###
   Navigate to a <section>.
   @method   section
   @param    {string} Id of the <section>
