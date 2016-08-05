@@ -39,7 +39,7 @@ Lungo.Element.Menu = do (lng = Lungo) ->
   toggle = (id) ->
     element = @_instance id
     if element
-      if element.hasClass C.CLASS.SHOW then @show id else @hide id
+      if element.hasClass C.CLASS.SHOW then @hide id else @show id
 
   _instance: (id) -> Lungo.dom "#{C.CONTROL.MENU}##{id}"
 
